@@ -1,0 +1,46 @@
+input {
+  text-align: center;
+}
+
+.HomeHeader {
+  min-height: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+      to bottom right,
+      rgba(32, 124, 167, 0.5) 0%,
+      rgba(208, 131, 167, 1)
+    ),
+    url(../../assets/Backgrounds/HomeHeader.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 4rem 0rem 1rem 0rem;
+  gap: 2rem;
+}
+
+.HomeHeader h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.sb-ctn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (max-width: 376px) {
+  .HomeHeader-title {
+    width: 90%;
+    padding-top: 5rem;
+  }
+
+  .HomeHeader-title h1 {
+    font-size: 20px;
+  }
+}

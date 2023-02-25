@@ -1,0 +1,83 @@
+.TopOffers-container {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  gap: 3rem;
+  overflow: hidden;
+}
+
+.TopOffers-table {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-card {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.table-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.place-img {
+  scale: 0.8;
+}
+
+.table-card p {
+  color: rgb(106, 106, 106);
+  font-weight: 600;
+  text-align: center;
+}
+
+.table-card h3 {
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 376px) {
+
+  .TopOffers-container  h1 {
+    margin-bottom: 3rem;
+  }
+
+  .TopOffers-container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .TopOffers-table {
+    width: 90%;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  section.TopOffers-table:nth-child(2) > div.table-card:nth-child(2), div.table-card:nth-child(3), div.table-card:nth-child(4), div.table-card:nth-child(5) {
+    display: none;
+  }
+
+  section.TopOffers-table:nth-child(3) > div.table-card:nth-child(n + 3) {
+    display: none;
+  }
+
+  section.TopOffers-table:nth-child(2) {
+    scale: 1.4;
+  }
+
+  section.TopOffers-table:nth-child(3) {
+    scale: 1.1;
+    flex-wrap: nowrap;
+  }
+}
