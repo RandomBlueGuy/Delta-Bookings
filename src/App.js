@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Homepage from './pages/Home/Homepage'
 import HotelList from './pages/HotelList/HotelListpage'
 import './App.css';
+import './pages/UniversalComponents/BaseStyles.css'
 
 function App() {
   return (

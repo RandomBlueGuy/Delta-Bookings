@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-
+import GoogleMapReact from "google-map-react";
 import icon from "../../assets/Icons/delta.svg";
 import locationIcon from "../../assets/Icons/location.svg";
 import phoneIcon from "../../assets/Icons/phone.svg";
@@ -11,7 +11,17 @@ import fIcon from "../../assets/Icons/facebook.svg";
 import iIcon from "../../assets/Icons/instagram.svg";
 import gIcon from "../../assets/Icons/google.svg";
 
+const prompt = ({ text }) => <div>{text}</div>;
+
 function Footer() {
+  const OurLocation = {
+    center: {
+      lat: 6.266716684592229,
+      lng: -75.58217656599909,
+    },
+    zoom: 12,
+  };
+
   return (
     <main className="ctn-footer">
       <div className="main-box">
@@ -64,7 +74,17 @@ function Footer() {
             <h2>Our Location</h2>
           </div>
           <div className="box-body">
-            <div className="map-box"></div>
+            <GoogleMapReact
+              bootstrapURLKeys={{ key: "" }}
+              defaultCenter={OurLocation.center}
+              defaultZoom={OurLocation.zoom}
+            >
+              <prompt
+                lat={6.266716684592229}
+                lng={-75.58217656599909}
+                text="Our Location"
+              />
+            </GoogleMapReact>
           </div>
         </section>
 
@@ -136,8 +156,7 @@ function Footer() {
         </div>
         <div className="copyright">
           <p>
-            Copyright 2023 Delta By <span className="heart"> ♥</span> Yo
-            Merenguez
+            Copyright 2023 Delta By <span className="heart"> ♥</span> Delta Team
           </p>
         </div>
       </div>
