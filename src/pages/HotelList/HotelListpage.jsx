@@ -14,7 +14,17 @@ function HotelListpage() {
       <UpButton />
       <Header />
       <SearchBar />
-      <HotelCard />
+      <div className="card-gallery">
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+        <HotelCard />
+      </div>
+
       <Footer />
     </div>
   );

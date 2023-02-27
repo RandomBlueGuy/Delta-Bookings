@@ -35,8 +35,10 @@ function NavBar() {
       className="NavBar-container txt-color"
       style={{
         backgroundColor: visibility ? "white" : "transparent",
+        boxShadow: visibility ? `0px 10px 10px rgba(43, 43, 43, 0.2)` : "none",
       }}
     >
+
       <nav className="NavBar">
         <section className="nav-section">
           <Link to="/">
@@ -130,13 +132,21 @@ function NavBar() {
               </div>
             </div>
             <button className="dropdown" onClick={triggerOpen}>
-              <img src={menuIcon} alt="Delta" />
+              <img
+                src={menuIcon}
+                alt="Delta"
+                style={{ filter: visibility ? "invert(0)" : "invert(1)" }}
+              />
             </button>
           </section>
 
           <section className="nav-section">
             <div className="dropdown">
-              <img src={userIcon} alt="Delta" />
+              <img
+                src={userIcon}
+                alt="Delta"
+                style={{ filter: visibility ? "invert(0)" : "invert(1)" }}
+              />
               <ul className="dropdown-menu">
                 <li className="item-ctn">
                   <Link to="/">
