@@ -5,7 +5,8 @@
   --red-style-darker: #d52e2e;
   --txt-gray: #999999;
   --dark-BG: #1c1c1c;
-  --NavBar-btn: rgba(217, 217, 217, 0.4);;
+  --NavBar-btn: rgba(217, 217, 217, 0.4);
+  --NavBar-menu: rgba(217, 217, 217, 0.9);
 }
 
 * {

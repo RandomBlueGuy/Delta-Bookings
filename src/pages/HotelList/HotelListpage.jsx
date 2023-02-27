@@ -5,10 +5,14 @@ import Footer from "../UniversalComponents/Footer";
 import UpButton from "../UniversalComponents/UpButton";
 import SearchBar from "./SearchBar";
 import HotelCard from "./HotelCard";
+import "./HotelListpage.css";
 
 function HotelListpage() {
   return (
-    <div>
+    <div
+      className="HotelListpage-ctn"
+      styles={{ display: "flex", flexDirection: "column" }}
+    >
       <NavBar />
       <UpButton />
       <Header />

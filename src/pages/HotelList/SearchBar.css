@@ -41,6 +41,7 @@
 
 .form-box input {
   border: none;
+  color: var(--txt-gray)
 }
 
 @media (max-width: 376px) {
