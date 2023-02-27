@@ -59,7 +59,7 @@ function NavBar() {
             <div id="mySidepanel" style={{ width: trigger }} class="sidepanel">
               <div class="closebtn item-ctn" onClick={triggerClose}>
                 <Link to="/">
-                  <h2>Back ></h2>
+                  <h2>Back →</h2>
                 </Link>
               </div>
               <div className="mobile-menu-titles">

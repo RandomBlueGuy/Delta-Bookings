@@ -5,7 +5,6 @@ import Footer from "../UniversalComponents/Footer";
 import UpButton from "../UniversalComponents/UpButton";
 import SearchBar from "./SearchBar";
 import HotelCard from "./HotelCard";
-import "./HotelListpage.css";
 
 function HotelListpage() {
   return (

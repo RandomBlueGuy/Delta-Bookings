@@ -86,7 +86,7 @@ a:hover {
 .item-ctn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   gap: 0.5rem;
   background-color: white;
   color: black;
@@ -112,6 +112,7 @@ a:hover {
   display: flex;
   gap: 1rem;
 }
+
 .accesibility select {
   border: none;
   border-radius: 5px;
@@ -193,6 +194,7 @@ a:hover {
 
   .closebtn:hover {
     background-color: var(--red-style-darker);
+    color: white;
   }
 
   .item-ctn select {
