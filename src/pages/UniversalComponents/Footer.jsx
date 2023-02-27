@@ -155,9 +155,7 @@ function Footer() {
           </a>
         </div>
         <div className="copyright">
-          <p>
-            Copyright 2023 Delta By <span className="heart"> ♥</span> Delta Team
-          </p>
+          <p>Copyright 2023 Delta By 💙 Delta Team</p>
         </div>
       </div>
     </main>

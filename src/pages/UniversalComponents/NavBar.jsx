@@ -1,6 +1,7 @@
 import React from "react";
 import "./NavBar.css";
-import icon from "../../assets/Icons/delta-black.svg";
+import iconB from "../../assets/Icons/delta-black.svg";
+import iconW from "../../assets/Icons/delta.svg";
 import userIcon from "../../assets/Icons/user.svg";
 import menuIcon from "../../assets/Icons/menu.svg";
 import settingsIcon from "../../assets/Icons/settings.svg";
@@ -8,37 +9,50 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function NavBar() {
-
-  const [trigger, setTrigger] = useState('');
+  const [trigger, setTrigger] = useState("");
+  const [visibility, setVisibility] = useState("");
 
   const triggerOpen = (event) => {
     event.preventDefault();
-    setTrigger('90%');
+    setTrigger("90%");
   };
 
   const triggerClose = (event) => {
     event.preventDefault();
-    setTrigger('0px');
+    setTrigger("0px");
   };
 
+  const toggleVisible = () => {
+    document.documentElement.scrollTop > 100
+      ? setVisibility(true)
+      : setVisibility(false);
+  };
+
+  window.addEventListener("scroll", toggleVisible);
+
   return (
-    <main className="NavBar-container">
+    <main
+      className="NavBar-container txt-color"
+      style={{
+        backgroundColor: visibility ? "white" : "transparent",
+      }}
+    >
       <nav className="NavBar">
         <section className="nav-section">
           <Link to="/">
-            <img src={icon} alt="Delta" />
+            <img src={visibility ? iconB : iconW} alt="Delta" />
           </Link>
         </section>
 
         <section className="nav-desktop">
           <Link to="/">
-            <h2>Home</h2>
+            <h2 style={{ color: visibility ? "black" : "white" }}>Home</h2>
           </Link>
           <Link to="/hotel-list">
-            <h2>Hotel</h2>
+            <h2 style={{ color: visibility ? "black" : "white" }}>Hotel</h2>
           </Link>
           <Link to="/">
-            <h2>Pages</h2>
+            <h2 style={{ color: visibility ? "black" : "white" }}>Pages</h2>
           </Link>
         </section>
 
@@ -56,8 +70,12 @@ function NavBar() {
           </section>
 
           <section className="nav-section">
-            <div id="mySidepanel" style={{ width: trigger }} class="sidepanel">
-              <div class="closebtn item-ctn" onClick={triggerClose}>
+            <div
+              id="mySidepanel"
+              style={{ width: trigger }}
+              className="sidepanel"
+            >
+              <div className="closebtn item-ctn" onClick={triggerClose}>
                 <Link to="/">
                   <h2>Back →</h2>
                 </Link>
@@ -111,15 +129,15 @@ function NavBar() {
                 </select>
               </div>
             </div>
-            <button class="dropdown" onClick={triggerOpen}>
+            <button className="dropdown" onClick={triggerOpen}>
               <img src={menuIcon} alt="Delta" />
             </button>
           </section>
 
           <section className="nav-section">
-            <div class="dropdown">
+            <div className="dropdown">
               <img src={userIcon} alt="Delta" />
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <li className="item-ctn">
                   <Link to="/">
                     <h2>Log In</h2>

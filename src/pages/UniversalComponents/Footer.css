@@ -140,10 +140,6 @@
   opacity: 0.65;
 }
 
-.heart {
-  color: rgb(29, 97, 161);
-}
-
 @media (max-width: 376px) {
   .main-box {
     flex-direction: column;

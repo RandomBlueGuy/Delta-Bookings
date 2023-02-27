@@ -1,0 +1,6 @@
+.HotelListpage-ctn {
+  display: flex;
+  align-items: center;
+  background-color: beige;
+  flex-direction: column;
+}
