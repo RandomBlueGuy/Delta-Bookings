@@ -9,7 +9,14 @@
   margin: 0;
   padding: 0;
   box-shadow: 5px 5px 10px rgba(3, 3, 3, 0.2);
+transition: ease-in-out 0.2s;
 }
+
+.hotel-card:hover {
+  transition: ease-in-out 0.2s;
+  transform: scale(1.02);
+}
+
 
 figure {
   width: 100%;

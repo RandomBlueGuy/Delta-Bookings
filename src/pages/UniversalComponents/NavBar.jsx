@@ -38,7 +38,6 @@ function NavBar() {
         boxShadow: visibility ? `0px 10px 10px rgba(43, 43, 43, 0.2)` : "none",
       }}
     >
-
       <nav className="NavBar">
         <section className="nav-section">
           <Link to="/">
