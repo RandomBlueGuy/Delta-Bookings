@@ -1,0 +1,117 @@
+.booking-info {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    margin-top: 5%;
+    /* Cuando se vuelva movil, se regresa a center*/
+
+}
+
+.picture-example {
+    width: 33%;
+}
+
+.container-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding-right: 8%;
+}
+
+.container-2,
+.container-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 8%;
+    width: 70%;
+}
+
+.travelInfo-container {
+    background-color: white;
+    padding: 20px 10px;
+    width: 100%;
+}
+
+.info-container {
+    background-color: white;
+    padding: 20px 10px;
+    width: 75%;
+}
+
+.form-control {
+    border-radius: 0%;
+}
+
+.travelInfo-container {
+    margin-bottom: 30px;
+}
+
+.second-container div {
+    margin-bottom: -15px;
+}
+
+.checkout-in {
+    margin-top: 10px;
+}
+
+.third-container,
+.fifth-container {
+    margin-top: 15px;
+}
+
+.fourth-container div {
+    margin-bottom: -15px;
+}
+
+.hotel-info {
+    padding-left: 5%;
+}
+
+.hotel-name {
+    margin-bottom: -2px;
+}
+
+
+#firstname {
+    width: 90%;
+}
+
+#lastname {
+    width: 100%
+}
+
+.email-group,
+.coupon-info,
+.contact-info,
+.request-info {
+    margin-top: 10px;
+}
+
+
+@media (max-width:376px) {
+
+    .booking-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-1 {
+        padding-right: 0;
+        width: 70%;
+    }
+
+    .info-container {
+        width: 100%;
+    }
+
+    .container-2 {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+    .pay-button {
+        width: 100%;
+    }
+}
