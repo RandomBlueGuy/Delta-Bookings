@@ -9,9 +9,9 @@ function App() {
   return (
     <div>
       <Routes>
+        {/* <Route exact path="/XXX" element={<XXX />} /> */}
         <Route exact path="/" element={<Homepage />} />
         <Route exact path="/hotel-list" element={<HotelList />} />
-        {/* <Route exact path="/XXX" element={<XXX />} /> */}
         <Route exact path="/signup" element={<Signuppage />} />
       </Routes>
     </div>
