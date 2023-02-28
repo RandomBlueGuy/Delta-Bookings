@@ -114,7 +114,6 @@ figure {
 
 .price-tags h3 {
   margin: 0;
-  text-decoration: line-through;
   font-weight: 800;
   font-size: 16px;
 }
@@ -125,6 +124,7 @@ figure {
   border: 1px solid grey;
   padding: 2px 8px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .tags:hover {

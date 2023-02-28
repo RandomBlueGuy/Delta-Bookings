@@ -59,12 +59,22 @@ function NavBar() {
 
         <div className="user-related">
           <section className="accesibility">
-            <select name="" id="" className="coin">
+            <select
+              name=""
+              id=""
+              className="coin"
+              style={{ color: visibility ? "black" : "white" }}
+            >
               <option value="">USD</option>
               <option value="">COP</option>
             </select>
 
-            <select name="" id="" className="language">
+            <select
+              name=""s
+              id=""
+              className="language"
+              style={{ color: visibility ? "black" : "white" }}
+            >
               <option value="">ESP</option>
               <option value="">ENG</option>
             </select>
