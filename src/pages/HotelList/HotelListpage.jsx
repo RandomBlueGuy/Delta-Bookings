@@ -10,7 +10,6 @@ import "./HotelListpage.css";
 function HotelListpage() {
   const totalItems = Math.random() * 9;
   const hotelCardArr = createArrayOfCards(totalItems);
-
   function createArrayOfCards(totalItems) {
     const element = [];
     for (let i = 0; i < totalItems; i++) {
