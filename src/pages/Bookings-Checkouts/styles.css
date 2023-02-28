@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-start;
-    margin-top: 5%;
+    justify-content: center;
+    background-color: #f5f5dc;
+    padding: 5% 10%;
     /* Cuando se vuelva movil, se regresa a center*/
-
 }
 
 .picture-example {
@@ -13,18 +14,15 @@
 
 .container-1 {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     width: 50%;
-    padding-right: 8%;
 }
 
-.container-2,
-.container-3 {
+.container-2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 8%;
     width: 70%;
 }
 
@@ -95,11 +93,12 @@
     .booking-info {
         flex-direction: column;
         align-items: center;
+        padding: 5% 5%;
     }
 
     .container-1 {
         padding-right: 0;
-        width: 70%;
+        width: 100%;
     }
 
     .info-container {
@@ -107,6 +106,7 @@
     }
 
     .container-2 {
+        width: 100%;
         padding-left: 0;
         margin-top: 20px;
     }
