@@ -70,7 +70,8 @@ function NavBar() {
             </select>
 
             <select
-              name=""s
+              name=""
+              s
               id=""
               className="language"
               style={{ color: visibility ? "black" : "white" }}
@@ -114,7 +115,7 @@ function NavBar() {
               <Link to="/" className="item-ctn">
                 <h2>Log-out</h2>
               </Link>
-              <Link to="/" className="item-ctn">
+              <Link to="/signup" className="item-ctn">
                 <h2>Sign-up</h2>
               </Link>
               <div className="mobile-menu-titles">
@@ -163,7 +164,12 @@ function NavBar() {
                   </Link>
                 </li>
                 <li className="item-ctn">
-                  <Link to="/">
+                  <Link to="/signup">
+                    <h2>Log out</h2>
+                  </Link>
+                </li>
+                <li className="item-ctn">
+                  <Link to="/signup">
                     <h2>Sign In</h2>
                   </Link>
                 </li>
