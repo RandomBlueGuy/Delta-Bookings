@@ -24,8 +24,8 @@ export default function Signup() {
                 <h1>SIGN UP </h1>
                 <h3>Sign Up With</h3>
                 <div className="goto-fa-go">
-                    <button className="facebook">Facebook</button>
-                    <button className="google">Google</button>
+                    <button>Facebook</button>
+                    <button>Google</button>
                 </div>
             </section>
             <div className="separador">
