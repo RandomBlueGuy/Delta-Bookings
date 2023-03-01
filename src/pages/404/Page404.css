@@ -1,5 +1,4 @@
 .page404-ctn {
-
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -14,7 +13,35 @@
 .page404-ctn-title {
   font-size: calc(16vw + 16vh + 8vmin);
   line-height: 0.8;
+  user-select: none;
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    rgb(65, 104, 167),
+    rgb(65, 167, 145),
+    rgb(152, 167, 65),
+    rgb(167, 128, 65),
+    var(--red-style),
+    rgb(167, 65, 128),
+    rgb(148, 65, 167),
+    rgb(65, 104, 167)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
 }
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
 .page404-ctn p {
   font-size: 20px;
 }
