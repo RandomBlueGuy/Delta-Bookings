@@ -52,9 +52,28 @@ function NavBar() {
           <Link to="/hotel-list">
             <h2 style={{ color: visibility ? "black" : "white" }}>Hotel</h2>
           </Link>
-          <Link to="/">
+
+          <div className="dropdown">
             <h2 style={{ color: visibility ? "black" : "white" }}>Pages</h2>
-          </Link>
+
+            <ul className="dropdown-menu">
+              <li className="item-ctn">
+                <Link to="/404-page-not-found">
+                  <h2>404</h2>
+                </Link>
+              </li>
+              <li className="item-ctn">
+                <Link to="/bookings">
+                  <h2>Booking</h2>
+                </Link>
+              </li>
+              <li className="item-ctn">
+                <Link to="/signup">
+                  <h2>Soon...</h2>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </section>
 
         <div className="user-related">
