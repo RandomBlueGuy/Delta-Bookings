@@ -49,9 +49,9 @@
   transform: scale(1.05);
 } */
 
+
 .dropdown {
   background: var(--NavBar-btn);
-  width: 2rem;
   height: 2rem;
   position: relative;
   z-index: 1;
@@ -76,13 +76,11 @@
   margin: 0 auto;
   padding: 0;
   position: absolute;
-  left: -2rem;
   opacity: 0;
   text-align: center;
   top: 0;
   visibility: hidden;
   z-index: -99999;
-  width: 6rem;
   box-shadow: 0 0 5px rgba(28, 28, 28, 0.5);
 }
 

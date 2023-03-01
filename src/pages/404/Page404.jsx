@@ -11,8 +11,8 @@ function page404() {
       <NavBar />
       <UpButton />
       <div className="page404-ctn">
-        <h1 className="page404-ctn-title">404</h1>
-        <p>There's nothing here :(</p>
+        <h1 className="page404-ctn-title page404-ctn-coloreffect">404</h1>
+        <p className="page404-ctn-coloreffect">There's nothing here :(</p>
 
         <Link to="/">
           <button className="page404-ctn-errorbtn">GO BACK</button>

@@ -72,6 +72,31 @@ function NavBar() {
                   <h2>Soon...</h2>
                 </Link>
               </li>
+              <li className="item-ctn">
+                <Link to="/signup">
+                  <h2>Soon...</h2>
+                </Link>
+              </li>
+              <li className="item-ctn">
+                <Link to="/signup">
+                  <h2>Soon...</h2>
+                </Link>
+              </li>
+              <li className="item-ctn">
+                <Link to="/signup">
+                  <h2>Soon...</h2>
+                </Link>
+              </li>
+              <li className="item-ctn">
+                <Link to="/signup">
+                  <h2>Soon...</h2>
+                </Link>
+              </li>
+              <li className="item-ctn">
+                <Link to="/signup">
+                  <h2>Soon...</h2>
+                </Link>
+              </li>
             </ul>
           </div>
         </section>
