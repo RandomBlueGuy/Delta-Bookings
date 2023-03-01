@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 
+ 
 export default function BookingModule() {
   return (
     <article className="container-1">

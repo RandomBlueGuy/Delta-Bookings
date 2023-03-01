@@ -17,15 +17,15 @@ function NewsLetter() {
   return (
     <main className="NewsLetter-container">
       <section className="NewsLetter-table">
-        <div className="card">
-          <figure className="card-img-container">
+        <div className="card-ctn-nl">
+          <figure className="card-ctn-nl-img-container">
             <img src={placeholderImg} alt="" />
             <figcaption className="date-review">
               <h1>{randomDate(false)}</h1>
               <p>{randomDate(true)}</p>
             </figcaption>
           </figure>
-          <div className="card-txt-container">
+          <div className="card-ctn-nl-txt-container">
             <p className="reviewer">Posted by: Julia Holmes</p>
             <p className="review">
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -38,15 +38,15 @@ function NewsLetter() {
             </button>
           </div>
         </div>
-        <div className="card">
-          <figure className="card-img-container">
+        <div className="card-ctn-nl">
+          <figure className="card-ctn-nl-img-container">
             <img src={placeholder2Img} alt="" />
             <figcaption className="date-review">
               <h1>{randomDate(false)}</h1>
               <p>{randomDate(true)}</p>
             </figcaption>
           </figure>
-          <div className="card-txt-container">
+          <div className="card-ctn-nl-txt-container">
             <p className="reviewer">Posted by: Julia Holmes</p>
             <p className="review">
               Lorem Ipsum is simply dummy text of the printing and typesetting
