@@ -1,53 +1,55 @@
 import React from "react";
 import "./UserDashboard.css";
+import Mark from "../../assets/Images/markenderes.jpg"
 
 export default function UserDashboard() {
     return (
-        <main className="container">
-            <section className="profile">
-                <div className="com-profile">
-                    <div className="img-profile">
-                        <img src="" alt="" />
+        <main className="dashboard__ctn">
+
+            <section className="dashboard__ctn-info">
+                <div className="dashboard__ctn-info-prof">
+                    <div className="dashboard__ctn-info-img">
+                        <img src={Mark} alt="" />
                         <input type="button" value="" />
                     </div>
-                    <div className="info-profile">
+                    <div className="dashboard__ctn-info-text">
                         <h1>Mark Enderess</h1>
                         <h2>+91 123 - 456 -7890</h2>
                         <h3>mark.enderess@mail.com</h3>
                     </div>
                 </div>
-                <div className="select-profile">
+                <div className="dashboard__ctn-info-select">
                     <p>Profile</p>
                     <p>Bookings</p>
                 </div>
             </section>
-            <section className="profile-edit">
-                <div className="profile-edit1">
-                    <div className="title">
+            <section className="dashboard__ctn-edit">
+                <div className="dashboard__ctn-edit1">
+                    <div className="dashboard__ctn-info-edit1-title">
                         <h1>Profile</h1>
                         <input type="button" value="edit" />
                     </div>
                     <form action="">
-                        <div className="_name">
+                        <div className="dashboard__ctn-info-edit1-name">
                             <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre" />
+                            <input type="text" id="nombre" name="nombre" disabled="true" style={{border: "none"}} placeholder= "[NOMBRE BASE]" />
                         </div>
-                        <div className="birthday">
+                        <div className="dashboard__ctn-info-edit1-birthday">
                             <label htmlFor="birthday">Birthday:</label>
                             <input type="date" name="birthday" id="birthday" />
                         </div>
                         <div className="gender">
-                            <label htmlFor="genero">Gender</label>
+                            <label htmlFor="dashboard__ctn-info-edit1-genero">Gender</label>
                             <select name="genero">
                                 <option value="masculino">Masculino</option>
                                 <option value="femenino">Femenino</option>
                             </select>
                         </div>
-                        <div className="address">
+                        <div className="dashboard__ctn-info-edit1-address">
                             <label htmlFor="address">Street Address</label>
                             <input type="text" name="address" id="address" />
                         </div>
-                        <div className="city">
+                        <div className="dashboard__ctn-info-edit1-city">
                             <label htmlFor="city">City/State</label>
                             <input type="text" name="city" id="city"/>
                         </div>
@@ -80,6 +82,7 @@ export default function UserDashboard() {
                     </form>
                 </div>
             </section>
+
         </main>
     );
 }

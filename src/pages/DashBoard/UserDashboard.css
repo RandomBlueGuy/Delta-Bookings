@@ -1,5 +1,5 @@
 
-.container {
+.dashboard__ctn {
     margin: 0;
     width: 90vw;
     display: grid;
@@ -10,22 +10,26 @@
     
     
 }
-.profile {
+.dashboard__ctn-info {
     grid-area: a;
     border: 1px solid;
     border-color: gray;
     text-align: center;
 }
-.info-profile h1 {
+dashboard__ctn-info-img {
+    border-radius: 50%;
+}
+.dashboard__ctn-info-text h1 {
     font-size: 25px;
 }
-.info-profile h2 {
+.dashboard__ctn-info-text h2 {
     color: gray;
     font-size: 20px;
 }
-.info-profile h3 {
+.dashboard__ctn-info-text h3 {
     color: gray;
 }
+
 
 .select-profile p {
     text-align: start;

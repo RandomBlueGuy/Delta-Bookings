@@ -3,14 +3,14 @@ import Signup from "./Signup";
 import NavBar from "../UniversalComponents/NavBar";
 import UpButton from "../UniversalComponents/UpButton";
 import Footer from "../UniversalComponents/Footer";
-import HomeHeader from "./HeaderSignup";
+import HeaderSignup from "./HeaderSignup";
 
 
 function Signuppage() {
   return (
     <div>
       <NavBar />
-      <HomeHeader />
+      <HeaderSignup />
       <UpButton />
         <Signup />
       <Footer />

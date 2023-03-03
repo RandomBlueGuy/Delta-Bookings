@@ -1,0 +1,72 @@
+
+.check__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  width: 100%;
+}
+.check__card-map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 90%;
+  padding: 5%;
+
+}
+.check__card-text {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  
+}
+.check__card-text-li {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.check__card-text-li h1 {
+  margin-bottom: 0;
+}
+.check__card-text-li ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.check__card-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1;
+}
+.check__card-price p {
+  color: lightslategray;
+  margin-top: 20;
+  margin-bottom: 5px;
+}
+.check__card-price h2 {
+  font-size: 18px;
+  margin:0;
+  text-decoration: line-through;
+}
+.check__card-price h1 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.check__card-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 90%;
+  margin-bottom: 15px;
+}
+.check__card-form input {
+  width: 100%;
+  height: 2rem;
+}
+.check__card-form button {
+  width: 50%;
+}

@@ -12,7 +12,7 @@ import Footer from "./pages/UniversalComponents/Footer";
 import UpButton from "./pages/UniversalComponents/UpButton";
 import AboutUspage from "./pages/AboutUs/AboutUspage";
 import Hotelsingle from "./pages/HotelSingle/Hotelsingle";
-import UserDashBoard from "./pages/DashBoard/UserDashboard";
+import UserDashBoard from "./pages/DashBoard/DashboardPage";
 
 // - URL
 // - protocol -   subDomain -  Domain        -   Extension      -  path       - params/slugs/opt - search params
