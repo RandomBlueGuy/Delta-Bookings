@@ -75,17 +75,19 @@ function Footer() {
             <h2>Our Location</h2>
           </div>
           <div className="box-body">
-            <GoogleMapReact
-              bootstrapURLKeys={{ key: "" }}
-              defaultCenter={OurLocation.center}
-              defaultZoom={OurLocation.zoom}
-            >
-              <prompt
-                lat={6.266716684592229}
-                lng={-75.58217656599909}
-                text="Our Location"
-              />
-            </GoogleMapReact>
+            <div className="map-box">
+              <GoogleMapReact
+                bootstrapURLKeys={{ key: "" }}
+                defaultCenter={OurLocation.center}
+                defaultZoom={OurLocation.zoom}
+              >
+                <prompt
+                  lat={6.266716684592229}
+                  lng={-75.58217656599909}
+                  text="Our Location"
+                />
+              </GoogleMapReact>
+            </div>
           </div>
         </section>
 

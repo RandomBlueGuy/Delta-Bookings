@@ -1,0 +1,41 @@
+.AboutUs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: Beige;
+}
+
+.AboutUs-card {
+  background-color: rgb(224, 224, 224);
+  width: 100%;
+  display: flex;
+  width: 80%;
+}
+
+.AboutUs-brief {
+  padding: 4rem 6rem 3rem 7rem;
+}
+
+.AboutUs-developers {
+  background-color: rgb(26, 74, 74);
+  display: flex;
+  align-items: right;
+  flex-direction: column;
+  padding-top: 2rem;
+
+}
+
+@media (max-width: 720px) {
+  .AboutUs-container {
+    padding: 2rem 0;
+  }
+  .AboutUs-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  .AboutUs-devs {
+    width: 90%;
+  }
+}
