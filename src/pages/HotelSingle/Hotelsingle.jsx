@@ -5,6 +5,7 @@ import CheckCard from "./CheckCard";
 import ContactInfoCard from "./ContactInfoCard"
 import HotelCard from "../HotelList/HotelCard"
 import AboutHeader from "../AboutUs/AboutHeader";
+import StarRating from "../UniversalComponents/StarRating";
 
 
 
@@ -18,18 +19,7 @@ export default function Hotelsingle() {
         <div className="hotel__text">
           <div className="name__p">
             <h1>Sea View Hotel</h1>
-            <form action="clasification">
-              <input type="radio" id="radio1" name="stars" value="5" />
-              <label htmlFor="radio1">★</label>
-              <input type="radio" id="radio2" name="stars" value="4" />
-              <label htmlFor="radio2">★</label>
-              <input type="radio" id="radio3" name="stars" value="3" />
-              <label htmlFor="radio3">★</label>
-              <input type="radio" id="radio4" name="stars" value="2" />
-              <label htmlFor="radio4">★</label>
-              <input type="radio" id="radio5" name="stars" value="1" />
-              <label htmlFor="radio5">★</label>
-            </form>
+            <StarRating />
             <button className="name__p-btn">
               <img src="" alt="" />
               <span className="name__p-span">Share</span>

@@ -3,6 +3,8 @@
 .hotel__single-container {
     display: flex;
     flex-direction: column;
+    width: 80%;
+    height: 1500px;
     align-items: center;
     justify-content: center;
     background-color: red;
@@ -12,10 +14,9 @@
     flex-direction: row;
     align-items: center;
     justify-items: center;
-    width: 80%;
+    width: 100%;
     background-color: white;
     color: black;
-    
     justify-content: space-between;
 }
 .hotel__text {
@@ -79,6 +80,13 @@
     box-shadow: 5px 5px 10px rgba(190, 74, 74, 0.2);
   }
 
+.hotel__container {
+    display: flex;
+    flex-direction: column;
+    height: 1500px;
+    flex-wrap: wrap;
+
+}
 .hotels {
     display: flex;
     flex-direction: column;
