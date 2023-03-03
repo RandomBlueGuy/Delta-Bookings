@@ -3,27 +3,55 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: Beige;
+  background-color: rgba(0, 0, 0, 255);
 }
 
 .AboutUs-card {
-  background-color: rgb(224, 224, 224);
   width: 100%;
   display: flex;
   width: 80%;
+  background-color: rgba(27, 82, 110, 0.36);
 }
 
 .AboutUs-brief {
-  padding: 4rem 6rem 3rem 7rem;
+  padding: 0rem 6rem 3rem 7rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.AboutUs-brief h1{
+  padding-left: 0;
+  padding-top: 2rem;
+  color: var(--red-style);
+}
+
+.AboutUs-brief p {
+  padding: 0.5rem 2rem 0rem 2rem;
+  color: var(--txt-gray);
+}
+
+.AboutUs-brief ul {
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 9rem;
+  padding: 0.5rem 2rem 1rem 2rem;
+  color: var(--txt-gray);
+}
+
+.AboutUs-brief li {
+  margin-left: 3rem;
+  padding: 0.5rem 2rem 0rem 0rem;
+  color: var(--txt-gray);
 }
 
 .AboutUs-developers {
-  background-color: rgb(26, 74, 74);
   display: flex;
   align-items: right;
   flex-direction: column;
-  padding-top: 2rem;
-
 }
 
 @media (max-width: 720px) {

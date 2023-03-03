@@ -10,11 +10,23 @@ import tIcon from "../../assets/Icons/twitter.svg";
 import fIcon from "../../assets/Icons/facebook.svg";
 import iIcon from "../../assets/Icons/instagram.svg";
 import gIcon from "../../assets/Icons/google.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const prompt = ({ text }) => <div>{text}</div>;
 
 function Footer() {
+  let location = useLocation();
+  const [invalidUrl, setInvalidUrl] = useState();
+  const paths = "/404-page-not-found";
+
+  useEffect(() => {
+    const result = paths === location.pathname;
+    setInvalidUrl(result);
+    console.log("url invalida = ", invalidUrl);
+  });
+
+
   const OurLocation = {
     center: {
       lat: 6.266716684592229,
@@ -24,6 +36,7 @@ function Footer() {
   };
 
   return (
+    !invalidUrl  && (
     <main className="ctn-footer">
       <div className="main-box">
         <section className="box-member B2">
@@ -161,7 +174,8 @@ function Footer() {
           <p>Copyright 2023 Delta By 💙 Delta Team</p>
         </div>
       </div>
-    </main>
+      </main>
+      )
   );
 }
 

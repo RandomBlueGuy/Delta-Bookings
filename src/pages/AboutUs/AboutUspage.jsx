@@ -50,6 +50,7 @@ function AboutUspage() {
             <li>etc</li>
           </ul>
         </section>
+
         <section className="AboutUs-developers">
           <DevCard
             cNick="RandomBlueDev"

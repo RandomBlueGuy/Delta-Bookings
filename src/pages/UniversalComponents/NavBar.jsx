@@ -17,7 +17,7 @@ function NavBar() {
     const result = paths === location.pathname;
     setInvalidUrl(result);
     console.log("url invalida = ", invalidUrl);
-  }, []);
+  });
   
   const [trigger, setTrigger] = useState("");
   const [visibility, setVisibility] = useState("");
@@ -41,7 +41,7 @@ function NavBar() {
   window.addEventListener("scroll", toggleVisible);
 
   return (
-    // !invalidUrl  && (
+   !invalidUrl  && (
     <main
       className="NavBar-container txt-color"
       style={{
@@ -237,7 +237,7 @@ function NavBar() {
         </div>
       </nav>
     </main>
-    // )
+     )
   );
 }
 
