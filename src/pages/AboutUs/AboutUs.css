@@ -3,10 +3,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: beige;
+  background-color: var(--Main-BG);
 }
 
 .AboutUs-card {
+  margin: 4rem 0;
   width: 100%;
   display: flex;
   width: 80%;
@@ -14,15 +15,16 @@
 }
 
 .AboutUs-brief {
-  padding: 0rem 6rem 3rem 7rem;
+  padding: 2rem 6rem 3rem 7rem;
   color: white;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   background-color: white;
+  box-shadow: 5px 5px 10px rgba(13, 13, 13, 0.2);
 }
 
-.AboutUs-brief h1{
+.AboutUs-card h1 {
   padding-left: 0;
   padding-top: 2rem;
   color: var(--red-style);
@@ -30,31 +32,30 @@
 
 .AboutUs-brief p {
   padding: 0.5rem 2rem 0rem 2rem;
-  color: var(--txt-gray);
-}
-
-.AboutUs-brief ul {
-  background-color: aqua;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 9rem;
-  padding: 0.5rem 2rem 1rem 2rem;
-  color: var(--txt-gray);
+  color: var(--dark-BG);
 }
 
 .AboutUs-brief li {
   margin-left: 3rem;
-  padding: 0.5rem 2rem 0rem 0rem;
-  color: var(--txt-gray);
+  padding: 0rem 2rem 0rem 0rem;
+  color: var(--dark-BG);
 }
 
 .AboutUs-developers {
   padding: 1rem;
   display: flex;
-  align-items: right;
+  justify-content: space-between;
   flex-direction: column;
   background-color: white;
+  box-shadow: 5px 5px 10px rgba(13, 13, 13, 0.2);
+}
+
+.developers-title {justify-content: center;}
+
+.developers-title h1 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 720px) {

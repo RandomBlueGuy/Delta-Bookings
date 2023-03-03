@@ -54,6 +54,9 @@ function AboutUspage() {
         </section>
 
         <section className="AboutUs-developers">
+          <div className="developers-title">
+            <h1>Our Team</h1>
+          </div>
           <DevCard
             cNick="RandomBlueDev"
             cImage={devPicImg1}

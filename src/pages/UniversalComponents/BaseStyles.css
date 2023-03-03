@@ -10,7 +10,7 @@
   --NavBar-btn: rgba(217, 217, 217, 0.4);
   --NavBar-menu: rgba(217, 217, 217, 0.9);
   --Main-BG: rgba(247,247,247,1);
-  box-sizing: none;
+  box-sizing: none; 
 }
 
 * {

@@ -9,6 +9,14 @@
   z-index: 99;
   transition: ease-in-out 0.8s;
 }
+.NavBar-container option{
+  color:blue;
+  background-color: rgb(194, 222, 209);;
+}
+.NavBar-container option:checked{
+  color:red;
+  background-color: rgb(194, 222, 209);;
+}
 
 .NavBar-container a,
 .NavBar-container a:visited {
