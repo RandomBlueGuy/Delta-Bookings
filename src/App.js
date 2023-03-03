@@ -11,6 +11,8 @@ import NavBar from "./pages/UniversalComponents/NavBar";
 import Footer from "./pages/UniversalComponents/Footer";
 import UpButton from "./pages/UniversalComponents/UpButton";
 import AboutUspage from "./pages/AboutUs/AboutUspage";
+import Hotelsingle from "./pages/HotelSingle/Hotelsingle";
+import UserDashBoard from "./pages/DashBoard/UserDashboard";
 
 // - URL
 // - protocol -   subDomain -  Domain        -   Extension      -  path       - params/slugs/opt - search params
@@ -31,6 +33,8 @@ function App() {
           <Route exact path="/bookings" element={<Bookingpage />} />
           <Route exact path="*" element={<Page404 />} />
           <Route exact path="/about-us" element={<AboutUspage />} />
+          <Route exact path="/dashboard" element={<UserDashBoard />} />
+          <Route exact path="/hotel-single" element={<Hotelsingle />} />
         </Routes>
         <Footer />
       </div>

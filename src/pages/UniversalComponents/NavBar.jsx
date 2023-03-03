@@ -82,13 +82,13 @@ function NavBar() {
                 </Link>
               </li>
               <li className="item-ctn">
-                <Link to="/signup">
-                  <h2>Soon...</h2>
+                <Link to="/dashboard">
+                  <h2>dashboard</h2>
                 </Link>
               </li>
               <li className="item-ctn">
-                <Link to="/signup">
-                  <h2>Soon...</h2>
+                <Link to="/hotel-single">
+                  <h2>hotel single</h2>
                 </Link>
               </li>
               <li className="item-ctn">
