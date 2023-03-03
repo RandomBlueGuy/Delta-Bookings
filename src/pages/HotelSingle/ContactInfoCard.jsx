@@ -10,8 +10,7 @@ import mailIcon from "../../assets/Icons/mail.svg";
 
 function ContactInfoCard() {
   return (
-    <main className="card">
-      <section className="contact">
+
         <section className="contact__info">
           <div className="contact__info-title">
             <h1>Contact Info</h1>
@@ -54,8 +53,7 @@ function ContactInfoCard() {
             </div>
           </div>
         </section>
-      </section>
-    </main>
+
   );
 }
 

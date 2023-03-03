@@ -28,8 +28,8 @@ function AboutUspage() {
             city and preferred date.
           </p>
           <h1>Usability</h1>
+          <p>Users should be capable of:</p>
           <ul>
-            Users should be capable of:
             <li>Log-in / log-out</li>
             <li>Change & recover passwords</li>
             <li>Search Hotels by city / date</li>
@@ -41,9 +41,11 @@ function AboutUspage() {
           </ul>
 
           <h1>Tools used</h1>
-          <ul>
+          <p>
             The software, Libraries, API’s & platforms used for this project
             consist of:
+          </p>
+          <ul>
             <li>GitHub.com</li>
             <li>Visual Studio Code</li>
             <li>React</li>
