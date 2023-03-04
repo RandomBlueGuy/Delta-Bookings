@@ -79,14 +79,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: background-pan 10s ease-in-out infinite;
-  background: radial-gradient(
+
+   background: radial-gradient(
     rgb(31, 96, 131),
     rgb(28, 54, 78),
     rgb(16, 16, 47)
-  );
+  ); 
   background-size: 200% 200%;
   white-space: nowrap;
+  animation: background-pan 10s ease-in-out infinite;
 }
 
 @keyframes background-pan {
@@ -123,6 +124,7 @@
   justify-content: space-between;
   flex-wrap: nowrap;
 }
+
 .info-ctn-code-line {
   max-height: 25px;
   display: flex;

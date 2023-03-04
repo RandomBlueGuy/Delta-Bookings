@@ -1,15 +1,15 @@
 import React from 'react'
 import './HeaderSignup.css'
 
-function HotelList() {
+function HeaderSignup() {
   return (
-    <main className="Header-container">
-      <section className="Header-title">
-        <h1>SIGN IN</h1>
-        <p>[PAGE] >> Hotels in [CITY]</p>
+    <main className="SignupHeader-container">
+      <section className="SignupHeader-title">
+        <h1>SIGN UP</h1>
+        <p>[PAGE] >> Sign Up]</p>
       </section>
     </main>
-  )
+  );
 }
 
-export default HotelList
+export default HeaderSignup;

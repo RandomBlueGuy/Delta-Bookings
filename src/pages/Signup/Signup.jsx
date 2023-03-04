@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Signup.css";
+import fbIcon from "../../assets/Icons/facebookSI.svg";
+import googleIcon from "../../assets/Icons/googleSI.svg";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -17,67 +19,69 @@ export default function Signup() {
   };
 
   return (
+    <div className="signup-main-container">
+      <main className="signup-card">
+        <section className="signup">
+          <h1>SIGN UP </h1>
+          <p>Sign Up With</p>
+          <div className="goto-social">
+            <button>
+              <img src={fbIcon} alt="" />
+              Facebook
+            </button>
+            <button>
+              <img src={googleIcon} alt="" />
+              Google
+            </button>
+          </div>
+        </section>
+        <div className="social-distancing">
+          <div className="social-distancing-line"></div>
+          <p>OR</p>
+        </div>
+        <form className="signup__form" onSubmit={handleSubmit}>
+          <label htmlFor="username">Full Name</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={username}
+            required
+            placeholder="Enter your name"
+            onChange={(e) => setUsername(e.target.value)}
+          />
 
-    <div className="signup-container">
-        <main className="container">
-            <section className="signup">
-                <h1>SIGN UP </h1>
-                <h3>Sign Up With</h3>
-                <div className="goto-fa-go">
-                    <button>Facebook</button>
-                    <button>Google</button>
-                </div>
-            </section>
-            <div className="separador">
-                <div className="line"></div>
-                <p>OR</p>
+          <label htmlFor="email">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={email}
+            required
+            placeholder="Email Address"
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-            </div>
-            <form className="signup__form" onSubmit={handleSubmit}>
-                <label htmlFor="username">Full Name</label>
-                <input
-                type="text"
-                id="username"
-                name="username"
-                value={username}
-                required
-                placeholder="Full Name"
-                onChange={(e) => setUsername(e.target.value)}
-                />
+          <label htmlFor="tel">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            minLength={8}
+            required
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-                <label htmlFor="email">Email Address</label>
-                <input
-                type="email"
-                name="email"
-                id="email"
-                value={email}
-                required
-                placeholder="Email Address"
-                onChange={(e) => setEmail(e.target.value)}
-                />
-
-                <label htmlFor="tel">Password</label>
-                <input
-                type="password"
-                name="password"
-                id="password"
-                minLength={8}
-                required
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                />
-                
-                <button className="signupBtn">CREATE ACCOUNT</button>
-                
-            </form>
-            <div className="separador">
-                <div className="line"></div>
-                <p>OR</p>
-            </div>
-            <button className="loginBtn">LOGIN</button>
-
-        </main>
+          <button className="createAcc-btn">CREATE ACCOUNT</button>
+        </form>
+        <div className="social-distancing">
+          <div className="social-distancing-line"></div>
+          <p>OR</p>
+        </div>
+        <button className="loginBtn">LOGIN</button>
+      </main>
     </div>
   );
 }

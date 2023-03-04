@@ -65,6 +65,7 @@ function AboutUspage() {
             cEmail="randombluemail@gmail.com"
             cGithub="github.com/RandomBlueGuy"
             cLinkedin="one day..."
+            cColor1="rgb(14, 170, 222)"
           />
           <DevCard
             cNick="Oscar_Nuñez"
@@ -74,6 +75,7 @@ function AboutUspage() {
             cEmail="oscar.nunez07@hotmail.com"
             cGithub="github.com/Oskarnuz"
             cLinkedin="/in/oscar-nuñez-68115587"
+            cColor1="rgb(15, 207, 111)"
           />
 
           <DevCard
@@ -84,6 +86,9 @@ function AboutUspage() {
             cEmail="oscar.nunez07@hotmail.com"
             cGithub="github.com/Oskarnuz"
             cLinkedin="/in/oscar-nuñez-68115587"
+            cColor1=""
+            cColor2=""
+            cColor3=""
           />
         </section>
       </div>
