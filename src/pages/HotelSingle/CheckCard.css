@@ -1,72 +1,87 @@
-
 .check__card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid black;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: right;
+	background-color: white;
+	width: 100%;
+	gap: 1rem;
+	padding-bottom: 1rem;
+	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
 }
-.check__card-map {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 150px;
-  width: 90%;
-  padding: 5%;
 
+.check__card-map {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 120px;
+	width: 90%;
+	margin-top: 5%;
 }
-.check__card-text {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  
+
+.check__card-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	width: 90%;
 }
-.check__card-text-li {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+
+.check__card-rate {
+	display: flex;
+	flex-direction: column;
 }
-.check__card-text-li h1 {
-  margin-bottom: 0;
+
+.check__card-rate h4 {
+	font-size: 16px;
+	line-height: 0;
 }
-.check__card-text-li ul {
-  padding-left: 20px;
-  margin-top: 10px;
+
+.rate-description {
+	display: flex;
+	gap: 0.5rem;
+	font-size: 12px;
+	font-weight: 700;
 }
 
 .check__card-price {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }
+
 .check__card-price p {
-  color: lightslategray;
-  margin-top: 20;
-  margin-bottom: 5px;
+	color: var(--txt-gray);
+	font-size: 12px;
+	font-weight: 700;
 }
+
 .check__card-price h2 {
-  font-size: 18px;
-  margin:0;
-  text-decoration: line-through;
+	font-size: 18px;
+	margin: 0;
+	text-decoration: line-through;
 }
+
 .check__card-price h1 {
-  font-size: 20px;
-  margin-bottom: 5px;
-  margin-top: 5px;
+	font-size: 20px;
+	padding-bottom: 0;
+	margin-bottom: 0;
 }
+
 .check__card-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 90%;
-  margin-bottom: 15px;
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 90%;
+	gap: 0.5rem;
 }
+
 .check__card-form input {
-  width: 100%;
-  height: 2rem;
-}
-.check__card-form button {
-  width: 50%;
+	width: 100%;
+	height: 2rem;
+	border-radius: 0;
+	border: 2px solid rgba(128, 128, 128, 0.234);
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--txt-gray);
 }

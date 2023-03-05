@@ -1,0 +1,10 @@
+.HotelSingleGallery-ctn {
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
+}
+
+.HotelSingleGallery-ctn img {
+	max-width: 100%;
+	max-height: 100%;
+}

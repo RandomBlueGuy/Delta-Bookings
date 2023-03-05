@@ -1,34 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
-
-* {
-    font-family: ;
-}
-.contact {
-    display: flex;
-    justify-content: center;
-}
 .contact__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:flex-start;
-    width: 100%;   
-    padding-left: 15px;
-    border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	padding: 5%;
+	background-color: white;
+    box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
+}
+
+.contact__info h1 {
+	font-size: 24px;
+	margin-bottom: 1rem;
 }
 
 .contact__info-display-icon {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: gray;
+	display: flex;
+	align-items: center;
+	color: var(--txt-gray);
 }
+.contact__info-display-icon p {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.contact__info-body {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.contact__info-social {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.contact__info-social img {
+	background-color: rgba(16, 192, 192, 255);
+	padding: 0.5rem;
+	border-radius: 50%;
+	filter: invert(1);
+	scale: 0.8;
+}
+
 .contact__info-check {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
 }
 .contact__info-check-text {
-    font-weight: 800;
-    border: none;
+	font-weight: 800;
+	border: none;
 }
