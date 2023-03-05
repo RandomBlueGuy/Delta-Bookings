@@ -5,38 +5,44 @@ export default function TravellerInfo() {
   return (
     <article className="container-2">
       <section className="travelInfo-container">
-        <h6>Traveller Information</h6>
-        <div class="form-inline d-flex justify-content-between" role="form">
-          <div class="form-group col-sm-6">
-            <label for="firstName">First Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="firstname"
-              placeholder="First Name"
-            />
+        <h4>Traveller Information</h4>
+        <div className="person-info" role="form">
+          <div class="name-info">
+            <label for="firstname">
+              First Name
+              <input
+                type="text"
+                class="form-control"
+                id="firstname"
+                placeholder="First Name"
+              />
+            </label>
           </div>
-          <div class="form-group col-sm-6">
-            <label for="lastname">Last Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="lastname"
-              placeholder="Last Name"
-            />
+          <div class="lastname-info">
+            <label for="lastname">
+              Last Name
+              <input
+                type="text"
+                class="form-control"
+                id="lastname"
+                placeholder="Last Name"
+              />
+            </label>
           </div>
         </div>
 
         <section className="email-group">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-            />
+          <div class="email-info">
+            <label for="exampleInputEmail1">
+              Email address
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+              />
+            </label>
             <small id="emailHelp" class="form-text text-muted">
               Booking confirmation will be sent to this email ID.
             </small>
@@ -45,30 +51,34 @@ export default function TravellerInfo() {
 
         <section className="contact-info">
           <div class="form-group">
-            <label for="contactInfo">Contact Info</label>
-            <input
-              type="tel"
-              class="form-control"
-              id="exampleInputEmail1"
-              placeholder="+57"
-            />
+            <label for="contactInfo">
+              Contact Info
+              <input
+                type="tel"
+                class="form-control"
+                id="exampleInputEmail1"
+                placeholder="+57"
+              />
+            </label>
           </div>
         </section>
 
         <section className="request-info">
-          <label for="Request">Special Request</label>
-          <textarea
-            maxlength="120"
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="2"
-            placeholder="E.g: Transport fee"
-          ></textarea>
+          <label for="Request">
+            Special Request
+            <textarea
+              maxlength="120"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="2"
+              placeholder="E.g: Transport fee"
+            ></textarea>
+          </label>
         </section>
 
         <section className="coupon-info">
           <label for="coupon">Have A Coupon Code?</label>
-          <div class="input-group mb-3">
+          <div className="coupon-wrapper">
             <input
               type="text"
               class="form-control"
@@ -76,15 +86,15 @@ export default function TravellerInfo() {
               aria-describedby="basic-addon2"
             />
             <div class="input-group-append">
-              <button type="submit" class="btn btn-secondary">
+              <button type="submit" className="btn">
                 APPLY
               </button>
             </div>
           </div>
         </section>
 
-        <section className="button-pay d-flex justify-content-end">
-          <button type="button" class="pay-button btn btn-danger col-4">
+        <section className="button-pay">
+          <button type="button" className="btn">
             PAY NOW
           </button>
         </section>

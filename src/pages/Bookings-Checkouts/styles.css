@@ -1,17 +1,58 @@
 
-.booking-info {
+/*Styles Related to the Person's Info*/
+
+.container-2 {
     display: flex;
-    flex-direction: row-reverse;
-    align-items: flex-start;
     justify-content: center;
-    background-color: #f5f5dc;
-    padding: 5% 10%;
-    /* Cuando se vuelva movil, se regresa a center*/
+    align-items: center;
+    width: 70%;
+}
+.travelInfo-container {
+    background-color: white;
+    padding: 20px 10px;
+    width: 100%;
 }
 
-.picture-example {
-    width: 33%;
+.person-info{
+    display: flex;
+    justify-content: space-between;
 }
+
+.name-info, .lastname-info{
+    width: 50%;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.coupon-wrapper{
+    display: flex;
+}
+
+.button-pay{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+.email-group,
+.coupon-info,
+.contact-info,
+.request-info {
+    margin-top: 10px;
+}
+
+#firstname {
+    width: 90%;
+}
+
+#lastname {
+    width: 100%
+}
+
+/*Styles Related to the Hotel Info*/
 
 .container-1 {
     display: flex;
@@ -20,17 +61,17 @@
     width: 50%;
 }
 
-.container-2 {
+.booking-info {
     display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
-    width: 70%;
+    background-color: #f5f5dc;
+    padding: 5% 10%;
 }
 
-.travelInfo-container {
-    background-color: white;
-    padding: 20px 10px;
-    width: 100%;
+.picture-example {
+    width: 33%;
 }
 
 .info-container {
@@ -39,29 +80,26 @@
     width: 75%;
 }
 
-.form-control {
-    border-radius: 0%;
+.first-container{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    
 }
 
-.travelInfo-container {
-    margin-bottom: 30px;
+.split-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
 }
 
-.second-container div {
-    margin-bottom: -15px;
+.second-container div,
+.fourth-container div {
+    margin-bottom: -5px;
 }
 
 .checkout-in {
     margin-top: 10px;
-}
-
-.third-container,
-.fifth-container {
-    margin-top: 15px;
-}
-
-.fourth-container div {
-    margin-bottom: -15px;
 }
 
 .hotel-info {
@@ -73,19 +111,42 @@
 }
 
 
-#firstname {
-    width: 90%;
+/*General Styles*/
+.btn {
+    appearance: none;
+    background-color: red;
+    border: 1px solid rgba(27, 31, 35, .15);
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
 }
 
-#lastname {
-    width: 100%
+.form-control {
+    width: 100%;
+    border-radius: 0%;
 }
 
-.email-group,
-.coupon-info,
-.contact-info,
-.request-info {
-    margin-top: 10px;
+h4{
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+input {
+    min-height: 2rem;
+    border: 0.0625rem solid #999;
 }
 
 
@@ -112,7 +173,7 @@
         margin-top: 20px;
     }
 
-    .pay-button {
+    .btn {
         width: 100%;
     }
 }

@@ -1,13 +1,12 @@
 import React from "react";
 import "./styles.css";
 
- 
 export default function BookingModule() {
   return (
     <article className="container-1">
       <section className="info-container">
-        <h6>Booking Summary</h6>
-        <section className="first-container d-flex justify-content-start align-items-center">
+        <h4>Booking Summary</h4>
+        <section className="first-container">
           <img
             src="https://media.istockphoto.com/id/104731717/photo/luxury-resort.jpg?s=612x612&w=0&k=20&c=cODMSPbYyrn1FHake1xYz9M8r15iOfGz9Aosy9Db7mI="
             alt=""
@@ -20,52 +19,52 @@ export default function BookingModule() {
         </section>
 
         <section className="second-container">
-          <div className="d-flex justify-content-between">
+          <div className="split-info">
             <p>Check In</p>
             <p>Check Out</p>
           </div>
 
-          <div className="d-flex justify-content-between">
+          <div className="split-info">
             <p>18 Sept</p>
             <p>22 Sept </p>
           </div>
 
-          <div className="checkout-in d-flex justify-content-between">
+          <div className="split-info">
             <p>Check In Time</p>
             <p>Check Out Time</p>
           </div>
 
-          <div className="d-flex justify-content-between">
+          <div className="split-info">
             <p>10:30</p>
             <p>11:30</p>
           </div>
         </section>
 
-        <section className="third-container d-flex justify-content-between">
+        <section className="split-info">
           <p>Number of Nights</p>
           <p>Edit</p>
         </section>
 
         <section className="fourth-container">
-          <h5>Payment Details</h5>
+          <h4>Payment Details</h4>
 
-          <div className="d-flex justify-content-between">
+          <div className="split-info">
             <p>Base Price</p>
             <p>Price</p>
           </div>
 
-          <div className="d-flex justify-content-between">
+          <div className="split-info">
             <p>Promo Discount</p>
             <p>Promo</p>
           </div>
 
-          <div className="d-flex justify-content-between">
+          <div className="split-info">
             <p>Tax & Services Fees</p>
             <p>Tax</p>
           </div>
         </section>
 
-        <section className="fifth-container d-flex justify-content-between">
+        <section className="split-info">
           <p>Payable Amount</p>
           <p>Amount</p>
         </section>
