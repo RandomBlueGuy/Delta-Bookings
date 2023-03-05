@@ -1,0 +1,54 @@
+
+.dashboard__ctn {
+    margin: 0;
+    width: 90vw;
+    display: grid;
+    grid-template-areas:
+    "a b b";
+    grid-gap: 15px;
+    font-family: 'Nunito', sans-serif;
+    
+    
+}
+.dashboard__ctn-info {
+    grid-area: a;
+    border: 1px solid;
+    border-color: gray;
+    text-align: center;
+}
+dashboard__ctn-info-img {
+    border-radius: 50%;
+}
+.dashboard__ctn-info-text h1 {
+    font-size: 25px;
+}
+.dashboard__ctn-info-text h2 {
+    color: gray;
+    font-size: 20px;
+}
+.dashboard__ctn-info-text h3 {
+    color: gray;
+}
+
+
+.select-profile p {
+    text-align: start;
+    margin-left: 15px;
+}
+.profile-edit {
+    grid-area: b;
+    border: 1px solid;
+    border-color: gray;
+    justify-items: stretch;
+    padding-left: 20px;
+    
+}
+.title {
+    display: flex;
+    flex-direction: row;
+}
+._name label {
+    display: flex;
+    flex-direction: row;
+    padding-right: 100px;
+}

@@ -3,7 +3,6 @@
   align-items: center;
   background-color: beige;
   flex-direction: column;
-  gap: 1rem;
 }
 
 .card-gallery {

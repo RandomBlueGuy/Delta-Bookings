@@ -1,22 +1,22 @@
-/* #form {
+.clasificacion #form {
   width: 250px;
   margin: 0 auto;
   height: 50px;
 }
 
-#form p {
+.clasificacion #form p {
   text-align: center;
 }
 
-#form label {
+.clasificacion #form label {
   font-size: 20px;
 }
 
-input[type="radio"] {
+.clasificacion input[type="radio"] {
   display: none;
 }
 
-label {
+.clasificacion label {
   color: grey;
 }
 
@@ -25,11 +25,11 @@ label {
   unicode-bidi: bidi-override;
 }
 
-label:hover,
-label:hover ~ label {
+.clasificacion label:hover,
+.clasificacion label:hover ~ .clasificacion label {
   color: orange;
 }
 
-input[type="radio"]:checked ~ label {
+.clasificacion input[type="radio"]:checked ~ .clasificacion label {
   color: orange;
-} */
+} 

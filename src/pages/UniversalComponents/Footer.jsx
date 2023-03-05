@@ -10,10 +10,23 @@ import tIcon from "../../assets/Icons/twitter.svg";
 import fIcon from "../../assets/Icons/facebook.svg";
 import iIcon from "../../assets/Icons/instagram.svg";
 import gIcon from "../../assets/Icons/google.svg";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const prompt = ({ text }) => <div>{text}</div>;
 
 function Footer() {
+  let location = useLocation();
+  const [invalidUrl, setInvalidUrl] = useState();
+  const paths = "/404-page-not-found";
+
+  useEffect(() => {
+    const result = paths === location.pathname;
+    setInvalidUrl(result);
+    console.log("url invalida = ", invalidUrl);
+  });
+
+
   const OurLocation = {
     center: {
       lat: 6.266716684592229,
@@ -23,6 +36,7 @@ function Footer() {
   };
 
   return (
+    !invalidUrl  && (
     <main className="ctn-footer">
       <div className="main-box">
         <section className="box-member B2">
@@ -59,13 +73,13 @@ function Footer() {
             <h2>About</h2>
           </div>
           <div className="box-body">
-            <a href="">About Us</a>
-            <a href="">FAQ</a>
-            <a href="">Login</a>
-            <a href="">Register</a>
-            <a href="">Terms & Co.</a>
-            <a href="">Privacy</a>
-            <a href="">Support</a>
+            <Link to="">About Us</Link>
+            <Link to="">FAQ</Link>
+            <Link to="">Login</Link>
+            <Link to="">Register</Link>
+            <Link to="">Terms & Co.</Link>
+            <Link to="">Privacy</Link>
+            <Link to="">Support</Link>
           </div>
         </section>
 
@@ -74,17 +88,19 @@ function Footer() {
             <h2>Our Location</h2>
           </div>
           <div className="box-body">
-            <GoogleMapReact
-              bootstrapURLKeys={{ key: "" }}
-              defaultCenter={OurLocation.center}
-              defaultZoom={OurLocation.zoom}
-            >
-              <prompt
-                lat={6.266716684592229}
-                lng={-75.58217656599909}
-                text="Our Location"
-              />
-            </GoogleMapReact>
+            <div className="map-box">
+              <GoogleMapReact
+                bootstrapURLKeys={{ key: "" }}
+                defaultCenter={OurLocation.center}
+                defaultZoom={OurLocation.zoom}
+              >
+                <prompt
+                  lat={6.266716684592229}
+                  lng={-75.58217656599909}
+                  text="Our Location"
+                />
+              </GoogleMapReact>
+            </div>
           </div>
         </section>
 
@@ -93,13 +109,13 @@ function Footer() {
             <h2>Useful Links</h2>
           </div>
           <div className="box-body">
-            <a href="">Home</a>
-            <a href="">Our Vehical</a>
-            <a href="">Latest Video</a>
-            <a href="">Services</a>
-            <a href="">Booking Deal</a>
-            <a href="">Emergency Call</a>
-            <a href="">Mobile App</a>
+            <Link to="">Home</Link>
+            <Link to="">Our Vehical</Link>
+            <Link to="">Latest Video</Link>
+            <Link to="">Services</Link>
+            <Link to="">Booking Deal</Link>
+            <Link to="">Emergency Call</Link>
+            <Link to="">Mobile App</Link>
           </div>
         </section>
 
@@ -141,24 +157,25 @@ function Footer() {
       </div>
       <div className="secondary-box">
         <div className="social-buttons">
-          <a href="">
+          <Link to="">
             <img src={fIcon} alt="" className="social-btn" />
-          </a>
-          <a href="">
+          </Link>
+          <Link to="">
             <img src={tIcon} alt="" className="social-btn" />
-          </a>
-          <a href="">
+          </Link>
+          <Link to="">
             <img src={iIcon} alt="" className="social-btn" />
-          </a>
-          <a href="">
+          </Link>
+          <Link to="">
             <img src={gIcon} alt="" className="social-btn" />
-          </a>
+          </Link>
         </div>
         <div className="copyright">
           <p>Copyright 2023 Delta By 💙 Delta Team</p>
         </div>
       </div>
-    </main>
+      </main>
+      )
   );
 }
 

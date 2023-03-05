@@ -1,20 +1,23 @@
 .page404-ctn {
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10rem 0 1rem 0;
-  gap: 2rem;
+  gap: 3rem;
   background-color: var(--dark-BG);
-  color: white;
+  padding-top: 3rem;
 }
 
 .page404-ctn-title {
   font-size: calc(16vw + 16vh + 8vmin);
   line-height: 0.8;
   user-select: none;
-  animation: background-pan 3s linear infinite;
+}
+
+.page404-ctn-coloreffect {
+ animation: background-pan 3s linear infinite;
   background: linear-gradient(
     to right,
     rgb(65, 104, 167),

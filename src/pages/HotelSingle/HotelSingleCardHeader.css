@@ -1,0 +1,90 @@
+.HotelSingleCardHeader-ctn {
+	display: flex;
+	align-items: center;
+	justify-items: space-around;
+}
+
+.HotelSingleCardHeader-general-info {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-items: center;
+}
+
+.general-info-title {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 20px;
+	font-weight: 700;
+	gap: 1rem;
+}
+
+.general-info-title button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: black;
+	background-color: white;
+	border: none;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.general-info-title img {
+	scale: 0.8;
+}
+
+.HotelSingleCardHeader-general-description {
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	color: var(--txt-gray);
+	font-size: 12px;
+}
+
+.HotelSingleCardHeader-general-buttons{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.HotelSingleCardHeader-general-description button {
+    background-color: rgb(238, 238, 238);
+    border-radius: 3px;
+	color: var(--txt-gray);
+	border: 1px solid var(--txt-gray);
+    font-size: 10px;
+    font-weight: 700;
+    box-shadow: none;
+}
+
+.HotelSingleCardHeader-general-description button:hover {
+    background-color: rgb(223, 223, 223);
+}
+
+.HotelSingleCardHeader-general-description button:active {
+    background-color: #ef3f3fb4;
+    color:white;
+    border: var(--red-style);
+}
+
+.HotelSingleCardHeader-general-price {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	align-items: flex-end;
+
+	gap: 0.5rem;
+}
+
+.HotelSingleCardHeader-general-price span {
+	font-size: 15px;
+}
+
+.HotelSingleCardHeader-general-price button {
+	height: 2.5rem;
+	padding: 0 1rem;
+	transition-duration: 0.2s;
+	border-radius: 2rem;
+}
