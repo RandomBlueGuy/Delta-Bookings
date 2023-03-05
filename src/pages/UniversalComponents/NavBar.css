@@ -98,7 +98,6 @@
   justify-content: right;
   gap: 0.5rem;
   background-color: white;
-
   margin: 0.4rem;
   box-shadow: 0 0 5px rgba(28, 28, 28, 0.5);
 }
@@ -112,7 +111,7 @@
   opacity: 1;
   visibility: visible;
   top: 100%;
-  width: 6rem;
+  width: 400%;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
