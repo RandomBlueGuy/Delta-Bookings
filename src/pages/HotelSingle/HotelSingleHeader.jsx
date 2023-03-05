@@ -5,8 +5,8 @@ function HotelSingleHeader() {
   return (
     <main className="About-container">
       <section className="About-title">
-        <h1>Hotel Single</h1>
-        <p>... As much as you want</p>
+        <h1>Hotels in [CITY]</h1>
+        <p>... looking for the best Hotel prices in this area</p>
       </section>
     </main>
   )

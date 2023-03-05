@@ -8,7 +8,6 @@ function HotelInfoDisplay() {
 
 	function handleClick(selection) {
 		setSelectedTab(selection);
-		console.log(selectedTab);
 	}
 
 	return (

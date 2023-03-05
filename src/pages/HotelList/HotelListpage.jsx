@@ -17,6 +17,7 @@ function HotelListpage() {
 
   return (
     <div className="HotelListpage-ctn">
+      <Header />
       <SearchBar />
       <div className="card-gallery">{hotelCardArr}</div>
     </div>
