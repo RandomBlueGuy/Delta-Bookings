@@ -1,0 +1,43 @@
+.pagination-ctn {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.pagination-ctn button {
+	padding: 0.5rem 1rem;
+}
+
+.act-chk {
+	background-color: white;
+	color: black;
+	font-size: 15px;
+	font-weight: 700;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.305);
+}
+
+.dis-chk {
+	background-color: transparent;
+	box-shadow: none;
+	color: transparent;
+}
+.dis-chk:hover {
+	background-color: transparent;
+}
+
+.act-chk:hover {
+	color: white;
+}
+
+.actual {
+	color: gray;
+	background-color: transparent;
+	box-shadow: none;
+	width: 5rem;
+    display: flex;
+}
+
+.actual:hover {
+
+	background-color: transparent;
+
+}

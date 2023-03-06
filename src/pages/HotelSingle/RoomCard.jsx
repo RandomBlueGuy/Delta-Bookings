@@ -64,8 +64,8 @@ function RoomCard() {
 					</ul>
 				</div>
 				<div className="RoomCard-table-price">
-          <p className="RC-discount">[$$$]</p>
-          <p className="RC-new-pri">[$$$]</p>
+					<p className="RC-discount">[$$$]</p>
+					<p className="RC-new-pri">[$$$]</p>
 					<p>per night</p>
 					<button>Book Now</button>
 				</div>
