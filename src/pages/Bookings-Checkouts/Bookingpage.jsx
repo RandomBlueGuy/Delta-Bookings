@@ -1,14 +1,14 @@
 import React from "react";
 import BookingInfo from "./BookingInfo";
 import TravellerInfo from "./TravellerInfo";
-import HomeHeader from "../Home/HomeHeader";
-import Payments from "./Payments";
+import HeaderDashboard from "../DashBoard/HeaderDashboard";
+
 import "./styles.css";
 
 function Bookingpage() {
   return (
     <div>
-      <HomeHeader />
+      <HeaderDashboard />
       <div className="booking-info">
         <BookingInfo />
         <TravellerInfo />
