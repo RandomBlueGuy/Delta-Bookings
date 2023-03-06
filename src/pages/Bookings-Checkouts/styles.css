@@ -9,7 +9,7 @@
 }
 .travelInfo-container {
     background-color: white;
-    padding: 20px 10px;
+    padding: 10px 10px;
     width: 100%;
 }
 
@@ -74,9 +74,14 @@ label{
     width: 33%;
 }
 
+.edit-option{
+    color: red;
+    font-weight: 500;
+}
+
 .info-container {
     background-color: white;
-    padding: 20px 10px;
+    padding: 10px 10px;
     width: 75%;
 }
 
@@ -87,7 +92,7 @@ label{
     
 }
 
-.split-info {
+.second-split-info, .third-container, .fourth-split-info, .fifth-split-info{
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
@@ -111,18 +116,21 @@ label{
 }
 
 
+/*Styles Related Only to the Card-Info Container*/
+
+.card-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
 /*General Styles*/
 .btn {
     appearance: none;
-    background-color: red;
     border: 1px solid rgba(27, 31, 35, .15);
-    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
     box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
     display: inline-block;
-    font-size: 14px;
-    font-weight: 600;
     line-height: 20px;
     padding: 7px 16px;
     text-align: center;
@@ -175,5 +183,9 @@ input {
 
     .btn {
         width: 100%;
+    }
+
+    .card-info{
+        flex-direction: column;
     }
 }
