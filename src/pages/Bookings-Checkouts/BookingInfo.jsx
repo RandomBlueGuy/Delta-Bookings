@@ -19,54 +19,54 @@ export default function BookingModule() {
         </section>
 
         <section className="second-container">
-          <div className="second-split-info">
+          <div className="second-split-info timestaps">
             <p>Check In</p>
             <p>Check Out</p>
           </div>
 
           <div className="second-split-info">
-            <p>18 Sept</p>
-            <p>22 Sept </p>
+            <strong>18 Sept</strong>
+            <strong>22 Sept </strong>
           </div>
 
-          <div className="second-split-info">
+          <div className="second-split-info timestaps">
             <p>Check In Time</p>
             <p>Check Out Time</p>
           </div>
 
           <div className="second-split-info">
-            <p>10:30</p>
-            <p>11:30</p>
+            <strong>10:30</strong>
+            <strong>11:30</strong>
           </div>
         </section>
 
         <section className="third-container">
-          <p>Number of Nights</p>
+          <strong>Number of Nights</strong>
           <p className="edit-option">Edit</p>
         </section>
 
         <section className="fourth-container">
-          <h4>Payment Details</h4>
+          <strong>Payment Details</strong>
 
           <div className="fourth-split-info">
             <p>Base Price</p>
-            <p>Price</p>
+            <strong>Price</strong>
           </div>
 
           <div className="fourth-split-info">
             <p>Promo Discount</p>
-            <p>Promo</p>
+            <strong>Promo</strong>
           </div>
 
           <div className="fourth-split-info">
             <p>Tax & Services Fees</p>
-            <p>Tax</p>
+            <strong>Tax</strong>
           </div>
         </section>
 
         <section className="fifth-split-info">
           <p>Payable Amount</p>
-          <p>Amount</p>
+          <strong>Amount</strong>
         </section>
       </section>
     </article>

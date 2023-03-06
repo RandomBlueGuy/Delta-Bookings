@@ -8,9 +8,10 @@
     width: 70%;
 }
 .travelInfo-container {
-    background-color: white;
-    padding: 10px 10px;
-    width: 100%;
+        background-color: white;
+        padding: 1rem;
+        width: 100%;
+        box-shadow: 3px 3px 6px rgb(0 0 0 / 10%);
 }
 
 .person-info{
@@ -65,9 +66,10 @@ label{
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #f5f5dc;
-    padding: 5% 10%;
+    padding: 4rem 10%;
+    gap: 5%;
 }
 
 .picture-example {
@@ -80,9 +82,10 @@ label{
 }
 
 .info-container {
-    background-color: white;
-    padding: 10px 10px;
-    width: 75%;
+        background-color: white;
+        padding: 1rem;
+        width: 100%;
+        box-shadow: 3px 3px 6px rgb(0 0 0 / 10%);
 }
 
 .first-container{
@@ -103,6 +106,10 @@ label{
     margin-bottom: -5px;
 }
 
+
+.timestaps{
+    margin-top: 0.6rem;
+}
 .checkout-in {
     margin-top: 10px;
 }
@@ -121,6 +128,11 @@ label{
 .card-info{
     display: flex;
     justify-content: space-between;
+    gap: 5%;
+}
+
+#panel1d-header, #panel2d-header {
+    background-color:#e3e3e38d;
 }
 
 
@@ -145,6 +157,7 @@ label{
 .form-control {
     width: 100%;
     border-radius: 0%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 h4{
@@ -189,3 +202,5 @@ input {
         flex-direction: column;
     }
 }
+
+/*btn nth-child(1): */
