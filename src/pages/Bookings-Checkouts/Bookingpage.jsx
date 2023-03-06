@@ -3,8 +3,6 @@ import BookingInfo from "./BookingInfo";
 import TravellerInfo from "./TravellerInfo";
 import HeaderDashboard from "../DashBoard/HeaderDashboard";
 
-import "./styles.css";
-
 function Bookingpage() {
   return (
     <div>

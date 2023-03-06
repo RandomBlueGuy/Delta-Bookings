@@ -1,4 +1,4 @@
-.Header-container {
+.Header-checkout {
     width: 100%;
     background-color: gray;
     background-image: url("../../src/assets/Backgrounds/HotelList.jpg");
@@ -23,7 +23,7 @@
 }
 
 @media (max-width: 376px) {
-    .Header-container {
+    .Header-checkout {
         padding: 0;
     }
 
@@ -32,7 +32,5 @@
         margin-bottom: 1rem;
     }
 
-    .menu-mobile {
-        display: block;
-    }
+    
 }

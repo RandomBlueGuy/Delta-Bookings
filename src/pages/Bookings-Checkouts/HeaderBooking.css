@@ -1,4 +1,4 @@
-.Header-container {
+.Header-booking {
     width: 100%;
     background-color: gray;
     background-image: url("../../src/assets/Backgrounds/HotelList.jpg");
@@ -23,16 +23,12 @@
 }
 
 @media (max-width: 376px) {
-    .Header-container {
+    .Header-booking {
         padding: 0;
     }
 
     .Header-title {
         margin-top: 4rem;
         margin-bottom: 1rem;
-    }
-
-    .menu-mobile {
-        display: block;
     }
 }
