@@ -4,7 +4,7 @@ import DevCard from "./DevCard";
 import AboutHeader from "./AboutHeader";
 import devPicImg1 from "../../assets/Images/dev-pic1.png";
 import devPicImg2 from "../../assets/Images/dev-pic2.png";
-import devPicImg3 from "../../assets/Images/dev-pic3.jpg";
+import devPicImg3 from "../../assets/Images/dev-pic3.png";
 
 function AboutUspage() {
   return (
