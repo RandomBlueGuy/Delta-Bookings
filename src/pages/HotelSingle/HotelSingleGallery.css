@@ -1,10 +1,83 @@
 .HotelSingleGallery-ctn {
 	width: 100%;
-	overflow: hidden;
-	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
+	max-height: 45vh;
+	display: flex;
+	gap: 1%;
+	background-color: transparent;
 }
 
-.HotelSingleGallery-ctn img {
+.gallery-slideshow {
+	width: 70%;
+	background-color: rgba(0, 128, 0, 0.352);
+	position: relative;
+	overflow: hidden;
+	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
+	display: flex;
+	align-items: center;
+}
+
+.gallery-slideshow img {
 	max-width: 100%;
-	max-height: 100%;
+}
+
+.gallery-slideshow button {
+	position: absolute;
+	width: 3rem;
+	height: 100%;
+	box-shadow: none;
+	font-size: 20px;
+	background-color: transparent;
+}
+
+.slider-left {
+	left: 0;
+}
+
+.slider-left:hover {
+	background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.slider-right {
+	right: 0;
+}
+
+.slider-right:hover {
+	background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.gallery-other-images {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30%;
+	gap: 2%;
+}
+
+.other-image-group {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.259);
+	position: relative;
+}
+
+.other-image-group img {
+	max-width: 100%;
+}
+
+.gallery-txt-tag {
+	z-index: 4;
+	display: flex;
+	align-items: flex-end;
+	position: absolute;
+	background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+	bottom: 0;
+	width: 100%;
+	color: white;
+	font-weight: 700;
+	padding-left: 1rem;
+	padding-bottom: 0.5rem;
+	height: 2rem;
 }

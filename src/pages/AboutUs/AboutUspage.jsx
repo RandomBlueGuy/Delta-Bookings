@@ -57,7 +57,7 @@ function AboutUspage() {
 					<DevCard
 						cNick="RandomBlueDev"
 						cImage={devPicImg1}
-						cName="Andrés Vélez"
+						cName=" Andrés Vélez"
 						cTitle="Junior Web Developer"
 						cEmail="randombluemail@gmail.com"
 						cGithub="github.com/RandomBlueGuy"
@@ -67,7 +67,7 @@ function AboutUspage() {
 					<DevCard
 						cNick="Oscar_Nuñez"
 						cImage={devPicImg2} // si pueden enviarme una imagen que quisieran tener en el about us
-						cName="Oscar Javier Nuñez"
+						cName=" Oscar Javier Nuñez"
 						cTitle="Junior Web Developer"
 						cEmail="oscar.nunez07@hotmail.com"
 						cGithub="github.com/Oskarnuz"
@@ -76,16 +76,15 @@ function AboutUspage() {
 					/>
 
 					<DevCard
-						cNick="Oscar_Nuñez"
-						cImage={devPicImg2} // si pueden enviarme una imagen que quisieran tener en el about us
-						cName="Oscar Javier Nuñez"
+						cNick=" Michael_Saénz"
+						cImage={devPicImg3} // si pueden enviarme una imagen que quisieran tener en el about us
+						cName="Michael Saénz"
 						cTitle="Junior Web Developer"
-						cEmail="oscar.nunez07@hotmail.com"
-						cGithub="github.com/Oskarnuz"
-						cLinkedin="/in/oscar-nuñez-68115587"
-						cColor1=""
-						cColor2=""
-						cColor3=""
+						cEmail="michaelsaenz96@hotmail.com"
+						cGithub="github.com/MSaenz1011"
+						cLinkedin="[UNKNOWN]"
+						cColor1="rgb(215, 207, 111)"
+
 					/>
 				</section>
 			</div>

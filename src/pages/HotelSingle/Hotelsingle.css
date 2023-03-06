@@ -3,7 +3,6 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: rgba(247,247,247,255);
 }
 
 .hotel__single-container {
@@ -30,9 +29,7 @@
 .hotel__ctn-displayCard {
 	display: flex;
 	justify-content: space-evenly;
-	background-color: white;
 	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
-
 }
 
 .contactInfo__display {
@@ -46,7 +43,6 @@
 	align-items: center;
 	justify-content: center;
 	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
-
 }
 
 .weather img {
@@ -57,7 +53,6 @@
 	width: 100%;
 	display: flex;
 	gap: 2rem;
-
 	flex-wrap: nowrap;
 }
 
@@ -74,4 +69,19 @@
 	flex-direction: column;
 	gap: 2rem;
 	max-width: 30%;
+}
+
+@media (max-width: 720px) {
+
+
+	.HotelList-displayer{
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hotels__container-columns {
+		flex-direction: column;
+	}
+
 }

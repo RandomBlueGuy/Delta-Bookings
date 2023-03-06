@@ -3,10 +3,11 @@ import "./DevCard.css";
 
 function DevCard(props) {
   const specialChar = ["  {", "}", ","];
-  const cRed = "#ef3f3f";
+  const cRed = "rgba(218,106,110,255)";
   const cOrange = "#ef9d3f";
-  const cGreen = "rgb(51, 187, 119)";
-  const cYellow = "rgb(204, 204, 54)";
+  const cGreen = "rgba(97,204,146,255)";
+  const cYellow = "#c46239";
+  const cPurple = "rgba(168,141,221,255)"
 
   return (
     <div className="card-base">
@@ -41,7 +42,7 @@ function DevCard(props) {
               <div className="line-code">
                 <p>
                   <span className="code-indentation">___</span>
-                  <span style={{ color: "purple" }}>const</span>
+                  <span style={{ color: cPurple }}>const</span>
                   <span style={{ color: cYellow }}> aboutMe</span>
                   <span style={{ color: "cyan" }}> = </span>
                   <span style={{ color: "white" }}> {specialChar[0]}</span>

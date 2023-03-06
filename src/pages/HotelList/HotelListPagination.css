@@ -16,9 +16,9 @@
 }
 
 .dis-chk {
-	background-color: transparent;
+	background-color: rgba(255, 255, 255, 0.403);
 	box-shadow: none;
-	color: transparent;
+	color: rgba(128, 128, 128, 0.34);
 }
 .dis-chk:hover {
 	background-color: transparent;
@@ -33,11 +33,11 @@
 	background-color: transparent;
 	box-shadow: none;
 	width: 5rem;
-    display: flex;
+	display: flex;
+	border: none;
+	text-align: center;
 }
 
 .actual:hover {
-
 	background-color: transparent;
-
 }

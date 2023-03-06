@@ -8,23 +8,27 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function NavBar() {
-	let { pathName } = useLocation();
+	let location = useLocation();
 	const [invalidUrl, setInvalidUrl] = useState('true');
 	const [NavBarState, setNavBarState] = useState('true');
-  const [trigger, setTrigger] = useState('');
+	const [trigger, setTrigger] = useState('');
 	const [visibility, setVisibility] = useState('');
 	const invalidPathsArr = ['/404-page-not-found'];
 	const specialPathsArr = ['/bookings', '/hotel-single'];
 
 	useEffect(() => {
-		const isInvalidPath = invalidPathsArr.map((item) => item === pathName).includes(true);
+		const isInvalidPath = invalidPathsArr
+			.map((item) => item === location.pathname)
+			.includes(true);
 		setInvalidUrl(isInvalidPath);
-	},[]);
+	});
 
 	useEffect(() => {
-		const isSpecialPath = specialPathsArr.map((item) => item === pathName).includes(true);
+		const isSpecialPath = specialPathsArr
+			.map((item) => item === location.pathname)
+			.includes(true);
 		setNavBarState(isSpecialPath);
-	},[]);
+	});
 
 	const triggerOpen = (event) => {
 		event.preventDefault();
@@ -72,49 +76,49 @@ function NavBar() {
 						</Link>
 
 						<div className="dropdown">
-							<h2 style={{ color: visibility ? 'black' : 'white' }}>Pages</h2>
+							<h2 style={{ color: visibility ? 'black' : 'white' }}>Pages ⌄</h2>
 
 							<ul className="dropdown-menu">
-								<li className="item-ctn">
-									<Link to="/404-page-not-found">
+								<Link to="/404-page-not-found">
+									<li className="item-ctn">
 										<h2>404</h2>
-									</Link>
-								</li>
-								<li className="item-ctn">
-									<Link to="/bookings">
+									</li>
+								</Link>
+								<Link to="/bookings">
+									<li className="item-ctn">
 										<h2>Booking</h2>
-									</Link>
-								</li>
-								<li className="item-ctn">
-									<Link to="/dashboard">
+									</li>
+								</Link>
+								<Link to="/dashboard">
+									<li className="item-ctn">
 										<h2>dashboard</h2>
-									</Link>
-								</li>
-								<li className="item-ctn">
-									<Link to="/hotel-single">
+									</li>
+								</Link>
+								<Link to="/hotel-single">
+									<li className="item-ctn">
 										<h2>hotel single</h2>
-									</Link>
-								</li>
-								<li className="item-ctn">
-									<Link to="/signup">
-										<h2>Soon...</h2>
-									</Link>
-								</li>
-								<li className="item-ctn">
-									<Link to="/signup">
-										<h2>Soon...</h2>
-									</Link>
-								</li>
-								<li className="item-ctn">
-									<Link to="/signup">
-										<h2>Soon...</h2>
-									</Link>
-								</li>
-								<li className="item-ctn">
-									<Link to="/about-us">
+									</li>
+								</Link>
+								<Link to="/signup">
+									<li className="item-ctn">
+										<h2>Sign Up</h2>
+									</li>
+								</Link>
+								<Link to="/bookings">
+									<li className="item-ctn">
+										<h2>Bookings</h2>
+									</li>
+								</Link>
+								<Link to="/checkout">
+									<li className="item-ctn">
+										<h2>Check out</h2>
+									</li>
+								</Link>
+								<Link to="/about-us">
+									<li className="item-ctn">
 										<h2>About Us</h2>
-									</Link>
-								</li>
+									</li>
+								</Link>
 							</ul>
 						</div>
 					</section>
@@ -220,7 +224,7 @@ function NavBar() {
 								</div>
 							</div>
 							<button
-								className="dropdown"
+								className="dropdown square-icon"
 								onClick={triggerOpen}>
 								<img
 									src={menuIcon}
@@ -231,7 +235,7 @@ function NavBar() {
 						</section>
 
 						<section className="nav-section">
-							<div className="dropdown">
+							<div className="dropdown square-icon">
 								<img
 									src={userIcon}
 									alt="Delta"

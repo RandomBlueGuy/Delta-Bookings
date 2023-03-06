@@ -16,7 +16,7 @@
 }
 
 .page404-ctn-coloreffect {
- animation: background-pan 3s linear infinite;
+ animation: background-pan1 3s linear infinite;
   background: linear-gradient(
     to right,
     rgb(65, 104, 167),
@@ -35,7 +35,7 @@
   white-space: nowrap;
 }
 
-@keyframes background-pan {
+@keyframes background-pan1 {
   from {
     background-position: 0% center;
   }

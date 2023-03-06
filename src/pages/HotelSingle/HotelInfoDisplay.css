@@ -7,7 +7,6 @@
 .HotelInfoDisplay-tabs {
 	width: 100%;
 	display: flex;
-	background-color: white;
 	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.1);
 }
 
@@ -23,9 +22,6 @@
 	border-bottom: 5px solid var(--red-style);
 }
 
-.HotelInfoDisplay-ctn {
-	/* background-color: white; */
-}
 
 .HotelInfoDisplay-rooms-display {
 	display: flex;
@@ -33,7 +29,6 @@
 	padding: 1rem;
 	gap: 2rem;
 	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.1);
-	background-color: white;
 }
 
 .HotelInfoDisplay-about-display,
@@ -42,11 +37,12 @@
 .HotelInfoDisplay-reviews-display,
 .HotelInfoDisplay-policies-display {
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	flex-direction: column;
 	padding: 2rem;
 	min-height: 300px;
 	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.1);
-	background-color: white;
 }
 
 .HotelInfoDisplay-about-display {

@@ -59,14 +59,19 @@
 
 
 .dropdown {
-  background: var(--NavBar-btn);
-  height: 2rem;
+
+  
   position: relative;
   z-index: 1;
   transform: perspective(1000px);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.square-icon {
+  background: var(--NavBar-btn);
+  height: 2rem;
 }
 
 .dropdown img {

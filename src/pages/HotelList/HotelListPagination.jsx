@@ -36,7 +36,7 @@ function HotelListPagination({ maxNpages, actualPage, setActualPage }) {
 				onClick={prePage}>
 				{actualPage }
 			</button>
-			<button className="actual">{actualPage +1} / {maxNpages}</button>
+			<input type="text" className="actual" placeholder= {`${actualPage +1} / ${maxNpages}`}></input>
 			<button
 				className={actualPage < maxNpages - 1 ? 'act-chk' : 'dis-chk'}
 				disabled={actualPage < maxNpages - 1 ? false : true}

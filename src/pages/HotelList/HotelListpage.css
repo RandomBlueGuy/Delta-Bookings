@@ -6,41 +6,59 @@
 	flex-direction: column;
 }
 
+.SearchBar-ctn-display {
+	width: 100%;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+}
+
 .HotelList-displayer {
 	width: 80%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: white;
-	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.1);
 	margin: 2rem 0;
 	padding-bottom: 2rem;
 }
+
 .card-gallery {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	gap: 2rem;
+	margin-bottom: 2rem;
 }
 
 .filter-ctn {
-	width: 100%;
+	width: 95%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1rem 0;
+	margin: 2rem 0;
+	background-color: white;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
 }
 
 .filter-ctn-btns {
 	display: flex;
 	gap: 1rem;
 	margin-left: 1rem;
+
+	padding: 1rem 0;
 }
 
 .filter-ctn-btns button {
 	padding: 0.5rem 1rem;
 	background-color: rgba(128, 128, 128, 0.085);
 	color: black;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
+}
+
+.filter-ctn-btns button:focus {
+	background-color: var(--red-style);
+	color: white;
 }
 
 .filter-ctn-btns button:hover {
