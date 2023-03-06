@@ -18,7 +18,7 @@ export default function BookingModule() {
           </div>
         </section>
 
-        <section className="second-container">
+        <section className="second-container" id="first">
           <div className="second-split-info timestaps">
             <p>Check In</p>
             <p>Check Out</p>
@@ -29,7 +29,7 @@ export default function BookingModule() {
             <strong>22 Sept </strong>
           </div>
 
-          <div className="second-split-info timestaps">
+          <div className="second-split-info timestaps" id="second">
             <p>Check In Time</p>
             <p>Check Out Time</p>
           </div>
@@ -40,12 +40,12 @@ export default function BookingModule() {
           </div>
         </section>
 
-        <section className="third-container">
+        <section className="third-container" id="third">
           <strong>Number of Nights</strong>
           <p className="edit-option">Edit</p>
         </section>
 
-        <section className="fourth-container">
+        <section className="fourth-container" id="fourth">
           <strong>Payment Details</strong>
 
           <div className="fourth-split-info">
@@ -64,7 +64,7 @@ export default function BookingModule() {
           </div>
         </section>
 
-        <section className="fifth-split-info">
+        <section className="fifth-split-info" id="fifth">
           <p>Payable Amount</p>
           <strong>Amount</strong>
         </section>

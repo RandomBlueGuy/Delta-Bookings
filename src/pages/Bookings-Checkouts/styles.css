@@ -106,7 +106,6 @@ label{
     margin-bottom: -5px;
 }
 
-
 .timestaps{
     margin-top: 0.6rem;
 }
@@ -120,6 +119,11 @@ label{
 
 .hotel-name {
     margin-bottom: -2px;
+}
+
+#first, #second, #third, #fourth, #fifth{
+    margin-top: 1rem;
+    border-top: 1px solid #ebebeb;
 }
 
 
