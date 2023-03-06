@@ -1,15 +1,53 @@
 .HotelListpage-ctn {
-  display: flex;
-  align-items: center;
-  background-color: beige;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--Main-BG);
+	flex-direction: column;
 }
 
+.HotelList-displayer {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.1);
+	margin: 2rem 0;
+	padding-bottom: 2rem;
+}
 .card-gallery {
-  display: flex;
-  width: 80%;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin: 3rem 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.filter-ctn {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 0;
+}
+
+.filter-ctn-btns {
+	display: flex;
+	gap: 1rem;
+	margin-left: 1rem;
+}
+
+.filter-ctn-btns button {
+	padding: 0.5rem 1rem;
+	background-color: rgba(128, 128, 128, 0.085);
+	color: black;
+}
+
+.filter-ctn-btns button:hover {
+	color: white;
+}
+
+.weird-thing {
+	margin-right: 1rem;
+	font-weight: 800;
 }

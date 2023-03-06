@@ -5,7 +5,7 @@ import heartEmptyIcon from "../../assets/Icons/heartEmpty.svg";
 import locationIcon from "../../assets/Icons/location.svg";
 import StarRating from "../UniversalComponents/StarRating";
 
-function HotelCard() {
+function HotelCard({hotelNum=0}) {
   return (
     <main className="hotel-card">
       <figure>
@@ -16,7 +16,7 @@ function HotelCard() {
       </figure>
       <section className="card-description">
         <div className="title">
-          <h1>[HOTEL]</h1>
+          <h1>[HOTEL] # {hotelNum}</h1>
           <img src="" alt="" />
           <div className="location">
             <img src={locationIcon} alt="" />

@@ -1,27 +1,51 @@
-import React from "react";
-import Header from "./Header";
-import HotelCard from "./HotelCard";
-import "./HotelListpage.css";
-import SearchBar from "./SearchBar"
+import React, { useState, useEffect } from 'react';
+import Header from './Header';
+import HotelCard from './HotelCard';
+import './HotelListpage.css';
+import SearchBar from './SearchBar';
+import HotelListPagination from './HotelListPagination';
 
 function HotelListpage() {
-  const totalItems = Math.random() * 9;
-  const hotelCardArr = createArrayOfCards(totalItems);
-  function createArrayOfCards(totalItems) {
-    const element = [];
-    for (let i = 0; i < totalItems; i++) {
-      element.push(<HotelCard />);
-    }
-    return element;
-  }
+	const [actualPage, setActualPage] = useState(0);
+	const [itemsPerPage, setItemsPerPage] = useState(9);
+	const [hotelCardArr, setHotelCardArr] = useState([]);
+	const maxNpages = parseInt(hotelCardArr.length / itemsPerPage);
 
-  return (
-    <div className="HotelListpage-ctn">
-      <Header />
-      <SearchBar />
-      <div className="card-gallery">{hotelCardArr}</div>
-    </div>
-  );
+	useEffect(() => {
+		for (let i = 0; i < 100; i++) {
+			setHotelCardArr([...hotelCardArr, hotelCardArr.push(<HotelCard hotelNum={i + 1} />)]);
+		}
+	}, []);
+
+	return (
+		<div className="HotelListpage-ctn">
+			<Header />
+			<SearchBar />
+			<div className="HotelList-displayer">
+				<div className="filter-ctn">
+					<div className="filter-ctn-btns">
+					<button>All</button>
+					<button>Popular</button>
+					<button>Latest</button>
+					<button>Trend</button>
+					</div>
+				<div className="weird-thing">
+					<p>☰ latest Filter</p>
+				</div>
+				</div>
+				<div className="card-gallery">
+					{hotelCardArr
+						.slice(actualPage * itemsPerPage, actualPage * itemsPerPage + itemsPerPage)
+						.map((item) => item)}
+				</div>
+				<HotelListPagination
+					maxNpages={maxNpages}
+					actualPage={actualPage}
+					setActualPage={setActualPage}
+				/>
+			</div>
+		</div>
+	);
 }
 
 export default HotelListpage;
