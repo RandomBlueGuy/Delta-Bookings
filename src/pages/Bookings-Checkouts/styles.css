@@ -158,6 +158,11 @@ label{
     white-space: nowrap;
 }
 
+.btn:nth-child(1){
+    padding-top:8px;
+    padding-bottom:8px
+}
+
 .form-control {
     width: 100%;
     border-radius: 0%;
@@ -207,4 +212,3 @@ input {
     }
 }
 
-/*btn nth-child(1): */
