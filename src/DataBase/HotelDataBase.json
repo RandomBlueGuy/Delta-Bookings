@@ -1,8 +1,10 @@
 [
   {
-    "HotelId": 0,
+    "HotelId": 1,
     "HotelName": "THE LANGHAM",
+    "Website": "https://www.langhamhotels.com/en/",
     "Location": {
+      "Place": "2701, Great Eagle Centre",
       "City": "New York City",
       "State": "New York State",
       "Country": "United States"
@@ -23,7 +25,7 @@
         "Facebook": "http://www.facebook.com/LanghamNYC/",
         "Twitter": "http://www.instagram.com/LanghamNYC/",
         "Instagram": "http://www.twitter.com/LanghamNYC",
-        "GooglePlus": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "Pinterest": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       },
       "Reviews": [
         {
@@ -98,6 +100,1303 @@
         "Location": {
           "lat": 0,
           "lng": 0
+        }
+      }
+    ]
+  },
+  {
+    "HotelId": 2,
+    "HotelName": "Hotel Elysee",
+    "Website": "https://www.elyseehotel.com",
+    "Location": {
+      "place": "2701, Great Eagle Centre",
+      "City": "New York City",
+      "State": "New York State",
+      "Country": "United States"
+    },
+    "About": {
+      "PhoneNumber": "212-753-1066",
+      "CountryCode": "+1",
+      "Email": "info@elyseehotel.com",
+      "HotelDescription": "Hotel Elysee welcomes guests of all abilities. Our building entrance, registration desk, elevator, rooms and suites are ADA compliant in accordance with the construction statutes of the ADA (Department of Justice ADA Title III Regulation 28 CFR Part 36, 1991). For more information about accessible and non-accessible features, please see our Accessibility Statement.",
+      "StarRating": 4.6,
+      "ReviewNumber": 5646,
+      "Tags": ["Breakfast", "Helicopter"],
+      "SpecialTags": "none",
+      "PopularityNumber": 56,
+      "DateAdded": "09/03/2022",
+      "TrendingNumber": 26,
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/elyseehotel/",
+        "Twitter": "https://twitter.com/HotelElyseeNYC",
+        "Instagram": "",
+        "Pinterest": "https://www.pinterest.com/libraryhotellhc/hotel-elysees-lifestyle/"
+      },
+      "Reviews": [
+        {
+          "Rating": 3.2,
+          "User": "Jotaro Kujo",
+          "Date": "23/12/2022",
+          "HotelReview": "I've seen better"
+        },
+        {
+          "Rating": 4,
+          "User": "Hideo Kojima",
+          "Date": "12/12/2020",
+          "HotelReview": "異 あｍ 費でお 小島"
+        },
+        {
+          "Rating": 3,
+          "User": "Somebody I used to know",
+          "Date": "06/08/2020",
+          "HotelReview": "Turbo Nice :)"
+        },
+        {
+          "Rating": 4.8,
+          "User": "Mike Litoris",
+          "Date": "26/08/2020",
+          "HotelReview": "Took advantage of the downtown location to walk to dinner, check out a couple galleries, and have drinks. It was great. Service top notch as always. Bed comfort can not be beat."
+        }
+      ],
+      "Policies": [
+        "These terms of use are entered into by and between You and Elysee Management, Inc. (”Company”, “we” or “us”). The following terms and conditions, together with any documents they expressly incorporate by reference (collectively, these “Terms of Use”), govern Your access to and use of this Library Hotel Collection (“LHC”) web site (“Site”) and the web sites (“Sites”) of affiliated hotels, including any content, functionality, and services offered on or through the Sites (the “Sites”), whether as a guest or a registered user.",
+        "Please read the Terms of Use carefully before You start to use the Sites. By using the Sites or by clicking to accept or agree to the Terms of Use when this option is made available to You, You accept and agree to be bound and abide by these Terms of Use and our Privacy Policy, found at https://www.elyseehotel.com/en/privacy-policy.html , incorporated herein by reference. If You do not want to agree to these Terms of Use or the Privacy Policy, You must not access or use the Sites.",
+        "The Sites are offered and available to users who are 21 years of age or older. By using the Sites, You represent and warrant that You are of legal age to form a binding contract with the Company and meet all of the foregoing eligibility requirements. If You do not meet all of these requirements, You must not access or use the Sites."
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Deluxe Room with Queen Bed",
+          "Amenities": ["Queen", "Shower", "LCD TV", "Couch"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 958,
+          "Discount": 30
+        },
+        "About": [
+          "Deluxe Rooms are approximately 300 sq. ft. and are suitable for 1 -2 adults."
+        ],
+        "Facility": ["Floor 12-20"],
+        "Location": {
+          "lat": 0,
+          "lng": 0
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Deluxe Accessible Queen",
+          "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 980,
+          "Discount": 30
+        },
+        "About": [
+          "Deluxe Rooms are approximately 300 sq. ft. and are suitable for 1 -2 adults. ADA compliant with roll-in shower"
+        ],
+        "Facility": ["Floors 21 -35"],
+        "Location": {
+          "lat": 0,
+          "lng": 0
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Deluxe Room with King Bed",
+          "Amenities": ["King/Twin", "Shower", "LCD TV", "Better Couch"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 1230,
+          "Discount": 5
+        },
+        "About": [
+          "Deluxe Rooms are approximately 300 sq. ft. and are suitable for 1 -2 adults."
+        ],
+        "Facility": ["Floors 36 - 40"],
+        "Location": {
+          "lat": 0,
+          "lng": 0
+        }
+      },
+      {
+        "card": {
+          "RoomName": "King Suite ",
+          "Amenities": ["King", "Pool", "LCD TV", "Better Couch"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 1999,
+          "Discount": 24
+        },
+        "About": [
+          "King Suites are approximately 600 sq. ft. and are suitable for 1-2 Adults and 1 child"
+        ],
+        "Facility": ["Floor 41"],
+        "Location": {
+          "lat": 0,
+          "lng": 0
+        }
+      }
+    ]
+  },
+  {
+    "HotelId": 3,
+    "HotelName": "The Plaza",
+    "Website": "https://www.fairmont.com/the-plaza-new-york/?y_source=1_MTIzNjE0MDYtNzE1LWxvY2F0aW9uLndlYnNpdGU=",
+    "Location": {
+      "Place": "768 5th Ave",
+      "City": "New York City",
+      "State": "New York State",
+      "Country": "United States"
+    },
+    "About": {
+      "PhoneNumber": "866 940 9361",
+      "CountryCode": "+1",
+      "Email": "plazareservation@fairmont.com",
+      "HotelDescription": "Since its debut on October 1st, 1907, The Plaza Hotel has remained a New York icon hosting world leaders, dignitaries, captains of industry, Broadway legends and Hollywood royalty.  As an established staple for lavish society affairs, and blockbuster films, The Plaza has welcomed guests from around the world to enjoy its magic at the castle on Central Park South for more than 100 years.",
+      "StarRating": 4.05,
+      "ReviewNumber": 5698,
+      "Tags": ["Breakfast", "Parking"],
+      "SpecialTags": "Recommended",
+      "PopularityNumber": 69,
+      "DateAdded": "10/10/2019",
+      "TrendingNumber": 645,
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/fairmonthotels/",
+        "Twitter": "https://twitter.com/fairmonthotels",
+        "Instagram": "https://www.instagram.com/fairmonthotels/",
+        "Pinterest": "https://www.pinterest.fr/fairmonthotels/"
+      },
+      "Reviews": [
+        {
+          "Rating": 5,
+          "User": "Ben Dover",
+          "Date": "11/11/2022",
+          "HotelReview": "I had a wonderful experience at the (HN). Every staff member I encountered, from the valet to the check- in to the cleaning staff were delightful and eager to help! Thank you! Will recommend to my colleagues!"
+        },
+        {
+          "Rating": 4.2,
+          "User": "Hugh G. Rection",
+          "Date": "05/05/2020",
+          "HotelReview": "Overall, I had a great experience with the (HN); staff was incredibly helpful, and the amenities were great. The room was wonderful, clean, and perfect to celebrate a birthday weekend."
+        },
+        {
+          "Rating": 4,
+          "User": "Justin Casey Feltersnatch",
+          "Date": "09/12/2015",
+          "HotelReview": "The staff at this property are all great! They all go above and beyond to make your stay comfortable. Please (HN) give your staff awards!"
+        }
+      ],
+      "Policies": [
+        "All material found in the pages of this Website is protected under the copyright laws of Canada, the United States and of other countries. Certain names, words, titles, phrases, logos, icons, graphics or designs in the pages of this Website may constitute trade-names, trade-marks or service marks of Fairmont Hotels & Resorts (Fairmont) or its affiliates, or Fairmont or its affiliates may have been licensed to use them. The display of trademarks, trade names or service marks on pages at this Website does not imply that a license of any kind has been granted to anyone else.",
+        "You are free to download the material posted on this Website for non-commercial purposes, to store it temporarily on a single computer, and to print it solely for your own personal purposes. You agree that you do not acquire any ownership rights in any downloaded content. You may not distribute copies of the material for any purpose or 'frame' it in any site you create or operate. You agree to abide by all copyright notices, information and restrictions contained in any content on this Website.",
+        "Any unauthorized downloading, transmission, republication or other copying or modification of material posted on this Website, including trademarks, trade names and service marks, may violate federal, common or civil law trade-mark law and copyright law, and may result in legal action."
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Plaza King",
+          "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Refundable"],
+          "OriginalPricePerNight": 804,
+          "Discount": 30
+        },
+        "About": [
+          " Plaza Kings are located on floors 5-19 and provide elegant accommodations with a comfortable sitting area.  Each of these exceptional New York City hotel rooms features a bathroom finished with inlaid earth stone mosaics in floral motifs, with a bathtub as well as separate shower.  Bathroom details include 24-carat gold plated Sherle Wagner faucets and accessories, and hand crafted solid white marble vanities."
+        ],
+        "Facility": ["Floors 5 to 19 "],
+        "Location": {
+          "lat": 40.76462773699905,
+          "lng": -73.974389473015
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Deluxe King",
+          "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 900,
+          "Discount": 60
+        },
+        "About": [
+          " The luxurious Deluxe King is exceptionally spacious with a comfortable sitting area. The bathroom is finished with inlaid “earth stone” mosaics in floral motifs, with a bathtub as well as separate shower. Bathroom details include 24-carat gold plated Sherle Wagner faucets and accessories with hand crafted solid white marble vanities. These well-appointed rooms are located throughout the hotel on floors 5 to 19."
+        ],
+        "Facility": ["Floors 5 to 19 "],
+        "Location": {
+          "lat": 40.76462773699905,
+          "lng": -73.974389473015
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Terrace Room King",
+          "Amenities": ["King/Twin", "Shower", "LCD TV", "Better Couch"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 1500,
+          "Discount": 20
+        },
+        "About": [
+          "The Terrace Room King features a private terrace, a King bed, and a deluxe bathroom.  Bathroom is finished with inlaid earth stone mosaics and include a luxurious bathtub and a separate shower.  Among many splendid details are 24-carat gold-plated Sherle Wagner fixtures, as well as hand-crafted solid white marble vanities."
+        ],
+        "Facility": ["Floors 5 & 9"],
+        "Location": {
+          "lat": 40.76462773699905,
+          "lng": -73.974389473015
+        }
+      }
+    ]
+  },
+  {
+    "HotelId": 4,
+    "HotelName": "The St. Regis New York",
+    "Website": "https://www.marriott.com/en-us/hotels/nycxr-the-st-regis-new-york/overview/",
+    "Location": {
+      "place": "Two East 55th Street, at Fifth Avenue",
+      "City": "New York City",
+      "State": "New York State",
+      "Country": "United States"
+    },
+    "About": {
+      "PhoneNumber": "212-787-3447",
+      "CountryCode": "+1",
+      "Email": "Mariott@mariott.com",
+      "HotelDescription": "Since its founding by John Jacob Astor over a century ago, The St. Regis New York has established itself as one of midtown Manhattan's best luxury hotels. Our historic 5-star hotel on Fifth Avenue has evolved to reflect the rich heritage of St. Regis while infusing the timeless elegance that has come to define it. Every element of the hotel is carefully considered, from the richly decorated rooms and",
+      "StarRating": 4.7,
+      "ReviewNumber": 4690,
+      "Tags": ["Breakfast", "Parking"],
+      "SpecialTags": "Certified",
+      "PopularityNumber": 81,
+      "DateAdded": "",
+      "TrendingNumber": 0,
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/marriottbonvoy",
+        "Twitter": "https://twitter.com/marriottbonvoy",
+        "Instagram": "https://www.instagram.com/marriottbonvoy/",
+        "Pinterest": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      },
+      "Reviews": [
+        {
+          "Rating": 5,
+          "User": "Duncan McOkiner",
+          "Date": "02/03/2020",
+          "HotelReview": "Quaint downtown hotel with super friendly staff and beautifully clean rooms. The restaurant downstairs has amazing food!"
+        },
+        {
+          "Rating": 4,
+          "User": "Munchma Quchi",
+          "Date": "06/08/2020",
+          "HotelReview": "26. Loved the Downtown Location and Atmosphere. Just about name it and you’re within walking distance."
+        },
+        {
+          "Rating": 4.2,
+          "User": "Craven Morehead",
+          "Date": "01/01/2023",
+          "HotelReview": "25. Beautiful downtown hotel with nice roof top bar. Rooms have historic feel with old hard wood floors, yet modern as bathrooms have white subway tiles with TVs in each bathroom. Staff is wonderful and accommodating providing upgrades when available."
+        }
+      ],
+      "Policies": [
+        "PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE USING THIS SITE. THIS IS A BINDING LEGAL AGREEMENT. BY ACCESSING AND CONTINUING TO USE THE SITE, YOU AGREE TO EACH AND EVERY ONE OF THESE TERMS AND CONDITIONS. PLEASE DO NOT USE THE SITE IF YOU DO NOT AGREE TO EACH AND EVERY ONE OF THESE TERMS AND CONDITIONS.",
+        "Marriott International, Inc. with its corporate headquarters at 7750 Wisconsin Avenue, Bethesda, Maryland 20814, United States of America, and its subsidiaries, including The Ritz-Carlton Hotel Company L.L.C. and Starwood Hotels & Resorts Worldwide, LLC (collectively, “Marriott”, “we”, “our” or “us”) provide various websites and apps available to visitors located throughout the world. Our websites and apps include without limitation, this website and other consumer facing platforms operated under our brands, including, www.marriott.com, www.autograph-hotels.marriott.com, www.vacationsbymarriott.com, www.ritzcarlton.com, www.corporate.ritzcarlton.com, starwoodhotels.com and our mobile apps (collectively, our “Sites”). These Terms and Conditions also apply to translations of our Sites, for example, www.espanol.marriott.com. Our Sites are controlled and operated from the United States and are subject to United States law.",
+        "The content and information displayed on the Sites are Marriott’s property and are collectively referred to as “Marriott Information”. The downloading, reproduction, or re-transmission of Marriott Information, other than for non-commercial individual use, is strictly prohibited, except to the extent permitted with prior written consent by Marriott or by travel agents for business-only purposes in accordance with the Travel Agent section below."
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Dior Suite",
+          "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 720,
+          "Discount": 30
+        },
+        "About": [
+          "Experience sophisticated Parisian glamour with this spectacularly chic suite that offers privacy, luxury and exquisitely designed accommodations. This iconic suite exhibits the elegance of Dior, along with signature 24 hour St. Regis Butler Service, offering complimentary services including Butler served tea or coffee upon arrival and following daily wake-up call, pressing of up to 2 items per guest "
+        ],
+        "Facility": ["Floors 2-3"],
+        "Location": {
+          "lat": 40.76137107443844,
+          "lng": -73.97469971164165
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Milano Suite",
+          "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 900,
+          "Discount": 20
+        },
+        "About": [
+          "Unwind in this chic suite with engaging design of Milan and exceptional Fifth Avenue views. The stylish Milano Suite, with views of Fifth Avenue, features natural colors and rich textiles, and offers access to our signature 24 hour Butler service offering complimentary services including Butler served tea or coffee upon arrival and following daily wake-up call, pressing of up to 2 items per guest upon... "
+        ],
+        "Facility": ["Floors 6-13"],
+        "Location": {
+          "lat": 40.76137107443844,
+          "lng": -73.97469971164165
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Bentley Suite",
+          "Amenities": ["King/Twin", "Shower", "LCD TV", "Better Couch"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 1200,
+          "Discount": 14
+        },
+        "About": [
+          "A collaboration between St. Regis and Bentley Motors, the 15th-floor Bentley Suite exudes the luxury, craftsmanship, and style associated with both renowned international brands. Guests of the Bentley Suite will enjoy our signature 24 hour Butler service offering complimentary services including Butler served tea or coffee upon arrival and following daily wake-up call, pressing of up to 2 items"
+        ],
+        "Facility": ["Floor 14"],
+        "Location": {
+          "lat": 40.76137107443844,
+          "lng": -73.97469971164165
+        }
+      }
+    ]
+  },
+  {
+    "HotelId": 5,
+    "HotelName": "The Beverly Hills Hotel",
+    "Website": "https://www.dorchestercollection.com/en/los-angeles/the-beverly-hills-hotel/",
+    "Location": {
+      "Place": "9641 Sunset Blvd",
+      "City": "New York City",
+      "State": "New York State",
+      "Country": "United States"
+    },
+    "About": {
+      "PhoneNumber": "310-276-2251",
+      "CountryCode": "+1",
+      "Email": "bhhotel.reservations@dorchestercollection.com",
+      "HotelDescription": "The Beverly Hills Hotel is an iconic luxury hotel located in the heart of Beverly Hills. Known for its glamour and exclusivity, the hotel has been a favorite of Hollywood stars and high society for over a century. With luxurious accommodations, fine dining, and a range of amenities, the Beverly Hills Hotel offers a truly unforgettable experience.",
+      "StarRating": 5,
+      "ReviewNumber": 1350,
+      "Tags": ["Breakfast", "Parking", "Pool", "Spa", "Fitness Center"],
+      "SpecialTags": "Luxury, Glamour, Iconic",
+      "PopularityNumber": 9.4,
+      "DateAdded": "2022-02-15",
+      "TrendingNumber": 544,
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/thebeverlyhillshotel/",
+        "Twitter": "https://twitter.com/BeverlyWilshire",
+        "Instagram": "https://www.instagram.com/bevhillshotel/",
+        "GooglePlus": ""
+      },
+      "Reviews": [
+        {
+          "Rating": 5,
+          "User": "John Smith",
+          "Date": "2022-03-01",
+          "HotelReview": "The Beverly Hills Hotel is truly amazing. The service is top-notch, the rooms are luxurious, and the amenities are excellent. I had a wonderful stay here and would highly recommend it to anyone looking for a high-end hotel experience."
+        },
+        {
+          "Rating": 4,
+          "User": "Jane Doe",
+          "Date": "2022-02-20",
+          "HotelReview": "The Beverly Hills Hotel is definitely a classic. The rooms are comfortable and well-appointed, and the service is excellent. The only downside is that it can be quite expensive, but if you're looking for luxury, it's worth it."
+        },
+        {
+          "Rating": 5,
+          "User": "Mike Johnson",
+          "Date": "2022-02-10",
+          "HotelReview": "I've stayed at a lot of high-end hotels, but the Beverly Hills Hotel is truly something special. The attention to detail is incredible, and the staff goes above and beyond to make sure you have a great experience. Highly recommended!"
+        }
+      ],
+      "Policies": [
+        "Check-in time: 3:00 PM",
+        "Check-out time: 12:00 PM",
+        "Cancellation policy: 24 hours prior to arrival"
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Deluxe King Room",
+          "Amenities": ["King Bed", "Shower", "LCD TV", "Sofa Bed"],
+          "Inclusions": ["Wi-Fi", "Breakfast"],
+          "OriginalPricePerNight": 299,
+          "Discount": 10
+        },
+        "About": [
+          "Our Deluxe King Room features a comfortable king-size bed, a cozy sofa bed, and a spacious bathroom with a shower. Enjoy your morning coffee in the seating area while watching your favorite show on the LCD TV. This room also includes complimentary Wi-Fi and daily breakfast."
+        ],
+        "Facility": ["Fitness Center", "Swimming Pool"],
+        "Location": {
+          "lat": 37.7749,
+          "lng": -122.4194
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Executive Suite",
+          "Amenities": [
+            "King Bed",
+            "Shower",
+            "LCD TV",
+            "Living Room",
+            "Kitchenette"
+          ],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 599,
+          "Discount": 15
+        },
+        "About": [
+          "Indulge in our Executive Suite, featuring a luxurious king-size bed, a spacious living room with a comfortable sofa and LCD TV, and a kitchenette for your convenience. The suite also includes complimentary Wi-Fi and daily breakfast, but is non-refundable. Relax and unwind in style during your stay at our Californian Hotel."
+        ],
+        "Facility": ["Spa", "Restaurant"],
+        "Location": {
+          "lat": 37.7749,
+          "lng": -122.4194
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Deluxe Double Room",
+          "Amenities": ["Two Double Beds", "Shower", "LCD TV", "Armchair"],
+          "Inclusions": ["Wi-Fi", "Breakfast"],
+          "OriginalPricePerNight": 249,
+          "Discount": 5
+        },
+        "About": [
+          "Our Deluxe Double Room is perfect for families or groups of friends, featuring two comfortable double beds, a cozy armchair, and a spacious bathroom with a shower. Watch your favorite show on the LCD TV or catch up on work with complimentary Wi-Fi. This room also includes daily breakfast."
+        ],
+        "Facility": ["Business Center", "Lounge"],
+        "Location": {
+          "lat": 37.7749,
+          "lng": -122.4194
+        }
+      }
+    ]
+  },
+  {
+    "HotelId": 6,
+    "HotelName": "Four Seasons Hotel Los Angeles at Beverly Hills",
+    "Website": "https://www.fourseasons.com/losangeles/",
+    "Location": {
+      "Place": "300 S Doheny Dr",
+      "City": "New York City",
+      "State": "New York State",
+      "Country": "United States"
+    },
+    "About": {
+      "PhoneNumber": "+1 310-273-2222",
+      "CountryCode": "+1",
+      "Email": "losangeles.reservations@fourseasons.com",
+      "HotelDescription": "The Four Seasons Hotel Los Angeles at Beverly Hills is a luxurious five-star hotel located in the heart of Beverly Hills. The hotel offers guests stunning views of the city and an array of amenities including a rooftop pool, a full-service spa, and a fitness center. The hotel's rooms and suites are elegant and spacious, featuring marble bathrooms and private balconies with views of the city or the Hollywood Hills.",
+      "StarRating": 5,
+      "ReviewNumber": 1350,
+      "Tags": ["Breakfast", "Parking", "Pool", "Spa", "Fitness Center"],
+      "SpecialTags": "Luxury, Elegance, Rooftop Pool, Beverly Hills",
+      "PopularityNumber": 9.2,
+      "DateAdded": "2022-02-20",
+      "TrendingNumber": 0,
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/FourSeasonsHotelLosAngelesBeverlyHills",
+        "Twitter": "https://twitter.com/FSLosAngeles",
+        "Instagram": "https://www.instagram.com/fourseasons/",
+        "GooglePlus": ""
+      },
+      "Reviews": [
+        {
+          "Rating": 5,
+          "User": "Alex Brown",
+          "Date": "2022-03-03",
+          "HotelReview": "The Four Seasons Hotel Los Angeles at Beverly Hills is a top-notch hotel with impeccable service. The rooms are spacious and luxurious, with breathtaking views of the city. The rooftop pool is a must-visit, and the spa is the perfect place to relax after a long day. Highly recommended!"
+        },
+        {
+          "Rating": 4,
+          "User": "Emily Wilson",
+          "Date": "2022-02-28",
+          "HotelReview": "The Four Seasons Hotel Los Angeles at Beverly Hills is a beautiful hotel in a great location. The staff is friendly and helpful, and the rooms are clean and comfortable. The only downside is that it can be quite expensive, but if you're looking for luxury, it's worth it."
+        },
+        {
+          "Rating": 5,
+          "User": "David Kim",
+          "Date": "2022-02-15",
+          "HotelReview": "I recently stayed at the Four Seasons Hotel Los Angeles at Beverly Hills and it was an amazing experience. The hotel is beautiful, the staff is friendly and helpful, and the amenities are excellent. I especially enjoyed the rooftop pool with its stunning views of the city. Highly recommended!"
+        }
+      ],
+      "Policies": [
+        "Check-in time: 3:00 PM",
+        "Check-out time: 12:00 PM",
+        "Cancellation policy: 24 hours prior to arrival"
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Deluxe Guest Room",
+          "Amenities": ["King Bed", "Shower", "LCD TV", "Sofa Bed"],
+          "Inclusions": ["Wi-Fi", "Breakfast"],
+          "OriginalPricePerNight": 545,
+          "Discount": 15
+        },
+        "About": [
+          "This room offers a comfortable king bed, a sofa bed for extra sleeping space, and an LCD TV for entertainment. The bathroom features a shower and luxury amenities. Guests can enjoy complimentary Wi-Fi and breakfast during their stay."
+        ],
+        "Facility": ["24-hour fitness center", "Heated rooftop pool"],
+        "Location": {
+          "lat": 34.045242,
+          "lng": -118.262683
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Executive Suite",
+          "Amenities": [
+            "King Bed",
+            "Shower and Tub",
+            "LCD TV",
+            "Separate Living Room"
+          ],
+          "Inclusions": ["Wi-Fi", "Breakfast"],
+          "OriginalPricePerNight": 1100,
+          "Discount": 25
+        },
+        "About": [
+          "This spacious suite offers a separate living room and bedroom, both featuring an LCD TV for entertainment. The bathroom boasts both a shower and a tub, as well as luxury amenities. Guests can enjoy complimentary Wi-Fi and breakfast during their stay."
+        ],
+        "Facility": ["24-hour fitness center", "Heated rooftop pool", "Spa"],
+        "Location": {
+          "lat": 34.045242,
+          "lng": -118.262683
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Club Level Room",
+          "Amenities": [
+            "King Bed",
+            "Shower and Tub",
+            "LCD TV",
+            "Access to Club Lounge"
+          ],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Club Lounge Access"],
+          "OriginalPricePerNight": 685,
+          "Discount": 20
+        },
+        "About": [
+          "This room offers a comfortable king bed and an LCD TV for entertainment. The bathroom boasts both a shower and a tub, as well as luxury amenities. Guests can enjoy complimentary Wi-Fi and breakfast during their stay, as well as exclusive access to the Club Lounge, which features a private check-in, daily culinary presentations, and evening cocktails and bites."
+        ],
+        "Facility": ["24-hour fitness center", "Heated rooftop pool"],
+        "Location": {
+          "lat": 34.045242,
+          "lng": -118.262683
+        }
+      }
+    ]
+  },
+  {
+    "HotelId": 7,
+    "HotelName": "Grand Hotel Palace",
+    "Location": {
+      "City": "Roma",
+      "State": "",
+      "Country": "Italia"
+    },
+    "About": {
+      "PhoneNumber": "+39 06 4899 1",
+      "CountryCode": "+39",
+      "Email": "info@grandhotelpalaceroma.com",
+      "HotelDescription": "El Grand Hotel Palace es un lujoso hotel de 5 estrellas situado en el corazón de Roma, cerca de las principales atracciones turísticas de la ciudad, como la Fontana di Trevi y el Coliseo. El hotel cuenta con elegantes habitaciones y suites, un restaurante gourmet, un spa y un centro de fitness.",
+      "StarRating": 5,
+      "ReviewNumber": 342,
+      "Tags": ["lujo", "centro histórico", "romance"],
+      "SpecialTags": "hotel de lujo",
+      "PopularityNumber": 9.2,
+      "DateAdded": "2021-08-01",
+      "TrendingNumber": 7.8,
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/grandhotelpalaceroma",
+        "Twitter": "https://twitter.com/ghpalaceroma",
+        "Instagram": "https://www.instagram.com/grandhotelpalaceroma/",
+        "GooglePlus": ""
+      },
+      "Reviews": [
+        {
+          "Rating": 9.2,
+          "User": "Maria G.",
+          "Date": "2022-02-20",
+          "HotelReview": "El hotel es simplemente espectacular, todo es de primera calidad. El personal es muy amable y servicial. La habitación era amplia y cómoda, con una vista impresionante de la ciudad."
+        },
+        {
+          "Rating": 8.5,
+          "User": "John D.",
+          "Date": "2022-01-15",
+          "HotelReview": "El hotel está muy bien ubicado y es muy lujoso. El servicio es excelente y las habitaciones son muy cómodas. El único inconveniente es el precio, que es bastante elevado."
+        },
+        {
+          "Rating": 9.5,
+          "User": "Sarah T.",
+          "Date": "2021-12-10",
+          "HotelReview": "Este hotel es simplemente excepcional. El personal es muy amable y servicial, y las instalaciones son de primera categoría. La ubicación es perfecta para explorar la ciudad."
+        }
+      ],
+      "Policies": [
+        "No se permiten mascotas",
+        "No se permite fumar en las habitaciones",
+        "El check-in es a las 14:00 y el check-out es a las 12:00"
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Habitación Deluxe",
+          "Amenities": [
+            "Aire acondicionado",
+            "TV de pantalla plana",
+            "Caja fuerte",
+            "Minibar"
+          ],
+          "Inclusions": ["Desayuno incluido", "Wi-Fi gratis", "Acceso al spa"],
+          "OriginalPricePerNight": 400,
+          "Discount": 10
+        },
+        "About": [
+          "Grand Hotel Palace offers spacious and elegantly furnished rooms and suites, providing guests with a luxurious and comfortable stay."
+        ],
+        "Facility": ["Fitness center", "Sauna", "Bar", "Restaurant"],
+        "Location": {
+          "lat": 41.9057,
+          "lng": 12.4869
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Deluxe Room",
+          "Amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Minibar",
+            "24-hour room service",
+            "Air conditioning"
+          ],
+          "Inclusions": [
+            "Complimentary breakfast",
+            "Access to fitness center and sauna"
+          ],
+          "OriginalPricePerNight": 275,
+          "Discount": 0.15
+        },
+        "About": [
+          "Grand Hotel Palace is a luxury hotel located in the heart of Rome, just a few steps away from the Spanish Steps and the Trevi Fountain."
+        ],
+        "Facility": ["Fitness center", "Sauna", "Bar", "Restaurant"],
+        "Location": {
+          "lat": 41.9057,
+          "lng": 12.4869
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Executive Suite",
+          "Amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Minibar",
+            "24-hour room service",
+            "Air conditioning",
+            "Private balcony"
+          ],
+          "Inclusions": [
+            "Complimentary breakfast",
+            "Access to fitness center and sauna"
+          ],
+          "OriginalPricePerNight": 500,
+          "Discount": 0.2
+        },
+        "About": [
+          "Grand Hotel Palace offers spacious and elegantly furnished rooms and suites, providing guests with a luxurious and comfortable stay."
+        ],
+        "Facility": ["Fitness center", "Sauna", "Bar", "Restaurant"],
+        "Location": {
+          "lat": 41.9057,
+          "lng": 12.4869
+        }
+      }
+    ]
+  },
+  {
+    "HotelId": 8,
+    "HotelName": "Hotel Eden",
+    "Location": {
+      "City": "Roma",
+      "State": "",
+      "Country": "Italia"
+    },
+    "About": {
+      "PhoneNumber": "+39 06 47812",
+      "CountryCode": "+39",
+      "Email": "info@hotel-eden-roma.com",
+      "HotelDescription": "El Hotel Eden es un lujoso hotel de 5 estrellas ubicado en el corazón de Roma. Ofrece vistas panorámicas de la ciudad y un servicio excepcional.",
+      "StarRating": 5,
+      "ReviewNumber": 157,
+      "Tags": ["lujoso", "vistas panorámicas", "servicio excepcional"],
+      "SpecialTags": "hotel de lujo",
+      "PopularityNumber": 9.5,
+      "DateAdded": "2021-01-01",
+      "TrendingNumber": 8.7,
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/hoteledenroma",
+        "Twitter": "https://twitter.com/hoteledenroma",
+        "Instagram": "https://www.instagram.com/hoteledenroma/",
+        "GooglePlus": ""
+      },
+      "Reviews": [
+        {
+          "Rating": 9.0,
+          "User": "John Smith",
+          "Date": "2022-02-20",
+          "HotelReview": "Increíble hotel, muy elegante y cómodo. El servicio es excepcional y las vistas desde la terraza son impresionantes."
+        },
+        {
+          "Rating": 9.5,
+          "User": "Maria García",
+          "Date": "2022-01-10",
+          "HotelReview": "Mi estancia en el Hotel Eden fue maravillosa. El personal es muy amable y el hotel está impecablemente limpio. Las vistas desde la habitación son impresionantes."
+        },
+        {
+          "Rating": 10,
+          "User": "Peter Johnson",
+          "Date": "2021-12-15",
+          "HotelReview": "No puedo decir suficientes cosas buenas sobre el Hotel Eden. La ubicación es perfecta y las vistas son impresionantes. El personal es excepcionalmente amable y servicial. Definitivamente volveré."
+        }
+      ],
+      "Policies": [
+        "Check-in a partir de las 15:00 horas",
+        "Check-out hasta las 12:00 horas",
+        "No se permiten mascotas",
+        "No se permite fumar en las habitaciones o áreas comunes"
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Habitación Superior",
+          "Amenities": [
+            "Aire acondicionado",
+            "Televisión de pantalla plana",
+            "Minibar"
+          ],
+          "Inclusions": ["Desayuno continental", "Acceso al spa"],
+          "OriginalPricePerNight": 350,
+          "Discount": 10
+        },
+        "About": [
+          "Habitación amplia y cómoda con vistas a la ciudad. Incluye acceso al spa y desayuno continental"
+        ],
+        "Facility": [
+          "Spa",
+          "Gimnasio",
+          "Restaurante",
+          "Bar",
+          "Sala de reuniones"
+        ],
+        "Location": {
+          "lat": 41.9052,
+          "lng": 12.4823
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Habitación Doble Clásica",
+          "Amenities": [
+            "Aire acondicionado",
+            "Wi-Fi gratis",
+            "Televisión",
+            "Baño privado"
+          ],
+          "Inclusions": ["Desayuno buffet"],
+          "OriginalPricePerNight": 350,
+          "Discount": 10
+        },
+        "About": [
+          "Habitación elegante con cama doble o dos camas individuales, con vistas a la ciudad o al jardín del hotel."
+        ],
+        "Facility": ["Piscina cubierta", "Gimnasio", "Spa"],
+        "Location": {
+          "lat": 41.9052,
+          "lng": 12.4823
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Suite",
+          "Amenities": [
+            "Air conditioning",
+            "Minibar",
+            "Flat-screen TV",
+            "Free Wi-Fi",
+            "Safe",
+            "Separate living room"
+          ],
+          "Inclusions": ["Buffet breakfast", "Free access to the spa"],
+          "OriginalPricePerNight": 800,
+          "Discount": 25
+        },
+        "About": [
+          "The Hotel Eden is an iconic hotel in the heart of Rome, with breathtaking views over the city. It is a perfect base from which to explore the city's many attractions, or simply relax in the luxurious surroundings."
+        ],
+        "Facility": [
+          "Michelin-starred restaurant",
+          "Rooftop bar with panoramic views of Rome",
+          "Spa and wellness center",
+          "Fitness center"
+        ],
+        "Location": {
+          "lat": 41.906209,
+          "lng": 12.480434
+        }
+      }
+    ]
+  },
+  {
+    "HotelId": 9,
+    "HotelName": "Hotel Artemide",
+    "Location": {
+      "City": "Roma",
+      "State": "",
+      "Country": "Italia"
+    },
+    "About": {
+      "PhoneNumber": "+39 06 489911",
+      "CountryCode": "+39",
+      "Email": "info@hotelartemide.it",
+      "HotelDescription": "El Hotel Artemide es un lujoso hotel de 4 estrellas situado en el corazón de Roma. Ofrece habitaciones elegantes y modernas, un centro de bienestar, un restaurante y un bar. El hotel se encuentra a pocos minutos de los principales lugares de interés de Roma, como la Fontana di Trevi, la Escalinata de la Plaza de España y el Coliseo.",
+      "StarRating": 4,
+      "ReviewNumber": 2476,
+      "Tags": [
+        "Centro de bienestar",
+        "Restaurante",
+        "Bar",
+        "Wi-Fi gratuito",
+        "Aparcamiento"
+      ],
+      "SpecialTags": "",
+      "PopularityNumber": 9.3,
+      "DateAdded": "2021-01-10",
+      "TrendingNumber": "",
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/hotelartemide/",
+        "Twitter": "https://twitter.com/hotelartemide",
+        "Instagram": "https://www.instagram.com/hotelartemide/",
+        "GooglePlus": ""
+      },
+      "Reviews": [
+        {
+          "Rating": 5,
+          "User": "John Smith",
+          "Date": "2022-01-01",
+          "HotelReview": "Fantástico hotel en el corazón de Roma. Habitaciones amplias y limpias, personal muy amable y un delicioso desayuno. Altamente recomendado."
+        },
+        {
+          "Rating": 4.5,
+          "User": "Maria Gomez",
+          "Date": "2022-02-15",
+          "HotelReview": "Muy buen hotel. Me encantó la ubicación y el personal es muy atento. Las habitaciones son cómodas y el desayuno es excelente."
+        },
+        {
+          "Rating": 4,
+          "User": "Peter Johnson",
+          "Date": "2022-03-05",
+          "HotelReview": "Buena opción de alojamiento en Roma. El hotel está bien ubicado, cerca de la estación de tren y de varios lugares de interés. La habitación era cómoda y limpia, aunque un poco pequeña. El personal era amable y servicial."
+        }
+      ],
+      "Policies": [
+        "Check-in a partir de las 14:00",
+        "Check-out antes de las 12:00",
+        "No se admiten mascotas"
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Habitación Doble Clásica",
+          "Amenities": [
+            "Wi-Fi gratuito",
+            "Aire acondicionado",
+            "Televisión de pantalla plana",
+            "Caja fuerte",
+            "Minibar"
+          ],
+          "Inclusions": [
+            "Desayuno buffet incluido",
+            "Acceso al centro de bienestar"
+          ],
+          "OriginalPricePerNight": 180,
+          "Discount": 15
+        },
+        "About": [],
+        "Facility": [],
+        "Location": {
+          "lat": 0,
+          "lng": 0
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Classic Room",
+          "Amenities": [
+            "Air conditioning",
+            "Minibar",
+            "Flat-screen TV",
+            "Free Wi-Fi",
+            "Safe"
+          ],
+          "Inclusions": ["Buffet breakfast"],
+          "OriginalPricePerNight": 180,
+          "Discount": 10
+        },
+        "About": [
+          "Located in the heart of Rome, Hotel Artemide is a luxurious 4-star hotel featuring modern amenities and elegant decor. The hotel is housed in a historic building and is within walking distance of many of Rome's most famous attractions."
+        ],
+        "Facility": [
+          "Rooftop terrace with panoramic views of Rome",
+          "Spa and wellness center",
+          "Restaurant and bar",
+          "Fitness center"
+        ],
+        "Location": {
+          "lat": 41.901399,
+          "lng": 12.494751
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Executive Room",
+          "Amenities": [
+            "Air conditioning",
+            "Minibar",
+            "Flat-screen TV",
+            "Free Wi-Fi",
+            "Safe",
+            "Nespresso coffee machine"
+          ],
+          "Inclusions": ["Buffet breakfast", "Free access to the spa"],
+          "OriginalPricePerNight": 260,
+          "Discount": 15
+        },
+        "About": [
+          "Hotel Artemide offers a unique experience in the heart of Rome. The hotel combines contemporary design with traditional Italian hospitality, creating a warm and welcoming atmosphere. The hotel's central location makes it easy to explore the city's many attractions."
+        ],
+        "Facility": [
+          "Rooftop terrace with panoramic views of Rome",
+          "Spa and wellness center",
+          "Restaurant and bar",
+          "Fitness center"
+        ],
+        "Location": {
+          "lat": 41.901399,
+          "lng": 12.494751
+        }
+      }
+    ]
+  },
+  {
+    "HotelId": 10,
+    "HotelName": "Hotel Splendide Royal Roma",
+    "Location": {
+      "City": "Roma",
+      "State": "",
+      "Country": "Italia"
+    },
+    "About": {
+      "PhoneNumber": "+39 06 421689",
+      "CountryCode": "+39",
+      "Email": "info@splendideroyal.com",
+      "HotelDescription": "Este lujoso hotel en un edificio del siglo XIX se encuentra a 9 minutos a pie de la Piazza di Spagna y a 1,6 km del Coliseo. Las habitaciones elegantes tienen techos altos y obras de arte, además de minibar, televisión y conexión Wi-Fi gratuita. Algunas tienen balcones y vistas a la ciudad. Las suites incluyen zonas de estar separadas; una tiene una bañera con patas y otra cuenta con una terraza con jacuzzi. El desayuno buffet se sirve en un elegante comedor, mientras que el bar del vestíbulo ofrece bebidas y aperitivos. Hay un gimnasio y un centro de negocios.",
+      "StarRating": 5,
+      "ReviewNumber": 944,
+      "Tags": ["Lujoso", "Histórico", "Centro de la ciudad"],
+      "SpecialTags": "",
+      "PopularityNumber": 9,
+      "DateAdded": "2022-02-23",
+      "TrendingNumber": 45,
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/SplendideRoyalRoma/",
+        "Twitter": "https://twitter.com/splendide_roma",
+        "Instagram": "https://www.instagram.com/hotelsplendideroyal/",
+        "GooglePlus": ""
+      },
+      "Reviews": [
+        {
+          "Rating": 5,
+          "User": "Carla M.",
+          "Date": "2022-02-15",
+          "HotelReview": "Excelente servicio, habitaciones espaciosas y cómodas, muy bien ubicado. Sin duda volvería."
+        },
+        {
+          "Rating": 4.5,
+          "User": "Paolo R.",
+          "Date": "2022-01-27",
+          "HotelReview": "El hotel es increíble, la ubicación, el servicio y las habitaciones son excepcionales, solo el precio es un poco alto."
+        },
+        {
+          "Rating": 4.5,
+          "User": "Sofia B.",
+          "Date": "2022-01-10",
+          "HotelReview": "Estuvimos muy contentos con nuestra estancia en este hotel. Todo fue perfecto, desde el registro hasta la salida. Las habitaciones son muy bonitas y cómodas."
+        }
+      ],
+      "Policies": [
+        "Check-in: desde las 15:00 horas",
+        "Check-out: hasta las 12:00 horas",
+        "No se admiten mascotas."
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Habitación Deluxe",
+          "Amenities": [
+            "Baño privado",
+            "Wi-Fi gratuito",
+            "Minibar",
+            "Televisión de pantalla plana",
+            "Caja fuerte",
+            "Aire acondicionado"
+          ],
+          "Inclusions": ["Desayuno", "Servicio"],
+          "OriginalPricePerNight": 2457,
+          "Discount": 24
+        },
+        "About": [],
+        "Facility": [],
+        "Location": {
+          "lat": 0,
+          "lng": 0
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Junior Suite",
+          "Amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Minibar",
+            "Air conditioning",
+            "Safe",
+            "Tea and coffee making facilities",
+            "Separate living area"
+          ],
+          "Inclusions": [
+            "Daily buffet breakfast",
+            "Access to the fitness center",
+            "Access to the spa"
+          ],
+          "OriginalPricePerNight": 700,
+          "Discount": 10
+        },
+        "About": [
+          "The Splendide Royal Roma is a luxury hotel located in the heart of Rome. The hotel is housed in a restored 19th-century palace and features elegant rooms and suites with stunning views of the city.",
+          "The Junior Suite is a spacious room with a separate living area and a range of amenities to ensure a comfortable and relaxing stay. Guests can enjoy a range of in-room amenities, including free Wi-Fi, a flat-screen TV, a minibar, and tea and coffee making facilities.",
+          "The hotel also features a fitness center and spa, as well as a rooftop restaurant with panoramic views of the city. Whether you're visiting Rome for business or pleasure, the Splendide Royal Roma is the perfect place to stay."
+        ],
+        "Facility": [
+          "Fitness center",
+          "Spa",
+          "Rooftop restaurant",
+          "Bar",
+          "24-hour front desk",
+          "Concierge service",
+          "Currency exchange",
+          "Laundry service"
+        ],
+        "Location": {
+          "lat": 41.906109,
+          "lng": 12.483114
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Deluxe Suite",
+          "Amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Minibar",
+            "Air conditioning",
+            "Safe",
+            "Tea and coffee making facilities",
+            "Separate living area",
+            "Private balcony"
+          ],
+          "Inclusions": [
+            "Daily buffet breakfast",
+            "Access to the fitness center",
+            "Access to the spa",
+            "Round-trip airport transfer"
+          ],
+          "OriginalPricePerNight": 1500,
+          "Discount": 15
+        },
+        "About": [
+          "The Deluxe Suite at the Splendide Royal Roma is the ultimate luxury experience. This spacious suite features a separate living area, a private balcony with stunning views of Rome, and a range of amenities to ensure a comfortable and relaxing stay.",
+          "Guests can enjoy a range of in-room amenities, including free Wi-Fi, a flat-screen TV, a minibar, and tea and coffee making facilities. The suite also includes access to the hotel's fitness center and spa, as well as a round-trip airport transfer.",
+          "Whether you're visiting Rome for business or pleasure, the Deluxe Suite at the Splendide Royal Roma is the perfect place to stay."
+        ],
+        "Facility": [
+          "Fitness center",
+          "Spa",
+          "Rooftop restaurant",
+          "Bar",
+          "24-hour front desk",
+          "Concierge service",
+          "Currency exchange",
+          "Laundry service"
+        ],
+        "Location": {
+          "lat": 41.906109,
+          "lng": 12.483114
+        }
+      }
+    ]
+  },
+  {
+    "HotelId": 0,
+    "HotelName": "Hotel Hassler Roma",
+    "Location": {
+      "City": "Roma",
+      "State": "",
+      "Country": "Italia"
+    },
+    "About": {
+      "PhoneNumber": "+39 06 6993 40",
+      "CountryCode": "+39",
+      "Email": "hassler@hotelhassler.it",
+      "HotelDescription": "Located at the top of the Spanish Steps, the Hotel Hassler Roma offers elegant rooms and suites, a panoramic restaurant, and a luxury spa.",
+      "StarRating": 5,
+      "ReviewNumber": 723,
+      "Tags": ["Luxury", "Panoramic Views", "Spa"],
+      "SpecialTags": "Travelers' Choice 2021 Winner",
+      "PopularityNumber": "#2 of 1,399 hotels in Rome",
+      "DateAdded": "2021-03-09",
+      "TrendingNumber": "+18% in searches",
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/hotelhasslerroma",
+        "Twitter": "https://twitter.com/hotelhassler",
+        "Instagram": "https://www.instagram.com/hotelhasslerroma",
+        "GooglePlus": ""
+      },
+      "Reviews": [
+        {
+          "Rating": 5,
+          "User": "John Smith",
+          "Date": "2022-02-14",
+          "HotelReview": "The Hotel Hassler Roma exceeded our expectations. The staff was incredibly friendly and helpful, the room was spacious and luxurious, and the view from the rooftop restaurant was breathtaking."
+        },
+        {
+          "Rating": 4,
+          "User": "Mary Johnson",
+          "Date": "2021-12-28",
+          "HotelReview": "We enjoyed our stay at the Hotel Hassler Roma. The location was perfect, the room was comfortable and clean, and the breakfast was delicious. The only downside was the high price."
+        },
+        {
+          "Rating": 5,
+          "User": "David Lee",
+          "Date": "2021-11-05",
+          "HotelReview": "My wife and I stayed at the Hotel Hassler Roma for our anniversary and it was wonderful. The staff went out of their way to make our stay special, the room was beautiful, and the spa treatments were top-notch."
+        }
+      ],
+      "Policies": [
+        "Check-in time: 2:00 PM",
+        "Check-out time: 12:00 PM",
+        "Cancellation policy: Free cancellation up to 24 hours before arrival"
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Classic Double Room",
+          "Amenities": ["Air conditioning", "Minibar", "Flat-screen TV"],
+          "Inclusions": ["Free Wi-Fi", "Breakfast"],
+          "OriginalPricePerNight": 580,
+          "Discount": 10
+        },
+        "About": [
+          "The Classic Double Room is elegantly furnished and features a marble bathroom with a bathtub and shower. The room also includes a work desk and a seating area."
+        ],
+        "Facility": ["Spa", "Rooftop restaurant", "Fitness center"],
+        "Location": {
+          "lat": 41.9052749,
+          "lng": 12.4811557
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Deluxe Room with City View",
+          "Amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Minibar",
+            "Air conditioning",
+            "Safe",
+            "Tea and coffee making facilities"
+          ],
+          "Inclusions": [
+            "Daily buffet breakfast",
+            "Access to the fitness center",
+            "Access to the spa"
+          ],
+          "OriginalPricePerNight": 550,
+          "Discount": 15
+        },
+        "About": [
+          "Located in the heart of Rome, the Hassler Roma is a luxury hotel offering stunning views of the city. The hotel is just a short walk from many of Rome's most popular attractions, including the Spanish Steps and the Trevi Fountain.",
+          "The hotel features elegant rooms and suites, each with its own unique character and charm. Guests can enjoy a range of amenities, including a fitness center, a spa, and a rooftop restaurant with panoramic views of the city.",
+          "Whether you're visiting Rome for business or pleasure, the Hassler Roma is the perfect place to stay."
+        ],
+        "Facility": [
+          "Fitness center",
+          "Spa",
+          "Rooftop restaurant",
+          "Bar",
+          "24-hour front desk",
+          "Concierge service",
+          "Currency exchange",
+          "Laundry service"
+        ],
+        "Location": {
+          "lat": 41.9046972,
+          "lng": 12.4822199
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Executive Suite with Terrace",
+          "Amenities": [
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Minibar",
+            "Air conditioning",
+            "Safe",
+            "Tea and coffee making facilities",
+            "Separate living area",
+            "Private terrace"
+          ],
+          "Inclusions": [
+            "Daily buffet breakfast",
+            "Access to the fitness center",
+            "Access to the spa",
+            "Round-trip airport transfer"
+          ],
+          "OriginalPricePerNight": 1200,
+          "Discount": 20
+        },
+        "About": [
+          "The Executive Suite with Terrace at the Hassler Roma is the ultimate luxury experience. This spacious suite features a separate living area, a private terrace with stunning views of Rome, and a range of amenities to ensure a comfortable and relaxing stay.",
+          "Guests can enjoy a range of in-room amenities, including free Wi-Fi, a flat-screen TV, a minibar, and tea and coffee making facilities. The suite also includes access to the hotel's fitness center and spa, as well as a round-trip airport transfer.",
+          "Whether you're visiting Rome for business or pleasure, the Executive Suite with Terrace at the Hassler Roma is the perfect place to stay."
+        ],
+        "Facility": [
+          "Fitness center",
+          "Spa",
+          "Rooftop restaurant",
+          "Bar",
+          "24-hour front desk",
+          "Concierge service",
+          "Currency exchange",
+          "Laundry service"
+        ],
+        "Location": {
+          "lat": 41.9046972,
+          "lng": 12.4822199
         }
       }
     ]
