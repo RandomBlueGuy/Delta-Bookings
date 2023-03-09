@@ -1,48 +1,104 @@
 [
   {
-    "HotelId": 0,                                                   
-    "HotelName": "string(short)",                                                 
-    "Location": {                                                   
-      "City": "string(short)",                                                   
-      "State": "string(short)",                                                  
-      "Country": "string(short)"                                                 
+    "HotelId": 0,
+    "HotelName": "THE LANGHAM",
+    "Location": {
+      "City": "New York City",
+      "State": "New York State",
+      "Country": "United States"
     },
-    "About": {                                                      
-      "PhoneNumber": "text(000 0000 0000)",       
-      "CountryCode" : "number(00)",                                        
-      "Email": "string(short)",
-      "HotelDescription": "string(short paragraph)",                                   
-      "StarRating": "number(1-5)",
-      "ReviewNumber": "number(10000 - 100000)",
-      "Tags": ["arrays(short-strings) [2 - 3max]"],
-      "SpecialTags": "string(choose between Certified - Recommended)",
-      "PopularityNumber": "number(1-1000)",
-      "DateAdded": "string(date DD/MM/YYYY)",
-      "TrendingNumber": "number(1-1000)",
+    "About": {
+      "PhoneNumber": " 212-695-4005",
+      "CountryCode": "+1",
+      "Email": "tlnyc.info@langhamhotels.com",
+      "HotelDescription": "Centrally located in the city, The Langham, New York, Fifth Avenue is a convenient base for all your big city adventures. Iconic cultural attractions and shopping destinations, like The Grand Central Station and Times Square, are just a short walk away.",
+      "StarRating": 4.5,
+      "ReviewNumber": 6589,
+      "Tags": ["Swimming", "Parking"],
+      "SpecialTags": "Certified",
+      "PopularityNumber": "3",
+      "DateAdded": "09/03/2023",
+      "TrendingNumber": "426",
       "SocialNetworkLinks": {
-        "Facebook": "URL",
-        "Instagram": "URL",
-        "Twitter": "URL",
-        "GooglePlus": "URL"
-      }
+        "Facebook": "http://www.facebook.com/LanghamNYC/",
+        "Twitter": "http://www.instagram.com/LanghamNYC/",
+        "Instagram": "http://www.twitter.com/LanghamNYC",
+        "GooglePlus": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      },
+      "Reviews": [
+        {
+          "Rating": 4,
+          "User": "Manolo Suarez",
+          "Date": "02/09/2021",
+          "HotelReview": "We have just had 5 nights in Barcelona and stayed at hotel market for one night. First impressions were great, entrance is impressive with the boutique style and lovely restaurant and then we went to our room....this is where is was all a bit random, there was a pillar right in front of the door which was weird, a massive picture at the end of the bed which was freaky and beds so hard it was like sleeping on wood. We tried to have a nap when we arrived but there was drilling etc going on somewhere in the hotel. Shower is also mixer so you have to spend ages getting the right temperature. Would I stay there again? Probably not, however it was cheap and actually nothing really bad but just a little random. Staff I must say were great, extremely friendly and helpful :)"
+        },
+        {
+          "Rating": 2,
+          "User": "Marianita Gonzales",
+          "Date": "02/06/2001",
+          "HotelReview": "We had an excellent stay at this hotel during the Catalan Day weekend. Location is great, service outstanding. The pool and bar at the top floor were great and the service was outstanding and vert friendly. Will certainly go back next time"
+        },
+        {
+          "Rating": 5,
+          "User": "AnyBody",
+          "Date": "02/09/2021",
+          "HotelReview": "NICE :)"
+        }
+      ],
+      "Policies": [
+        "PLEASE READ THESE TERMS AND CONDITIONS (“Terms and Conditions”) CAREFULLY BEFORE USING THIS SITE. THIS IS A BINDING LEGAL AGREEMENT. BY ACCESSING AND CONTINUING TO USE THE SITE, YOU AGREE TO EACH AND EVERY ONE OF THESE TERMS AND CONDITIONS. PLEASE DO NOT USE THE SITE IF YOU DO NOT AGREE TO EACH AND EVERY ONE OF THESE TERMS AND CONDITIONS.",
+        "The term “Site” refers to this website and any other website, app or platform owned, operated, or licensed by Langham that displays these Terms & Conditions (or a link to them). The Site may include websites, mobile websites, and other Internet-enabled or wireless means (such downloadable or preloaded software applications) as by which we make content available to you or receive content from you.",
+        "As used throughout the Site, including these Terms and Conditions, the terms “Langham,” “the Company,” “our,” “we,” “us,” and other similar terms may refer Langham Hotels International Limited, or one or more of its parent company, its direct or indirect subsidiaries or affiliates, members hotel under the management or operation or conts",
+        "These Terms and Conditions are last updated on March 10, 2022. Langham reserves the right, at its sole discretion, to change, modify, add or remove portions of these Terms and Conditions, at any time without notice other than by posting amended terms and conditions to the Site. Your continued use of the Site following the posting of changes will mean that you accept and agree to the changes."
+      ]
     },
     "Rooms": [
       {
         "card": {
-          "RoomName": "string(Deluxe-etc...)(ROOMS X HOTEL => 2 - 3)",
-          "Amenities": ["array(STRING)[4-5]"],
-          "Inclusions": ["array(STRING)[3-4]"],
-          "OriginalPricePerNight": "number(200 - 2000)",
-          "Discount": "number(percent 10 - 50)"
+          "RoomName": "DELUXE ROOM",
+          "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 544,
+          "Discount": 30
         },
-        "About": ["array(strings)"],
-        "Facility": ["array(strings)"],
+        "About": ["From Level 5 to 17 - Separate shower and deep soaking tub"],
+        "Facility": [
+          "Fifth Avenue or City View - Floors 5 to 17 - Max occupancy of 3 with Rollaway bed"
+        ],
         "Location": {
           "lat": 0,
           "lng": 0
+        }
+      },
+      {
+        "card": {
+          "RoomName": "EXECUTIVE CLUB ROOM",
+          "Amenities": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 900,
+          "Discount": 20
         },
-        "Reviews": ["array(strings)"],
-        "Policies": ["array(strings)"]
+        "About": ["Includes daily access to The Langham Club for two"],
+        "Facility": ["Fifth Avenue or City View - Floor 12 to 27"],
+        "Location": {
+          "lat": 0,
+          "lng": 0
+        }
+      },
+      {
+        "card": {
+          "RoomName": "DELUXE ROOM WITH TERRACE",
+          "Amenities": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "OriginalPricePerNight": 1230,
+          "Discount": 20
+        },
+        "About": ["Courtyard View - 5th Floor - Max Occupancy of 2"],
+        "Facility": ["Fifth Avenue or City View - Floor 28"],
+        "Location": {
+          "lat": 0,
+          "lng": 0
+        }
       }
     ]
   }
