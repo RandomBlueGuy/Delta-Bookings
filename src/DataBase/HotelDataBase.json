@@ -16,9 +16,9 @@
       "ReviewNumber": 6589,
       "Tags": ["Swimming", "Parking"],
       "SpecialTags": "Certified",
-      "PopularityNumber": "3",
+      "PopularityNumber": 3,
       "DateAdded": "09/03/2023",
-      "TrendingNumber": "426",
+      "TrendingNumber": 426,
       "SocialNetworkLinks": {
         "Facebook": "http://www.facebook.com/LanghamNYC/",
         "Twitter": "http://www.instagram.com/LanghamNYC/",
@@ -91,7 +91,7 @@
           "Amenities": ["Wi-Fi", "Breakfast", "Non Refundable"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
           "OriginalPricePerNight": 1230,
-          "Discount": 20
+          "Discount": 30
         },
         "About": ["Courtyard View - 5th Floor - Max Occupancy of 2"],
         "Facility": ["Fifth Avenue or City View - Floor 28"],
