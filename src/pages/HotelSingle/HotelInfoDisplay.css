@@ -68,3 +68,16 @@
 .HotelInfoDisplay-ctn img {
 	width: 300px;
 }
+
+@media (max-width: 720px) {
+	.HotelInfoDisplay-tabs{
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.HotelInfoDisplay-tabs button{
+		width: 25%;
+	}
+
+}

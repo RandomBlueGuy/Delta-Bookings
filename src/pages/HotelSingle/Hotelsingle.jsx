@@ -23,6 +23,7 @@ export default function Hotelsingle() {
 						<section className="hotel__ctn-displayCard">
 							<HotelCard />
 							<HotelCard />
+							<HotelCard />
 						</section>
 						{/* <section className="contact"> */}
 					</div>

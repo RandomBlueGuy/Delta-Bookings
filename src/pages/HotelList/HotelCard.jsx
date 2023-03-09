@@ -34,8 +34,8 @@ function HotelCard({hotelNum=0}) {
         <div className="price-tags">
           <h4>[OLD PRICE]</h4>
           <h3>[PRICE]</h3>
-          <p className="tags">[TAG 1]</p>
-          <p className="tags">[TAG 2]</p>
+          <p className="tags">[TAG]</p>
+          <p className="tags">[TAG]</p>
         </div>
       </section>
     </main>

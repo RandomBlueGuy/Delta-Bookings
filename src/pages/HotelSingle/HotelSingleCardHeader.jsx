@@ -9,8 +9,11 @@ function HotelSingleCardHeader() {
 		<main className="HotelSingleCardHeader-ctn">
 			<section className="HotelSingleCardHeader-general-info">
 				<div className="general-info-title">
-					<h1>[HOTEL NAME HERE]</h1>
-					<StarRating />
+					<h1>[HOTEL NAME]</h1>
+					<div className="info-unnecessary">
+						<StarRating className="hotelsingle-displayer" />
+					</div>
+
 					<button>
 						<img
 							src={shareIcon}

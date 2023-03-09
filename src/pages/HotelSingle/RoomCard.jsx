@@ -11,6 +11,7 @@ import {
 	faCheck,
 	faSwimmingPool,
 } from '@fortawesome/free-solid-svg-icons';
+
 function RoomCard() {
 	return (
 		<main className="RoomCard-ctn">

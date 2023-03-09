@@ -28,8 +28,8 @@
 
 .hotel__ctn-displayCard {
 	display: flex;
-	justify-content: space-evenly;
-	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
+	justify-content: space-between;
+	gap: 1rem;
 }
 
 .contactInfo__display {
@@ -53,7 +53,6 @@
 	width: 100%;
 	display: flex;
 	gap: 2rem;
-	flex-wrap: nowrap;
 }
 
 .container-column1 {
@@ -71,17 +70,41 @@
 	max-width: 30%;
 }
 
+
 @media (max-width: 720px) {
-
-
-	.HotelList-displayer{
+	.HotelList-displayer {
 		width: 100%;
 		align-items: center;
 		justify-content: center;
 	}
 
-	.hotels__container-columns {
-		flex-direction: column;
+	.hotel__single-container {
+		width: 90%;
 	}
 
+	.hotels__container-columns {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.container-column1 {
+		max-width: 100%;
+	}
+
+	.container-column2 {
+		max-width: 100%;
+	}
+
+	.hotel__ctn-displayCard {
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.RoomCard-table-price{
+		display: flex;
+		align-items: left;
+		justify-content: left;
+	}
 }

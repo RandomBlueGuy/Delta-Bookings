@@ -1,0 +1,49 @@
+[
+  {
+    "HotelId": 0,                                                   
+    "HotelName": "string(short)",                                                 
+    "Location": {                                                   
+      "City": "string(short)",                                                   
+      "State": "string(short)",                                                  
+      "Country": "string(short)"                                                 
+    },
+    "About": {                                                      
+      "PhoneNumber": "text(000 0000 0000)",       
+      "CountryCode" : "number(00)",                                        
+      "Email": "string(short)",
+      "HotelDescription": "string(short paragraph)",                                   
+      "StarRating": "number(1-5)",
+      "ReviewNumber": "number(10000 - 100000)",
+      "Tags": ["arrays(short-strings) [2 - 3max]"],
+      "SpecialTags": "string(choose between Certified - Recommended)",
+      "PopularityNumber": "number(1-1000)",
+      "DateAdded": "string(date DD/MM/YYYY)",
+      "TrendingNumber": "number(1-1000)",
+      "SocialNetworkLinks": {
+        "Facebook": "URL",
+        "Instagram": "URL",
+        "Twitter": "URL",
+        "GooglePlus": "URL"
+      }
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "string(Deluxe-etc...)(ROOMS X HOTEL => 2 - 3)",
+          "Amenities": ["array(STRING)[4-5]"],
+          "Inclusions": ["array(STRING)[3-4]"],
+          "OriginalPricePerNight": "number(200 - 2000)",
+          "Discount": "number(percent 10 - 50)"
+        },
+        "About": ["array(strings)"],
+        "Facility": ["array(strings)"],
+        "Location": {
+          "lat": 0,
+          "lng": 0
+        },
+        "Reviews": ["array(strings)"],
+        "Policies": ["array(strings)"]
+      }
+    ]
+  }
+]
