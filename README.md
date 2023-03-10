@@ -1,4 +1,5 @@
- <h1>What is Delta Bookings?</h1>
+<title>WELCOME TO DELTA BOOKINGS</title>
+<h1>What is Delta Bookings?</h1>
           <p>
             Delta Bookings is the project we decided to take as part of our
             study plan at Make It Real. It is a fully fledged website we
