@@ -1,6 +1,5 @@
 import React from "react";
 import "./HotelCard.css";
-import placeholderImg from "../../assets/Images/placeholder-card.png";
 import heartEmptyIcon from "../../assets/Icons/heartEmpty.svg";
 import locationIcon from "../../assets/Icons/location.svg";
 import StarRating from "../UniversalComponents/StarRating";
@@ -9,7 +8,7 @@ function HotelCard({hotelNum=0}) {
   return (
     <main className="hotel-card">
       <figure>
-        <img className="hotel-pic" src={placeholderImg} alt="" />
+        <img className="hotel-pic" src="https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front1.jpeg" alt="" />
         <div className="heart-ctn">
           <img className="love-icon" src={heartEmptyIcon} alt="" />
         </div>

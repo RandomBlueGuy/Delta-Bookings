@@ -10,6 +10,13 @@
       "Country": "United States"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front1.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel1.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel9.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel3.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel10.jpeg"
+      ],
       "PhoneNumber": " 212-695-4005",
       "CountryCode": "+1",
       "Email": "tlnyc.info@langhamhotels.com",
@@ -57,6 +64,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room4.jpeg",
           "RoomName": "DELUXE ROOM",
           "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -74,6 +82,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room5.jpeg",
           "RoomName": "EXECUTIVE CLUB ROOM",
           "Amenities": ["Wi-Fi", "Breakfast", "Non Refundable"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -89,6 +98,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room6.jpeg",
           "RoomName": "DELUXE ROOM WITH TERRACE",
           "Amenities": ["Wi-Fi", "Breakfast", "Non Refundable"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -115,6 +125,13 @@
       "Country": "United States"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front2.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel10.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel19.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel13.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel8.jpeg"
+      ],
       "PhoneNumber": "212-753-1066",
       "CountryCode": "+1",
       "Email": "info@elyseehotel.com",
@@ -167,6 +184,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room7.jpeg",
           "RoomName": "Deluxe Room with Queen Bed",
           "Amenities": ["Queen", "Shower", "LCD TV", "Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -184,6 +202,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room8.jpeg",
           "RoomName": "Deluxe Accessible Queen",
           "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -201,6 +220,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room9.jpeg",
           "RoomName": "Deluxe Room with King Bed",
           "Amenities": ["King/Twin", "Shower", "LCD TV", "Better Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -218,6 +238,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room25.jpeg",
           "RoomName": "King Suite ",
           "Amenities": ["King", "Pool", "LCD TV", "Better Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -246,6 +267,13 @@
       "Country": "United States"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front3.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel15.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel9.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel13.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel1.jpeg"
+      ],
       "PhoneNumber": "866 940 9361",
       "CountryCode": "+1",
       "Email": "plazareservation@fairmont.com",
@@ -292,6 +320,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room36.jpeg",
           "RoomName": "Plaza King",
           "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Refundable"],
@@ -309,6 +338,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room16.jpeg",
           "RoomName": "Deluxe King",
           "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -326,6 +356,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room6.jpeg",
           "RoomName": "Terrace Room King",
           "Amenities": ["King/Twin", "Shower", "LCD TV", "Better Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -354,6 +385,13 @@
       "Country": "United States"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front4.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel2.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel3.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel4.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel5.jpeg"
+      ],
       "PhoneNumber": "212-787-3447",
       "CountryCode": "+1",
       "Email": "Mariott@mariott.com",
@@ -400,6 +438,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room10.jpeg",
           "RoomName": "Dior Suite",
           "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -417,6 +456,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room11.jpeg",
           "RoomName": "Milano Suite",
           "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -434,6 +474,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room12.jpeg",
           "RoomName": "Bentley Suite",
           "Amenities": ["King/Twin", "Shower", "LCD TV", "Better Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
@@ -462,6 +503,13 @@
       "Country": "United States"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front5.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel6.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel7.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel8.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel9.jpeg"
+      ],
       "PhoneNumber": "310-276-2251",
       "CountryCode": "+1",
       "Email": "bhhotel.reservations@dorchestercollection.com",
@@ -508,6 +556,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room13.jpeg",
           "RoomName": "Deluxe King Room",
           "Amenities": ["King Bed", "Shower", "LCD TV", "Sofa Bed"],
           "Inclusions": ["Wi-Fi", "Breakfast"],
@@ -525,6 +574,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room14.jpeg",
           "RoomName": "Executive Suite",
           "Amenities": [
             "King Bed",
@@ -548,6 +598,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room15.jpeg",
           "RoomName": "Deluxe Double Room",
           "Amenities": ["Two Double Beds", "Shower", "LCD TV", "Armchair"],
           "Inclusions": ["Wi-Fi", "Breakfast"],
@@ -576,6 +627,13 @@
       "Country": "United States"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front6.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel11.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel12.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel13.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel14.jpeg"
+      ],
       "PhoneNumber": "+1 310-273-2222",
       "CountryCode": "+1",
       "Email": "losangeles.reservations@fourseasons.com",
@@ -622,6 +680,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room16.jpeg",
           "RoomName": "Deluxe Guest Room",
           "Amenities": ["King Bed", "Shower", "LCD TV", "Sofa Bed"],
           "Inclusions": ["Wi-Fi", "Breakfast"],
@@ -639,6 +698,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room17.jpeg",
           "RoomName": "Executive Suite",
           "Amenities": [
             "King Bed",
@@ -661,6 +721,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room17.jpeg",
           "RoomName": "Club Level Room",
           "Amenities": [
             "King Bed",
@@ -692,6 +753,13 @@
       "Country": "Italia"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front7.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel15.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel16.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel7.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel18.jpeg"
+      ],
       "PhoneNumber": "+39 06 4899 1",
       "CountryCode": "+39",
       "Email": "info@grandhotelpalaceroma.com",
@@ -738,6 +806,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room18.jpeg",
           "RoomName": "Habitación Deluxe",
           "Amenities": [
             "Aire acondicionado",
@@ -760,6 +829,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room19.jpeg",
           "RoomName": "Deluxe Room",
           "Amenities": [
             "Free Wi-Fi",
@@ -786,6 +856,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room20.jpeg",
           "RoomName": "Executive Suite",
           "Amenities": [
             "Free Wi-Fi",
@@ -822,6 +893,13 @@
       "Country": "Italia"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front8.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel18.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel19.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel20.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel10.jpeg"
+      ],
       "PhoneNumber": "+39 06 47812",
       "CountryCode": "+39",
       "Email": "info@hotel-eden-roma.com",
@@ -869,6 +947,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room21.jpeg",
           "RoomName": "Habitación Superior",
           "Amenities": [
             "Aire acondicionado",
@@ -896,6 +975,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room22.jpeg",
           "RoomName": "Habitación Doble Clásica",
           "Amenities": [
             "Aire acondicionado",
@@ -918,6 +998,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room23.jpeg",
           "RoomName": "Suite",
           "Amenities": [
             "Air conditioning",
@@ -956,6 +1037,13 @@
       "Country": "Italia"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front9.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel1.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel3.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel5.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel7.jpeg"
+      ],
       "PhoneNumber": "+39 06 489911",
       "CountryCode": "+39",
       "Email": "info@hotelartemide.it",
@@ -1008,6 +1096,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room24.jpeg",
           "RoomName": "Habitación Doble Clásica",
           "Amenities": [
             "Wi-Fi gratuito",
@@ -1032,6 +1121,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room25.jpeg",
           "RoomName": "Classic Room",
           "Amenities": [
             "Air conditioning",
@@ -1060,6 +1150,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room26.jpeg",
           "RoomName": "Executive Room",
           "Amenities": [
             "Air conditioning",
@@ -1098,6 +1189,13 @@
       "Country": "Italia"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front10.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel7.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel9.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel12.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel14.jpeg"
+      ],
       "PhoneNumber": "+39 06 421689",
       "CountryCode": "+39",
       "Email": "info@splendideroyal.com",
@@ -1144,6 +1242,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room27.jpeg",
           "RoomName": "Habitación Deluxe",
           "Amenities": [
             "Baño privado",
@@ -1166,6 +1265,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room28.jpeg",
           "RoomName": "Junior Suite",
           "Amenities": [
             "Free Wi-Fi",
@@ -1206,6 +1306,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room29.jpeg",
           "RoomName": "Deluxe Suite",
           "Amenities": [
             "Free Wi-Fi",
@@ -1257,6 +1358,13 @@
       "Country": "Italia"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front11.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel16.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel19.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel3.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel7.jpeg"
+      ],
       "PhoneNumber": "+39 06 6993 40",
       "CountryCode": "+39",
       "Email": "hassler@hotelhassler.it",
@@ -1303,6 +1411,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room30.jpeg",
           "RoomName": "Classic Double Room",
           "Amenities": ["Air conditioning", "Minibar", "Flat-screen TV"],
           "Inclusions": ["Free Wi-Fi", "Breakfast"],
@@ -1320,6 +1429,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room31.jpeg",
           "RoomName": "Deluxe Room with City View",
           "Amenities": [
             "Free Wi-Fi",
@@ -1359,6 +1469,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room32.jpeg",
           "RoomName": "Executive Suite with Terrace",
           "Amenities": [
             "Free Wi-Fi",
@@ -1410,6 +1521,13 @@
       "Country": "Mexico"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front12.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel14.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel17.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel6.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel12.jpeg"
+      ],
       "PhoneNumber": " +52 (55) 10850830",
       "CountryCode": "+52",
       "Email": "reservaciones@hotelmetropol.com.mx",
@@ -1452,6 +1570,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room33.jpeg",
           "RoomName": "Habitación Doble",
           "Amenities": ["Air conditioning", "Safe Box", "Pet Friendly"],
           "Inclusions": ["Free Wi-Fi", "Breakfast"],
@@ -1469,6 +1588,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room34.jpeg",
           "RoomName": "Habitación Triple",
           "Amenities": ["Free Wi-Fi", "Air conditioning", "Pet Friendly"],
           "Inclusions": ["Breakfast", "Free Wi-Fi"],
@@ -1486,6 +1606,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room35.jpeg",
           "RoomName": "Habitación Cuádruple",
           "Amenities": ["Free Wi-Fi", "Air conditioning", "Pet Friendly"],
           "Inclusions": ["Breakfast", "Free Wi-Fi"],
@@ -1514,6 +1635,13 @@
       "Country": "Mexico"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front13.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel1.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel20.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel10.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel15.jpeg"
+      ],
       "PhoneNumber": " +52 (55) 55221920 ",
       "CountryCode": "+52",
       "Email": "contacto@hotelcastropol.com",
@@ -1564,6 +1692,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room36.jpeg",
           "RoomName": "Habitación Doble Estandar",
           "Amenities": ["Desk lamp", "Safe Box", "Satelital TV"],
           "Inclusions": ["Free Wi-Fi", "Breakfast"],
@@ -1581,6 +1710,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room37.jpeg",
           "RoomName": "Habitación Doble Estandar Con Camas Dobles",
           "Amenities": ["Desk lamp", "Safe Box", "Satelital TV"],
           "Inclusions": ["Free Wi-Fi", "Breakfast"],
@@ -1608,6 +1738,13 @@
       "Country": "Mexico"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front14.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel16.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel2.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel6.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel13.jpeg"
+      ],
       "PhoneNumber": " 52 (55) 5515 1299 ",
       "CountryCode": "+52",
       "Email": "reservaciones.escandon@kalihoteles.com",
@@ -1654,6 +1791,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room38.jpeg",
           "RoomName": "Junior Suite Doble Con Jacuzzi",
           "Amenities": ["Shower and Tub", "Safe Box", "Fire System"],
           "Inclusions": ["Free Wi-Fi", "Breakfast"],
@@ -1671,6 +1809,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room39.jpeg",
           "RoomName": "Habitación Premier Doble",
           "Amenities": ["Shower and Tub", "Safe Box", "Fire System"],
           "Inclusions": ["Free Wi-Fi", "Breakfast"],
@@ -1689,6 +1828,7 @@
 
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room40.jpeg",
           "RoomName": "Kali Suite",
           "Amenities": ["Shower and Tub", "Safe Box", "Fire System"],
           "Inclusions": ["Free Wi-Fi", "Breakfast"],
@@ -1717,6 +1857,13 @@
       "Country": "Mexico"
     },
     "About": {
+      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front15.jpeg",
+      "Gallery": [
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel11.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel19.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel13.jpeg",
+        "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel15.jpeg"
+      ],
       "PhoneNumber": " 52 (55) 5229 1200 ",
       "CountryCode": "+52",
       "Email": "divctos@marquisreforma.com",
@@ -1764,6 +1911,7 @@
     "Rooms": [
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room1.jpeg",
           "RoomName": "Habitacion de Lujo 1 King o 2 Dobles",
           "Amenities": [
             "Shower and Tub",
@@ -1786,6 +1934,7 @@
       },
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room2.jpeg",
           "RoomName": "Master Suite",
           "Amenities": [
             "Shower and Tub",
@@ -1809,6 +1958,7 @@
 
       {
         "card": {
+          "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room3.jpeg",
           "RoomName": "Marquis Loft",
           "Amenities": [
             "Shower and Tub",
