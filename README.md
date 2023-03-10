@@ -83,6 +83,7 @@ npm start
 
 # **Acknowledgments**
 
-- MIR (Make It Real)
+- [MIR (Make It Real)](https://makeitreal.camp)
 - Sergio Jaramillo
-- El alcoholismo que me ha permitido llegar hasta aquí
+- [W3Schools](https://www.w3schools.com/)
+- [StackOverflow](https://stackoverflow.com)
