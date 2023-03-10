@@ -1,5 +1,21 @@
-<title>WELCOME TO DELTA BOOKINGS</title>
-<h1>What is Delta Bookings?</h1>
+# WELCOME TO DELTA BOOKINGS
+
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)s
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+
+
+#What is Delta Bookings?
           <p>
             Delta Bookings is the project we decided to take as part of our
             study plan at Make It Real. It is a fully fledged website we
@@ -32,8 +48,8 @@
             consist of:
           </p>
           <ul>
-            <li>GitHub.com</li>
-            <li>Visual Studio Code</li>
             <li>React</li>
-            <li>etc</li>
+            <li>FontAwesome</li>
+            <li>Material UI</li>
+            <li></li>
           </ul>
