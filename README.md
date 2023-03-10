@@ -1,17 +1,18 @@
-# WELCOME TO DELTA BOOKINGS
+# **WELCOME TO DELTA BOOKINGS!**
 
-## Table of contents
+## **Table of contents**
 
 - [What is Delta Bookings?](#what-is-Delta-Bookings?)
 - [Usability]("#usability)
   - [Tools used](#tools-used)
   - [Basic Commands](#basic-commands)
-- [Authors](#author)
+- [Screenshots](#screenshots)
+- [Authors](#authors)
 - [Acknowledgments](#acknowledgments)
 
 <br />
 
-# What is Delta Bookings?
+# **What is Delta Bookings?**
 
   Delta Bookings is the project we decided to take as part of our
   study plan at Make It Real. It is a fully fledged website we
@@ -25,9 +26,9 @@
   reservations all around the world. All the results are filtered by
   city and preferred date.
 
-<br /><br />
+<br />
 
-# Usability
+# **Usability**
 
   Users should be capable of:
 
@@ -40,9 +41,9 @@
   * Review their reservations
   * Access the site on desktop and mobile devices
 
-<br /><br />
+<br />
 
-## Tools Used
+## **Tools Used**
 
   The software, Libraries, API’s & platforms used for this project
   consist of:
@@ -52,26 +53,32 @@
   - FontAwesome
   - Material UI
   ```
-<br /><br />
+<br />
 
-## Basic Commands
+## **Basic Commands**
 Some basic Git commands are:
 
   ```
   npm install
   npm start
   ```
-<br /><br />
+<br />
 
-# Authors
+# **Screenshots**
+
+[Wallpapers here]
+
+<br />
+
+# **Authors**
 
   * Oscar Núñez
   * Michael Sáenz
   * Andrés Camilo Vélez
 
-<br /><br />
+<br />
 
-# Acknowledgments
+# **Acknowledgments**
 
   * MIR (Make It Real)
   * Sergio Jaramillo
