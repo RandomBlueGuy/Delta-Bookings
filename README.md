@@ -1,4 +1,4 @@
-<title>WELCOME TO DELTA BOOKINGS</title>
+# WELCOME TO DELTA BOOKINGS
 <h1>What is Delta Bookings?</h1>
           <p>
             Delta Bookings is the project we decided to take as part of our
@@ -32,8 +32,8 @@
             consist of:
           </p>
           <ul>
-            <li>GitHub.com</li>
-            <li>Visual Studio Code</li>
             <li>React</li>
-            <li>etc</li>
+            <li>FontAwesome</li>
+            <li>Material UI</li>
+            <li></li>
           </ul>
