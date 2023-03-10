@@ -711,19 +711,19 @@
       },
       "Reviews": [
         {
-          "Rating": 9.2,
+          "Rating": 4.2,
           "User": "Maria G.",
           "Date": "2022-02-20",
           "HotelReview": "El hotel es simplemente espectacular, todo es de primera calidad. El personal es muy amable y servicial. La habitación era amplia y cómoda, con una vista impresionante de la ciudad."
         },
         {
-          "Rating": 8.5,
+          "Rating": 4.5,
           "User": "John D.",
           "Date": "2022-01-15",
           "HotelReview": "El hotel está muy bien ubicado y es muy lujoso. El servicio es excelente y las habitaciones son muy cómodas. El único inconveniente es el precio, que es bastante elevado."
         },
         {
-          "Rating": 9.5,
+          "Rating": 3.5,
           "User": "Sarah T.",
           "Date": "2021-12-10",
           "HotelReview": "Este hotel es simplemente excepcional. El personal es muy amable y servicial, y las instalaciones son de primera categoría. La ubicación es perfecta para explorar la ciudad."
@@ -841,19 +841,19 @@
       },
       "Reviews": [
         {
-          "Rating": 9.0,
+          "Rating": 4,
           "User": "John Smith",
           "Date": "2022-02-20",
           "HotelReview": "Increíble hotel, muy elegante y cómodo. El servicio es excepcional y las vistas desde la terraza son impresionantes."
         },
         {
-          "Rating": 9.5,
+          "Rating": 4.5,
           "User": "Maria García",
           "Date": "2022-01-10",
           "HotelReview": "Mi estancia en el Hotel Eden fue maravillosa. El personal es muy amable y el hotel está impecablemente limpio. Las vistas desde la habitación son impresionantes."
         },
         {
-          "Rating": 10,
+          "Rating": 5,
           "User": "Peter Johnson",
           "Date": "2021-12-15",
           "HotelReview": "No puedo decir suficientes cosas buenas sobre el Hotel Eden. La ubicación es perfecta y las vistas son impresionantes. El personal es excepcionalmente amable y servicial. Definitivamente volveré."
@@ -1249,7 +1249,7 @@
     ]
   },
   {
-    "HotelId": 0,
+    "HotelId": 11,
     "HotelName": "Hotel Hassler Roma",
     "Location": {
       "City": "Roma",
@@ -1399,11 +1399,10 @@
           "lng": 12.4822199
         }
       }
-      
     ]
   },
   {
-    "HotelId": 100,
+    "HotelId": 12,
     "HotelName": "Hotel Metropol",
     "Location": {
       "City": "Mexico D.F",
@@ -1448,10 +1447,7 @@
           "HotelReview": "Hotel muy céntrico, lo mejor es la ubicación. El precio no es caro comparando con los alrededores, pero le sobran estrellas.."
         }
       ],
-      "Policies": [
-        "Check-in time: 2:00 PM",
-        "Check-out time: 11:00 AM"
-      ]
+      "Policies": ["Check-in time: 2:00 PM", "Check-out time: 11:00 AM"]
     },
     "Rooms": [
       {
@@ -1459,7 +1455,7 @@
           "RoomName": "Habitación Doble",
           "Amenities": ["Air conditioning", "Safe Box", "Pet Friendly"],
           "Inclusions": ["Free Wi-Fi", "Breakfast"],
-          "OriginalPricePerNight": 64.20,
+          "OriginalPricePerNight": 64.2,
           "Discount": 10
         },
         "About": [
@@ -1474,23 +1470,15 @@
       {
         "card": {
           "RoomName": "Habitación Triple",
-          "Amenities": [
-            "Free Wi-Fi",
-            "Air conditioning",
-            "Pet Friendly"
-          ],
-          "Inclusions": [
-            "Breakfast", "Free Wi-Fi"
-            ],
+          "Amenities": ["Free Wi-Fi", "Air conditioning", "Pet Friendly"],
+          "Inclusions": ["Breakfast", "Free Wi-Fi"],
           "OriginalPricePerNight": 79.88,
           "Discount": 15
         },
         "About": [
           "Cómoda habitación triple en viaje de negocios o placer. El Hotel esta ubicado en el corazón de la zona Rosa en la Ciudad de México"
         ],
-        "Facility": [
-          "Event Rooms", "Boardroom", "Fitness Center"
-        ],
+        "Facility": ["Event Rooms", "Boardroom", "Fitness Center"],
         "Location": {
           "lat": 19.433269268228695,
           "lng": -99.1451415534691
@@ -1499,23 +1487,15 @@
       {
         "card": {
           "RoomName": "Habitación Cuádruple",
-          "Amenities": [
-           "Free Wi-Fi",
-            "Air conditioning",
-            "Pet Friendly"
-          ],
-          "Inclusions": [
-            "Breakfast", "Free Wi-Fi"
-          ],
+          "Amenities": ["Free Wi-Fi", "Air conditioning", "Pet Friendly"],
+          "Inclusions": ["Breakfast", "Free Wi-Fi"],
           "OriginalPricePerNight": 89.22,
           "Discount": 20
         },
         "About": [
           "Cómoda habitación cuádruple en viaje de negocios o placer. El Hotel esta ubicado en el corazón de la zona Rosa en la Ciudad de México"
         ],
-        "Facility": [
-      "Event Rooms", "Boardroom", "Fitness Center"
-        ],
+        "Facility": ["Event Rooms", "Boardroom", "Fitness Center"],
         "Location": {
           "lat": 19.433269268228695,
           "lng": -99.1451415534691
@@ -1525,7 +1505,7 @@
   },
 
   {
-    "HotelId": 101,
+    "HotelId": 13,
     "HotelName": "Hotel Castropol",
     "Location": {
       "Place": "Av. Pino Suarez #58 Col. Centro del Cuauhtémoc",
@@ -1540,7 +1520,12 @@
       "HotelDescription": "Un espacio tranquilo ubicado en pleno centro histórico de CDMX. Las 85 habitaciones del hotel Castropol son dormitorios diseñados para ofrecerte el mejor descanso durante tus vacaciones, en un ambiente seguro, limpio y cómodo.",
       "StarRating": 4.5,
       "ReviewNumber": 100,
-      "Tags": ["Business Center", "Good Comunications", "Good Location", "Touristic Informations"],
+      "Tags": [
+        "Business Center",
+        "Good Comunications",
+        "Good Location",
+        "Touristic Informations"
+      ],
       "SpecialTags": "Easy access to the downtown",
       "PopularityNumber": "5",
       "DateAdded": "2019-04-08",
@@ -1593,14 +1578,14 @@
           "lat": 19.426995950974554,
           "lng": -99.13259048580133
         }
-      }, 
+      },
       {
         "card": {
-        "RoomName": "Habitación Doble Estandar Con Camas Dobles",
-        "Amenities": ["Desk lamp", "Safe Box", "Satelital TV"],
-        "Inclusions": ["Free Wi-Fi", "Breakfast"],
-        "OriginalPricePerNight": 200,
-        "Discount": 10
+          "RoomName": "Habitación Doble Estandar Con Camas Dobles",
+          "Amenities": ["Desk lamp", "Safe Box", "Satelital TV"],
+          "Inclusions": ["Free Wi-Fi", "Breakfast"],
+          "OriginalPricePerNight": 200,
+          "Discount": 10
         },
         "About": [
           "Las habitaciones dobles estándar con dos camas dobles del hotel Castropol te ofrecen un extra de espacio en tus vacaciones. Con una capacidad máxima de hasta 4 personas."
@@ -1613,8 +1598,8 @@
       }
     ]
   },
-   {
-    "HotelId": 102,
+  {
+    "HotelId": 14,
     "HotelName": "Hotel Kali Escandón",
     "Location": {
       "Place": "Av. José Martí No. 178, Escandón I Secc, Miguel Hidalgo",
@@ -1669,7 +1654,7 @@
     "Rooms": [
       {
         "card": {
-          "RoomName": "Junior Suite Doble Con Jacuzzi" ,
+          "RoomName": "Junior Suite Doble Con Jacuzzi",
           "Amenities": ["Shower and Tub", "Safe Box", "Fire System"],
           "Inclusions": ["Free Wi-Fi", "Breakfast"],
           "OriginalPricePerNight": 93.21,
@@ -1683,14 +1668,14 @@
           "lat": 19.402075954229737,
           "lng": -99.17747854233332
         }
-      }, 
+      },
       {
-       "card": {
-       "RoomName": "Habitación Premier Doble" ,
-       "Amenities": ["Shower and Tub", "Safe Box", "Fire System"],
-       "Inclusions": ["Free Wi-Fi", "Breakfast"],
-       "OriginalPricePerNight": 93.74,
-       "Discount": 10
+        "card": {
+          "RoomName": "Habitación Premier Doble",
+          "Amenities": ["Shower and Tub", "Safe Box", "Fire System"],
+          "Inclusions": ["Free Wi-Fi", "Breakfast"],
+          "OriginalPricePerNight": 93.74,
+          "Discount": 10
         },
         "About": [
           "Con una ubicación privilegiada, principalmente en las esquinas del hotel, nuestras 14 Habitaciones Premier Doble (31 m2.) disponen de dos camas matrimoniales, aire acondicionado, calefaccion, cafetera, TV 45’’, Bluetooth play music, Internet Wifi gratis y detalles de lujo."
@@ -1703,12 +1688,12 @@
       },
 
       {
-       "card": {
-       "RoomName": "Kali Suite" ,
-       "Amenities": ["Shower and Tub", "Safe Box", "Fire System"],
-       "Inclusions": ["Free Wi-Fi", "Breakfast"],
-       "OriginalPricePerNight": 201.38,
-       "Discount": 10
+        "card": {
+          "RoomName": "Kali Suite",
+          "Amenities": ["Shower and Tub", "Safe Box", "Fire System"],
+          "Inclusions": ["Free Wi-Fi", "Breakfast"],
+          "OriginalPricePerNight": 201.38,
+          "Discount": 10
         },
         "About": [
           "Nuestra Kali Suite cuenta con una cama king size, jacuzzi al aire libre, amplia terraza e impresionante vista panorámica de la CDMX. Esta lujosa habitación te sorprenderá con su inigualable diseño, brindando espacios creados con un excelente gusto y calidez contemporánea"
@@ -1719,12 +1704,11 @@
           "lng": -99.17747854233332
         }
       }
-
     ]
   },
 
-   {
-    "HotelId": 103,
+  {
+    "HotelId": 15,
     "HotelName": "Hotel Marquis Reforma",
     "Location": {
       "Place": "Paseo de la Reforma 465, Col. Cuauhtémoc",
@@ -1764,7 +1748,7 @@
           "HotelReview": "El hotel muy bonito, las habitaciones muy limpias, camas muy cómodas, clima al gusto, pantalla de televisión grande con muchos canales, etc, el personal de servicio muy atento y amable, el desayuno bufet estaba exquisito"
         },
         {
-          "Rating": 5,
+          "Rating": 3,
           "User": "Israel Garces",
           "Date": "2023-01-03",
           "HotelReview": "Ampliamente recomendado, te hacen sentir muy bien, un servicio espectacular y las habitaciones también están muy bien"
@@ -1780,8 +1764,13 @@
     "Rooms": [
       {
         "card": {
-          "RoomName": "Habitacion de Lujo 1 King o 2 Dobles" ,
-          "Amenities": ["Shower and Tub", "Safe Box", "Fire System", "Bathroom's Phone"],
+          "RoomName": "Habitacion de Lujo 1 King o 2 Dobles",
+          "Amenities": [
+            "Shower and Tub",
+            "Safe Box",
+            "Fire System",
+            "Bathroom's Phone"
+          ],
           "Inclusions": ["Free Wi-Fi", "Breakfast", "Desserts"],
           "OriginalPricePerNight": 80.81,
           "Discount": 10
@@ -1794,14 +1783,19 @@
           "lat": 19.424985803234893,
           "lng": -99.17361538801889
         }
-      }, 
+      },
       {
-     "card": {
-        "RoomName": "Master Suite" ,
-        "Amenities": ["Shower and Tub", "Panomaric View", "Fire System", "Bathroom's Phone"],
-        "Inclusions": ["Free Wi-Fi", "Breakfast", "Desserts"],
-        "OriginalPricePerNight": 135.90,
-        "Discount": 10
+        "card": {
+          "RoomName": "Master Suite",
+          "Amenities": [
+            "Shower and Tub",
+            "Panomaric View",
+            "Fire System",
+            "Bathroom's Phone"
+          ],
+          "Inclusions": ["Free Wi-Fi", "Breakfast", "Desserts"],
+          "OriginalPricePerNight": 135.9,
+          "Discount": 10
         },
         "About": [
           "Master Suite Reforma de Lujo, 70 mts2. Esta habitación de tres módulos con una increíble vista panorámica de la Ciudad de México ofrece un perfecto ambiente tanto para un viaje de negocios como para una celebración especial "
@@ -1814,12 +1808,17 @@
       },
 
       {
-      "card": {
-        "RoomName": "Marquis Loft" ,
-        "Amenities": ["Shower and Tub", "Panomaric View", "Fire System", "Bathroom's Phone"],
-        "Inclusions": ["Free Wi-Fi", "Breakfast", "Desserts"],
-        "OriginalPricePerNight": 224,
-        "Discount": 10
+        "card": {
+          "RoomName": "Marquis Loft",
+          "Amenities": [
+            "Shower and Tub",
+            "Panomaric View",
+            "Fire System",
+            "Bathroom's Phone"
+          ],
+          "Inclusions": ["Free Wi-Fi", "Breakfast", "Desserts"],
+          "OriginalPricePerNight": 224,
+          "Discount": 10
         },
         "About": [
           "Loft Suite, 80 mt2, Nueva suite en último piso cuenta con Smart TV FHD de 65 y acceso a internet, 2 capsulas de nespresso por dia, lustrado de calzado, planchado de 1 pieza por dia"
@@ -1830,8 +1829,6 @@
           "lng": -99.17361538801889
         }
       }
-
     ]
   }
-
 ]

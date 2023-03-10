@@ -1,56 +1,62 @@
-import React, { useState } from 'react';
-import './HotelListPagination.css';
+import React, { useState } from "react";
+import "./HotelListPagination.css";
 
 function HotelListPagination({ maxNpages, actualPage, setActualPage }) {
-	const specialChar = ['<<', '>>'];
+  const specialChar = ["<<", ">>"];
 
-	const firstPage = () => {
-		setActualPage(0);
-	};
+  const firstPage = () => {
+    setActualPage(0);
+  };
 
-	const nextPage = () => {
-		setActualPage(actualPage + 1);
-	};
+  const nextPage = () => {
+    setActualPage(actualPage + 1);
+  };
 
-	const prePage = () => {
-		setActualPage(actualPage - 1);
+  const prePage = () => {
+    setActualPage(actualPage - 1);
+  };
 
-	};
+  const lastPage = () => {
+    setActualPage(maxNpages - 1);
+  };
 
-	const lastPage = () => {
-		setActualPage(maxNpages - 1);
-
-	};
-
-	return (
-		<div className="pagination-ctn">
-			<button
-				className={actualPage > 0 ? 'act-chk' : 'dis-chk'}
-				disabled={actualPage > 0 ? false : true}
-				onClick={firstPage}>
-				{specialChar[0]}
-			</button>
-			<button
-				className={actualPage > 0 ? 'act-chk' : 'dis-chk'}
-				disabled={actualPage > 0 ? false : true}
-				onClick={prePage}>
-				{actualPage }
-			</button>
-			<input type="text" className="actual" placeholder= {`${actualPage +1} / ${maxNpages}`}></input>
-			<button
-				className={actualPage < maxNpages - 1 ? 'act-chk' : 'dis-chk'}
-				disabled={actualPage < maxNpages - 1 ? false : true}
-				onClick={nextPage}>
-				{actualPage + 2}
-			</button>
-			<button
-				className={actualPage < maxNpages - 1 ? 'act-chk' : 'dis-chk'}
-				disabled={actualPage < maxNpages - 1 ? false : true}
-				onClick={lastPage}>
-				{specialChar[1]}
-			</button>
-		</div>
-	);
+  return (
+    <div className="pagination-ctn">
+      <button
+        className={actualPage > 0 ? "act-chk" : "dis-chk"}
+        disabled={actualPage > 0 ? false : true}
+        onClick={firstPage}
+      >
+        {specialChar[0]}
+      </button>
+      <button
+        className={actualPage > 0 ? "act-chk" : "dis-chk"}
+        disabled={actualPage > 0 ? false : true}
+        onClick={prePage}
+      >
+        {actualPage}
+      </button>
+      <input
+        type="text"
+        className="actual"
+        placeholder={`${actualPage + 1} / ${maxNpages}`}
+      ></input>
+      <button
+        className={actualPage < maxNpages - 1 ? "act-chk" : "dis-chk"}
+        disabled={actualPage < maxNpages - 1 ? false : true}
+        onClick={nextPage}
+      >
+        {actualPage + 2}
+      </button>
+      <button
+        className={actualPage < maxNpages - 1 ? "act-chk" : "dis-chk"}
+        disabled={actualPage < maxNpages - 1 ? false : true}
+        onClick={lastPage}
+      >
+        {specialChar[1]}
+      </button>
+    </div>
+  );
 }
 
 export default HotelListPagination;
