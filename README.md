@@ -1,55 +1,78 @@
 # WELCOME TO DELTA BOOKINGS
 
-
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)s
-  - [Screenshot](#screenshot)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
+- [What is Delta Bookings?](#what-is-Delta-Bookings?)
+- [Usability]("#usability)
+  - [Tools used](#tools-used)
+  - [Basic Commands](#basic-commands)
+- [Authors](#author)
 - [Acknowledgments](#acknowledgments)
 
+<br />
 
-#What is Delta Bookings?
-          <p>
-            Delta Bookings is the project we decided to take as part of our
-            study plan at Make It Real. It is a fully fledged website we
-            developed from the ground up, be it design, front-end and back-end
-            functionality, we made it. Of course, it was only possible due to
-            the help of our mentors at Make It real, as well as some extra help
-            we got along the way.
-          </p>
-          <p>
-            So, to answer the question, what is “Delta Bookings”? It is an
-            application designed to allow the user to search and book hotel
-            reservations all around the world. All the results are filtered by
-            city and preferred date.
-          </p>
-          <h1>Usability</h1>
-          <p>Users should be capable of:</p>
-          <ul>
-            <li>Log-in / log-out</li>
-            <li>Change & recover passwords</li>
-            <li>Search Hotels by city / date</li>
-            <li>Get more details from any hotel</li>
-            <li>Book a reservation</li>
-            <li>Get emails with their reservation information</li>
-            <li>Review their reservations</li>
-            <li>Access the site on desktop and mobile devices</li>
-          </ul>
-          <h1>Tools used</h1>
-          <p>
-            The software, Libraries, API’s & platforms used for this project
-            consist of:
-          </p>
-          <ul>
-            <li>React</li>
-            <li>FontAwesome</li>
-            <li>Material UI</li>
-            <li></li>
-          </ul>
+# What is Delta Bookings?
+
+  Delta Bookings is the project we decided to take as part of our
+  study plan at Make It Real. It is a fully fledged website we
+  developed from the ground up, be it design, front-end and back-end
+  functionality, we made it. Of course, it was only possible due to
+  the help of our mentors at Make It real, as well as some extra help
+  we got along the way.
+
+  So, to answer the question, what is “Delta Bookings”? It is an
+  application designed to allow the user to search and book hotel
+  reservations all around the world. All the results are filtered by
+  city and preferred date.
+
+<br /><br />
+
+# Usability
+
+  Users should be capable of:
+
+  * Log-in / log-out
+  * Change & recover passwords
+  * Search Hotels by city / date
+  * Get more details from any hotel
+  * Book a reservation
+  * Get emails with their reservation information
+  * Review their reservations
+  * Access the site on desktop and mobile devices
+
+<br /><br />
+
+## Tools Used
+
+  The software, Libraries, API’s & platforms used for this project
+  consist of:
+
+  ```
+  - React
+  - FontAwesome
+  - Material UI
+  ```
+<br /><br />
+
+## Basic Commands
+Some basic Git commands are:
+
+  ```
+  npm install
+  npm start
+  ```
+<br /><br />
+
+# Authors
+
+  * Oscar Núñez
+  * Michael Sáenz
+  * Andrés Camilo Vélez
+
+<br /><br />
+
+# Acknowledgments
+
+  * MIR (Make It Real)
+  * Sergio Jaramillo
+  * El alcoholismo que me ha permitido llegar hasta aquí
