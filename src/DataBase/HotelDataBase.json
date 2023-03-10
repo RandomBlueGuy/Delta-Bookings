@@ -1399,6 +1399,439 @@
           "lng": 12.4822199
         }
       }
+      
+    ]
+  },
+  {
+    "HotelId": 100,
+    "HotelName": "Hotel Metropol",
+    "Location": {
+      "City": "Mexico D.F",
+      "State": "D.F",
+      "Country": "Mexico"
+    },
+    "About": {
+      "PhoneNumber": " +52 (55) 10850830",
+      "CountryCode": "+52",
+      "Email": "reservaciones@hotelmetropol.com.mx",
+      "HotelDescription": "El Hotel Metropol de México se encuentra en el centro de la Ciudad de México, ubicado a solo unos pasos de la Alameda Central, el Palacio de Bellas Artes y a 5 min. del Zócalo.",
+      "StarRating": 4,
+      "ReviewNumber": 200,
+      "Tags": ["Placing", "Good Prices", "Spa"],
+      "SpecialTags": "",
+      "PopularityNumber": "",
+      "DateAdded": "2022-03-10",
+      "TrendingNumber": "",
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/hotelmetropolcdmx",
+        "Twitter": "",
+        "Instagram": "https://www.instagram.com/hotelmetropol2020/",
+        "GooglePlus": ""
+      },
+      "Reviews": [
+        {
+          "Rating": 5,
+          "User": "Arturo Sánchez",
+          "Date": "2022-11-12",
+          "HotelReview": "Para ser domingo a media noche los recepcionistas nos trataron bien. Tiene un estacionamiento muy seguro. Las recámaras, un poco pasadas de moda, pero para el precio está perfecto, no huele mal, pero tampoco bien, se escucha un poco el ruido de las habitaciones, las camas son cómodas"
+        },
+        {
+          "Rating": 4,
+          "User": "Alma Sosa",
+          "Date": "2023-01-14",
+          "HotelReview": "El lugar está bastante céntrico sin problema para registrarse. Limpio. Solo un tanto ruidoso los alrededores."
+        },
+        {
+          "Rating": 3,
+          "User": "Juan Combarro ",
+          "Date": "2022-07-05",
+          "HotelReview": "Hotel muy céntrico, lo mejor es la ubicación. El precio no es caro comparando con los alrededores, pero le sobran estrellas.."
+        }
+      ],
+      "Policies": [
+        "Check-in time: 2:00 PM",
+        "Check-out time: 11:00 AM"
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Habitación Doble",
+          "Amenities": ["Air conditioning", "Safe Box", "Pet Friendly"],
+          "Inclusions": ["Free Wi-Fi", "Breakfast"],
+          "OriginalPricePerNight": 64.20,
+          "Discount": 10
+        },
+        "About": [
+          "Cómoda habitación para dos personas en viaje de negocios o placer. El Hotel esta ubicado en el corazón de la zona Rosa en la Ciudad de México"
+        ],
+        "Facility": ["Event Rooms", "Boardroom", "Fitness Center"],
+        "Location": {
+          "lat": 19.433269268228695,
+          "lng": -99.1451415534691
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Habitación Triple",
+          "Amenities": [
+            "Free Wi-Fi",
+            "Air conditioning",
+            "Pet Friendly"
+          ],
+          "Inclusions": [
+            "Breakfast", "Free Wi-Fi"
+            ],
+          "OriginalPricePerNight": 79.88,
+          "Discount": 15
+        },
+        "About": [
+          "Cómoda habitación triple en viaje de negocios o placer. El Hotel esta ubicado en el corazón de la zona Rosa en la Ciudad de México"
+        ],
+        "Facility": [
+          "Event Rooms", "Boardroom", "Fitness Center"
+        ],
+        "Location": {
+          "lat": 19.433269268228695,
+          "lng": -99.1451415534691
+        }
+      },
+      {
+        "card": {
+          "RoomName": "Habitación Cuádruple",
+          "Amenities": [
+           "Free Wi-Fi",
+            "Air conditioning",
+            "Pet Friendly"
+          ],
+          "Inclusions": [
+            "Breakfast", "Free Wi-Fi"
+          ],
+          "OriginalPricePerNight": 89.22,
+          "Discount": 20
+        },
+        "About": [
+          "Cómoda habitación cuádruple en viaje de negocios o placer. El Hotel esta ubicado en el corazón de la zona Rosa en la Ciudad de México"
+        ],
+        "Facility": [
+      "Event Rooms", "Boardroom", "Fitness Center"
+        ],
+        "Location": {
+          "lat": 19.433269268228695,
+          "lng": -99.1451415534691
+        }
+      }
+    ]
+  },
+
+  {
+    "HotelId": 101,
+    "HotelName": "Hotel Castropol",
+    "Location": {
+      "Place": "Av. Pino Suarez #58 Col. Centro del Cuauhtémoc",
+      "City": "Mexico D.F",
+      "State": "D.F",
+      "Country": "Mexico"
+    },
+    "About": {
+      "PhoneNumber": " +52 (55) 55221920 ",
+      "CountryCode": "+52",
+      "Email": "contacto@hotelcastropol.com",
+      "HotelDescription": "Un espacio tranquilo ubicado en pleno centro histórico de CDMX. Las 85 habitaciones del hotel Castropol son dormitorios diseñados para ofrecerte el mejor descanso durante tus vacaciones, en un ambiente seguro, limpio y cómodo.",
+      "StarRating": 4.5,
+      "ReviewNumber": 100,
+      "Tags": ["Business Center", "Good Comunications", "Good Location", "Touristic Informations"],
+      "SpecialTags": "Easy access to the downtown",
+      "PopularityNumber": "5",
+      "DateAdded": "2019-04-08",
+      "TrendingNumber": "N/A",
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/HotelCastropolMX/",
+        "Twitter": "https://twitter.com/HotelCastropol",
+        "Instagram": "https://www.instagram.com/hotelcastropol/",
+        "Pinterest": ""
+      },
+      "Reviews": [
+        {
+          "Rating": 4,
+          "User": "Roxana Gomez",
+          "Date": "2022-09-17",
+          "HotelReview": "Muy buena ubicación bien céntrico y cercano al metro y parada de autobuses. El restaurante ofrece variedad de platos y tiene buenos precios."
+        },
+        {
+          "Rating": 5,
+          "User": "Edgar Araya",
+          "Date": "2023-02-22",
+          "HotelReview": "Todo muy bueno y limpio lástima que aun haya un poco de mal servicio en el restaurante (aclaro no todos solo como dos de las personas que laboran allí)"
+        },
+        {
+          "Rating": 3,
+          "User": "María Eugenia Landa",
+          "Date": "2022-09-22",
+          "HotelReview": "Magnífica ubicación cerca del centro histórico y con muy buena oferta de transporte público a unos pasos, personal amable, instalaciones limpias, comida sabrosa a precio accesible en el restaurante y ambiente familiar. "
+        }
+      ],
+      "Policies": [
+        "Check-in time: 14:00 PM- 22:00 PM",
+        "Check-out time: 13:00 PM"
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Habitación Doble Estandar",
+          "Amenities": ["Desk lamp", "Safe Box", "Satelital TV"],
+          "Inclusions": ["Free Wi-Fi", "Breakfast"],
+          "OriginalPricePerNight": 200,
+          "Discount": 10
+        },
+        "About": [
+          "Las habitaciones dobles estándar del hotel Castropol son estancias acogedoras de 15m2 con capacidad para dos personas"
+        ],
+        "Facility": ["Lobby", "Laundry", "Bar"],
+        "Location": {
+          "lat": 19.426995950974554,
+          "lng": -99.13259048580133
+        }
+      }, 
+      {
+        "card": {
+        "RoomName": "Habitación Doble Estandar Con Camas Dobles",
+        "Amenities": ["Desk lamp", "Safe Box", "Satelital TV"],
+        "Inclusions": ["Free Wi-Fi", "Breakfast"],
+        "OriginalPricePerNight": 200,
+        "Discount": 10
+        },
+        "About": [
+          "Las habitaciones dobles estándar con dos camas dobles del hotel Castropol te ofrecen un extra de espacio en tus vacaciones. Con una capacidad máxima de hasta 4 personas."
+        ],
+        "Facility": ["Lobby", "Laundry", "Bar"],
+        "Location": {
+          "lat": 19.426995950974554,
+          "lng": -99.13259048580133
+        }
+      }
+    ]
+  },
+   {
+    "HotelId": 102,
+    "HotelName": "Hotel Kali Escandón",
+    "Location": {
+      "Place": "Av. José Martí No. 178, Escandón I Secc, Miguel Hidalgo",
+      "City": "Mexico D.F",
+      "State": "D.F",
+      "Country": "Mexico"
+    },
+    "About": {
+      "PhoneNumber": " 52 (55) 5515 1299 ",
+      "CountryCode": "+52",
+      "Email": "reservaciones.escandon@kalihoteles.com",
+      "HotelDescription": "Relájate, conoce y disfruta de una experiencia diferente de hospedaje. Todas las habitaciones en Kali Escandón  se encuentran diseñadas para ofrecerte una estancia perfecta, con todas las comodidades y exigencias del mundo actual, pero con un toque de lujo y exclusividad que te mereces.",
+      "StarRating": 4.5,
+      "ReviewNumber": 12,
+      "Tags": ["Gym", "Restaurant", "Good Location", "360º Photo Galeries"],
+      "SpecialTags": "Kayak Travel Awards 2022",
+      "PopularityNumber": "5",
+      "DateAdded": "2020-05-30",
+      "TrendingNumber": "",
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/Hotel-Escandon-232684136933758/",
+        "Twitter": "https://twitter.com/Kali_Hoteles",
+        "Instagram": "https://www.instagram.com/kali_hoteles/",
+        "Pinterest": ""
+      },
+      "Reviews": [
+        {
+          "Rating": 4,
+          "User": "Luis Rojas",
+          "Date": "2023-01-12",
+          "HotelReview": "Este hotel siempre me ha quedado bien. Aparte de que esta muy limpio, amplio y cómodo, está bien ubicado, tiene precios contenidos y el bufete que incluyen para el desayuno es bueno"
+        },
+        {
+          "Rating": 5,
+          "User": "Maria Guadalupe Mondragón",
+          "Date": "2023-01-30",
+          "HotelReview": "Me encanta, me he hospedado en varias ocasiones y el servicio es muy bueno, las habitaciones son grandes y las camas súper cómodas, el personal muy amable, lo súper recomiendo, tiene estacionamiento gratis =)"
+        },
+        {
+          "Rating": 4,
+          "User": "Carlos Méndez",
+          "Date": "2022-11-23",
+          "HotelReview": "Excelente precio, la habitación enorme con todo lo necesario y una cama cómoda, el único pero que le pongo fue su personal del restaurante que no ofrecieron un buen servicio, fuera de ello, todo muy bien"
+        }
+      ],
+      "Policies": [
+        "Check-in time: 14:00 PM",
+        "Check-out time: 13:00 PM",
+        "Las interrupciones de disponibilidad de la información motivada por desconexión de la red Internet, averías en la red, causas de fuerza mayor o no controlables por el mismo. Los daños producidos por virus informáticos. De las consecuencias derivadas del mal uso de los contenidos de la página web llevado a cabo por los usuarios."
+      ]
+    },
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Junior Suite Doble Con Jacuzzi" ,
+          "Amenities": ["Shower and Tub", "Safe Box", "Fire System"],
+          "Inclusions": ["Free Wi-Fi", "Breakfast"],
+          "OriginalPricePerNight": 93.21,
+          "Discount": 10
+        },
+        "About": [
+          "Si lo que necesitas es realajarte pero viajas en familia, tenemos la habitacion perfecta para ti, nuestras unicas 2 Junior Suite Doble con Jacuzzi, disponen de 2 magnificas camas king size y un amplio jacuzzi"
+        ],
+        "Facility": ["Personal Restaurant", "Exclusive Floor", "Bar"],
+        "Location": {
+          "lat": 19.402075954229737,
+          "lng": -99.17747854233332
+        }
+      }, 
+      {
+       "card": {
+       "RoomName": "Habitación Premier Doble" ,
+       "Amenities": ["Shower and Tub", "Safe Box", "Fire System"],
+       "Inclusions": ["Free Wi-Fi", "Breakfast"],
+       "OriginalPricePerNight": 93.74,
+       "Discount": 10
+        },
+        "About": [
+          "Con una ubicación privilegiada, principalmente en las esquinas del hotel, nuestras 14 Habitaciones Premier Doble (31 m2.) disponen de dos camas matrimoniales, aire acondicionado, calefaccion, cafetera, TV 45’’, Bluetooth play music, Internet Wifi gratis y detalles de lujo."
+        ],
+        "Facility": ["Personal Restaurant", "Exclusive Floor", "Bar"],
+        "Location": {
+          "lat": 19.402075954229737,
+          "lng": -99.17747854233332
+        }
+      },
+
+      {
+       "card": {
+       "RoomName": "Kali Suite" ,
+       "Amenities": ["Shower and Tub", "Safe Box", "Fire System"],
+       "Inclusions": ["Free Wi-Fi", "Breakfast"],
+       "OriginalPricePerNight": 201.38,
+       "Discount": 10
+        },
+        "About": [
+          "Nuestra Kali Suite cuenta con una cama king size, jacuzzi al aire libre, amplia terraza e impresionante vista panorámica de la CDMX. Esta lujosa habitación te sorprenderá con su inigualable diseño, brindando espacios creados con un excelente gusto y calidez contemporánea"
+        ],
+        "Facility": ["Personal Restaurant", "Exclusive Floor", "Bar"],
+        "Location": {
+          "lat": 19.402075954229737,
+          "lng": -99.17747854233332
+        }
+      }
+
+    ]
+  },
+
+   {
+    "HotelId": 103,
+    "HotelName": "Hotel Marquis Reforma",
+    "Location": {
+      "Place": "Paseo de la Reforma 465, Col. Cuauhtémoc",
+      "City": "Mexico D.F",
+      "State": "D.F",
+      "Country": "Mexico"
+    },
+    "About": {
+      "PhoneNumber": " 52 (55) 5229 1200 ",
+      "CountryCode": "+52",
+      "Email": "divctos@marquisreforma.com",
+      "HotelDescription": "En el corazón de la histórica Ciudad de México, sobre el majestuoso Paseo de la Reforma, este icónico hotel estilo Art Decó cuenta con la mejor ubicación que nos permite disfrutar de las riquezas culturales gastronómicas y de una impecable belleza natural a sólo pasos del bosque y castillo de Chapultepec. Rodeado de las principales torres de negocios de la cosmopolita ciudad, disfrute de una experiencia única con la reconocida calidez de nuestro servicio.",
+      "StarRating": 5,
+      "ReviewNumber": 8,
+      "Tags": ["Gym", "Events", "Gastronomy", "Weddings"],
+      "SpecialTags": "Member of The Leading Hotels of The World",
+      "PopularityNumber": "2",
+      "DateAdded": "2018-05-30",
+      "TrendingNumber": "",
+      "SocialNetworkLinks": {
+        "Facebook": "https://www.facebook.com/hotelmarquisreforma",
+        "Twitter": "",
+        "Instagram": "https://www.instagram.com/marquisreforma/",
+        "Pinterest": "https://www.pinterest.com.mx/marquisreforma/"
+      },
+      "Reviews": [
+        {
+          "Rating": 5,
+          "User": "Fernando Tapia",
+          "Date": "2022-12-05",
+          "HotelReview": "Un hotel digno de recomendar, si bien es cierto tiene sus años, sigue manteniendo un nivel de servicio alto con excelente atención al cliente, desde la entrada, elevadores y habitaciones super limpias"
+        },
+        {
+          "Rating": 5,
+          "User": "Magdalena Dominguez",
+          "Date": "2023-01-22",
+          "HotelReview": "El hotel muy bonito, las habitaciones muy limpias, camas muy cómodas, clima al gusto, pantalla de televisión grande con muchos canales, etc, el personal de servicio muy atento y amable, el desayuno bufet estaba exquisito"
+        },
+        {
+          "Rating": 5,
+          "User": "Israel Garces",
+          "Date": "2023-01-03",
+          "HotelReview": "Ampliamente recomendado, te hacen sentir muy bien, un servicio espectacular y las habitaciones también están muy bien"
+        }
+      ],
+      "Policies": [
+        "Check-in time: 15:00 PM",
+        "Check-out time: 12:00 AM",
+        "MARQUIS REFORMA HOTEL & SPA solicita los datos personales de sus Huéspedes con la finalidad de: (i) identificarlos, (ii) reservar una habitación y/o hospedarse en el hotel; (iii) darle seguimiento y atender las reservaciones de huéspedes, (iv) confirmar reservaciones; (v) saber si se necesita una atención especial para personas con discapacidad o aquellos con algún tipo de dieta específica"
+      ]
+    },
+
+    "Rooms": [
+      {
+        "card": {
+          "RoomName": "Habitacion de Lujo 1 King o 2 Dobles" ,
+          "Amenities": ["Shower and Tub", "Safe Box", "Fire System", "Bathroom's Phone"],
+          "Inclusions": ["Free Wi-Fi", "Breakfast", "Desserts"],
+          "OriginalPricePerNight": 80.81,
+          "Discount": 10
+        },
+        "About": [
+          "Habitación de Lujo con una cama king o dos matrimoniales (sujeto a disponibilidad), requerir tipo de cama como solicitud especial, decoración con colores frescos y su espacioso baño de mármol ofrece a nuestros huéspedes un ambiente lujoso y tranquilo. "
+        ],
+        "Facility": ["Personal Restaurant", "Convention's Room", "Banquets"],
+        "Location": {
+          "lat": 19.424985803234893,
+          "lng": -99.17361538801889
+        }
+      }, 
+      {
+     "card": {
+        "RoomName": "Master Suite" ,
+        "Amenities": ["Shower and Tub", "Panomaric View", "Fire System", "Bathroom's Phone"],
+        "Inclusions": ["Free Wi-Fi", "Breakfast", "Desserts"],
+        "OriginalPricePerNight": 135.90,
+        "Discount": 10
+        },
+        "About": [
+          "Master Suite Reforma de Lujo, 70 mts2. Esta habitación de tres módulos con una increíble vista panorámica de la Ciudad de México ofrece un perfecto ambiente tanto para un viaje de negocios como para una celebración especial "
+        ],
+        "Facility": ["Personal Restaurant", "Convention's Room", "Banquets"],
+        "Location": {
+          "lat": 19.424985803234893,
+          "lng": -99.17361538801889
+        }
+      },
+
+      {
+      "card": {
+        "RoomName": "Marquis Loft" ,
+        "Amenities": ["Shower and Tub", "Panomaric View", "Fire System", "Bathroom's Phone"],
+        "Inclusions": ["Free Wi-Fi", "Breakfast", "Desserts"],
+        "OriginalPricePerNight": 224,
+        "Discount": 10
+        },
+        "About": [
+          "Loft Suite, 80 mt2, Nueva suite en último piso cuenta con Smart TV FHD de 65 y acceso a internet, 2 capsulas de nespresso por dia, lustrado de calzado, planchado de 1 pieza por dia"
+        ],
+        "Facility": ["Personal Restaurant", "Convention's Room", "Banquets"],
+        "Location": {
+          "lat": 19.424985803234893,
+          "lng": -99.17361538801889
+        }
+      }
+
     ]
   }
+
 ]
