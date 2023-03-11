@@ -1,39 +1,16 @@
-.StarRating-clasificacion {
-  display: flex;
+.StarRating{
+  position: relative;
+  height: 100%;
 }
 
-.StarRating-clasificacion #form {
-  width: 250px;
-  margin: 0 auto;
-  height: 50px;
+.star-painter {
+  top: 0;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(255, 208, 0);
+   background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
 }
 
-.StarRating-clasificacion #form p {
-  text-align: center;
-}
-
-.StarRating-clasificacion #form label {
-  font-size: 20px;
-}
-
-.StarRating-clasificacion input[type="radio"] {
-  display: none;
-}
-
-.StarRating-clasificacion label {
-  color: grey;
-}
-
-.StarRating-clasificacion {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-}
-
-.StarRating-clasificacion label:hover,
-.StarRating-clasificacion label:hover ~ .clasificacion label {
-  color: orange;
-}
-
-.StarRating-clasificacion input[type="radio"]:checked ~ .StarRating-clasificacion label {
-  color: orange;
-} 

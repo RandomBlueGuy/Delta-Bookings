@@ -4,11 +4,12 @@ import heartEmptyIcon from "../../assets/Icons/heartEmpty.svg";
 import locationIcon from "../../assets/Icons/location.svg";
 import StarRating from "../UniversalComponents/StarRating";
 
-function HotelCard({hotelNum=0}) {
+function HotelCard({hotelNum=0 , hotelRating = 0}) {
+  const HotelPicRandom = parseInt(Math.random()*14) + 1;
   return (
     <main className="hotel-card">
       <figure>
-        <img className="hotel-pic" src="https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front1.jpeg" alt="" />
+        <img className="hotel-pic" src= {`https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front${HotelPicRandom}.jpeg`} alt="" />
         <div className="heart-ctn">
           <img className="love-icon" src={heartEmptyIcon} alt="" />
         </div>
@@ -27,7 +28,7 @@ function HotelCard({hotelNum=0}) {
           eiusmod tempor incididunt ut... LMAO
         </p>
         <div className="score-system">
-          <StarRating />
+          <StarRating hotelRating = {hotelRating} />
           <p>[#] reviews</p>
         </div>
         <div className="price-tags">

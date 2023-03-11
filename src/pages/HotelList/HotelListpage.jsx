@@ -13,7 +13,10 @@ function HotelListpage() {
 
 	useEffect(() => {
 		for (let i = 0; i < 100; i++) {
-			setHotelCardArr([...hotelCardArr, hotelCardArr.push(<HotelCard hotelNum={i + 1} />)]);
+			setHotelCardArr([...hotelCardArr, hotelCardArr.push(<HotelCard 
+				hotelNum={i + 1}
+				hotelRating = {Math.random()*5}
+				/>)]);
 		}
 	}, []);
 

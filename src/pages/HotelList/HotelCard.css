@@ -13,20 +13,23 @@
   padding-bottom: 0.5rem;
 }
 
-.hotel-card:hover {
-	transition: ease-in-out 0.2s;
-	transform: scale(1.02);
-}
 
-figure {
+
+.hotel-card figure {
 	width: 100%;
+	height: 70%;
 	margin: 0;
 	padding: 0;
 	position: relative;
+	overflow: hidden;
 }
 
 .hotel-pic {
-	width: 100%;
+	width: 110%;
+	
+}
+.hotel-pic img {
+	position: center;
 }
 
 .heart-ctn {
