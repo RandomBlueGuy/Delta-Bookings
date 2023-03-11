@@ -75,9 +75,9 @@ npm start
 
 # **Authors**
 
-- [Oscar Núñez] (https://github.com/Oskarnuz)
-- [Michael Sáenz] (https://github.com/MSaenz1011)
-- [Andrés Camilo Vélez] (https://github.com/RandomBlueGuy)
+- [Oscar Núñez](https://github.com/Oskarnuz)
+- [Michael Sáenz](https://github.com/MSaenz1011)
+- [Andrés Camilo Vélez](https://github.com/RandomBlueGuy)
 
 <br />
 
