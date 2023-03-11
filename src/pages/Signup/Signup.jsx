@@ -2,22 +2,40 @@ import React, { useState } from "react";
 import "./Signup.css";
 import fbIcon from "../../assets/Icons/facebookSI.svg";
 import googleIcon from "../../assets/Icons/googleSI.svg";
+import axios from "axios";
 
 export default function Signup() {
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [tel, setTel] = useState("");
-  const [password, setPassword] = useState("");
+  const [data, setData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+ 
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const response = await axios.post("https://jsonplaceholder.typicode.com/posts", data);
+      setData({
+        username: "",
+        email: "",
+        password: "",
+      })
+    } catch {
+      alert("No existen datos adjuntos");
+    }
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log({ email, username, tel, password });
-    setEmail("");
-    setTel("");
-    setUsername("");
-    setPassword("");
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
+    setData({
+      ...data,
+      [name]: type === "checkbox" ? checked : value,
+    });
   };
+  console.log(data["username"]);
 
+  const { username, email, password } = data;
   return (
     <div className="signup-main-container">
       <main className="signup-card">
@@ -48,7 +66,7 @@ export default function Signup() {
             value={username}
             required
             placeholder="Enter your name"
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => handleChange(e)}
           />
 
           <label htmlFor="email">Email Address</label>
@@ -59,10 +77,10 @@ export default function Signup() {
             value={email}
             required
             placeholder="Email Address"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => handleChange(e)}
           />
 
-          <label htmlFor="tel">Password</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             name="password"
@@ -71,16 +89,16 @@ export default function Signup() {
             required
             placeholder="Password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => handleChange(e)}
           />
 
-          <button className="createAcc-btn">CREATE ACCOUNT</button>
+          <button className="createAcc-btn" type="submit">CREATE ACCOUNT</button>
         </form>
         <div className="social-distancing">
           <div className="social-distancing-line"></div>
           <p>OR</p>
         </div>
-        <button className="loginBtn">LOGIN</button>
+        <button className="loginBtn" >LOGIN</button>
       </main>
     </div>
   );
