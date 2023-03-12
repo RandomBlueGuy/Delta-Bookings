@@ -4,6 +4,8 @@
     "HotelName": "THE LANGHAM",
     "Website": "https://www.langhamhotels.com/en/",
     "Location": {
+      "lat": 40.76462773699905,
+      "lng": -73.974389473015,
       "Place": "2701, Great Eagle Centre",
       "City": "New York City",
       "State": "New York State",
@@ -21,7 +23,7 @@
       "CountryCode": "+1",
       "Email": "tlnyc.info@langhamhotels.com",
       "HotelDescription": "Centrally located in the city, The Langham, New York, Fifth Avenue is a convenient base for all your big city adventures. Iconic cultural attractions and shopping destinations, like The Grand Central Station and Times Square, are just a short walk away.",
-      "StarRating": 4.5,
+      "StarRating": 2.75,
       "ReviewNumber": 6589,
       "Tags": ["Swimming", "Parking"],
       "SpecialTags": "Certified",
@@ -55,10 +57,8 @@
         }
       ],
       "Policies": [
-        "PLEASE READ THESE TERMS AND CONDITIONS (“Terms and Conditions”) CAREFULLY BEFORE USING THIS SITE. THIS IS A BINDING LEGAL AGREEMENT. BY ACCESSING AND CONTINUING TO USE THE SITE, YOU AGREE TO EACH AND EVERY ONE OF THESE TERMS AND CONDITIONS. PLEASE DO NOT USE THE SITE IF YOU DO NOT AGREE TO EACH AND EVERY ONE OF THESE TERMS AND CONDITIONS.",
-        "The term “Site” refers to this website and any other website, app or platform owned, operated, or licensed by Langham that displays these Terms & Conditions (or a link to them). The Site may include websites, mobile websites, and other Internet-enabled or wireless means (such downloadable or preloaded software applications) as by which we make content available to you or receive content from you.",
-        "As used throughout the Site, including these Terms and Conditions, the terms “Langham,” “the Company,” “our,” “we,” “us,” and other similar terms may refer Langham Hotels International Limited, or one or more of its parent company, its direct or indirect subsidiaries or affiliates, members hotel under the management or operation or conts",
-        "These Terms and Conditions are last updated on March 10, 2022. Langham reserves the right, at its sole discretion, to change, modify, add or remove portions of these Terms and Conditions, at any time without notice other than by posting amended terms and conditions to the Site. Your continued use of the Site following the posting of changes will mean that you accept and agree to the changes."
+        "Check-in time: 15:00 PM",
+        "Check-out time: 12:00 AM"
       ]
     },
     "Rooms": [
@@ -66,7 +66,7 @@
         "card": {
           "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room4.jpeg",
           "RoomName": "DELUXE ROOM",
-          "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
+          "Amenities": ["King", "Pool", "LCD TV", "Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
           "OriginalPricePerNight": 544,
           "Discount": 30
@@ -74,43 +74,31 @@
         "About": ["From Level 5 to 17 - Separate shower and deep soaking tub"],
         "Facility": [
           "Fifth Avenue or City View - Floors 5 to 17 - Max occupancy of 3 with Rollaway bed"
-        ],
-        "Location": {
-          "lat": 0,
-          "lng": 0
-        }
+        ]
       },
       {
         "card": {
           "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room5.jpeg",
           "RoomName": "EXECUTIVE CLUB ROOM",
-          "Amenities": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
           "Inclusions": ["Wi-Fi", "No Breakfast", "Non Refundable"],
           "OriginalPricePerNight": 900,
           "Discount": 20
         },
         "About": ["Includes daily access to The Langham Club for two"],
-        "Facility": ["Fifth Avenue or City View - Floor 12 to 27"],
-        "Location": {
-          "lat": 0,
-          "lng": 0
-        }
+        "Facility": ["Fifth Avenue or City View - Floor 12 to 27"]
       },
       {
         "card": {
           "RoomImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room6.jpeg",
           "RoomName": "DELUXE ROOM WITH TERRACE",
-          "Amenities": ["Wi-Fi", "Breakfast", "Non Refundable"],
+          "Amenities": ["King/Twin", "Shower", "LCD TV", "Couch"],
           "Inclusions": ["Wi-Fi", "Breakfast", "Non Refundable"],
           "OriginalPricePerNight": 1230,
           "Discount": 30
         },
         "About": ["Courtyard View - 5th Floor - Max Occupancy of 2"],
-        "Facility": ["Fifth Avenue or City View - Floor 28"],
-        "Location": {
-          "lat": 0,
-          "lng": 0
-        }
+        "Facility": ["Fifth Avenue or City View - Floor 28"]
       }
     ]
   },
@@ -119,7 +107,9 @@
     "HotelName": "Hotel Elysee",
     "Website": "https://www.elyseehotel.com",
     "Location": {
-      "place": "2701, Great Eagle Centre",
+      "lat": 40.76462773699905,
+      "lng": -73.974389473015,
+      "Place": "2701, Great Eagle Centre",
       "City": "New York City",
       "State": "New York State",
       "Country": "United States"
@@ -176,9 +166,8 @@
         }
       ],
       "Policies": [
-        "These terms of use are entered into by and between You and Elysee Management, Inc. (”Company”, “we” or “us”). The following terms and conditions, together with any documents they expressly incorporate by reference (collectively, these “Terms of Use”), govern Your access to and use of this Library Hotel Collection (“LHC”) web site (“Site”) and the web sites (“Sites”) of affiliated hotels, including any content, functionality, and services offered on or through the Sites (the “Sites”), whether as a guest or a registered user.",
-        "Please read the Terms of Use carefully before You start to use the Sites. By using the Sites or by clicking to accept or agree to the Terms of Use when this option is made available to You, You accept and agree to be bound and abide by these Terms of Use and our Privacy Policy, found at https://www.elyseehotel.com/en/privacy-policy.html , incorporated herein by reference. If You do not want to agree to these Terms of Use or the Privacy Policy, You must not access or use the Sites.",
-        "The Sites are offered and available to users who are 21 years of age or older. By using the Sites, You represent and warrant that You are of legal age to form a binding contract with the Company and meet all of the foregoing eligibility requirements. If You do not meet all of these requirements, You must not access or use the Sites."
+        "Check-in time: 15:00 PM",
+        "Check-out time: 12:00 AM"
       ]
     },
     "Rooms": [
@@ -194,11 +183,7 @@
         "About": [
           "Deluxe Rooms are approximately 300 sq. ft. and are suitable for 1 -2 adults."
         ],
-        "Facility": ["Floor 12-20"],
-        "Location": {
-          "lat": 0,
-          "lng": 0
-        }
+        "Facility": ["Floor 12-20"]
       },
       {
         "card": {
@@ -212,11 +197,7 @@
         "About": [
           "Deluxe Rooms are approximately 300 sq. ft. and are suitable for 1 -2 adults. ADA compliant with roll-in shower"
         ],
-        "Facility": ["Floors 21 -35"],
-        "Location": {
-          "lat": 0,
-          "lng": 0
-        }
+        "Facility": ["Floors 21 -35"]
       },
       {
         "card": {
@@ -230,11 +211,7 @@
         "About": [
           "Deluxe Rooms are approximately 300 sq. ft. and are suitable for 1 -2 adults."
         ],
-        "Facility": ["Floors 36 - 40"],
-        "Location": {
-          "lat": 0,
-          "lng": 0
-        }
+        "Facility": ["Floors 36 - 40"]
       },
       {
         "card": {
@@ -248,11 +225,7 @@
         "About": [
           "King Suites are approximately 600 sq. ft. and are suitable for 1-2 Adults and 1 child"
         ],
-        "Facility": ["Floor 41"],
-        "Location": {
-          "lat": 0,
-          "lng": 0
-        }
+        "Facility": ["Floor 41"]
       }
     ]
   },
@@ -261,6 +234,8 @@
     "HotelName": "The Plaza",
     "Website": "https://www.fairmont.com/the-plaza-new-york/?y_source=1_MTIzNjE0MDYtNzE1LWxvY2F0aW9uLndlYnNpdGU=",
     "Location": {
+      "lat": 40.76462773699905,
+      "lng": -73.974389473015,
       "Place": "768 5th Ave",
       "City": "New York City",
       "State": "New York State",
@@ -312,8 +287,8 @@
         }
       ],
       "Policies": [
-        "All material found in the pages of this Website is protected under the copyright laws of Canada, the United States and of other countries. Certain names, words, titles, phrases, logos, icons, graphics or designs in the pages of this Website may constitute trade-names, trade-marks or service marks of Fairmont Hotels & Resorts (Fairmont) or its affiliates, or Fairmont or its affiliates may have been licensed to use them. The display of trademarks, trade names or service marks on pages at this Website does not imply that a license of any kind has been granted to anyone else.",
-        "You are free to download the material posted on this Website for non-commercial purposes, to store it temporarily on a single computer, and to print it solely for your own personal purposes. You agree that you do not acquire any ownership rights in any downloaded content. You may not distribute copies of the material for any purpose or 'frame' it in any site you create or operate. You agree to abide by all copyright notices, information and restrictions contained in any content on this Website.",
+        "Check-in time: 15:00 PM",
+        "Check-out time: 12:00 AM",
         "Any unauthorized downloading, transmission, republication or other copying or modification of material posted on this Website, including trademarks, trade names and service marks, may violate federal, common or civil law trade-mark law and copyright law, and may result in legal action."
       ]
     },
@@ -330,11 +305,7 @@
         "About": [
           " Plaza Kings are located on floors 5-19 and provide elegant accommodations with a comfortable sitting area.  Each of these exceptional New York City hotel rooms features a bathroom finished with inlaid earth stone mosaics in floral motifs, with a bathtub as well as separate shower.  Bathroom details include 24-carat gold plated Sherle Wagner faucets and accessories, and hand crafted solid white marble vanities."
         ],
-        "Facility": ["Floors 5 to 19 "],
-        "Location": {
-          "lat": 40.76462773699905,
-          "lng": -73.974389473015
-        }
+        "Facility": ["Floors 5 to 19 "]
       },
       {
         "card": {
@@ -348,11 +319,7 @@
         "About": [
           " The luxurious Deluxe King is exceptionally spacious with a comfortable sitting area. The bathroom is finished with inlaid “earth stone” mosaics in floral motifs, with a bathtub as well as separate shower. Bathroom details include 24-carat gold plated Sherle Wagner faucets and accessories with hand crafted solid white marble vanities. These well-appointed rooms are located throughout the hotel on floors 5 to 19."
         ],
-        "Facility": ["Floors 5 to 19 "],
-        "Location": {
-          "lat": 40.76462773699905,
-          "lng": -73.974389473015
-        }
+        "Facility": ["Floors 5 to 19 "]
       },
       {
         "card": {
@@ -366,11 +333,7 @@
         "About": [
           "The Terrace Room King features a private terrace, a King bed, and a deluxe bathroom.  Bathroom is finished with inlaid earth stone mosaics and include a luxurious bathtub and a separate shower.  Among many splendid details are 24-carat gold-plated Sherle Wagner fixtures, as well as hand-crafted solid white marble vanities."
         ],
-        "Facility": ["Floors 5 & 9"],
-        "Location": {
-          "lat": 40.76462773699905,
-          "lng": -73.974389473015
-        }
+        "Facility": ["Floors 5 & 9"]
       }
     ]
   },
@@ -379,7 +342,9 @@
     "HotelName": "The St. Regis New York",
     "Website": "https://www.marriott.com/en-us/hotels/nycxr-the-st-regis-new-york/overview/",
     "Location": {
-      "place": "Two East 55th Street, at Fifth Avenue",
+      "lat": 40.76462773699905,
+      "lng": -73.974389473015,
+      "Place": "Two East 55th Street, at Fifth Avenue",
       "City": "New York City",
       "State": "New York State",
       "Country": "United States"
@@ -430,9 +395,8 @@
         }
       ],
       "Policies": [
-        "PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE USING THIS SITE. THIS IS A BINDING LEGAL AGREEMENT. BY ACCESSING AND CONTINUING TO USE THE SITE, YOU AGREE TO EACH AND EVERY ONE OF THESE TERMS AND CONDITIONS. PLEASE DO NOT USE THE SITE IF YOU DO NOT AGREE TO EACH AND EVERY ONE OF THESE TERMS AND CONDITIONS.",
-        "Marriott International, Inc. with its corporate headquarters at 7750 Wisconsin Avenue, Bethesda, Maryland 20814, United States of America, and its subsidiaries, including The Ritz-Carlton Hotel Company L.L.C. and Starwood Hotels & Resorts Worldwide, LLC (collectively, “Marriott”, “we”, “our” or “us”) provide various websites and apps available to visitors located throughout the world. Our websites and apps include without limitation, this website and other consumer facing platforms operated under our brands, including, www.marriott.com, www.autograph-hotels.marriott.com, www.vacationsbymarriott.com, www.ritzcarlton.com, www.corporate.ritzcarlton.com, starwoodhotels.com and our mobile apps (collectively, our “Sites”). These Terms and Conditions also apply to translations of our Sites, for example, www.espanol.marriott.com. Our Sites are controlled and operated from the United States and are subject to United States law.",
-        "The content and information displayed on the Sites are Marriott’s property and are collectively referred to as “Marriott Information”. The downloading, reproduction, or re-transmission of Marriott Information, other than for non-commercial individual use, is strictly prohibited, except to the extent permitted with prior written consent by Marriott or by travel agents for business-only purposes in accordance with the Travel Agent section below."
+        "Check-in time: 15:00 PM",
+        "Check-out time: 12:00 AM"
       ]
     },
     "Rooms": [
@@ -448,11 +412,7 @@
         "About": [
           "Experience sophisticated Parisian glamour with this spectacularly chic suite that offers privacy, luxury and exquisitely designed accommodations. This iconic suite exhibits the elegance of Dior, along with signature 24 hour St. Regis Butler Service, offering complimentary services including Butler served tea or coffee upon arrival and following daily wake-up call, pressing of up to 2 items per guest "
         ],
-        "Facility": ["Floors 2-3"],
-        "Location": {
-          "lat": 40.76137107443844,
-          "lng": -73.97469971164165
-        }
+        "Facility": ["Floors 2-3"]
       },
       {
         "card": {
@@ -466,11 +426,7 @@
         "About": [
           "Unwind in this chic suite with engaging design of Milan and exceptional Fifth Avenue views. The stylish Milano Suite, with views of Fifth Avenue, features natural colors and rich textiles, and offers access to our signature 24 hour Butler service offering complimentary services including Butler served tea or coffee upon arrival and following daily wake-up call, pressing of up to 2 items per guest upon... "
         ],
-        "Facility": ["Floors 6-13"],
-        "Location": {
-          "lat": 40.76137107443844,
-          "lng": -73.97469971164165
-        }
+        "Facility": ["Floors 6-13"]
       },
       {
         "card": {
@@ -484,11 +440,7 @@
         "About": [
           "A collaboration between St. Regis and Bentley Motors, the 15th-floor Bentley Suite exudes the luxury, craftsmanship, and style associated with both renowned international brands. Guests of the Bentley Suite will enjoy our signature 24 hour Butler service offering complimentary services including Butler served tea or coffee upon arrival and following daily wake-up call, pressing of up to 2 items"
         ],
-        "Facility": ["Floor 14"],
-        "Location": {
-          "lat": 40.76137107443844,
-          "lng": -73.97469971164165
-        }
+        "Facility": ["Floor 14"]
       }
     ]
   },
@@ -497,6 +449,8 @@
     "HotelName": "The Beverly Hills Hotel",
     "Website": "https://www.dorchestercollection.com/en/los-angeles/the-beverly-hills-hotel/",
     "Location": {
+      "lat": 37.7749,
+      "lng": -122.4194,
       "Place": "9641 Sunset Blvd",
       "City": "New York City",
       "State": "New York State",
@@ -514,7 +468,7 @@
       "CountryCode": "+1",
       "Email": "bhhotel.reservations@dorchestercollection.com",
       "HotelDescription": "The Beverly Hills Hotel is an iconic luxury hotel located in the heart of Beverly Hills. Known for its glamour and exclusivity, the hotel has been a favorite of Hollywood stars and high society for over a century. With luxurious accommodations, fine dining, and a range of amenities, the Beverly Hills Hotel offers a truly unforgettable experience.",
-      "StarRating": 5,
+      "StarRating": 4.5,
       "ReviewNumber": 1350,
       "Tags": ["Breakfast", "Parking", "Pool", "Spa", "Fitness Center"],
       "SpecialTags": "Luxury, Glamour, Iconic",
@@ -566,11 +520,7 @@
         "About": [
           "Our Deluxe King Room features a comfortable king-size bed, a cozy sofa bed, and a spacious bathroom with a shower. Enjoy your morning coffee in the seating area while watching your favorite show on the LCD TV. This room also includes complimentary Wi-Fi and daily breakfast."
         ],
-        "Facility": ["Fitness Center", "Swimming Pool"],
-        "Location": {
-          "lat": 37.7749,
-          "lng": -122.4194
-        }
+        "Facility": ["Fitness Center", "Swimming Pool"]
       },
       {
         "card": {
@@ -590,11 +540,7 @@
         "About": [
           "Indulge in our Executive Suite, featuring a luxurious king-size bed, a spacious living room with a comfortable sofa and LCD TV, and a kitchenette for your convenience. The suite also includes complimentary Wi-Fi and daily breakfast, but is non-refundable. Relax and unwind in style during your stay at our Californian Hotel."
         ],
-        "Facility": ["Spa", "Restaurant"],
-        "Location": {
-          "lat": 37.7749,
-          "lng": -122.4194
-        }
+        "Facility": ["Spa", "Restaurant"]
       },
       {
         "card": {
@@ -608,11 +554,7 @@
         "About": [
           "Our Deluxe Double Room is perfect for families or groups of friends, featuring two comfortable double beds, a cozy armchair, and a spacious bathroom with a shower. Watch your favorite show on the LCD TV or catch up on work with complimentary Wi-Fi. This room also includes daily breakfast."
         ],
-        "Facility": ["Business Center", "Lounge"],
-        "Location": {
-          "lat": 37.7749,
-          "lng": -122.4194
-        }
+        "Facility": ["Business Center", "Lounge"]
       }
     ]
   },
@@ -621,6 +563,8 @@
     "HotelName": "Four Seasons Hotel Los Angeles at Beverly Hills",
     "Website": "https://www.fourseasons.com/losangeles/",
     "Location": {
+      "lat": 34.045242,
+      "lng": -118.262683,
       "Place": "300 S Doheny Dr",
       "City": "New York City",
       "State": "New York State",
@@ -638,7 +582,7 @@
       "CountryCode": "+1",
       "Email": "losangeles.reservations@fourseasons.com",
       "HotelDescription": "The Four Seasons Hotel Los Angeles at Beverly Hills is a luxurious five-star hotel located in the heart of Beverly Hills. The hotel offers guests stunning views of the city and an array of amenities including a rooftop pool, a full-service spa, and a fitness center. The hotel's rooms and suites are elegant and spacious, featuring marble bathrooms and private balconies with views of the city or the Hollywood Hills.",
-      "StarRating": 5,
+      "StarRating": 3.8,
       "ReviewNumber": 1350,
       "Tags": ["Breakfast", "Parking", "Pool", "Spa", "Fitness Center"],
       "SpecialTags": "Luxury, Elegance, Rooftop Pool, Beverly Hills",
@@ -690,11 +634,7 @@
         "About": [
           "This room offers a comfortable king bed, a sofa bed for extra sleeping space, and an LCD TV for entertainment. The bathroom features a shower and luxury amenities. Guests can enjoy complimentary Wi-Fi and breakfast during their stay."
         ],
-        "Facility": ["24-hour fitness center", "Heated rooftop pool"],
-        "Location": {
-          "lat": 34.045242,
-          "lng": -118.262683
-        }
+        "Facility": ["24-hour fitness center", "Heated rooftop pool"]
       },
       {
         "card": {
@@ -713,11 +653,7 @@
         "About": [
           "This spacious suite offers a separate living room and bedroom, both featuring an LCD TV for entertainment. The bathroom boasts both a shower and a tub, as well as luxury amenities. Guests can enjoy complimentary Wi-Fi and breakfast during their stay."
         ],
-        "Facility": ["24-hour fitness center", "Heated rooftop pool", "Spa"],
-        "Location": {
-          "lat": 34.045242,
-          "lng": -118.262683
-        }
+        "Facility": ["24-hour fitness center", "Heated rooftop pool", "Spa"]
       },
       {
         "card": {
@@ -736,11 +672,7 @@
         "About": [
           "This room offers a comfortable king bed and an LCD TV for entertainment. The bathroom boasts both a shower and a tub, as well as luxury amenities. Guests can enjoy complimentary Wi-Fi and breakfast during their stay, as well as exclusive access to the Club Lounge, which features a private check-in, daily culinary presentations, and evening cocktails and bites."
         ],
-        "Facility": ["24-hour fitness center", "Heated rooftop pool"],
-        "Location": {
-          "lat": 34.045242,
-          "lng": -118.262683
-        }
+        "Facility": ["24-hour fitness center", "Heated rooftop pool"]
       }
     ]
   },
@@ -748,6 +680,9 @@
     "HotelId": 7,
     "HotelName": "Grand Hotel Palace",
     "Location": {
+      "lat": 41.9057,
+      "lng": 12.4869,
+      "Place": "Unknown",
       "City": "Roma",
       "State": "",
       "Country": "Italia"
@@ -821,11 +756,7 @@
         "About": [
           "Grand Hotel Palace offers spacious and elegantly furnished rooms and suites, providing guests with a luxurious and comfortable stay."
         ],
-        "Facility": ["Fitness center", "Sauna", "Bar", "Restaurant"],
-        "Location": {
-          "lat": 41.9057,
-          "lng": 12.4869
-        }
+        "Facility": ["Fitness center", "Sauna", "Bar", "Restaurant"]
       },
       {
         "card": {
@@ -848,11 +779,7 @@
         "About": [
           "Grand Hotel Palace is a luxury hotel located in the heart of Rome, just a few steps away from the Spanish Steps and the Trevi Fountain."
         ],
-        "Facility": ["Fitness center", "Sauna", "Bar", "Restaurant"],
-        "Location": {
-          "lat": 41.9057,
-          "lng": 12.4869
-        }
+        "Facility": ["Fitness center", "Sauna", "Bar", "Restaurant"]
       },
       {
         "card": {
@@ -876,11 +803,7 @@
         "About": [
           "Grand Hotel Palace offers spacious and elegantly furnished rooms and suites, providing guests with a luxurious and comfortable stay."
         ],
-        "Facility": ["Fitness center", "Sauna", "Bar", "Restaurant"],
-        "Location": {
-          "lat": 41.9057,
-          "lng": 12.4869
-        }
+        "Facility": ["Fitness center", "Sauna", "Bar", "Restaurant"]
       }
     ]
   },
@@ -888,6 +811,7 @@
     "HotelId": 8,
     "HotelName": "Hotel Eden",
     "Location": {
+      "Place": "Unknown",
       "City": "Roma",
       "State": "",
       "Country": "Italia"
@@ -967,11 +891,7 @@
           "Restaurante",
           "Bar",
           "Sala de reuniones"
-        ],
-        "Location": {
-          "lat": 41.9052,
-          "lng": 12.4823
-        }
+        ]
       },
       {
         "card": {
@@ -990,11 +910,7 @@
         "About": [
           "Habitación elegante con cama doble o dos camas individuales, con vistas a la ciudad o al jardín del hotel."
         ],
-        "Facility": ["Piscina cubierta", "Gimnasio", "Spa"],
-        "Location": {
-          "lat": 41.9052,
-          "lng": 12.4823
-        }
+        "Facility": ["Piscina cubierta", "Gimnasio", "Spa"]
       },
       {
         "card": {
@@ -1020,11 +936,7 @@
           "Rooftop bar with panoramic views of Rome",
           "Spa and wellness center",
           "Fitness center"
-        ],
-        "Location": {
-          "lat": 41.906209,
-          "lng": 12.480434
-        }
+        ]
       }
     ]
   },
@@ -1032,6 +944,9 @@
     "HotelId": 9,
     "HotelName": "Hotel Artemide",
     "Location": {
+      "lat": 41.901399,
+      "lng": 12.494751,
+      "Place": "Unknown",
       "City": "Roma",
       "State": "",
       "Country": "Italia"
@@ -1113,11 +1028,7 @@
           "Discount": 15
         },
         "About": [],
-        "Facility": [],
-        "Location": {
-          "lat": 0,
-          "lng": 0
-        }
+        "Facility": []
       },
       {
         "card": {
@@ -1142,11 +1053,7 @@
           "Spa and wellness center",
           "Restaurant and bar",
           "Fitness center"
-        ],
-        "Location": {
-          "lat": 41.901399,
-          "lng": 12.494751
-        }
+        ]
       },
       {
         "card": {
@@ -1172,11 +1079,7 @@
           "Spa and wellness center",
           "Restaurant and bar",
           "Fitness center"
-        ],
-        "Location": {
-          "lat": 41.901399,
-          "lng": 12.494751
-        }
+        ]
       }
     ]
   },
@@ -1184,6 +1087,9 @@
     "HotelId": 10,
     "HotelName": "Hotel Splendide Royal Roma",
     "Location": {
+      "lat": 41.906109,
+      "lng": 12.483114,
+      "Place": "Unknown",
       "City": "Roma",
       "State": "",
       "Country": "Italia"
@@ -1257,11 +1163,7 @@
           "Discount": 24
         },
         "About": [],
-        "Facility": [],
-        "Location": {
-          "lat": 0,
-          "lng": 0
-        }
+        "Facility": []
       },
       {
         "card": {
@@ -1298,11 +1200,7 @@
           "Concierge service",
           "Currency exchange",
           "Laundry service"
-        ],
-        "Location": {
-          "lat": 41.906109,
-          "lng": 12.483114
-        }
+        ]
       },
       {
         "card": {
@@ -1341,11 +1239,7 @@
           "Concierge service",
           "Currency exchange",
           "Laundry service"
-        ],
-        "Location": {
-          "lat": 41.906109,
-          "lng": 12.483114
-        }
+        ]
       }
     ]
   },
@@ -1353,6 +1247,9 @@
     "HotelId": 11,
     "HotelName": "Hotel Hassler Roma",
     "Location": {
+      "lat": 41.9052749,
+      "lng": 12.4811557,
+      "Place": "Unknown",
       "City": "Roma",
       "State": "",
       "Country": "Italia"
@@ -1421,11 +1318,7 @@
         "About": [
           "The Classic Double Room is elegantly furnished and features a marble bathroom with a bathtub and shower. The room also includes a work desk and a seating area."
         ],
-        "Facility": ["Spa", "Rooftop restaurant", "Fitness center"],
-        "Location": {
-          "lat": 41.9052749,
-          "lng": 12.4811557
-        }
+        "Facility": ["Spa", "Rooftop restaurant", "Fitness center"]
       },
       {
         "card": {
@@ -1461,11 +1354,7 @@
           "Concierge service",
           "Currency exchange",
           "Laundry service"
-        ],
-        "Location": {
-          "lat": 41.9046972,
-          "lng": 12.4822199
-        }
+        ]
       },
       {
         "card": {
@@ -1504,11 +1393,7 @@
           "Concierge service",
           "Currency exchange",
           "Laundry service"
-        ],
-        "Location": {
-          "lat": 41.9046972,
-          "lng": 12.4822199
-        }
+        ]
       }
     ]
   },
@@ -1516,6 +1401,9 @@
     "HotelId": 12,
     "HotelName": "Hotel Metropol",
     "Location": {
+      "lat": 19.433269268228695,
+      "lng": -99.1451415534691,
+      "Place": "Unknown",
       "City": "Mexico D.F",
       "State": "D.F",
       "Country": "Mexico"
@@ -1580,11 +1468,7 @@
         "About": [
           "Cómoda habitación para dos personas en viaje de negocios o placer. El Hotel esta ubicado en el corazón de la zona Rosa en la Ciudad de México"
         ],
-        "Facility": ["Event Rooms", "Boardroom", "Fitness Center"],
-        "Location": {
-          "lat": 19.433269268228695,
-          "lng": -99.1451415534691
-        }
+        "Facility": ["Event Rooms", "Boardroom", "Fitness Center"]
       },
       {
         "card": {
@@ -1598,11 +1482,7 @@
         "About": [
           "Cómoda habitación triple en viaje de negocios o placer. El Hotel esta ubicado en el corazón de la zona Rosa en la Ciudad de México"
         ],
-        "Facility": ["Event Rooms", "Boardroom", "Fitness Center"],
-        "Location": {
-          "lat": 19.433269268228695,
-          "lng": -99.1451415534691
-        }
+        "Facility": ["Event Rooms", "Boardroom", "Fitness Center"]
       },
       {
         "card": {
@@ -1616,19 +1496,16 @@
         "About": [
           "Cómoda habitación cuádruple en viaje de negocios o placer. El Hotel esta ubicado en el corazón de la zona Rosa en la Ciudad de México"
         ],
-        "Facility": ["Event Rooms", "Boardroom", "Fitness Center"],
-        "Location": {
-          "lat": 19.433269268228695,
-          "lng": -99.1451415534691
-        }
+        "Facility": ["Event Rooms", "Boardroom", "Fitness Center"]
       }
     ]
   },
-
   {
     "HotelId": 13,
     "HotelName": "Hotel Castropol",
     "Location": {
+      "lat": 19.426995950974554,
+      "lng": -99.13259048580133,
       "Place": "Av. Pino Suarez #58 Col. Centro del Cuauhtémoc",
       "City": "Mexico D.F",
       "State": "D.F",
@@ -1702,11 +1579,7 @@
         "About": [
           "Las habitaciones dobles estándar del hotel Castropol son estancias acogedoras de 15m2 con capacidad para dos personas"
         ],
-        "Facility": ["Lobby", "Laundry", "Bar"],
-        "Location": {
-          "lat": 19.426995950974554,
-          "lng": -99.13259048580133
-        }
+        "Facility": ["Lobby", "Laundry", "Bar"]
       },
       {
         "card": {
@@ -1720,11 +1593,7 @@
         "About": [
           "Las habitaciones dobles estándar con dos camas dobles del hotel Castropol te ofrecen un extra de espacio en tus vacaciones. Con una capacidad máxima de hasta 4 personas."
         ],
-        "Facility": ["Lobby", "Laundry", "Bar"],
-        "Location": {
-          "lat": 19.426995950974554,
-          "lng": -99.13259048580133
-        }
+        "Facility": ["Lobby", "Laundry", "Bar"]
       }
     ]
   },
@@ -1732,6 +1601,8 @@
     "HotelId": 14,
     "HotelName": "Hotel Kali Escandón",
     "Location": {
+      "lat": 19.402075954229737,
+      "lng": -99.17747854233332,
       "Place": "Av. José Martí No. 178, Escandón I Secc, Miguel Hidalgo",
       "City": "Mexico D.F",
       "State": "D.F",
@@ -1801,11 +1672,7 @@
         "About": [
           "Si lo que necesitas es realajarte pero viajas en familia, tenemos la habitacion perfecta para ti, nuestras unicas 2 Junior Suite Doble con Jacuzzi, disponen de 2 magnificas camas king size y un amplio jacuzzi"
         ],
-        "Facility": ["Personal Restaurant", "Exclusive Floor", "Bar"],
-        "Location": {
-          "lat": 19.402075954229737,
-          "lng": -99.17747854233332
-        }
+        "Facility": ["Personal Restaurant", "Exclusive Floor", "Bar"]
       },
       {
         "card": {
@@ -1819,11 +1686,7 @@
         "About": [
           "Con una ubicación privilegiada, principalmente en las esquinas del hotel, nuestras 14 Habitaciones Premier Doble (31 m2.) disponen de dos camas matrimoniales, aire acondicionado, calefaccion, cafetera, TV 45’’, Bluetooth play music, Internet Wifi gratis y detalles de lujo."
         ],
-        "Facility": ["Personal Restaurant", "Exclusive Floor", "Bar"],
-        "Location": {
-          "lat": 19.402075954229737,
-          "lng": -99.17747854233332
-        }
+        "Facility": ["Personal Restaurant", "Exclusive Floor", "Bar"]
       },
 
       {
@@ -1838,19 +1701,16 @@
         "About": [
           "Nuestra Kali Suite cuenta con una cama king size, jacuzzi al aire libre, amplia terraza e impresionante vista panorámica de la CDMX. Esta lujosa habitación te sorprenderá con su inigualable diseño, brindando espacios creados con un excelente gusto y calidez contemporánea"
         ],
-        "Facility": ["Personal Restaurant", "Exclusive Floor", "Bar"],
-        "Location": {
-          "lat": 19.402075954229737,
-          "lng": -99.17747854233332
-        }
+        "Facility": ["Personal Restaurant", "Exclusive Floor", "Bar"]
       }
     ]
   },
-
   {
     "HotelId": 15,
     "HotelName": "Hotel Marquis Reforma",
     "Location": {
+      "lat": 19.424985803234893,
+      "lng": -99.17361538801889,
       "Place": "Paseo de la Reforma 465, Col. Cuauhtémoc",
       "City": "Mexico D.F",
       "State": "D.F",
@@ -1926,11 +1786,7 @@
         "About": [
           "Habitación de Lujo con una cama king o dos matrimoniales (sujeto a disponibilidad), requerir tipo de cama como solicitud especial, decoración con colores frescos y su espacioso baño de mármol ofrece a nuestros huéspedes un ambiente lujoso y tranquilo. "
         ],
-        "Facility": ["Personal Restaurant", "Convention's Room", "Banquets"],
-        "Location": {
-          "lat": 19.424985803234893,
-          "lng": -99.17361538801889
-        }
+        "Facility": ["Personal Restaurant", "Convention's Room", "Banquets"]
       },
       {
         "card": {
@@ -1949,11 +1805,7 @@
         "About": [
           "Master Suite Reforma de Lujo, 70 mts2. Esta habitación de tres módulos con una increíble vista panorámica de la Ciudad de México ofrece un perfecto ambiente tanto para un viaje de negocios como para una celebración especial "
         ],
-        "Facility": ["Personal Restaurant", "Convention's Room", "Banquets"],
-        "Location": {
-          "lat": 19.424985803234893,
-          "lng": -99.17361538801889
-        }
+        "Facility": ["Personal Restaurant", "Convention's Room", "Banquets"]
       },
 
       {
@@ -1973,11 +1825,7 @@
         "About": [
           "Loft Suite, 80 mt2, Nueva suite en último piso cuenta con Smart TV FHD de 65 y acceso a internet, 2 capsulas de nespresso por dia, lustrado de calzado, planchado de 1 pieza por dia"
         ],
-        "Facility": ["Personal Restaurant", "Convention's Room", "Banquets"],
-        "Location": {
-          "lat": 19.424985803234893,
-          "lng": -99.17361538801889
-        }
+        "Facility": ["Personal Restaurant", "Convention's Room", "Banquets"]
       }
     ]
   }

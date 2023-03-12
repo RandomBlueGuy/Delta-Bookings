@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./HotelListpage.css";
 import Header from "./HotelListHeader";
 import HotelCard from "./HotelCard";
-import "./HotelListpage.css";
 import SearchBar from "./SearchBar";
 import HotelListPagination from "./HotelListPagination";
 
@@ -10,12 +10,13 @@ function HotelListpage() {
   const [actualPage, setActualPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(9);
   const [hotelCardArr, setHotelCardArr] = useState([]);
-  function getMaxNpages() {
-	const  res = (hotelCardArr.length / itemsPerPage);
-	return res > parseInt(res) ? parseInt(res) + 1 : res;
-  }
   const maxNpages = getMaxNpages();
-  
+
+  function getMaxNpages() {
+    const res = hotelCardArr.length / itemsPerPage;
+    return res > parseInt(res) ? parseInt(res) + 1 : res;
+  }
+
   useEffect(() => {
     axios
       .get("/DB/HotelDataBase.json")
@@ -23,9 +24,8 @@ function HotelListpage() {
         setHotelCardArr([...hotelCardArr, ...response.data]);
       })
       .catch((err) => console.log(err));
-      setItemsPerPage(6)
-    //console.log("EJECUCION AXIOS" , hotelCardArr);
-  }, [hotelCardArr]);
+    setItemsPerPage(6);
+  }, []);
 
   return (
     <div className="HotelListpage-ctn">

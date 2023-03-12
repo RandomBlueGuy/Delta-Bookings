@@ -4,14 +4,9 @@ import heartEmptyIcon from "../../assets/Icons/heartEmpty.svg";
 import StarRating from "../UniversalComponents/StarRating";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 function HotelCard({ hotelInfoCard }) {
-  //const CardImg = require(hotelInfoCard.About.FrontImg)
-  console.log(
-    "img=>",
-    typeof hotelInfoCard.About.FrontImg,
-    hotelInfoCard.About.FrontImg
-  );
   const finalPrice =
     hotelInfoCard.Rooms[0].card.OriginalPricePerNight -
     (
@@ -21,11 +16,16 @@ function HotelCard({ hotelInfoCard }) {
   return (
     <main className="hotel-card">
       <figure>
-        <img
-          className="hotel-pic"
-          src={`${hotelInfoCard.About.FrontImg}`}
-          alt=""
-        />
+        <Link 
+        to="/hotel-single"
+        state={{data: hotelInfoCard}}
+        >
+          <img
+            className="hotel-pic"
+            src={`${hotelInfoCard.About.FrontImg}`}
+            alt=""
+          />
+        </Link>
         <div className="heart-ctn">
           <img className="love-icon" src={heartEmptyIcon} alt="" />
         </div>

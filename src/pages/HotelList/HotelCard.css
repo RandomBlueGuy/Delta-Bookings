@@ -1,3 +1,4 @@
+
 .hotel-card {
 	background-color: white;
 	max-width: 360px;
@@ -11,6 +12,10 @@
 	box-shadow: 5px 5px 10px rgba(3, 3, 3, 0.1);
 	transition: ease-in-out 0.2s;
   padding-bottom: 0.5rem;
+}
+
+.hotel-card a{
+	text-decoration: none;
 }
 
 .hotel-card figure {

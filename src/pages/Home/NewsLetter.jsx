@@ -38,8 +38,12 @@ function NewsLetter() {
           <figure className="card-ctn-nl-img-container">
             <img src={placeholderImg} alt="" />
             <figcaption className="date-review">
-              <h1>{(r1Date.getDay()+1).toString().padStart(2, "0")}</h1>
-              <p>{r1Date.toLocaleString(undefined, { month: "long"}).slice(0,3)}</p>
+              <h1>{(r1Date.getDay() + 1).toString().padStart(2, "0")}</h1>
+              <p>
+                {r1Date
+                  .toLocaleString(undefined, { month: "long" })
+                  .slice(0, 3)}
+              </p>
             </figcaption>
           </figure>
           <div className="card-ctn-nl-txt-container">
@@ -55,8 +59,12 @@ function NewsLetter() {
           <figure className="card-ctn-nl-img-container">
             <img src={placeholder2Img} alt="" />
             <figcaption className="date-review">
-            <h1>{(r2Date.getDay()+1).toString().padStart(2, "0")}</h1>
-              <p>{r2Date.toLocaleString(undefined, { month: "long"}).slice(0,3)}</p>
+              <h1>{(r2Date.getDay() + 1).toString().padStart(2, "0")}</h1>
+              <p>
+                {r2Date
+                  .toLocaleString(undefined, { month: "long" })
+                  .slice(0, 3)}
+              </p>
             </figcaption>
           </figure>
           <div className="card-ctn-nl-txt-container">
