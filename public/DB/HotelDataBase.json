@@ -10,7 +10,7 @@
       "Country": "United States"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front1.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front1.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel1.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel9.jpeg",
@@ -125,7 +125,7 @@
       "Country": "United States"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front2.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front2.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel10.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel19.jpeg",
@@ -267,7 +267,7 @@
       "Country": "United States"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front3.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front3.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel15.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel9.jpeg",
@@ -385,7 +385,7 @@
       "Country": "United States"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front4.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front4.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel2.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel3.jpeg",
@@ -503,7 +503,7 @@
       "Country": "United States"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front5.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front5.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel6.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel7.jpeg",
@@ -627,7 +627,7 @@
       "Country": "United States"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front6.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front6.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel11.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel12.jpeg",
@@ -753,7 +753,7 @@
       "Country": "Italia"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front7.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front7.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel15.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel16.jpeg",
@@ -893,7 +893,7 @@
       "Country": "Italia"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front8.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front8.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel18.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel19.jpeg",
@@ -1037,7 +1037,7 @@
       "Country": "Italia"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front9.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front9.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel1.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel3.jpeg",
@@ -1189,7 +1189,7 @@
       "Country": "Italia"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front10.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front10.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel7.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel9.jpeg",
@@ -1358,7 +1358,7 @@
       "Country": "Italia"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front11.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front11.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel16.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel19.jpeg",
@@ -1521,7 +1521,7 @@
       "Country": "Mexico"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front12.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front12.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel14.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel17.jpeg",
@@ -1635,7 +1635,7 @@
       "Country": "Mexico"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front13.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front13.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel1.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel20.jpeg",
@@ -1738,7 +1738,7 @@
       "Country": "Mexico"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front14.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front14.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel16.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel2.jpeg",
@@ -1857,7 +1857,7 @@
       "Country": "Mexico"
     },
     "About": {
-      "FrontImg": "https://github.com/RandomBlueGuy/PROYECTO-FINAL-MIR/blob/main/src/DataBase/Hotel/Fronts/front15.jpeg",
+      "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front15.jpeg",
       "Gallery": [
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel11.jpeg",
         "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel19.jpeg",

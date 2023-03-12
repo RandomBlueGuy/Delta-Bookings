@@ -1,11 +1,11 @@
 .hotel-card {
 	background-color: white;
 	max-width: 360px;
-	max-height: 380px;
+	max-height: 370px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 0.5rem;
+	justify-content: space-between;
 	margin: 0;
 	padding: 0;
 	box-shadow: 5px 5px 10px rgba(3, 3, 3, 0.1);
@@ -13,24 +13,24 @@
   padding-bottom: 0.5rem;
 }
 
-
-
 .hotel-card figure {
 	width: 100%;
-	height: 70%;
+	min-height: 65%;
+	max-height: 65%;
 	margin: 0;
 	padding: 0;
 	position: relative;
 	overflow: hidden;
+	object-fit: cover;
 }
 
 .hotel-pic {
-	width: 110%;
-	
-}
-.hotel-pic img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 	position: center;
 }
+
 
 .heart-ctn {
 	position: absolute;
@@ -60,27 +60,42 @@
 .card-description {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	align-items: space-between;
+	justify-content: space-between;
 	width: 90%;
+	
 }
 
-.title {
+.HC-title {
 	display: flex;
 	align-items: center;
-	gap: 0.2rem;
+	gap: 0.5rem;
+
 }
 
-.title h1 {
+.HC-subtitle{
+	max-width: 70%;
+	/* white-space: nowrap; 
+	background-color: aqua;
+	flex-wrap: nowrap;
+	
+	overflow: hidden;
+	text-overflow: ellipsis;	 */
+
+}
+
+.HC-title h1 {
 	font-size: 16px;
 	font-weight: 900;
+	text-overflow: ellipsis;	
 }
 
-.location {
+.HC-location {
 	display: flex;
 	align-items: center;
 }
 
-.location p {
+.HC-location p {
 	font-size: 10px;
 	font-weight: 700;
 	color: gray;
@@ -88,18 +103,19 @@
 	margin-left: -3px;
 }
 
-.location img {
-	scale: 0.5;
-	filter: invert(1) brightness(0.5);
+.HC-description {
+	max-height: 3rem;
+	margin-bottom: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-.description {
+.HC-description p{
 	font-weight: 700;
 	color: var(--txt-gray);
 	font-size: 12px;
-	margin-bottom: 5px;
-	margin-top: px;
 }
+
 .price-tags {
 	display: flex;
 	gap: 0.5rem;

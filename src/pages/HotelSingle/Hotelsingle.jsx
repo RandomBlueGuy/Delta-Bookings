@@ -2,7 +2,7 @@ import React from 'react';
 import './Hotelsingle.css';
 import '../UniversalComponents/BaseStyles.css';
 import ContactInfoCard from './ContactInfoCard';
-import HotelCard from '../HotelList/HotelCard';
+// import HotelCard from '../HotelList/HotelCard';
 import HotelSingleHeader from './HotelSingleHeader';
 import HotelSingleCardHeader from './HotelSingleCardHeader';
 import HotelSingleGallery from './HotelSingleGallery';
@@ -21,9 +21,9 @@ export default function Hotelsingle() {
 						<HotelSingleGallery />
 						<HotelInfoDisplay />
 						<section className="hotel__ctn-displayCard">
+{/* {							<HotelCard />
 							<HotelCard />
-							<HotelCard />
-							<HotelCard />
+							<HotelCard />} */}
 						</section>
 						{/* <section className="contact"> */}
 					</div>

@@ -1,23 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import "./HotelListPagination.css";
 
 function HotelListPagination({ maxNpages, actualPage, setActualPage }) {
   const specialChar = ["<<", ">>"];
 
+  const scrollToTop = () => {
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: "smooth",
+    // });
+  };
+
   const firstPage = () => {
+    scrollToTop();
     setActualPage(0);
   };
 
   const nextPage = () => {
+    scrollToTop();
     setActualPage(actualPage + 1);
+    
   };
 
   const prePage = () => {
+    scrollToTop();
     setActualPage(actualPage - 1);
+    scrollToTop();
   };
 
   const lastPage = () => {
+    scrollToTop();
     setActualPage(maxNpages - 1);
+    scrollToTop();
   };
 
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import "./DevCard.css";
 
-function DevCard(props) {
-  const specialChar = ["  {", "}", ","];
+function DevCard(devInformation) {
+  const specialChar = ["  {", "}", ",", "//"];
   const cRed = "rgba(218,106,110,255)";
   const cOrange = "#ef9d3f";
   const cGreen = "rgba(97,204,146,255)";
@@ -13,10 +13,10 @@ function DevCard(props) {
     <div className="card-base">
       <div className="developers-card-ctn">
         <figure className="member-img-ctn">
-          <img className="member-profile-pic" src={props.cImage} alt="" />
-          <h3 style={{ color: `${props.cColor1}` }}>
+          <img className="member-profile-pic" src={devInformation.cImage} alt="" />
+          <h3 style={{ color: `${devInformation.cColor1}` }}>
             <span style={{ color: "white" }}>{specialChar[0]}</span>
-            {props.cNick}
+            {devInformation.cNick}
             <span style={{ color: "white" }}> {specialChar[1]}</span>
           </h3>
         </figure>
@@ -30,7 +30,7 @@ function DevCard(props) {
                 <p>
                   <span className="code-indentation">___</span>
                   <span style={{ color: "gray" }}>
-                    //Declare Developer Status
+                    {specialChar[3]}Declare Developer Status
                   </span>
                 </p>
               </div>
@@ -60,7 +60,7 @@ function DevCard(props) {
                   <span className="code-indentation">___</span>
                   <span style={{ color: cRed }}> name</span>
                   <span style={{ color: "cyan" }}> : </span>
-                  <span style={{ color: cGreen }}>'{props.cName}'</span>
+                  <span style={{ color: cGreen }}>'{devInformation.cName}'</span>
                   <span style={{ color: "white" }}> {specialChar[2]}</span>
                 </p>
               </div>
@@ -75,7 +75,7 @@ function DevCard(props) {
                   <span className="code-indentation">___</span>
                   <span style={{ color: cRed }}> title</span>
                   <span style={{ color: "cyan" }}> : </span>
-                  <span style={{ color: cGreen }}>'{props.cTitle}'</span>
+                  <span style={{ color: cGreen }}>'{devInformation.cTitle}'</span>
                   <span style={{ color: "white" }}> {specialChar[2]}</span>
                 </p>
               </div>
@@ -106,7 +106,7 @@ function DevCard(props) {
                   <span className="code-indentation">___</span>
                   <span style={{ color: cOrange }}> email</span>
                   <span style={{ color: "cyan" }}> : </span>
-                  <span style={{ color: cGreen }}>'{props.cEmail}'</span>
+                  <span style={{ color: cGreen }}>'{devInformation.cEmail}'</span>
                   <span style={{ color: "white" }}> {specialChar[2]}</span>
                 </p>
               </div>
@@ -122,7 +122,7 @@ function DevCard(props) {
                   <span className="code-indentation">___</span>
                   <span style={{ color: cOrange }}> github</span>
                   <span style={{ color: "cyan" }}> : </span>
-                  <span style={{ color: cGreen }}>'{props.cGithub}'</span>
+                  <span style={{ color: cGreen }}>'{devInformation.cGithub}'</span>
                   <span style={{ color: "white" }}> {specialChar[2]}</span>
                 </p>
               </div>
@@ -138,7 +138,7 @@ function DevCard(props) {
                   <span className="code-indentation">___</span>
                   <span style={{ color: cOrange }}> linkedin</span>
                   <span style={{ color: "cyan" }}> : </span>
-                  <span style={{ color: cGreen }}>'{props.cLinkedin}'</span>
+                  <span style={{ color: cGreen }}>'{devInformation.cLinkedin}'</span>
                   <span style={{ color: "white" }}> {specialChar[2]}</span>
                 </p>
               </div>

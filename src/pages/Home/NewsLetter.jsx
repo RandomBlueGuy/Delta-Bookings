@@ -1,18 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./NewsLetter.css";
 import placeholderImg from "../../assets/Images/NewsLetter-placeholder.png";
 import placeholder2Img from "../../assets/Images/NewsLetter-placeholder2.png";
 
 function NewsLetter() {
-  function randomDate(x) {
-    const rDate = new Date(Math.floor(Math.random() * Date.now()));
-    return x === true
-      ? rDate
-          .toLocaleString(undefined, { month: "long" })
-          .toUpperCase()
-          .slice(0, 3)
-      : rDate.getDay().toString().padStart(2, "0");
-  }
+  const [review1, setReview1] = useState({});
+  const [review2, setReview2] = useState({});
+  const r1Date = new Date(review1.Date);
+  const r2Date = new Date(review2.Date);
+
+  useEffect(() => {
+    fetch("/DB/HotelDataBase.json")
+      .then((response) => response.json())
+      .then((data) =>
+        setReview1(
+          data[parseInt(Math.random() * 15)].About.Reviews[
+            parseInt(Math.random() * 3)
+          ]
+        )
+      );
+
+    fetch("/DB/HotelDataBase.json")
+      .then((response) => response.json())
+      .then((data) =>
+        setReview2(
+          data[parseInt(Math.random() * 15)].About.Reviews[
+            parseInt(Math.random() * 3)
+          ]
+        )
+      );
+  }, []);
 
   return (
     <main className="NewsLetter-container">
@@ -21,18 +38,14 @@ function NewsLetter() {
           <figure className="card-ctn-nl-img-container">
             <img src={placeholderImg} alt="" />
             <figcaption className="date-review">
-              <h1>{randomDate(false)}</h1>
-              <p>{randomDate(true)}</p>
+              <h1>{(r1Date.getDay()+1).toString().padStart(2, "0")}</h1>
+              <p>{r1Date.toLocaleString(undefined, { month: "long"}).slice(0,3)}</p>
             </figcaption>
           </figure>
           <div className="card-ctn-nl-txt-container">
-            <p className="reviewer">Posted by: Julia Holmes</p>
-            <p className="review">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
-            <p className="sub">Lorem Ipsum is simply dummy text</p>
-
+            <p className="reviewer">Posted by: {review1.User}</p>
+            <p className="review">User Rating: {review1.Rating}/5</p>
+            <p className="sub">{review1.HotelReview}</p>
             <button type="button" className="more">
               READ MORE
             </button>
@@ -42,17 +55,14 @@ function NewsLetter() {
           <figure className="card-ctn-nl-img-container">
             <img src={placeholder2Img} alt="" />
             <figcaption className="date-review">
-              <h1>{randomDate(false)}</h1>
-              <p>{randomDate(true)}</p>
+            <h1>{(r2Date.getDay()+1).toString().padStart(2, "0")}</h1>
+              <p>{r2Date.toLocaleString(undefined, { month: "long"}).slice(0,3)}</p>
             </figcaption>
           </figure>
           <div className="card-ctn-nl-txt-container">
-            <p className="reviewer">Posted by: Julia Holmes</p>
-            <p className="review">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
-            <p className="sub">Lorem Ipsum is simply dummy text</p>
+            <p className="reviewer">Posted by: {review2.User}</p>
+            <p className="review">User Rating: {review2.Rating}/5</p>
+            <p className="sub">{review2.HotelReview}</p>
 
             <button type="button" className="more">
               READ MORE
