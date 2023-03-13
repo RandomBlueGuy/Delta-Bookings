@@ -14,7 +14,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function RoomCard({ RoomCardData }) {
-  console.log("INFO INSIDE ROOM CARD =>", RoomCardData);
   const HotelData = useContext(HotelSingleContext);
   return (
     <main className="RoomCard-ctn">
