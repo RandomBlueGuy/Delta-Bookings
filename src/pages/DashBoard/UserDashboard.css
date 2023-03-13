@@ -1,22 +1,71 @@
 
+.dashboard {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
 .dashboard__ctn {
     margin: 0;
-    width: 90vw;
-    display: grid;
-    grid-template-areas:
-    "a b b";
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     grid-gap: 15px;
     font-family: 'Nunito', sans-serif;
-    
-    
+    gap: 1rem;
+   
 }
 .dashboard__ctn-info {
-    grid-area: a;
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 90%;
     border: 1px solid;
     border-color: gray;
     text-align: center;
+    align-items: center;
+    justify-content: center;
+
 }
-dashboard__ctn-info-img {
+.dashboard__ctn-info-prof {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard__ctn-info-img {
+    display: flex;
+    position: relative;
+}
+.dashboard__ctn-info-img input {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+
+}
+.dashboard__ctn-edit {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    padding: 15px;
+    flex: 2;
+}
+.dashboard__ctn-edit1 {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+.dashboard__ctn-edit1-title {
+    display: flex;
+    flex-direction: column;
+}
+.dashboard__ctn-info-img img {
     border-radius: 50%;
 }
 .dashboard__ctn-info-text h1 {
@@ -36,7 +85,7 @@ dashboard__ctn-info-img {
     margin-left: 15px;
 }
 .profile-edit {
-    grid-area: b;
+    display: flex;
     border: 1px solid;
     border-color: gray;
     justify-items: stretch;
@@ -52,3 +101,25 @@ dashboard__ctn-info-img {
     flex-direction: row;
     padding-right: 100px;
 }
+
+/*Estilo para el formulario*/
+form div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    width: 150px; /* ajusta el ancho del label según tus necesidades */
+    margin-right: 10px;
+    text-align: right;
+  }
+  
+  input {
+    flex: 1;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  

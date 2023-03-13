@@ -9,7 +9,7 @@
   --dark-BG: #1c1c1c;
   --NavBar-btn: rgba(217, 217, 217, 0.4);
   --NavBar-menu: rgba(217, 217, 217, 0.9);
-  --Main-BG: rgba(247,247,247,1);
+  --Main-BG: rgb(237, 237, 237);
   box-sizing: none; 
 }
 

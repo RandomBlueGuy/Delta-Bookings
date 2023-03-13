@@ -17,14 +17,13 @@
 
 .card-ctn-nl {
   display: flex;
-
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
   gap: 2rem;
 }
 
 .card-ctn-nl-img-container {
   background-color: azure;
-  width: 300px;
+  width: 200px;
   position: relative;
   display: inline-block;
   padding: 0;
@@ -79,14 +78,21 @@
 }
 
 .review {
+
+  overflow: hidden;
   font-weight: 800;
   font-size: 18px;
 }
 
 .sub {
+  height: 5rem;
+  max-height: 5rem;
+  width:90%;
   font-weight: 600;
   color: gray;
   font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .more {

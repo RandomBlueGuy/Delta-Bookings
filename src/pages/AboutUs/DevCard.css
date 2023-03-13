@@ -71,6 +71,7 @@
 }
 
 .member-img-ctn {
+  margin: 0;
   display: flex;
   min-width: 250px;
   height: 100%;
@@ -170,7 +171,6 @@
   .card-base:hover .developers-card-ctn {
     width: 100%;
     height: 200%;
-
     transform: translateX(0px);
     z-index: 3;
   }

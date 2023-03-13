@@ -22,7 +22,7 @@
 .check__card-info {
 	display: flex;
 	justify-content: space-between;
-	align-items: end;
+	align-items: flex-end;
 	width: 90%;
 }
 
