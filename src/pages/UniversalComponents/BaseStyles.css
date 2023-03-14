@@ -11,10 +11,14 @@
   --NavBar-menu: rgba(217, 217, 217, 0.9);
   --Main-BG: rgb(237, 237, 237);
   box-sizing: none; 
+
 }
 
 * {
   font-family: "Nunito", sans-serif;
+}
+::selection {
+  background: #ef3f3f6d;
 }
 
 p {
