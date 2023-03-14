@@ -6,7 +6,7 @@ export default function TravellerInfo() {
     firstname: "",
     lastname: "",
     inputEmail: "",
-    contactInfo: 0,
+    contactInfo: "",
     request: "",
     coupon: "",
   });
@@ -17,16 +17,22 @@ export default function TravellerInfo() {
       ...info,
       [name]: value,
     });
-    console.log(info);
   };
 
-  //const handleInfo = (event) => {};
+  const handleInfo = (event) => {
+    event.preventDefault();
+    if (firstname === "" || lastname === "") {
+      alert("información pendiente");
+    }
+  };
 
   const { firstname, lastname, inputEmail, contactInfo, request, coupon } =
     info;
 
+  console.log(info);
+
   return (
-    <article className="container-2">
+    <form onSubmit={handleInfo} className="container-2">
       <section className="travelInfo-container">
         <h4>Traveller Information</h4>
         <div className="person-info" role="form">
@@ -41,6 +47,7 @@ export default function TravellerInfo() {
                 placeholder="First Name"
                 onChange={(event) => handleChange(event)}
                 value={firstname}
+                //required
               />
             </label>
           </div>
@@ -55,6 +62,7 @@ export default function TravellerInfo() {
                 onChange={(event) => handleChange(event)}
                 placeholder="Last Name"
                 value={lastname}
+                //required
               />
             </label>
           </div>
@@ -93,6 +101,7 @@ export default function TravellerInfo() {
                 onChange={(event) => handleChange(event)}
                 placeholder="+57"
                 value={contactInfo}
+                //required
               />
             </label>
           </div>
@@ -140,6 +149,6 @@ export default function TravellerInfo() {
           </button>
         </section>
       </section>
-    </article>
+    </form>
   );
 }
