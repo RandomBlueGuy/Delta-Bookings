@@ -43,6 +43,7 @@ function HotelListPagination({ maxNpages, actualPage, setActualPage }) {
       >
         {specialChar[0]}
       </button>
+      <p className='pagination-infinitive'>...</p>
       <button
         className={actualPage > 0 ? "act-chk" : "dis-chk"}
         disabled={actualPage > 0 ? false : true}
@@ -62,6 +63,8 @@ function HotelListPagination({ maxNpages, actualPage, setActualPage }) {
       >
         {actualPage + 2}
       </button>
+      <p className='pagination-infinitive'>...</p>
+
       <button
         className={actualPage < maxNpages - 1 ? "act-chk" : "dis-chk"}
         disabled={actualPage < maxNpages - 1 ? false : true}
