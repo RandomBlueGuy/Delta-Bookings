@@ -1,6 +1,5 @@
 import React from 'react'
 import '../DashBoard/HeaderDashboard'
-
 function HotelList() {
   return (
     <main className="Header-container">

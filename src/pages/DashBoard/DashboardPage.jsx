@@ -1,15 +1,17 @@
 import React from "react";
 import UserDashboard from "./UserDashboard";
-import HeaderDashboard from "./HeaderDashboard"
-
+import HeaderDashboard from "./HeaderDashboard";
+import "./UserDashboard";
 
 function DashBoardPage() {
   return (
     <div>
       <HeaderDashboard />
-      <UserDashboard />
+      <main className="Dashboard-ctn">
+        <UserDashboard />
+      </main>
     </div>
   );
 }
 
-export default DashBoardPage
+export default DashBoardPage;

@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  background-color: var(--dark-BG);
+  background-color: var(--Main-BG);
 }
 
 .page404-ctn-title {
