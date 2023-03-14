@@ -1,11 +1,17 @@
 .RoomCard-ctn {
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	padding: 1rem;
+	box-shadow: 3px 3px 5px rgba(143, 143, 143, 0.2); 
+	 /* border-right: 2px solid rgba(143, 143, 143, 0.2);
+	border-bottom: 2px solid rgba(143, 143, 143, 0.2);  */
 }
 
 .RoomCard-title {
 	width: 100%;
+	margin-bottom: 0.5rem;
 }
 
 .RoomCard-table {
@@ -44,11 +50,13 @@
 	display: flex;
 	align-items: top;
 	justify-content: center;
+	margin-top: 1rem;
 }
 
 .RoomCard-table-inclusion {
 	align-items: top;
 	justify-content: center;
+	margin-top: 1rem;
 }
 
 .RoomCard-table-price {
@@ -92,7 +100,6 @@
 	}
 
 	.RoomCard-table-price {
-
-		align-items: start;
+		align-items: flex-start;
 	}
 }

@@ -9,8 +9,8 @@ import { useState, useEffect } from "react";
 
 function NavBar() {
   let location = useLocation();
-  const [invalidUrl, setInvalidUrl] = useState("true");
-  const [NavBarState, setNavBarState] = useState("true");
+  const [invalidUrl, setInvalidUrl] = useState(true);
+  const [NavBarState, setNavBarState] = useState(true);
   const [trigger, setTrigger] = useState("");
   const [visibility, setVisibility] = useState("");
   const invalidPathsArr = ["/404-page-not-found"];
@@ -40,10 +40,18 @@ function NavBar() {
     setTrigger("0px");
   };
 
+  useEffect(() => {
+    NavBarState
+    ? setVisibility(true)
+    : setVisibility(false);
+  }, [])
+  
   const toggleVisible = () => {
-    document.documentElement.scrollTop > 100 || NavBarState
-      ? setVisibility(true)
-      : setVisibility(false);
+    if (!NavBarState){
+       document.documentElement.scrollTop > 100
+        ? setVisibility(true)
+        : setVisibility(false);
+    }
   };
 
   window.addEventListener("scroll", toggleVisible);
