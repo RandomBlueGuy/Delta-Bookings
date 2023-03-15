@@ -179,6 +179,13 @@ input {
     border: 0.0625rem solid #999;
 }
 
+/*Error Style*/
+.error {
+    color: red;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
 
 @media (max-width:376px) {
 
