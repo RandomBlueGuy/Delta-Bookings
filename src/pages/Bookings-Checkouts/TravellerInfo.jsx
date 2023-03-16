@@ -10,6 +10,10 @@ export default function TravellerInfo() {
     request: "",
     coupon: "",
   });
+  const [errors, setErrors] = useState({});
+
+  const { firstname, lastname, inputEmail, contactInfo, request, coupon } =
+    info;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -21,15 +25,31 @@ export default function TravellerInfo() {
 
   const handleInfo = (event) => {
     event.preventDefault();
-    if (firstname === "" || lastname === "") {
-      alert("información pendiente");
+    const validationErrors = {};
+    if (firstname.trim() === "") {
+      validationErrors.firstName = "Please enter your first name";
+    } else if (!/^[a-zA-Z]+$/.test(firstname)) {
+      validationErrors.firstName = "First name must contain only letters";
+    } else if (firstname.trim().length < 2) {
+      validationErrors.firstName =
+        "First name must be at least 2 characters long";
     }
+
+    if (lastname.trim() === "") {
+      validationErrors.lastName = "Please enter your second name";
+    } else if (!/^[a-zA-Z]+$/.test(lastname)) {
+      validationErrors.lastName = "Last name must contain only letters";
+    } else if (firstname.trim().length < 2) {
+      validationErrors.lastName =
+        "Last name must be at least 2 characters long";
+    }
+
+    if (inputEmail.trim() === "") {
+      validationErrors.email = "Please enter your email";
+    }
+
+    setErrors(validationErrors);
   };
-
-  const { firstname, lastname, inputEmail, contactInfo, request, coupon } =
-    info;
-
-  console.log(info);
 
   return (
     <form onSubmit={handleInfo} className="container-2">
@@ -47,8 +67,10 @@ export default function TravellerInfo() {
                 placeholder="First Name"
                 onChange={(event) => handleChange(event)}
                 value={firstname}
-                //required
               />
+              {errors.firstName && (
+                <span className="error">{errors.firstName}</span>
+              )}
             </label>
           </div>
           <div class="lastname-info">
@@ -62,8 +84,10 @@ export default function TravellerInfo() {
                 onChange={(event) => handleChange(event)}
                 placeholder="Last Name"
                 value={lastname}
-                //required
               />
+              {errors.lastName && (
+                <span className="error">{errors.lastName}</span>
+              )}
             </label>
           </div>
         </div>
@@ -82,6 +106,7 @@ export default function TravellerInfo() {
                 placeholder="Enter email"
                 value={inputEmail}
               />
+              {errors.email && <span className="error">{errors.email}</span>}
             </label>
             <small id="emailHelp" class="form-text text-muted">
               Booking confirmation will be sent to this email ID.
