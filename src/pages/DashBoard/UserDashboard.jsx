@@ -44,6 +44,8 @@ export default function UserDashboard() {
             >
               Edit
             </button>
+            <button>Cancel</button>
+              <button>Save Changes</button>
           </div>
           <form action="">
             <div className="dashboard__ctn-info-edit1-name">
@@ -135,6 +137,7 @@ export default function UserDashboard() {
                     : "Dashboard-ctn-isNotDisabled"
                 }
               />
+
             </div>
           </form>
         </div>

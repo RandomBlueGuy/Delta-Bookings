@@ -4,10 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
+  
   const [toggleVisible, setToggleVisible] = useState(true);
   const uIcon = <FontAwesomeIcon icon={faUser} />;
   const lIcon = <FontAwesomeIcon icon={faLock} />;
   const mIcon = <FontAwesomeIcon icon={faEnvelope} />;
+
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
     console.log(toggleVisible);
