@@ -1,13 +1,13 @@
 .Login-ctn {
   width: 100%;
-  height: 80vh;
+
   background-color: var(--Main-BG);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   box-sizing: border-box;
   padding-top: 5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 
 .Login-ctn input {
