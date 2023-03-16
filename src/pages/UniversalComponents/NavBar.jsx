@@ -9,26 +9,37 @@ import { useState, useEffect } from "react";
 
 function NavBar() {
   let location = useLocation();
-  const [invalidUrl, setInvalidUrl] = useState(true);
-  const [NavBarState, setNavBarState] = useState(true);
+  const [visibility, setVisibility] = useState(true);
+  const [isInvalidUrl, setIsInvalidUrl] = useState(false);
+  const [isSpecialPath, setIsSpecialPath] = useState(false);
   const [trigger, setTrigger] = useState("");
-  const [visibility, setVisibility] = useState("");
+  const specialPathsArr = ["/bookings", "/hotel-single", "/checkout-success", "/login"];
   const invalidPathsArr = ["/404-page-not-found"];
-  const specialPathsArr = ["/bookings", "/hotel-single"];
 
   useEffect(() => {
-    const isInvalidPath = invalidPathsArr
-      .map((item) => item === location.pathname)
-      .includes(true);
-    setInvalidUrl(isInvalidPath);
-  });
+    invalidPathsArr
+      .map((element) => element === location.pathname)
+      .includes(true)
+      ? setIsInvalidUrl(true)
+      : setIsInvalidUrl(false);
+  }, [location.pathname]);
 
   useEffect(() => {
-    const isSpecialPath = specialPathsArr
-      .map((item) => item === location.pathname)
-      .includes(true);
-    setNavBarState(isSpecialPath);
-  });
+    console.log(      specialPathsArr
+      .map((element) => element === location.pathname)
+      .includes(true))
+    if (
+      specialPathsArr
+        .map((element) => element === location.pathname)
+        .includes(true)
+    ) {
+      setIsSpecialPath(true);
+      setVisibility(true);
+    } else {
+      setIsSpecialPath(false);
+      setVisibility(false);
+    }
+  }, [location.pathname]);
 
   const triggerOpen = (event) => {
     event.preventDefault();
@@ -41,14 +52,14 @@ function NavBar() {
   };
 
   useEffect(() => {
-    NavBarState
-    ? setVisibility(true)
-    : setVisibility(false);
-  }, [])
-  
+    isSpecialPath ? setVisibility(true) : setVisibility(false);
+  }, []);
+
   const toggleVisible = () => {
-    if (!NavBarState){
-       document.documentElement.scrollTop > 100
+    if (isSpecialPath) {
+      setVisibility(true);
+    } else {
+      document.documentElement.scrollTop > 100
         ? setVisibility(true)
         : setVisibility(false);
     }
@@ -57,13 +68,13 @@ function NavBar() {
   window.addEventListener("scroll", toggleVisible);
 
   return (
-    !invalidUrl && (
+    !isInvalidUrl && (
       <main
         className="NavBar-container txt-color"
         style={{
           backgroundColor: visibility ? "white" : "transparent",
           boxShadow: visibility
-            ? `0px 10px 10px rgba(43, 43, 43, 0.2)`
+            ? `0px 2px 5px rgba(43, 43, 43, 0.2)`
             : "none",
           // display: invalidUrl ? "none" : "flex",
         }}
@@ -112,9 +123,9 @@ function NavBar() {
                     <h2>Sign Up</h2>
                   </li>
                 </Link>
-                <Link to="/bookings">
+                <Link to="/checkout-success">
                   <li className="item-ctn">
-                    <h2>Bookings</h2>
+                    <h2>Check Out Success</h2>
                   </li>
                 </Link>
                 <Link to="/checkout">
@@ -232,7 +243,7 @@ function NavBar() {
                 />
                 <ul className="dropdown-menu">
                   <li className="item-ctn">
-                    <Link to="/">
+                    <Link to="/login">
                       <h2>Log In</h2>
                     </Link>
                   </li>

@@ -3,7 +3,6 @@ import "./Hotelsingle.css";
 import "../UniversalComponents/BaseStyles.css";
 import ContactInfoCard from "./ContactInfoCard";
 // import HotelCard from '../HotelList/HotelCard';
-import HotelSingleHeader from "./HotelSingleHeader";
 import HotelSingleCardHeader from "./HotelSingleCardHeader";
 import HotelSingleGallery from "./HotelSingleGallery";
 import HotelInfoDisplay from "./HotelInfoDisplay";
@@ -16,8 +15,6 @@ export default function Hotelsingle() {
   return (
     <HScontextProvider>
       <div className="hotelsingle__maxcontainer">
-        <HotelSingleHeader />
-    
         <main className="hotel__single-container">
           <HotelSingleCardHeader />
           <div className="hotels__container-columns">

@@ -17,7 +17,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./App.css";
 import CheckoutSuccessPage from "./pages/Bookings-Checkouts/CheckoutSuccessPage";
-
+import Login from './pages/Login/Login';
 // - URL
 // - protocol -   subDomain -  Domain        -   Extension      -  path       - params/slugs/opt - search params
 // - http:    - classroom   -  make it real  -    .   -  camp  - /dashboard  -  /users ? name=jhon&id=1234
@@ -47,6 +47,7 @@ function App() {
           path="/checkout-success"
           element={<CheckoutSuccessPage />}
         />
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="*" element={<Page404 />} />
         <Route exact path="/about-us" element={<AboutUspage />} />
         <Route exact path="/dashboard" element={<UserDashBoard />} />

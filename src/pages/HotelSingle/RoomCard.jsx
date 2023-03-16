@@ -29,7 +29,6 @@ function RoomCard({ RoomCardData }) {
             <h4>Amenities</h4>
             {RoomCardData.Amenities.map((amenities) => (
               <li>
-                <FontAwesomeIcon icon={faBed} />
                 {amenities}
               </li>
             ))}

@@ -1,0 +1,140 @@
+.Login-ctn {
+  width: 100%;
+  height: 80vh;
+  background-color: var(--Main-BG);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+.Login-ctn input {
+  font-size: 16px;
+  color: rgb(67, 67, 67);
+}
+
+.Login-ctn ::placeholder {
+  color: rgb(160, 160, 160);
+}
+
+.Login-ctn input {
+  border-radius: 0;
+  border: none;
+  outline: none;
+}
+
+
+.Login-card {
+  box-sizing: inherit;
+  width: 90%;
+  max-width: 400px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.5rem;
+}
+
+.Login-card p {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--txt-gray);
+}
+
+.Login-ctn label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--txt-gray);
+}
+
+.Login-card input {
+  box-sizing: border-box;
+  width: 99%;
+}
+
+.Login-special-label {
+  text-align: right;
+  width: 100%;
+  flex-direction: row;
+}
+
+.Login-special-btn {
+  width: 100%;
+  align-self: flex-end;
+  background-color: transparent;
+  color: var(--red-style);
+  box-shadow: none;
+  text-align: right;
+}
+
+.Login-special-btn:hover {
+  background-color: transparent;
+  color: var(--red-style);
+}
+
+.Login-secret-section {
+  height: 0px;
+  overflow: hidden;
+  transition: height ease-in-out 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Login-secret-section-active {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100px;
+  transition: height ease-in-out 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Login-ctn-btn {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 20rem;
+}
+
+.Login-formbox{
+  display: flex;
+  align-items: center;
+  color: var(--txt-gray);
+  gap: 0.5rem;
+  border-bottom: 3px solid rgba(128, 128, 128, 0.352);
+  padding-left: 0.5rem;
+}
+
+.recovery-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.Login-formbox:focus-within{
+  border-color: var(--red-style);
+}
+
+@media (max-width: 720px) {
+  .Login-special-label {
+    font-weight: 700;
+    color: var(--txt-gray);
+    font-size: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .Login-secret-section input,
+  .Login-secret-section-active input {
+    width: 98%;
+    justify-content: center;
+    align-items: center;
+  }
+}
