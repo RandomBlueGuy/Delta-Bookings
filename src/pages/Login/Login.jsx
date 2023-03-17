@@ -9,6 +9,7 @@ function Login() {
   const uIcon = <FontAwesomeIcon icon={faUser} />;
   const lIcon = <FontAwesomeIcon icon={faLock} />;
   const mIcon = <FontAwesomeIcon icon={faEnvelope} />;
+  
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
     console.log(toggleVisible);
@@ -18,6 +19,30 @@ function Login() {
     event.preventDefault(); 
     console.log('Datos enviados:', event.target.input.value);
   }
+
+  const [usuario, setUsuario] = useState({campo: '', valido: null});
+
+const validarUsuario = (e) => {
+  const regexUsuario = /^[a-zA-Z0-9]{4,16}$/;
+  const valido = regexUsuario.test(e.target.value);
+  setUsuario({campo: e.target.value, valido: valido});
+};
+
+const [password, setPassword] = useState({campo: '', valido: null});
+
+const validarPassword = (e) => {
+  const regexPassword = /^[a-zA-Z0-9]{4,16}$/;
+  const valido = regexPassword.test(e.target.value);
+  setPassword({campo: e.target.value, valido: valido});
+};
+
+const [email, setEmail] = useState({campo: '', valido: null});
+
+const validarEmail = (e) => {
+  const regexEmail = /^[a-zA-Z0-9]{4,16}$/;
+  const valido = regexEmail.test(e.target.value);
+  setEmail({campo: e.target.value, valido: valido});
+};
 
   return (
     <main className="Login-ctn">
