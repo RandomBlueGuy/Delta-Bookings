@@ -48,6 +48,15 @@ export default function TravellerInfo() {
       validationErrors.email = "Please enter your email";
     }
 
+    if (contactInfo === "") {
+      validationErrors.number = "Please enter your phone number";
+    } else if (contactInfo.trim().replace(/\s+/g, "").length !== 10) {
+      validationErrors.number =
+        "Number cannot be longer  or shorter than 10 digits";
+    } else if (!/^[0-9]*$/.test(contactInfo.trim().replace(/\s+/g, ""))) {
+      validationErrors.number = "Only numeric characters are accepted";
+    }
+
     setErrors(validationErrors);
   };
 
@@ -126,8 +135,8 @@ export default function TravellerInfo() {
                 onChange={(event) => handleChange(event)}
                 placeholder="+57"
                 value={contactInfo}
-                //required
               />
+              {errors.number && <span className="error">{errors.number}</span>}
             </label>
           </div>
         </section>

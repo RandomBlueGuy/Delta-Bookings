@@ -123,7 +123,7 @@
 
 .dashboard__ctn-info-edit1-title {
   display: flex;
-
+  gap: 2rem;
   align-items: center;
   margin-bottom: 1rem;
 }

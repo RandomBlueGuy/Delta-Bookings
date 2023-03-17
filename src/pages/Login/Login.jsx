@@ -4,42 +4,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
+  
   const [toggleVisible, setToggleVisible] = useState(true);
   const uIcon = <FontAwesomeIcon icon={faUser} />;
   const lIcon = <FontAwesomeIcon icon={faLock} />;
   const mIcon = <FontAwesomeIcon icon={faEnvelope} />;
-
-  
-  const [usuario, setUsuario] = useState({ campo: "", valido: null });
-  const validarUsuario = (e) => {
-    const regex = /^[a-zA-Z0-9]{4,16}$/;
-    const valido = regex.test(e.target.value);
-    setUsuario({ campo: e.target.value, valido: valido });
-  };
-
-  const [password, setPassword] = useState({campo: "", valido: null});
-  const validarPassword = (e) => {
-    const regexPassword = /^,{4,12}$/;
-    const valido = regexPassword.test(e.target.value);
-    setPassword({ campo: e.target.value, valido: valido });
-  };
-
-  const [email, setEmail] = useState({campo: "", valido: null});
-  const validarEmail = (e) => {
-    const regexEmail = /^[a-zA-Z09_.+-]+@[a-zA-Z09-]+\.[a-zA-Z09-.]+$/;
-    const valido = regexEmail.test(e.target.value);
-    setEmail({ campo: e.target.value, valido: valido });
-  };
-
-
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
     console.log(toggleVisible);
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Esto evita que la página se recargue cuando se envía el formulario.
-    // Aquí puedes hacer cualquier acción que desees con los datos del input.
+    event.preventDefault(); 
     console.log('Datos enviados:', event.target.input.value);
   }
 
