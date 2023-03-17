@@ -36,10 +36,14 @@ function CheckCard() {
       </section>
 
       <form className="check__card-form" action="">
-        <input type="date" placeholder="Fecha del Check-in" />
-        <input type="date" placeholder="Fecha de Check-out" />
-        <input type="text" placeholder="Ingrese ciudad de destino" />
-        <input type="number" placeholder="Choose" />
+        <label htmlFor="check-in">Check-in Date</label>
+        <input type="date" placeholder="Check-In Date" />
+        <label htmlFor="check-out">Check-out Date</label>
+        <input type="date" placeholder="Check-out Date" />
+        <label htmlFor="city-destination">City Destination</label>
+        <input type="text" placeholder="City Destination" />
+        <label htmlFor="room-type">Room Type</label>
+        <input type="select" placeholder="Room Type" />
         <button className="search-btn">Book This Now</button>
       </form>
     </section>

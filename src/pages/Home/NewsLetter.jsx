@@ -92,7 +92,7 @@ function NewsLetter() {
             about our fresh and fantastic products
           </p>
         </section>
-        <section className="form-input">
+        <form className="form-input">
           <input
             className="input-mail"
             type="text"
@@ -101,7 +101,7 @@ function NewsLetter() {
           <button type="button" className="sub-btn">
             Subscribe
           </button>
-        </section>
+        </form>
       </form>
     </main>
   );
