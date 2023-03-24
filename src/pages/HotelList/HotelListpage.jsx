@@ -5,27 +5,24 @@ import Header from "./HotelListHeader";
 import HotelCard from "./HotelCard";
 import SearchBar from "./SearchBar";
 import HotelListPagination from "./HotelListPagination";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "../../ReduxStore/Slices/FetchData/fetchDataSlice";
 
 function HotelListpage() {
   const [actualPage, setActualPage] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(9);
-  const [hotelCardArr, setHotelCardArr] = useState([]);
-  const maxNpages = getMaxNpages();
-
-  function getMaxNpages() {
-    const res = hotelCardArr.length / itemsPerPage;
-    return res > parseInt(res) ? parseInt(res) + 1 : res;
-  }
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [maxNpages, setMaxNpages] = useState();
+  const HotelsArray = useSelector((state) => state.fetchData.HotelsArray);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get("/DB/HotelDataBase.json")
-      .then((response) => {
-        setHotelCardArr([...hotelCardArr, ...response.data]);
-      })
-      .catch((err) => console.log(err));
-    setItemsPerPage(6);
+    dispatch(fetchData());
   }, []);
+
+  useEffect(() => {
+    const res = HotelsArray.length / itemsPerPage;
+    setMaxNpages(res > parseInt(res) ? parseInt(res) + 1 : res);
+  }, [HotelsArray]);
 
   return (
     <div className="HotelListpage-ctn">
@@ -46,15 +43,13 @@ function HotelListpage() {
           </div>
         </div>
         <div className="card-gallery">
-          {hotelCardArr
-            .slice(
-              actualPage * itemsPerPage,
-              actualPage * itemsPerPage + itemsPerPage
-            )
-            .map((item) => {
-              //console.log("item en map", item);
-              return <HotelCard hotelInfoCard={item} />;
-            })}
+          {HotelsArray.slice(
+            actualPage * itemsPerPage,
+            actualPage * itemsPerPage + itemsPerPage
+          ).map((item) => {
+            //console.log("item en map", item);
+            return <HotelCard hotelInfoCard={item} />;
+          })}
         </div>
         <HotelListPagination
           maxNpages={maxNpages}

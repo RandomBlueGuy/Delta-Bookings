@@ -33,7 +33,7 @@ function HotelCard({ hotelInfoCard }) {
       <section className="card-description">
         <div className="HC-title">
           <div className="HC-subtitle">
-            <h1>{hotelInfoCard.HotelName}</h1>
+            <h1>{hotelInfoCard.HotelName.slice(0, 20)}</h1>
           </div>
           <div className="HC-location">
             <p>
@@ -43,7 +43,7 @@ function HotelCard({ hotelInfoCard }) {
           </div>
         </div>
         <div className="HC-description">
-          <p>{hotelInfoCard.About.HotelDescription}</p>
+          <p>{hotelInfoCard.About.HotelDescription.slice(0, 130)}...</p>
         </div>
         <div className="score-system">
           <StarRating hotelRating={hotelInfoCard.About.StarRating} />

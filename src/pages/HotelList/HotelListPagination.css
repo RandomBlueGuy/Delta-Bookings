@@ -41,8 +41,3 @@
 .actual:hover {
 	background-color: transparent;
 }
-
-.pagination-infinitive{
-	color:var(--txt-gray);
-	line-height: 0;
-}
