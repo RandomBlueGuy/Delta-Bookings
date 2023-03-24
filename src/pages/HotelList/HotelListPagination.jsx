@@ -41,7 +41,7 @@ function HotelListPagination({ maxNpages, actualPage, setActualPage }) {
         disabled={actualPage > 0 ? false : true}
         onClick={firstPage}
       >
-        {specialChar[0]}
+        ❮❮
       </button>
       <button
         className={actualPage > 0 ? "act-chk" : "dis-chk"}
@@ -67,7 +67,7 @@ function HotelListPagination({ maxNpages, actualPage, setActualPage }) {
         disabled={actualPage < maxNpages - 1 ? false : true}
         onClick={lastPage}
       >
-        {specialChar[1]}
+        ❯❯
       </button>
     </div>
   );

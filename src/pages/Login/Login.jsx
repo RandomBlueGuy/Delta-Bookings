@@ -104,7 +104,7 @@ const validarEmail = (e) => {
                 type="email"
                 name="recover-input"
                 id="recover-input"
-                value={email}
+                value={email.campo}
                 placeholder="Enter your recovery email"
                 oncChange={validarEmail}
               />
