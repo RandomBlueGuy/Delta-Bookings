@@ -14,10 +14,10 @@ import Hotelsingle from "./pages/HotelSingle/Hotelsingle";
 import UserDashBoard from "./pages/DashBoard/DashboardPage";
 import CheckoutPage from "./pages/Bookings-Checkouts/CheckoutPage";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
 import "./App.css";
 import CheckoutSuccessPage from "./pages/Bookings-Checkouts/CheckoutSuccessPage";
-import Login from './pages/Login/Login';
+import Login from "./pages/Login/Login";
 // - URL
 // - protocol -   subDomain -  Domain        -   Extension      -  path       - params/slugs/opt - search params
 // - http:    - classroom   -  make it real  -    .   -  camp  - /dashboard  -  /users ? name=jhon&id=1234
@@ -33,11 +33,13 @@ function App() {
 
   return (
     <div>
-      <NavBar />
       <UpButton />
+      <NavBar />
       <Routes>
         {/* <Route exact path="/XXX" element={<XXX />} /> */}
-        <Route exact path="/" element={<Homepage />} />
+
+        <Route exact path="/" element={<Navigate to="/home" />} />
+        <Route exact path="/home" element={<Homepage />} />
         <Route exact path="/hotel-list" element={<HotelList />} />
         <Route exact path="/signup" element={<Signuppage />} />
         <Route exact path="/bookings" element={<Bookingpage />} />
@@ -48,10 +50,15 @@ function App() {
           element={<CheckoutSuccessPage />}
         />
         <Route exact path="/login" element={<Login />} />
-        <Route exact path="*" element={<Page404 />} />
+        <Route
+          exact
+          path="/*"
+          element={<Navigate to="/404-page-not-found" />}
+        />
+        <Route exact path="/404-page-not-found" element={<Page404 />} />
         <Route exact path="/about-us" element={<AboutUspage />} />
         <Route exact path="/dashboard" element={<UserDashBoard />} />
-        <Route exact path="/hotel-single" element={<Hotelsingle />} />
+        <Route exact path="/hotel-single/:id" element={<Hotelsingle />} />
       </Routes>
       <Footer />
     </div>

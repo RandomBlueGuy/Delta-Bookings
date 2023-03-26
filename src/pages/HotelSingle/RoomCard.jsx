@@ -46,7 +46,7 @@ function RoomCard({ RoomCardData }) {
           </ul>
         </div>
         <div className="RoomCard-table-price">
-          <p className="RC-discount">${RoomCardData?.OriginalPricePerNight}</p>
+          <p className="RC-discount">${(RoomCardData?.OriginalPricePerNight).toFixed(0)}</p>
           <p className="RC-new-pri">
             $
             {(

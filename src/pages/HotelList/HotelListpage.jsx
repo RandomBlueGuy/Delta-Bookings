@@ -46,9 +46,9 @@ function HotelListpage() {
           {HotelsArray.slice(
             actualPage * itemsPerPage,
             actualPage * itemsPerPage + itemsPerPage
-          ).map((item) => {
+          ).map((item, index) => {
             //console.log("item en map", item);
-            return <HotelCard hotelInfoCard={item} />;
+            return <HotelCard key = {index} hotelInfoCard={item} />;
           })}
         </div>
         <HotelListPagination

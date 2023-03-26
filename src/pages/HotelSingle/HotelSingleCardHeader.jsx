@@ -1,19 +1,18 @@
-import React, { useContext } from "react";
+import React from "react";
 import StarRating from "../UniversalComponents/StarRating";
 import "./HotelSingleCardHeader.css";
 import shareIcon from "../../assets/Icons/share.svg";
 import saveIcon from "../../assets/Icons/heartEmpty.svg";
-import { HotelSingleContext } from "./HotelSingleContext/HotelSingleContext";
 
-function HotelSingleCardHeader() {
-  const HotelData = useContext(HotelSingleContext);
+function HotelSingleCardHeader({currentHotel}) {
+
   return (
     <main className="HotelSingleCardHeader-ctn">
       <section className="HotelSingleCardHeader-general-info">
         <div className="general-info-title">
-          <h1>{HotelData?.HotelName}</h1>
+          <h1>{currentHotel?.HotelName}</h1>
           <div className="info-unnecessary">
-            <StarRating className="hotelsingle-displayer" hotelRating={HotelData?.About?.StarRating}/>
+            <StarRating className="hotelsingle-displayer" hotelRating={currentHotel?.StarRating} />
           </div>
           <button>
             <img src={shareIcon} alt="" />
@@ -26,18 +25,20 @@ function HotelSingleCardHeader() {
         </div>
         <div className="HotelSingleCardHeader-general-description">
           <h3>
-            {HotelData?.Location?.City} , {HotelData?.Location?.Country}
+            {currentHotel?.loc_City} , {currentHotel?.loc_Country}
           </h3>
           <div className="HotelSingleCardHeader-general-buttons">
-				{HotelData?.About?.Tags.map(item => <button>{item}</button>)}
-				
+            {currentHotel.Tags.map((tag) => (
+              <button>{tag}</button>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="HotelSingleCardHeader-general-price">
         <h1>
-          $ {HotelData?.Rooms[0]?.card?.OriginalPricePerNight} <span>/ Per Nigth</span>
+          $ {(currentHotel?.Rooms[0]?.OriginalPricePerNight).toFixed(0)}
+          <span>/ Per Nigth</span>
         </h1>
         <button>Book This Now</button>
       </section>

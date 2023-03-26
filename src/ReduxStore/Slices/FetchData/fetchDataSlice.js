@@ -7,30 +7,43 @@ export const fetchDataSlice = createSlice({
     HotelsArray: [],
     loading: false,
     error: false,
+    hotelSingle: null,
   },
   reducers: {
-    axiosSuccess: (state, action) =>{
+    axiosSuccess: (state, action) => {
       state.HotelsArray = action.payload;
+      state.loading = false;
+      state.error = false;
+    },
+    axiosSuccessHS: (state, action) => {
+      state.hotelSingle = action.payload;
       state.loading = false;
       state.error = false;
     },
     axiosLoading: (state) => {
       state.loading = true;
-      state.error = false;  
+      state.error = false;
     },
     axiosError: (state, action) => {
       state.loading = false;
-      state.error = action.payload; 
+      state.error = action.payload;
     },
   },
 });
 
-export const fetchData = () => {
+export const fetchData = (searchParams = null) => {
   return async (dispatch) => {
     dispatch({ type: axiosLoading });
     try {
       await axios.get("/DB/HotelDataBase.json").then((response) => {
-        dispatch({ type: axiosSuccess, payload: response.data });
+        if (searchParams === null) {
+          dispatch({ type: axiosSuccess, payload: response.data });
+        } else {
+          const [currentHotel] = response.data.filter(
+            (hotel) => hotel.HotelId === searchParams
+          );
+          dispatch({ type: axiosSuccessHS, payload: currentHotel });
+        }
       });
     } catch (error) {
       dispatch({ type: axiosError, payload: error.message });
@@ -38,6 +51,23 @@ export const fetchData = () => {
   };
 };
 
-export const { axiosSuccess, axiosLoading, axiosError } = fetchDataSlice.actions;
+// export const fetchDataHS = (searchParams = null) => {
+//   return async (dispatch) => {
+//     dispatch({ type: axiosLoading });
+//     try {
+//       await axios.get("/DB/HotelDataBase.json").then((response) => {
+//         const [currentHotel] = response.data.filter(
+//           (hotel) => hotel.HotelId === searchParams
+//         );
+//         dispatch({ type: axiosSuccessHS, payload: currentHotel });
+//       });
+//     } catch (error) {
+//       dispatch({ type: axiosError, payload: error.message });
+//     }
+//   };
+// };
+
+export const { axiosSuccess, axiosSuccessHS, axiosLoading, axiosError } =
+  fetchDataSlice.actions;
 
 export default fetchDataSlice.reducer;

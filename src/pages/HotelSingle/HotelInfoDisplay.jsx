@@ -1,14 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import RoomCard from "./RoomCard";
 import "./HotelInfoDisplay.css";
 import hotelPlaceholderImg from "../../assets/Images/hotelPlaceholder.jpg";
 import { HotelSingleContext } from "./HotelSingleContext/HotelSingleContext";
 import { Hotel } from "@mui/icons-material";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchDataHS } from "../../ReduxStore/Slices/FetchData/fetchDataSlice";
+import { useParams, useLocation } from "react-router-dom";
 
-function HotelInfoDisplay() {
+function HotelInfoDisplay({currentHotel = {}}) {
   const [selectedTab, setSelectedTab] = useState("ROOMS");
-  const HotelData = useContext(HotelSingleContext);
 
+  // console.log("EN HOTEL INFODISOLAY",currentHotel)
   function handleClick(selection) {
     setSelectedTab(selection);
   }
@@ -70,15 +73,17 @@ function HotelInfoDisplay() {
           className="HotelInfoDisplay-rooms-display"
           style={{ display: selectedTab === "ROOMS" ? "flex" : "none" }}
         >
-          {HotelData?.Rooms.map(element => <RoomCard RoomCardData = {element.card}/>)}
+          {currentHotel?.Rooms.map((room) => (
+            <RoomCard RoomCardData={room} />
+          ))}
         </article>
 
         <article
           className="HotelInfoDisplay-about-display"
           style={{ display: selectedTab === "ABOUT" ? "flex" : "none" }}
         >
-          <h1>About {HotelData?.HotelName}</h1>
-          <p>{HotelData?.About?.HotelDescription}</p>
+          <h1>About {currentHotel?.HotelName}</h1>
+          <p>{currentHotel?.HotelDescription}</p>
         </article>
 
         <article
@@ -86,7 +91,7 @@ function HotelInfoDisplay() {
           style={{ display: selectedTab === "FACILITY" ? "flex" : "none" }}
         >
           <h1>The Hotel Facilities include: </h1>
-          {HotelData?.Location?.Place}
+          {currentHotel?.HotelDescription}
         </article>
 
         <article
@@ -102,12 +107,12 @@ function HotelInfoDisplay() {
           style={{ display: selectedTab === "REVIEWS" ? "flex" : "none" }}
         >
           <h1>Hotel Reviews:</h1>
-          {HotelData?.About?.Reviews.map((element) => {
+          {currentHotel?.Reviews.map((review) => {
             return (
               <div>
-                <h1>User: {element.User}</h1>
-                <p>{element.Date}</p>
-                <p>{element.HotelReview}</p>
+                <h1>User: {review.User}</h1>
+                <p>{review.Date}</p>
+                <p>{review.HotelReview}</p>
               </div>
             );
           })}
@@ -118,10 +123,10 @@ function HotelInfoDisplay() {
           style={{ display: selectedTab === "POLICIES" ? "flex" : "none" }}
         >
           <h1>Hotel Policies</h1>
-          {HotelData?.About?.Policies.map((element) => {
+          {currentHotel?.Policies.map((policy) => {
             return (
               <div>
-                <li>{element}</li>
+                <li>{policy}</li>
               </div>
             );
           })}

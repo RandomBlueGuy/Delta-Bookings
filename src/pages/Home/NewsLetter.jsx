@@ -14,7 +14,7 @@ function NewsLetter() {
       .then((response) => response.json())
       .then((data) =>
         setReview1(
-          data[parseInt(Math.random() * 15)].About.Reviews[
+          data[parseInt(Math.random() * 15)].Reviews[
             parseInt(Math.random() * 3)
           ]
         )
@@ -24,7 +24,7 @@ function NewsLetter() {
       .then((response) => response.json())
       .then((data) =>
         setReview2(
-          data[parseInt(Math.random() * 15)].About.Reviews[
+          data[parseInt(Math.random() * 15)].Reviews[
             parseInt(Math.random() * 3)
           ]
         )
