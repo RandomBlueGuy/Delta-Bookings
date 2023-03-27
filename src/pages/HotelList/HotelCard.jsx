@@ -34,11 +34,11 @@ function HotelCard({ hotelInfoCard }) {
       <section className="card-description">
         <div className="HC-title">
           <div className="HC-subtitle">
-            <h1>{hotelInfoCard.HotelName.slice(0, 20)}</h1>
+            <h1>{hotelInfoCard.HotelName.slice(0, 25)}...</h1>
           </div>
           <div className="HC-location">
             <p>
-              <FontAwesomeIcon icon={faLocationDot} />{" "}
+              <FontAwesomeIcon icon={faLocationDot} />
               {hotelInfoCard.loc_City}
             </p>
           </div>

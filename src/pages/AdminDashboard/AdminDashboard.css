@@ -1,0 +1,228 @@
+.AdminDashboard__ctn {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.AdminDashboard__ctn-info {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+  max-width: 30%;
+  max-height: 600px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.admi.AdminDashboard__ctn-info h1 {
+  font-weight: 800;
+  color: rgb(43, 43, 43);
+}
+
+.AdminDashboard__ctn-info p {
+  font-weight: 600;
+  color: var(--txt-gray);
+  font-size: 18px;
+}
+
+.AdminDashboard__ctn-info-prof {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(242, 237, 237, 0.521);
+  padding: 2rem 0;
+}
+
+.AdminDashboard__ctn-info-img {
+  display: flex;
+  position: relative;
+  width: 70%;
+  aspect-ratio: 1/1;
+}
+
+.AdminDashboard__ctn-info-img img {
+  max-width: 100%;
+  position: absolute;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.AdminDashboard__ctn-info-img button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  color: var(--red-style);
+  background-color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  font-size: 120%;
+}
+
+.AdminDashboard__ctn-info-select {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+}
+
+.AdminDashboard__ctn-info-select button {
+  width: 100%;
+  height: 4rem;
+  background-color: white;
+  color: black;
+  box-shadow: 3px 3px 6px rgba(14, 14, 14, 0);
+  font-size: 18px;
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.AdminDashboard__ctn-info-select button:focus {
+  border-right: 5px solid var(--red-style);
+}
+
+.Admin__AdminDashboardCtn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-basis: 68%;
+  background-color: white;
+  padding: 2rem;
+}
+
+.AdminDashboard__ctn-info-edit1-title {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.AdminDashboard-edit-btn {
+  background-color: rgba(242, 237, 237, 0.521);
+  color: var(--red-style);
+  width: 4rem;
+  height: 1.5rem;
+  font-weight: 500;
+  margin-left: 2rem;
+}
+
+.AdminDashboard-edit-btn:hover {
+  transition: 0.2 ease-in-out;
+  background-color: var(--red-style);
+  color: white;
+}
+
+.AdminDashboard__ctn-info-img img {
+  border-radius: 50%;
+}
+
+.AdminDashboard__ctn-info-text h1 {
+  font-size: 25px;
+}
+
+.AdminDashboard-is-active {
+  border-right: 5px solid var(--red-style);
+}
+
+.searchbar__ctn {
+  box-sizing: border-box;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.management__searchbar {
+  width: 100%;
+}
+
+.searchbar__ctn button {
+  width: 8rem;
+}
+
+.Management__Card {
+  background-color: var(--NavBar-btn);
+  transition: 0.3s ease-in-out;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.Management__Card:hover {
+  background-color: var(--NavBar-menu);
+}
+
+.Management__Card h3 {
+  margin: 0;
+}
+
+.Management__Card--title{
+  display: flex;
+  justify-content: space-between;
+}
+
+.Management__separator {
+  color: var(--txt-gray);
+}
+
+.management__listDisplay {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.manage_btns{
+  display: flex;
+  gap: 0.5rem;
+
+}
+
+.manage_btns button{
+  height: 2rem;
+  aspect-ratio: 1 / 1;
+}
+
+.manage__edit{
+  background-color: rgb(44, 187, 85);
+}
+
+.manage__edit:hover{
+  background-color: rgb(35, 145, 66);
+}
+
+.manage__more{
+  background-color: rgb(44, 142, 187);
+}
+
+.manage__more:hover{
+  background-color: rgb(35, 107, 145);
+}
+
+
+.filter__ctn{
+  display: flex;
+}
+
+.Management__Card--body{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.manage__pagination{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

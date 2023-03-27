@@ -138,6 +138,11 @@ function NavBar() {
                     <h2>About Us</h2>
                   </li>
                 </Link>
+                <Link to="/admin-dashboard">
+                  <li className="item-ctn">
+                    <h2>Admin Dashboard</h2>
+                  </li>
+                </Link>
               </ul>
             </div>
           </section>

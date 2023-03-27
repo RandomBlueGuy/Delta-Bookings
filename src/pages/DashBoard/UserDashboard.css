@@ -236,6 +236,28 @@
         width: 100%;
     }
   }
+
+.Dashboard-is-active{
+  border-right: 5px solid var(--red-style);
+}
+
+.dashboard__ctn--Bookings {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-basis: 65%;
+  background-color: white;
+}
+
+.dashboard__ctn--ManageHotels{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-basis: 65%;
+  background-color: white;
+}
 /* outline: solid var(--red-style);
 box-shadow: 0 0 10px #719ece42;
 animation: input-shake  0.2s ease-in-out 0s 2;

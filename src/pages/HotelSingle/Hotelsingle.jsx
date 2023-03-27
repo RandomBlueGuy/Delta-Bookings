@@ -45,10 +45,10 @@ export default function Hotelsingle() {
           </div>
           <div className="container-column2">
             <section className="contactInfo__display">
-              {currentHotel && <CheckCard />}
+              {currentHotel && <CheckCard currentHotel={currentHotel} />}
             </section>
             <section className="contactInfo__display">
-              {currentHotel && <ContactInfoCard />}
+              {currentHotel && <ContactInfoCard currentHotel={currentHotel} />}
             </section>
 
             <div className="weather">

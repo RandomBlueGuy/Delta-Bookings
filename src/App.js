@@ -18,6 +18,7 @@ import { useLocation, Navigate } from "react-router-dom";
 import "./App.css";
 import CheckoutSuccessPage from "./pages/Bookings-Checkouts/CheckoutSuccessPage";
 import Login from "./pages/Login/Login";
+import AdminDashBoardPage from './pages/AdminDashboard/AdminDashboardPage';
 // - URL
 // - protocol -   subDomain -  Domain        -   Extension      -  path       - params/slugs/opt - search params
 // - http:    - classroom   -  make it real  -    .   -  camp  - /dashboard  -  /users ? name=jhon&id=1234
@@ -58,6 +59,7 @@ function App() {
         <Route exact path="/404-page-not-found" element={<Page404 />} />
         <Route exact path="/about-us" element={<AboutUspage />} />
         <Route exact path="/dashboard" element={<UserDashBoard />} />
+        <Route exact path="/admin-dashboard" element={<AdminDashBoardPage />} />
         <Route exact path="/hotel-single/:id" element={<Hotelsingle />} />
       </Routes>
       <Footer />

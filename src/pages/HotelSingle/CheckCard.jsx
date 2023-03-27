@@ -4,14 +4,15 @@ import GoogleMap from "google-map-react";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function CheckCard() {
-
-
+function CheckCard({ currentHotel }) {
   return (
     <section className="check__card">
       <div className="check__card-map">
         <GoogleMap
-          center={{ lat: 6.266716684592229, lng: -75.58217656599909 }}
+          center={{
+            lat: Number(currentHotel.loc_Lat),
+            lng: Number(currentHotel.loc_Lng),
+          }}
           zoom={20}
         ></GoogleMap>
       </div>
@@ -30,8 +31,8 @@ function CheckCard() {
 
         <div className="check__card-price">
           <p>Per Nigth</p>
-          <h2>[$$$]</h2>
-          <h1>[$$$]</h1>
+          <h2>${parseInt(currentHotel.Rooms[0].OriginalPricePerNight)}</h2>
+          <h1>${parseInt(currentHotel.Rooms[0].OriginalPricePerNight - currentHotel.Rooms[0].OriginalPricePerNight * currentHotel.Rooms[0].Discount / 100)}</h1>
         </div>
       </section>
 

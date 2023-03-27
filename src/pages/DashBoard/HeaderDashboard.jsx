@@ -5,7 +5,7 @@ function HotelList() {
     <main className="Header-container">
       <section className="Header-title">
         <h1>DASHBOARD</h1>
-        <p>Home >> Dashboard</p>
+        <p>Home {">>"} Dashboard</p>
       </section>
     </main>
   )
