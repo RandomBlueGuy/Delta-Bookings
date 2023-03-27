@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
+import axios from "axios";
 
 function SearchBar() {
   const [info, setInfo] = useState({
@@ -41,12 +42,26 @@ function SearchBar() {
 
     setErrors(validationErrors);
 
-    /* ONLY USABLE IF THE INFO WANTS TO BE SEND FROM THIS PARTICULAR FORM
-    TO THE JSON
     if (Object.keys(validationErrors).length === 0) {
-      // Envio de info
+      axios
+        .post("https://jsonplaceholder.typicode.com/posts", {
+          city,
+          datein,
+          dateout,
+          guestnumber,
+        })
+        .then((response) => console.log(response.data))
+        .catch((error) => console.error(error));
+
+      setInfo({
+        city: "",
+        datein: "",
+        dateout: "",
+        guestnumber: "",
+      });
+
       setErrors({});
-    }*/
+    }
   };
 
   return (
