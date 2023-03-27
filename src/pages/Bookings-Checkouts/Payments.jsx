@@ -74,6 +74,24 @@ export default function Payments() {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
+      axios
+        .post("https://jsonplaceholder.typicode.com/posts", {
+          cardname,
+          cardnumber,
+          cardmonth,
+          cardyear,
+          cardccv,
+        })
+        .then((response) => console.log(response.data))
+        .catch((error) => console.error(error));
+
+      setClientInfo({
+        cardname: "",
+        cardnumber: "",
+        cardmonth: "",
+        cardyear: "",
+        cardccv: "",
+      });
       setErrors({});
     }
   };

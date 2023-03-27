@@ -28,25 +28,25 @@ function SearchBar() {
     const validationErrors = {};
 
     if (city.trim() === "") {
-      validationErrors.firstName = "Please enter a city";
-    } else if (!/^[a-zA-Z]+$/.test(city)) {
+      validationErrors.cityName = "Please enter a city";
+    } else if (!/^[a-zA-Z]+$/.test(city.trim().replace(/\s+/g, ""))) {
       validationErrors.cityName = "city name must only contain numbers";
     }
 
-    // Validation if Date In is bigger than End Date
     if (start.getDate() > end.getDate()) {
       validationErrors.dateRange = "Invalid date range";
-      //|| end < start
-    } else if (start < today) {
-      validationErrors.dateRange = "The inital or end date is expired";
+    } else if (start < today || today > end) {
+      validationErrors.dateRange = "The inital date or end date is expired";
     }
 
     setErrors(validationErrors);
 
+    /* ONLY USABLE IF THE INFO WANTS TO BE SEND FROM THIS PARTICULAR FORM
+    TO THE JSON
     if (Object.keys(validationErrors).length === 0) {
       // Envio de info
       setErrors({});
-    }
+    }*/
   };
 
   return (
@@ -60,6 +60,7 @@ function SearchBar() {
           onChange={(event) => handleChange(event)}
           value={city}
         />
+        {errors.cityName && <span className='error'>{errors.cityName}</span>}
       </div>
 
       <div className='form-box-ctn'>
@@ -71,6 +72,7 @@ function SearchBar() {
           onChange={(event) => handleChange(event)}
           value={datein}
         />
+        {errors.dateRange && <span className='error'>{errors.dateRange}</span>}
       </div>
 
       <div className='form-box-ctn'>
@@ -82,6 +84,7 @@ function SearchBar() {
           onChange={(event) => handleChange(event)}
           value={dateout}
         />
+        {errors.dateRange && <span className='error'>{errors.dateRange}</span>}
       </div>
 
       <div className='form-box-ctn'>
