@@ -36,6 +36,8 @@ function SearchBar() {
 
     if (start.getDate() > end.getDate()) {
       validationErrors.dateRange = "Invalid date range";
+    } else if (!datein || !dateout) {
+      validationErrors.dateRange = "Please enter both dates";
     } else if (start < today || today > end) {
       validationErrors.dateRange = "The inital date or end date is expired";
     }
