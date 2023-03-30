@@ -51,22 +51,6 @@ export const fetchData = (searchParams = null) => {
   };
 };
 
-// export const fetchDataHS = (searchParams = null) => {
-//   return async (dispatch) => {
-//     dispatch({ type: axiosLoading });
-//     try {
-//       await axios.get("/DB/HotelDataBase.json").then((response) => {
-//         const [currentHotel] = response.data.filter(
-//           (hotel) => hotel.HotelId === searchParams
-//         );
-//         dispatch({ type: axiosSuccessHS, payload: currentHotel });
-//       });
-//     } catch (error) {
-//       dispatch({ type: axiosError, payload: error.message });
-//     }
-//   };
-// };
-
 export const { axiosSuccess, axiosSuccessHS, axiosLoading, axiosError } =
   fetchDataSlice.actions;
 

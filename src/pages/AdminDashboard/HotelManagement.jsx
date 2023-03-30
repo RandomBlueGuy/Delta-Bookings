@@ -6,7 +6,7 @@ import { fetchData } from "../../ReduxStore/Slices/FetchData/fetchDataSlice";
 
 function HotelManagement() {
   const [actualPage, setActualPage] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const itemsPerPage = 10;
   const [maxNpages, setMaxNpages] = useState();
   const HotelsArray = useSelector((state) => state.fetchData.HotelsArray);
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ function HotelManagement() {
   return (
     <main>
       <h1>Hotel Management</h1>
-      {/* <ol>
+      <ol>
         <li>Create List card component</li>
         <li>Axios magic</li>
         <li>Map results on each List card</li>
@@ -31,7 +31,7 @@ function HotelManagement() {
         <li>Add option to DELETE</li>
         <li>EDIT: Redirect to Create a New Hotel</li>
         <li>Fill Create a New Hotel form inputs with previous information</li>
-      </ol> */}
+      </ol>
 
       <label htmlFor="management__searchbar" />
       <div className="searchbar__ctn">
@@ -78,7 +78,6 @@ function HotelManagement() {
             actualPage * itemsPerPage,
             actualPage * itemsPerPage + itemsPerPage
           ).map((hotel, index) => {
-            //console.log("hotel en map", hotel);
             return <ManageListMember key = {index} hotel={hotel} />;
           })}
       </section>

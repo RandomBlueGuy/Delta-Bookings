@@ -10,8 +10,8 @@ import { fetchData } from "../../ReduxStore/Slices/FetchData/fetchDataSlice";
 
 function HotelListpage() {
   const [actualPage, setActualPage] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(6);
-  const [maxNpages, setMaxNpages] = useState();
+  const itemsPerPage = 6;
+  const [maxNpages, setMaxNpages] = useState(0);
   const HotelsArray = useSelector((state) => state.fetchData.HotelsArray);
   const dispatch = useDispatch();
 

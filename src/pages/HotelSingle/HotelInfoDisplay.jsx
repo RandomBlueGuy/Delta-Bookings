@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import RoomCard from "./RoomCard";
 import "./HotelInfoDisplay.css";
 import GoogleMap from "google-map-react";
+import Marker from "google-map-react";
 
 function HotelInfoDisplay({ currentHotel = {} }) {
   const [selectedTab, setSelectedTab] = useState("ROOMS");
@@ -154,8 +155,21 @@ function HotelInfoDisplay({ currentHotel = {} }) {
                 lat: Number(currentHotel.loc_Lat),
                 lng: Number(currentHotel.loc_Lng),
               }}
-              zoom={20}
-            ></GoogleMap>
+              zoom={10}
+            >
+              <Marker
+              style={{
+                width: "1rem", height: "1rem", background: "red"
+              }}
+                key="1"
+                text= {`${currentHotel.HotelName}`}
+                position={{
+                  lat: Number(currentHotel.loc_Lat),
+                  lng: Number(currentHotel.loc_Lng)
+                }}
+              />
+              
+            </GoogleMap>
           </div>
         </article>
 

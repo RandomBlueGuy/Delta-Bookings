@@ -184,7 +184,7 @@
 }
 
 .Dashboard-ctn label {
-  width: 8rem; /* ajusta el ancho del label según tus necesidades */
+  /* width: 8rem; ajusta el ancho del label según tus necesidades */
   margin-right: 10px;
   text-align: left;
   font-weight: 700;

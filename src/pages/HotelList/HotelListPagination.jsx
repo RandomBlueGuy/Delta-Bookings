@@ -5,10 +5,10 @@ function HotelListPagination({ maxNpages, actualPage, setActualPage }) {
   const specialChar = ["<<", ">>"];
 
   const scrollToTop = () => {
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: "smooth",
-    // });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const firstPage = () => {

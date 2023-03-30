@@ -4,7 +4,12 @@ function ManageListMember({ hotel }) {
   const [viewMore, setViewMore] = useState(false);
 
   return (
-    <article className="Management__Card">
+    <article
+      className="Management__Card"
+      onClick={() => {
+        setViewMore(!viewMore);
+      }}
+    >
       <div className="Management__Card--title">
         <h3>
           {hotel.HotelId}
@@ -31,35 +36,35 @@ function ManageListMember({ hotel }) {
         style={{ display: viewMore ? "flex" : "none" }}
       >
         <p className="">
-          <strong>[Description]: </strong>
+          <strong>Description: </strong>
           {hotel.HotelDescription}
         </p>
         <p className="">
-          <strong>[PhoneNumber]: </strong>
+          <strong>PhoneNumber: </strong>
           {hotel.CountryCode} {hotel.PhoneNumber}
         </p>
         <p className="">
-          <strong>[Email]: </strong>
+          <strong>Email: </strong>
           {hotel.Email}
         </p>
         <p className="">
-          <strong>[Tags]: </strong>
+          <strong>Tags: </strong>
           {hotel.Tags[0]} , {hotel.Tags[1]}
         </p>
         <p className="">
-          <strong>[Popularity Number]: </strong>
+          <strong>Popularity Number: </strong>
           {hotel.PopularityNumber}
         </p>
         <p className="">
-          <strong>[Trending Number]: </strong>
+          <strong>Trending Number: </strong>
           {hotel.TrendingNumber}
         </p>
         <p className="">
-          <strong>[Review Number]: </strong>
+          <strong>Review Number: </strong>
           {hotel.ReviewNumber}
         </p>
         <p className="">
-          <strong>[Rooms Available]: </strong>
+          <strong>Rooms Available: </strong>
           {hotel.Rooms.length}
         </p>
       </div>
