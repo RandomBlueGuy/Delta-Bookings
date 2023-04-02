@@ -10,7 +10,7 @@ import ReservationVisualizer from './ReservationVisualizer';
 
 export default function AdminDashboard() {
   const [profileEdit, setProfileEdit] = useState(false);
-  const [selectedTab, setSelectedTab] = useState("Management");
+  const [selectedTab, setSelectedTab] = useState("Reservations");
 
   function handleClick(selection) {
     setSelectedTab(selection);

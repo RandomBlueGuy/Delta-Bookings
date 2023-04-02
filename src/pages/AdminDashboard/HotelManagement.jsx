@@ -75,11 +75,11 @@ function HotelManagement() {
 
       <section className="management__listDisplay">
         {HotelsArray.slice(
-            actualPage * itemsPerPage,
-            actualPage * itemsPerPage + itemsPerPage
-          ).map((hotel, index) => {
-            return <ManageListMember key = {index} hotel={hotel} />;
-          })}
+          actualPage * itemsPerPage,
+          actualPage * itemsPerPage + itemsPerPage
+        ).map((hotel, index) => {
+          return <ManageListMember key={index} hotel={hotel} />;
+        })}
       </section>
 
       <div className="manage__pagination">
