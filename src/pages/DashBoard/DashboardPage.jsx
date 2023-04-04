@@ -6,7 +6,7 @@ import "./UserDashboard";
 function DashBoardPage() {
   return (
     <div>
-      <HeaderDashboard />
+      {/* <HeaderDashboard /> */}
       <main className="Dashboard-ctn">
         <UserDashboard />
       </main>

@@ -41,3 +41,15 @@
 .actual:hover {
 	background-color: transparent;
 }
+
+.pagination-ctn select{
+	background-color: transparent;
+	border: none;
+	font-weight: 700;
+	max-height: 100%;
+	overflow-y: auto;
+}
+
+.pagination-ctn option{
+	background-color: white;
+}

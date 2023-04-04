@@ -32,7 +32,15 @@ function CheckCard({ currentHotel }) {
         <div className="check__card-price">
           <p>Per Nigth</p>
           <h2>${parseInt(currentHotel.Rooms[0].OriginalPricePerNight)}</h2>
-          <h1>${parseInt(currentHotel.Rooms[0].OriginalPricePerNight - currentHotel.Rooms[0].OriginalPricePerNight * currentHotel.Rooms[0].Discount / 100)}</h1>
+          <h1>
+            $
+            {parseInt(
+              currentHotel.Rooms[0].OriginalPricePerNight -
+                (currentHotel.Rooms[0].OriginalPricePerNight *
+                  currentHotel.Rooms[0].Discount) /
+                  100
+            )}
+          </h1>
         </div>
       </section>
 
@@ -41,10 +49,27 @@ function CheckCard({ currentHotel }) {
         <input type="date" placeholder="Check-In Date" />
         <label htmlFor="check-out">Check-out Date</label>
         <input type="date" placeholder="Check-out Date" />
-        <label htmlFor="city-destination">City Destination</label>
-        <input type="text" placeholder="City Destination" />
-        <label htmlFor="room-type">Room Type</label>
-        <input type="select" placeholder="Room Type" />
+        <div className='Guest__select'>
+        <strong>City:</strong>
+        <p>
+          [City]
+        </p>
+        </div>
+        <div className='Guest__select'>
+        <strong>Rooms:</strong>
+        <p>
+          [.................... ................ ........................................]
+        </p>
+        </div>
+        <div className='Guest__select'>
+        <strong>Guests:</strong>
+          <select name="" id="">
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">...</option>
+            <option value="">10</option>
+          </select>
+        </div>
         <button className="search-btn">Book This Now</button>
       </form>
     </section>
