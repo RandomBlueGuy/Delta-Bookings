@@ -4,11 +4,11 @@ import HomeHeader from "./HomeHeader";
 import TopOffers from "./TopOffers";
 import NewsLetter from "./NewsLetter"
 
-
 function Homepage() {
   return (
     <div>
       <HomeHeader />
+      
       <TopOffers />
       <HomeSteps />
       <NewsLetter />

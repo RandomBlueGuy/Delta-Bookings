@@ -1,30 +1,37 @@
 import React, { useState } from "react";
 import placeHolderImg from "../../assets/Images/hotelPlaceholder.jpg";
 
-function ReservationCard({index , reservation}) {
+function ReservationCard({ index, reservation }) {
   const [viewMore, setViewMore] = useState(false);
 
   return (
-    <article className="ReservationCard"
-    style={{borderColor: viewMore ? "var(--red-style)" : "var(--NavBar-btn)"}}
-    >
-      <section className="ReservationCard__header"
-      onClick={() => {setViewMore(!viewMore)}}
+    <article
+      className="ReservationCard"
       style={{
-        backgroundColor: viewMore ? "var(--red-style)" : "var(--NavBar-btn)",
-        color: viewMore ? "white" : "black",
-        
+        borderColor: viewMore ? "var(--red-style)" : "var(--NavBar-btn)",
       }}
+    >
+      <section
+        className="ReservationCard__header"
+        onClick={() => {
+          setViewMore(!viewMore);
+        }}
+        style={{
+          backgroundColor: viewMore ? "var(--red-style)" : "var(--NavBar-btn)",
+          color: viewMore ? "white" : "black",
+        }}
       >
         <h2>Reservation [# {reservation}] - [UserName] [Reservation date]</h2>
         <button
-        onClick={() => {setViewMore(!viewMore)}}
-        >🞮</button>
+          onClick={() => {
+            setViewMore(!viewMore);
+          }}
+        > <p className="">{viewMore ? "🞮" : "🞧"}</p></button>
       </section>
 
-      <section className="ReservationCard__body"
-      style={{display: viewMore ? "flex" : "none"}}
-      
+      <section
+        className="ReservationCard__body"
+        style={{ display: viewMore ? "flex" : "none" }}
       >
         <div className="HotelMicroCard">
           <figure className="HotelMicroCard__HotelImg">
@@ -133,7 +140,6 @@ function ReservationCard({index , reservation}) {
                 <h3>Extras</h3>
               </td>
             </tr>
-
             <tr>
               <td colspan="2">
                 <p className="">[...]</p>

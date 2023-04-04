@@ -176,6 +176,7 @@
 
 .Management__separator {
   color: var(--txt-gray);
+  margin: 0rem 0.25rem;
 }
 
 .management__listDisplay {
@@ -242,7 +243,6 @@
 .HotelCreator__form--line {
   width: 100%;
   display: flex;
-  align-items: center;
 }
 
 .HotelCreator__label {
@@ -315,42 +315,41 @@
   gap: 0.5rem;
 }
 
-.Ctn__Form5{
+.Ctn__Form5 {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   margin-bottom: 1rem;
 }
 
-.manage__status{
+.manage__status {
   background-color: rgb(204, 197, 8);
 }
 
-.manage__status:hover{
+.manage__status:hover {
   background-color: rgb(204, 197, 8);
-
 }
 
-.addRoom{
+.addRoom {
   width: 100%;
   display: flex;
   justify-content: right;
 }
 
-.addRoom button{
+.addRoom button {
   padding: 0.5rem 1rem;
 }
 
-.roomList__ctn{
+.roomList__ctn {
   background-color: white;
   padding: 0.25rem 1rem;
   border-radius: 5px;
   transition: 0.3s ease-in-out;
 }
 
-.roomList__ctn:hover{
+.roomList__ctn:hover {
   background-color: rgb(255, 231, 231);
 }
 
-.ReservationCard__header{
+.ReservationCard__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -362,104 +361,229 @@
   cursor: pointer;
 }
 
-.ReservationCard{
+.ReservationCard__header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  margin: 0;
+  padding: 0.25rem;
+  position: relative;
+}
+
+.ReservationCard {
   border: 3px solid var(--red-style);
   border-radius: 0.5rem;
   overflow: hidden;
 }
 
-.ReservationCard__body{
+.ReservationCard__body {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.HotelMicroCard{
+.HotelMicroCard {
   display: flex;
   padding: 1rem;
   margin: 0;
   gap: 1rem;
+  width: 90%;
 }
 
 .HotelMicroCard__HotelImg {
-  position: relative;
   display: flex;
   padding: 0;
   margin: 0;
 }
 
-.HotelMicroCard__HotelImg img{
-
+.HotelMicroCard__HotelImg img {
+  object-fit: contain;
   max-height: 180px;
 }
 
-.HotelMicroCard__text{
+.HotelMicroCard__text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.CheckTable{
+.CheckTable {
   display: flex;
   width: 100%;
   justify-content: center;
   margin: 2rem 0;
 }
 
-.CheckTable tr, .CheckTable td, .CheckTable th{
-  outline: 3px solid var(--NavBar-btn);
-  padding: 0.5rem 3rem;
+.CheckTable table {
+  width: 90%;
+  max-width: 450px;
 }
 
-.CheckTable th, .PaymentDetails th{
+.CheckTable tr,
+.CheckTable td,
+.CheckTable th {
+  outline: 3px solid var(--NavBar-btn);
+}
+
+.CheckTable th,
+.PaymentDetails th {
   background-color: var(--red-style);
   color: white;
 }
 
-.CheckTable td{
+.CheckTable td {
   background-color: transparent;
   transition: 0.3s ease-in-out;
 }
 
-.PaymentDetails{
+.PaymentDetails {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
-.PaymentDetails table{
+.PaymentDetails table {
   width: 90%;
-  max-width: 600px;
+  max-width: 800px;
   margin: 1rem 0;
-  border: 1px solid var(--NavBar-btn)
+  border: 1px solid var(--NavBar-btn);
 }
-.PaymentDetails td, .PaymentDetails tr{
+
+.PaymentDetails td,
+.PaymentDetails tr {
   border: 0px;
   outline: 0px;
 }
 
-.PaymentDetails h3{
+.PaymentDetails h3 {
   margin: 0;
 }
 
-.PaymentDetails__col2{
+.PaymentDetails__col2 {
   text-align: right;
 }
 
-.PaymentDetails td{
+.PaymentDetails td {
   padding: 0 1rem;
 }
 
-.PaymentDetails tr:hover{
+.PaymentDetails tr:hover {
   background-color: var(--NavBar-btn);
-} 
+}
 
-.PaymentDetails__sub{
+.PaymentDetails__sub {
   background-color: var(--NavBar-btn);
   margin-top: 1rem;
 }
 
-.reservations__list{
+.reservations__list {
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+.HotelManagement__ctn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Management__Card--id {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 720px) {
+  .AdminDashboard__ctn {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .AdminDashboard__ctn {
+    width: 90%;
+  }
+
+  .AdminDashboard__ctn-info {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .HotelCreator__form--line {
+    flex-direction: column;
+    align-self: left;
+    justify-content: right;
+    align-items: right;
+  }
+
+  .HotelCreator__label {
+    width: 100%;
+  }
+
+  .searchbar__ctn {
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .searchbar__ctn select {
+    width: 100%;
+    height: 2.5rem;
+  }
+
+  .searchbar__ctn button {
+    width: 8rem;
+    padding: 1rem 0;
+  }
+
+  .manage_btns {
+    flex-direction: column;
+  }
+
+  .Management__Card--title {
+    gap: 0.5rem;
+  }
+
+  .Management__separator {
+    opacity: 0;
+    font-size: 0;
+  }
+
+  .Management__Card--id {
+    gap: 0.5rem;
+  }
+
+  .management__listDisplay {
+    gap: 0.5rem;
+  }
+
+  .ReservationCard__header button {
+    width: 3rem;
+  }
+
+  .HotelMicroCard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .HotelMicroCard__HotelImg {
+    width: 90%;
+    justify-content: center;
+  }
+
+  .HotelMicroCard__text {
+    width: 90%;
+  }
+
+  .CheckTable table {
+    overflow: hidden;
+  }
+
+  .PaymentDetails table {
+    width: 90%;
+  }
 }

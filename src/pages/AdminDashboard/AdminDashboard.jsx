@@ -8,9 +8,10 @@ import HotelManagement from './HotelManagement';
 import HotelCreator from './HotelCreator';
 import ReservationVisualizer from './ReservationVisualizer';
 
+
 export default function AdminDashboard() {
   const [profileEdit, setProfileEdit] = useState(false);
-  const [selectedTab, setSelectedTab] = useState("Reservations");
+  const [selectedTab, setSelectedTab] = useState("Management");
 
   function handleClick(selection) {
     setSelectedTab(selection);

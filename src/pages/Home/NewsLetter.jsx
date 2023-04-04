@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./NewsLetter.css";
-import placeholderImg from "../../assets/Images/NewsLetter-placeholder.png";
-import placeholder2Img from "../../assets/Images/NewsLetter-placeholder2.png";
+
+import ReviewCard from "./ReviewCard";
 
 function NewsLetter() {
   const [review1, setReview1] = useState({});
@@ -34,49 +34,28 @@ function NewsLetter() {
   return (
     <main className="NewsLetter-container">
       <section className="NewsLetter-table">
-        <div className="card-ctn-nl">
-          <figure className="card-ctn-nl-img-container">
-            <img src={placeholderImg} alt="" />
-            <figcaption className="date-review">
-              <h1>{(r1Date.getDay() + 1).toString().padStart(2, "0")}</h1>
-              <p>
-                {r1Date
-                  .toLocaleString(undefined, { month: "long" })
-                  .slice(0, 3)}
-              </p>
-            </figcaption>
-          </figure>
-          <div className="card-ctn-nl-txt-container">
-            <p className="reviewer">Posted by: {review1.User}</p>
-            <p className="review">User Rating: {review1.Rating}/5</p>
-            <p className="sub">{review1.HotelReview}</p>
-            <button type="button" className="more">
-              READ MORE
-            </button>
-          </div>
-        </div>
-        <div className="card-ctn-nl">
-          <figure className="card-ctn-nl-img-container">
-            <img src={placeholder2Img} alt="" />
-            <figcaption className="date-review">
-              <h1>{(r2Date.getDay() + 1).toString().padStart(2, "0")}</h1>
-              <p>
-                {r2Date
-                  .toLocaleString(undefined, { month: "long" })
-                  .slice(0, 3)}
-              </p>
-            </figcaption>
-          </figure>
-          <div className="card-ctn-nl-txt-container">
-            <p className="reviewer">Posted by: {review2.User}</p>
-            <p className="review">User Rating: {review2.Rating}/5</p>
-            <p className="sub">{review2.HotelReview}</p>
+        <ReviewCard
+          placeholderImg={"1"}
+          dateD={(r1Date.getDay() + 1).toString().padStart(2, "0")}
+          dateM={r1Date
+            .toLocaleString(undefined, { month: "long" })
+            .slice(0, 3)}
+          user={review1.User}
+          rating={review1.Rating}
+          review={review1.HotelReview}
+        />
 
-            <button type="button" className="more">
-              READ MORE
-            </button>
-          </div>
-        </div>
+        <ReviewCard
+          placeholderImg={"2"}
+          dateD={(r2Date.getDay() + 1).toString().padStart(2, "0")}
+          dateM={r2Date
+            .toLocaleString(undefined, { month: "long" })
+            .slice(0, 3)}
+          user={review2.User}
+          rating={review2.Rating}
+          review={review2.HotelReview}
+        />
+       
       </section>
 
       <form action="" className="subscribe-form">

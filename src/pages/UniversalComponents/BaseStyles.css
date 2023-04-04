@@ -9,7 +9,7 @@
   --dark-BG: #1c1c1c;
   --NavBar-btn: rgba(217, 217, 217, 0.4);
   --NavBar-menu: rgba(217, 217, 217, 0.9);
-  --Main-BG: rgb(237, 237, 237);
+  --Main-BG: rgb(247, 243, 243);
   box-sizing: none; 
 
 }
@@ -62,5 +62,4 @@ input {
   font-weight: 700;
   border-radius: 5px;
 }
-
 

@@ -4,6 +4,7 @@ import Mark from "../../assets/Images/markenderes.jpg";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import ReservationCard from '../AdminDashboard/ReservationCard';
 
 export default function UserDashboard() {
   const [profileEdit, setProfileEdit] = useState(false);
@@ -50,14 +51,6 @@ export default function UserDashboard() {
             onClick={(event) => handleClick(event.target.value)}
           >
             Bookings
-          </button>
-          <button
-            type="button"
-            value="Manage"
-            className={selectedTab === "Manage" ? "Dashboard-is-active" : ""}
-            onClick={(event) => handleClick(event.target.value)}
-          >
-            Manage Hotels
           </button>
         </div>
       </section>
@@ -196,83 +189,7 @@ export default function UserDashboard() {
             className="dashboard__ctn--Bookings"
             style={{ display: selectedTab === "Bookings" ? "flex" : "none" }}
           >
-            <h1>Booking Summary</h1>
-            <p className="">
-              <span className="Booking__info--title">
-                <strong>Hotel Name:</strong>
-              </span>
-              {`  [ANSWER]  `}
-            </p>
-            <p className="">
-              <span className="Booking__info--title">
-                <strong>Location:</strong>
-              </span>
-              {`  [ANSWER]  `}
-            </p>
-            <p className="">
-              <span className="Booking__info--title">
-                <strong>Room type:</strong>
-              </span>
-              {`  [ANSWER]  `}
-            </p>
-            <p className="">
-              <span className="Booking__info--title">
-                <strong>Check-in Date:</strong>
-              </span>
-              {`  [ANSWER]  `}
-            </p>
-            <p className="">
-              <span className="Booking__info--title">
-                <strong>Check-out Date:</strong>
-              </span>
-              {`  [ANSWER]  `}
-            </p>
-
-            <p className="">
-              <span className="Booking__info--title">
-                <strong>Guest Number:</strong>
-              </span>
-              {`  [ANSWER]  `}
-            </p>
-            <p className="">
-              <span className="Booking__info--title">
-                <strong>PaymentDetails:</strong>
-              </span>
-              {`  [ANSWER]  `}
-            </p>
-            <p className="">
-              <span className="Booking__info--title">
-                <strong>Base price:</strong>
-              </span>
-              {`  [ANSWER]  `}
-            </p>
-            <p className="">
-              <span className="Booking__info--title">
-                <strong>Discount:</strong>
-              </span>
-              {`  [ANSWER]  `}
-            </p>
-            <p className="">
-              <span className="Booking__info--title">
-                <strong>Tax & Service Fees:</strong>
-              </span>
-              {`  [ANSWER]  `}
-            </p>
-            <p className="">
-              <span className="Booking__info--title">
-                <strong>Final price:</strong>
-              </span>
-              {`  [ANSWER]  `}
-            </p>
-          </div>
-
-          <div
-            className="dashboard__ctn--ManageHotels"
-            style={{ display: selectedTab === "Manage" ? "flex" : "none" }}
-          >
-            <h1>Hotel Managing</h1>
-                
-            <p className="">MEGA FORM</p>
+           <ReservationCard />
           </div>
         </div>
       </section>

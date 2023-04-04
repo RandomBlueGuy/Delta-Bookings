@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import HotelListPagination from "../HotelList/HotelListPagination";
 import ReservationCard from "./ReservationCard";
 
@@ -6,6 +6,7 @@ function ReservationVisualizer() {
   const [actualPage, setActualPage] = useState(0);
   const itemsPerPage = 4;
   const [maxNpages, setMaxNpages] = useState();
+  const refProp = useRef(null);
   const reservationsArr = [
     "1",
     "2",
@@ -26,7 +27,7 @@ function ReservationVisualizer() {
   }, [reservationsArr]);
 
   return (
-    <main>
+    <main ref = {refProp}>
       <h1>Reservation Visualizer</h1>
       <ol>
         <li>Create Booking card component</li>
@@ -75,6 +76,7 @@ function ReservationVisualizer() {
           maxNpages={maxNpages}
           actualPage={actualPage}
           setActualPage={setActualPage}
+          refProp = {refProp}
         />
       </div>
     </main>

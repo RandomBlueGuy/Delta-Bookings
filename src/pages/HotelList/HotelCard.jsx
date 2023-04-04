@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 function HotelCard({ hotelInfoCard }) {
-  console.log("hotelInfoCard =>" ,hotelInfoCard)
+
   const finalPrice =
     hotelInfoCard.Rooms[0].OriginalPricePerNight -
     (

@@ -28,6 +28,8 @@
   align-items: center;
   justify-content: center;
   background-color: white;
+  max-height: 500px;
+  box-sizing: border-box;
 }
 
 .dashboard__ctn-info h1 {
@@ -51,12 +53,15 @@
   text-align: center;
   background-color: rgba(242, 237, 237, 0.521);
   padding: 2rem 0;
+  gap: 1rem;
+  box-sizing: border-box;
 }
 
 .dashboard__ctn-info-img {
   display: flex;
   position: relative;
   width: 70%;
+  max-width: 180px;
   aspect-ratio: 1/1;
 }
 
@@ -75,7 +80,7 @@
   right: 0.5rem;
   color: var(--red-style);
   background-color: white;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 50%;
   aspect-ratio: 1/1;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
@@ -109,9 +114,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  flex-basis: 65%;
+  flex-basis: 68%;
   background-color: white;
   padding: 2rem;
+  min-height: 500px;
 }
 
 .dashboard__ctn-edit1 {
@@ -220,6 +226,7 @@
     max-width: 50%;
     height: 1.5rem;
   }
+
   @media (max-width: 720px){
     .dashboard__ctn{
         width: 90%;
@@ -230,7 +237,6 @@
     .dashboard__ctn-info{
         min-width: 100%;
         flex-basis: 100%;
-        
     }
     .dashboard__ctn input {
         width: 100%;

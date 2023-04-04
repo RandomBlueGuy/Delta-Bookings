@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ManageListMember from "./ManageListMember";
 import HotelListPagination from "../HotelList/HotelListPagination";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,6 +10,7 @@ function HotelManagement() {
   const [maxNpages, setMaxNpages] = useState();
   const HotelsArray = useSelector((state) => state.fetchData.HotelsArray);
   const dispatch = useDispatch();
+  const refProp = useRef(null);
 
   useEffect(() => {
     dispatch(fetchData());
@@ -21,9 +22,9 @@ function HotelManagement() {
   }, [HotelsArray]);
 
   return (
-    <main>
+    <main className='HotelManagement__ctn' ref={refProp}>
       <h1>Hotel Management</h1>
-      <ol>
+      {/* <ol>
         <li>Create List card component</li>
         <li>Axios magic</li>
         <li>Map results on each List card</li>
@@ -31,7 +32,7 @@ function HotelManagement() {
         <li>Add option to DELETE</li>
         <li>EDIT: Redirect to Create a New Hotel</li>
         <li>Fill Create a New Hotel form inputs with previous information</li>
-      </ol>
+      </ol> */}
 
       <label htmlFor="management__searchbar" />
       <div className="searchbar__ctn">
@@ -87,6 +88,7 @@ function HotelManagement() {
           maxNpages={maxNpages}
           actualPage={actualPage}
           setActualPage={setActualPage}
+          refProp ={refProp}
         />
       </div>
     </main>

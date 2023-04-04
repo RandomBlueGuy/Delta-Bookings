@@ -23,7 +23,7 @@
 
 .card-ctn-nl-img-container {
   background-color: azure;
-  width: 200px;
+  width: 250px;
   position: relative;
   display: inline-block;
   padding: 0;
@@ -93,6 +93,8 @@
   font-size: 11px;
   overflow: hidden;
   text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .more {

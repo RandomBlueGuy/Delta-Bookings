@@ -24,6 +24,7 @@
 }
 
 .card-gallery {
+	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -41,6 +42,14 @@
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
 }
 
+.filter-ctn h2{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .filter-ctn-btns {
 	display: flex;
 	gap: 1rem;
@@ -51,14 +60,7 @@
 
 .filter-ctn-btns button {
 	padding: 0.5rem 1rem;
-	background-color: rgba(128, 128, 128, 0.085);
-	color: black;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
-}
-
-.filter-ctn-btns button:focus {
-	background-color: var(--red-style);
-	color: white;
 }
 
 .filter-ctn-btns button:hover {
@@ -68,6 +70,16 @@
 .weird-thing {
 	margin-right: 1rem;
 	font-weight: 800;
+}
+
+.filter-ctn-selected{
+	background-color: var(--red-style);
+	color: white;
+}
+
+.filter-ctn-Notselected{
+	background-color: var(--NavBar-btn);
+	color: black;
 }
 
 @media (max-width: 720px) {
