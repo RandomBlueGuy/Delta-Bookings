@@ -129,7 +129,7 @@ const {
             id="inp1"
             className="HotelCreator__input"
             type="text"
-            placeholder="Write your new Room Name"
+            placeholder="Write your room's Name"
             name='roomName'
             onChange={(event) => handleChange(event)}
             value={roomName}
@@ -144,7 +144,7 @@ const {
             id="inp2"
             className="HotelCreator__input"
             type="text"
-            placeholder="Write your hotel amenity or amenities (use comas)"
+            placeholder="Write your room's amenity or amenities (use comas)"
             name='roomAmenities'
             onChange={(event) => handleChange(event)}
             value={roomAmenities}
@@ -159,7 +159,7 @@ const {
             id="inp3"
             className="HotelCreator__input"
             type="text"
-            placeholder="Write your hotel inclusion or inclusions (use comas)"
+            placeholder="Write your room's inclusion or inclusions (use comas)"
             name='roomInclusions'
             onChange={(event) => handleChange(event)}
             value={roomInclusions}
@@ -189,7 +189,7 @@ const {
             id="inp5"
             className="HotelCreator__input"
             type="text"
-            placeholder="Write your new hotel description"
+            placeholder="Write your room's discount"
             name='roomDiscount'
             onChange={(event) => handleChange(event)}
             value={roomDiscount}
@@ -204,7 +204,7 @@ const {
             id="inp5"
             className="HotelCreator__input"
             type="text"
-            placeholder="Write your new hotel description"
+            placeholder="Write your room'sgi description"
             name='roomDescription'
             onChange={(event) => handleChange(event)}
             value={roomDescription}
