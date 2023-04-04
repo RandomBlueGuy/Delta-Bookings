@@ -71,7 +71,6 @@ export default function Payments() {
     } else if (cardccv.trim().length !== 3) {
       validationErrors.cardCCV = "Enter a valid CCV";
     }
-    setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
       axios

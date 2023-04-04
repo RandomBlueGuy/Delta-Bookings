@@ -31,7 +31,7 @@ function SearchBar() {
     if (city.trim() === "") {
       validationErrors.cityName = "Please enter a city";
     } else if (!/^[a-zA-Z]+$/.test(city.trim().replace(/\s+/g, ""))) {
-      validationErrors.cityName = "city name must only contain numbers";
+      validationErrors.cityName = "city name must only contain letters";
     }
 
     if (start.getDate() > end.getDate()) {

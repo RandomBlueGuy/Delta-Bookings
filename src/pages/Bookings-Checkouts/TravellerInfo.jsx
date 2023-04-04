@@ -72,16 +72,6 @@ export default function TravellerInfo() {
         })
         .then((response) => console.log(response.data))
         .catch((error) => console.error(error));
-
-      setInfo({
-        firstname: "",
-        lastname: "",
-        inputEmail: "",
-        contactInfo: "",
-        request: "",
-        coupon: "",
-      });
-      setErrors({});
     }
   };
 
