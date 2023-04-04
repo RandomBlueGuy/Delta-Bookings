@@ -7,7 +7,7 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
     hotelNumber: "",
     hotelEmail: "",
     hotelDescription: "",
-    hotelFront: null,
+    hotelFront: [],
   });
 
   const {
@@ -22,8 +22,14 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
   const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setInfo({ ...info, [name]: value });
+    const target= event.target
+    const value= target.type==='file' ? Array.from(target.files): target.value;
+    const name= target.name
+    
+  setInfo(prevState=> ({
+    ...prevState,
+    [name]:value
+  }))
   };
 
   const handleInfo = (event) => {
@@ -59,6 +65,10 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
         "Please give us a shorter description";
     }
 
+    if(hotelFront.length<1){
+      validationErrors.hotelfront= "Please upload, at least, one picture"
+    }
+
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
@@ -68,7 +78,7 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
         hotelNumber: "",
         hotelEmail: "",
         hotelDescription: "",
-        hotelFront: "",
+        hotelFront: [],
       });
       setErrors({});
     }
@@ -167,6 +177,7 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
           multiple
           onChange={(event) => handleChange(event)}
         />
+        {errors.hotelfront && <span> {errors.hotelfront} </span>}
       </div>
 
       <div className='HotelForm__footer'>

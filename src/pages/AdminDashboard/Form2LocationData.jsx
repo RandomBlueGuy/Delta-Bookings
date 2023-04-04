@@ -41,6 +41,14 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
         "Hotel's state name must only contain letters";
     }
 
+    if (hotelCountry.trim() === "") {
+      validationErrors.hotelcountry = "Enter the hotel's country";
+    } else if (!/^[a-zA-Z]+$/.test(hotelCountry.trim().replace(/\s+/g, ""))) {
+      validationErrors.hotelcountry =
+        "Hotel's country name must only contain letters";
+    }
+
+
     if (hotelCity.trim() === "") {
       validationErrors.hotelcity = "Enter the hotel's city";
     } else if (!/^[a-zA-Z]+$/.test(hotelCity.trim().replace(/\s+/g, ""))) {
