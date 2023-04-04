@@ -37,7 +37,7 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
     if (hotelState.trim() === "") {
       validationErrors.hotelstate = "Enter the hotel's state";
     } else if (!/^[a-zA-Z]+$/.test(hotelState.trim().replace(/\s+/g, ""))) {
-      validationErrors.hotelcity =
+      validationErrors.hotelstate =
         "Hotel's state name must only contain letters";
     }
 
@@ -48,8 +48,15 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
         "Hotel's City name must only contain letters";
     }
 
+    if (hotelCountry.trim() === "") {
+      validationErrors.hotelcountry = "Enter the hotel's country";
+    } else if (!/^[a-zA-Z]+$/.test(hotelCountry.trim().replace(/\s+/g, ""))) {
+      validationErrors.hotelcountry =
+        "Hotel's country name must only contain letters";
+    }
+
     if (hotelLatitude.trim() === "") {
-      validationErrors.hotelatitude = "Enter the hotel's latitude";
+      validationErrors.hotellatitude = "Enter the hotel's latitude";
     } else if (
       !/^([-+])?([0-9]|[1-8][0-9])(\.\d+)?|90(\.0+)?$/.test(
         hotelLatitude.trim()
