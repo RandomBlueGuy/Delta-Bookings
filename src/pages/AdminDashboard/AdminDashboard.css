@@ -230,6 +230,7 @@
   justify-content: center;
 }
 
+
 .HotelCreator {
   display: flex;
   flex-direction: column;
@@ -496,6 +497,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.error-creator {
+  color: red;
+  font-style: italic;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 720px) {

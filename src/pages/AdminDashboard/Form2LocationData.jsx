@@ -20,6 +20,7 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
   } = info;
 
   const [errors, setErrors] = useState({});
+  const [render, setRender] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -48,7 +49,6 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
         "Hotel's country name must only contain letters";
     }
 
-
     if (hotelCity.trim() === "") {
       validationErrors.hotelcity = "Enter the hotel's city";
     } else if (!/^[a-zA-Z]+$/.test(hotelCity.trim().replace(/\s+/g, ""))) {
@@ -65,22 +65,10 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
 
     if (hotelLatitude.trim() === "") {
       validationErrors.hotellatitude = "Enter the hotel's latitude";
-    } else if (
-      !/^([-+])?([0-9]|[1-8][0-9])(\.\d+)?|90(\.0+)?$/.test(
-        hotelLatitude.trim()
-      )
-    ) {
-      validationErrors.hotellatitude = "Invalid Latitude";
     }
 
     if (hotelLongitude.trim() === "") {
       validationErrors.hotellongitude = "Enter the hotel's longitude";
-    } else if (
-      !/^([-+])?([0-9]|[1-9][0-9]|1[1-7][0-9])(\.\d+)?|180(\.0+)?$/.test(
-        hotelLongitude.trim()
-      )
-    ) {
-      validationErrors.hotellongitude = "Invalid Longitude";
     }
 
     setErrors(validationErrors);
@@ -96,6 +84,7 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
       });
 
       setErrors({});
+      setRender(true);
     }
   };
 
@@ -119,8 +108,11 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
           onChange={(event) => handleChange(event)}
           value={hotelAdress}
         />
-        {errors.hoteladress && <span>{errors.hoteladress}</span>}
       </div>
+      {errors.hoteladress && (
+        <span className='error-creator'>{errors.hoteladress}</span>
+      )}
+
       <div className='HotelCreator__form--line'>
         <label className='HotelCreator__label' htmlFor='hotelCity'>
           City:
@@ -129,13 +121,16 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
           id='inp2'
           className='HotelCreator__input'
           type='text'
-          placeholder='city'
+          placeholder='Enter the city'
           name='hotelCity'
           onChange={(event) => handleChange(event)}
           value={hotelCity}
         />
-        {errors.hotelcity && <span>{errors.hotelcity}</span>}
       </div>
+      {errors.hotelcity && (
+        <span className='error-creator'>{errors.hotelcity}</span>
+      )}
+
       <div className='HotelCreator__form--line'>
         <label className='HotelCreator__label' htmlFor='hotelState'>
           State:
@@ -144,13 +139,16 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
           id='inp3'
           className='HotelCreator__input'
           type='text'
-          placeholder='State'
+          placeholder='Enter the state'
           name='hotelState'
           onChange={(event) => handleChange(event)}
           value={hotelState}
         />
-        {errors.hotelstate && <span>{errors.hotelstate}</span>}
       </div>
+      {errors.hotelstate && (
+        <span className='error-creator'>{errors.hotelstate}</span>
+      )}
+
       <div className='HotelCreator__form--line'>
         <label className='HotelCreator__label' htmlFor='hotelCountry'>
           Country:
@@ -160,12 +158,15 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
           className='HotelCreator__input'
           type='text'
           placeholder="Write your hotel's country"
-          name='hotelState'
+          name='hotelCountry'
           onChange={(event) => handleChange(event)}
           value={hotelCountry}
         />
-        {errors.hotelcountry && <span>{errors.hotelcountry}</span>}
       </div>
+      {errors.hotelcountry && (
+        <span className='error-creator'>{errors.hotelcountry}</span>
+      )}
+
       <div className='HotelCreator__form--line'>
         <label className='HotelCreator__label' htmlFor='hotelLatitude'>
           Latitude:
@@ -179,8 +180,11 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
           onChange={(event) => handleChange(event)}
           value={hotelLatitude}
         />
-        {errors.hotellatitude && <span>{errors.hotellatitude}</span>}
       </div>
+      {errors.hotellatitude && (
+        <span className='error-creator'>{errors.hotellatitude}</span>
+      )}
+
       <div className='HotelCreator__form--line'>
         <label className='HotelCreator__label' htmlFor='hotelLongitude'>
           Longitude:
@@ -194,8 +198,10 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
           onChange={(event) => handleChange(event)}
           value={hotelLongitude}
         />
-        {errors.hotellongitude && <span>{errors.hotellongitude}</span>}
       </div>
+      {errors.hotellongitude && (
+        <span className='error-creator'>{errors.hotellongitude}</span>
+      )}
 
       <div className='HotelForm__footer'>
         <button
@@ -208,15 +214,19 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
           🡸
         </button>
         Step {formTab} / 5
-        <button
-          className='HotelCreator__form--microSubmit'
-          onClick={(event) => {
-            setFormTab(3);
-            scrollToTop();
-          }}
-        >
-          🢂
-        </button>
+        {render === true ? (
+          <button
+            className='HotelCreator__form--microSubmit'
+            onClick={(event) => {
+              setFormTab(3);
+              scrollToTop();
+            }}
+          >
+            🢂
+          </button>
+        ) : (
+          <button className='HotelCreator__form--microSubmit'>🢂</button>
+        )}
       </div>
     </form>
   );

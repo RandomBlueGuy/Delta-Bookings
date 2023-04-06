@@ -1,14 +1,14 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-function Form3SocialData({setFormTab, formTab, scrollToTop}) {
-  const [info, setInfo]= useState({
-    hotelPopularity:"",
-    hotelTrending:"",
-    hotelFacebook:"",
-    hotelInstagram:"",
-    hotelTwitter:"",
-    hotelPinterest:""
-  })
+function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
+  const [info, setInfo] = useState({
+    hotelPopularity: "",
+    hotelTrending: "",
+    hotelFacebook: "",
+    hotelInstagram: "",
+    hotelTwitter: "",
+    hotelPinterest: "",
+  });
 
   const {
     hotelPopularity,
@@ -16,123 +16,185 @@ function Form3SocialData({setFormTab, formTab, scrollToTop}) {
     hotelFacebook,
     hotelInstagram,
     hotelTwitter,
-    hotelPinterest
-  } =info
-  
-  const [errors, setErrors]=useState({})
+    hotelPinterest,
+  } = info;
 
-  const handleChange = (event) =>{
-    const {name, value}= event.target
-    setInfo({...info, [name]:value})
-  }
+  const [errors, setErrors] = useState({});
+  const [render, setRender] = useState(false);
 
-  
-  const handleInfo = (event) =>{
-    /*Here I consider that there should not
-    be validations, these data is completely optional.
-    */
-    
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setInfo({ ...info, [name]: value });
+  };
+
+  const handleInfo = (event) => {
     event.preventDefault();
-    const validationErrors={}
-  }
+    const validationErrors = {};
+
+    if (hotelPopularity.trim() === "") {
+      validationErrors.hotelpopularity = "No empty spaces";
+    }
+
+    if (hotelTrending.trim() === "") {
+      validationErrors.hoteltrending = "No empty spaces";
+    }
+
+    if (hotelFacebook.trim() === "") {
+      validationErrors.hotelfacebook = "No empty spaces";
+    }
+
+    if (hotelInstagram.trim() === "") {
+      validationErrors.hotelinstagram = "No empty spaces";
+    }
+
+    if (hotelTwitter.trim() === "") {
+      validationErrors.hoteltwitter = "No empty spaces";
+    }
+
+    if (hotelPinterest.trim() === "") {
+      validationErrors.hotelpinterest = "No empty spaces";
+    }
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      setInfo({
+        hotelPopularity: "",
+        hotelTrending: "",
+        hotelFacebook: "",
+        hotelInstagram: "",
+        hotelTwitter: "",
+        hotelPinterest: "",
+      });
+      setErrors(validationErrors);
+      setRender(true);
+    }
+  };
 
   return (
     <form
-      action=""
-      className="CreateHotel--subHotel CH__form3"
+      action=''
+      className='CreateHotel--subHotel CH__form3'
       onSubmit={handleInfo}
     >
       <h2>Social Data</h2>
-      <div className="HotelCreator__form--line">
-        <label className="HotelCreator__label" htmlFor="hotelPopularity">
+      <div className='HotelCreator__form--line'>
+        <label className='HotelCreator__label' htmlFor='hotelPopularity'>
           Popularity #:
         </label>
         <input
-          id="inp1"
-          className="HotelCreator__input"
-          type="text"
-          placeholder="Write your hotel's popularity number"
+          id='inp1'
+          className='HotelCreator__input'
+          type='text'
+          placeholder="Write your hotel's popularity number.
+          If not, enter NA or related"
           name='hotelPopularity'
           onChange={(event) => handleChange(event)}
           value={hotelPopularity}
         />
       </div>
-      <div className="HotelCreator__form--line">
-        <label className="HotelCreator__label" htmlFor="hotelTrending">
+      {errors.hotelpopularity && (
+        <span className='error-creator'> {errors.hotelpopularity} </span>
+      )}
+
+      <div className='HotelCreator__form--line'>
+        <label className='HotelCreator__label' htmlFor='hotelTrending'>
           Trending #:
         </label>
         <input
-          id="inp2"
-          className="HotelCreator__input"
-          type="text"
-          placeholder="Write your hotel's popularity number"
+          id='inp2'
+          className='HotelCreator__input'
+          type='text'
+          placeholder="Write your hotel's popularity number.
+          If not, enter NA or related"
           name='hotelTrending'
           onChange={(event) => handleChange(event)}
           value={hotelTrending}
         />
       </div>
-      <div className="HotelCreator__form--line">
-        <label className="HotelCreator__label" htmlFor="hotelFacebook">
+      {errors.hoteltrending && (
+        <span className='error-creator'> {errors.hoteltrending} </span>
+      )}
+
+      <div className='HotelCreator__form--line'>
+        <label className='HotelCreator__label' htmlFor='hotelFacebook'>
           Facebook:
         </label>
         <input
-          id="inp3"
-          className="HotelCreator__input"
-          type="text"
-          placeholder="Write your hotel's facebook fanpage"
+          id='inp3'
+          className='HotelCreator__input'
+          type='text'
+          placeholder="Write your hotel's facebook fanpage.
+          If not, enter NA or related"
           name='hotelFacebook'
           onChange={(event) => handleChange(event)}
           value={hotelFacebook}
         />
       </div>
-      <div className="HotelCreator__form--line">
-        <label className="HotelCreator__label" htmlFor="hotelInstagram">
+      {errors.hotelfacebook && (
+        <span className='error-creator'> {errors.hotelfacebook} </span>
+      )}
+      <div className='HotelCreator__form--line'>
+        <label className='HotelCreator__label' htmlFor='hotelInstagram'>
           Instagram:
         </label>
         <input
-          id="inp4"
-          className="HotelCreator__input"
-          type="text"
-          placeholder="Write your hotel's Instagram fanpage"
+          id='inp4'
+          className='HotelCreator__input'
+          type='text'
+          placeholder="Write your hotel's Instagram fanpage.
+          If not, enter NA or related"
           name='hotelInstagram'
           onChange={(event) => handleChange(event)}
           value={hotelInstagram}
         />
       </div>
-      <div className="HotelCreator__form--line">
-        <label className="HotelCreator__label" htmlFor="hotelTwitter">
+      {errors.hotelinstagram && (
+        <span className='error-creator'> {errors.hotelinstagram} </span>
+      )}
+
+      <div className='HotelCreator__form--line'>
+        <label className='HotelCreator__label' htmlFor='hotelTwitter'>
           Twitter:
         </label>
         <input
-          id="inp5"
-          className="HotelCreator__input"
-          type="text"
-          placeholder="Write your hotel's Twitter page"
+          id='inp5'
+          className='HotelCreator__input'
+          type='text'
+          placeholder="Write your hotel's Twitter page.
+          If not, enter NA or related"
           name='hotelTwitter'
           onChange={(event) => handleChange(event)}
           value={hotelTwitter}
         />
       </div>
-      <div className="HotelCreator__form--line">
-        <label className="HotelCreator__label" htmlFor="hotelPinterest">
+      {errors.hoteltwitter && (
+        <span className='error-creator'> {errors.hoteltwitter} </span>
+      )}
+
+      <div className='HotelCreator__form--line'>
+        <label className='HotelCreator__label' htmlFor='hotelPinterest'>
           Pinterest:
         </label>
         <input
-          id="inp5"
-          className="HotelCreator__input"
-          type="text"
-          placeholder="Write your hotel's Pinterest page"
+          id='inp5'
+          className='HotelCreator__input'
+          type='text'
+          placeholder="Write your hotel's Pinterest page.
+          If not, enter NA or related"
           name='hotelPinterest'
           onChange={(event) => handleChange(event)}
           value={hotelPinterest}
         />
       </div>
+      {errors.hotelpinterest && (
+        <span className='error-creator'> {errors.hotelpinterest} </span>
+      )}
 
-      <div className="HotelForm__footer">
+      <div className='HotelForm__footer'>
         <button
-          className="HotelCreator__form--microSubmit"
+          className='HotelCreator__form--microSubmit'
           onClick={(event) => {
-            
             setFormTab(2);
             scrollToTop();
           }}
@@ -140,16 +202,19 @@ function Form3SocialData({setFormTab, formTab, scrollToTop}) {
           🡸
         </button>
         Step {formTab} / 5
-        <button
-          className="HotelCreator__form--microSubmit"
-          onClick={(event) => {
-            
-            setFormTab(4);
-            scrollToTop();
-          }}
-        >
-          🢂
-        </button>
+        {render === true ? (
+          <button
+            className='HotelCreator__form--microSubmit'
+            onClick={(event) => {
+              setFormTab(4);
+              scrollToTop();
+            }}
+          >
+            🢂
+          </button>
+        ) : (
+          <button className='HotelCreator__form--microSubmit'>🢂</button>
+        )}
       </div>
     </form>
   );
