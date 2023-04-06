@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
   const [info, setInfo] = useState({
@@ -9,6 +10,11 @@ function SearchBar() {
     dateout: "",
     guestnumber: "",
   });
+  const navigate = useNavigate();
+
+  function handleSearchQuery(searchInput) {
+    navigate(`/hotel-list/search?q=${searchInput}`);
+  }
 
   const [errors, setErrors] = useState({});
 
@@ -67,58 +73,62 @@ function SearchBar() {
   };
 
   return (
-    <form onSubmit={handleInfo} className='SearchBar-ctn' action=''>
-      <div className='form-box-ctn'>
-        <label htmlFor='city'>HOTEL</label>
+    <form onSubmit={handleInfo} className="SearchBar-ctn" action="">
+      <div className="form-box-ctn">
+        <label htmlFor="city">HOTEL</label>
         <input
-          name='city'
-          type='text'
-          placeholder='Ingrese ciudad de destino'
+          name="city"
+          type="text"
+          placeholder="Ingrese ciudad de destino"
           onChange={(event) => handleChange(event)}
           value={city}
         />
-        {errors.cityName && <span className='error'>{errors.cityName}</span>}
+        {errors.cityName && <span className="error">{errors.cityName}</span>}
       </div>
 
-      <div className='form-box-ctn'>
-        <label htmlFor='datein'>CHECK-IN</label>
+      <div className="form-box-ctn">
+        <label htmlFor="datein">CHECK-IN</label>
         <input
-          name='datein'
-          type='date'
-          placeholder='Fecha del Check-in'
+          name="datein"
+          type="date"
+          placeholder="Fecha del Check-in"
           onChange={(event) => handleChange(event)}
           value={datein}
         />
-        {errors.dateRange && <span className='error'>{errors.dateRange}</span>}
+        {errors.dateRange && <span className="error">{errors.dateRange}</span>}
       </div>
 
-      <div className='form-box-ctn'>
-        <label htmlFor='dateout'>CHECK-OUT</label>
+      <div className="form-box-ctn">
+        <label htmlFor="dateout">CHECK-OUT</label>
         <input
-          name='dateout'
-          type='date'
-          placeholder='Fecha de Check-out'
+          name="dateout"
+          type="date"
+          placeholder="Fecha de Check-out"
           onChange={(event) => handleChange(event)}
           value={dateout}
         />
-        {errors.dateRange && <span className='error'>{errors.dateRange}</span>}
+        {errors.dateRange && <span className="error">{errors.dateRange}</span>}
       </div>
 
-      <div className='form-box-ctn'>
-        <label htmlFor='guestnumber'>GUESTS</label>
+      <div className="form-box-ctn">
+        <label htmlFor="guestnumber">GUESTS</label>
         <input
-          name='guestnumber'
-          type='number'
-          placeholder='Choose'
-          min='1'
-          max='5'
+          name="guestnumber"
+          type="number"
+          placeholder="Choose"
+          min="1"
+          max="5"
           onChange={(event) => handleChange(event)}
           value={guestnumber}
         />
       </div>
 
-      <div className='form-box-ctn'>
-        <button className='search-btn'>SEARCH</button>
+      <div className="form-box-ctn">
+        <button className="search-btn" onClick={() => {
+          return handleSearchQuery(`${city}`);
+        }}>
+          SEARCH
+        </button>
       </div>
     </form>
   );

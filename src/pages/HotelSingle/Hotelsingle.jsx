@@ -8,7 +8,6 @@ import HotelSingleGallery from "./HotelSingleGallery";
 import HotelInfoDisplay from "./HotelInfoDisplay";
 import weather from "../../assets/Images/weather.jpg";
 import CheckCard from "./CheckCard";
-import { HScontextProvider } from "./HotelSingleContext/HotelSingleContext";
 import { useParams, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -24,8 +23,6 @@ export default function Hotelsingle() {
   useEffect(() => {
     dispatch(fetchData(parseInt(id)));
   }, []);
-
-  console.log("currentHotel en HOTEL SINGLE PAGE", currentHotel);
 
   return (
     <div className="hotelsingle__maxcontainer">

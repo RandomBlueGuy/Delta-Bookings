@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-
+import { useParams } from 'react-router-dom';
 import "./HotelListpage.css";
 import Header from "./HotelListHeader";
 import HotelCard from "./HotelCard";
@@ -10,6 +10,7 @@ import { fetchData } from "../../ReduxStore/Slices/FetchData/fetchDataSlice";
 import LoadingComp from "../UniversalComponents/LoadingComp";
 
 function HotelListpage() {
+  
   const [actualPage, setActualPage] = useState(0);
   const itemsPerPage = 9;
   const [maxNpages, setMaxNpages] = useState(0);
@@ -19,7 +20,10 @@ function HotelListpage() {
   let [filteredHotelsArray, setFilteredHotelsArray] = useState(HotelsArray);
   const [selectedFilter, setSelectedFilter] = useState("All");
   const loading = useSelector((state) => state.fetchData.loading);
-  const [filterLoading, setFilterLoading] = useState(false)
+  const [filterLoading, setFilterLoading] = useState(false);
+  const { q } = useParams();
+
+  console.log("searchQuery =>", q); // "hbwafea"
 
   useEffect(() => {
     dispatch(fetchData());

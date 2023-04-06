@@ -44,7 +44,7 @@ function App() {
 
           <Route exact path="/" element={<Navigate to="/home" />} />
           <Route exact path="/home" element={<Homepage />} />
-          <Route exact path="/hotel-list" element={<HotelList />} />
+          <Route exact path="/hotel-list/:search" element={<HotelList />} />
           <Route exact path="/signup" element={<Signuppage />} />
           <Route exact path="/bookings" element={<Bookingpage />} />
           <Route exact path="/checkout" element={<CheckoutPage />} />
@@ -54,11 +54,11 @@ function App() {
             element={<CheckoutSuccessPage />}
           />
           <Route exact path="/login" element={<Login />} />
-          <Route
+          {/* <Route
             exact
             path="/*"
             element={<Navigate to="/404-page-not-found" />}
-          />
+          /> */}
           <Route exact path="/404-page-not-found" element={<Page404 />} />
           <Route exact path="/about-us" element={<AboutUspage />} />
           <Route exact path="/dashboard" element={<UserDashBoard />} />
