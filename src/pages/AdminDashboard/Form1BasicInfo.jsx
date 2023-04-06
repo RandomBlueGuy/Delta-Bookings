@@ -20,16 +20,18 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
   } = info;
 
   const [errors, setErrors] = useState({});
+  const [render, setRender] = useState(false);
 
   const handleChange = (event) => {
-    const target= event.target
-    const value= target.type==='file' ? Array.from(target.files): target.value;
-    const name= target.name
-    
-  setInfo(prevState=> ({
-    ...prevState,
-    [name]:value
-  }))
+    const target = event.target;
+    const value =
+      target.type === "file" ? Array.from(target.files) : target.value;
+    const name = target.name;
+
+    setInfo((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const handleInfo = (event) => {
@@ -42,7 +44,11 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
 
     if (hotelWebsite.trim() === "") {
       validationErrors.hotelwebsite = "Enter your website";
-    } else if (hotelWebsite.test(/^(?!.*\s)www\..+\.com$/)) {
+    } else if (
+      !/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/.test(
+        hotelWebsite.trim().replace(/\s+/g, "")
+      )
+    ) {
       validationErrors.hotelwebsite = "Invalid Website";
     }
 
@@ -59,14 +65,14 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
     }
 
     if (hotelDescription.trim() === "") {
-      validationErrors.hoteldescription = "enter your hotel's description";
+      validationErrors.hoteldescription = "Enter your hotel's description";
     } else if (hotelDescription.replace(/\s+/g, "").length > 100) {
       validationErrors.hoteldescription =
         "Please give us a shorter description";
     }
 
-    if(hotelFront.length<1){
-      validationErrors.hotelfront= "Please upload, at least, one picture"
+    if (hotelFront.length < 1) {
+      validationErrors.hotelfront = "Please upload, at least, one picture";
     }
 
     setErrors(validationErrors);
@@ -81,6 +87,7 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
         hotelFront: [],
       });
       setErrors({});
+      setRender(true);
     }
   };
 
@@ -91,6 +98,7 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
       onSubmit={handleInfo}
     >
       <h2>Basic information</h2>
+
       <div className='HotelCreator__form--line'>
         <label className='HotelCreator__label' htmlFor='hotelName'>
           Name:
@@ -104,8 +112,11 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
           onChange={(event) => handleChange(event)}
           value={hotelName}
         />
-        {errors.hotelname && <span> {errors.hotelname} </span>}
       </div>
+      {errors.hotelname && (
+        <span className='error-creator'> {errors.hotelname} </span>
+      )}
+
       <div className='HotelCreator__form--line'>
         <label className='HotelCreator__label' htmlFor='hotelWebsite'>
           Website:
@@ -119,8 +130,11 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
           onChange={(event) => handleChange(event)}
           value={hotelWebsite}
         />
-        {errors.hotelwebsite && <span> {errors.hotelwebsite} </span>}
       </div>
+      {errors.hotelwebsite && (
+        <span className='error-creator'> {errors.hotelwebsite} </span>
+      )}
+
       <div className='HotelCreator__form--line'>
         <label className='HotelCreator__label' htmlFor='hotelNumber'>
           Phone number:
@@ -134,8 +148,11 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
           onChange={(event) => handleChange(event)}
           value={hotelNumber}
         />
-        {errors.hotelnumber && <span> {errors.hotelnumber} </span>}
       </div>
+      {errors.hotelnumber && (
+        <span className='error-creator'> {errors.hotelnumber} </span>
+      )}
+
       <div className='HotelCreator__form--line'>
         <label className='HotelCreator__label' htmlFor='hotelEmail'>
           Email:
@@ -149,8 +166,11 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
           onChange={(event) => handleChange(event)}
           value={hotelEmail}
         />
-        {errors.hotelemail && <span> {errors.hotelemail} </span>}
       </div>
+      {errors.hotelemail && (
+        <span className='error-creator'> {errors.hotelemail} </span>
+      )}
+
       <div className='HotelCreator__form--line'>
         <label className='HotelCreator__label' htmlFor='hotelDescription'>
           Description:
@@ -164,22 +184,27 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
           onChange={(event) => handleChange(event)}
           value={hotelDescription}
         />
-        {errors.hoteldescription && <span> {errors.hoteldescription} </span>}
       </div>
+      {errors.hoteldescription && (
+        <span className='error-creator'> {errors.hoteldescription} </span>
+      )}
+
       <div className='HotelCreator__form--line'>
         <label className='HotelCreator__label' htmlFor='hotelFront'>
           Front image
         </label>
         <input
+          className='HotelCreator__input'
           type='file'
           name='hotelFront'
           accept='image/png, image/jpeg, image/jpg'
           multiple
           onChange={(event) => handleChange(event)}
         />
-        {errors.hotelfront && <span> {errors.hotelfront} </span>}
       </div>
-
+      {errors.hotelfront && (
+        <span className='error-creator'> {errors.hotelfront} </span>
+      )}
       <div className='HotelForm__footer'>
         <button
           className='HotelCreator__form--microSubmit'
@@ -191,15 +216,19 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
           🡸
         </button>
         Step {formTab} / 5
-        <button
-          className='HotelCreator__form--microSubmit'
-          onClick={(event) => {
-            setFormTab(2);
-            scrollToTop();
-          }}
-        >
-          🢂
-        </button>
+        {render === true ? (
+          <button
+            className='HotelCreator__form--microSubmit'
+            onClick={(event) => {
+              setFormTab(2);
+              scrollToTop();
+            }}
+          >
+            🢂
+          </button>
+        ) : (
+          <button className='HotelCreator__form--microSubmit'>🢂</button>
+        )}
       </div>
     </form>
   );

@@ -72,6 +72,8 @@ export default function Payments() {
       validationErrors.cardCCV = "Enter a valid CCV";
     }
 
+    setErrors(validationErrors);
+
     if (Object.keys(validationErrors).length === 0) {
       axios
         .post("https://jsonplaceholder.typicode.com/posts", {
@@ -98,7 +100,7 @@ export default function Payments() {
   return (
     <form onSubmit={handleInfo} className='container-2'>
       <section className='travelInfo-container'>
-        <h4>Payment Options</h4>
+        <h4> Payment Options</h4>
         <Accordion
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}
@@ -108,7 +110,7 @@ export default function Payments() {
             id='panel1d-header'
             expandIcon={<ExpandMoreIcon />}
           >
-            <Typography>Credit Card</Typography>
+            <Typography>◉ Credit Card</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>

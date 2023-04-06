@@ -5,6 +5,12 @@
     justify-content: center ;
     background-color: #f5f5dc;
     text-align: center; 
+    padding: 3rem 0
+}
+
+.container-success h1{
+    width: 80%;
+    max-width: 700px;
 }
 
 .picture-travel{
@@ -27,6 +33,7 @@
     touch-action: manipulation;
     vertical-align: middle;
     white-space: nowrap;
+    margin-top: 15px;
 }
 
 .confirmation-text{
@@ -34,7 +41,7 @@
     margin-top: 0.8rem;
 }
 
-.picture-travel, .confirmation-text, .container-success button{
+ .confirmation-text, .container-success button{
     margin-bottom: 2%;
 }
 
