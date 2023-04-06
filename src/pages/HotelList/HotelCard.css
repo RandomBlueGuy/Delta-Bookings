@@ -1,182 +1,178 @@
-
 .hotel-card {
-	background-color: white;
-	max-width: 360px;
-	max-height: 370px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	margin: 0;
-	padding: 0;
-	transition: box-shadow ease-in-out 0.5s;
+  background-color: white;
+  max-width: 360px;
+  max-height: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  transition: box-shadow ease-in-out 0.5s;
   padding-bottom: 0.5rem;
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0px 0px 20px rgba(34, 62, 96, 0.1);
+  transition: all ease-in-out 0.3s;
 }
 
 .hotel-card:hover {
-	transition: box-shadow ease-in-out 0.5s;
-	box-shadow: 0px 0px 20px rgba(34, 62, 96, 0.6);
+  box-shadow: 0px 0px 20px rgba(34, 62, 96, 0.6);
+  scale: 1.02;
 }
 
-.hotel-card a{
-	text-decoration: none;
+.hotel-card a {
+  text-decoration: none;
 }
 
 .hotel-card figure {
-	width: 100%;
-	min-height: 65%;
-	max-height: 65%;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	overflow: hidden;
-	object-fit: cover;
+  width: 100%;
+  min-height: 65%;
+  max-height: 65%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .hotel-pic {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: center;
 }
 
-
 .heart-ctn {
-	position: absolute;
-	right: 0.5rem;
-	top: 0.5rem;
-	width: 1.8rem;
-	height: 1.8rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: white;
-	background-color: rgb(15, 15, 15, 0.5);
-	border-radius: 50%;
-	transition: ease-in-out 0.2s;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgb(15, 15, 15, 0.5);
+  border-radius: 50%;
+  transition: ease-in-out 0.2s;
 }
 
 .heart-ctn:hover {
-	transition: ease-in-out 0.2s;
-	transform: scale(1.2);
+  transition: ease-in-out 0.2s;
+  transform: scale(1.2);
 }
 
 .love-icon {
-	width: 60%;
-	filter: invert(1);
+  width: 60%;
+  filter: invert(1);
 }
 
 .card-description {
-	display: flex;
-	flex-direction: column;
-	align-items: space-between;
-	justify-content: space-between;
-	width: 90%;
-	
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+  width: 90%;
 }
 
 .HC-title {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.HC-subtitle{
-	max-width: 70%;
-	/* white-space: nowrap; 
+.HC-subtitle {
+  max-width: 70%;
+  /* white-space: nowrap; 
 	background-color: aqua;
 	flex-wrap: nowrap;
 	
 	overflow: hidden;
 	text-overflow: ellipsis;	 */
-
 }
 
 .HC-title h1 {
-	font-size: 16px;
-	font-weight: 900;
-	text-overflow: ellipsis;	
+  font-size: 16px;
+  font-weight: 900;
+  text-overflow: ellipsis;
 }
 
 .HC-location {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .HC-location p {
-	font-size: 10px;
-	font-weight: 700;
-	color: gray;
-	font-weight: 800;
-	margin-left: -3px;
+  font-size: 10px;
+  font-weight: 700;
+  color: gray;
+  font-weight: 800;
+  margin-left: -3px;
 }
 
 .HC-description {
-	max-height: 3rem;
-	margin-bottom: 5px;
-	overflow: hidden;
-	text-overflow: ellipsis;
+  max-height: 3rem;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.HC-description p{
-	font-weight: 700;
-	color: var(--txt-gray);
-	font-size: 12px;
+.HC-description p {
+  font-weight: 700;
+  color: var(--txt-gray);
+  font-size: 12px;
 }
 
 .price-tags {
-	display: flex;
-	gap: 0.5rem;
-	align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .price-tags h4 {
-	margin: 0;
-	text-decoration: line-through;
-	font-weight: 800;
-	font-size: 12px;
-	align-items: center;
+  margin: 0;
+  text-decoration: line-through;
+  font-weight: 800;
+  font-size: 12px;
+  align-items: center;
 }
 
 .price-tags h3 {
-	margin: 0;
-	font-weight: 800;
-	font-size: 16px;
+  margin: 0;
+  font-weight: 800;
+  font-size: 16px;
 }
 
 .tags {
-	font-size: 10px;
-	font-weight: 600;
-	border: 1px solid grey;
-	padding: 2px;
-	border-radius: 3px;
-	cursor: pointer;
+  font-size: 10px;
+  font-weight: 600;
+  border: 1px solid grey;
+  padding: 2px;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .tags:hover {
-	background-color: rgba(201, 76, 76, 0.5);
-	color: var(--red-style);
-	border: 1px solid var(--red-style);
+  background-color: rgba(201, 76, 76, 0.5);
+  color: var(--red-style);
+  border: 1px solid var(--red-style);
 }
 
 .score-system {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 .star-rating {
-	color: #fecb38;
-	font-size: 20px;
+  color: #fecb38;
+  font-size: 20px;
 }
 
 .score-system p {
-	font-weight: 700;
-	font-size: 12px;
-	color: var(--txt-gray);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--txt-gray);
 }
 
 /* @media (max-width: 720px){

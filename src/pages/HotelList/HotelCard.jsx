@@ -51,8 +51,8 @@ function HotelCard({ hotelInfoCard }) {
           <p>{hotelInfoCard.ReviewNumber} reviews</p>
         </div>
         <div className="price-tags">
-          <h4>${(hotelInfoCard.Rooms[0].OriginalPricePerNight).toFixed(2)}</h4>
-          <h3>${finalPrice.toFixed(2)}</h3>
+          <h4>${(hotelInfoCard.Rooms[0].OriginalPricePerNight).toFixed(0)}</h4>
+          <h3>${finalPrice.toFixed(0)}</h3>
           <p className="tags">{hotelInfoCard.Tags[0]}</p>
           <p className="tags">{hotelInfoCard.Tags[1]}</p>
         </div>
