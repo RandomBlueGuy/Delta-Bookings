@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import "./HotelListpage.css";
 import Header from "./HotelListHeader";
 import HotelCard from "./HotelCard";
@@ -21,9 +21,11 @@ function HotelListpage() {
   const [selectedFilter, setSelectedFilter] = useState("All");
   const loading = useSelector((state) => state.fetchData.loading);
   const [filterLoading, setFilterLoading] = useState(false);
-  const { q } = useParams();
-
-  console.log("searchQuery =>", q); // "hbwafea"
+  // const search = useParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const city = searchParams.get('city');
+  console.log("searchQuery =>", city); 
 
   useEffect(() => {
     dispatch(fetchData());

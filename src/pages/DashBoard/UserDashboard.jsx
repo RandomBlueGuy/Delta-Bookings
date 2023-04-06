@@ -71,7 +71,7 @@ export default function UserDashboard() {
               <button>Cancel</button>
               <button>Save Changes</button>
             </div>
-            <form action="">
+            <form className='dashboard__form' action="">
               <div className="dashboard__ctn-info-edit1-name">
                 <label htmlFor="nombre">Name</label>
                 <input

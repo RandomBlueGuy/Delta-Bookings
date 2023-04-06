@@ -13,7 +13,7 @@ function SearchBar() {
   const navigate = useNavigate();
 
   function handleSearchQuery(searchInput) {
-    navigate(`/hotel-list/search?q=${searchInput}`);
+    navigate(`/hotel-list/search?city=${searchInput}`);
   }
 
   const [errors, setErrors] = useState({});
