@@ -74,15 +74,6 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      setInfo({
-        hotelAdress: "",
-        hotelCity: "",
-        hotelState: "",
-        hotelCountry: "",
-        hotelLatitude: "",
-        hotelLongitude: "",
-      });
-
       setErrors({});
       setRender(true);
     }
@@ -95,113 +86,126 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
       className='CreateHotel--subHotel CH__form2'
     >
       <h2>Location data</h2>
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelAdress'>
-          Address:
-        </label>
-        <input
-          id='inp1'
-          className='HotelCreator__input'
-          type='text'
-          placeholder='Write your hotel address'
-          name='hotelAdress'
-          onChange={(event) => handleChange(event)}
-          value={hotelAdress}
-        />
-      </div>
-      {errors.hoteladress && (
-        <span className='error-creator'>{errors.hoteladress}</span>
-      )}
 
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelCity'>
-          City:
-        </label>
-        <input
-          id='inp2'
-          className='HotelCreator__input'
-          type='text'
-          placeholder='Enter the city'
-          name='hotelCity'
-          onChange={(event) => handleChange(event)}
-          value={hotelCity}
-        />
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelAdress'>
+            Address:
+          </label>
+          <input
+            id='inp1'
+            className='HotelCreator__input'
+            type='text'
+            placeholder='Write your hotel address'
+            name='hotelAdress'
+            onChange={(event) => handleChange(event)}
+            value={hotelAdress}
+          />
+        </div>
+        {errors.hoteladress && (
+          <span className='error-creatorAdmin'>{errors.hoteladress}</span>
+        )}
       </div>
-      {errors.hotelcity && (
-        <span className='error-creator'>{errors.hotelcity}</span>
-      )}
 
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelState'>
-          State:
-        </label>
-        <input
-          id='inp3'
-          className='HotelCreator__input'
-          type='text'
-          placeholder='Enter the state'
-          name='hotelState'
-          onChange={(event) => handleChange(event)}
-          value={hotelState}
-        />
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelCity'>
+            City:
+          </label>
+          <input
+            id='inp2'
+            className='HotelCreator__input'
+            type='text'
+            placeholder='Enter the city'
+            name='hotelCity'
+            onChange={(event) => handleChange(event)}
+            value={hotelCity}
+          />
+        </div>
+        {errors.hotelcity && (
+          <span className='error-creatorAdmin'>{errors.hotelcity}</span>
+        )}
       </div>
-      {errors.hotelstate && (
-        <span className='error-creator'>{errors.hotelstate}</span>
-      )}
 
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelCountry'>
-          Country:
-        </label>
-        <input
-          id='inp4'
-          className='HotelCreator__input'
-          type='text'
-          placeholder="Write your hotel's country"
-          name='hotelCountry'
-          onChange={(event) => handleChange(event)}
-          value={hotelCountry}
-        />
+      <div className='line_Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelState'>
+            State:
+          </label>
+          <input
+            id='inp3'
+            className='HotelCreator__input'
+            type='text'
+            placeholder='Enter the state'
+            name='hotelState'
+            onChange={(event) => handleChange(event)}
+            value={hotelState}
+          />
+        </div>
+        {errors.hotelstate && (
+          <span className='error-creatorAdmin'>{errors.hotelstate}</span>
+        )}
       </div>
-      {errors.hotelcountry && (
-        <span className='error-creator'>{errors.hotelcountry}</span>
-      )}
 
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelLatitude'>
-          Latitude:
-        </label>
-        <input
-          id='inp5'
-          className='HotelCreator__input'
-          type='text'
-          placeholder="Write your hotel's latitude"
-          name='hotelLatitude'
-          onChange={(event) => handleChange(event)}
-          value={hotelLatitude}
-        />
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelCountry'>
+            Country:
+          </label>
+          <input
+            id='inp4'
+            className='HotelCreator__input'
+            type='text'
+            placeholder="Write your hotel's country"
+            name='hotelCountry'
+            onChange={(event) => handleChange(event)}
+            value={hotelCountry}
+          />
+        </div>
+        {errors.hotelcountry && (
+          <span className='error-creatorAdmin'>{errors.hotelcountry}</span>
+        )}
       </div>
-      {errors.hotellatitude && (
-        <span className='error-creator'>{errors.hotellatitude}</span>
-      )}
 
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelLongitude'>
-          Longitude:
-        </label>
-        <input
-          id='inp5'
-          className='HotelCreator__input'
-          type='text'
-          placeholder="Write your hotel's Longitude"
-          name='hotelLongitude'
-          onChange={(event) => handleChange(event)}
-          value={hotelLongitude}
-        />
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelLatitude'>
+            Latitude:
+          </label>
+          <input
+            id='inp5'
+            className='HotelCreator__input'
+            type='text'
+            placeholder="Write your hotel's latitude"
+            name='hotelLatitude'
+            onChange={(event) => handleChange(event)}
+            value={hotelLatitude}
+          />
+        </div>
+        {errors.hotellatitude && (
+          <span className='error-creatorAdmin'>{errors.hotellatitude}</span>
+        )}
       </div>
-      {errors.hotellongitude && (
-        <span className='error-creator'>{errors.hotellongitude}</span>
-      )}
+
+      <div className='line_Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelLongitude'>
+            Longitude:
+          </label>
+          <input
+            id='inp5'
+            className='HotelCreator__input'
+            type='text'
+            placeholder="Write your hotel's Longitude"
+            name='hotelLongitude'
+            onChange={(event) => handleChange(event)}
+            value={hotelLongitude}
+          />
+        </div>
+        {errors.hotellongitude && (
+          <span className='error-creatorAdmin'>{errors.hotellongitude}</span>
+        )}
+      </div>
 
       <div className='HotelForm__footer'>
         <button

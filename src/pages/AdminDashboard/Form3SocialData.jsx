@@ -58,14 +58,6 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      setInfo({
-        hotelPopularity: "",
-        hotelTrending: "",
-        hotelFacebook: "",
-        hotelInstagram: "",
-        hotelTwitter: "",
-        hotelPinterest: "",
-      });
       setErrors(validationErrors);
       setRender(true);
     }
@@ -78,118 +70,132 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
       onSubmit={handleInfo}
     >
       <h2>Social Data</h2>
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelPopularity'>
-          Popularity #:
-        </label>
-        <input
-          id='inp1'
-          className='HotelCreator__input'
-          type='text'
-          placeholder="Write your hotel's popularity number.
-          If not, enter NA or related"
-          name='hotelPopularity'
-          onChange={(event) => handleChange(event)}
-          value={hotelPopularity}
-        />
-      </div>
-      {errors.hotelpopularity && (
-        <span className='error-creator'> {errors.hotelpopularity} </span>
-      )}
 
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelTrending'>
-          Trending #:
-        </label>
-        <input
-          id='inp2'
-          className='HotelCreator__input'
-          type='text'
-          placeholder="Write your hotel's popularity number.
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelPopularity'>
+            Popularity #:
+          </label>
+          <input
+            id='inp1'
+            className='HotelCreator__input'
+            type='text'
+            placeholder="Write your hotel's popularity number.
           If not, enter NA or related"
-          name='hotelTrending'
-          onChange={(event) => handleChange(event)}
-          value={hotelTrending}
-        />
+            name='hotelPopularity'
+            onChange={(event) => handleChange(event)}
+            value={hotelPopularity}
+          />
+        </div>
+        {errors.hotelpopularity && (
+          <span className='error-creatorAdmin'> {errors.hotelpopularity} </span>
+        )}
       </div>
-      {errors.hoteltrending && (
-        <span className='error-creator'> {errors.hoteltrending} </span>
-      )}
 
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelFacebook'>
-          Facebook:
-        </label>
-        <input
-          id='inp3'
-          className='HotelCreator__input'
-          type='text'
-          placeholder="Write your hotel's facebook fanpage.
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelTrending'>
+            Trending #:
+          </label>
+          <input
+            id='inp2'
+            className='HotelCreator__input'
+            type='text'
+            placeholder="Write your hotel's popularity number.
           If not, enter NA or related"
-          name='hotelFacebook'
-          onChange={(event) => handleChange(event)}
-          value={hotelFacebook}
-        />
+            name='hotelTrending'
+            onChange={(event) => handleChange(event)}
+            value={hotelTrending}
+          />
+        </div>
+        {errors.hoteltrending && (
+          <span className='error-creatorAdmin'> {errors.hoteltrending} </span>
+        )}
       </div>
-      {errors.hotelfacebook && (
-        <span className='error-creator'> {errors.hotelfacebook} </span>
-      )}
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelInstagram'>
-          Instagram:
-        </label>
-        <input
-          id='inp4'
-          className='HotelCreator__input'
-          type='text'
-          placeholder="Write your hotel's Instagram fanpage.
-          If not, enter NA or related"
-          name='hotelInstagram'
-          onChange={(event) => handleChange(event)}
-          value={hotelInstagram}
-        />
-      </div>
-      {errors.hotelinstagram && (
-        <span className='error-creator'> {errors.hotelinstagram} </span>
-      )}
 
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelTwitter'>
-          Twitter:
-        </label>
-        <input
-          id='inp5'
-          className='HotelCreator__input'
-          type='text'
-          placeholder="Write your hotel's Twitter page.
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelFacebook'>
+            Facebook:
+          </label>
+          <input
+            id='inp3'
+            className='HotelCreator__input'
+            type='text'
+            placeholder="Write your hotel's facebook fanpage.
           If not, enter NA or related"
-          name='hotelTwitter'
-          onChange={(event) => handleChange(event)}
-          value={hotelTwitter}
-        />
+            name='hotelFacebook'
+            onChange={(event) => handleChange(event)}
+            value={hotelFacebook}
+          />
+        </div>
+        {errors.hotelfacebook && (
+          <span className='error-creatorAdmin'> {errors.hotelfacebook} </span>
+        )}
       </div>
-      {errors.hoteltwitter && (
-        <span className='error-creator'> {errors.hoteltwitter} </span>
-      )}
 
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='hotelPinterest'>
-          Pinterest:
-        </label>
-        <input
-          id='inp5'
-          className='HotelCreator__input'
-          type='text'
-          placeholder="Write your hotel's Pinterest page.
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelInstagram'>
+            Instagram:
+          </label>
+          <input
+            id='inp4'
+            className='HotelCreator__input'
+            type='text'
+            placeholder="Write your hotel's Instagram fanpage.
           If not, enter NA or related"
-          name='hotelPinterest'
-          onChange={(event) => handleChange(event)}
-          value={hotelPinterest}
-        />
+            name='hotelInstagram'
+            onChange={(event) => handleChange(event)}
+            value={hotelInstagram}
+          />
+        </div>
+        {errors.hotelinstagram && (
+          <span className='error-creatorAdmin'> {errors.hotelinstagram} </span>
+        )}
       </div>
-      {errors.hotelpinterest && (
-        <span className='error-creator'> {errors.hotelpinterest} </span>
-      )}
+
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelTwitter'>
+            Twitter:
+          </label>
+          <input
+            id='inp5'
+            className='HotelCreator__input'
+            type='text'
+            placeholder="Write your hotel's Twitter page.
+          If not, enter NA or related"
+            name='hotelTwitter'
+            onChange={(event) => handleChange(event)}
+            value={hotelTwitter}
+          />
+        </div>
+        {errors.hoteltwitter && (
+          <span className='error-creatorAdmin'> {errors.hoteltwitter} </span>
+        )}
+      </div>
+
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='hotelPinterest'>
+            Pinterest:
+          </label>
+          <input
+            id='inp5'
+            className='HotelCreator__input'
+            type='text'
+            placeholder="Write your hotel's Pinterest page.
+          If not, enter NA or related"
+            name='hotelPinterest'
+            onChange={(event) => handleChange(event)}
+            value={hotelPinterest}
+          />
+        </div>
+        {errors.hotelpinterest && (
+          <span className='error-creatorAdmin'> {errors.hotelpinterest} </span>
+        )}
+      </div>
 
       <div className='HotelForm__footer'>
         <button

@@ -34,20 +34,20 @@ function Form5RoomForm({ setRoomFormArr, roomFormArr }) {
       ...prevState,
       [name]: value,
     }));
-    /*  if (
-    roomName !== "" ||
-    roomAmenities !== "" ||
-    roomInclusions !== "" ||
-    roomPrice !== "" ||
-    roomDiscount !== "" ||
-    roomDescription !== "" ||
-    roomImages.length !== 0
-  ) {
-    setStatus(true);
-  } else {
-    setStatus(false);
-  }
- */
+
+    if (
+      roomName !== "" ||
+      roomAmenities !== "" ||
+      roomInclusions !== "" ||
+      roomPrice !== "" ||
+      roomDiscount !== "" ||
+      roomDescription !== "" ||
+      roomImages.length !== 0
+    ) {
+      setStatus(true);
+    } else {
+      setStatus(false);
+    }
   };
 
   const handleInfo = (event) => {
@@ -91,15 +91,6 @@ function Form5RoomForm({ setRoomFormArr, roomFormArr }) {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      setInfo({
-        roomName: "",
-        roomAmenities: "",
-        roomInclusions: "",
-        roomPrice: "",
-        roomDiscount: "",
-        roomDescription: "",
-        roomImages: [],
-      });
       setErrors({});
     }
   };
@@ -141,128 +132,151 @@ function Form5RoomForm({ setRoomFormArr, roomFormArr }) {
             </button>
           </div>
         </div>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='roomName'>
-            Room name:
-          </label>
-          <input
-            id='inp1'
-            className='HotelCreator__input'
-            type='text'
-            placeholder="Write your room's Name"
-            name='roomName'
-            onChange={(event) => handleChange(event)}
-            value={roomName}
-          />
-        </div>
-        {errors.roomname && (
-          <span className='error-creator'> {errors.roomname} </span>
-        )}
 
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='roonAmenities'>
-            Add Amenities:
-          </label>
-          <input
-            id='inp2'
-            className='HotelCreator__input'
-            type='text'
-            placeholder="Write your room's amenity or amenities (use comas)"
-            name='roomAmenities'
-            onChange={(event) => handleChange(event)}
-            value={roomAmenities}
-          />
+        <div className='line_Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='roomName'>
+              Room name:
+            </label>
+            <input
+              id='inp1'
+              className='HotelCreator__input'
+              type='text'
+              placeholder="Write your room's Name"
+              name='roomName'
+              onChange={(event) => handleChange(event)}
+              value={roomName}
+            />
+          </div>
+          {errors.roomname && (
+            <span className='error-creatorAdmin'> {errors.roomname} </span>
+          )}
         </div>
-        {errors.roomamenities && (
-          <span className='error-creator'> {errors.roomamenities} </span>
-        )}
 
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='roomInclusions'>
-            Add Inclusions:
-          </label>
-          <input
-            id='inp3'
-            className='HotelCreator__input'
-            type='text'
-            placeholder="Write your room's inclusion or inclusions (use comas)"
-            name='roomInclusions'
-            onChange={(event) => handleChange(event)}
-            value={roomInclusions}
-          />
+        <div className='line_Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='roonAmenities'>
+              Add Amenities:
+            </label>
+            <input
+              id='inp2'
+              className='HotelCreator__input'
+              type='text'
+              placeholder="Write your room's amenity or amenities (use comas)"
+              name='roomAmenities'
+              onChange={(event) => handleChange(event)}
+              value={roomAmenities}
+            />
+          </div>
+          {errors.roomamenities && (
+            <span className='error-creatorAdmin'> {errors.roomamenities} </span>
+          )}
         </div>
-        {errors.roominclusions && (
-          <span className='error-creator'> {errors.roominclusions} </span>
-        )}
 
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='roomPrice'>
-            Room's Price:
-          </label>
-          <input
-            id='inp4'
-            className='HotelCreator__input'
-            type='text'
-            placeholder="Write your room's price"
-            name='roomPrice'
-            onChange={(event) => handleChange(event)}
-            value={roomPrice}
-          />
+        <div className='line_Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='roomInclusions'>
+              Add Inclusions:
+            </label>
+            <input
+              id='inp3'
+              className='HotelCreator__input'
+              type='text'
+              placeholder="Write your room's inclusion or inclusions (use comas)"
+              name='roomInclusions'
+              onChange={(event) => handleChange(event)}
+              value={roomInclusions}
+            />
+          </div>
+          {errors.roominclusions && (
+            <span className='error-creatorAdmin'>
+              {" "}
+              {errors.roominclusions}{" "}
+            </span>
+          )}
         </div>
-        {errors.roomprice && (
-          <span className='error-creator'> {errors.roomprice} </span>
-        )}
 
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='roomDiscount'>
-            Room's discount:
-          </label>
-          <input
-            id='inp5'
-            className='HotelCreator__input'
-            type='text'
-            placeholder="Write your room's discount"
-            name='roomDiscount'
-            onChange={(event) => handleChange(event)}
-            value={roomDiscount}
-          />
+        <div className='line_Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='roomPrice'>
+              Room's Price:
+            </label>
+            <input
+              id='inp4'
+              className='HotelCreator__input'
+              type='text'
+              placeholder="Write your room's price"
+              name='roomPrice'
+              onChange={(event) => handleChange(event)}
+              value={roomPrice}
+            />
+          </div>
+          {errors.roomprice && (
+            <span className='error-creatorAdmin'> {errors.roomprice} </span>
+          )}
         </div>
-        {errors.roomdiscount && (
-          <span className='error-creator'> {errors.roomdiscount} </span>
-        )}
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='roomDescription'>
-            Room's description:
-          </label>
-          <input
-            id='inp5'
-            className='HotelCreator__input'
-            type='text'
-            placeholder="Write your room'sgi description"
-            name='roomDescription'
-            onChange={(event) => handleChange(event)}
-            value={roomDescription}
-          />
+
+        <div className='line_Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='roomDiscount'>
+              Room's discount:
+            </label>
+            <input
+              id='inp5'
+              className='HotelCreator__input'
+              type='text'
+              placeholder="Write your room's discount"
+              name='roomDiscount'
+              onChange={(event) => handleChange(event)}
+              value={roomDiscount}
+            />
+          </div>
+          {errors.roomdiscount && (
+            <span className='error-creatorAdmin'> {errors.roomdiscount} </span>
+          )}
         </div>
-        {errors.roomdescription && (
-          <span className='error-creator'> {errors.roomdescription} </span>
-        )}
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='roomImages'>
-            Add Room Image:
-          </label>
-          <input
-            className='HotelCreator__input'
-            type='file'
-            name='roomImages'
-            accept='image/png, image/jpeg, image/jpg'
-            multiple
-            onChange={(event) => handleChange(event)}
-          />
+
+        <div className='line_Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='roomDescription'>
+              Room's description:
+            </label>
+            <input
+              id='inp5'
+              className='HotelCreator__input'
+              type='text'
+              placeholder="Write your room'sgi description"
+              name='roomDescription'
+              onChange={(event) => handleChange(event)}
+              value={roomDescription}
+            />
+          </div>
+          {errors.roomdescription && (
+            <span className='error-creatorAdmin'>
+              {" "}
+              {errors.roomdescription}{" "}
+            </span>
+          )}
         </div>
-        {errors.roomimages && (
-          <span className='error-creator'> {errors.roomimages} </span>
-        )}
+
+        <div className='line_Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='roomImages'>
+              Add Room Image:
+            </label>
+            <input
+              className='HotelCreator__input'
+              type='file'
+              name='roomImages'
+              accept='image/png, image/jpeg, image/jpg'
+              multiple
+              onChange={(event) => handleChange(event)}
+            />
+          </div>
+          {errors.roomimages && (
+            <span className='error-creatorAdmin'> {errors.roomimages} </span>
+          )}
+        </div>
         <div className='addRoom'>
           <button>Create Room 🞧</button>
         </div>

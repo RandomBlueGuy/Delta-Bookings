@@ -22,7 +22,6 @@ function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      setFiles([]);
       setErrors({});
       setRender(true);
     }
@@ -34,21 +33,23 @@ function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
       onSubmit={handleInfo}
       className='CreateHotel--subHotel CH__form4'
     >
-      <div className='HotelCreator__form--line'>
-        <label className='HotelCreator__label' htmlFor='inp6'>
-          Add new images:
-        </label>
-        <input
-          type='file'
-          name='hotelFront'
-          accept='image/png, image/jpeg, image/jpg'
-          multiple
-          onChange={(event) => handleFile(event)}
-        />
+      <div className='line_Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='inp6'>
+            Add new images:
+          </label>
+          <input
+            type='file'
+            name='hotelFront'
+            accept='image/png, image/jpeg, image/jpg'
+            multiple
+            onChange={(event) => handleFile(event)}
+          />
+        </div>
+        {errors.filesempty && (
+          <span className='error-creatorAdmin'>{errors.filesempty}</span>
+        )}
       </div>
-      {errors.filesempty && (
-        <span className='error-creator'>{errors.filesempty}</span>
-      )}
 
       <div className='HotelForm__footer'>
         <button
