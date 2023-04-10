@@ -16,12 +16,14 @@ import {
 } from "../../ReduxStore/Slices/FetchData/fetchDataSlice";
 
 export default function Hotelsingle() {
-  const { id } = useParams();
   const currentHotel = useSelector((state) => state.fetchData.hotelSingle);
   const dispatch = useDispatch();
+  const location = useLocation();
+  const searchParams = Object.fromEntries(new URLSearchParams(location.search));
+  console.log("searchParams=>", searchParams);
 
   useEffect(() => {
-    dispatch(fetchData(parseInt(id)));
+    dispatch(fetchData(searchParams));
   }, []);
 
   return (

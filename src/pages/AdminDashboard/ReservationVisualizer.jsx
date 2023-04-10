@@ -29,17 +29,6 @@ function ReservationVisualizer() {
   return (
     <main ref = {refProp}>
       <h1>Reservation Visualizer</h1>
-      <ol>
-        <li>Create Booking card component</li>
-        <li>Create base prompt dummy</li>
-        <li>fill reservations in a .JSON file</li>
-        <li>Create some Axios magic</li>
-        <li>Map the obtained results in a new card each</li>
-        <li>Don't cry at night</li>
-        <li>Drink to forget the nightmares</li>
-        <li>Profit</li>
-      </ol>
-
       <label htmlFor="management__searchbar" />
       <div className="searchbar__ctn">
         <input type="text" className="management__searchbar" />

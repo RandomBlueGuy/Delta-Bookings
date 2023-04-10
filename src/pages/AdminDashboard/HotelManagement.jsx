@@ -9,6 +9,11 @@ function HotelManagement() {
   const itemsPerPage = 10;
   const [maxNpages, setMaxNpages] = useState();
   const HotelsArray = useSelector((state) => state.fetchData.HotelsArray);
+  const [filteredHotelsArray, setFilteredHotelsArray] = useState(() => {
+    return HotelsArray;
+  });
+  const [inputFilter, setInputFilter] = useState("");
+  const [inputKey, setInputKey] = useState("HotelName");
   const dispatch = useDispatch();
   const refProp = useRef(null);
 
@@ -17,12 +22,28 @@ function HotelManagement() {
   }, []);
 
   useEffect(() => {
-    const res = HotelsArray.length / itemsPerPage;
-    setMaxNpages(res > parseInt(res) ? parseInt(res) + 1 : res);
+    if (HotelsArray.length > 0) {
+      setFilteredHotelsArray(HotelsArray);
+    }
   }, [HotelsArray]);
 
+  useEffect(() => {
+    setFilteredHotelsArray(
+      HotelsArray.filter((hotel) => {
+        const input = inputFilter.split(" ").join("").toLowerCase();
+        const key = hotel[`${inputKey}`].toString().split(" ").join("").toLowerCase();
+        return key.includes(input);
+      })
+    );
+  }, [inputFilter, inputKey]);
+
+  useEffect(() => {
+    const res = filteredHotelsArray.length / itemsPerPage;
+    setMaxNpages(res > parseInt(res) ? parseInt(res) + 1 : res);
+  }, [filteredHotelsArray]);
+
   return (
-    <main className='HotelManagement__ctn' ref={refProp}>
+    <main className="HotelManagement__ctn" ref={refProp}>
       <h1>Hotel Management</h1>
       {/* <ol>
         <li>Create List card component</li>
@@ -36,14 +57,23 @@ function HotelManagement() {
 
       <label htmlFor="management__searchbar" />
       <div className="searchbar__ctn">
-        <input type="text" className="management__searchbar" />
-        <select name="" id="">
-          <option value="">-- sort by --</option>
-          <option value="Id">Id</option>
-          <option value="City">City</option>
-          <option value="Country">Country</option>
-          <option value="Popularity">Popularity #</option>
-          <option value="Trending">Trending #</option>
+        <input
+          value={inputFilter}
+          type="text"
+          onChange={(event) => setInputFilter(event.target.value)}
+          className="management__searchbar"
+        />
+        <select
+          value={inputKey}
+          onChange={(event) => {
+            return setInputKey(event.target.value);
+          }}
+        >
+          <option disabled selected>-- Filter by --</option>
+          <option value="HotelName">Name</option>
+          <option value="HotelId">Id</option>
+          <option value="loc_City">City</option>
+          <option value="loc_Country">Country</option>
         </select>
         <button>SEARCH</button>
       </div>
@@ -75,12 +105,14 @@ function HotelManagement() {
       </section> */}
 
       <section className="management__listDisplay">
-        {HotelsArray.slice(
-          actualPage * itemsPerPage,
-          actualPage * itemsPerPage + itemsPerPage
-        ).map((hotel, index) => {
-          return <ManageListMember key={index} hotel={hotel} />;
-        })}
+        {filteredHotelsArray
+          .slice(
+            actualPage * itemsPerPage,
+            actualPage * itemsPerPage + itemsPerPage
+          )
+          .map((hotel, index) => {
+            return <ManageListMember key={index} hotel={hotel} />;
+          })}
       </section>
 
       <div className="manage__pagination">
@@ -88,7 +120,7 @@ function HotelManagement() {
           maxNpages={maxNpages}
           actualPage={actualPage}
           setActualPage={setActualPage}
-          refProp ={refProp}
+          refProp={refProp}
         />
       </div>
     </main>

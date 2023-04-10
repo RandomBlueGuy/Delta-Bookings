@@ -31,18 +31,45 @@ export const fetchDataSlice = createSlice({
   },
 });
 
-export const fetchData = (searchParams = null) => {
+export const fetchData = (searchParams = { city: "All" }) => {
+  console.log("Data Output (AXIOS SLICE) =>", searchParams);
   return async (dispatch) => {
     dispatch({ type: axiosLoading });
     try {
       await axios.get("/DB/HotelDataBase.json").then((response) => {
-        if (searchParams === null) {
-          dispatch({ type: axiosSuccess, payload: response.data });
-        } else {
+        if (parseInt(searchParams.hid)!== 0) {
+          console.log("gets here", searchParams.hid)
           const [currentHotel] = response.data.filter(
-            (hotel) => hotel.HotelId === searchParams
+            (hotel) => hotel.HotelId === parseInt(searchParams.hid)
           );
           dispatch({ type: axiosSuccessHS, payload: currentHotel });
+        }
+
+        if (searchParams.city === "All") {
+          dispatch({ type: axiosSuccess, payload: response.data });
+        } else {
+          dispatch({
+            type: axiosSuccess,
+            payload: response.data.filter((hotel) => {
+              return (
+                hotel.loc_City
+                  .split(" ")
+                  .join("_")
+                  .toLocaleLowerCase()
+                  .includes(searchParams.city) ||
+                hotel.loc_State
+                  .split(" ")
+                  .join("_")
+                  .toLocaleLowerCase()
+                  .includes(searchParams.city) ||
+                hotel.loc_Country
+                  .split(" ")
+                  .join("_")
+                  .toLocaleLowerCase()
+                  .includes(searchParams.city)
+              );
+            }),
+          });
         }
       });
     } catch (error) {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 function SearchBar() {
   const [info, setInfo] = useState({
@@ -12,9 +12,21 @@ function SearchBar() {
   });
   const navigate = useNavigate();
 
-  function handleSearchQuery(searchInput) {
-    navigate(`/hotel-list/search?city=${searchInput}`);
+  function handleSearchQuery() {
+    const searchParams = {
+      city: `${city.split(" ").join("_").toLocaleLowerCase()}`,
+      checkInDate: `${datein}`,
+      checkOutDate: `${dateout}`,
+      guests: guestnumber,
+    };
+    const queryString = Object.entries(searchParams)
+      .map(([key, value]) => {
+        return `${key}=${value}`;
+      })
+      .join("&");
+    navigate(`/hotel-list/search?${queryString}`)
   }
+  // navigate(`/hotel-list/search?city?=${searchParams.city}chkIn?=${searchParams.checkInDate}chkOut?=${searchParams.checkOutDate}gn?=${searchParams.guests}`);
 
   const [errors, setErrors] = useState({});
 
@@ -22,6 +34,7 @@ function SearchBar() {
   const start = new Date(datein);
   const end = new Date(guestnumber);
   const today = new Date();
+  
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInfo({
@@ -58,15 +71,15 @@ function SearchBar() {
           dateout,
           guestnumber,
         })
-        .then((response) => console.log(response.data))
+        // .then((response) => console.log(response.data))
         .catch((error) => console.error(error));
 
-      setInfo({
-        city: "",
-        datein: "",
-        dateout: "",
-        guestnumber: "",
-      });
+      // setInfo({
+      //   city: "",
+      //   datein: "",
+      //   dateout: "",
+      //   guestnumber: "",
+      // });
 
       setErrors({});
     }
@@ -124,9 +137,12 @@ function SearchBar() {
       </div>
 
       <div className="form-box-ctn">
-        <button className="search-btn" onClick={() => {
-          return handleSearchQuery(`${city}`);
-        }}>
+        <button
+          className="search-btn"
+          onClick={() => {
+            return handleSearchQuery();
+          }}
+        >
           SEARCH
         </button>
       </div>

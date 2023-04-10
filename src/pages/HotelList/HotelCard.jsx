@@ -5,9 +5,10 @@ import StarRating from "../UniversalComponents/StarRating";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 function HotelCard({ hotelInfoCard }) {
-
+  const navigate= useNavigate();
   const finalPrice =
     hotelInfoCard.Rooms[0].OriginalPricePerNight -
     (
@@ -18,7 +19,7 @@ function HotelCard({ hotelInfoCard }) {
     <main className="hotel-card">
       <figure>
         <Link 
-        to= {`/hotel-single/${hotelInfoCard.HotelId}`}
+        to= {`/hotel-single/htlid?hid=${hotelInfoCard.HotelId}`}
         state={{data: hotelInfoCard}}
         >
           <img
@@ -29,6 +30,10 @@ function HotelCard({ hotelInfoCard }) {
         </Link>
         <div className="heart-ctn">
           <img className="love-icon" src={heartEmptyIcon} alt="" />
+        </div>
+        <div className="card__specialtag"
+        style={{display: hotelInfoCard.SpecialTags === "NoTag" ? "none" : "flex"}}>
+          {hotelInfoCard.SpecialTags}
         </div>
       </figure>
       <section className="card-description">

@@ -90,7 +90,7 @@ function NavBar() {
             <Link to="/">
               <h2 style={{ color: visibility ? "black" : "white" }}>Home</h2>
             </Link>
-            <Link to="/hotel-list">
+            <Link to="/hotel-list/search?city=All">
               <h2 style={{ color: visibility ? "black" : "white" }}>Hotel</h2>
             </Link>
 
@@ -188,7 +188,7 @@ function NavBar() {
                 <Link to="/" className="item-ctn">
                   <h2>Home</h2>
                 </Link>
-                <Link to="/hotel-list" className="item-ctn">
+                <Link to = "/hotel-list/search?city=All" className="item-ctn">
                   <h2>Hotel</h2>
                 </Link>
                 <Link to="/" className="item-ctn">

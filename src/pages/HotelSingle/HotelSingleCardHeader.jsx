@@ -16,11 +16,11 @@ function HotelSingleCardHeader({currentHotel}) {
           </div>
           <button>
             <img src={shareIcon} alt="" />
-            Share
+            <p className="button__txtDisplay">Share</p>
           </button>
           <button>
             <img src={saveIcon} alt="" />
-            Save
+            <p className="button__txtDisplay">Save</p>
           </button>
         </div>
         <div className="HotelSingleCardHeader-general-description">

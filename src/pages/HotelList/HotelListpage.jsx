@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import "./HotelListpage.css";
 import Header from "./HotelListHeader";
 import HotelCard from "./HotelCard";
@@ -10,7 +10,6 @@ import { fetchData } from "../../ReduxStore/Slices/FetchData/fetchDataSlice";
 import LoadingComp from "../UniversalComponents/LoadingComp";
 
 function HotelListpage() {
-  
   const [actualPage, setActualPage] = useState(0);
   const itemsPerPage = 9;
   const [maxNpages, setMaxNpages] = useState(0);
@@ -20,16 +19,14 @@ function HotelListpage() {
   let [filteredHotelsArray, setFilteredHotelsArray] = useState(HotelsArray);
   const [selectedFilter, setSelectedFilter] = useState("All");
   const loading = useSelector((state) => state.fetchData.loading);
+  const error = useSelector((state) => state.fetchData.error);
   const [filterLoading, setFilterLoading] = useState(false);
-  // const search = useParams();
   const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const city = searchParams.get('city');
-  console.log("searchQuery =>", city); 
+  const searchParams = Object.fromEntries(new URLSearchParams(location.search));
 
   useEffect(() => {
-    dispatch(fetchData());
-  }, []);
+    dispatch(fetchData(searchParams));
+  }, [location]);
 
   //INITIALIZE FILTERED HOTELS
   useEffect(() => {
@@ -117,7 +114,7 @@ function HotelListpage() {
               }
               onClick={(event) => {
                 setSelectedFilter(event.target.value);
-                setFakeLoading()
+                setFakeLoading();
               }}
             >
               All
@@ -131,7 +128,7 @@ function HotelListpage() {
               }
               onClick={(event) => {
                 setSelectedFilter(event.target.value);
-                setFakeLoading()
+                setFakeLoading();
               }}
             >
               Popular
@@ -145,7 +142,7 @@ function HotelListpage() {
               }
               onClick={(event) => {
                 setSelectedFilter(event.target.value);
-                setFakeLoading()
+                setFakeLoading();
               }}
             >
               Latest
@@ -159,7 +156,7 @@ function HotelListpage() {
               }
               onClick={(event) => {
                 setSelectedFilter(event.target.value);
-                setFakeLoading()
+                setFakeLoading();
               }}
             >
               Trend
@@ -169,6 +166,11 @@ function HotelListpage() {
             <p>☰ latest Filter</p>
           </div>
         </div>
+        {HotelsArray.length === 0 &&(
+          <div>
+            <h1>There are no hotels in "{searchParams.city}"</h1>
+          </div>
+        )}
         <div className="card-gallery">
           {filteredHotelsArray
             .slice(

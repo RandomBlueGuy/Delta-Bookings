@@ -112,6 +112,10 @@
 		width: 100%;
 	}
 
+	.general-info-title h1{
+		font-size: 18px;
+	}
+
 	.HotelSingleCardHeader-general-description {
 		display: flex;
 		justify-content: center;
@@ -122,11 +126,15 @@
 		display: none;
 	}
 
-	.HotelSingleCardHeader-general-price {
+	.HotelSingleCardHeader-general-price button{
 		display: none;
 	}
 
 	.info-unnecessary {
+		display: none;
+	}
+
+	.button__txtDisplay{
 		display: none;
 	}
 }

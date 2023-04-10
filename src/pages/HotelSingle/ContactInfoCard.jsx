@@ -4,9 +4,6 @@ import tIcon from "../../assets/Icons/twitter.svg";
 import fIcon from "../../assets/Icons/facebook.svg";
 import iIcon from "../../assets/Icons/instagram.svg";
 import gIcon from "../../assets/Icons/google.svg";
-import locationIcon from "../../assets/Icons/location.svg";
-import phoneIcon from "../../assets/Icons/phone.svg";
-import mailIcon from "../../assets/Icons/mail.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLocationDot,

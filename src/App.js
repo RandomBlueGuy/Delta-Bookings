@@ -65,7 +65,7 @@ function App() {
         <Route exact path="/about-us" element={<AboutUspage />} />
         <Route exact path="/dashboard" element={<UserDashBoard />} />
         <Route exact path="/admin-dashboard" element={<AdminDashBoardPage />} />
-        <Route exact path="/hotel-single/:id" element={<Hotelsingle />} />
+        <Route exact path="/hotel-single/:htlid" element={<Hotelsingle />} />
       </Routes>
       {/* </div> */}
       <Footer />

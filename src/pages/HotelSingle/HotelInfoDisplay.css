@@ -63,14 +63,17 @@
   transition: background 0.3s ease-in-out;
 }
 
-.reviewCard:hover{
+.reviewCard:hover {
   background-color: rgba(173, 34, 34, 0.088);
 }
 
 .reviewCard__titleCtn {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   margin-bottom: 1rem;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
 }
 
 .reviewCard__title {
@@ -94,7 +97,6 @@
 }
 
 .HotelInfoDisplay-policies-display {
-
 }
 
 .HotelInfoDisplay-ctn img {
@@ -126,4 +128,35 @@
   .HotelInfoDisplay-tabs button {
     width: 25%;
   }
+
+  .reviewCard__titleCtn {
+    flex-direction: column;
+    align-items: right;
+    gap: 0;
+  }
+
+  .reviewCard__review {
+    padding-left: 0;
+  }
+
+  .reviewCard__title{
+    text-align: right;
+    width: 100%;
+  }
+  
+  .reviewCard {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reviewCard__date{
+    width: 100%;
+  }
+
+  .rating__ctn{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+  }
+
 }
