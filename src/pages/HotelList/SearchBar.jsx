@@ -24,7 +24,7 @@ function SearchBar() {
         return `${key}=${value}`;
       })
       .join("&");
-    navigate(`/hotel-list/search?${queryString}`)
+    navigate(`/hotel-list/search?${queryString}`);
   }
   // navigate(`/hotel-list/search?city?=${searchParams.city}chkIn?=${searchParams.checkInDate}chkOut?=${searchParams.checkOutDate}gn?=${searchParams.guests}`);
 
@@ -34,7 +34,7 @@ function SearchBar() {
   const start = new Date(datein);
   const end = new Date(guestnumber);
   const today = new Date();
-  
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInfo({
@@ -71,74 +71,65 @@ function SearchBar() {
           dateout,
           guestnumber,
         })
-        // .then((response) => console.log(response.data))
         .catch((error) => console.error(error));
-
-      // setInfo({
-      //   city: "",
-      //   datein: "",
-      //   dateout: "",
-      //   guestnumber: "",
-      // });
-
       setErrors({});
     }
   };
 
   return (
-    <form onSubmit={handleInfo} className="SearchBar-ctn" action="">
-      <div className="form-box-ctn">
-        <label htmlFor="city">HOTEL</label>
+    <form onSubmit={handleInfo} className='SearchBar-ctn' action=''>
+      <div className='form-box-ctn'>
+        <label htmlFor='city'>HOTEL</label>
         <input
-          name="city"
-          type="text"
-          placeholder="Ingrese ciudad de destino"
+          name='city'
+          type='text'
+          placeholder='Ingrese ciudad de destino'
           onChange={(event) => handleChange(event)}
           value={city}
         />
-        {errors.cityName && <span className="error">{errors.cityName}</span>}
+        {errors.cityName && <span className='error'>{errors.cityName}</span>}
       </div>
 
-      <div className="form-box-ctn">
-        <label htmlFor="datein">CHECK-IN</label>
+      <div className='form-box-ctn'>
+        <label htmlFor='datein'>CHECK-IN</label>
         <input
-          name="datein"
-          type="date"
-          placeholder="Fecha del Check-in"
+          name='datein'
+          type='date'
+          placeholder='Fecha del Check-in'
           onChange={(event) => handleChange(event)}
           value={datein}
         />
-        {errors.dateRange && <span className="error">{errors.dateRange}</span>}
+        {errors.dateRange && <span className='error'>{errors.dateRange}</span>}
       </div>
 
-      <div className="form-box-ctn">
-        <label htmlFor="dateout">CHECK-OUT</label>
+      <div className='form-box-ctn'>
+        <label htmlFor='dateout'>CHECK-OUT</label>
         <input
-          name="dateout"
-          type="date"
-          placeholder="Fecha de Check-out"
+          name='dateout'
+          type='date'
+          placeholder='Fecha de Check-out'
           onChange={(event) => handleChange(event)}
           value={dateout}
         />
-        {errors.dateRange && <span className="error">{errors.dateRange}</span>}
+        {errors.dateRange && <span className='error'>{errors.dateRange}</span>}
       </div>
 
-      <div className="form-box-ctn">
-        <label htmlFor="guestnumber">GUESTS</label>
+      <div className='form-box-ctn'>
+        <label htmlFor='guestnumber'>GUESTS</label>
         <input
-          name="guestnumber"
-          type="number"
-          placeholder="Choose"
-          min="1"
-          max="5"
+          name='guestnumber'
+          type='number'
+          placeholder='Choose'
+          min='1'
+          max='5'
           onChange={(event) => handleChange(event)}
           value={guestnumber}
         />
       </div>
 
-      <div className="form-box-ctn">
+      <div className='form-box-ctn'>
         <button
-          className="search-btn"
+          className='search-btn'
           onClick={() => {
             return handleSearchQuery();
           }}
