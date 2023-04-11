@@ -41,7 +41,6 @@ const Form = () => {
       [name]: type === "checkbox" ? checked : value,
     });
   };
-  console.log(data["name"]);
 
   const { name, birthday, gender, streetAddress, cityState, zip } = data;
   return (

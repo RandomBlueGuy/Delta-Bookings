@@ -20,7 +20,6 @@ export default function Hotelsingle() {
   const dispatch = useDispatch();
   const location = useLocation();
   const searchParams = Object.fromEntries(new URLSearchParams(location.search));
-  console.log("searchParams=>", searchParams);
 
   useEffect(() => {
     dispatch(fetchData(searchParams));

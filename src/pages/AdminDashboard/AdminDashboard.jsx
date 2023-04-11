@@ -19,7 +19,6 @@ export default function AdminDashboard() {
 
   function handleClickEdit() {
     setProfileEdit(!profileEdit);
-    console.log(profileEdit);
   }
 
   return (

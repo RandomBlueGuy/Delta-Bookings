@@ -11,19 +11,18 @@ function ManageListMember({ hotel }) {
       }}
     >
       <div className="Management__Card--title">
-        <div className='Management__Card--id'>
-
-        <div>
+        <div className="Management__Card--id">
+          <div>
+            <h3>
+              {hotel.HotelId}
+              <span className="Management__separator">{" :: "}</span>
+            </h3>
+          </div>
           <h3>
-            {hotel.HotelId}
+            {hotel.HotelName}
             <span className="Management__separator">{" :: "}</span>
+            {hotel.loc_City}, {hotel.loc_Country}
           </h3>
-        </div>
-        <h3>
-          {""}{hotel.HotelName}
-          <span className="Management__separator">{" :: "}</span>
-          {hotel.loc_City}, {hotel.loc_Country}
-        </h3>
         </div>
         <div className="manage_btns">
           <button

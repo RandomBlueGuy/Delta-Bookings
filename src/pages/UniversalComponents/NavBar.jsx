@@ -25,7 +25,6 @@ function NavBar() {
   }, [location.pathname]);
 
   // useEffect(() => {
-  //   console.log(      specialPathsArr
   //     .map((element) => element === location.pathname)
   //     .includes(true))
   //   if (

@@ -12,12 +12,10 @@ function Login() {
   
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
-    console.log(toggleVisible);
   }
 
   const handleSubmit = (event) => {
     event.preventDefault(); 
-    console.log('Datos enviados:', event.target.input.value);
   }
 
   const [usuario, setUsuario] = useState({campo: '', valido: null});

@@ -14,10 +14,10 @@ function SearchBar() {
 
   function handleSearchQuery() {
     const searchParams = {
-      city: `${city.split(" ").join("_").toLocaleLowerCase()}`,
-      checkInDate: `${datein}`,
-      checkOutDate: `${dateout}`,
-      guests: guestnumber,
+      ...(city && city.trim() !== "" && { city: `${city.split(" ").join("_").toLocaleLowerCase()}` }),
+      ...(datein && datein.trim() !== "" && { checkInDate: `${datein}` }),
+      ...(dateout && dateout.trim() !== "" && { checkOutDate: `${dateout}` }),
+      ...(guestnumber !== null && guestnumber !== "" && { guests: guestnumber }),
     };
     const queryString = Object.entries(searchParams)
       .map(([key, value]) => {

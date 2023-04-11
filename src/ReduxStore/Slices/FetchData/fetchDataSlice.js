@@ -32,13 +32,11 @@ export const fetchDataSlice = createSlice({
 });
 
 export const fetchData = (searchParams = { city: "All" }) => {
-  console.log("Data Output (AXIOS SLICE) =>", searchParams);
   return async (dispatch) => {
     dispatch({ type: axiosLoading });
     try {
       await axios.get("/DB/HotelDataBase.json").then((response) => {
         if (parseInt(searchParams.hid)!== 0) {
-          console.log("gets here", searchParams.hid)
           const [currentHotel] = response.data.filter(
             (hotel) => hotel.HotelId === parseInt(searchParams.hid)
           );
