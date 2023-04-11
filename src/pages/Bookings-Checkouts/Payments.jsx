@@ -43,7 +43,7 @@ export default function Payments() {
     if (cardnumber.trim() === "") {
       validationErrors.cardNumber = "Enter your card's number";
     } else if (!/^[0-9]*$/.test(cardnumber.trim().replace(/\s+/g, ""))) {
-      validationErrors.cardNumber = "Only numeric characters are accepted";
+      validatigionErrors.cardNumber = "Only numeric characters are accepted";
     } else if (cardnumber.trim().replace(/\s+/g, "").length !== 16) {
       validationErrors.cardNumber = "Enter a valid card number extension";
     }
