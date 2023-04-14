@@ -119,6 +119,11 @@
   background-color: var(--red-style);
 }
 
+.error{
+  margin-top: -25px;
+  padding-bottom: 1.2rem;
+}
+
 @media (max-width: 720px) {
   .signup-main-container {
     padding: 2rem 0;

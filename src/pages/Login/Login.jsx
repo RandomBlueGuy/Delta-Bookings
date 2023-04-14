@@ -10,80 +10,102 @@ function Login() {
   const lIcon = <FontAwesomeIcon icon={faLock} />;
   const mIcon = <FontAwesomeIcon icon={faEnvelope} />;
 
+  const [errors, setErrors] = useState({});
+  const [emailerr, setEmailerr] = useState({});
+  const [data, setData] = useState({
+    username: "",
+    password: "",
+    email: "",
+  });
+
+  const { username, password, email } = data;
+
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
   }
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    const validationErrors = {};
+
+    if (username.trim() === "") {
+      validationErrors.userName = "Please Enter Your Name";
+    }
+
+    if (password.trim() === "") {
+      validationErrors.userPassword = "Please Enter Your Password";
+    }
+
+    setErrors(validationErrors);
   };
 
-  const [usuario, setUsuario] = useState({ campo: "", valido: null });
+  const handleEmail = (event) => {
+    event.preventDefault();
+    const validateEmail = {};
 
-  const validarUsuario = (e) => {
-    const regexUsuario = /^[a-zA-Z0-9]{4,16}$/;
-    const valido = regexUsuario.test(e.target.value);
-    setUsuario({ campo: e.target.value, valido: valido });
-  };
+    if (email.trim() === "") {
+      validateEmail.userEmail = "Please Enter Your Email";
+    } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      validateEmail.userEmail = "Enter a Valid Email";
+    }
 
-  const [password, setPassword] = useState({ campo: "", valido: null });
-
-  const validarPassword = (e) => {
-    const regexPassword = /^[a-zA-Z0-9]{4,16}$/;
-    const valido = regexPassword.test(e.target.value);
-    setPassword({ campo: e.target.value, valido: valido });
-  };
-
-  const [email, setEmail] = useState({ campo: "", valido: null });
-
-  const validarEmail = (e) => {
-    const regexEmail = /^[a-zA-Z0-9]{4,16}$/;
-    const valido = regexEmail.test(e.target.value);
-    setEmail({ campo: e.target.value, valido: valido });
+    setEmailerr(validateEmail);
   };
 
   return (
-    <main className="Login-ctn">
-      <section className="Login-card">
-        <h1>Login</h1>
-        <label htmlFor="user-input" className="Login-normal-label" name="user">
-          User:
-        </label>
-        <div className="Login-formbox" onSubmit={handleSubmit}>
-          {uIcon}
-          <input
-            id="user-input"
-            type="text"
-            placeholder={`Enter your Username`}
-            className="Login-input-username"
-            name="user-input"
-            value={usuario.campo}
-            onChange={validarUsuario}
-            required
-          />
-          {usuario.valido === false && (
-            <p className="error">{usuario.leyendaError}</p>
-          )}
-        </div>
-        <label htmlFor="password-input" className="Login-normal-label">
-          Password:
-        </label>
-        <div className="pass-input-area">
-          <div className="Login-formbox" onSubmit={handleSubmit}>
-            {lIcon}
+    <main className='Login-ctn'>
+      <section className='Login-card'>
+        <form onSubmit={handleSubmit}>
+          <h1>Login</h1>
+          <label htmlFor='username' className='Login-normal-label' name='user'>
+            User:
+          </label>
+          <div className='Login-formbox'>
+            {uIcon}
             <input
-              id="password-input"
-              name="password-input"
-              type="password"
-              placeholder={`Enter your password`}
-              value={password.campo}
-              onChange={validarPassword}
+              id='user-input'
+              type='text'
+              placeholder='Enter your Username'
+              className='Login-input-username'
+              name='username'
+              value={username}
+              onChange={(event) => handleChange(event)}
             />
           </div>
-          <button className="Login-special-btn" onClick={toggleSecretSection}>
-            Forgot your password?
-          </button>
-        </div>
+          {errors.userName && <span className='error'>{errors.userName}</span>}
+
+          <label htmlFor='password' className='Login-normal-label'>
+            Password:
+          </label>
+          <div className='pass-input-area'>
+            <div className='Login-formbox'>
+              {lIcon}
+              <input
+                id='password-input'
+                name='password-input'
+                type='password'
+                placeholder={`Enter your password`}
+                value={password}
+                onChange={(event) => handleChange(event)}
+              />
+            </div>
+            {errors.userPassword && (
+              <span className='error'>{errors.userPassword}</span>
+            )}
+            <button className='Login-special-btn' onClick={toggleSecretSection}>
+              Forgot your password?
+            </button>
+          </div>
+        </form>
 
         <div
           className={
@@ -92,30 +114,36 @@ function Login() {
               : "Login-secret-section-active"
           }
         >
-          <div className="recovery-column">
-            <label className="Login-special-label" htmlFor="recover-input">
-              Write your Email here to reset your password ;)
+          <div className='recovery-column'>
+            <label className='email' htmlFor='recover-input'>
+              Write your Email here to reset your password
             </label>
-            <div className="Login-formbox">
+            <div className='Login-formbox'>
               {mIcon}
               <input
-                type="email"
-                name="recover-input"
-                id="recover-input"
-                value={email.campo}
-                placeholder="Enter your recovery email"
-                oncChange={validarEmail}
+                type='email'
+                name='email'
+                id='recover-input'
+                value={email}
+                placeholder='Enter your recovery email'
+                onChange={(event) => handleChange(event)}
               />
             </div>
+            {emailerr.userEmail && (
+              <span className='error'>{emailerr.userEmail}</span>
+            )}
+            <button className='Login-ctn-btn' onClick={handleEmail}>
+              Recover Email
+            </button>
           </div>
         </div>
-        <button className="Login-ctn-btn">LOGIN</button>
-        <div className="social-distancing">
-          <div className="social-distancing-line"></div>
+        <button className='Login-ctn-btn'>Log In</button>
+        <div className='social-distancing'>
+          <div className='social-distancing-line'></div>
           <p>OR</p>
         </div>
-        <Link to="/signup">
-          <button className="Signin-ctn-btn">Sign Up</button>
+        <Link to='/signup'>
+          <button className='Signin-ctn-btn'>Sign Up</button>
         </Link>
       </section>
     </main>
