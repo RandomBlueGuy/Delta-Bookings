@@ -21,9 +21,6 @@ import CheckoutFailurePage from "./pages/Bookings-Checkouts/CheckoutFailurePage"
 import Login from "./pages/Login/Login";
 import AdminDashBoardPage from "./pages/AdminDashboard/AdminDashboardPage";
 import LoadingComp from "./pages/UniversalComponents/LoadingComp";
-// - URL
-// - protocol -   subDomain -  Domain        -   Extension      -  path       - params/slugs/opt - search params
-// - http:    - classroom   -  make it real  -    .   -  camp  - /dashboard  -  /users ? name=jhon&id=1234
 
 function App() {
   const { pathname } = useLocation();
@@ -39,10 +36,7 @@ function App() {
       <UpButton />
       <NavBar />
       {/* <LoadingComp /> */}
-      {/* <div  style={{filter: "blur(5px)"}}> */}
       <Routes>
-        {/* <Route exact path="/XXX" element={<XXX />} /> */}
-
         <Route exact path="/" element={<Navigate to="/home" />} />
         <Route exact path="/home" element={<Homepage />} />
         <Route exact path="/hotel-list/:search" element={<HotelList />} />
@@ -54,7 +48,7 @@ function App() {
           path="/checkout-success"
           element={<CheckoutSuccessPage />}
         />
-        <Route exact path="/checkout-fail" element={<CheckoutFailurePage />} />
+        <Route exact path="/checkout-failure" element={<CheckoutFailurePage />} />
         <Route exact path="/login" element={<Login />} />
         <Route
           exact
