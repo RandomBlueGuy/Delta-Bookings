@@ -1,46 +1,46 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
-  
   const [toggleVisible, setToggleVisible] = useState(true);
   const uIcon = <FontAwesomeIcon icon={faUser} />;
   const lIcon = <FontAwesomeIcon icon={faLock} />;
   const mIcon = <FontAwesomeIcon icon={faEnvelope} />;
-  
+
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault(); 
-  }
+    event.preventDefault();
+  };
 
-  const [usuario, setUsuario] = useState({campo: '', valido: null});
+  const [usuario, setUsuario] = useState({ campo: "", valido: null });
 
-const validarUsuario = (e) => {
-  const regexUsuario = /^[a-zA-Z0-9]{4,16}$/;
-  const valido = regexUsuario.test(e.target.value);
-  setUsuario({campo: e.target.value, valido: valido});
-};
+  const validarUsuario = (e) => {
+    const regexUsuario = /^[a-zA-Z0-9]{4,16}$/;
+    const valido = regexUsuario.test(e.target.value);
+    setUsuario({ campo: e.target.value, valido: valido });
+  };
 
-const [password, setPassword] = useState({campo: '', valido: null});
+  const [password, setPassword] = useState({ campo: "", valido: null });
 
-const validarPassword = (e) => {
-  const regexPassword = /^[a-zA-Z0-9]{4,16}$/;
-  const valido = regexPassword.test(e.target.value);
-  setPassword({campo: e.target.value, valido: valido});
-};
+  const validarPassword = (e) => {
+    const regexPassword = /^[a-zA-Z0-9]{4,16}$/;
+    const valido = regexPassword.test(e.target.value);
+    setPassword({ campo: e.target.value, valido: valido });
+  };
 
-const [email, setEmail] = useState({campo: '', valido: null});
+  const [email, setEmail] = useState({ campo: "", valido: null });
 
-const validarEmail = (e) => {
-  const regexEmail = /^[a-zA-Z0-9]{4,16}$/;
-  const valido = regexEmail.test(e.target.value);
-  setEmail({campo: e.target.value, valido: valido});
-};
+  const validarEmail = (e) => {
+    const regexEmail = /^[a-zA-Z0-9]{4,16}$/;
+    const valido = regexEmail.test(e.target.value);
+    setEmail({ campo: e.target.value, valido: valido });
+  };
 
   return (
     <main className="Login-ctn">
@@ -110,6 +110,13 @@ const validarEmail = (e) => {
           </div>
         </div>
         <button className="Login-ctn-btn">LOGIN</button>
+        <div className="social-distancing">
+          <div className="social-distancing-line"></div>
+          <p>OR</p>
+        </div>
+        <Link to="/signup">
+          <button className="Signin-ctn-btn">Sign Up</button>
+        </Link>
       </section>
     </main>
   );

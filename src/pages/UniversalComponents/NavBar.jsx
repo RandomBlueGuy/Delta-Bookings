@@ -86,13 +86,13 @@ function NavBar() {
         >
           <nav className="NavBar">
             <section className="nav-section">
-              <Link to="/">
+              <Link to="/home">
                 <img src={visibility ? iconB : iconW} alt="Delta" />
               </Link>
             </section>
 
             <section className="nav-desktop">
-              <Link to="/">
+              <Link to="/home">
                 <h2 style={{ color: visibility ? "black" : "white" }}>Home</h2>
               </Link>
               <Link to="/hotel-list/search?city=All">

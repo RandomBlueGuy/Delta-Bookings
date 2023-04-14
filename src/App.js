@@ -13,7 +13,7 @@ import AboutUspage from "./pages/AboutUs/AboutUspage";
 import Hotelsingle from "./pages/HotelSingle/Hotelsingle";
 import UserDashBoard from "./pages/DashBoard/DashboardPage";
 import CheckoutPage from "./pages/Bookings-Checkouts/CheckoutPage";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useLocation, Navigate } from "react-router-dom";
 import "./App.css";
 import CheckoutSuccessPage from "./pages/Bookings-Checkouts/CheckoutSuccessPage";
@@ -32,7 +32,7 @@ function App() {
   }, [pathname]);
 
   return (
-    <div>
+    <React.Fragment>
       <UpButton />
       <NavBar />
       {/* <LoadingComp /> */}
@@ -48,7 +48,11 @@ function App() {
           path="/checkout-success"
           element={<CheckoutSuccessPage />}
         />
-        <Route exact path="/checkout-failure" element={<CheckoutFailurePage />} />
+        <Route
+          exact
+          path="/checkout-failure"
+          element={<CheckoutFailurePage />}
+        />
         <Route exact path="/login" element={<Login />} />
         <Route
           exact
@@ -63,7 +67,7 @@ function App() {
       </Routes>
       {/* </div> */}
       <Footer />
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -81,8 +81,9 @@
 }
 
 .square-icon {
-  background-color: white;
+
   height: 2rem;
+  width: 8rem;
   aspect-ratio: 1/1;
   display: flex;
   align-items: center;
@@ -124,8 +125,7 @@
   box-shadow: 0 5px 5px rgba(28, 28, 28, 0.25);
 }
 
-.square-icon:hover 
-.dropdown-menu {
+.square-icon:hover .dropdown-menu, .dropdown-menu:hover {
   opacity: 1;
   visibility: visible;
   top: 100%;

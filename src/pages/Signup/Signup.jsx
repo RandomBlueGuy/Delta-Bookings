@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "./Signup.css";
 import fbIcon from "../../assets/Icons/facebookSI.svg";
 import googleIcon from "../../assets/Icons/googleSI.svg";
+import { useNavigate } from "react-router-dom";
 //import axios from "axios";
 
 export default function Signup() {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -122,7 +124,14 @@ export default function Signup() {
           <div className="social-distancing-line"></div>
           <p>OR</p>
         </div>
-        <button className="loginBtn">LOGIN</button>
+        <button
+          className="loginBtn"
+          onClick={() => {
+            return navigate("/login");
+          }}
+        >
+          LOGIN
+        </button>
       </main>
     </div>
   );
