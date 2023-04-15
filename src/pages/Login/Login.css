@@ -19,7 +19,7 @@
   color: rgb(160, 160, 160);
 }
 
-.Login-ctn a{
+.Login-ctn a {
   text-decoration: none;
   color: var(--red-style);
   text-align: right;
@@ -32,6 +32,9 @@
   outline: none;
 }
 
+.error {
+  width: 100%;
+}
 
 .Login-card {
   box-sizing: inherit;
@@ -90,14 +93,14 @@
   overflow: hidden;
   transition: height ease-in-out 0.5s;
   display: flex;
-
+  text-align: right;
 }
 
 .Login-secret-section-active {
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  height: 100px;
+  height: 80px;
   transition: height ease-in-out 0.5s;
   display: flex;
   flex-direction: column;
@@ -105,14 +108,18 @@
   text-align: right;
 }
 
-.err__display__secret{
+.err__display__secret {
   display: flex;
   flex-direction: column;
-  align-items: right;
+  align-items: left;
+  justify-content: right;
+}
+
+.error {
   text-align: right;
 }
 
-.error__email{
+.error__email {
   padding-right: 2rem;
 }
 
@@ -123,7 +130,7 @@
   margin-top: 1rem;
 }
 
-.Signin-ctn-btn{
+.Signin-ctn-btn {
   width: 100%;
   padding: 1rem 0;
   border-radius: 20rem;
@@ -132,11 +139,11 @@
   color: var(--red-style);
 }
 
-.Signin-ctn-btn:hover{
+.Signin-ctn-btn:hover {
   background-color: transparent;
 }
 
-.Login-formbox{
+.Login-formbox {
   display: flex;
   align-items: center;
   color: var(--txt-gray);
@@ -144,21 +151,36 @@
   border-bottom: 3px solid rgba(128, 128, 128, 0.352);
   padding-left: 0.5rem;
   transition: 0.2s ease-in-out;
-  
 }
 
-.recovery-column{
+.recovery-column {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.Login-formbox:focus-within{
+.error__display {
+  width: 100%;
+  align-items: right;
+  justify-content: right;
+  color: var(--red-style);
+  font-size: 75%;
+  font-weight: 700;
+  font-style: italic;
+  text-align: right;
+}
+
+.form__line--login{
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.Login-formbox:focus-within {
   border-color: var(--red-style);
   transition: 0.2s ease-in-out;
 }
 
-.email__recover{
+.email__recover {
   padding: 0.5rem;
   aspect-ratio: 1/1;
   display: flex;
@@ -178,7 +200,10 @@
   .Login-secret-section input,
   .Login-secret-section-active input {
     width: 98%;
-    justify-content: center;
-    align-items: center;
+
+  }
+
+  .Login-secret-section-active {
+    height: 100px;
   }
 }

@@ -55,37 +55,43 @@ function Login() {
           <label htmlFor="username" className="Login-normal-label" name="user">
             User:
           </label>
-          <div className="Login-formbox">
-            {uIcon}
-            <input
-              id="user-input"
-              type="text"
-              placeholder="Enter your Username"
-              className="Login-input-username"
-              name="username"
-              value={username}
-              onChange={(event) => handleChange(event)}
-            />
-          </div>
-          {errors.userName && <span className="error">{errors.userName}</span>}
-          <label htmlFor="password" className="Login-normal-label">
-            Password:
-          </label>
-          <div className="pass-input-area">
+          <div className="form__line--login">
             <div className="Login-formbox">
-              {lIcon}
+              {uIcon}
               <input
-                id="password-input"
-                name="password"
-                type="password"
-                placeholder={"Enter your password"}
-                value={password}
+                id="user-input"
+                type="text"
+                placeholder="Enter your Username"
+                className="Login-input-username"
+                name="username"
+                value={username}
                 onChange={(event) => handleChange(event)}
               />
             </div>
-            {errors.userPassword && (
-              <span className="error error__email">{errors.userPassword}</span>
+            {errors.userName && (
+              <div className="error__display">{errors.userName}</div>
             )}
+          </div>
+          <div className="form__line--login">
+            <label htmlFor="password" className="Login-normal-label">
+              Password:
+            </label>
+            <div className="pass-input-area">
+              <div className="Login-formbox">
+                {lIcon}
+                <input
+                  id="password-input"
+                  name="password"
+                  type="password"
+                  placeholder={"Enter your password"}
+                  value={password}
+                  onChange={(event) => handleChange(event)}
+                />
+              </div>
+              {errors.userPassword && (
+                <div className="error__display">{errors.userPassword}</div>
+              )}
+            </div>
             <button className="Login-special-btn" onClick={toggleSecretSection}>
               Forgot your password?
             </button>
@@ -99,7 +105,7 @@ function Login() {
                 : "Login-secret-section-active"
             }
           >
-            <div className="recovery-column">
+            <div className="form__line--login">
               <label className="email" htmlFor="recover-input">
                 Write your Email here to reset your password
               </label>
@@ -117,12 +123,16 @@ function Login() {
                   ✉
                 </button>
               </div>
+          {emailerr.userEmail && (
+            <div
+              className="error__display"
+              style={{ display: toggleVisible ? "none" : "flex" }}
+            >
+              {emailerr.userEmail}
+            </div>
+          )}
             </div>
           </div>
-
-          {emailerr.userEmail && (
-            <span className="error" style={{display: toggleVisible ? "none" : "flex"}}>{emailerr.userEmail}</span>
-          )}
         </div>
 
         <button className="Login-ctn-btn">Log In</button>
