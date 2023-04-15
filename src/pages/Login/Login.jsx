@@ -128,15 +128,16 @@ function Login() {
                 placeholder='Enter your recovery email'
                 onChange={(event) => handleChange(event)}
               />
+
+            <button className='' onClick={handleEmail}>
+              Send
+            </button>
             </div>
+              </div>
+        </div>
             {emailerr.userEmail && (
               <span className='error'>{emailerr.userEmail}</span>
             )}
-            <button className='Login-ctn-btn' onClick={handleEmail}>
-              Recover Email
-            </button>
-          </div>
-        </div>
         <button className='Login-ctn-btn'>Log In</button>
         <div className='social-distancing'>
           <div className='social-distancing-line'></div>
