@@ -28,10 +28,6 @@ export default function Signup() {
     event.preventDefault();
     const validationErrors = {};
 
-    if (username.trim() === "") {
-      validationErrors.userName = "Please Enter Your Name";
-    }
-
     if (email.trim() === "") {
       validationErrors.userEmail = "Please Enter Your Email";
     }
@@ -50,82 +46,82 @@ export default function Signup() {
   };
 
   return (
-    <div className="signup-main-container">
-      <main className="signup-card">
-        <section className="signup">
+    <div className='signup-main-container'>
+      <main className='signup-card'>
+        <section className='signup'>
           <h1>SIGN UP </h1>
           <p>Sign Up With</p>
-          <div className="goto-social">
+          <div className='goto-social'>
             <button>
-              <img src={fbIcon} alt="" />
+              <img src={fbIcon} alt='' />
               Facebook
             </button>
             <button>
-              <img src={googleIcon} alt="" />
+              <img src={googleIcon} alt='' />
               Google
             </button>
           </div>
         </section>
-        <div className="social-distancing">
-          <div className="social-distancing-line"></div>
+        <div className='social-distancing'>
+          <div className='social-distancing-line'></div>
           <p>OR</p>
         </div>
-        <form className="signup__form" onSubmit={handleSubmit}>
-          <label htmlFor="username">
+        <form className='signup__form' onSubmit={handleSubmit}>
+          <label htmlFor='username'>
             Full Name
             <input
-              type="text"
-              id="username"
-              name="username"
+              type='text'
+              id='username'
+              name='username'
               value={username}
-              placeholder="Enter your name"
+              placeholder='Enter your name'
               onChange={(event) => handleChange(event)}
             />
             {errors.userName && (
-              <span className="error">{errors.userName}</span>
+              <span className='error'>{errors.userName}</span>
             )}
           </label>
 
-          <label htmlFor="email">
+          <label htmlFor='email'>
             Email Address
             <input
-              type="email"
-              name="email"
-              id="email"
+              type='email'
+              name='email'
+              id='email'
               value={email}
-              placeholder="Email Address"
+              placeholder='Email Address'
               onChange={(event) => handleChange(event)}
             />
             {errors.userEmail && (
-              <span className="error">{errors.userEmail}</span>
+              <span className='error'>{errors.userEmail}</span>
             )}
           </label>
 
-          <label htmlFor="password">
+          <label htmlFor='password'>
             Password
             <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
+              type='password'
+              name='password'
+              id='password'
+              placeholder='Password'
               value={password}
               onChange={(event) => handleChange(event)}
             />
             {errors.userPassword && (
-              <span className="error">{errors.userPassword}</span>
+              <span className='error'>{errors.userPassword}</span>
             )}
           </label>
 
-          <button className="createAcc-btn" type="submit">
+          <button className='createAcc-btn' type='submit'>
             CREATE ACCOUNT
           </button>
         </form>
-        <div className="social-distancing">
-          <div className="social-distancing-line"></div>
+        <div className='social-distancing'>
+          <div className='social-distancing-line'></div>
           <p>OR</p>
         </div>
         <button
-          className="loginBtn"
+          className='loginBtn'
           onClick={() => {
             return navigate("/login");
           }}

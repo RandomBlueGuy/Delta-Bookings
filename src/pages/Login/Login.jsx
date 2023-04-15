@@ -91,7 +91,7 @@ function Login() {
               {lIcon}
               <input
                 id='password-input'
-                name='password-input'
+                name='password'
                 type='password'
                 placeholder={`Enter your password`}
                 value={password}
