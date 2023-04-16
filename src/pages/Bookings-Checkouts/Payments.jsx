@@ -31,7 +31,7 @@ export default function Payments() {
     });
   };
 
-  const handler = ePayco.checkout.configure({
+  const handler = window.ePayco.checkout.configure({
     key: "84793745e1cb8ebb40ff304f2853aa4a",
     test: true,
   });
@@ -40,42 +40,39 @@ export default function Payments() {
     handler.open({
       name: "Hotel Testing in mitte",
       description: "deluxe room",
-      invoice: "0002",
+      invoice: "1000",
       currency: "cop",
-      amount: "2000000",
+      amount: 50000,
       tax_base: "0",
       tax: "0",
-      country: "germany",
+      country: "CO",
       lang: "en",
-
       external: "false",
-
       extra1: "extra1",
       extra2: "extra2",
       extra3: "extra3",
       confirmation: "http://secure2.payco.co/prueba_curl.php",
       response: "http://secure2.payco.co/prueba_curl.php",
-
       name_billing: "Andres Perez",
       address_billing: "Carrera 19 numero 14 91",
       type_doc_billing: "cc",
       mobilephone_billing: "3050000000",
       number_doc_billing: "100000000",
 
-      methodsDisable: [],
+      methodsDisable: ["CASH"],
     });
   };
 
   const handleInfo = (event) => {
     event.preventDefault();
     const validationErrors = {};
-    if (cardname.trim() === "") {
+    if (!cardname.trim()) {
       validationErrors.cardName = "Enter the name that appears on your card";
     } else if (!/^[a-zA-Z]+$/.test(cardname.trim().replace(/\s+/g, ""))) {
       validationErrors.cardName = "Name must only contain letters";
     }
 
-    if (cardnumber.trim() === "") {
+    if (!cardnumber.trim()) {
       validationErrors.cardNumber = "Enter your card's number";
     } else if (!/^[0-9]*$/.test(cardnumber.trim().replace(/\s+/g, ""))) {
       validationErrors.cardNumber = "Only numeric characters are accepted";
@@ -83,7 +80,7 @@ export default function Payments() {
       validationErrors.cardNumber = "Enter a valid card number extension";
     }
 
-    if (cardmonth.trim() === "") {
+    if (!cardmonth.trim()) {
       validationErrors.cardMonth = "Enter the month of expiration";
     } else if (!/^[0-9]*$/.test(cardmonth)) {
       validationErrors.cardMonth = "Only numeric characters are accepted";
@@ -91,7 +88,7 @@ export default function Payments() {
       validationErrors.cardMonth = "Enter a valid month expiration";
     }
 
-    if (cardyear.trim() === "") {
+    if (!cardyear.trim()) {
       validationErrors.cardYear = "Enter the year of expiration";
     } else if (!/^[0-9]*$/.test(cardyear)) {
       validationErrors.cardYear = "Only numeric characters are accepted";
@@ -99,7 +96,7 @@ export default function Payments() {
       validationErrors.cardYear = "Enter a valid Year expiration";
     }
 
-    if (cardccv.trim() === "") {
+    if (!cardccv.trim()) {
       validationErrors.cardCCV = "Enter your CCV";
     } else if (!/^[0-9]*$/.test(cardccv)) {
       validationErrors.cardCCV = "Only numeric characters are accepted";
@@ -109,7 +106,7 @@ export default function Payments() {
 
     setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length === 0) {
+    if (!Object.keys(validationErrors).length) {
       axios
         .post("https://jsonplaceholder.typicode.com/posts", {
           cardname,
