@@ -31,6 +31,41 @@ export default function Payments() {
     });
   };
 
+  const handler = ePayco.checkout.configure({
+    key: "84793745e1cb8ebb40ff304f2853aa4a",
+    test: true,
+  });
+
+  const epaycoPayment = () => {
+    handler.open({
+      name: "Hotel Testing in mitte",
+      description: "deluxe room",
+      invoice: "0002",
+      currency: "cop",
+      amount: "2000000",
+      tax_base: "0",
+      tax: "0",
+      country: "germany",
+      lang: "en",
+
+      external: "false",
+
+      extra1: "extra1",
+      extra2: "extra2",
+      extra3: "extra3",
+      confirmation: "http://secure2.payco.co/prueba_curl.php",
+      response: "http://secure2.payco.co/prueba_curl.php",
+
+      name_billing: "Andres Perez",
+      address_billing: "Carrera 19 numero 14 91",
+      type_doc_billing: "cc",
+      mobilephone_billing: "3050000000",
+      number_doc_billing: "100000000",
+
+      methodsDisable: [],
+    });
+  };
+
   const handleInfo = (event) => {
     event.preventDefault();
     const validationErrors = {};
@@ -98,23 +133,23 @@ export default function Payments() {
   };
 
   return (
-    <form onSubmit={handleInfo} className="container-2">
-      <section className="travelInfo-container">
+    <div className='container-2'>
+      <section className='travelInfo-container'>
         <h4> Payment Options</h4>
         <Accordion
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}
         >
           <AccordionSummary
-            aria-controls="panel1d-content"
-            id="panel1d-header"
+            aria-controls='panel1d-content'
+            id='panel1d-header'
             expandIcon={<ExpandMoreIcon />}
           >
             <Typography>
               <span
                 style={{
                   color: expanded === "panel1" ? "var(--red-style)" : "black",
-                  fontSize: "120%"
+                  fontSize: "120%",
                 }}
               >
                 ◉
@@ -124,116 +159,115 @@ export default function Payments() {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              <div class="accordion-item">
-                <div
-                  id="collapseOne"
-                  class="accordion-collapse collapse show"
-                  aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div class="accordion-body">
-                    <div class="general-info">
-                      <label htmlFor="cardname">
-                        Name on card
-                        <input
-                          name="cardname"
-                          type="text"
-                          class="form-control"
-                          id="cardname"
-                          placeholder=""
-                          value={cardname}
-                          onChange={(event) => handleChangeData(event)}
-                        />
-                        {errors.cardName && (
-                          <span className="error">{errors.cardName}</span>
-                        )}
-                      </label>
-
-                      <small class="text-muted">
-                        Full name as displayed on card
-                      </small>
-
-                      <div class="credit-card">
-                        <label htmlFor="cardnumber">
-                          Credit card number
+              <form onSubmit={handleInfo}>
+                <div class='accordion-item'>
+                  <div
+                    id='collapseOne'
+                    class='accordion-collapse collapse show'
+                    aria-labelledby='headingOne'
+                    data-bs-parent='#accordionExample'
+                  >
+                    <div class='accordion-body'>
+                      <div class='general-info'>
+                        <label htmlFor='cardname'>
+                          Name on card
                           <input
-                            name="cardnumber"
-                            type="text"
-                            class="form-control"
-                            id="cc-number"
-                            placeholder=""
+                            name='cardname'
+                            type='text'
+                            class='form-control'
+                            id='cardname'
+                            placeholder=''
+                            value={cardname}
                             onChange={(event) => handleChangeData(event)}
-                            value={cardnumber}
                           />
-                          {errors.cardNumber && (
-                            <span className="error">{errors.cardNumber}</span>
-                          )}
                         </label>
-                      </div>
+                        {errors.cardName && (
+                          <span className='error'>{errors.cardName}</span>
+                        )}
 
-                      <div class="card-info">
-                        <div class="month">
-                          <label htmlFor="cardmonth">
-                            Month
+                        <div class='credit-card'>
+                          <label htmlFor='cardnumber'>
+                            Credit card number
                             <input
-                              name="cardmonth"
-                              type="text"
-                              class="form-control"
-                              id="cc-expiration"
-                              placeholder="E.g: 08"
+                              name='cardnumber'
+                              type='text'
+                              class='form-control'
+                              id='cc-number'
+                              placeholder=''
                               onChange={(event) => handleChangeData(event)}
-                              value={cardmonth}
+                              value={cardnumber}
                             />
+                          </label>
+                          {errors.cardNumber && (
+                            <span className='error'>{errors.cardNumber}</span>
+                          )}
+                        </div>
+
+                        <div class='card-info'>
+                          <div class='month'>
+                            <label htmlFor='cardmonth'>
+                              Month
+                              <input
+                                name='cardmonth'
+                                type='text'
+                                class='form-control'
+                                id='cc-expiration'
+                                placeholder='E.g: 08'
+                                onChange={(event) => handleChangeData(event)}
+                                value={cardmonth}
+                              />
+                            </label>
                             {errors.cardMonth && (
-                              <span className="error">{errors.cardMonth}</span>
+                              <span className='error'>{errors.cardMonth}</span>
                             )}
-                          </label>
-                        </div>
+                          </div>
 
-                        <div class="year">
-                          <label htmlFor="cardyear">
-                            Year
-                            <input
-                              name="cardyear"
-                              type="text"
-                              class="form-control"
-                              id="cc-cvv"
-                              placeholder="E.g: 2023"
-                              onChange={(event) => handleChangeData(event)}
-                              value={cardyear}
-                            />
+                          <div class='year'>
+                            <label htmlFor='cardyear'>
+                              Year
+                              <input
+                                name='cardyear'
+                                type='text'
+                                class='form-control'
+                                id='cc-cvv'
+                                placeholder='E.g: 2023'
+                                onChange={(event) => handleChangeData(event)}
+                                value={cardyear}
+                              />
+                            </label>
                             {errors.cardYear && (
-                              <span className="error">{errors.cardYear}</span>
+                              <span className='error'>{errors.cardYear}</span>
                             )}
-                          </label>
-                        </div>
-                        <div class="ccv">
-                          <label htmlFor="cardccv">
-                            CCV
-                            <input
-                              name="cardccv"
-                              type="text"
-                              class="form-control"
-                              id="cc-expiration"
-                              placeholder="CCV"
-                              onChange={(event) => handleChangeData(event)}
-                              value={cardccv}
-                            />
+                          </div>
+
+                          <div class='ccv'>
+                            <label htmlFor='cardccv'>
+                              CCV
+                              <input
+                                name='cardccv'
+                                type='text'
+                                class='form-control'
+                                id='cc-expiration'
+                                placeholder='CCV'
+                                onChange={(event) => handleChangeData(event)}
+                                value={cardccv}
+                              />
+                            </label>
                             {errors.cardCCV && (
-                              <span className="error">{errors.cardCCV}</span>
+                              <span className='error'>{errors.cardCCV}</span>
                             )}
-                          </label>
+                          </div>
                         </div>
-                      </div>
-                      <div className="button-pay">
-                        <button type="submit" className="btn">
-                          SUBMIT PAYMENT
-                        </button>
+                        <div className='button-pay'>
+                          <button type='submit' className='btn'>
+                            SUBMIT PAYMENT
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -243,95 +277,32 @@ export default function Payments() {
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2d-content"
-            id="panel2d-header"
+            aria-controls='panel2d-content'
+            id='panel2d-header'
           >
             <Typography>
               <span
                 style={{
                   color: expanded === "panel2" ? "var(--red-style)" : "black",
-                  fontSize: "120%"
+                  fontSize: "120%",
                 }}
               >
                 ◉
               </span>{" "}
-              Debit Card
+              Epayco
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              <div class="accordion-item">
-                <div
-                  id="collapseOne"
-                  class="accordion-collapse collapse show"
-                  aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div class="accordion-body">
-                    <div class="general-info">
-                      <label for="cc-name">Name on card</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="cc-name"
-                        placeholder=""
-                      />
-                      <small class="text-muted">
-                        Full name as displayed on card
-                      </small>
-
-                      <div class="credit-card">
-                        <label for="cc-number">Credit card number</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="cc-number"
-                          placeholder=""
-                        />
-                      </div>
-
-                      <div class="card-info">
-                        <div class="month">
-                          <label for="cc-expiration">Month</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="cc-expiration"
-                            placeholder="Month"
-                          />
-                        </div>
-                        <div class="year">
-                          <label for="cc-cvv">Year</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="cc-cvv"
-                            placeholder="Year"
-                          />
-                        </div>
-                        <div class="ccv">
-                          <label for="cc-expiration">CCV</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="cc-expiration"
-                            placeholder="CCV"
-                          />
-                        </div>
-                      </div>
-                      <div className="button-pay">
-                        <button type="button" className="btn">
-                          SUBMIT PAYMENT
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class='accordion-item'>
+                <button onClick={epaycoPayment} className='btn'>
+                  SUBMIT PAYMENT
+                </button>
               </div>
             </Typography>
           </AccordionDetails>
         </Accordion>
       </section>
-    </form>
+    </div>
   );
 }
