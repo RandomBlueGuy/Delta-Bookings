@@ -28,6 +28,10 @@ export default function Signup() {
     event.preventDefault();
     const validationErrors = {};
 
+    if (username.trim() === "") {
+      validationErrors.userName = "Please Enter Your Name";
+    }
+
     if (email.trim() === "") {
       validationErrors.userEmail = "Please Enter Your Email";
     }
@@ -35,12 +39,12 @@ export default function Signup() {
     if (password.trim() === "") {
       validationErrors.userPassword = "Please Enter Your Password";
     } else if (
-      !/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(
+      !/^(?=.*\d)(?=.*[!@#$%^&/*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(
         password.trim().replace(/\s+/g, "")
       )
     ) {
       validationErrors.userPassword =
-        "Password Must Have This: 8 characters, a special character, a number, one uppercase letter and one lowercase letter";
+        "Password Must Have This: 8 characters, a special character (@#$%^&/), a number, one uppercase letter and one lowercase letter";
     }
     setErrors(validationErrors);
   };
@@ -100,7 +104,7 @@ export default function Signup() {
           <label htmlFor='password'>
             Password
             <input
-              type='password'
+              type='text'
               name='password'
               id='password'
               placeholder='Password'

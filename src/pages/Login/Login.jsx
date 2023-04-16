@@ -64,48 +64,46 @@ function Login() {
   return (
     <main className='Login-ctn'>
       <section className='Login-card'>
-        <form onSubmit={handleSubmit}>
-          <h1>Login</h1>
-          <label htmlFor='username' className='Login-normal-label' name='user'>
-            User:
-          </label>
+        <h1>Login</h1>
+        <label htmlFor='username' className='Login-normal-label' name='user'>
+          User:
+        </label>
+        <div className='Login-formbox'>
+          {uIcon}
+          <input
+            id='user-input'
+            type='text'
+            placeholder='Enter your Username'
+            className='Login-input-username'
+            name='username'
+            value={username}
+            onChange={(event) => handleChange(event)}
+          />
+        </div>
+        {errors.userName && <span className='error'>{errors.userName}</span>}
+
+        <label htmlFor='password' className='Login-normal-label'>
+          Password:
+        </label>
+        <div className='pass-input-area'>
           <div className='Login-formbox'>
-            {uIcon}
+            {lIcon}
             <input
-              id='user-input'
-              type='text'
-              placeholder='Enter your Username'
-              className='Login-input-username'
-              name='username'
-              value={username}
+              id='password-input'
+              name='password'
+              type='password'
+              placeholder={`Enter your password`}
+              value={password}
               onChange={(event) => handleChange(event)}
             />
           </div>
-          {errors.userName && <span className='error'>{errors.userName}</span>}
-
-          <label htmlFor='password' className='Login-normal-label'>
-            Password:
-          </label>
-          <div className='pass-input-area'>
-            <div className='Login-formbox'>
-              {lIcon}
-              <input
-                id='password-input'
-                name='password'
-                type='password'
-                placeholder={`Enter your password`}
-                value={password}
-                onChange={(event) => handleChange(event)}
-              />
-            </div>
-            {errors.userPassword && (
-              <span className='error'>{errors.userPassword}</span>
-            )}
-            <button className='Login-special-btn' onClick={toggleSecretSection}>
-              Forgot your password?
-            </button>
-          </div>
-        </form>
+          {errors.userPassword && (
+            <span className='error'>{errors.userPassword}</span>
+          )}
+          <button className='Login-special-btn' onClick={toggleSecretSection}>
+            Forgot your password?
+          </button>
+        </div>
 
         <div
           className={
@@ -129,23 +127,25 @@ function Login() {
                 onChange={(event) => handleChange(event)}
               />
 
-            <button className='' onClick={handleEmail}>
-              Send
-            </button>
+              <button className='' onClick={handleEmail}>
+                Send
+              </button>
             </div>
-              </div>
+          </div>
         </div>
-            {emailerr.userEmail && (
-              <span className='error'>{emailerr.userEmail}</span>
-            )}
-        <button className='Login-ctn-btn'>Log In</button>
-        <div className='social-distancing'>
-          <div className='social-distancing-line'></div>
-          <p>OR</p>
-        </div>
-        <Link to='/signup'>
-          <button className='Signin-ctn-btn'>Sign Up</button>
-        </Link>
+        {emailerr.userEmail && (
+          <span className='error'>{emailerr.userEmail}</span>
+        )}
+        <form onSubmit={handleSubmit}>
+          <button className='Login-ctn-btn'>Log In</button>
+          <div className='social-distancing'>
+            <div className='social-distancing-line'></div>
+            <p>OR</p>
+          </div>
+          <Link to='/signup'>
+            <button className='Signin-ctn-btn'>Sign Up</button>
+          </Link>
+        </form>
       </section>
     </main>
   );
