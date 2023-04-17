@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import Cookies from "universal-cookie";
 import "./Login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 function Login() {
+  const cookies = new Cookies();
   const [toggleVisible, setToggleVisible] = useState(true);
   const uIcon = <FontAwesomeIcon icon={faUser} />;
   const lIcon = <FontAwesomeIcon icon={faLock} />;
@@ -19,14 +23,14 @@ function Login() {
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
   }
-  const handleChange = (event) => {
+  const handleChange = async (event) => {
     const { name, value } = event.target;
     setData({
       ...data,
       [name]: value,
     });
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const validationErrors = {};
     if (username.trim() === "") {
@@ -36,7 +40,23 @@ function Login() {
       validationErrors.userPassword = "Please Enter Your Password";
     }
     setErrors(validationErrors);
+
+    if (Object.keys(validationErrors) === 0) {
+      try {
+        const { data } = await axios.post(
+          "http://localhost:8080/auth/local/login",
+          data
+        );
+        cookies.set("token", data.token);
+        cookies.set("firstName", data.token.firstName);
+        cookies.set("lastName", data.token.lastName);
+        cookies.set("email", data.token.email);
+      } catch (err) {
+        alert("Something went wrong");
+      }
+    }
   };
+
   const handleEmail = (event) => {
     event.preventDefault();
     const validateEmail = {};
@@ -47,6 +67,7 @@ function Login() {
     }
     setEmailerr(validateEmail);
   };
+
   return (
     <main className='Login-ctn'>
       <section className='Login-card'>

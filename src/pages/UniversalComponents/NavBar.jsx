@@ -4,10 +4,12 @@ import iconB from "../../assets/Icons/delta-black.svg";
 import iconW from "../../assets/Icons/delta.svg";
 import userIcon from "../../assets/Icons/user.svg";
 import menuIcon from "../../assets/Icons/menu.svg";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Cookies from "universal-cookie/cjs/Cookies";
 
 function NavBar() {
+  const cookies = new Cookies();
   let location = useLocation();
   const [visibility, setVisibility] = useState(true);
   const [isInvalidUrl, setIsInvalidUrl] = useState(false);
@@ -28,6 +30,15 @@ function NavBar() {
       ? setIsInvalidUrl(true)
       : setIsInvalidUrl(false);
   }, [location.pathname]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    cookies.remove("token");
+    cookies.remove("firstName");
+    cookies.remove("lastName");
+    cookies.remove("email");
+    return <Navigate to='' />;
+  };
 
   // useEffect(() => {
   //     .map((element) => element === location.pathname)
@@ -75,7 +86,7 @@ function NavBar() {
     !isInvalidUrl && (
       <main>
         <section
-          className="NavBar-container txt-color"
+          className='NavBar-container txt-color'
           style={{
             backgroundColor: visibility ? "white" : "transparent",
             boxShadow: visibility
@@ -84,134 +95,134 @@ function NavBar() {
             // display: invalidUrl ? "none" : "flex",
           }}
         >
-          <nav className="NavBar">
-            <section className="nav-section">
-              <Link to="/home">
-                <img src={visibility ? iconB : iconW} alt="Delta" />
+          <nav className='NavBar'>
+            <section className='nav-section'>
+              <Link to='/home'>
+                <img src={visibility ? iconB : iconW} alt='Delta' />
               </Link>
             </section>
 
-            <section className="nav-desktop">
-              <Link to="/home">
+            <section className='nav-desktop'>
+              <Link to='/home'>
                 <h2 style={{ color: visibility ? "black" : "white" }}>Home</h2>
               </Link>
-              <Link to="/hotel-list/search?city=All">
+              <Link to='/hotel-list/search?city=All'>
                 <h2 style={{ color: visibility ? "black" : "white" }}>
                   Hotels
                 </h2>
               </Link>
-              <Link to="/about-us">
+              <Link to='/about-us'>
                 <h2 style={{ color: visibility ? "black" : "white" }}>
                   About Us
                 </h2>
               </Link>
             </section>
 
-            <div className="user-related">
-              <section className="accesibility">
+            <div className='user-related'>
+              <section className='accesibility'>
                 <select
-                  name=""
-                  id=""
-                  className="coin"
+                  name=''
+                  id=''
+                  className='coin'
                   style={{ color: visibility ? "black" : "white" }}
                 >
-                  <option value="">USD</option>
-                  <option value="">COP</option>
+                  <option value=''>USD</option>
+                  <option value=''>COP</option>
                 </select>
               </section>
 
-              <section className="mobile__NavBtn">
+              <section className='mobile__NavBtn'>
                 <div
-                  id="mySidepanel"
+                  id='mySidepanel'
                   style={{
                     width: trigger,
                     padding: trigger !== "0px" ? "1rem" : "0",
                   }}
-                  className="sidepanel"
+                  className='sidepanel'
                 >
-                  <div className="closebtn" onClick={triggerClose}>
+                  <div className='closebtn' onClick={triggerClose}>
                     <h2>Back →</h2>
                   </div>
-                  <div className="mobile-menu-titles">
+                  <div className='mobile-menu-titles'>
                     <h2>Navigation</h2>
                   </div>
-                  <Link to="/" className="item-ctn">
+                  <Link to='/' className='item-ctn'>
                     <h2>Home</h2>
                   </Link>
-                  <Link to="/hotel-list/search?city=All" className="item-ctn">
+                  <Link to='/hotel-list/search?city=All' className='item-ctn'>
                     <h2>Hotel</h2>
                   </Link>
-                  <Link to="/about-us" className="item-ctn">
+                  <Link to='/about-us' className='item-ctn'>
                     <h2>About Us</h2>
                   </Link>
 
-                  <div className="mobile-menu-titles">
+                  <div className='mobile-menu-titles'>
                     <h2>Account</h2>
                   </div>
-                  <Link to="/dashboard" className="item-ctn">
+                  <Link to='/dashboard' className='item-ctn'>
                     <h2>Profile</h2>
                   </Link>
-                  <Link to="/admin-dashboard" className="item-ctn">
+                  <Link to='/admin-dashboard' className='item-ctn'>
                     <h2>Admin Dashboard</h2>
                   </Link>
-                  <Link to="/" className="item-ctn">
+                  <Link to='/' className='item-ctn'>
                     <h2>Log In</h2>
                   </Link>
-                  <Link to="/" className="item-ctn">
-                    <h2>Log Out</h2>
+                  <Link to='/' className='item-ctn'>
+                    <h2 onClick={handleLogout}>Log Out</h2>
                   </Link>
-                  <Link to="/signup" className="item-ctn">
+                  <Link to='/signup' className='item-ctn'>
                     <h2>Sign-up</h2>
                   </Link>
-                  <div className="mobile-menu-titles">
+                  <div className='mobile-menu-titles'>
                     <h2>Accesibility</h2>
                   </div>
-                  <div className="item-ctn" style={{ paddingLeft: "0.5rem" }}>
+                  <div className='item-ctn' style={{ paddingLeft: "0.5rem" }}>
                     <h2>Coin:</h2>
-                    <select name="" id="" className="coin">
-                      <option value="">USD</option>
-                      <option value="">COP</option>
+                    <select name='' id='' className='coin'>
+                      <option value=''>USD</option>
+                      <option value=''>COP</option>
                     </select>
                   </div>
                 </div>
-                <button className="dropdown square-icon" onClick={triggerOpen}>
+                <button className='dropdown square-icon' onClick={triggerOpen}>
                   <img
                     src={menuIcon}
-                    alt="Delta"
+                    alt='Delta'
                     style={{ filter: visibility ? "invert(0)" : "invert(1)" }}
                   />
                 </button>
               </section>
 
-              <div className="square-icon userManager">
+              <div className='square-icon userManager'>
                 <img
                   src={userIcon}
-                  alt="Delta"
+                  alt='Delta'
                   style={{ filter: visibility ? "invert(0)" : "invert(1)" }}
                 />
-                <div className="dropdown-menu">
-                  <Link to="/dashboard">
-                    <div className="item-ctn">
+                <div className='dropdown-menu'>
+                  <Link to='/dashboard'>
+                    <div className='item-ctn'>
                       <h4>Profile</h4>
                     </div>
                   </Link>
-                  <Link to="/admin-dashboard">
-                    <div className="item-ctn">
+                  <Link to='/admin-dashboard'>
+                    <div className='item-ctn'>
                       <h4>Dashboard</h4>
                     </div>
                   </Link>
-                  <Link to="/login">
-                    <div className="item-ctn">
+                  <Link to='/login'>
+                    <div className='item-ctn'>
                       <h4>Log in</h4>
                     </div>
                   </Link>
-                  <Link to="/signup">
-                    <div className="item-ctn">
+                  <Link to='/signup'>
+                    <div className='item-ctn'>
                       <h4>Log out</h4>
                     </div>
                   </Link>
-                  <Link to="/signup">
-                    <div className="item-ctn">
+                  <Link to='/signup'>
+                    <div className='item-ctn'>
                       <h4>Sign In</h4>
                     </div>
                   </Link>

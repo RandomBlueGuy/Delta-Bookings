@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./Signup.css";
 import fbIcon from "../../assets/Icons/facebookSI.svg";
 import googleIcon from "../../assets/Icons/googleSI.svg";
@@ -47,6 +48,13 @@ export default function Signup() {
         "Password Must Have This: 8 characters, a special character (@#$%^&/), a number, one uppercase letter and one lowercase letter";
     }
     setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      axios
+        .post("https://jsonplaceholder.typicode.com/posts", {})
+        .then((response) => console.log(response.data))
+        .catch((error) => console.error(error));
+    }
   };
 
   return (
