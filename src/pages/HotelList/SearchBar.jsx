@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import axios from "axios";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
   const [info, setInfo] = useState({
@@ -26,10 +26,8 @@ function SearchBar() {
       .join("&");
     navigate(`/hotel-list/search?${queryString}`);
   }
-  // navigate(`/hotel-list/search?city?=${searchParams.city}chkIn?=${searchParams.checkInDate}chkOut?=${searchParams.checkOutDate}gn?=${searchParams.guests}`);
-
+ 
   const [errors, setErrors] = useState({});
-
   const { city, datein, dateout, guestnumber } = info;
   const start = new Date(datein);
   const end = new Date(guestnumber);

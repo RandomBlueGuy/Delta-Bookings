@@ -96,9 +96,7 @@ function HotelListpage() {
       <div className="HotelList-displayer" ref={refProp}>
         <div className="filter-ctn">
           <div className="filter-ctn-btns">
-            <h2>
-              Filter by:{filteredHotelsArray.length} -- {maxNpages}
-            </h2>
+            <h2>Filter by:</h2>
             {/* <select name="" id="">
               <option value="">All</option>
               <option value="">Popular</option>
@@ -163,14 +161,23 @@ function HotelListpage() {
             </button>
           </div>
           <div className="weird-thing">
-            <p>☰ latest Filter</p>
+            <p className="weirdThing__txt">
+              {" "}
+              {filteredHotelsArray.length} hotels found
+            </p>
           </div>
         </div>
-        {HotelsArray.length === 0 &&(
+        {HotelsArray.length === 0 && (
           <div>
             <h1>There are no hotels in "{searchParams.city}"</h1>
           </div>
         )}
+        <HotelListPagination
+          maxNpages={maxNpages}
+          actualPage={actualPage}
+          setActualPage={setActualPage}
+          refProp={refProp}
+        />
         <div className="card-gallery">
           {filteredHotelsArray
             .slice(

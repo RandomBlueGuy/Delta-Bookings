@@ -1,20 +1,11 @@
-import React, { useContext } from "react";
-import { HotelSingleContext } from "./HotelSingleContext/HotelSingleContext";
 import "./RoomCard.css";
-import hotelPlaceholderImg from "../../assets/Images/hotelPlaceholder.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faShower,
-  faBed,
-  faTv,
-  faCouch,
-  faTick,
   faCheck,
-  faSwimmingPool,
 } from "@fortawesome/free-solid-svg-icons";
 
 function RoomCard({ RoomCardData }) {
-  const HotelData = useContext(HotelSingleContext);
+  // const HotelData = useContext(HotelSingleContext);
   return (
     <main className="RoomCard-ctn">
       <div className="RoomCard-title">

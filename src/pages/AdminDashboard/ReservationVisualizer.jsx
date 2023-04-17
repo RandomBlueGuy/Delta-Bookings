@@ -33,12 +33,11 @@ function ReservationVisualizer() {
       <div className="searchbar__ctn">
         <input type="text" className="management__searchbar" />
         <select name="" id="">
-          <option value="">-- sort by --</option>
+          <option value="" disabled>-- sort by --</option>
           <option value="Id">Id</option>
-          <option value="City">City</option>
-          <option value="Country">Country</option>
-          <option value="Popularity">Popularity #</option>
-          <option value="Trending">Trending #</option>
+          <option value="Location">Location</option>
+          <option value="User">User</option>
+
         </select>
         <button>SEARCH</button>
       </div>

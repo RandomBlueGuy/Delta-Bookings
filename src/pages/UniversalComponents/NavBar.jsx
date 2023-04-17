@@ -13,14 +13,14 @@ function NavBar() {
   let location = useLocation();
   const [visibility, setVisibility] = useState(true);
   const [isInvalidUrl, setIsInvalidUrl] = useState(false);
-  const [isSpecialPath, setIsSpecialPath] = useState(false);
+  // const [isSpecialPath, setIsSpecialPath] = useState(false);
   const [trigger, setTrigger] = useState("0px");
-  const specialPathsArr = [
-    "/bookings",
-    "/hotel-single",
-    "/checkout-success",
-    "/login",
-  ];
+  // const specialPathsArr = [
+  //   "/bookings",
+  //   "/hotel-single",
+  //   "/checkout-success",
+  //   "/login",
+  // ];
   const invalidPathsArr = ["/404-page-not-found"];
 
   useEffect(() => {
@@ -231,48 +231,6 @@ function NavBar() {
             </div>
           </nav>
         </section>
-        {/* <section className="NavBar__dropdownCtn">
-          <div className="NavBar__groupings ctn__g1">
-            <h3>
-              <i>...Looking for a hotel?</i>
-            </h3>
-
-            <Link to="/dashboard">
-              <h2>dashboard</h2>
-            </Link>
-            <Link to="/hotel-single">
-              <h2>hotel single</h2>
-            </Link>
-
-            <Link to="/checkout-success">
-              <h2>Check Out Success</h2>
-            </Link>
-            <Link to="/checkout-failure">
-              <h2>Check Out Failure</h2>
-            </Link>
-            <Link to="/checkout">
-              <h2>Check out</h2>
-            </Link>
-
-            <Link to="/admin-dashboard">
-              <h2>Admin Dashboard</h2>
-            </Link>
-            <Link to="/404-page-not-found">
-              <h2>404</h2>
-            </Link>
-            <Link to="/bookings">
-              <h2>Booking</h2>
-            </Link>
-          </div>
-          <div className="NavBar__groupings ctn__g2">
-            <h3>
-              <i>User related...</i>
-              <Link to="/signup">
-                <h2>Sign Up</h2>
-              </Link>
-            </h3>
-          </div>
-        </section> */}
       </main>
     )
   );

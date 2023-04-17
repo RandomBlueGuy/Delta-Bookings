@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Hotelsingle.css";
 import "../UniversalComponents/BaseStyles.css";
 import ContactInfoCard from "./ContactInfoCard";
-// import HotelCard from '../HotelList/HotelCard';
 import HotelSingleCardHeader from "./HotelSingleCardHeader";
 import HotelSingleGallery from "./HotelSingleGallery";
 import HotelInfoDisplay from "./HotelInfoDisplay";
 import weather from "../../assets/Images/weather.jpg";
 import CheckCard from "./CheckCard";
-import { useParams, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  fetchDataHS,
   fetchData,
 } from "../../ReduxStore/Slices/FetchData/fetchDataSlice";
 

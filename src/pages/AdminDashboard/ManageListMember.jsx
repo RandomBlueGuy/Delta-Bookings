@@ -25,14 +25,6 @@ function ManageListMember({ hotel }) {
           </h3>
         </div>
         <div className="manage_btns">
-          <button
-            className="manage__more"
-            onClick={() => {
-              setViewMore(!viewMore);
-            }}
-          >
-            ✚
-          </button>
           <button className="manage__edit">✎</button>
           <button className="manage__del">🞮</button>
         </div>

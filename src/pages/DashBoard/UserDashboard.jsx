@@ -4,7 +4,7 @@ import Mark from "../../assets/Images/markenderes.jpg";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import ReservationCard from '../AdminDashboard/ReservationCard';
+import ReservationCard from "../AdminDashboard/ReservationCard";
 
 export default function UserDashboard() {
   const [profileEdit, setProfileEdit] = useState(false);
@@ -71,7 +71,7 @@ export default function UserDashboard() {
               <button>Cancel</button>
               <button>Save Changes</button>
             </div>
-            <form className='dashboard__form' action="">
+            <form className="dashboard__form" action="">
               <div className="dashboard__ctn-info-edit1-name">
                 <label htmlFor="nombre">Name</label>
                 <input
@@ -189,7 +189,10 @@ export default function UserDashboard() {
             className="dashboard__ctn--Bookings"
             style={{ display: selectedTab === "Bookings" ? "flex" : "none" }}
           >
-           <ReservationCard />
+            <h1>My Reservations</h1>
+            <div className="reservationDisplay">
+              <ReservationCard />
+            </div>
           </div>
         </div>
       </section>

@@ -30,6 +30,7 @@
 	justify-content: center;
 	gap: 2rem;
 	margin-bottom: 2rem;
+	margin-top: 2rem;
 }
 
 .filter-ctn {
@@ -80,6 +81,12 @@
 .filter-ctn-Notselected{
 	background-color: var(--NavBar-btn);
 	color: black;
+}
+
+.weirdThing__txt{
+	font-weight: 600;
+	opacity: 0.6;
+	font-style: italic;
 }
 
 @media (max-width: 720px) {

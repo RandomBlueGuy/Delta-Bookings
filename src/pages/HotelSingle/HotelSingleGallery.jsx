@@ -1,7 +1,4 @@
 import React, {useState} from "react";
-import sliderImg from "../../assets/Images/gallery-slider.jpg";
-import galleryGroup1Img from "../../assets/Images/hotelPlaceholder.jpg";
-import galleryGroup2Img from "../../assets/Images/hotelPlaceholder.jpg";
 import "./HotelSingleGallery.css";
 
 function HotelSingleGallery({ currentHotel }) {
