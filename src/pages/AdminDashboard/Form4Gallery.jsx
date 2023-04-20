@@ -15,7 +15,7 @@ function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
     event.preventDefault();
     const validationErrors = {};
 
-    if (files.length < 1) {
+    if (files.length <= 1) {
       validationErrors.filesempty = "Please add, at least, one file";
     }
 
