@@ -8,7 +8,6 @@ function Homepage() {
   return (
     <div>
       <HomeHeader />
-      
       <TopOffers />
       <HomeSteps />
       <NewsLetter />

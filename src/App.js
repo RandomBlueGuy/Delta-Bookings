@@ -13,24 +13,32 @@ import AboutUspage from "./pages/AboutUs/AboutUspage";
 import Hotelsingle from "./pages/HotelSingle/Hotelsingle";
 import UserDashBoard from "./pages/DashBoard/DashboardPage";
 import CheckoutPage from "./pages/Bookings-Checkouts/CheckoutPage";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import CheckoutSuccessPage from "./pages/Bookings-Checkouts/CheckoutSuccessPage";
 import CheckoutFailurePage from "./pages/Bookings-Checkouts/CheckoutFailurePage";
 import Login from "./pages/Login/Login";
 import AdminDashBoardPage from "./pages/AdminDashboard/AdminDashboardPage";
-import LoadingComp from "./pages/UniversalComponents/LoadingComp";
 import Cookies from "universal-cookie/cjs/Cookies";
 import { useJwt } from "react-jwt";
+import LoadingComp from "./pages/UniversalComponents/LoadingComp";
+import WarningMessage from "./pages/UniversalComponents/WarningMessage";
 
 const Private = ({ children }) => {
   const cookies = new Cookies();
   const ticket = useJwt(cookies.getItem("token"));
-  return ticket ? children : <Navigate to='/' />;
+  return ticket ? children : <Navigate to="/" />;
 };
 
 function App() {
   const { pathname } = useLocation();
+  const [showWarning, setShowWarning] = useState(true);
+  const warningTitle = "Warning Title";
+  const warningMessage = "Warning Message";
+
+  const onCloseWarning = () => {
+    setShowWarning(false);
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -43,42 +51,49 @@ function App() {
       <UpButton />
       <NavBar />
       {/* <LoadingComp /> */}
+      {!showWarning && (
+        <WarningMessage
+          warningTitle={warningTitle}
+          warningMessage={warningMessage}
+          setShowWarning={setShowWarning}
+        />
+      )}
       <Routes>
-        <Route exact path='/' element={<Navigate to='/home' />} />
-        <Route exact path='/home' element={<Homepage />} />
-        <Route exact path='/hotel-list/:search' element={<HotelList />} />
-        <Route exact path='/signup' element={<Signuppage />} />
-        <Route exact path='/bookings' element={<Bookingpage />} />
-        <Route exact path='/checkout' element={<CheckoutPage />} />
+        <Route exact path="/" element={<Navigate to="/home" />} />
+        <Route exact path="/home" element={<Homepage />} />
+        <Route exact path="/hotel-list/:search" element={<HotelList />} />
+        <Route exact path="/signup" element={<Signuppage />} />
+        <Route exact path="/bookings" element={<Bookingpage />} />
+        <Route exact path="/checkout" element={<CheckoutPage />} />
         <Route
           exact
-          path='/checkout-success'
+          path="/checkout-success"
           element={<CheckoutSuccessPage />}
         />
         <Route
           exact
-          path='/checkout-failure'
+          path="/checkout-failure"
           element={<CheckoutFailurePage />}
         />
-        <Route exact path='/login' element={<Login />} />
+        <Route exact path="/login" element={<Login />} />
         <Route
           exact
-          path='/*'
-          element={<Navigate to='/404-page-not-found' />}
+          path="/*"
+          element={<Navigate to="/404-page-not-found" />}
         />
-        <Route exact path='/404-page-not-found' element={<Page404 />} />
-        <Route exact path='/about-us' element={<AboutUspage />} />
+        <Route exact path="/404-page-not-found" element={<Page404 />} />
+        <Route exact path="/about-us" element={<AboutUspage />} />
         <Route
           exact
-          path='/dashboard'
+          path="/dashboard"
           element={
             // <Private>
-              <UserDashBoard />
+            <UserDashBoard />
             // </Private>
           }
         />
-        <Route exact path='/admin-dashboard' element={<AdminDashBoardPage />} />
-        <Route exact path='/hotel-single/:htlid' element={<Hotelsingle />} />
+        <Route exact path="/admin-dashboard" element={<AdminDashBoardPage />} />
+        <Route exact path="/hotel-single/:htlid" element={<Hotelsingle />} />
       </Routes>
       {/* </div> */}
       <Footer />

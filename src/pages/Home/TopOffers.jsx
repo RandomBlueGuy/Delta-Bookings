@@ -10,7 +10,7 @@ import place2Img from "../../assets/Images/place2.png";
 import place3Img from "../../assets/Images/place3.png";
 import place4Img from "../../assets/Images/place4.png";
 import place5Img from "../../assets/Images/place5.png";
-import place6Img from "../../assets/Images/place6.png";
+import place6Img from "../../assets/Images/place6.png"; 
 
 function TopOffers() {
   return (

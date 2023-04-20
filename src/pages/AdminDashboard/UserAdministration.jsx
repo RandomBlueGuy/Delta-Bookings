@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import HotelListPagination from "../HotelList/HotelListPagination";
-import ReservationCard from "./ReservationCard";
+import UserListMember from "./UserListMember";
 
 function ReservationVisualizer() {
   const [actualPage, setActualPage] = useState(0);
   const itemsPerPage = 5;
   const [maxNpages, setMaxNpages] = useState();
   const refProp = useRef(null);
-  const reservationsArr = [
+  const userArr = [
     "1",
     "2",
     "3",
@@ -22,39 +22,39 @@ function ReservationVisualizer() {
   ];
 
   useEffect(() => {
-    const res = reservationsArr.length / itemsPerPage;
+    const res = userArr.length / itemsPerPage;
     setMaxNpages(res > parseInt(res) ? parseInt(res) + 1 : res);
-  }, [reservationsArr]);
+  }, [userArr]);
 
   return (
-    <main ref={refProp}>
-      <h1>Reservation Visualizer</h1>
+    <main ref={refProp} className=''>
+      <h1>Users Administration</h1>
       <label htmlFor="management__searchbar" />
       <div className="searchbar__ctn">
         <input type="text" className="management__searchbar" />
-        <select name="" id="">
-          <option value="" disabled>
-            -- sort by --
-          </option>
-          <option value="Id">Id</option>
-          <option value="Location">Location</option>
-          <option value="User">User</option>
-        </select>
+                 <select name="" id="">
+           <option value="" disabled>
+             -- sort by --
+           </option>
+           <option value="Id">Id</option>
+           <option value="Name">Name</option>
+           <option value="Role">Role</option>
+         </select>
         <button>SEARCH</button>
       </div>
 
       <div className="reservations__list">
-        {reservationsArr
+        {userArr
           .slice(
             actualPage * itemsPerPage,
             actualPage * itemsPerPage + itemsPerPage
           )
-          .map((reservation, index) => {
+          .map((user, index) => {
             return (
-              <ReservationCard
+              <UserListMember
                 key={index}
                 index={index}
-                reservation={reservation}
+                user={user}
               />
             );
           })}

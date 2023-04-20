@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./NewsLetter.css";
+import axios from "axios";
 
 import ReviewCard from "./ReviewCard";
 
@@ -8,6 +9,7 @@ function NewsLetter() {
   const [review2, setReview2] = useState({});
   const r1Date = new Date(review1.Date);
   const r2Date = new Date(review2.Date);
+  const [inputEmail, setInputEmail] = useState("");
 
   useEffect(() => {
     fetch("/DB/HotelDataBase.json")
@@ -30,6 +32,22 @@ function NewsLetter() {
         )
       );
   }, []);
+
+  const sendEmail = async () => {
+    const res = await axios
+      .post(
+        "http://localhost:8080/api/emailsubscription",
+        { "Email": inputEmail },
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      )
+      .then((response) => console.log(response.data))
+      .catch((error) => console.log(error.message));
+    setInputEmail("");
+  };
 
   return (
     <main className="NewsLetter-container">
@@ -55,7 +73,6 @@ function NewsLetter() {
           rating={review2.Rating}
           review={review2.HotelReview}
         />
-       
       </section>
 
       <form action="" className="subscribe-form">
@@ -76,8 +93,10 @@ function NewsLetter() {
             className="input-mail"
             type="text"
             placeholder={"Enter Your Email"}
+            value={inputEmail}
+            onChange={(e) => setInputEmail(e.target.value)}
           />
-          <button type="button" className="sub-btn">
+          <button type="button" className="sub-btn" onClick={sendEmail}>
             Subscribe
           </button>
         </form>

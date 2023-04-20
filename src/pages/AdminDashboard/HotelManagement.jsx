@@ -45,16 +45,6 @@ function HotelManagement() {
   return (
     <main className="HotelManagement__ctn" ref={refProp}>
       <h1>Hotel Management</h1>
-      {/* <ol>
-        <li>Create List card component</li>
-        <li>Axios magic</li>
-        <li>Map results on each List card</li>
-        <li>Add pagination</li>
-        <li>Add option to DELETE</li>
-        <li>EDIT: Redirect to Create a New Hotel</li>
-        <li>Fill Create a New Hotel form inputs with previous information</li>
-      </ol> */}
-
       <label htmlFor="management__searchbar" />
       <div className="searchbar__ctn">
         <input

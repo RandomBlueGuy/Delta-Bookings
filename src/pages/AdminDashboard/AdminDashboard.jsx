@@ -3,11 +3,11 @@ import "./AdminDashboard.css";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import AdminImg from '../../assets/Images/dev-pic1.png'
-import HotelManagement from './HotelManagement';
-import HotelCreator from './HotelCreator';
-import ReservationVisualizer from './ReservationVisualizer';
-
+import AdminImg from "../../assets/Images/dev-pic1.png";
+import HotelManagement from "./HotelManagement";
+import HotelCreator from "./HotelCreator";
+import ReservationVisualizer from "./ReservationVisualizer";
+import UserAdministration from "./UserAdministration";
 
 export default function AdminDashboard() {
   const [profileEdit, setProfileEdit] = useState(false);
@@ -50,7 +50,9 @@ export default function AdminDashboard() {
           <button
             type="button"
             value="Create"
-            className={selectedTab === "Create" ? "AdminDashboard-is-active" : ""}
+            className={
+              selectedTab === "Create" ? "AdminDashboard-is-active" : ""
+            }
             onClick={(event) => handleClick(event.target.value)}
           >
             Create a New Hotel
@@ -65,6 +67,18 @@ export default function AdminDashboard() {
           >
             Reservations
           </button>
+          <button
+            type="button"
+            value="UserAdministration"
+            className={
+              selectedTab === "UserAdministration"
+                ? "AdminDashboard-is-active"
+                : ""
+            }
+            onClick={(event) => handleClick(event.target.value)}
+          >
+            User Management
+          </button>
         </div>
       </section>
       <section className="Admin__AdminDashboardCtn">
@@ -72,7 +86,7 @@ export default function AdminDashboard() {
           className="hotelManagement__ctn"
           style={{ display: selectedTab === "Management" ? "block" : "none" }}
         >
-          <HotelManagement/>
+          <HotelManagement />
         </div>
 
         <div
@@ -86,6 +100,14 @@ export default function AdminDashboard() {
           style={{ display: selectedTab === "Reservations" ? "block" : "none" }}
         >
           <ReservationVisualizer />
+        </div>
+        <div
+          className="UserAdministration"
+          style={{
+            display: selectedTab === "UserAdministration" ? "block" : "none",
+          }}
+        >
+          <UserAdministration />
         </div>
       </section>
     </main>
