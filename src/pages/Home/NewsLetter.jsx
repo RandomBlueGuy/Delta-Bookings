@@ -35,15 +35,9 @@ function NewsLetter() {
 
   const sendEmail = async () => {
     const res = await axios
-      .post(
-        "http://localhost:8080/api/emailsubscription",
-        { "Email": inputEmail },
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-        }
-      )
+      .post("http://localhost:8080/api/emailsubscription", {
+        Email: inputEmail,
+      })
       .then((response) => console.log(response.data))
       .catch((error) => console.log(error.message));
     setInputEmail("");
