@@ -10,6 +10,7 @@ function NewsLetter() {
   const r1Date = new Date(review1.Date);
   const r2Date = new Date(review2.Date);
   const [inputEmail, setInputEmail] = useState("");
+  const [Errors, setErrors] = useState({});
 
   useEffect(() => {
     fetch("/DB/HotelDataBase.json")
@@ -33,19 +34,32 @@ function NewsLetter() {
       );
   }, []);
 
-  const sendEmail = async () => {
-    const res = await axios
-      .post("http://localhost:8080/api/emailsubscription", {
-        Email: inputEmail,
-      })
-      .then((response) => console.log(response.data))
-      .catch((error) => console.log(error.message));
-    setInputEmail("");
+  const sendEmail = async (event) => {
+    const validationErrors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!inputEmail.trim()) {
+      validationErrors.emailerror = "Please, enter your email";
+    } else if (!emailRegex.test(inputEmail)) {
+      validationErrors.emailerror = "Enter a valid email";
+    }
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      const res = await axios
+        .post("http://localhost:8080/api/emailsubscription", {
+          Email: inputEmail,
+        })
+        .then((response) => console.log(response.data))
+        .catch((error) => console.log(error.message));
+      setInputEmail("");
+    }
   };
 
   return (
-    <main className="NewsLetter-container">
-      <section className="NewsLetter-table">
+    <main className='NewsLetter-container'>
+      <section className='NewsLetter-table'>
         <ReviewCard
           placeholderImg={"1"}
           dateD={(r1Date.getDay() + 1).toString().padStart(2, "0")}
@@ -69,30 +83,33 @@ function NewsLetter() {
         />
       </section>
 
-      <form action="" className="subscribe-form">
-        <section className="sub-call-txt">
-          <div className="call-txt-title">
-            <div className="our-news">
+      <form action='' className='subscribe-form'>
+        <section className='sub-call-txt'>
+          <div className='call-txt-title'>
+            <div className='our-news'>
               <p>OUR NEWS</p>
             </div>
             <h1>Subscribe Our News</h1>
           </div>
-          <p className="call-txt-title-paragraph">
+          <p className='call-txt-title-paragraph'>
             Subscribe and receive our newsletters to follow the new Promise
             about our fresh and fantastic products
           </p>
         </section>
-        <form className="form-input">
+        <form className='form-input'>
           <input
-            className="input-mail"
-            type="text"
-            placeholder={"Enter Your Email"}
+            className='input-mail'
+            type='text'
+            placeholder='Enter Your Email'
             value={inputEmail}
             onChange={(e) => setInputEmail(e.target.value)}
           />
-          <button type="button" className="sub-btn" onClick={sendEmail}>
+          <button type='button' className='sub-btn' onClick={sendEmail}>
             Subscribe
           </button>
+          {Errors.emailerror && (
+            <span className='error'>{Errors.emailerror}</span>
+          )}
         </form>
       </form>
     </main>
