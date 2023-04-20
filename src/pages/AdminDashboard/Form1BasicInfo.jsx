@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
   const [info, setInfo] = useState({
@@ -21,6 +22,14 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
 
   const [errors, setErrors] = useState({});
   const [render, setRender] = useState(false);
+  const [image, setImage] = useState(null);
+
+  const readFile = (hotelFront) => {
+    const reader = new FileReader();
+
+    reader.onload = (e) => setImage(e.target.result);
+    reader.readAsDataURL(hotelFront);
+  };
 
   const handleChange = (event) => {
     const target = event.target;
@@ -32,9 +41,10 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
       ...prevState,
       [name]: value,
     }));
+    readFile(event.target.files[0]);
   };
 
-  const handleInfo = (event) => {
+  const handleInfo = async (event) => {
     event.preventDefault();
     const validationErrors = {};
 
@@ -78,6 +88,20 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
+      const data = new FormData();
+      data.append("hotelName", hotelName);
+      for (let i = 0; i < hotelFront.length; i++) {
+        data.append(`file ${i}`, hotelFront[i], hotelFront[i].name);
+      }
+
+      const response = await axios.post(
+        "http://localhost:8080/test-formdata",
+        data,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+
       setErrors({});
       setRender(true);
     }
@@ -200,16 +224,18 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
             type='file'
             name='hotelFront'
             accept='image/png, image/jpeg, image/jpg'
-            multiple
             onChange={(event) => handleChange(event)}
           />
         </div>
         {errors.hotelfront && (
           <span className='error-creatorAdmin'> {errors.hotelfront} </span>
         )}
+        {!!image && <img src={image} alt='User Update' />}
       </div>
+
       <div className='HotelForm__footer'>
         <button
+          type='submit'
           className='HotelCreator__form--microSubmit'
           onClick={(event) => {
             event.preventDefault();
