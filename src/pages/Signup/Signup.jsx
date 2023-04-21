@@ -55,6 +55,7 @@ export default function Signup() {
         .then((response) => console.log(response.data))
         .catch((error) => console.error(error));
     }
+    setData({ username: "", email: "", password: "" });
   };
 
   return (

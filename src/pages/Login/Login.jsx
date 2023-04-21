@@ -20,6 +20,8 @@ function Login() {
     email: "",
   });
   const { username, password, email } = data;
+  const emailRegex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
   }
@@ -62,7 +64,7 @@ function Login() {
     const validateEmail = {};
     if (email.trim() === "") {
       validateEmail.userEmail = "Please Enter Your Email";
-    } else if (!/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(email)) {
+    } else if (!emailRegex.test(email)) {
       validateEmail.userEmail = "Enter a Valid Email";
     }
     setEmailerr(validateEmail);
