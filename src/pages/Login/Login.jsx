@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import "./Login.css";
@@ -21,6 +21,7 @@ function Login() {
   });
   const { emailRecovery, password, email } = data;
   const emailRegex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+  const navigate = useNavigate();
 
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
@@ -47,31 +48,20 @@ function Login() {
     const logUser = async () => {
       const res = await axios
         .post("http://localhost:8080/auth/local/login", {
-          email:email,
-          password:password,
+          email: email,
+          password: password,
         })
-        .then((response) => console.log(response.data))
         .catch((error) => console.log(error.message));
+      cookies.set("token", res.data.token);
+      console.log(res.data.token);
     };
 
-    logUser();
-    if (Object.keys(validationErrors) === 0) {
-    //   try {
-    //     const { data } = await axios.post(
-    //       "http://localhost:8080/auth/local/login",
-    //       data
-    //     );
-    //     cookies.set("token", data.token);
-    //     cookies.set("firstName", data.token.firstName);
-    //     cookies.set("lastName", data.token.lastName);
-    //     cookies.set("email", data.token.email);
-    //   } catch (err) {
-    //     alert("Something went wrong");
-    //   }
-    }else{
-      console.log("HAY ERRORES MP")
+    if (Object.keys(validationErrors).length === 0) {
+      logUser();
+      navigate(`/`);
+    } else {
+      console.log("HAY ERRORES", validationErrors);
     }
-    
   };
 
   const handleEmail = (event) => {
@@ -176,7 +166,7 @@ function Login() {
         {emailerr.userEmail && (
           <span className="error">{emailerr.userEmail}</span>
         )}
-        
+
         <div className="social-distancing">
           <div className="social-distancing-line"></div>
           <p>OR</p>

@@ -4,7 +4,7 @@ import iconB from "../../assets/Icons/delta-black.svg";
 import iconW from "../../assets/Icons/delta.svg";
 import userIcon from "../../assets/Icons/user.svg";
 import menuIcon from "../../assets/Icons/menu.svg";
-import { Link, useLocation, Navigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Cookies from "universal-cookie/cjs/Cookies";
 
@@ -13,8 +13,9 @@ function NavBar() {
   let location = useLocation();
   const [visibility, setVisibility] = useState(true);
   const [isInvalidUrl, setIsInvalidUrl] = useState(false);
+  const navigate = useNavigate();
   // const [isSpecialPath, setIsSpecialPath] = useState(false);
-  const [trigger, setTrigger] = useState("0px");
+  const [trigger, setTrigger] = useState("0vw");
   // const specialPathsArr = [
   //   "/bookings",
   //   "/hotel-single",
@@ -33,12 +34,10 @@ function NavBar() {
   
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
     cookies.remove("token");
     cookies.remove("firstName");
     cookies.remove("lastName");
     cookies.remove("email");
-    return <Navigate to='' />;
   };
 
   // useEffect(() => {
@@ -170,8 +169,8 @@ function NavBar() {
                   <Link to='/' className='item-ctn'>
                     <h2>Log In</h2>
                   </Link>
-                  <Link to='/' className='item-ctn'>
-                    <h2 onClick={handleLogout}>Log Out</h2>
+                  <Link to='/' className='item-ctn' onClick={handleLogout}>
+                    <h2>Log Out</h2>
                   </Link>
                   <Link to='/signup' className='item-ctn'>
                     <h2>Sign-up</h2>
@@ -218,14 +217,14 @@ function NavBar() {
                       <h4>Log in</h4>
                     </div>
                   </Link>
-                  <Link to='/signup'>
-                    <div className='item-ctn'>
+                  <Link to='/'>
+                    <div className='item-ctn' onClick={handleLogout}>
                       <h4>Log out</h4>
                     </div>
                   </Link>
                   <Link to='/signup'>
                     <div className='item-ctn'>
-                      <h4>Sign In</h4>
+                      <h4>Sign Up</h4>
                     </div>
                   </Link>
                 </div>
