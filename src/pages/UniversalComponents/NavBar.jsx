@@ -30,6 +30,7 @@ function NavBar() {
       ? setIsInvalidUrl(true)
       : setIsInvalidUrl(false);
   }, [location.pathname]);
+  
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -58,12 +59,12 @@ function NavBar() {
 
   const triggerOpen = (event) => {
     event.preventDefault();
-    setTrigger("90%");
+    setTrigger("90vw");
   };
 
   const triggerClose = (event) => {
     event.preventDefault();
-    setTrigger("0px");
+    setTrigger("0vw");
   };
 
   // useEffect(() => {
@@ -136,7 +137,8 @@ function NavBar() {
                   id='mySidepanel'
                   style={{
                     width: trigger,
-                    padding: trigger !== "0px" ? "1rem" : "0",
+                    padding: trigger !== "0vw" ? "1rem" : "0",
+                    opacity: trigger !== "0vw" ? "1" : "0"
                   }}
                   className='sidepanel'
                 >
@@ -146,7 +148,7 @@ function NavBar() {
                   <div className='mobile-menu-titles'>
                     <h2>Navigation</h2>
                   </div>
-                  <Link to='/' className='item-ctn'>
+                  <Link to='/' className='item-ctn' >
                     <h2>Home</h2>
                   </Link>
                   <Link to='/hotel-list/search?city=All' className='item-ctn'>

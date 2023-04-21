@@ -23,6 +23,7 @@ import Cookies from "universal-cookie/cjs/Cookies";
 import { useJwt } from "react-jwt";
 import LoadingComp from "./pages/UniversalComponents/LoadingComp";
 import WarningMessage from "./pages/UniversalComponents/WarningMessage";
+import FloatingMessage from "./pages/UniversalComponents/FloatingMessage";
 
 const Private = ({ children }) => {
   const cookies = new Cookies();
@@ -51,13 +52,14 @@ function App() {
       <UpButton />
       <NavBar />
       {/* <LoadingComp /> */}
-      {!showWarning && (
+      {/* {!showWarning && (
         <WarningMessage
           warningTitle={warningTitle}
           warningMessage={warningMessage}
           setShowWarning={setShowWarning}
         />
-      )}
+      )} */}
+      {/* <FloatingMessage /> */}
       <Routes>
         <Route exact path="/" element={<Navigate to="/home" />} />
         <Route exact path="/home" element={<Homepage />} />
@@ -87,9 +89,9 @@ function App() {
           exact
           path="/dashboard"
           element={
-            // <Private>
-            <UserDashBoard />
-            // </Private>
+            <Private>
+              <UserDashBoard />
+            </Private>
           }
         />
         <Route exact path="/admin-dashboard" element={<AdminDashBoardPage />} />

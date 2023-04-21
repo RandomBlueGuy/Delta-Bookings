@@ -15,11 +15,11 @@ function Login() {
   const [errors, setErrors] = useState({});
   const [emailerr, setEmailerr] = useState({});
   const [data, setData] = useState({
-    username: "",
     password: "",
     email: "",
+    emailRecovery: "",
   });
-  const { username, password, email } = data;
+  const { emailRecovery, password, email } = data;
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
   }
@@ -30,31 +30,46 @@ function Login() {
       [name]: value,
     });
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const validationErrors = {};
-    if (username.trim() === "") {
-      validationErrors.userName = "Please Enter Your Name";
+    if (email.trim() === "") {
+      validationErrors.email = "Please Enter Your email";
     }
     if (password.trim() === "") {
       validationErrors.userPassword = "Please Enter Your Password";
     }
     setErrors(validationErrors);
 
+    const logUser = async () => {
+      const res = await axios
+        .post("http://localhost:8080/auth/local/login", {
+          email:email,
+          password:password,
+        })
+        .then((response) => console.log(response.data))
+        .catch((error) => console.log(error.message));
+    };
+
+    logUser();
     if (Object.keys(validationErrors) === 0) {
-      try {
-        const { data } = await axios.post(
-          "http://localhost:8080/auth/local/login",
-          data
-        );
-        cookies.set("token", data.token);
-        cookies.set("firstName", data.token.firstName);
-        cookies.set("lastName", data.token.lastName);
-        cookies.set("email", data.token.email);
-      } catch (err) {
-        alert("Something went wrong");
-      }
+    //   try {
+    //     const { data } = await axios.post(
+    //       "http://localhost:8080/auth/local/login",
+    //       data
+    //     );
+    //     cookies.set("token", data.token);
+    //     cookies.set("firstName", data.token.firstName);
+    //     cookies.set("lastName", data.token.lastName);
+    //     cookies.set("email", data.token.email);
+    //   } catch (err) {
+    //     alert("Something went wrong");
+    //   }
+    }else{
+      console.log("HAY ERRORES MP")
     }
+    
   };
 
   const handleEmail = (event) => {
@@ -69,56 +84,57 @@ function Login() {
   };
 
   return (
-    <main className='Login-ctn'>
-      <section className='Login-card'>
+    <main className="Login-ctn">
+      <section className="Login-card">
         <form onSubmit={handleSubmit}>
           <h1>Login</h1>
-          <label htmlFor='username' className='Login-normal-label' name='user'>
+          <label htmlFor="email" className="Login-normal-label" name="user">
             User:
           </label>
-          <div className='form__line--login'>
-            <div className='Login-formbox'>
+          <div className="form__line--login">
+            <div className="Login-formbox">
               {uIcon}
               <input
-                id='user-input'
-                type='text'
-                placeholder='Enter your Username'
-                className='Login-input-username'
-                name='username'
-                value={username}
+                id="user-input"
+                type="text"
+                placeholder="Enter your email"
+                className="Login-input-email"
+                name="email"
+                value={email}
                 onChange={(event) => handleChange(event)}
               />
             </div>
-            {errors.userName && (
-              <div className='error__display'>{errors.userName}</div>
+            {errors.email && (
+              <div className="error__display">{errors.email}</div>
             )}
           </div>
-          <div className='form__line--login'>
-            <label htmlFor='password' className='Login-normal-label'>
+          <div className="form__line--login">
+            <label htmlFor="password" className="Login-normal-label">
               Password:
             </label>
-            <div className='pass-input-area'>
-              <div className='Login-formbox'>
+            <div className="pass-input-area">
+              <div className="Login-formbox">
                 {lIcon}
                 <input
-                  id='password-input'
-                  name='password'
-                  type='password'
+                  id="password-input"
+                  name="password"
+                  type="password"
                   placeholder={"Enter your password"}
                   value={password}
                   onChange={(event) => handleChange(event)}
                 />
               </div>
               {errors.userPassword && (
-                <div className='error__display'>{errors.userPassword}</div>
+                <div className="error__display">{errors.userPassword}</div>
               )}
             </div>
-            <button className='Login-special-btn' onClick={toggleSecretSection}>
-              Forgot your password?
-            </button>
           </div>
+          <button className="Login-ctn-btn">Log In</button>
         </form>
-        <div className='err__display__secret'>
+        <button className="Login-special-btn" onClick={toggleSecretSection}>
+          Forgot your password?
+        </button>
+        <div className="err__display__secret">
           <div
             className={
               toggleVisible
@@ -126,27 +142,27 @@ function Login() {
                 : "Login-secret-section-active"
             }
           >
-            <div className='form__line--login'>
-              <label className='email' htmlFor='recover-input'>
+            <div className="form__line--login">
+              <label className="emailRecovery" htmlFor="recover-input">
                 Write your Email here to reset your password
               </label>
-              <div className='Login-formbox'>
+              <div className="Login-formbox">
                 {mIcon}
                 <input
-                  type='email'
-                  name='email'
-                  id='recover-input'
-                  value={email}
-                  placeholder='Enter your recovery email'
+                  type="email"
+                  name="emailRecovery"
+                  id="emailRecovery"
+                  value={emailRecovery}
+                  placeholder="Enter your recovery email"
                   onChange={(event) => handleChange(event)}
                 />
-                <button className='email__recover' onClick={handleEmail}>
+                <button className="email__recover" onClick={handleEmail}>
                   ✉
                 </button>
               </div>
               {emailerr.userEmail && (
                 <div
-                  className='error__display'
+                  className="error__display"
                   style={{ display: toggleVisible ? "none" : "flex" }}
                 >
                   {emailerr.userEmail}
@@ -156,15 +172,15 @@ function Login() {
           </div>
         </div>
         {emailerr.userEmail && (
-          <span className='error'>{emailerr.userEmail}</span>
+          <span className="error">{emailerr.userEmail}</span>
         )}
-        <button className='Login-ctn-btn'>Log In</button>
-        <div className='social-distancing'>
-          <div className='social-distancing-line'></div>
+        
+        <div className="social-distancing">
+          <div className="social-distancing-line"></div>
           <p>OR</p>
         </div>
-        <Link to='/signup'>
-          <button className='Signin-ctn-btn'>Sign Up</button>
+        <Link to="/signup">
+          <button className="Signin-ctn-btn">Sign Up</button>
         </Link>
       </section>
     </main>

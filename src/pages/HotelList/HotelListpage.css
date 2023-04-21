@@ -1,96 +1,119 @@
 .HotelListpage-ctn {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: var(--Main-BG);
-	flex-direction: column;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--Main-BG);
+  flex-direction: column;
 }
 
 .SearchBar-ctn-display {
-	width: 100%;
-	background-color: white;
-	display: flex;
-	justify-content: center;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .HotelList-displayer {
-	width: 80%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin: 2rem 0;
-	padding-bottom: 2rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  padding-bottom: 2rem;
 }
 
 .card-gallery {
-	box-sizing: border-box;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 2rem;
-	margin-bottom: 2rem;
-	margin-top: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .filter-ctn {
-	width: 95%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin: 2rem 0;
-	background-color: white;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
+  gap: 2rem
 }
 
-.filter-ctn h2{
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.filter-ctn h2 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .filter-ctn-btns {
-	display: flex;
-	gap: 1rem;
-	margin-left: 1rem;
+  display: flex;
+  gap: 1rem;
+  margin-left: 1rem;
+	align-items: center;
 
-	padding: 1rem 0;
+  padding: 1rem 0;
+
 }
 
 .filter-ctn-btns button {
-	padding: 0.5rem 1rem;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
+  padding: 0.5rem 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
 }
 
 .filter-ctn-btns button:hover {
-	color: white;
+  color: white;
 }
 
 .weird-thing {
-	margin-right: 1rem;
-	font-weight: 800;
+  margin-right: 1rem;
+  font-weight: 800;
 }
 
-.filter-ctn-selected{
-	background-color: var(--red-style);
-	color: white;
+.filter-ctn-selected {
+  background-color: var(--red-style);
+  color: white;
 }
 
-.filter-ctn-Notselected{
-	background-color: var(--NavBar-btn);
-	color: black;
+.filter-ctn-Notselected {
+  background-color: var(--NavBar-btn);
+  color: black;
 }
 
-.weirdThing__txt{
-	font-weight: 600;
-	opacity: 0.6;
-	font-style: italic;
+
+.weirdThing__txt {
+  font-weight: 600;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.mobile__filter {
+  display: none;
+}
+
+.filter__btns{
+
+	display: flex;
 }
 
 @media (max-width: 720px) {
-	.filter-ctn {
-		flex-wrap: wrap;
-	}
+  .filter-ctn {
+    max-width: 95%;
+  }
+
+  .mobile__filter {
+	display: block;
+ }
+
+ .filter__btns{
+	display: none;
+}
+
 }

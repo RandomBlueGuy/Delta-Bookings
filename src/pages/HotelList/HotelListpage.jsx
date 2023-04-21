@@ -97,68 +97,79 @@ function HotelListpage() {
         <div className="filter-ctn">
           <div className="filter-ctn-btns">
             <h2>Filter by:</h2>
-            {/* <select name="" id="">
-              <option value="">All</option>
-              <option value="">Popular</option>
-              <option value="">Latest</option>
-              <option value="">Trend</option>
-            </select> */}
-            <button
-              value={"All"}
-              className={
-                selectedFilter === "All"
-                  ? "filter-ctn-selected"
-                  : "filter-ctn-Notselected"
-              }
-              onClick={(event) => {
-                setSelectedFilter(event.target.value);
-                setFakeLoading();
-              }}
-            >
-              All
-            </button>
-            <button
-              value={"Popular"}
-              className={
-                selectedFilter === "Popular"
-                  ? "filter-ctn-selected"
-                  : "filter-ctn-Notselected"
-              }
-              onClick={(event) => {
-                setSelectedFilter(event.target.value);
-                setFakeLoading();
-              }}
-            >
-              Popular
-            </button>
-            <button
-              value={"Latest"}
-              className={
-                selectedFilter === "Latest"
-                  ? "filter-ctn-selected"
-                  : "filter-ctn-Notselected"
-              }
-              onClick={(event) => {
-                setSelectedFilter(event.target.value);
-                setFakeLoading();
-              }}
-            >
-              Latest
-            </button>
-            <button
-              value={"Trending"}
-              className={
-                selectedFilter === "Trending"
-                  ? "filter-ctn-selected"
-                  : "filter-ctn-Notselected"
-              }
-              onClick={(event) => {
-                setSelectedFilter(event.target.value);
-                setFakeLoading();
-              }}
-            >
-              Trend
-            </button>
+            <div className="mobile__filter">
+              <select
+                name=""
+                id=""
+                onChange={(event) => {
+                   setSelectedFilter(event.target.value);
+                   setFakeLoading();
+                }}
+              >
+                <option value="All">All</option>
+                <option value="Popular">Popular</option>
+                <option value="Latest">Latest</option>
+                <option value="Trend">Trend</option>
+              </select>
+            </div>
+            <div className="filter__btns">
+              <button
+                value={"All"}
+                className={
+                  selectedFilter === "All"
+                    ? "filter-ctn-selected"
+                    : "filter-ctn-Notselected"
+                }
+                onClick={(event) => {
+                  setSelectedFilter(event.target.value);
+                  setFakeLoading();
+                }}
+              >
+                All
+              </button>
+              <button
+                value={"Popular"}
+                className={
+                  selectedFilter === "Popular"
+                    ? "filter-ctn-selected"
+                    : "filter-ctn-Notselected"
+                }
+                onClick={(event) => {
+                  setSelectedFilter(event.target.value);
+                  setFakeLoading();
+                }}
+              >
+                Popular
+              </button>
+              <button
+                value={"Latest"}
+                className={
+                  selectedFilter === "Latest"
+                    ? "filter-ctn-selected"
+                    : "filter-ctn-Notselected"
+                }
+                onClick={(event) => {
+                  setSelectedFilter(event.target.value);
+                  setFakeLoading();
+                }}
+              >
+                Latest
+              </button>
+              <button
+                value={"Trending"}
+                className={
+                  selectedFilter === "Trending"
+                    ? "filter-ctn-selected"
+                    : "filter-ctn-Notselected"
+                }
+                onClick={(event) => {
+                  setSelectedFilter(event.target.value);
+                  setFakeLoading();
+                }}
+              >
+                Trend
+              </button>
+            </div>
           </div>
           <div className="weird-thing">
             <p className="weirdThing__txt">

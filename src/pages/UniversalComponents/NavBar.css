@@ -1,13 +1,15 @@
 .NavBar-container {
-  width: 100%;
+  width: 100vw;
   height: 3rem;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
-  z-index: 999;
+  z-index: 9;
   transition: 0.25s ease-in-out;
+  box-sizing: border-box;
+  max-height: 3rem;
 }
 
 .NavBar-container h4{
@@ -43,7 +45,9 @@
   align-items: center;
   justify-content: space-between;
   width: 80%;
+  max-width: 80%;
   height: 2rem;
+  box-sizing: border-box;
 }
 
 .nav-section {
@@ -196,7 +200,9 @@
 
 @media (max-width: 720px) {
   .NavBar {
-    width: 90%;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 90%;
     justify-content: space-between;
   }
 
@@ -208,7 +214,6 @@
     display: none;
   }
 
-  .dropdown:nth-child(2),
   .sidepanel {
     display: flex;
     flex-direction: column;

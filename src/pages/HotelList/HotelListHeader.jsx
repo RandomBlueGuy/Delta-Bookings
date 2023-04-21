@@ -7,7 +7,7 @@ function HotelList() {
     <main className="Header-container">
       <section className="Header-title">
         <h1>HOTELS IN [CITY]</h1>
-        <p>[PAGE] {specialChar} Hotels in [CITY]</p>
+        <p>[Hotels in] {specialChar} Hotels in [CITY]</p>
       </section>
     </main>
   )
