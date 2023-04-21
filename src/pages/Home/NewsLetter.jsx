@@ -34,7 +34,7 @@ function NewsLetter() {
       );
   }, []);
 
-  const sendEmail = async (event) => {
+  const sendEmail = async () => {
     const validationErrors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

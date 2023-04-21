@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
   const [files, setFiles] = useState([]);
@@ -23,8 +24,27 @@ function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
 
     if (Object.keys(validationErrors).length === 0) {
       setErrors({});
-      setRender(true);
+      const formData = new FormData();
+      for (let i = 0; i < files.length; i++) {
+        formData.append("image", files[i]);
+      }
+      try {
+        const response = axios.post(
+          "http://localhost:8080/test-formdata",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        console.log(response.data);
+        setRender(true);
+      } catch (error) {
+        console.log(error);
+      }
     }
+    setFiles([]);
   };
 
   return (
