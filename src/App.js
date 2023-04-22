@@ -89,9 +89,9 @@ function App() {
           exact
           path="/dashboard"
           element={
-            <Private>
               <UserDashBoard />
-            </Private>
+            // <Private>
+            // </Private>
           }
         />
         <Route exact path="/admin-dashboard" element={<AdminDashBoardPage />} />
