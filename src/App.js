@@ -28,7 +28,7 @@ import FloatingMessage from "./pages/UniversalComponents/FloatingMessage";
 const Private = ({ children }) => {
   const cookies = new Cookies();
   const ticket = useJwt(cookies.getItem("token"));
-  return ticket ? children : <Navigate to="/" />;
+  return ticket ? children : <Navigate to='/' />;
 };
 
 function App() {
@@ -61,41 +61,41 @@ function App() {
       )} */}
       {/* <FloatingMessage /> */}
       <Routes>
-        <Route exact path="/" element={<Navigate to="/home" />} />
-        <Route exact path="/home" element={<Homepage />} />
-        <Route exact path="/hotel-list/:search" element={<HotelList />} />
-        <Route exact path="/signup" element={<Signuppage />} />
-        <Route exact path="/bookings" element={<Bookingpage />} />
-        <Route exact path="/checkout" element={<CheckoutPage />} />
+        <Route exact path='/' element={<Navigate to='/home' />} />
+        <Route exact path='/home' element={<Homepage />} />
+        <Route exact path='/hotel-list/:search' element={<HotelList />} />
+        <Route exact path='/signup' element={<Signuppage />} />
+        <Route exact path='/bookings' element={<Bookingpage />} />
+        <Route exact path='/checkout' element={<CheckoutPage />} />
         <Route
           exact
-          path="/checkout-success"
+          path='/checkout-success'
           element={<CheckoutSuccessPage />}
         />
         <Route
           exact
-          path="/checkout-failure"
+          path='/checkout-failure'
           element={<CheckoutFailurePage />}
         />
-        <Route exact path="/login" element={<Login />} />
+        <Route exact path='/login' element={<Login />} />
         <Route
           exact
-          path="/*"
-          element={<Navigate to="/404-page-not-found" />}
+          path='/*'
+          element={<Navigate to='/404-page-not-found' />}
         />
-        <Route exact path="/404-page-not-found" element={<Page404 />} />
-        <Route exact path="/about-us" element={<AboutUspage />} />
+        <Route exact path='/404-page-not-found' element={<Page404 />} />
+        <Route exact path='/about-us' element={<AboutUspage />} />
         <Route
           exact
-          path="/dashboard"
+          path='/dashboard'
           element={
-            <Private>
-              <UserDashBoard />
-            </Private>
+            //<Private>
+            <UserDashBoard />
+            //</Private>
           }
         />
-        <Route exact path="/admin-dashboard" element={<AdminDashBoardPage />} />
-        <Route exact path="/hotel-single/:htlid" element={<Hotelsingle />} />
+        <Route exact path='/admin-dashboard' element={<AdminDashBoardPage />} />
+        <Route exact path='/hotel-single/:htlid' element={<Hotelsingle />} />
       </Routes>
       {/* </div> */}
       <Footer />

@@ -37,10 +37,10 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const validationErrors = {};
-    if (email.trim() === "") {
+    if (!email.trim()) {
       validationErrors.email = "Please Enter Your email";
     }
-    if (password.trim() === "") {
+    if (!password.trim()) {
       validationErrors.userPassword = "Please Enter Your Password";
     }
     setErrors(validationErrors);
@@ -76,57 +76,57 @@ function Login() {
   };
 
   return (
-    <main className="Login-ctn">
-      <section className="Login-card">
+    <main className='Login-ctn'>
+      <section className='Login-card'>
         <form onSubmit={handleSubmit}>
           <h1>Login</h1>
-          <label htmlFor="email" className="Login-normal-label" name="user">
+          <label htmlFor='email' className='Login-normal-label' name='user'>
             User:
           </label>
-          <div className="form__line--login">
-            <div className="Login-formbox">
+          <div className='form__line--login'>
+            <div className='Login-formbox'>
               {uIcon}
               <input
-                id="user-input"
-                type="text"
-                placeholder="Enter your email"
-                className="Login-input-email"
-                name="email"
+                id='user-input'
+                type='text'
+                placeholder='Enter your email'
+                className='Login-input-email'
+                name='email'
                 value={email}
                 onChange={(event) => handleChange(event)}
               />
             </div>
             {errors.email && (
-              <div className="error__display">{errors.email}</div>
+              <div className='error__display'>{errors.email}</div>
             )}
           </div>
-          <div className="form__line--login">
-            <label htmlFor="password" className="Login-normal-label">
+          <div className='form__line--login'>
+            <label htmlFor='password' className='Login-normal-label'>
               Password:
             </label>
-            <div className="pass-input-area">
-              <div className="Login-formbox">
+            <div className='pass-input-area'>
+              <div className='Login-formbox'>
                 {lIcon}
                 <input
-                  id="password-input"
-                  name="password"
-                  type="password"
+                  id='password-input'
+                  name='password'
+                  type='password'
                   placeholder={"Enter your password"}
                   value={password}
                   onChange={(event) => handleChange(event)}
                 />
               </div>
               {errors.userPassword && (
-                <div className="error__display">{errors.userPassword}</div>
+                <div className='error__display'>{errors.userPassword}</div>
               )}
             </div>
           </div>
-          <button className="Login-ctn-btn">Log In</button>
+          <button className='Login-ctn-btn'>Log In</button>
         </form>
-        <button className="Login-special-btn" onClick={toggleSecretSection}>
+        <button className='Login-special-btn' onClick={toggleSecretSection}>
           Forgot your password?
         </button>
-        <div className="err__display__secret">
+        <div className='err__display__secret'>
           <div
             className={
               toggleVisible
@@ -134,27 +134,27 @@ function Login() {
                 : "Login-secret-section-active"
             }
           >
-            <div className="form__line--login">
-              <label className="emailRecovery" htmlFor="recover-input">
+            <div className='form__line--login'>
+              <label className='emailRecovery' htmlFor='recover-input'>
                 Write your Email here to reset your password
               </label>
-              <div className="Login-formbox">
+              <div className='Login-formbox'>
                 {mIcon}
                 <input
-                  type="email"
-                  name="emailRecovery"
-                  id="emailRecovery"
+                  type='email'
+                  name='emailRecovery'
+                  id='emailRecovery'
                   value={emailRecovery}
-                  placeholder="Enter your recovery email"
+                  placeholder='Enter your recovery email'
                   onChange={(event) => handleChange(event)}
                 />
-                <button className="email__recover" onClick={handleEmail}>
+                <button className='email__recover' onClick={handleEmail}>
                   ✉
                 </button>
               </div>
               {emailerr.userEmail && (
                 <div
-                  className="error__display"
+                  className='error__display'
                   style={{ display: toggleVisible ? "none" : "flex" }}
                 >
                   {emailerr.userEmail}
@@ -164,15 +164,15 @@ function Login() {
           </div>
         </div>
         {emailerr.userEmail && (
-          <span className="error">{emailerr.userEmail}</span>
+          <span className='error'>{emailerr.userEmail}</span>
         )}
 
-        <div className="social-distancing">
-          <div className="social-distancing-line"></div>
+        <div className='social-distancing'>
+          <div className='social-distancing-line'></div>
           <p>OR</p>
         </div>
-        <Link to="/signup">
-          <button className="Signin-ctn-btn">Sign Up</button>
+        <Link to='/signup'>
+          <button className='Signin-ctn-btn'>Sign Up</button>
         </Link>
       </section>
     </main>

@@ -40,7 +40,7 @@ export default function Payments() {
     handler.open({
       name: "Hotel Testing in mitte",
       description: "deluxe room",
-      invoice: "10",
+      invoice: "11",
       currency: "usd",
       amount: 20,
       tax_base: "0",
