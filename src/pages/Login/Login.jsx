@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Cookies from "universal-cookie";
 import "./Login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useCookies } from 'react-cookie';
+
 
 function Login() {
-  const cookies = new Cookies();
+  const [cookies, setCookie] = useCookies(['cookieToken']);
   const [toggleVisible, setToggleVisible] = useState(true);
   const uIcon = <FontAwesomeIcon icon={faUser} />;
   const lIcon = <FontAwesomeIcon icon={faLock} />;
   const mIcon = <FontAwesomeIcon icon={faEnvelope} />;
   const [errors, setErrors] = useState({});
   const [emailerr, setEmailerr] = useState({});
+  const [logUser, setLogUser] = useState(false);
   const [data, setData] = useState({
     password: "",
     email: "",
@@ -22,7 +24,6 @@ function Login() {
   const { emailRecovery, password, email } = data;
   const emailRegex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
   const navigate = useNavigate();
-
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
   }
@@ -37,32 +38,48 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const validationErrors = {};
-    if (email.trim() === "") {
+    if (!email.trim()) {
       validationErrors.email = "Please Enter Your email";
     }
-    if (password.trim() === "") {
+    if (!password.trim()) {
       validationErrors.userPassword = "Please Enter Your Password";
     }
     setErrors(validationErrors);
 
-    const logUser = async () => {
-      const res = await axios
-        .post("http://localhost:8080/auth/local/login", {
-          email: email,
-          password: password,
-        })
-        .catch((error) => console.log(error.message));
-      cookies.set("token", res.data.token);
-      console.log(res.data.token);
-    };
-
     if (Object.keys(validationErrors).length === 0) {
-      logUser();
-      navigate(`/`);
+      setLogUser(true);
+      axios
+      .post("http://localhost:8080/auth/local/login", {
+        email: email,
+        password: password,
+      }).then((response) => {
+        // console.log("token", response.data.token);
+        // cookies.set("token", response.data.token)
+        setCookie('cookieToken', response.data.token, { path: '/' });
+        // cookies.set
+      })
+      .catch((error) => console.log(error.message));
     } else {
       console.log("HAY ERRORES", validationErrors);
     }
+
+    setInterval(() => {
+       navigate(`/dashboard`);
+    }, 3000);
   };
+
+  useEffect(() => {
+    // axios
+    //   .post("http://localhost:8080/auth/local/login", {
+    //     email: email,
+    //     password: password,
+    //   }).then((response) => {
+    //     cookies.set("token", response.data.token);
+    //     // cookies.set
+    //   })
+    //   .catch((error) => console.log(error.message));
+    //   // navigate(`/home`);
+  }, [logUser]);
 
   const handleEmail = (event) => {
     event.preventDefault();

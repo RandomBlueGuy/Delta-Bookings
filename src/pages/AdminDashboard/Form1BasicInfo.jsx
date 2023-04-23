@@ -23,6 +23,7 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
   const [errors, setErrors] = useState({});
   const [render, setRender] = useState(false);
   const [image, setImage] = useState(null);
+  const webRegex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/;
 
   const readFile = (hotelFront) => {
     const reader = new FileReader();
@@ -48,21 +49,17 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
     event.preventDefault();
     const validationErrors = {};
 
-    if (hotelName.trim() === "") {
+    if (!hotelName.trim()) {
       validationErrors.hotelname = "Enter the name of the hotel";
     }
 
-    if (hotelWebsite.trim() === "") {
+    if (!hotelWebsite.trim()) {
       validationErrors.hotelwebsite = "Enter your website";
-    } else if (
-      !/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/.test(
-        hotelWebsite.trim().replace(/\s+/g, "")
-      )
-    ) {
+    } else if (!webRegex.test(hotelWebsite.trim().replace(/\s+/g, ""))) {
       validationErrors.hotelwebsite = "Invalid Website";
     }
 
-    if (hotelNumber.trim() === "") {
+    if (!hotelNumber.trim()) {
       validationErrors.hotelnumber = "Please enter the hotel's number";
     } else if (!/^[0-9]*$/.test(hotelNumber.trim().replace(/\s+/g, ""))) {
       validationErrors.hotelnumber = "Only numbers are valid";
@@ -70,11 +67,11 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
       validationErrors.hotelnumber = "Enter a number long enough to be valid";
     }
 
-    if (hotelEmail.trim() === "") {
+    if (!hotelEmail.trim()) {
       validationErrors.hotelemail = "Please enter the hotel's email";
     }
 
-    if (hotelDescription.trim() === "") {
+    if (!hotelDescription.trim()) {
       validationErrors.hoteldescription = "Enter your hotel's description";
     } else if (hotelDescription.replace(/\s+/g, "").length > 100) {
       validationErrors.hoteldescription =

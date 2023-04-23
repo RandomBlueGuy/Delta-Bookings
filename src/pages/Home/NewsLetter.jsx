@@ -83,7 +83,7 @@ function NewsLetter() {
         />
       </section>
 
-      <form action='' className='subscribe-form'>
+      <div action='' className='subscribe-form'>
         <section className='sub-call-txt'>
           <div className='call-txt-title'>
             <div className='our-news'>
@@ -93,7 +93,7 @@ function NewsLetter() {
           </div>
           <p className='call-txt-title-paragraph'>
             Subscribe and receive our newsletters to follow the new Promise
-            about our fresh and fantastic products
+            about our fresh and fantastic booking offers
           </p>
         </section>
         <form className='form-input'>
@@ -111,7 +111,7 @@ function NewsLetter() {
             <span className='error'>{Errors.emailerror}</span>
           )}
         </form>
-      </form>
+      </div>
     </main>
   );
 }

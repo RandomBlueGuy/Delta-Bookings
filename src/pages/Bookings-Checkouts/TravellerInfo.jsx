@@ -12,6 +12,7 @@ export default function TravellerInfo() {
     coupon: "",
   });
   const [errors, setErrors] = useState({});
+  const numberRegex = /^[a-zA-Z]+$/;
 
   const { firstname, lastname, inputEmail, contactInfo, request, coupon } =
     info;
@@ -27,34 +28,34 @@ export default function TravellerInfo() {
   const handleInfo = (event) => {
     event.preventDefault();
     const validationErrors = {};
-    if (firstname.trim() === "") {
+    if (!firstname.trim()) {
       validationErrors.firstName = "Please enter your first name";
-    } else if (!/^[a-zA-Z]+$/.test(firstname)) {
+    } else if (!numberRegex.test(firstname)) {
       validationErrors.firstName = "First name must contain only letters";
     } else if (firstname.trim().length < 2) {
       validationErrors.firstName =
         "First name must be at least 2 characters long";
     }
 
-    if (lastname.trim() === "") {
+    if (!lastname.trim()) {
       validationErrors.lastName = "Please enter your second name";
-    } else if (!/^[a-zA-Z]+$/.test(lastname)) {
+    } else if (!numberRegex.test(lastname)) {
       validationErrors.lastName = "Last name must contain only letters";
     } else if (firstname.trim().length < 2) {
       validationErrors.lastName =
         "Last name must be at least 2 characters long";
     }
 
-    if (inputEmail.trim() === "") {
+    if (!inputEmail.trim()) {
       validationErrors.email = "Please enter your email";
     }
 
-    if (contactInfo === "") {
+    if (!contactInfo) {
       validationErrors.number = "Please enter your phone number";
     } else if (contactInfo.trim().replace(/\s+/g, "").length !== 10) {
       validationErrors.number =
         "Number cannot be longer  or shorter than 10 digits";
-    } else if (!/^[0-9]*$/.test(contactInfo.trim().replace(/\s+/g, ""))) {
+    } else if (!numberRegex.test(contactInfo.trim().replace(/\s+/g, ""))) {
       validationErrors.number = "Only numeric characters are accepted";
     }
 
