@@ -127,7 +127,7 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
         )}
       </div>
 
-      <div className='line_Ctn'>
+      <div className='line__Ctn'>
         <div className='HotelCreator__form--line'>
           <label className='HotelCreator__label' htmlFor='hotelState'>
             State:

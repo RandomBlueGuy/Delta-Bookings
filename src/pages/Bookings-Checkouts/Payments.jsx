@@ -6,6 +6,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import axios from "axios";
+import { loadStripe } from "@stripe/stripe-js";
 
 export default function Payments() {
   const [expanded, setExpanded] = useState("panel1");
@@ -18,6 +19,7 @@ export default function Payments() {
   });
   const [errors, setErrors] = useState({});
   const { cardname, cardnumber, cardmonth, cardyear, cardccv } = clientInfo;
+  const stripePromise = loadStripe("pk_test_Dt4ZBItXSZT1EzmOd8yCxonL");
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -63,7 +65,7 @@ export default function Payments() {
     });
   };
 
-  const handleInfo = (event) => {
+  const handleInfo = async (event) => {
     event.preventDefault();
     const validationErrors = {};
     if (!cardname.trim()) {
@@ -107,25 +109,39 @@ export default function Payments() {
     setErrors(validationErrors);
 
     if (!Object.keys(validationErrors).length) {
-      axios
-        .post("https://jsonplaceholder.typicode.com/posts", {
-          cardname,
-          cardnumber,
-          cardmonth,
-          cardyear,
-          cardccv,
-        })
-        .then((response) => console.log(response.data))
-        .catch((error) => console.error(error));
+      const stripe = await stripePromise;
 
-      setClientInfo({
-        cardname: "",
-        cardnumber: "",
-        cardmonth: "",
-        cardyear: "",
-        cardccv: "",
+      const response = await fetch("/api/payment-intent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: 100, // replace with the desired amount in cents
+        }),
       });
-      setErrors({});
+
+      const { client_secret } = await response.json();
+
+      const result = await stripe.confirmCardPayment(client_secret, {
+        payment_method: {
+          card: {
+            number: cardnumber,
+            exp_month: cardmonth,
+            exp_year: cardyear,
+            cvc: cardccv,
+          },
+          billing_details: {
+            name: cardname,
+          },
+        },
+      });
+
+      if (result.error) {
+        // Handle errors
+      } else {
+        // Handle successful payment
+      }
     }
   };
 

@@ -19,7 +19,7 @@ import CheckoutSuccessPage from "./pages/Bookings-Checkouts/CheckoutSuccessPage"
 import CheckoutFailurePage from "./pages/Bookings-Checkouts/CheckoutFailurePage";
 import Login from "./pages/Login/Login";
 import AdminDashBoardPage from "./pages/AdminDashboard/AdminDashboardPage";
-import { useCookies } from "react-cookie";
+import { CookiesProvider } from "react-cookie";
 import { useJwt } from "react-jwt";
 import PrivateRoutes from "./Utils/PrivateRoutes";
 import LoadingComp from "./pages/UniversalComponents/LoadingComp";
@@ -64,56 +64,56 @@ function App() {
 
   return (
     <React.Fragment>
-      <UpButton />
-      <NavBar />
+      <CookiesProvider>
+        <UpButton />
+        <NavBar />
 
-      {/* <LoadingComp /> */}
-      {/* {!showWarning && (
+        {/* <LoadingComp /> */}
+        {/* {!showWarning && (
         <WarningMessage
           warningTitle={warningTitle}
           warningMessage={warningMessage}
           setShowWarning={setShowWarning}
         />
       )} */}
-      
-      <Routes>
-        <Route exact path="/" element={<Navigate to="/home" />} />
-        <Route exact path="/home" element={<Homepage />} />
-        <Route exact path="/hotel-list/:search" element={<HotelList />} />
-        <Route exact path="/signup" element={<Signuppage />} />
 
-        <Route exact path="/login" element={<Login />} />
-        <Route
-          exact
-          path="/*"
-          element={<Navigate to="/404-page-not-found" />}
-        />
-        <Route exact path="/404-page-not-found" element={<Page404 />} />
-        <Route exact path="/about-us" element={<AboutUspage />} />
-        <Route exact path="/hotel-single/:htlid" element={<Hotelsingle />} />
-        <Route element={<PrivateRoutes />}>
-          <Route exact path="/dashboard" element={<UserDashBoard />} />
+        <Routes>
+          <Route exact path='/' element={<Navigate to='/home' />} />
+          <Route exact path='/home' element={<Homepage />} />
+          <Route exact path='/hotel-list/:search' element={<HotelList />} />
+          <Route exact path='/signup' element={<Signuppage />} />
+
+          <Route exact path='/login' element={<Login />} />
           <Route
             exact
-            path="/admin-dashboard"
+            path='/*'
+            element={<Navigate to='/404-page-not-found' />}
+          />
+          <Route exact path='/404-page-not-found' element={<Page404 />} />
+          <Route exact path='/about-us' element={<AboutUspage />} />
+          <Route exact path='/hotel-single/:htlid' element={<Hotelsingle />} />
+          <Route exact path='/dashboard' element={<UserDashBoard />} />
+          <Route
+            exact
+            path='/admin-dashboard'
             element={<AdminDashBoardPage />}
           />
           <Route
             exact
-            path="/checkout-failure"
+            path='/checkout-failure'
             element={<CheckoutFailurePage />}
           />
           <Route
             exact
-            path="/checkout-success"
+            path='/checkout-success'
             element={<CheckoutSuccessPage />}
           />
-          <Route exact path="/bookings" element={<Bookingpage />} />
-          <Route exact path="/checkout" element={<CheckoutPage />} />
-        </Route>
-      </Routes>
-      {/* </div> */}
-      <Footer />
+          <Route exact path='/bookings' element={<Bookingpage />} />
+          <Route exact path='/checkout' element={<CheckoutPage />} />
+        </Routes>
+        {/* </div> */}
+        <Footer />
+      </CookiesProvider>
     </React.Fragment>
   );
 }
