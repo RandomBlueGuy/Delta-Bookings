@@ -139,8 +139,6 @@ export default function UserDashboard() {
   const handlePic = (e) => {
     readFile(e.target.files[0]);
     setPicture(e.target.files);
-    console.log(picture);
-    console.log(image);
   };
 
   const editPicture = async () => {

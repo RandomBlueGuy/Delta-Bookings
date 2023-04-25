@@ -92,6 +92,8 @@ function App() {
           <Route exact path='/404-page-not-found' element={<Page404 />} />
           <Route exact path='/about-us' element={<AboutUspage />} />
           <Route exact path='/hotel-single/:htlid' element={<Hotelsingle />} />
+
+          {/* <Route element={<PrivateRoutes />}> */}
           <Route exact path='/dashboard' element={<UserDashBoard />} />
           <Route
             exact
@@ -110,8 +112,9 @@ function App() {
           />
           <Route exact path='/bookings' element={<Bookingpage />} />
           <Route exact path='/checkout' element={<CheckoutPage />} />
+          {/* </Route> */}
         </Routes>
-        {/* </div> */}
+
         <Footer />
       </CookiesProvider>
     </React.Fragment>
