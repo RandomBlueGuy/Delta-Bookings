@@ -13,9 +13,9 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   const [showWarning, setShowWarning] = useState(false);
   const [warningResult, setWarningResult] = useState();
   const navigate = useNavigate();
-
-  console.log("searchParams", searchParams);
-  console.log("SelectedROOM", selectedRoom);
+  const minDate = new Date().toISOString().split("T")[0];
+  // console.log("searchParams", searchParams);
+  // console.log("SelectedROOM", selectedRoom);
 
   useEffect(() => {
     if (guests && dateIn && dateOut && Object.keys(selectedRoom).length > 0) {
@@ -81,7 +81,7 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   }
    */
 
-  const minDate = new Date().toISOString().split("T")[0];
+  
 
   return (
     <section className='check__card'>
