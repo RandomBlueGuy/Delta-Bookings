@@ -20,38 +20,6 @@ export default function Payments() {
     setExpanded(newExpanded ? panel : false);
   };
 
-  const handler = window.ePayco.checkout.configure({
-    key: "84793745e1cb8ebb40ff304f2853aa4a",
-    test: true,
-  });
-
-  const epaycoPayment = () => {
-    handler.open({
-      name: "Hotel Testing in mitte",
-      description: "deluxe room",
-      invoice: "11",
-      currency: "usd",
-      amount: 20,
-      tax_base: "0",
-      tax: "0",
-      country: "CO",
-      lang: "en",
-      external: "false",
-      extra1: "extra1",
-      extra2: "extra2",
-      extra3: "extra3",
-      confirmation: "http://secure2.payco.co/prueba_curl.php",
-      response: "http://secure2.payco.co/prueba_curl.php",
-      name_billing: "Andres Perez",
-      address_billing: "Carrera 19 numero 14 91",
-      type_doc_billing: "cc",
-      mobilephone_billing: "3050000000",
-      number_doc_billing: "100000000",
-
-      methodsDisable: ["CASH"],
-    });
-  };
-
   return (
     <div className='container-2'>
       <section className='travelInfo-container'>
@@ -82,37 +50,6 @@ export default function Payments() {
               <Elements stripe={stripePromise}>
                 <StripeButton />
               </Elements>
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel2"}
-          onChange={handleChange("panel2")}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls='panel2d-content'
-            id='panel2d-header'
-          >
-            <Typography>
-              <span
-                style={{
-                  color: expanded === "panel2" ? "var(--red-style)" : "black",
-                  fontSize: "120%",
-                }}
-              >
-                ◉
-              </span>{" "}
-              Epayco
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              <div class='accordion-item'>
-                <button onClick={epaycoPayment} className='btn'>
-                  SUBMIT PAYMENT
-                </button>
-              </div>
             </Typography>
           </AccordionDetails>
         </Accordion>

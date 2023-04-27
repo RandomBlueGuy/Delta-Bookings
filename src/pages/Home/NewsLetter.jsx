@@ -49,7 +49,7 @@ function NewsLetter() {
     if (Object.keys(validationErrors).length === 0) {
       const res = await axios
         .post("http://localhost:8080/api/emailsubscription", {
-          email: inputEmail,
+          Email: inputEmail,
         })
         .then((response) => console.log(response.data))
         .catch((error) => console.log(error.message));

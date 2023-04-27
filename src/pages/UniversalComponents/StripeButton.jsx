@@ -15,7 +15,6 @@ export default function StripeButton() {
     });
 
     if (error) {
-      console.log("Ups! ocurrió un error");
       return;
     }
 
@@ -24,7 +23,6 @@ export default function StripeButton() {
       amount: 100,
     });
 
-    //console.log('Response Back:', response);
     elements.getElement(CardElement).clear();
   };
 

@@ -40,6 +40,8 @@ function SearchBar() {
     });
   };
 
+  const minDate = new Date().toISOString().split("T")[0];
+
   return (
     <form className='SearchBar-ctn' action=''>
       <div className='form-box-ctn'>
@@ -58,6 +60,7 @@ function SearchBar() {
         <input
           name='datein'
           type='date'
+          min={minDate}
           placeholder='Fecha del Check-in'
           onChange={(event) => handleChange(event)}
           value={datein}
@@ -69,6 +72,7 @@ function SearchBar() {
         <input
           name='dateout'
           type='date'
+          min={minDate}
           placeholder='Fecha de Check-out'
           onChange={(event) => handleChange(event)}
           value={dateout}
