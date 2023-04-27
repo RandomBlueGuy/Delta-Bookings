@@ -1,11 +1,11 @@
 import "./RoomCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCheck,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
-function RoomCard({ RoomCardData }) {
-  // const HotelData = useContext(HotelSingleContext);
+function RoomCard({ RoomCardData, roomChanger }) {
+  const amenitiesArr = RoomCardData.Amenities.split("-/-");
+  const inclusionsArr = RoomCardData.Inclusions.split("-/-");
+
   return (
     <main className="RoomCard-ctn">
       <div className="RoomCard-title">
@@ -18,17 +18,15 @@ function RoomCard({ RoomCardData }) {
         <div className="RoomCard-table-amenities">
           <ul>
             <h4>Amenities</h4>
-            {RoomCardData.Amenities.map((amenities) => (
-              <li>
-                {amenities}
-              </li>
+            {amenitiesArr.map((amenities) => (
+              <li>{amenities}</li>
             ))}
           </ul>
         </div>
         <div className="RoomCard-table-inclusion">
           <ul>
             <h4>Inclusions</h4>
-            {RoomCardData.Inclusions.map((inclusion) => (
+            {inclusionsArr.map((inclusion) => (
               <li>
                 <FontAwesomeIcon icon={faCheck} />
                 {inclusion}
@@ -37,7 +35,9 @@ function RoomCard({ RoomCardData }) {
           </ul>
         </div>
         <div className="RoomCard-table-price">
-          <p className="RC-discount">${(RoomCardData?.OriginalPricePerNight).toFixed(0)}</p>
+          <p className="RC-discount">
+            ${(RoomCardData?.OriginalPricePerNight).toFixed(0)}
+          </p>
           <p className="RC-new-pri">
             $
             {(
@@ -47,7 +47,14 @@ function RoomCard({ RoomCardData }) {
             ).toFixed(0)}
           </p>
           <p>per night</p>
-          <button>Book Now</button>
+          <button
+            onClick={() => {
+              roomChanger(RoomCardData);
+              console.log("PRESS")
+            }}
+          >
+            Book Now
+          </button>
         </div>
       </section>
     </main>

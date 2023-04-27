@@ -4,17 +4,18 @@ import "./HotelSingleGallery.css";
 function HotelSingleGallery({ currentHotel }) {
 
 	const [imgActual, setImgActual] = useState(0);
+  const imgArr = currentHotel.Gallery.split("-//-");
 
 	function nextImg(direction){
 		if (direction === "right"){
 			setImgActual(imgActual + 1);
-			if(imgActual >= currentHotel.Gallery.length -1){
+			if(imgActual >= imgArr.length -1){
 				setImgActual(0);
 			}
 		} else {
 			setImgActual(imgActual - 1);
 			if(imgActual <= 0){
-				setImgActual(currentHotel.Gallery.length - 1);
+				setImgActual(imgArr.length - 1);
 			}
 		}
 	}
@@ -22,7 +23,7 @@ function HotelSingleGallery({ currentHotel }) {
   return (
     <main className="HotelSingleGallery-ctn">
       <section className="gallery-slideshow">
-        <img src={`${currentHotel?.Gallery[imgActual]}`} alt="" />
+        <img src={`${imgArr[imgActual]}`} alt="" />
         <button className="slider-left" onClick={() => {
 			 nextImg("left")
 		  }

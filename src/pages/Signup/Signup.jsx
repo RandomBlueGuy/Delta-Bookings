@@ -4,9 +4,9 @@ import "./Signup.css";
 import fbIcon from "../../assets/Icons/facebookSI.svg";
 import googleIcon from "../../assets/Icons/googleSI.svg";
 import { useNavigate } from "react-router-dom";
-//import axios from "axios";
 
 export default function Signup() {
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const navigate = useNavigate();
   const [data, setData] = useState({
     username: "",
@@ -17,7 +17,6 @@ export default function Signup() {
   const { username, email, password } = data;
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -49,8 +48,9 @@ export default function Signup() {
     }
     setErrors(validationErrors);
     const createUserDB = async () => {
+      console.log(DB_URL)
       const res = await axios
-        .post("http://localhost:8080/auth/local/signup", {
+        .post(`${DB_URL}/auth/local/signup`, {
           fullName: username,
           email,
           password,

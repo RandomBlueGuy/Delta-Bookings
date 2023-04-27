@@ -4,7 +4,7 @@
 	align-items: center;
 	justify-content: right;
 	background-color: white;
-	width: 100%;
+	width: 25vw;
 	gap: 1rem;
 	padding-bottom: 1rem;
 	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
@@ -21,6 +21,7 @@
 
 .check__card-info {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-end;
 	width: 90%;
@@ -93,4 +94,25 @@
 	width: 100%;
 	
 	box-sizing: border-box;
+}
+
+.check__card--line{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.BOOKING_BTN{
+	margin-top: 2rem;
+	padding: 0.75rem 1rem;
+}
+
+.BOOKING_BTN:disabled{
+	background-color: gray;
+	color: white;
+}
+
+.guest__select{
+	width: 100%;
 }

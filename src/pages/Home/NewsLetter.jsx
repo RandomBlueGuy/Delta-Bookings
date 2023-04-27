@@ -11,6 +11,7 @@ function NewsLetter() {
   const r2Date = new Date(review2.Date);
   const [inputEmail, setInputEmail] = useState("");
   const [Errors, setErrors] = useState({});
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
     fetch("/DB/HotelDataBase.json")
@@ -48,12 +49,12 @@ function NewsLetter() {
 
     if (Object.keys(validationErrors).length === 0) {
       const res = await axios
-        .post("http://localhost:8080/api/emailsubscription", {
+        .post(`${DB_URL}/api/emailsubscription`, {
           Email: inputEmail,
         })
         .then((response) => console.log(response.data))
         .catch((error) => console.log(error.message));
-      setInputEmail("");
+      // setInputEmail("");
     }
   };
 

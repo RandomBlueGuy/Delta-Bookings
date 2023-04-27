@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RoomCard from "./RoomCard";
 import "./HotelInfoDisplay.css";
 import GoogleMap from "google-map-react";
 import Marker from "google-map-react";
 import StarRating from "../UniversalComponents/StarRating";
+import axios from "axios";
 
-function HotelInfoDisplay({ currentHotel = {} }) {
+function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
   const [selectedTab, setSelectedTab] = useState("ROOMS");
 
   function handleClick(selection) {
@@ -69,8 +70,8 @@ function HotelInfoDisplay({ currentHotel = {} }) {
           className="HotelInfoDisplay-rooms-display"
           style={{ display: selectedTab === "ROOMS" ? "flex" : "none" }}
         >
-          {currentHotel?.Rooms.map((room) => (
-            <RoomCard RoomCardData={room} />
+          {currentHotel?.Rooms.map((room, index) => (
+            <RoomCard key={index} RoomCardData={room} roomChanger={roomChanger}/>
           ))}
         </article>
 
@@ -180,21 +181,25 @@ function HotelInfoDisplay({ currentHotel = {} }) {
           style={{ display: selectedTab === "REVIEWS" ? "flex" : "none" }}
         >
           <h1>Hotel Reviews:</h1>
-          {currentHotel?.Reviews.map((review) => {
+          {reviews.map((review) => {
             return (
               <div className="reviewCard">
                 <div className="reviewCard__titleCtn">
                   <h1 className="reviewCard__title">
                     <span>By: </span>
-                    {review.User}
+                    {review.user}
                   </h1>
                   <div className="rating__ctn">
-                    <StarRating hotelRating={review.Rating} />
+                    <StarRating hotelRating={review.rating} />
                   </div>
-                  <h5 className="reviewCard__date">{review.Date}</h5>
+                  <h5 className="reviewCard__date">
+                    {review.date.slice(0, 10)}
+                  </h5>
                 </div>
 
-                <p className="reviewCard__review">{review.HotelReview}</p>
+                <p className="reviewCard__review">
+                  {review.hotelReview.slice(0, 180)}...
+                </p>
               </div>
             );
           })}
@@ -205,13 +210,17 @@ function HotelInfoDisplay({ currentHotel = {} }) {
           style={{ display: selectedTab === "POLICIES" ? "flex" : "none" }}
         >
           <h1 className="Room__title">Hotel Policies</h1>
-          {currentHotel?.Policies.map((policy) => {
-            return (
-              <div>
-                <li className="Room__list">{policy}</li>
-              </div>
-            );
-          })}
+          <p className="">
+            <strong>CHECK IN: </strong> Until{" "}
+            {Math.floor(Math.random() * 4) + 8}:00 AM
+          </p>
+          <p className="">
+            <strong>CHECK IN: </strong> Until{" "}
+            {Math.floor(Math.random() * 4) + 16}:00 PM
+          </p>
+          <h2 style={{opacity: "0"}}>___</h2>
+          <h2 className="Room__title">Other considerations</h2>
+          <p className="">Pellentesque consectetur sem vitae eleifend efficitur. Vivamus a tristique nulla, faucibus volutpat libero. Phasellus interdum nisi nisi, sit amet lobortis ex vulputate ut. Morbi eget justo pulvinar, faucibus arcu ut, viverra justo. Maecenas vestibulum luctus ante quis hendrerit. Ut at pulvinar est, a venenatis odio. Proin aliquam ante non ante malesuada pellentesque. Sed ac libero bibendum, accumsan dui in, feugiat risus. Praesent rutrum quam id libero ultrices, congue vehicula dolor egestas. Suspendisse eu leo nec turpis rutrum fringilla. Mauris pretium, nibh id dignissim sollicitudin, ex erat dignissim mi, in fringilla magna orci ac felis. Ut ex elit, posuere at enim eget, commodo elementum tortor.</p>
         </article>
       </section>
     </main>

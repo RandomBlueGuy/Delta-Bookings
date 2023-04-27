@@ -5,7 +5,7 @@ import shareIcon from "../../assets/Icons/share.svg";
 import saveIcon from "../../assets/Icons/heartEmpty.svg";
 
 function HotelSingleCardHeader({currentHotel}) {
-
+  const Tags = currentHotel.Tags.split("-/-")
   return (
     <main className="HotelSingleCardHeader-ctn">
       <section className="HotelSingleCardHeader-general-info">
@@ -28,7 +28,7 @@ function HotelSingleCardHeader({currentHotel}) {
             {currentHotel?.loc_City} , {currentHotel?.loc_Country}
           </h3>
           <div className="HotelSingleCardHeader-general-buttons">
-            {currentHotel.Tags.map((tag) => (
+            {Tags.map((tag) => (
               <button>{tag}</button>
             ))}
           </div>
@@ -38,7 +38,7 @@ function HotelSingleCardHeader({currentHotel}) {
       <section className="HotelSingleCardHeader-general-price">
         <h1>
           $ {(currentHotel?.Rooms[0]?.OriginalPricePerNight).toFixed(0)}
-          <span>/ Per Nigth</span>
+          <span>/ Per Night</span>
         </h1>
         <button>Book This Now</button>
       </section>

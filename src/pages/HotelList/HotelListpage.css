@@ -28,7 +28,7 @@
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
@@ -58,9 +58,7 @@
   gap: 1rem;
   margin-left: 1rem;
 	align-items: center;
-
   padding: 1rem 0;
-
 }
 
 .filter-ctn-btns button {
@@ -99,8 +97,8 @@
 }
 
 .filter__btns{
-
 	display: flex;
+  gap: 1rem;
 }
 
 @media (max-width: 720px) {

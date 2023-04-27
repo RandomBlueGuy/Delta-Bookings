@@ -1,6 +1,5 @@
 [
   {
-    "HotelId": 1,
     "HotelName": "Nitzsche - Ryan Hotel",
     "Website": "https://dexter.com",
     "loc_Lat": "53.254883412335133",
@@ -8,7 +7,7 @@
     "loc_Place": "82808 Melyssa Spur",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front11.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel7.jpeg",
@@ -122,7 +121,7 @@
     "loc_Place": "551 Myah Trail",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front12.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel8.jpeg",
@@ -236,7 +235,7 @@
     "loc_Place": "1925 Bernard Pine",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front11.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel11.jpeg",
@@ -350,7 +349,7 @@
     "loc_Place": "072 Tamara Mission",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front3.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel1.jpeg",
@@ -464,7 +463,7 @@
     "loc_Place": "73982 Considine Valleys",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front1.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel2.jpeg",
@@ -578,7 +577,7 @@
     "loc_Place": "16458 Will Shores",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front7.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel6.jpeg",
@@ -697,7 +696,7 @@
     "loc_Place": "3603 Cassidy Divide",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front6.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel3.jpeg",
@@ -811,7 +810,7 @@
     "loc_Place": "53804 Hodkiewicz Skyway",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front6.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel2.jpeg",
@@ -925,7 +924,7 @@
     "loc_Place": "792 Brody Walks",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front8.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel3.jpeg",
@@ -1039,7 +1038,7 @@
     "loc_Place": "7856 Joelle Pass",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front8.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel8.jpeg",
@@ -1153,7 +1152,7 @@
     "loc_Place": "4359 Hipolito Village",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front4.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel2.jpeg",
@@ -1267,7 +1266,7 @@
     "loc_Place": "85714 Okuneva Road",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front11.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel7.jpeg",
@@ -1381,7 +1380,7 @@
     "loc_Place": "502 Elyse Extension",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front2.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel9.jpeg",
@@ -1495,7 +1494,7 @@
     "loc_Place": "1193 Olson Mount",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front4.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel6.jpeg",
@@ -1609,7 +1608,7 @@
     "loc_Place": "7988 O'Kon Loaf",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front9.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel3.jpeg",
@@ -1721,7 +1720,7 @@
     "loc_Place": "5167 Kutch Ways",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front4.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel10.jpeg",
@@ -1835,7 +1834,7 @@
     "loc_Place": "804 Mohr Crossing",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front10.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel8.jpeg",
@@ -1949,7 +1948,7 @@
     "loc_Place": "3248 Thiel Crossing",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front7.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel12.jpeg",
@@ -2063,7 +2062,7 @@
     "loc_Place": "78274 Jayme Crossing",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front2.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel8.jpeg",
@@ -2177,7 +2176,7 @@
     "loc_Place": "6955 Deckow Grove",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front9.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel13.jpeg",
@@ -2291,7 +2290,7 @@
     "loc_Place": "523 King Mills",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front8.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel8.jpeg",
@@ -2405,7 +2404,7 @@
     "loc_Place": "2407 Corwin Walks",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front2.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel7.jpeg",
@@ -2519,7 +2518,7 @@
     "loc_Place": "7119 Mayer Mills",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front4.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel9.jpeg",
@@ -2633,7 +2632,7 @@
     "loc_Place": "710 Hermann Coves",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front8.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel11.jpeg",
@@ -2747,7 +2746,7 @@
     "loc_Place": "21686 Adams Ford",
     "loc_City": "Barcelona",
     "loc_State": "Cataluña",
-    "loc_Country": "España",
+    "loc_Country": "Spain",
     "FrontImg": "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Fronts/front8.jpeg",
     "Gallery": [
       "https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Hotels/hotel9.jpeg",

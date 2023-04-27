@@ -38,7 +38,6 @@ function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
             },
           }
         );
-        console.log(response.data);
         setRender(true);
       } catch (error) {
         console.log(error);

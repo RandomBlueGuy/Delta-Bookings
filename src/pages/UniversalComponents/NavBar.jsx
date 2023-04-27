@@ -25,8 +25,8 @@ function NavBar() {
   // ];
 
   useEffect(() => {
-    console.log("Cookie token changed:", cookies.cookieToken);
-    console.log("cookies.cookieToken", cookies.cookieToken)
+    // console.log("Cookie token changed:", cookies.cookieToken);
+    // console.log("cookies.cookieToken", cookies.cookieToken)
   }, [cookies.cookieToken]);
 
   const handleLogout = () => {
@@ -116,7 +116,7 @@ function NavBar() {
               <Link to="/home">
                 <h2 style={{ color: visibility ? "black" : "white" }}>Home</h2>
               </Link>
-              <Link to="/hotel-list/search?city=All">
+              <Link to="/hotel-list/search?city=All&datein=&dateout=&guestnumber=1">
                 <h2 style={{ color: visibility ? "black" : "white" }}>
                   Hotels
                 </h2>

@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useCookies } from 'react-cookie';
 
-
 function Login() {
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [cookies, setCookie] = useCookies(['cookieToken']);
   const [toggleVisible, setToggleVisible] = useState(true);
   const uIcon = <FontAwesomeIcon icon={faUser} />;
@@ -49,14 +49,11 @@ function Login() {
     if (Object.keys(validationErrors).length === 0) {
       setLogUser(true);
       axios
-      .post("http://localhost:8080/auth/local/login", {
+      .post(`${DB_URL}/auth/local/login`, {
         email: email,
         password: password,
       }).then((response) => {
-        // console.log("token", response.data.token);
-        // cookies.set("token", response.data.token)
         setCookie('cookieToken', response.data.token, { path: '/' });
-        // cookies.set
       })
       .catch((error) => console.log(error.message));
     } else {
@@ -67,19 +64,6 @@ function Login() {
        navigate(`/dashboard`);
     }, 3000);
   };
-
-  useEffect(() => {
-    // axios
-    //   .post("http://localhost:8080/auth/local/login", {
-    //     email: email,
-    //     password: password,
-    //   }).then((response) => {
-    //     cookies.set("token", response.data.token);
-    //     // cookies.set
-    //   })
-    //   .catch((error) => console.log(error.message));
-    //   // navigate(`/home`);
-  }, [logUser]);
 
   const handleEmail = (event) => {
     event.preventDefault();
@@ -95,7 +79,7 @@ function Login() {
   return (
     <main className="Login-ctn">
       <section className="Login-card">
-        <form onSubmit={handleSubmit}>
+        <form>
           <h1>Login</h1>
           <label htmlFor="email" className="Login-normal-label" name="user">
             User:
@@ -138,7 +122,7 @@ function Login() {
               )}
             </div>
           </div>
-          <button className="Login-ctn-btn">Log In</button>
+          <button className="Login-ctn-btn" onClick={(event) => {handleSubmit(event)}}>Log In</button>
         </form>
         <button className="Login-special-btn" onClick={toggleSecretSection}>
           Forgot your password?

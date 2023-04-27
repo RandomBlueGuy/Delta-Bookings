@@ -14,7 +14,7 @@ function PrivateRoutes() {
     Authorization.decodedToken.role ? (
     <Outlet />
   ) : (
-    <LoadingComp />
+    <LoadingComp to= "/home" />
   );
 }
 

@@ -23,7 +23,8 @@ function HotelListpage() {
   const [filterLoading, setFilterLoading] = useState(false);
   const location = useLocation();
   const searchParams = Object.fromEntries(new URLSearchParams(location.search));
-
+  console.log("SEARCH PARAMS", searchParams)
+  
   useEffect(() => {
     dispatch(fetchData(searchParams));
   }, [location]);
@@ -195,8 +196,8 @@ function HotelListpage() {
               actualPage * itemsPerPage,
               actualPage * itemsPerPage + itemsPerPage
             )
-            .map((item, index) => {
-              return <HotelCard key={index} hotelInfoCard={item} />;
+            .map((hotel, index) => {
+              return <HotelCard key={index} hotelInfoCard={hotel} searchParams={searchParams}/>;
             })}
         </div>
         <HotelListPagination

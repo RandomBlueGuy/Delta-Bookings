@@ -8,7 +8,6 @@ function HotelListPagination({
   refProp,
 }) {
   const specialChar = ["<<", ">>"];
-  // const [optionArr , setOptionArr] = useState([]);
 
   const optionGenerator = () => {
     const optionArr = [];

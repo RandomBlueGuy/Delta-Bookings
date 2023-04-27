@@ -22,40 +22,18 @@ import AdminDashBoardPage from "./pages/AdminDashboard/AdminDashboardPage";
 import { useCookies } from "react-cookie";
 import { useJwt } from "react-jwt";
 import PrivateRoutes from "./Utils/PrivateRoutes";
-import LoadingComp from "./pages/UniversalComponents/LoadingComp";
 import WarningMessage from "./pages/UniversalComponents/WarningMessage";
 import FloatingMessage from "./pages/UniversalComponents/FloatingMessage";
-
-// const Private = ({ children }) => {
-//   const [cookies] = useCookies(["cookieToken"]);
-//   console.log("COOOOOOKKKIIIIEEEESSSS");
-//   const ticket = useJwt(cookies.cookieToken);
-//   return ticket ? children : <Navigate to="/" />;
-// };
 
 function App() {
   const { pathname } = useLocation();
   const [showWarning, setShowWarning] = useState(true);
   const warningTitle = "Warning Title";
   const warningMessage = "Warning Message";
-  // const cookies = new Cookies();
-  // const [cookies, useCookies] = useCookies(["cookieToken"]);
-
-  // console.log("COOKIES = ", cookies.get("token"));
-
-  //  console.log("cookies.cookieToken", cookies.getAll())
 
   const onCloseWarning = () => {
     setShowWarning(false);
   };
-
-  // useEffect(() => {
-  //   const cookieChanges = () => {
-  //     // console.log("cookies have changed", cookies.get("token"));
-  //   };
-  //   cookies.addChangeListener(cookieChanges);
-  // }, [cookies]);
-
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
@@ -66,22 +44,19 @@ function App() {
     <React.Fragment>
       <UpButton />
       <NavBar />
-
-      {/* <LoadingComp /> */}
       {/* {!showWarning && (
         <WarningMessage
           warningTitle={warningTitle}
           warningMessage={warningMessage}
           setShowWarning={setShowWarning}
         />
-      )} */}
-      
+      )} */}      
       <Routes>
         <Route exact path="/" element={<Navigate to="/home" />} />
         <Route exact path="/home" element={<Homepage />} />
         <Route exact path="/hotel-list/:search" element={<HotelList />} />
+        <Route exact path="/hotel-single/:htlnfo" element={<Hotelsingle />} />
         <Route exact path="/signup" element={<Signuppage />} />
-
         <Route exact path="/login" element={<Login />} />
         <Route
           exact
@@ -90,7 +65,6 @@ function App() {
         />
         <Route exact path="/404-page-not-found" element={<Page404 />} />
         <Route exact path="/about-us" element={<AboutUspage />} />
-        <Route exact path="/hotel-single/:htlid" element={<Hotelsingle />} />
         <Route element={<PrivateRoutes />}>
           <Route exact path="/dashboard" element={<UserDashBoard />} />
           <Route
@@ -108,11 +82,10 @@ function App() {
             path="/checkout-success"
             element={<CheckoutSuccessPage />}
           />
-          <Route exact path="/bookings" element={<Bookingpage />} />
+          <Route exact path="/bookings/:bkngcd" element={<Bookingpage />} />
           <Route exact path="/checkout" element={<CheckoutPage />} />
         </Route>
       </Routes>
-      {/* </div> */}
       <Footer />
     </React.Fragment>
   );

@@ -32,23 +32,28 @@ export const fetchDataSlice = createSlice({
 });
 
 export const fetchData = (searchParams = { city: "All" }) => {
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
+
   return async (dispatch) => {
     dispatch({ type: axiosLoading });
+
     try {
-      await axios.get("/DB/HotelDataBase.json").then((response) => {
-        if (parseInt(searchParams.hid)!== 0) {
-          const [currentHotel] = response.data.filter(
-            (hotel) => hotel.HotelId === parseInt(searchParams.hid)
+      await axios.get(`${DB_URL}/api/hotels`).then((response) => {
+        const { data } = response.data;
+        
+        if (searchParams.id) {
+          const [currentHotel] = data.filter(
+            (hotel) => hotel.id === searchParams.id
           );
           dispatch({ type: axiosSuccessHS, payload: currentHotel });
         }
 
         if (searchParams.city === "All") {
-          dispatch({ type: axiosSuccess, payload: response.data });
+          dispatch({ type: axiosSuccess, payload: data });
         } else {
           dispatch({
             type: axiosSuccess,
-            payload: response.data.filter((hotel) => {
+            payload: data.filter((hotel) => {
               return (
                 hotel.loc_City
                   .split(" ")

@@ -10,23 +10,25 @@ function SearchBar() {
     guestnumber: "",
   });
   const navigate = useNavigate();
-
+  // setInfo({ ...info, city:`${city.split(" ").join("_").toLowerCase()}`});
+  
   function handleSearchQuery() {
+    const newCity = city.split(" ").join("").toLowerCase();
+    setInfo({ ...info, city: newCity });
     const searchParams = {
-      ...(city &&
-        city.trim() !== "" && {
-          city: `${city.split(" ").join("_").toLocaleLowerCase()}`,
-        }),
+      ...(newCity && { city }),
       ...(datein && datein.trim() !== "" && { checkInDate: `${datein}` }),
       ...(dateout && dateout.trim() !== "" && { checkOutDate: `${dateout}` }),
       ...(guestnumber !== null &&
         guestnumber !== "" && { guests: guestnumber }),
     };
+
     const queryString = Object.entries(searchParams)
       .map(([key, value]) => {
         return `${key}=${value}`;
       })
       .join("&");
+
     navigate(`/hotel-list/search?${queryString}`);
   }
 
@@ -82,7 +84,7 @@ function SearchBar() {
           type='number'
           placeholder='Choose'
           min='1'
-          max='5'
+          max='4'
           onChange={(event) => handleChange(event)}
           value={guestnumber}
         />

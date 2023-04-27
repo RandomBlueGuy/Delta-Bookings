@@ -5,34 +5,54 @@ import StarRating from "../UniversalComponents/StarRating";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-function HotelCard({ hotelInfoCard }) {
-  const navigate= useNavigate();
+function HotelCard({ hotelInfoCard, searchParams }) {
+  const navigate = useNavigate();
   const finalPrice =
     hotelInfoCard.Rooms[0].OriginalPricePerNight -
     (
       hotelInfoCard.Rooms[0].OriginalPricePerNight *
       (hotelInfoCard.Rooms[0].Discount / 100)
     ).toFixed(0);
+
+  function handleNavigate() {
+    const { city, datein, dateout, guestnumber } = searchParams;
+    const newSearchParams = {
+      id: hotelInfoCard.id,
+      city,
+      datein,
+      dateout,
+      guestnumber,
+    };
+
+    const queryString = new URLSearchParams(newSearchParams).toString();
+    navigate(`/hotel-single/htlnfo?${queryString}`);
+  }
+
   return (
     <main className="hotel-card">
       <figure>
-        <Link 
-        to= {`/hotel-single/htlid?hid=${hotelInfoCard.HotelId}`}
+        {/* <Link 
+        to= {`/hotel-single/htlid?hid=${hotelInfoCard.id}`}
         state={{data: hotelInfoCard}}
-        >
-          <img
-            className="hotel-pic"
-            src={`${hotelInfoCard.FrontImg}`}
-            alt=""
-          />
-        </Link>
+        > */}
+        <img
+          className="hotel-pic"
+          src={`${hotelInfoCard.FrontImg}`}
+          alt=""
+          onClick={handleNavigate}
+        />
+        {/* </Link> */}
         <div className="heart-ctn">
           <img className="love-icon" src={heartEmptyIcon} alt="" />
         </div>
-        <div className="card__specialtag"
-        style={{display: hotelInfoCard.SpecialTags === "NoTag" ? "none" : "flex"}}>
+        <div
+          className="card__specialtag"
+          style={{
+            display: hotelInfoCard.SpecialTags === "NoTag" ? "none" : "flex",
+          }}
+        >
           {hotelInfoCard.SpecialTags}
         </div>
       </figure>
@@ -56,7 +76,7 @@ function HotelCard({ hotelInfoCard }) {
           <p>{hotelInfoCard.ReviewNumber} reviews</p>
         </div>
         <div className="price-tags">
-          <h4>${(hotelInfoCard.Rooms[0].OriginalPricePerNight).toFixed(0)}</h4>
+          <h4>${hotelInfoCard.Rooms[0].OriginalPricePerNight.toFixed(0)}</h4>
           <h3>${finalPrice.toFixed(0)}</h3>
           <p className="tags">{hotelInfoCard.Tags[0]}</p>
           <p className="tags">{hotelInfoCard.Tags[1]}</p>
