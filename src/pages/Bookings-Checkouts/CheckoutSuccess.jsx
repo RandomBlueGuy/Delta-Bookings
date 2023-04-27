@@ -11,16 +11,18 @@ export default function CheckoutSuccess() {
         alt=''
       />
       <div className='text-container'></div>
-      <h1>Payment Succesfull ! Get Ready For Conformtable Stay.</h1>
+      <h1>Payment Has Been Successful.</h1>
       <p className='confirmation-text'>
         Thank you for your payment. We have recieved your payment succesfully.
         Your transaction ID is: 'SHD4993034'. You will get an invoice mail soon!
       </p>
-      <button>Download Invoice</button>
+      <div className='button-wrapper'>
+        <button>Download Invoice</button>
 
-      <Link to='/'>
-        <button>Go Back Home</button>
-      </Link>
+        <Link to='/'>
+          <button>Go Back Home</button>
+        </Link>
+      </div>
     </div>
   );
 }

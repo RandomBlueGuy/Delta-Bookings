@@ -19,7 +19,7 @@ import CheckoutSuccessPage from "./pages/Bookings-Checkouts/CheckoutSuccessPage"
 import CheckoutFailurePage from "./pages/Bookings-Checkouts/CheckoutFailurePage";
 import Login from "./pages/Login/Login";
 import AdminDashBoardPage from "./pages/AdminDashboard/AdminDashboardPage";
-import { useCookies } from "react-cookie";
+import { CookiesProvider } from "react-cookie";
 import { useJwt } from "react-jwt";
 import PrivateRoutes from "./Utils/PrivateRoutes";
 import WarningMessage from "./pages/UniversalComponents/WarningMessage";
@@ -69,17 +69,17 @@ function App() {
           <Route exact path="/dashboard" element={<UserDashBoard />} />
           <Route
             exact
-            path="/admin-dashboard"
+            path='/admin-dashboard'
             element={<AdminDashBoardPage />}
           />
           <Route
             exact
-            path="/checkout-failure"
+            path='/checkout-failure'
             element={<CheckoutFailurePage />}
           />
           <Route
             exact
-            path="/checkout-success"
+            path='/checkout-success'
             element={<CheckoutSuccessPage />}
           />
           <Route exact path="/bookings/:bkngcd" element={<Bookingpage />} />

@@ -81,8 +81,10 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   }
    */
 
+  const minDate = new Date().toISOString().split("T")[0];
+
   return (
-    <section className="check__card">
+    <section className='check__card'>
       {showWarning && (
         <WarningMessage
           warningMessage={"Do you want to proceed with the current booking?"}
@@ -91,7 +93,7 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
           setWarningResult={setWarningResult}
         />
       )}
-      <div className="check__card-map">
+      <div className='check__card-map'>
         <GoogleMap
           center={{
             lat: Number(currentHotel.loc_Lat),
@@ -107,7 +109,7 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
             Per Nigth
           </p>
         </div>
-        <div className="check__card--line">
+        <div className='check__card--line'>
           <p className="rate-description">✔ Non Refundable</p>
           <h2 style={{ fontSize: "80%", textDecoration: "line-through" }}>
             $
