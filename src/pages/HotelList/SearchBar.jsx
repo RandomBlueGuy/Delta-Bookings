@@ -1,40 +1,19 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import { useNavigate } from "react-router-dom";
-
 function SearchBar() {
   const [info, setInfo] = useState({
     city: "",
     datein: new Date().toISOString().split("T")[0],
-    dateout: new Date() + 24 * 60 * 60 * 1000,
+    dateout: (new Date() + 24 * 60 * 60 * 1000),
     guestnumber: "",
   });
-
-  const today = new Date().toISOString().substr(0, 10); // get today's date in YYYY-MM-DD format
-  const tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
-    .toISOString()
-    .substr(0, 10); // get tomorrow's date in YYYY-MM-DD format
-
-  const [startDate, setStartDate] = useState(today);
-  const [endDate, setEndDate] = useState(tomorrow);
-
   const navigate = useNavigate();
   const minDate = new Date().toISOString().split("T")[0];
-<<<<<<< HEAD
   const minDateOut = new Date(new Date(info.datein).getTime() + 24 * 60 * 60 * 1000).toISOString().split("T")[0];
   //  console.log(`Min date in ${minDate} and min date out ${minDateOut}`)
   // console.log("datein", info.dateout)
   // setInfo({ ...info, city:`${city.split(" ").join("_").toLowerCase()}`});
-  
-=======
-  const minDateOut = new Date(
-    new Date(info.datein).getTime() + 24 * 60 * 60 * 1000
-  )
-    .toISOString()
-    .split("T")[0];
-  console.log(`Min date in ${minDate} and min date out ${minDateOut}`);
-
->>>>>>> 6355ba0d2ef755d5ad980127ae69d1e8751471c9
   function handleSearchQuery() {
     const newCity = city.split(" ").join("").toLowerCase();
     setInfo({ ...info, city: newCity });
@@ -45,18 +24,14 @@ function SearchBar() {
       ...(guestnumber !== null &&
         guestnumber !== "" && { guests: guestnumber }),
     };
-
     const queryString = Object.entries(searchParams)
       .map(([key, value]) => {
         return `${key}=${value}`;
       })
       .join("&");
-
     navigate(`/hotel-list/search?${queryString}`);
   }
-
   const { city, datein, dateout, guestnumber } = info;
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInfo({
@@ -64,7 +39,6 @@ function SearchBar() {
       [name]: value,
     });
   };
-
   return (
     <form className='SearchBar-ctn' action=''>
       <div className='form-box-ctn'>
@@ -77,31 +51,28 @@ function SearchBar() {
           value={city}
         />
       </div>
-
       <div className='form-box-ctn'>
-        <label htmlFor='startDate'>CHECK-IN</label>
+        <label htmlFor='datein'>CHECK-IN</label>
         <input
+          name='datein'
           type='date'
-          id='startDate'
-          name='startDate'
-          min={today}
-          value={startDate}
-          onChange={(e) => setStartDate(e.target.value)}
+          min={minDate}
+          placeholder='Fecha del Check-in'
+          onChange={(event) => handleChange(event)}
+          value={datein}
         />
       </div>
-
       <div className='form-box-ctn'>
-        <label htmlFor='endDate'>CHECK-OUT</label>
+        <label htmlFor='dateout'>CHECK-OUT</label>
         <input
+          name='dateout'
           type='date'
-          id='endDate'
-          name='endDate'
-          min={tomorrow}
-          value={endDate}
-          onChange={(e) => setEndDate(e.target.value)}
+          min={minDateOut}
+          placeholder='Fecha de Check-out'
+          onChange={(event) => handleChange(event)}
+          value={dateout}
         />
       </div>
-
       <div className='form-box-ctn'>
         <label htmlFor='guestnumber'>GUESTS</label>
         <input
@@ -114,7 +85,6 @@ function SearchBar() {
           value={guestnumber}
         />
       </div>
-
       <div className='form-box-ctn'>
         <button
           className='search-btn'
@@ -128,5 +98,4 @@ function SearchBar() {
     </form>
   );
 }
-
 export default SearchBar;

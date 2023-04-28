@@ -33,7 +33,7 @@ export const fetchDataSlice = createSlice({
 
 export const fetchData = (searchParams = { city: "All" }) => {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
-
+  
   return async (dispatch) => {
     dispatch({ type: axiosLoading });
 
@@ -47,7 +47,6 @@ export const fetchData = (searchParams = { city: "All" }) => {
           );
           dispatch({ type: axiosSuccessHS, payload: currentHotel });
         }
-
         if (searchParams.city === "All") {
           dispatch({ type: axiosSuccess, payload: data });
         } else {

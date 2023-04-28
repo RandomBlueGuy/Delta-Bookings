@@ -53,7 +53,7 @@ export default function TravellerInfo({ fillTravellerInfo }) {
 
     if (Object.keys(validationErrors).length === 0) {
       fillTravellerInfo(fullName, inputEmail, contactInfo, request, coupon)
-      // console.log("OSCAAAAAAAAAAARRRRRRRR",fullName, inputEmail, contactInfo, request, coupon);
+       console.log("OSCAAAAAAAAAAARRRRRRRR",fullName, inputEmail, contactInfo, request, coupon);
     }
   };
 

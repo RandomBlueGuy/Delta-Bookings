@@ -23,7 +23,8 @@ function HotelListpage() {
   const [filterLoading, setFilterLoading] = useState(false);
   const location = useLocation();
   const searchParams = Object.fromEntries(new URLSearchParams(location.search));
-  
+  // console.log(HotelsArray)
+
   useEffect(() => {
     dispatch(fetchData(searchParams));
   }, [location]);
