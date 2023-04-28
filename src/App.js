@@ -19,21 +19,21 @@ import CheckoutSuccessPage from "./pages/Bookings-Checkouts/CheckoutSuccessPage"
 import CheckoutFailurePage from "./pages/Bookings-Checkouts/CheckoutFailurePage";
 import Login from "./pages/Login/Login";
 import AdminDashBoardPage from "./pages/AdminDashboard/AdminDashboardPage";
-import { CookiesProvider } from "react-cookie";
 import { useJwt } from "react-jwt";
 import PrivateRoutes from "./Utils/PrivateRoutes";
-import WarningMessage from "./pages/UniversalComponents/WarningMessage";
-import FloatingMessage from "./pages/UniversalComponents/FloatingMessage";
+import { useCookies } from "react-cookie";
 
 function App() {
   const { pathname } = useLocation();
-  const [showWarning, setShowWarning] = useState(true);
-  const warningTitle = "Warning Title";
-  const warningMessage = "Warning Message";
+  const [cookies] = useCookies(["cookieToken"]);
+  const [auth, setAuth] = useState()
 
-  const onCloseWarning = () => {
-    setShowWarning(false);
-  };
+  useEffect(() => {
+    setAuth(() => cookies.cookieToken)
+  }, [cookies.cookieToken]);
+  
+  // console.log("is it auth:", auth);
+
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
@@ -44,13 +44,6 @@ function App() {
     <React.Fragment>
       <UpButton />
       <NavBar />
-      {/* {!showWarning && (
-        <WarningMessage
-          warningTitle={warningTitle}
-          warningMessage={warningMessage}
-          setShowWarning={setShowWarning}
-        />
-      )} */}      
       <Routes>
         <Route exact path="/" element={<Navigate to="/home" />} />
         <Route exact path="/home" element={<Homepage />} />
@@ -65,7 +58,7 @@ function App() {
         />
         <Route exact path="/404-page-not-found" element={<Page404 />} />
         <Route exact path="/about-us" element={<AboutUspage />} />
-        <Route element={<PrivateRoutes />}>
+        <Route element={<PrivateRoutes auth={auth} />}>
           <Route exact path="/dashboard" element={<UserDashBoard />} />
           <Route
             exact

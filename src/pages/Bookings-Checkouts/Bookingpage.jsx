@@ -15,8 +15,9 @@ function Bookingpage() {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const currentHotel = useSelector((state) => state.fetchData.hotelSingle);
   const [price, setPrice] = useState({});
+  const [TravellerInfoObj, setTravellerInfoObj] = useState({});
 
-  console.log("AAAAAAAAAAAAAAAAA", price);
+  // console.log("AAAAAAAAAAAAAAAAA", price);
 
   useEffect(() => {
     dispatch(fetchData(searchParams));
@@ -27,7 +28,6 @@ function Bookingpage() {
       const [currentRoom] = currentHotel.Rooms.filter((room) => {
         return room.id === searchParams.roomId;
       });
-      console.log("BEFORE PRICE", currentRoom.Discount);
 
       const nights =
         Math.floor(
@@ -48,34 +48,25 @@ function Bookingpage() {
         tax,
         finalPrice,
       });
-
-      // console.log("OSCAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRR", price.discount())
     }
   }, [currentHotel]);
 
-  // useEffect(() => {
-  //   setPrice({
-  //     pxn: currentRoom.OriginalPricePerNight,
-  //     discount: currentRoom.Discount,
-  //     tax: 19,
-  //     nights: () =>
-  //       Math.floor(
-  //         new Date(searchParams.checkOut).getTime() / 1000 / 3600 / 24
-  //       ) -
-  //       Math.floor(new Date(searchParams.checkIn).getTime() / 1000 / 3600 / 24),
-  //     finalPrice: function () {
-  //       const basePrice = this.nights() * this.pxn;
-  //       const priceWithDiscount = basePrice - basePrice * (this.discount / 100);
-  //       return priceWithDiscount * (this.tax / 100);
-  //     },
-  //   });
-  // }, [currentHotel, searchParams.roomId]);
-
-  // const finalPrice = (nights, pxn, discount, tax) => {
-  //   const basePrice = nights * pxn;
-  //   const priceWithDiscount = basePrice - basePrice * (discount / 100);
-  //   return priceWithDiscount * (tax / 100);
-  // };
+  function fillTravellerInfo(
+    fullName,
+    email,
+    phoneNumber,
+    specialRequest,
+    coupon
+  ) {
+    setTravellerInfoObj({
+      fullName,
+      email,
+      phoneNumber,
+      specialRequest,
+      coupon,
+    });
+    console.log(TravellerInfoObj);
+  }
 
   return (
     <div>
@@ -91,7 +82,7 @@ function Bookingpage() {
           />
         )}
         {proceed && <Payments />}
-        {!proceed && <TravellerInfo />}
+        {!proceed && <TravellerInfo fillTravellerInfo={fillTravellerInfo} />}
       </div>
     </div>
   );

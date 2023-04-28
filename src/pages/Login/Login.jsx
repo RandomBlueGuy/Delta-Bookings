@@ -4,15 +4,16 @@ import axios from "axios";
 import "./Login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { useCookies } from 'react-cookie';
+import { useCookies } from "react-cookie";
 
 function Login() {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
-  const [cookies, setCookie] = useCookies(['cookieToken']);
+  const [cookies, setCookie] = useCookies(["cookieToken"]);
   const [toggleVisible, setToggleVisible] = useState(true);
   const uIcon = <FontAwesomeIcon icon={faUser} />;
   const lIcon = <FontAwesomeIcon icon={faLock} />;
   const mIcon = <FontAwesomeIcon icon={faEnvelope} />;
+  const [next, setNext] =useState(false)
   const [errors, setErrors] = useState({});
   const [emailerr, setEmailerr] = useState({});
   const [logUser, setLogUser] = useState(false);
@@ -24,9 +25,11 @@ function Login() {
   const { emailRecovery, password, email } = data;
   const emailRegex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
   const navigate = useNavigate();
+
   function toggleSecretSection() {
     setToggleVisible(!toggleVisible);
   }
+
   const handleChange = async (event) => {
     const { name, value } = event.target;
     setData({
@@ -34,6 +37,11 @@ function Login() {
       [name]: value,
     });
   };
+
+  useEffect(() => {
+    if(next) {navigate("/dashboard"); setNext(false) }
+  }, [cookies.cookieToken]);
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,20 +57,21 @@ function Login() {
     if (Object.keys(validationErrors).length === 0) {
       setLogUser(true);
       axios
-      .post(`${DB_URL}/auth/local/login`, {
-        email: email,
-        password: password,
-      }).then((response) => {
-        setCookie('cookieToken', response.data.token, { path: '/' });
-      })
-      .catch((error) => console.log(error.message));
+        .post(`${DB_URL}/auth/local/login`, {
+          email: email,
+          password: password,
+        })
+        .then((response) => {
+          setCookie("cookieToken", response.data.token, { path: "/" });
+        })
+        .catch((error) => console.log(error.message));
     } else {
       console.log("HAY ERRORES", validationErrors);
     }
-
-    setInterval(() => {
-       navigate(`/dashboard`);
-    }, 3000);
+    setNext(true)
+    // setInterval(() => {
+    // navigate(`/dashboard`);
+    // }, 3000);
   };
 
   const handleEmail = (event) => {
@@ -122,7 +131,14 @@ function Login() {
               )}
             </div>
           </div>
-          <button className="Login-ctn-btn" onClick={(event) => {handleSubmit(event)}}>Log In</button>
+          <button
+            className="Login-ctn-btn"
+            onClick={(event) => {
+              handleSubmit(event);
+            }}
+          >
+            Log In
+          </button>
         </form>
         <button className="Login-special-btn" onClick={toggleSecretSection}>
           Forgot your password?

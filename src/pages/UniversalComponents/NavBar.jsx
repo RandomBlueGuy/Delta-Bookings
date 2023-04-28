@@ -6,7 +6,6 @@ import userIcon from "../../assets/Icons/user.svg";
 import menuIcon from "../../assets/Icons/menu.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Cookies from "universal-cookie/cjs/Cookies";
 import { useCookies } from "react-cookie";
 
 function NavBar() {
@@ -26,7 +25,6 @@ function NavBar() {
 
   useEffect(() => {
     // console.log("Cookie token changed:", cookies.cookieToken);
-    // console.log("cookies.cookieToken", cookies.cookieToken)
   }, [cookies.cookieToken]);
 
   const handleLogout = () => {
@@ -34,13 +32,6 @@ function NavBar() {
   };
 
   const invalidPathsArr = ["/404-page-not-found"];
-  // const cookies = new Cookies();
-
-  // cookies.addChangeListener(cookieChanges);
-
-  function cookieChanges() {
-    // console.log("cookies NavBar have changed", cookies.get("token"));
-  }
 
   useEffect(() => {
     invalidPathsArr

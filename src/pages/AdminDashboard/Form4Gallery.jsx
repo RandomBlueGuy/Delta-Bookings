@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [files, setFiles] = useState([]);
   const [errors, setErrors] = useState({});
   const [render, setRender] = useState(false);
@@ -30,7 +31,7 @@ function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
       }
       try {
         const response = axios.post(
-          "http://localhost:8080/test-formdata",
+          `${DB_URL}/test-formdata`,
           formData,
           {
             headers: {

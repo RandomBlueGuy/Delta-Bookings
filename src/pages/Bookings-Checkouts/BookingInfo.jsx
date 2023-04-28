@@ -35,21 +35,11 @@ export default function BookingModule({
             <strong>{searchParams.checkIn}</strong>
             <strong>{searchParams.checkOut}</strong>
           </div>
-{/* 
-          <div className="second-split-info timestaps" id="second">
-            <p>Check In Time</p>
-            <p>Check Out Time</p>
-          </div>
-
-          <div className="second-split-info">
-            <strong>{Math.floor(Math.random() * 4) + 8}:30</strong>
-            <strong>{Math.floor(Math.random() * 4) + 16}:30</strong>
-          </div> */}
         </section>
 
         <section className="third-container" id="third">
           <strong>
-            {searchParams.guestN} Guests, {price.RoomName}, {price.nights}  Nights
+            {searchParams.guestsN} Guests, {price.RoomName}, {price.nights}  Nights
           </strong>
           <p className="edit-option"></p>
         </section>

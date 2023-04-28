@@ -12,7 +12,7 @@ function SearchBar() {
   const navigate = useNavigate();
   const minDate = new Date().toISOString().split("T")[0];
   const minDateOut = new Date(new Date(info.datein).getTime() + 24 * 60 * 60 * 1000).toISOString().split("T")[0];
-   console.log(`Min date in ${minDate} and min date out ${minDateOut}`)
+  //  console.log(`Min date in ${minDate} and min date out ${minDateOut}`)
   // console.log("datein", info.dateout)
   // setInfo({ ...info, city:`${city.split(" ").join("_").toLowerCase()}`});
   

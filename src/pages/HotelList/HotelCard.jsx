@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 function HotelCard({ hotelInfoCard, searchParams }) {
   const navigate = useNavigate();
   const tagsArr = hotelInfoCard.Tags.split("-/-");
-  console.log(tagsArr)
+  
   const finalPrice =
     hotelInfoCard.Rooms[0].OriginalPricePerNight -
     (
