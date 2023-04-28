@@ -8,7 +8,7 @@ import TravellerInfo from "./TravellerInfo";
 import Payments from "./Payments";
 
 function Bookingpage() {
-  const proceed = true;
+  const proceed = false;
   const location = useLocation();
   const searchParams = Object.fromEntries(new URLSearchParams(location.search));
   const dispatch = useDispatch();
@@ -58,19 +58,21 @@ function Bookingpage() {
     specialRequest,
     coupon
   ) {
-    setTravellerInfoObj(()=> {return {
-      fullName,
-      email,
-      phoneNumber,
-      specialRequest,
-      coupon,
-    }});
+    setTravellerInfoObj(() => {
+      return {
+        fullName,
+        email,
+        phoneNumber,
+        specialRequest,
+        coupon,
+      };
+    });
   }
   console.log(TravellerInfoObj);
 
   return (
     <div>
-      <div className="booking-info">
+      <div className='booking-info'>
         {currentHotel && (
           <BookingInfo
             searchParams={searchParams}

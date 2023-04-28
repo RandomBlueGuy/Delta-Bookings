@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 
@@ -6,6 +6,7 @@ export default function StripeButton() {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const elements = useElements();
   const stripe = useStripe();
+  const [infoPay, setInfoPay] = useState({});
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,6 +26,10 @@ export default function StripeButton() {
     });
 
     elements.getElement(CardElement).clear();
+    console.log(response);
+    console.log(response.data);
+    console.log(response.data.payment.status);
+    console.log(response.data.payment.amount);
   };
 
   return (

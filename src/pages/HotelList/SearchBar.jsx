@@ -57,15 +57,9 @@ function SearchBar() {
       </div>
       <div className='form-box-ctn'>
         <label htmlFor='datein'>CHECK-IN</label>
-        <label htmlFor='datein'>CHECK-IN</label>
         <input
           name='datein'
-          name='datein'
           type='date'
-          min={minDate}
-          placeholder='Fecha del Check-in'
-          onChange={(event) => handleChange(event)}
-          value={datein}
           min={minDate}
           placeholder='Fecha del Check-in'
           onChange={(event) => handleChange(event)}
@@ -74,15 +68,9 @@ function SearchBar() {
       </div>
       <div className='form-box-ctn'>
         <label htmlFor='dateout'>CHECK-OUT</label>
-        <label htmlFor='dateout'>CHECK-OUT</label>
         <input
           name='dateout'
-          name='dateout'
           type='date'
-          min={minDateOut}
-          placeholder='Fecha de Check-out'
-          onChange={(event) => handleChange(event)}
-          value={dateout}
           min={minDateOut}
           placeholder='Fecha de Check-out'
           onChange={(event) => handleChange(event)}
