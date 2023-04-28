@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
+
   const [info, setInfo] = useState({
     hotelName: "",
     hotelWebsite: "",
@@ -92,7 +94,7 @@ function Form1BasicInfo({ setFormTab, formTab, scrollToTop }) {
       }
 
       const response = await axios.post(
-        "http://localhost:8080/test-formdata",
+        `${DB_URL}/test-formdata`,
         data,
         {
           headers: { "Content-Type": "multipart/form-data" },

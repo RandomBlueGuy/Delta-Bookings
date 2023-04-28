@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import { useNavigate } from "react-router-dom";
-
 function SearchBar() {
   const [info, setInfo] = useState({
     city: "",
@@ -16,10 +15,9 @@ function SearchBar() {
   )
     .toISOString()
     .split("T")[0];
-  console.log(`Min date in ${minDate} and min date out ${minDateOut}`);
+  //  console.log(`Min date in ${minDate} and min date out ${minDateOut}`)
   // console.log("datein", info.dateout)
   // setInfo({ ...info, city:`${city.split(" ").join("_").toLowerCase()}`});
-
   function handleSearchQuery() {
     const newCity = city.split(" ").join("").toLowerCase();
     setInfo({ ...info, city: newCity });
@@ -30,18 +28,14 @@ function SearchBar() {
       ...(guestnumber !== null &&
         guestnumber !== "" && { guests: guestnumber }),
     };
-
     const queryString = Object.entries(searchParams)
       .map(([key, value]) => {
         return `${key}=${value}`;
       })
       .join("&");
-
     navigate(`/hotel-list/search?${queryString}`);
   }
-
   const { city, datein, dateout, guestnumber } = info;
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInfo({
@@ -49,7 +43,6 @@ function SearchBar() {
       [name]: value,
     });
   };
-
   return (
     <form className='SearchBar-ctn' action=''>
       <div className='form-box-ctn'>
@@ -62,31 +55,40 @@ function SearchBar() {
           value={city}
         />
       </div>
-
       <div className='form-box-ctn'>
         <label htmlFor='datein'>CHECK-IN</label>
+        <label htmlFor='datein'>CHECK-IN</label>
         <input
+          name='datein'
           name='datein'
           type='date'
           min={minDate}
           placeholder='Fecha del Check-in'
           onChange={(event) => handleChange(event)}
           value={datein}
+          min={minDate}
+          placeholder='Fecha del Check-in'
+          onChange={(event) => handleChange(event)}
+          value={datein}
         />
       </div>
-
       <div className='form-box-ctn'>
         <label htmlFor='dateout'>CHECK-OUT</label>
+        <label htmlFor='dateout'>CHECK-OUT</label>
         <input
+          name='dateout'
           name='dateout'
           type='date'
           min={minDateOut}
           placeholder='Fecha de Check-out'
           onChange={(event) => handleChange(event)}
           value={dateout}
+          min={minDateOut}
+          placeholder='Fecha de Check-out'
+          onChange={(event) => handleChange(event)}
+          value={dateout}
         />
       </div>
-
       <div className='form-box-ctn'>
         <label htmlFor='guestnumber'>GUESTS</label>
         <input
@@ -99,7 +101,6 @@ function SearchBar() {
           value={guestnumber}
         />
       </div>
-
       <div className='form-box-ctn'>
         <button
           className='search-btn'
@@ -113,5 +114,4 @@ function SearchBar() {
     </form>
   );
 }
-
 export default SearchBar;

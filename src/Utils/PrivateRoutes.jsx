@@ -1,22 +1,10 @@
 import { Outlet } from "react-router-dom";
-import { useJwt } from "react-jwt";
-import { useCookies } from "react-cookie";
-import LoadingComp from "../pages/UniversalComponents/LoadingComp";
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
-function PrivateRoutes() {
-  const [cookies] = useCookies("cookieToken");
-  const location = useLocation();
-  let Authorization = useJwt(cookies.cookieToken);
+import Page404 from "../pages/404/Page404";
+import LoadingComp from '../pages/UniversalComponents/LoadingComp';
 
-  return Authorization &&
-    Authorization.decodedToken &&
-    Authorization.decodedToken.role ? (
-    <Outlet />
-  ) : (
-    <LoadingComp />
-  );
+function PrivateRoutes({ auth }) {
+  return auth ? <Outlet /> : <LoadingComp />;
 }
 
 export default PrivateRoutes;

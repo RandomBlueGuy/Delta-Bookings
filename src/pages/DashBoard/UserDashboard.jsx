@@ -11,6 +11,7 @@ import WarningMessage from "../UniversalComponents/WarningMessage";
 import FloatingMessage from "../UniversalComponents/FloatingMessage";
 
 export default function UserDashboard() {
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [editState1, setEditState1] = useState(false);
   const [profileEdit, setProfileEdit] = useState(false);
   const [selectedTab, setSelectedTab] = useState("Profile");
@@ -54,7 +55,7 @@ export default function UserDashboard() {
     if (decode && decode.decodedToken && decode.decodedToken.id) {
       const id = decode.decodedToken.id;
       axios
-        .get(`http://localhost:8080/api/users/${id}`)
+        .get(`${DB_URL}/api/users/${id}`)
         .then((response) => {
           setUserData({
             fullName: response.data.data.fullName,
@@ -89,7 +90,7 @@ export default function UserDashboard() {
       setEditState1(false);
       axios
         .put(
-          `http://localhost:8080/api/users/${decode.id}`,
+          `${DB_URL}/api/users/${decode.id}`,
           {
             fullName,
             gender,
@@ -148,7 +149,7 @@ export default function UserDashboard() {
       data.append(`file:${i}`, picture[i], picture[i].name);
     }
     axios.put(
-      `http://localhost:8080/api/users/${decode.id}`,
+      `${DB_URL}/api/users/${decode.id}`,
       {
         picture,
       },
@@ -160,7 +161,7 @@ export default function UserDashboard() {
     );
 
     const response = await axios.post(
-      "http://localhost:8080/test-formdata",
+      `${DB_URL}/test-formdata`,
       data,
       {
         headers: { "Content-Type": "multipart/form-data" },
