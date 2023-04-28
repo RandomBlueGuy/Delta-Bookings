@@ -53,6 +53,10 @@ label{
     width: 100%
 }
 
+#text-area-form{
+    resize: vertical;
+}
+
 /*Styles Related to the Hotel Info*/
 
 .container-1 {

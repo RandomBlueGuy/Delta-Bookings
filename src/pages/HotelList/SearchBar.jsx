@@ -5,12 +5,16 @@ function SearchBar() {
   const [info, setInfo] = useState({
     city: "",
     datein: new Date().toISOString().split("T")[0],
-    dateout: (new Date() + 24 * 60 * 60 * 1000),
+    dateout: new Date() + 24 * 60 * 60 * 1000,
     guestnumber: "",
   });
   const navigate = useNavigate();
   const minDate = new Date().toISOString().split("T")[0];
-  const minDateOut = new Date(new Date(info.datein).getTime() + 24 * 60 * 60 * 1000).toISOString().split("T")[0];
+  const minDateOut = new Date(
+    new Date(info.datein).getTime() + 24 * 60 * 60 * 1000
+  )
+    .toISOString()
+    .split("T")[0];
   //  console.log(`Min date in ${minDate} and min date out ${minDateOut}`)
   // console.log("datein", info.dateout)
   // setInfo({ ...info, city:`${city.split(" ").join("_").toLowerCase()}`});
