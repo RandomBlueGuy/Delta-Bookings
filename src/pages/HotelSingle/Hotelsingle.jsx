@@ -22,11 +22,6 @@ export default function Hotelsingle() {
   const [selectedRoom, setSelectedRoom] = useState({});
   const [loading , setLoading] = useState(false);
 
-  function roomChanger(newRoom) {
-    setSelectedRoom(() => newRoom);
-  }
-  
-
   useEffect(() => {
     dispatch(fetchData(searchParams));
   }, []);
@@ -54,6 +49,11 @@ export default function Hotelsingle() {
           
         }, 1000);
   }, []);
+
+  
+  function roomChanger(newRoom) {
+    setSelectedRoom(() => newRoom);
+  }
 
   return (
     <div className="hotelsingle__maxcontainer">

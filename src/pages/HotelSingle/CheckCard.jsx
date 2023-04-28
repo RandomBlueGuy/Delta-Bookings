@@ -14,14 +14,29 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   const [warningResult, setWarningResult] = useState();
   const navigate = useNavigate();
   const minDate = new Date().toISOString().split("T")[0];
-  // console.log("searchParams", searchParams);
-  // console.log("SelectedROOM", selectedRoom);
+  console.log("searchParams", searchParams);
+  console.log("SelectedROOM", selectedRoom);
 
   useEffect(() => {
     if (guests && dateIn && dateOut && Object.keys(selectedRoom).length > 0) {
       setDisabler(false);
     }
   }, [selectedRoom, guests, dateIn, dateOut]);
+
+  useEffect(() => {
+    if (warningResult) {
+      const bookingParams = {
+        id: searchParams.id,
+        roomId: selectedRoom.id,
+        city: searchParams.city,
+        checkIn:  searchParams.datein,
+        checkOut: searchParams.dateout,
+        guestsN: searchParams.guestnumber
+      };
+      const queryString = new URLSearchParams(bookingParams).toString();
+      navigate(`/bookings/bkngcd?${queryString}`);
+    }
+  }, [warningResult]);
 
   const handleGuestChange = (event) => {
     setGuests(parseInt(event.target.value));
@@ -38,11 +53,6 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   const handleBooking = (event) => {
     event.preventDefault();
     setShowWarning(true);
-    const QueryString = {};
-    
-    if (warningResult) {
-      navigate(`/bookings/bkngcd?${QueryString}`);
-    }
   };
 
   // function handleNavigate() {
@@ -81,10 +91,8 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   }
    */
 
-  
-
   return (
-    <section className='check__card'>
+    <section className="check__card">
       {showWarning && (
         <WarningMessage
           warningMessage={"Do you want to proceed with the current booking?"}
@@ -93,7 +101,7 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
           setWarningResult={setWarningResult}
         />
       )}
-      <div className='check__card-map'>
+      <div className="check__card-map">
         <GoogleMap
           center={{
             lat: Number(currentHotel.loc_Lat),
@@ -109,7 +117,7 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
             Per Nigth
           </p>
         </div>
-        <div className='check__card--line'>
+        <div className="check__card--line">
           <p className="rate-description">✔ Non Refundable</p>
           <h2 style={{ fontSize: "80%", textDecoration: "line-through" }}>
             $

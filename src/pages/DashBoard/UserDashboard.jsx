@@ -247,8 +247,7 @@ export default function UserDashboard() {
       <section className='dashboard__ctn-info'>
         <div className='dashboard__ctn-info-prof'>
           <div className='dashboard__ctn-info-img'>
-            <img src={image} alt='' />
-
+            <img src={image} className='profile__img' />
             <button>
               <FontAwesomeIcon icon={faPenToSquare} onClick={editPicture} />
             </button>

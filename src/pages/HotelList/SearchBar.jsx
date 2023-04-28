@@ -5,11 +5,15 @@ import { useNavigate } from "react-router-dom";
 function SearchBar() {
   const [info, setInfo] = useState({
     city: "",
-    datein: "",
-    dateout: "",
+    datein: new Date().toISOString().split("T")[0],
+    dateout: (new Date() + 24 * 60 * 60 * 1000),
     guestnumber: "",
   });
   const navigate = useNavigate();
+  const minDate = new Date().toISOString().split("T")[0];
+  const minDateOut = new Date(new Date(info.datein).getTime() + 24 * 60 * 60 * 1000).toISOString().split("T")[0];
+   console.log(`Min date in ${minDate} and min date out ${minDateOut}`)
+  // console.log("datein", info.dateout)
   // setInfo({ ...info, city:`${city.split(" ").join("_").toLowerCase()}`});
   
   function handleSearchQuery() {
@@ -42,7 +46,7 @@ function SearchBar() {
     });
   };
 
-  const minDate = new Date().toISOString().split("T")[0];
+  
 
   return (
     <form className='SearchBar-ctn' action=''>
@@ -74,7 +78,7 @@ function SearchBar() {
         <input
           name='dateout'
           type='date'
-          min={minDate}
+          min={minDateOut}
           placeholder='Fecha de Check-out'
           onChange={(event) => handleChange(event)}
           value={dateout}

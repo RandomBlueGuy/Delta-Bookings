@@ -4,11 +4,12 @@ import heartEmptyIcon from "../../assets/Icons/heartEmpty.svg";
 import StarRating from "../UniversalComponents/StarRating";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function HotelCard({ hotelInfoCard, searchParams }) {
   const navigate = useNavigate();
+  const tagsArr = hotelInfoCard.Tags.split("-/-");
+  console.log(tagsArr)
   const finalPrice =
     hotelInfoCard.Rooms[0].OriginalPricePerNight -
     (
@@ -78,8 +79,7 @@ function HotelCard({ hotelInfoCard, searchParams }) {
         <div className="price-tags">
           <h4>${hotelInfoCard.Rooms[0].OriginalPricePerNight.toFixed(0)}</h4>
           <h3>${finalPrice.toFixed(0)}</h3>
-          <p className="tags">{hotelInfoCard.Tags[0]}</p>
-          <p className="tags">{hotelInfoCard.Tags[1]}</p>
+          {tagsArr.map((tag) => <p className="tags">{tag}</p>)}
         </div>
       </section>
     </main>
