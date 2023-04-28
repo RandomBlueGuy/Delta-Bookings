@@ -9,15 +9,6 @@ function SearchBar() {
     dateout: new Date() + 24 * 60 * 60 * 1000,
     guestnumber: "",
   });
-
-  const today = new Date().toISOString().substr(0, 10); // get today's date in YYYY-MM-DD format
-  const tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
-    .toISOString()
-    .substr(0, 10); // get tomorrow's date in YYYY-MM-DD format
-
-  const [startDate, setStartDate] = useState(today);
-  const [endDate, setEndDate] = useState(tomorrow);
-
   const navigate = useNavigate();
   const minDate = new Date().toISOString().split("T")[0];
   const minDateOut = new Date(
@@ -26,6 +17,8 @@ function SearchBar() {
     .toISOString()
     .split("T")[0];
   console.log(`Min date in ${minDate} and min date out ${minDateOut}`);
+  // console.log("datein", info.dateout)
+  // setInfo({ ...info, city:`${city.split(" ").join("_").toLowerCase()}`});
 
   function handleSearchQuery() {
     const newCity = city.split(" ").join("").toLowerCase();
@@ -71,26 +64,26 @@ function SearchBar() {
       </div>
 
       <div className='form-box-ctn'>
-        <label htmlFor='startDate'>CHECK-IN</label>
+        <label htmlFor='datein'>CHECK-IN</label>
         <input
+          name='datein'
           type='date'
-          id='startDate'
-          name='startDate'
-          min={today}
-          value={startDate}
-          onChange={(e) => setStartDate(e.target.value)}
+          min={minDate}
+          placeholder='Fecha del Check-in'
+          onChange={(event) => handleChange(event)}
+          value={datein}
         />
       </div>
 
       <div className='form-box-ctn'>
-        <label htmlFor='endDate'>CHECK-OUT</label>
+        <label htmlFor='dateout'>CHECK-OUT</label>
         <input
+          name='dateout'
           type='date'
-          id='endDate'
-          name='endDate'
-          min={tomorrow}
-          value={endDate}
-          onChange={(e) => setEndDate(e.target.value)}
+          min={minDateOut}
+          placeholder='Fecha de Check-out'
+          onChange={(event) => handleChange(event)}
+          value={dateout}
         />
       </div>
 
