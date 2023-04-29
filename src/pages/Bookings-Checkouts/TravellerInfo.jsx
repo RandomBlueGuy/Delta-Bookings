@@ -15,7 +15,7 @@ export default function TravellerInfo({ fillTravellerInfo }) {
   const [errors, setErrors] = useState({});
   const letterRegex = /^[a-zA-Z]+$/;
   const numberRegex = /^[0-9]*$/;
-  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   const { fullName, inputEmail, contactInfo, request, coupon } = info;
 
@@ -42,7 +42,7 @@ export default function TravellerInfo({ fillTravellerInfo }) {
     if (!inputEmail.trim()) {
       validationErrors.email = "Please enter your email";
     } else if (!emailRegex.test(inputEmail.trim().replace(/\s+/g, ""))) {
-      validationErrors.userEmail = "Enter a Valid Email";
+      validationErrors.email = "Enter a Valid Email";
     }
 
     if (!contactInfo.trim()) {
@@ -55,17 +55,11 @@ export default function TravellerInfo({ fillTravellerInfo }) {
     }
 
     setErrors(validationErrors);
-
+    // console.log(validationErrors);
     if (Object.keys(validationErrors).length === 0) {
+      // console.log("gets here");
       fillTravellerInfo(fullName, inputEmail, contactInfo, request, coupon);
-      console.log(
-        "OSCAAAAAAAAAAARRRRRRRR",
-        fullName,
-        inputEmail,
-        contactInfo,
-        request,
-        coupon
-      );
+      // console.log("from button pay now", fullName, inputEmail, contactInfo, request, coupon)
       setErrors({});
     }
   };

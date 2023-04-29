@@ -6,9 +6,11 @@ import { fetchData } from "../../ReduxStore/Slices/FetchData/fetchDataSlice";
 import BookingInfo from "./BookingInfo";
 import TravellerInfo from "./TravellerInfo";
 import Payments from "./Payments";
+import { useCookies } from "react-cookie";
 
 function Bookingpage() {
-  const proceed = false;
+  const [cookies] = useCookies(["cookieToken"]);
+  const [proceed, setProceed] = useState(false);
   const location = useLocation();
   const searchParams = Object.fromEntries(new URLSearchParams(location.search));
   const dispatch = useDispatch();
@@ -16,9 +18,7 @@ function Bookingpage() {
   const currentHotel = useSelector((state) => state.fetchData.hotelSingle);
   const [price, setPrice] = useState({});
   const [TravellerInfoObj, setTravellerInfoObj] = useState({});
-
-  // console.log("AAAAAAAAAAAAAAAAA", price);
-
+  // console.log("price", price);
   useEffect(() => {
     dispatch(fetchData(searchParams));
   }, [dispatch]);
@@ -51,6 +51,13 @@ function Bookingpage() {
     }
   }, [currentHotel]);
 
+  useEffect(() => {
+    // console.log("Exists")
+    if (TravellerInfo !== undefined) {
+      // setProceed(true)
+    }
+  }, [TravellerInfo.email]);
+
   function fillTravellerInfo(
     fullName,
     email,
@@ -67,12 +74,58 @@ function Bookingpage() {
         coupon,
       };
     });
+
+    setProceed(() => true);
   }
-  console.log(TravellerInfoObj);
+  // console.log("SET TRAVELER INFO", TravellerInfoObj)
+  function sendPayment(message, paymentInfo, card) {
+    console.log("payment sent");
+    // console.log();
+
+    if (paymentInfo.payment.status === "succeeded") {
+      const transformedDateStr = new Date(
+        `${searchParams.checkIn}T00:00:00.000Z`
+      ).toISOString();
+
+      const NumberOfGuest = Number(searchParams.guestsN);
+      console.log(searchParams.checkIn);
+      const booking = {
+        HotelName: `${currentHotel.HotelName}`,
+        RoomType: `${price.RoomName}`,
+        DateOfStay: `${transformedDateStr}`,
+        NumberOfGuest: NumberOfGuest,
+        Payments: {
+          create: {
+            CardFirstName: `${TravellerInfoObj.fullName}`,
+            CardSecondName: `${card.brand}`,
+            CardBankEntity: "Bank2",
+            CardNumber: `**** **** **** ${card.last4}`,
+            CardType: 2,
+            CardYear: card.exp_year,
+            CardMonth: card.exp_month,
+            CardCcv: 999,
+            Status: "Successful",
+          },
+        },
+      };
+
+      // console.log("beforeAxios", booking);
+
+      axios
+        .post(`${DB_URL}/api/bookings`, booking, {
+          headers: { Authorization: `Bearer ${cookies.cookieToken}` },
+        })
+        .then(() => console.log("booking success"))
+        .catch((error) => {
+          console.log("Error creating booking:", error.message);
+          console.log(error.stack);
+        });
+    }
+  }
 
   return (
     <div>
-      <div className='booking-info'>
+      <div className="booking-info">
         {currentHotel && (
           <BookingInfo
             searchParams={searchParams}
@@ -83,7 +136,9 @@ function Bookingpage() {
             price={price}
           />
         )}
-        {proceed && <Payments />}
+        {proceed && (
+          <Payments sendPayment={sendPayment} finalPrice={price.finalPrice} />
+        )}
         {!proceed && <TravellerInfo fillTravellerInfo={fillTravellerInfo} />}
       </div>
     </div>

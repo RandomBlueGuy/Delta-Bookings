@@ -13,7 +13,7 @@ const stripePromise = loadStripe(
   "pk_test_51N0c89EVaWSJ74nLzQn1EK6VmxmVrVpEnnQZCl8uWRqzCfDRQIOnDkMvn3PSb3wkIxosQT9bJbDZmYk4uAesUdoC00HMQf6eck"
 );
 
-export default function Payments() {
+export default function Payments({sendPayment, finalPrice}) {
   const [expanded, setExpanded] = useState("panel1");
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -48,7 +48,7 @@ export default function Payments() {
           <AccordionDetails>
             <Typography>
               <Elements stripe={stripePromise}>
-                <StripeButton />
+                <StripeButton sendPayment={sendPayment} finalPrice={finalPrice}/>
               </Elements>
             </Typography>
           </AccordionDetails>
