@@ -13,7 +13,7 @@ export default function TravellerInfo({ fillTravellerInfo }) {
   });
 
   const [errors, setErrors] = useState({});
-  const letterRegex = /^[a-zA-Z]+$/;
+  const letterRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
   const numberRegex = /^[0-9]*$/;
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 

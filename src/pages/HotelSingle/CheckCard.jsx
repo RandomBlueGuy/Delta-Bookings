@@ -5,17 +5,33 @@ import GoogleMap from "google-map-react";
 import WarningMessage from "../UniversalComponents/WarningMessage";
 
 function CheckCard({ currentHotel, searchParams, selectedRoom }) {
-  const { id } = searchParams;
   const [guests, setGuests] = useState(searchParams.guestnumber);
-  const [dateIn, setDatein] = useState(searchParams.datein);
-  const [dateOut, setDateOut] = useState(searchParams.dateout);
+  const [dateIn, setDatein] = useState(
+    searchParams.datein || new Date().toISOString().split("T")[0]
+  );
+  const [dateOut, setDateOut] = useState(
+    searchParams.dateout ||
+      new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
+        .toISOString()
+        .split("T")[0]
+  );
   const [disabler, setDisabler] = useState(true);
   const [showWarning, setShowWarning] = useState(false);
   const [warningResult, setWarningResult] = useState();
   const navigate = useNavigate();
-  const minDate = new Date().toISOString().split("T")[0];
-  // console.log("searchParams", searchParams);
-  // console.log("SelectedROOM", selectedRoom);
+  const [checkInDate, setCheckInDate] = useState("");
+  const [checkOutDate, setCheckOutDate] = useState("");
+  const handleCheckInDateChange = (event) => {
+    const selectedDate = new Date(event.target.value);
+    const nextDay = new Date(selectedDate);
+    nextDay.setDate(selectedDate.getDate() + 1);
+    setCheckInDate(event.target.value);
+    setCheckOutDate(nextDay.toISOString().split("T")[0]);
+  };
+
+  const handleCheckOutDateChange = (event) => {
+    setCheckOutDate(event.target.value);
+  };
 
   useEffect(() => {
     if (guests && dateIn && dateOut && Object.keys(selectedRoom).length > 0) {
@@ -29,9 +45,9 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
         id: searchParams.id,
         roomId: selectedRoom.id,
         city: searchParams.city,
-        checkIn:  searchParams.datein,
-        checkOut: searchParams.dateout,
-        guestsN: searchParams.guestnumber
+        checkIn: checkInDate,
+        checkOut: checkOutDate,
+        guestsN: guests,
       };
       const queryString = new URLSearchParams(bookingParams).toString();
       navigate(`/bookings/bkngcd?${queryString}`);
@@ -44,6 +60,13 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
 
   const handleDateInChange = (event) => {
     setDatein(event.target.value);
+    setDateOut(() => {
+      return new Date(
+        new Date(event.target.value).getTime() + 24 * 60 * 60 * 1000
+      )
+        .toISOString()
+        .split("T")[0];
+    });
   };
 
   const handleDateOutChange = (event) => {
@@ -146,16 +169,25 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
         <label htmlFor="check-in">Check-in Date</label>
         <input
           type="date"
-          placeholder="Check-In Date"
-          value={dateIn}
-          onChange={handleDateInChange}
+          id="checkInDate"
+          name="checkInDate"
+          value={checkInDate}
+          min={new Date().toISOString().split("T")[0]}
+          onChange={handleCheckInDateChange}
         />
         <label htmlFor="check-out">Check-out Date</label>
         <input
           type="date"
-          placeholder="Check-Out Date"
-          value={dateOut}
-          onChange={handleDateOutChange}
+          id="checkOutDate"
+          name="checkOutDate"
+          value={checkOutDate}
+          min={
+            checkInDate &&
+            new Date(new Date(checkInDate).getTime() + 86400000)
+              .toISOString()
+              .split("T")[0]
+          }
+          onChange={handleCheckOutDateChange}
         />
         <div className="Guest__select">
           <strong>City:</strong>

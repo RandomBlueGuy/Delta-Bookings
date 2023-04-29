@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import placeHolderImg from "../../assets/Images/hotelPlaceholder.jpg";
 
-function ReservationCard({ index, reservation }) {
+function ReservationCard({ booking }) {
   const [viewMore, setViewMore] = useState(false);
-
+  console.log(booking);
   return (
     <article
       className="ReservationCard"
@@ -21,12 +21,17 @@ function ReservationCard({ index, reservation }) {
           color: viewMore ? "white" : "black",
         }}
       >
-        <h2>Reservation [# {reservation}] - [UserName] [Reservation date]</h2>
+        <h2>
+          Reservation at: {booking.HotelName} [{booking.createdAt.slice(0,10)}]
+        </h2>
         <button
           onClick={() => {
             setViewMore(!viewMore);
           }}
-        > <p className="">{viewMore ? "🞮" : "🞧"}</p></button>
+        >
+          {" "}
+          <p className="">{viewMore ? "🞮" : "🞧"}</p>
+        </button>
       </section>
 
       <section
@@ -39,20 +44,20 @@ function ReservationCard({ index, reservation }) {
           </figure>
           <div className="HotelMicroCard__text">
             <p className="">
-              <strong>Hotel:</strong>
-              [HotelName] [{reservation}]
+              <strong>Hotel: </strong>
+               {booking.HotelName}
             </p>
             <p className="">
               <strong>Location:</strong>
-              [city] [country]
+              [???]
             </p>
             <p className="">
               <strong>Rooms:</strong>
-              [#][RoomName]...
+              {booking.RoomType}
             </p>
             <p className="">
               <strong>Guests:</strong>
-              [# Guests]
+              {booking.NumberOfGuest}
             </p>
             <p className="">
               <strong>Nights:</strong>
@@ -87,19 +92,25 @@ function ReservationCard({ index, reservation }) {
               <td>
                 <strong> Name: </strong>
               </td>
-              <td className="PaymentDetails__col2">[Full name]</td>
+              <td className="PaymentDetails__col2">{booking.Payments[0].CardFirstName}</td>
             </tr>
             <tr>
               <td>
                 <strong> Payment Option: </strong>
               </td>
-              <td className="PaymentDetails__col2">[Payment Option]</td>
+              <td className="PaymentDetails__col2">Stripe</td>
             </tr>
             <tr>
               <td>
                 <strong> Card Number: </strong>
               </td>
-              <td className="PaymentDetails__col2">[#]</td>
+              <td className="PaymentDetails__col2">{booking.Payments[0].CardNumber}</td>
+            </tr>
+            <tr>
+              <td>
+                <strong> Card Type: </strong>
+              </td>
+              <td className="PaymentDetails__col2">{booking.Payments[0].CardSecondName}</td>
             </tr>
             <tr>
               <td>

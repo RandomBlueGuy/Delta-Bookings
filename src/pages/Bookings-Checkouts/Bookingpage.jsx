@@ -115,10 +115,9 @@ function Bookingpage() {
         .post(`${DB_URL}/api/bookings`, booking, {
           headers: { Authorization: `Bearer ${cookies.cookieToken}` },
         })
-        .then(() => console.log("booking success"))
+        .then(() => console.log("booking Success!!!!"))
         .catch((error) => {
           console.log("Error creating booking:", error.message);
-          console.log(error.stack);
         });
     }
   }

@@ -44,7 +44,7 @@ function ReservationVisualizer() {
       </div>
 
       <div className="reservations__list">
-        {reservationsArr
+        {/* {reservationsArr
           .slice(
             actualPage * itemsPerPage,
             actualPage * itemsPerPage + itemsPerPage
@@ -57,7 +57,7 @@ function ReservationVisualizer() {
                 reservation={reservation}
               />
             );
-          })}
+          })} */}
       </div>
 
       <div className="manage__pagination">

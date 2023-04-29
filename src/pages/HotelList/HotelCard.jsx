@@ -19,9 +19,12 @@ function HotelCard({ hotelInfoCard, searchParams }) {
 
   function handleNavigate() {
     const { city, datein, dateout, guestnumber } = searchParams;
+    // if (guestnumber !== "1" || guestnumber !== "2" || guestnumber !== "1" || guestnumber !== "4"){
+    //   guestnumber = "1";
+    // }
     const newSearchParams = {
       id: hotelInfoCard.id,
-      city,
+      city: hotelInfoCard.loc_City,
       datein,
       dateout,
       guestnumber,
@@ -34,10 +37,6 @@ function HotelCard({ hotelInfoCard, searchParams }) {
   return (
     <main className="hotel-card">
       <figure>
-        {/* <Link 
-        to= {`/hotel-single/htlid?hid=${hotelInfoCard.id}`}
-        state={{data: hotelInfoCard}}
-        > */}
         <img
           className="hotel-pic"
           src={`${hotelInfoCard.FrontImg}`}
