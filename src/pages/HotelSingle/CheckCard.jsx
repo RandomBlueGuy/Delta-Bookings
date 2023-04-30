@@ -6,22 +6,19 @@ import WarningMessage from "../UniversalComponents/WarningMessage";
 
 function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   const [guests, setGuests] = useState(searchParams.guestnumber);
-  const [dateIn, setDatein] = useState(
-    searchParams.datein || new Date().toISOString().split("T")[0]
-  );
-  const [dateOut, setDateOut] = useState(
-    searchParams.dateout ||
-      new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
-        .toISOString()
-        .split("T")[0]
-  );
+
   const [disabler, setDisabler] = useState(true);
   const [showWarning, setShowWarning] = useState(false);
   const [warningResult, setWarningResult] = useState();
   const navigate = useNavigate();
-  const [checkInDate, setCheckInDate] = useState("");
-  const [checkOutDate, setCheckOutDate] = useState("");
-  const handleCheckInDateChange = (event) => {
+  const [checkInDate, setCheckInDate] = useState(searchParams.checkInDate || new Date().toISOString().split("T")[0]);
+  const [checkOutDate, setCheckOutDate] = useState(
+    searchParams.checkOutDate ||
+      new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
+        .toISOString()
+        .split("T")[0]
+  );
+  const handleCheckInChange = (event) => {
     const selectedDate = new Date(event.target.value);
     const nextDay = new Date(selectedDate);
     nextDay.setDate(selectedDate.getDate() + 1);
@@ -34,10 +31,10 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   };
 
   useEffect(() => {
-    if (guests && dateIn && dateOut && Object.keys(selectedRoom).length > 0) {
+    if (guests && checkInDate && checkOutDate && Object.keys(selectedRoom).length > 0) {
       setDisabler(false);
     }
-  }, [selectedRoom, guests, dateIn, dateOut]);
+  }, [selectedRoom, guests, checkInDate, checkOutDate]);
 
   useEffect(() => {
     if (warningResult) {
@@ -59,8 +56,8 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   };
 
   const handleDateInChange = (event) => {
-    setDatein(event.target.value);
-    setDateOut(() => {
+    setCheckInDate(event.target.value);
+    setCheckInDate(() => {
       return new Date(
         new Date(event.target.value).getTime() + 24 * 60 * 60 * 1000
       )
@@ -69,50 +66,14 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
     });
   };
 
-  const handleDateOutChange = (event) => {
-    setDateOut(event.target.value);
+  const handleCheckOutChange = (event) => {
+    setCheckOutDate(event.target.value);
   };
 
   const handleBooking = (event) => {
     event.preventDefault();
     setShowWarning(true);
   };
-
-  // function handleNavigate() {
-  //   const { city, datein, dateout, guestnumber } = searchParams;
-  //   const newSearchParams = {
-  //     id: hotelInfoCard.id,
-  //     city,
-  //     datein,
-  //     dateout,
-  //     guestnumber,
-  //   };
-
-  //   const queryString = new URLSearchParams(newSearchParams).toString();
-  //   navigate(`/hotel-single/htlnfo?${queryString}`);
-  // }
-
-  /**
-   *   function handleSearchQuery() {
-    const newCity = city.split(" ").join("").toLowerCase();
-    setInfo({ ...info, city: newCity });
-    const searchParams = {
-      ...(newCity && { city }),
-      ...(datein && datein.trim() !== "" && { checkInDate: `${datein}` }),
-      ...(dateout && dateout.trim() !== "" && { checkOutDate: `${dateout}` }),
-      ...(guestnumber !== null &&
-        guestnumber !== "" && { guests: guestnumber }),
-    };
-
-    const queryString = Object.entries(searchParams)
-      .map(([key, value]) => {
-        return `${key}=${value}`;
-      })
-      .join("&");
-
-    navigate(`/hotel-list/search?${queryString}`);
-  }
-   */
 
   return (
     <section className="check__card">
@@ -173,7 +134,7 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
           name="checkInDate"
           value={checkInDate}
           min={new Date().toISOString().split("T")[0]}
-          onChange={handleCheckInDateChange}
+          onChange={handleCheckInChange}
         />
         <label htmlFor="check-out">Check-out Date</label>
         <input
@@ -194,8 +155,8 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
           <p>{currentHotel.loc_City}</p>
         </div>
         <div className="Guest__select">
-          <strong>Rooms:</strong>
-          <p>{selectedRoom.RoomName}</p>
+          <strong>Room:</strong>
+          <p>{selectedRoom.RoomName || "Please select a room first"}</p>
         </div>
         <div className="Guest__select">
           <strong>Guests:</strong>

@@ -23,20 +23,18 @@ function HotelListpage() {
   const [filterLoading, setFilterLoading] = useState(false);
   const location = useLocation();
   const searchParams = Object.fromEntries(new URLSearchParams(location.search));
-  // console.log(HotelsArray)
+  console.log(searchParams)
 
   useEffect(() => {
     dispatch(fetchData(searchParams));
   }, [location]);
 
-  //INITIALIZE FILTERED HOTELS
   useEffect(() => {
     if (HotelsArray.length > 0) {
       setFilteredHotelsArray(HotelsArray);
     }
   }, [HotelsArray]);
 
-  //SET A FILTER FOR FILTERED HOTELS ARRAY AND SORT ITS MEMBERS
   useEffect(() => {
     switch (selectedFilter) {
       case "All":
@@ -72,13 +70,13 @@ function HotelListpage() {
     setActualPage(0);
   }, [maxNpages, selectedFilter]);
 
-  //UPDATE PAGINATION
+
   useEffect(() => {
     const res = filteredHotelsArray.length / itemsPerPage;
     setMaxNpages(() => (res > parseInt(res) ? parseInt(res) + 1 : res));
   }, [filteredHotelsArray]);
 
-  //FAKE LOADING SCREEN
+
   const setFakeLoading = () => {
     setFilterLoading(true);
     setInterval(() => {

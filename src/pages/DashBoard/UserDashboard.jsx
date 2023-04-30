@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./UserDashboard.css";
-import Mark from "../../assets/Images/markenderes.jpg";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReservationCard from "../AdminDashboard/ReservationCard";

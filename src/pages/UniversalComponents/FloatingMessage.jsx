@@ -5,7 +5,6 @@ function FloatingMessage({
   setShowUpdate,
   showUpdate = false,
 }) {
-
   useEffect(() => {
     let intervalId;
     if (showUpdate) {
@@ -26,7 +25,10 @@ function FloatingMessage({
       <p>
         <strong>{message}</strong>
       </p>
-      <p className="floatingMessage__special">
+      <p
+        className="floatingMessage__special"
+         onClick={()=>setShowUpdate(false)}
+      >
         <strong>🗙</strong>
       </p>
     </main>

@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../ReduxStore/Slices/FetchData/fetchDataSlice";
 import BookingInfo from "./BookingInfo";
 import TravellerInfo from "./TravellerInfo";
 import Payments from "./Payments";
 import { useCookies } from "react-cookie";
+import LoadingComp from "../UniversalComponents/LoadingComp";
 
 function Bookingpage() {
   const [cookies] = useCookies(["cookieToken"]);
@@ -18,7 +19,9 @@ function Bookingpage() {
   const currentHotel = useSelector((state) => state.fetchData.hotelSingle);
   const [price, setPrice] = useState({});
   const [TravellerInfoObj, setTravellerInfoObj] = useState({});
-  // console.log("price", price);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
   useEffect(() => {
     dispatch(fetchData(searchParams));
   }, [dispatch]);
@@ -52,7 +55,6 @@ function Bookingpage() {
   }, [currentHotel]);
 
   useEffect(() => {
-    // console.log("Exists")
     if (TravellerInfo !== undefined) {
       // setProceed(true)
     }
@@ -77,18 +79,15 @@ function Bookingpage() {
 
     setProceed(() => true);
   }
-  // console.log("SET TRAVELER INFO", TravellerInfoObj)
-  function sendPayment(message, paymentInfo, card) {
-    console.log("payment sent");
-    // console.log();
 
+  function sendPayment(message, paymentInfo, card) {
+    setIsLoading(true);
     if (paymentInfo.payment.status === "succeeded") {
       const transformedDateStr = new Date(
         `${searchParams.checkIn}T00:00:00.000Z`
       ).toISOString();
 
       const NumberOfGuest = Number(searchParams.guestsN);
-      console.log(searchParams.checkIn);
       const booking = {
         HotelName: `${currentHotel.HotelName}`,
         RoomType: `${price.RoomName}`,
@@ -109,13 +108,16 @@ function Bookingpage() {
         },
       };
 
-      // console.log("beforeAxios", booking);
-
       axios
         .post(`${DB_URL}/api/bookings`, booking, {
           headers: { Authorization: `Bearer ${cookies.cookieToken}` },
         })
-        .then(() => console.log("booking Success!!!!"))
+        .then((response) => {
+          setIsLoading(false);
+          console.log("booking Success!!!!'", response.data.data.id);
+          navigate(`/checkout-success/scss?id=${response.data.data.id}`)
+        })
+
         .catch((error) => {
           console.log("Error creating booking:", error.message);
         });
@@ -125,6 +127,7 @@ function Bookingpage() {
   return (
     <div>
       <div className="booking-info">
+        {isLoading === true && <LoadingComp />}
         {currentHotel && (
           <BookingInfo
             searchParams={searchParams}

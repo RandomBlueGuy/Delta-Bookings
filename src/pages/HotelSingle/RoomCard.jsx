@@ -50,7 +50,6 @@ function RoomCard({ RoomCardData, roomChanger }) {
           <button
             onClick={() => {
               roomChanger(RoomCardData);
-              console.log("PRESS")
             }}
           >
             Book Now

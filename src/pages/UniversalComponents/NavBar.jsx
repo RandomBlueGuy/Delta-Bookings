@@ -107,7 +107,7 @@ function NavBar() {
               <Link to="/home">
                 <h2 style={{ color: visibility ? "black" : "white" }}>Home</h2>
               </Link>
-              <Link to="/hotel-list/search?city=All&datein=&dateout=&guestnumber=1">
+              <Link to={`/hotel-list/search?city=All&checkInDate=${new Date().toISOString().slice(0, 10)}&checkOutDate=${new Date(Date.now() + 86400000).toISOString().slice(0, 10)}&guestnumber=1`}>
                 <h2 style={{ color: visibility ? "black" : "white" }}>
                   Hotels
                 </h2>

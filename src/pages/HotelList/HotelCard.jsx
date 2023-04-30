@@ -18,15 +18,13 @@ function HotelCard({ hotelInfoCard, searchParams }) {
     ).toFixed(0);
 
   function handleNavigate() {
-    const { city, datein, dateout, guestnumber } = searchParams;
-    // if (guestnumber !== "1" || guestnumber !== "2" || guestnumber !== "1" || guestnumber !== "4"){
-    //   guestnumber = "1";
-    // }
+    const { checkInDate, checkOutDate, guestnumber } = searchParams;
+
     const newSearchParams = {
       id: hotelInfoCard.id,
       city: hotelInfoCard.loc_City,
-      datein,
-      dateout,
+      checkInDate,
+      checkOutDate,
       guestnumber,
     };
 

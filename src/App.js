@@ -22,6 +22,8 @@ import AdminDashBoardPage from "./pages/AdminDashboard/AdminDashboardPage";
 import { useJwt } from "react-jwt";
 import PrivateRoutes from "./Utils/PrivateRoutes";
 import { useCookies } from "react-cookie";
+import LoadingComp from "./pages/UniversalComponents/LoadingComp";
+
 
 function App() {
   const { pathname } = useLocation();
@@ -42,6 +44,7 @@ function App() {
 
   return (
     <React.Fragment>
+      {/* <LoadingComp /> */}
       <UpButton />
       <NavBar />
       <Routes>
@@ -72,11 +75,11 @@ function App() {
           />
           <Route
             exact
-            path='/checkout-success'
+            path='/checkout-success/:scss'
             element={<CheckoutSuccessPage />}
           />
           <Route exact path="/bookings/:bkngcd" element={<Bookingpage />} />
-          <Route exact path="/checkout" element={<CheckoutPage />} />
+          <Route exact path="/checkout/" element={<CheckoutPage />} />
         </Route>
       </Routes>
       <Footer />

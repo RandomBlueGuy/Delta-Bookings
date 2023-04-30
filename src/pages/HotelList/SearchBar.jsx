@@ -36,13 +36,14 @@ function SearchBar() {
   function handleSearchQuery() {
     const newCity =
       city && city !== "" ? city.split(" ").join("").toLowerCase() : "All";
+    const newGuestNumber =
+      guestnumber && guestnumber !== "" ? guestnumber : "1";
     setInfo({ ...info, city: newCity });
     const searchParams = {
       ...(newCity && { city: newCity }),
-      ...(checkInDate && { datein: `${checkInDate}` }),
-      ...(checkOutDate && { dateout: `${checkOutDate}` }),
-      ...(guestnumber !== null &&
-        guestnumber !== "" && { guests: guestnumber }),
+      ...(checkInDate && { checkInDate: `${checkInDate}` }),
+      ...(checkOutDate && { checkOutDate: `${checkOutDate}` }),
+      ...(newGuestNumber !== null && { guests: newGuestNumber }),
     };
 
     const queryString = Object.entries(searchParams)
@@ -53,6 +54,7 @@ function SearchBar() {
     navigate(`/hotel-list/search?${queryString}`);
   }
 
+  const { city, guestnumber } = info;
   const handleChangeDateIn = (event) => {
     setInfo({
       ...info,
@@ -65,7 +67,6 @@ function SearchBar() {
     });
   };
 
-  const { city, datein, dateout, guestnumber } = info;
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInfo({
@@ -73,6 +74,7 @@ function SearchBar() {
       [name]: value,
     });
   };
+
   return (
     <form className="SearchBar-ctn" action="">
       <div className="form-box-ctn">
