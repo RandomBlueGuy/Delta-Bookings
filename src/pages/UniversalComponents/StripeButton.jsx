@@ -19,12 +19,12 @@ export default function StripeButton({ sendPayment, finalPrice }) {
     if (error) {
       return "Error";
     }
-    const card= paymentMethod.card;
+    const card = paymentMethod.card;
     const { data } = await axios
       .post(`${DB_URL}/api/checkout`, {
         paymentMethod,
         amount: Math.floor(finalPrice) * 100,
-        source:'tok_visa'
+        source: "tok_visa",
       })
       .catch((error) =>
         console.log(
@@ -32,15 +32,14 @@ export default function StripeButton({ sendPayment, finalPrice }) {
           error.message
         )
       );
-    // elements.getElement(CardElement).clear();
+
     sendPayment(data.message, data, card);
-    // console.log(card)
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <CardElement />
-      <button type="submit" style={{ padding: "0.5rem 0.75rem" }}>
+      <button type='submit' style={{ padding: "0.5rem 0.75rem" }}>
         Pay With Stripe
       </button>
     </form>
