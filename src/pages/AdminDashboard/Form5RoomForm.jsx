@@ -4,8 +4,6 @@ import axios from "axios";
 function Form5RoomForm({ length = 1, form5Constructor }) {
   const [status, setStatus] = useState(false);
   const [changeRoomData, setChangeRoomData] = useState(false);
-  const DB_URL = process.env.REACT_APP_BACKEND_URL;
-
   const [info, setInfo] = useState({
     RoomImg: "",
     RoomName: "",
@@ -25,6 +23,7 @@ function Form5RoomForm({ length = 1, form5Constructor }) {
     Amenities,
     Inclusions,
   } = info;
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
 
   const [errors, setErrors] = useState({});
 
@@ -33,6 +32,11 @@ function Form5RoomForm({ length = 1, form5Constructor }) {
     const value =
       target.type === "file" ? Array.from(target.files) : target.value;
     const name = target.name;
+
+    setInfo((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
 
     if (
       RoomName !== "" ||
@@ -102,7 +106,6 @@ function Form5RoomForm({ length = 1, form5Constructor }) {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      const fileURLs = Object.values(response.data);
       const roomURL = response.data["file 0"];
 
       setChangeRoomData(true);
