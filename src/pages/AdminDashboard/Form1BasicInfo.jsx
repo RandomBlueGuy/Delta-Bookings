@@ -50,17 +50,17 @@ function Form1BasicInfo({
   const handleInfo = async (event) => {
     event.preventDefault();
     const validationErrors = {};
-    
+
     if (!HotelName.trim()) {
       validationErrors.HotelName = "Enter the name of the hotel";
     }
-    
+
     if (!Website.trim()) {
       validationErrors.Website = "Enter your website";
     } else if (!webRegex.test(Website.trim().replace(/\s+/g, ""))) {
       validationErrors.Website = "Invalid Website";
     }
-    
+
     if (!PhoneNumber.trim()) {
       validationErrors.PhoneNumber = "Please enter the hotel's number";
     } else if (!/^[0-9]*$/.test(PhoneNumber.trim().replace(/\s+/g, ""))) {
@@ -68,37 +68,37 @@ function Form1BasicInfo({
     } else if (PhoneNumber.trim().replace(/\s+/g, "").length < 5) {
       validationErrors.PhoneNumber = "Enter a number long enough to be valid";
     }
-    
+
     if (!Email.trim()) {
       validationErrors.Email = "Please enter the hotel's email";
     }
-    
+
     if (!HotelDescription.trim()) {
       validationErrors.HotelDescription = "Enter your hotel's description";
     } else if (HotelDescription.replace(/\s+/g, "").length > 100) {
       validationErrors.HotelDescription =
-      "Please give us a shorter description";
+        "Please give us a shorter description";
     }
-    
+
     if (FrontImg.length < 1) {
       validationErrors.FrontImg = "Please upload, at least, one picture";
     }
-    
+
     setErrors(validationErrors);
-    
+
     if (Object.keys(validationErrors).length === 0) {
       const data = new FormData();
       data.append("HotelName", HotelName);
       for (let i = 0; i < FrontImg.length; i++) {
         data.append(`file ${i}`, FrontImg[i], FrontImg[i].name);
       }
-      
+
       const response = await axios.post(`${DB_URL}/test-formdata`, data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      
+
       const fileURLs = Object.values(response.data);
-      const newURL = response.data["file 0"]
+      const newURL = response.data["file 0"];
 
       form1Constructor(
         HotelName,
@@ -117,135 +117,135 @@ function Form1BasicInfo({
 
   return (
     <form
-      action=""
-      className="CreateHotel--subHotel CH__form1"
+      action=''
+      className='CreateHotel--subHotel CH__form1'
       onSubmit={handleInfo}
     >
       <h2>Basic information</h2>
-      <div className="line__Ctn">
-        <div className="HotelCreator__form--line">
-          <label className="HotelCreator__label" htmlFor="HotelName">
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='HotelName'>
             Name:
           </label>
           <input
-            name="HotelName"
-            id="inp1"
-            className="HotelCreator__input"
-            type="text"
-            placeholder="Write your new hotel Name"
+            name='HotelName'
+            id='inp1'
+            className='HotelCreator__input'
+            type='text'
+            placeholder='Write your new hotel Name'
             onChange={(event) => handleChange(event)}
             value={HotelName}
           />
         </div>
         {errors.HotelName && (
-          <span className="error-creatorAdmin"> {errors.HotelName} </span>
+          <span className='error-creatorAdmin'> {errors.HotelName} </span>
         )}
       </div>
 
-      <div className="line__Ctn">
-        <div className="HotelCreator__form--line">
-          <label className="HotelCreator__label" htmlFor="Website">
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='Website'>
             Website:
           </label>
           <input
-            id="inp2"
-            className="HotelCreator__input"
-            type="text"
-            placeholder="Write your hotel site (no spaces /)"
-            name="Website"
+            id='inp2'
+            className='HotelCreator__input'
+            type='text'
+            placeholder='Write your hotel site (no spaces /)'
+            name='Website'
             onChange={(event) => handleChange(event)}
             value={Website}
           />
         </div>
         {errors.Website && (
-          <span className="error-creatorAdmin"> {errors.Website} </span>
+          <span className='error-creatorAdmin'> {errors.Website} </span>
         )}
       </div>
-      <div className="line__Ctn">
-        <div className="HotelCreator__form--line">
-          <label className="HotelCreator__label" htmlFor="PhoneNumber">
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='PhoneNumber'>
             Phone number:
           </label>
           <input
-            id="inp3"
-            className="HotelCreator__input"
-            type="text"
-            placeholder="Write your new hotel phone number (only numbers)"
-            name="PhoneNumber"
+            id='inp3'
+            className='HotelCreator__input'
+            type='text'
+            placeholder='Write your new hotel phone number (only numbers)'
+            name='PhoneNumber'
             onChange={(event) => handleChange(event)}
             value={PhoneNumber}
           />
         </div>
         {errors.PhoneNumber && (
-          <span className="error-creatorAdmin"> {errors.PhoneNumber} </span>
+          <span className='error-creatorAdmin'> {errors.PhoneNumber} </span>
         )}
       </div>
-      <div className="line__Ctn">
-        <div className="HotelCreator__form--line">
-          <label className="HotelCreator__label" htmlFor="Email">
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='Email'>
             Email:
           </label>
           <input
-            id="inp4"
-            className="HotelCreator__input"
-            type="email"
-            placeholder="Write your new hotel email address"
-            name="Email"
+            id='inp4'
+            className='HotelCreator__input'
+            type='email'
+            placeholder='Write your new hotel email address'
+            name='Email'
             onChange={(event) => handleChange(event)}
             value={Email}
           />
         </div>
         {errors.Email && (
-          <span className="error-creatorAdmin"> {errors.Email} </span>
+          <span className='error-creatorAdmin'> {errors.Email} </span>
         )}
       </div>
-      <div className="line__Ctn">
-        <div className="HotelCreator__form--line">
-          <label className="HotelCreator__label" htmlFor="HotelDescription">
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='HotelDescription'>
             Description:
           </label>
           <input
-            id="inp5"
-            className="HotelCreator__input"
-            type="text"
-            placeholder="Write your new hotel description"
-            name="HotelDescription"
+            id='inp5'
+            className='HotelCreator__input'
+            type='text'
+            placeholder='Write your new hotel description'
+            name='HotelDescription'
             onChange={(event) => handleChange(event)}
             value={HotelDescription}
           />
         </div>
         {errors.HotelDescription && (
-          <span className="error-creatorAdmin">
+          <span className='error-creatorAdmin'>
             {" "}
             {errors.HotelDescription}{" "}
           </span>
         )}
       </div>
 
-      <div className="line__Ctn">
-        <div className="HotelCreator__form--line">
-          <label className="HotelCreator__label" htmlFor="FrontImg">
+      <div className='line__Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='FrontImg'>
             Front image
           </label>
           <input
-            className="Input__file"
-            type="file"
-            name="FrontImg"
-            accept="image/png, image/jpeg, image/jpg"
+            className='Input__file'
+            type='file'
+            name='FrontImg'
+            accept='image/png, image/jpeg, image/jpg'
             onChange={(event) => handleChange(event)}
           />
         </div>
         {errors.FrontImg && (
-          <span className="error-creatorAdmin"> {errors.FrontImg} </span>
+          <span className='error-creatorAdmin'> {errors.FrontImg} </span>
         )}
         {/* {!!image && <img src={image} alt="User Update" />} */}
         <ImgCtn />
       </div>
 
-      <div className="HotelForm__footer">
+      <div className='HotelForm__footer'>
         <button
-          type="submit"
-          className="HotelCreator__form--microSubmit"
+          type='submit'
+          className='HotelCreator__form--microSubmit'
           onClick={(event) => {
             event.preventDefault();
           }}
@@ -254,17 +254,16 @@ function Form1BasicInfo({
           🡸
         </button>
         Step {formTab} / 5
-          <button
-            className="HotelCreator__form--microSubmit"
-            type="submit"
-            onClick={(event) => {
-          
-              scrollToTop();
-              handleInfo(event)
-            }}
-          >
-            🢂
-          </button>
+        <button
+          className='HotelCreator__form--microSubmit'
+          type='submit'
+          onClick={(event) => {
+            scrollToTop();
+            handleInfo(event);
+          }}
+        >
+          🢂
+        </button>
       </div>
     </form>
   );
