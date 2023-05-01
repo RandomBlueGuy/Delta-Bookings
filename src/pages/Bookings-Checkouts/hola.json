@@ -1,0 +1,24 @@
+{
+            "HotelName": "HOTEL TEST",
+            "RoomType": "lol",
+            "CheckInDate": "lol",
+            "CheckOutDate": "lol",
+            "SpecialReqs": "lol",
+            "HotelCity": "lol",
+            "HotelCountry": "lol",
+            "NumberOfGuest": 5,
+            "payments": {
+                "create": {
+                "CardFirstName": "lol",
+                "CardSecondName": "lol",
+                "CardBankEntity": "lol",
+                "CardNumber": "lol",
+                "CardType": 2,
+                "FinalPrice": 50,
+                "Tax": 50,
+                "BasePrice": 50,
+                "PromoCode": false,
+                "Status": "fgsgsg"
+                }
+            }
+        }

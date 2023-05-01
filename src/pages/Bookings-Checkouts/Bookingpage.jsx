@@ -91,18 +91,23 @@ function Bookingpage() {
       const booking = {
         HotelName: `${currentHotel.HotelName}`,
         RoomType: `${price.RoomName}`,
-        DateOfStay: `${transformedDateStr}`,
+        CheckInDate: `${searchParams.checkIn}`,
+        CheckOutDate: `${searchParams.checkOut}`,
+        SpecialReqs: `${TravellerInfoObj.specialRequest}`,
+        HotelCity: `${currentHotel.loc_City}`,
+        HotelCountry: `${currentHotel.loc_Country}`,
         NumberOfGuest: NumberOfGuest,
-        Payments: {
+        payments: {
           create: {
             CardFirstName: `${TravellerInfoObj.fullName}`,
             CardSecondName: `${card.brand}`,
             CardBankEntity: "Bank2",
             CardNumber: `**** **** **** ${card.last4}`,
             CardType: 2,
-            CardYear: card.exp_year,
-            CardMonth: card.exp_month,
-            CardCcv: 999,
+            FinalPrice: price.finalPrice,
+            Tax: price.tax,
+            BasePrice: price.basePrice,
+            PromoCode: false,
             Status: "Successful",
           },
         },

@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 
-function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
+function Form2LocationData({
+  setFormTab,
+  formTab,
+  scrollToTop,
+  form2Constructor,
+}) {
+  //loc_Place, loc_City, loc_State, loc_Country, loc_Lat, loc_Lng;
   const [info, setInfo] = useState({
-    hotelAdress: "",
-    hotelCity: "",
-    hotelState: "",
-    hotelCountry: "",
-    hotelLatitude: "",
-    hotelLongitude: "",
+    loc_Place: "",
+    loc_City: "",
+    loc_State: "",
+    loc_Country: "",
+    loc_Lat: "",
+    loc_Lng: "",
   });
 
   const {
-    hotelAdress,
-    hotelCity,
-    hotelState,
-    hotelCountry,
-    hotelLatitude,
-    hotelLongitude,
+    loc_Place,
+    loc_City,
+    loc_State,
+    loc_Country,
+    loc_Lat,
+    loc_Lng,
   } = info;
 
   const [errors, setErrors] = useState({});
@@ -31,44 +37,44 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
     event.preventDefault();
     const validationErrors = {};
 
-    if (hotelAdress.trim() === "") {
-      validationErrors.hoteladress = "Enter the hotel's adress";
+    if (loc_Place.trim() === "") {
+      validationErrors.loc_Place = "Enter the hotel's adress";
     }
 
-    if (hotelState.trim() === "") {
-      validationErrors.hotelstate = "Enter the hotel's state";
-    } else if (!/^[a-zA-Z]+$/.test(hotelState.trim().replace(/\s+/g, ""))) {
-      validationErrors.hotelstate =
+    if (loc_State.trim() === "") {
+      validationErrors.loc_State = "Enter the hotel's state";
+    } else if (!/^[a-zA-Z]+$/.test(loc_State.trim().replace(/\s+/g, ""))) {
+      validationErrors.loc_State =
         "Hotel's state name must only contain letters";
     }
 
-    if (hotelCountry.trim() === "") {
-      validationErrors.hotelcountry = "Enter the hotel's country";
-    } else if (!/^[a-zA-Z]+$/.test(hotelCountry.trim().replace(/\s+/g, ""))) {
-      validationErrors.hotelcountry =
+    if (loc_Country.trim() === "") {
+      validationErrors.loc_Country = "Enter the hotel's country";
+    } else if (!/^[a-zA-Z]+$/.test(loc_Country.trim().replace(/\s+/g, ""))) {
+      validationErrors.loc_Country =
         "Hotel's country name must only contain letters";
     }
 
-    if (hotelCity.trim() === "") {
-      validationErrors.hotelcity = "Enter the hotel's city";
-    } else if (!/^[a-zA-Z]+$/.test(hotelCity.trim().replace(/\s+/g, ""))) {
-      validationErrors.hotelcity =
+    if (loc_City.trim() === "") {
+      validationErrors.loc_City = "Enter the hotel's city";
+    } else if (!/^[a-zA-Z]+$/.test(loc_City.trim().replace(/\s+/g, ""))) {
+      validationErrors.loc_City =
         "Hotel's City name must only contain letters";
     }
 
-    if (hotelCountry.trim() === "") {
-      validationErrors.hotelcountry = "Enter the hotel's country";
-    } else if (!/^[a-zA-Z]+$/.test(hotelCountry.trim().replace(/\s+/g, ""))) {
-      validationErrors.hotelcountry =
+    if (loc_Country.trim() === "") {
+      validationErrors.loc_Country = "Enter the hotel's country";
+    } else if (!/^[a-zA-Z]+$/.test(loc_Country.trim().replace(/\s+/g, ""))) {
+      validationErrors.loc_Country =
         "Hotel's country name must only contain letters";
     }
 
-    if (hotelLatitude.trim() === "") {
-      validationErrors.hotellatitude = "Enter the hotel's latitude";
+    if (loc_Lat.trim() === "") {
+      validationErrors.loc_Lat = "Enter the hotel's latitude";
     }
 
-    if (hotelLongitude.trim() === "") {
-      validationErrors.hotellongitude = "Enter the hotel's longitude";
+    if (loc_Lng.trim() === "") {
+      validationErrors.loc_Lng = "Enter the hotel's longitude";
     }
 
     setErrors(validationErrors);
@@ -76,161 +82,166 @@ function Form2LocationData({ setFormTab, formTab, scrollToTop }) {
     if (Object.keys(validationErrors).length === 0) {
       setErrors({});
       setRender(true);
+      setFormTab(3);
+      form2Constructor(
+        loc_Place,
+        loc_City,
+        loc_State,
+        loc_Country,
+        loc_Lat,
+        loc_Lng
+      );
     }
   };
 
   return (
     <form
-      action=''
+      action=""
       onSubmit={handleInfo}
-      className='CreateHotel--subHotel CH__form2'
+      className="CreateHotel--subHotel CH__form2"
     >
       <h2>Location data</h2>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelAdress'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="loc_Place">
             Address:
           </label>
           <input
-            id='inp1'
-            className='HotelCreator__input'
-            type='text'
-            placeholder='Write your hotel address'
-            name='hotelAdress'
+            id="inp1"
+            className="HotelCreator__input"
+            type="text"
+            placeholder="Write your hotel address"
+            name="loc_Place"
             onChange={(event) => handleChange(event)}
-            value={hotelAdress}
+            value={loc_Place}
           />
         </div>
-        {errors.hoteladress && (
-          <span className='error-creatorAdmin'>{errors.hoteladress}</span>
+        {errors.loc_Place && (
+          <span className="error-creatorAdmin">{errors.loc_Place}</span>
         )}
       </div>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelCity'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="loc_City">
             City:
           </label>
           <input
-            id='inp2'
-            className='HotelCreator__input'
-            type='text'
-            placeholder='Enter the city'
-            name='hotelCity'
+            id="inp2"
+            className="HotelCreator__input"
+            type="text"
+            placeholder="Enter the city"
+            name="loc_City"
             onChange={(event) => handleChange(event)}
-            value={hotelCity}
+            value={loc_City}
           />
         </div>
-        {errors.hotelcity && (
-          <span className='error-creatorAdmin'>{errors.hotelcity}</span>
+        {errors.loc_City && (
+          <span className="error-creatorAdmin">{errors.loc_City}</span>
         )}
       </div>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelState'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="loc_State">
             State:
           </label>
           <input
-            id='inp3'
-            className='HotelCreator__input'
-            type='text'
-            placeholder='Enter the state'
-            name='hotelState'
+            id="inp3"
+            className="HotelCreator__input"
+            type="text"
+            placeholder="Enter the state"
+            name="loc_State"
             onChange={(event) => handleChange(event)}
-            value={hotelState}
+            value={loc_State}
           />
         </div>
-        {errors.hotelstate && (
-          <span className='error-creatorAdmin'>{errors.hotelstate}</span>
+        {errors.loc_State && (
+          <span className="error-creatorAdmin">{errors.loc_State}</span>
         )}
       </div>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelCountry'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="loc_Country">
             Country:
           </label>
           <input
-            id='inp4'
-            className='HotelCreator__input'
-            type='text'
+            id="inp4"
+            className="HotelCreator__input"
+            type="text"
             placeholder="Write your hotel's country"
-            name='hotelCountry'
+            name="loc_Country"
             onChange={(event) => handleChange(event)}
-            value={hotelCountry}
+            value={loc_Country}
           />
         </div>
-        {errors.hotelcountry && (
-          <span className='error-creatorAdmin'>{errors.hotelcountry}</span>
+        {errors.loc_Country && (
+          <span className="error-creatorAdmin">{errors.loc_Country}</span>
         )}
       </div>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelLatitude'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="loc_Lat">
             Latitude:
           </label>
           <input
-            id='inp5'
-            className='HotelCreator__input'
-            type='text'
+            id="inp5"
+            className="HotelCreator__input"
+            type="text"
             placeholder="Write your hotel's latitude"
-            name='hotelLatitude'
+            name="loc_Lat"
             onChange={(event) => handleChange(event)}
-            value={hotelLatitude}
+            value={loc_Lat}
           />
         </div>
-        {errors.hotellatitude && (
-          <span className='error-creatorAdmin'>{errors.hotellatitude}</span>
+        {errors.loc_Lat && (
+          <span className="error-creatorAdmin">{errors.loc_Lat}</span>
         )}
       </div>
 
-      <div className='line_Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelLongitude'>
+      <div className="line_Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="loc_Lng">
             Longitude:
           </label>
           <input
-            id='inp5'
-            className='HotelCreator__input'
-            type='text'
+            id="inp5"
+            className="HotelCreator__input"
+            type="text"
             placeholder="Write your hotel's Longitude"
-            name='hotelLongitude'
+            name="loc_Lng"
             onChange={(event) => handleChange(event)}
-            value={hotelLongitude}
+            value={loc_Lng}
           />
         </div>
-        {errors.hotellongitude && (
-          <span className='error-creatorAdmin'>{errors.hotellongitude}</span>
+        {errors.loc_Lng && (
+          <span className="error-creatorAdmin">{errors.loc_Lng}</span>
         )}
       </div>
 
-      <div className='HotelForm__footer'>
+      <div className="HotelForm__footer">
         <button
-          className='HotelCreator__form--microSubmit'
+          className="HotelCreator__form--microSubmit"
           onClick={(event) => {
             setFormTab(1);
             scrollToTop();
+            handleInfo(event);
           }}
         >
           🡸
         </button>
         Step {formTab} / 5
-        {render === true ? (
-          <button
-            className='HotelCreator__form--microSubmit'
-            onClick={(event) => {
-              setFormTab(3);
-              scrollToTop();
-            }}
-          >
-            🢂
-          </button>
-        ) : (
-          <button className='HotelCreator__form--microSubmit'>🢂</button>
-        )}
+        <button
+          className="HotelCreator__form--microSubmit"
+          onClick={(event) => {
+            scrollToTop();
+          }}
+        >
+          🢂
+        </button>
       </div>
     </form>
   );

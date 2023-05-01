@@ -49,7 +49,7 @@ function ReservationCard({ booking }) {
             </p>
             <p className="">
               <strong>Location:</strong>
-              [???]
+              {booking.HotelCity}, {booking.HotelCountry}
             </p>
             <p className="">
               <strong>Rooms:</strong>
@@ -60,12 +60,8 @@ function ReservationCard({ booking }) {
               {booking.NumberOfGuest}
             </p>
             <p className="">
-              <strong>Nights:</strong>
-              [#]
-            </p>
-            <p className="">
-              <strong>Special Requirements:</strong>
-              [...]
+              <strong>Special Requirements: </strong>
+              {booking.SpecialReqs || "None"}
             </p>
           </div>
         </div>
@@ -76,8 +72,8 @@ function ReservationCard({ booking }) {
               <th>Check-out</th>
             </tr>
             <tr>
-              <td>[Check in Date]</td>
-              <td>[Check out Date]</td>
+              <td>{booking.CheckInDate}</td>
+              <td>{booking.CheckOutDate}</td>
             </tr>
           </table>
         </div>
@@ -92,7 +88,7 @@ function ReservationCard({ booking }) {
               <td>
                 <strong> Name: </strong>
               </td>
-              <td className="PaymentDetails__col2">{booking.Payments[0].CardFirstName}</td>
+              <td className="PaymentDetails__col2">{booking.payments.CardFirstName}</td>
             </tr>
             <tr>
               <td>
@@ -104,31 +100,25 @@ function ReservationCard({ booking }) {
               <td>
                 <strong> Card Number: </strong>
               </td>
-              <td className="PaymentDetails__col2">{booking.Payments[0].CardNumber}</td>
+              <td className="PaymentDetails__col2">{booking.payments.CardNumber}</td>
             </tr>
             <tr>
               <td>
                 <strong> Card Type: </strong>
               </td>
-              <td className="PaymentDetails__col2">{booking.Payments[0].CardSecondName}</td>
+              <td className="PaymentDetails__col2">{booking.payments.CardSecondName}</td>
             </tr>
             <tr>
               <td>
                 <strong> Base Price: </strong>
               </td>
-              <td className="PaymentDetails__col2">[$$$]</td>
-            </tr>
-            <tr>
-              <td>
-                <strong> Promo code: </strong>
-              </td>
-              <td className="PaymentDetails__col2">[CODE]</td>
+              <td className="PaymentDetails__col2">{booking.payments.BasePrice}</td>
             </tr>
             <tr>
               <td>
                 <strong> Taxes & fees total: </strong>
               </td>
-              <td className="PaymentDetails__col2">[$$$]</td>
+              <td className="PaymentDetails__col2">{booking.payments.Tax}</td>
             </tr>
             <tr>
               <td>
@@ -140,21 +130,11 @@ function ReservationCard({ booking }) {
               <td>
                 <strong> Total: </strong>
               </td>
-              <td className="PaymentDetails__col2">[$$$]</td>
+              <td className="PaymentDetails__col2">{booking.payments.FinalPrice}</td>
             </tr>
             <tr>
               <td style={{ opacity: "0" }}>.</td>
               <td style={{ opacity: "0" }}>.</td>
-            </tr>
-            <tr>
-              <td className="PaymentDetails__sub" colspan="2">
-                <h3>Extras</h3>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <p className="">[...]</p>
-              </td>
             </tr>
           </table>
         </div>

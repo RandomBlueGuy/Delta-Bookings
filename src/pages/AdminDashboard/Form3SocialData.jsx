@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
-function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
+function Form3SocialData({ setFormTab, formTab, scrollToTop,form3Constructor }) {
   const [info, setInfo] = useState({
-    hotelPopularity: "",
-    hotelTrending: "",
-    hotelFacebook: "",
-    hotelInstagram: "",
-    hotelTwitter: "",
-    hotelPinterest: "",
+    PopularityNumber: "",
+    TrendingNumber: "",
+    SN_Facebook: "",
+    SN_Instagram: "",
+    SN_Twitter: "",
+    SN_Pinterest: "",
   });
 
   const {
-    hotelPopularity,
-    hotelTrending,
-    hotelFacebook,
-    hotelInstagram,
-    hotelTwitter,
-    hotelPinterest,
+    PopularityNumber,
+    TrendingNumber,
+    SN_Facebook,
+    SN_Instagram,
+    SN_Twitter,
+    SN_Pinterest,
   } = info;
 
   const [errors, setErrors] = useState({});
@@ -31,28 +31,28 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
     event.preventDefault();
     const validationErrors = {};
 
-    if (hotelPopularity.trim() === "") {
-      validationErrors.hotelpopularity = "No empty spaces";
+    if (PopularityNumber.trim() === "") {
+      validationErrors.PopularityNumber = "No empty spaces";
     }
 
-    if (hotelTrending.trim() === "") {
-      validationErrors.hoteltrending = "No empty spaces";
+    if (TrendingNumber.trim() === "") {
+      validationErrors.TrendingNumber = "No empty spaces";
     }
 
-    if (hotelFacebook.trim() === "") {
-      validationErrors.hotelfacebook = "No empty spaces";
+    if (SN_Facebook.trim() === "") {
+      validationErrors.SN_Facebook = "No empty spaces";
     }
 
-    if (hotelInstagram.trim() === "") {
-      validationErrors.hotelinstagram = "No empty spaces";
+    if (SN_Instagram.trim() === "") {
+      validationErrors.SN_Instagram = "No empty spaces";
     }
 
-    if (hotelTwitter.trim() === "") {
-      validationErrors.hoteltwitter = "No empty spaces";
+    if (SN_Twitter.trim() === "") {
+      validationErrors.SN_Twitter = "No empty spaces";
     }
 
-    if (hotelPinterest.trim() === "") {
-      validationErrors.hotelpinterest = "No empty spaces";
+    if (SN_Pinterest.trim() === "") {
+      validationErrors.SN_Pinterest = "No empty spaces";
     }
 
     setErrors(validationErrors);
@@ -60,6 +60,15 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
     if (Object.keys(validationErrors).length === 0) {
       setErrors(validationErrors);
       setRender(true);
+      setFormTab(4);
+      form3Constructor(
+        PopularityNumber,
+        TrendingNumber,
+        SN_Facebook,
+        SN_Instagram,
+        SN_Twitter,
+        SN_Pinterest
+      )
     }
   };
 
@@ -73,7 +82,7 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
 
       <div className='line__Ctn'>
         <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelPopularity'>
+          <label className='HotelCreator__label' htmlFor='PopularityNumber'>
             Popularity #:
           </label>
           <input
@@ -82,19 +91,19 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
             type='text'
             placeholder="Write your hotel's popularity number.
           If not, enter NA or related"
-            name='hotelPopularity'
+            name='PopularityNumber'
             onChange={(event) => handleChange(event)}
-            value={hotelPopularity}
+            value={PopularityNumber}
           />
         </div>
-        {errors.hotelpopularity && (
-          <span className='error-creatorAdmin'> {errors.hotelpopularity} </span>
+        {errors.PopularityNumber && (
+          <span className='error-creatorAdmin'> {errors.PopularityNumber} </span>
         )}
       </div>
 
       <div className='line__Ctn'>
         <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelTrending'>
+          <label className='HotelCreator__label' htmlFor='TrendingNumber'>
             Trending #:
           </label>
           <input
@@ -103,19 +112,19 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
             type='text'
             placeholder="Write your hotel's popularity number.
           If not, enter NA or related"
-            name='hotelTrending'
+            name='TrendingNumber'
             onChange={(event) => handleChange(event)}
-            value={hotelTrending}
+            value={TrendingNumber}
           />
         </div>
-        {errors.hoteltrending && (
-          <span className='error-creatorAdmin'> {errors.hoteltrending} </span>
+        {errors.TrendingNumber && (
+          <span className='error-creatorAdmin'> {errors.TrendingNumber} </span>
         )}
       </div>
 
       <div className='line__Ctn'>
         <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelFacebook'>
+          <label className='HotelCreator__label' htmlFor='SN_Facebook'>
             Facebook:
           </label>
           <input
@@ -124,19 +133,19 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
             type='text'
             placeholder="Write your hotel's facebook fanpage.
           If not, enter NA or related"
-            name='hotelFacebook'
+            name='SN_Facebook'
             onChange={(event) => handleChange(event)}
-            value={hotelFacebook}
+            value={SN_Facebook}
           />
         </div>
-        {errors.hotelfacebook && (
-          <span className='error-creatorAdmin'> {errors.hotelfacebook} </span>
+        {errors.SN_Facebook && (
+          <span className='error-creatorAdmin'> {errors.SN_Facebook} </span>
         )}
       </div>
 
       <div className='line__Ctn'>
         <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelInstagram'>
+          <label className='HotelCreator__label' htmlFor='SN_Instagram'>
             Instagram:
           </label>
           <input
@@ -145,19 +154,19 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
             type='text'
             placeholder="Write your hotel's Instagram fanpage.
           If not, enter NA or related"
-            name='hotelInstagram'
+            name='SN_Instagram'
             onChange={(event) => handleChange(event)}
-            value={hotelInstagram}
+            value={SN_Instagram}
           />
         </div>
-        {errors.hotelinstagram && (
-          <span className='error-creatorAdmin'> {errors.hotelinstagram} </span>
+        {errors.SN_Instagram && (
+          <span className='error-creatorAdmin'> {errors.SN_Instagram} </span>
         )}
       </div>
 
       <div className='line__Ctn'>
         <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelTwitter'>
+          <label className='HotelCreator__label' htmlFor='SN_Twitter'>
             Twitter:
           </label>
           <input
@@ -166,19 +175,19 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
             type='text'
             placeholder="Write your hotel's Twitter page.
           If not, enter NA or related"
-            name='hotelTwitter'
+            name='SN_Twitter'
             onChange={(event) => handleChange(event)}
-            value={hotelTwitter}
+            value={SN_Twitter}
           />
         </div>
-        {errors.hoteltwitter && (
-          <span className='error-creatorAdmin'> {errors.hoteltwitter} </span>
+        {errors.SN_Twitter && (
+          <span className='error-creatorAdmin'> {errors.SN_Twitter} </span>
         )}
       </div>
 
       <div className='line__Ctn'>
         <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='hotelPinterest'>
+          <label className='HotelCreator__label' htmlFor='SN_Pinterest'>
             Pinterest:
           </label>
           <input
@@ -187,13 +196,13 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
             type='text'
             placeholder="Write your hotel's Pinterest page.
           If not, enter NA or related"
-            name='hotelPinterest'
+            name='SN_Pinterest'
             onChange={(event) => handleChange(event)}
-            value={hotelPinterest}
+            value={SN_Pinterest}
           />
         </div>
-        {errors.hotelpinterest && (
-          <span className='error-creatorAdmin'> {errors.hotelpinterest} </span>
+        {errors.SN_Pinterest && (
+          <span className='error-creatorAdmin'> {errors.SN_Pinterest} </span>
         )}
       </div>
 
@@ -208,19 +217,15 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop }) {
           🡸
         </button>
         Step {formTab} / 5
-        {render === true ? (
           <button
             className='HotelCreator__form--microSubmit'
             onClick={(event) => {
-              setFormTab(4);
               scrollToTop();
+              handleInfo(event)
             }}
           >
             🢂
           </button>
-        ) : (
-          <button className='HotelCreator__form--microSubmit'>🢂</button>
-        )}
       </div>
     </form>
   );

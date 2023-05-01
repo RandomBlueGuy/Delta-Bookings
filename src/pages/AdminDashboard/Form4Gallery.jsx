@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
+function Form4Gallery({ setFormTab, formTab, scrollToTop, form4Constructor }) {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState("");
   const [errors, setErrors] = useState({});
   const [render, setRender] = useState(false);
 
@@ -13,7 +13,7 @@ function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
     setFiles(filesArray);
   };
 
-  const handleInfo = (event) => {
+  const handleInfo = async (event) => {
     event.preventDefault();
     const validationErrors = {};
 
@@ -24,27 +24,33 @@ function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      setErrors({});
-      const formData = new FormData();
+      
+      const data = new FormData();
       for (let i = 0; i < files.length; i++) {
-        formData.append("image", files[i]);
+        data.append(`file:${i}`, files[i], files[i].name);
       }
-      try {
-        const response = axios.post(
+
+      const response = await axios.post(
           `${DB_URL}/test-formdata`,
-          formData,
+          data,
           {
             headers: {
               "Content-Type": "multipart/form-data",
             },
           }
-        );
-        setRender(true);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    setFiles([]);
+          );
+          
+          setRender(true);
+          const Gallery = Object.values(response.data).join('-//-');
+          console.log(Gallery);
+          
+          form4Constructor(Gallery)
+          
+          
+          setFormTab(5);
+        }
+        // setFiles([]);
+        setErrors({});
   };
 
   return (
@@ -82,19 +88,15 @@ function Form4Gallery({ setFormTab, formTab, scrollToTop }) {
           🡸
         </button>
         Step {formTab} / 5
-        {render === true ? (
           <button
             className='HotelCreator__form--microSubmit'
             onClick={(event) => {
-              setFormTab(5);
+              handleInfo(event)
               scrollToTop();
             }}
           >
             🢂
           </button>
-        ) : (
-          <button className='HotelCreator__form--microSubmit'>🢂</button>
-        )}
       </div>
     </form>
   );

@@ -63,7 +63,7 @@ export default function Signup() {
     if (Object.keys(validationErrors).length === 0) {
       setData({ username: "", email: "", password: "" });
       createUserDB();
-      navigate(`/`);
+      navigate(`/home`);
     }
   };
 

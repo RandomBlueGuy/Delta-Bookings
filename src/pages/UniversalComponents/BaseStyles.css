@@ -208,3 +208,21 @@ input {
   padding: 0;
 
 }
+
+.Img-ctn{
+  width: 3rem;
+  height:3rem;
+  max-width: 3rem;
+  max-height: 3rem;
+  border: 2px solid lightgray;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.plusUltra{
+  font-size: 50;
+  color: lightgray;
+}

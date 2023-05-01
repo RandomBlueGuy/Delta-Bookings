@@ -1,25 +1,247 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form1BasicInfo from "./Form1BasicInfo";
 import Form2LocationData from "./Form2LocationData";
 import Form3SocialData from "./Form3SocialData";
 import Form4Gallery from "./Form4Gallery";
 import Form5RoomForm from "./Form5RoomForm";
-import RoomList from './RoomList';
+import RoomList from "./RoomList";
+import axios from "axios";
 
 function HotelCreator() {
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [formTab, setFormTab] = useState(1);
-  const [roomFormArr, setRoomFormArr] = useState([]);
+  const [create, setCreate] = useState([]);
+  const [deleteRoomData, setDeleteRoomData] = useState(false);
+  const [hotelForm, setHotelForm] = useState({
+    HotelName: "",
+    Website: "",
+    location: "",
+    category: "Category",
+    loc_Lat: "",
+    loc_Lng: "",
+    loc_Place: "",
+    loc_City: "",
+    loc_State: "",
+    loc_Country: "",
+    FrontImg: "",
+    Gallery: "",
+    PhoneNumber: "",
+    CountryCode: "",
+    Email: "",
+    HotelDescription: "",
+    StarRating: 0,
+    ReviewNumber: 0,
+    Tags: "", //USAR -//-
+    SpecialTags: "",
+    PopularityNumber: 0,
+    DateAdded: "", // FORMATO FECHA HP: 2022-10-21T03:35:24.658Z
+    TrendingNumber: 0,
+    SN_Facebook: "",
+    SN_Twitter: "",
+    SN_Instagram: "",
+    SN_Pinterest: "",
+    Rooms: {},
+  });
 
-  /*
-      //CHANGE INPUT TO INPUT FILE
-      <label for="avatar">Choose a profile picture:</label>
-      <input type="file"
-          id="avatar" name="avatar"
-          accept="image/png, image/jpeg"
-        multiple
-      >
-  */
+  const [roomForm, setRoomForm] = useState({
+    Facility: "Floors [20 -30]",
+    Available: true,
+    RoomImg: "",
+    RoomName: "",
+    OriginalPricePerNight: 0,
+    Discount: 0,
+    About: "",
+    Facility: "Floors 00 - 20",
+    Amenities: "", //USAR -/-
+    Inclusions: "", //USAR -/-
+  });
 
+  function form1Constructor(
+    HotelName,
+    Website,
+    PhoneNumber,
+    Email,
+    HotelDescription,
+    FrontImg
+  ) {
+    setHotelForm({
+      ...hotelForm,
+      HotelName,
+      Website,
+      PhoneNumber,
+      Email,
+      HotelDescription,
+      FrontImg,
+    });
+  }
+
+  function form2Constructor(
+    loc_Place,
+    loc_City,
+    loc_State,
+    loc_Country,
+    loc_Lat,
+    loc_Lng
+  ) {
+    setHotelForm({
+      ...hotelForm,
+      loc_Place,
+      loc_City,
+      loc_State,
+      loc_Country,
+      loc_Lat,
+      loc_Lng,
+    });
+  }
+
+  function form3Constructor(
+    PopularityNumber,
+    TrendingNumber,
+    SN_Facebook,
+    SN_Instagram,
+    SN_Twitter,
+    SN_Pinterest
+  ) {
+    PopularityNumber = parseInt(PopularityNumber);
+    TrendingNumber = parseInt(TrendingNumber);
+    setHotelForm({
+      ...hotelForm,
+      PopularityNumber,
+      TrendingNumber,
+      SN_Facebook,
+      SN_Instagram,
+      SN_Twitter,
+      SN_Pinterest,
+    });
+  }
+
+  function form4Constructor(Gallery) {
+    //USE -//-
+    setHotelForm({ ...hotelForm, Gallery });
+  }
+
+  function form5Constructor(
+    RoomImg,
+    RoomName,
+    OriginalPricePerNight,
+    Discount,
+    About,
+    Amenities,
+    Inclusions
+  ) {
+    Discount = Number(Discount);
+    OriginalPricePerNight = Number(OriginalPricePerNight);
+    setRoomForm({
+      ...roomForm,
+      RoomImg,
+      RoomName,
+      OriginalPricePerNight,
+      Discount,
+      About,
+      Amenities,
+      Inclusions
+    });
+  }
+
+  useEffect(() => {
+    if (roomForm.RoomName !== "") {
+      setCreate([...create, roomForm]);
+    }
+  }, [roomForm]);
+
+  console.log(create);
+
+  function deleteRoom(delNum) {
+    if (deleteRoomData === true) {
+      setCreate(create.filter((room, index) => index !== delNum));
+      setDeleteRoomData(false);
+    }
+  }
+
+  function createHotel() {
+    // Rooms.create
+    setHotelForm({
+      ...hotelForm,
+      StarRating: 4.5,
+      ReviewNumber: 0,
+      PopularityNumber: 100,
+      DateAdded: "2022-10-21T03:35:24.658Z",
+      TrendingNumber: 100,
+      Rooms: create,
+    });
+
+    console.log("CREATE", create);
+    const gggg = {
+      HotelName: `${hotelForm.HotelName}`,
+      Website: `${hotelForm.Website}`,
+      location: "",
+      category: "",
+      loc_Lat: `${hotelForm.loc_Lat}`,
+      loc_Lng: `${hotelForm.loc_Lng}`,
+      loc_Place: `${hotelForm.loc_Place}`,
+      loc_City: `${hotelForm.loc_City}`,
+      loc_State: `${hotelForm.loc_State}`,
+      loc_Country: `${hotelForm.loc_Country}`,
+      FrontImg: `${hotelForm.FrontImg}`,
+      Gallery: `${hotelForm.Gallery}`,
+      PhoneNumber: `${hotelForm.PhoneNumber}`,
+      CountryCode: `${Math.floor(Math.random() * 80) + 10}`,
+      Email: `${hotelForm.Email}`,
+      HotelDescription: `${hotelForm.HotelDescription}`,
+      StarRating: 5,
+      ReviewNumber: 0,
+      Tags: `Pooil-/-Coffee shop`,
+      SpecialTags: `Recommended`,
+      PopularityNumber: 100,
+      DateAdded: "2022-10-21T03:35:24.658Z",
+      TrendingNumber: 0,
+      SN_Facebook: `${hotelForm.SN_Facebook}`,
+      SN_Twitter: `${hotelForm.SN_Twitter}`,
+      SN_Instagram: `${hotelForm.SN_Instagram}`,
+      SN_Pinterest: `${hotelForm.SN_Pinterest}`,
+      Rooms: {
+        create,
+      },
+    }
+    console.log(gggg);
+    axios
+      .post(`${DB_URL}/api/hotels`, {
+        HotelName: `${hotelForm.HotelName}`,
+        Website: `${hotelForm.Website}`,
+        location: "",
+        category: "",
+        loc_Lat: `${hotelForm.loc_Lat}`,
+        loc_Lng: `${hotelForm.loc_Lng}`,
+        loc_Place: `${hotelForm.loc_Place}`,
+        loc_City: `${hotelForm.loc_City}`,
+        loc_State: `${hotelForm.loc_State}`,
+        loc_Country: `${hotelForm.loc_Country}`,
+        FrontImg: `${hotelForm.FrontImg}`,
+        Gallery: `${hotelForm.Gallery}`,
+        PhoneNumber: `${hotelForm.PhoneNumber}`,
+        CountryCode: `${Math.floor(Math.random() * 80) + 10}`,
+        Email: `${hotelForm.Email}`,
+        HotelDescription: `${hotelForm.HotelDescription}`,
+        StarRating: 5,
+        ReviewNumber: 0,
+        Tags: `Pooil-/-Coffee shop`,
+        SpecialTags: `Recommended`,
+        PopularityNumber: 100,
+        DateAdded: "2022-10-21T03:35:24.658Z",
+        TrendingNumber: 0,
+        SN_Facebook: `${hotelForm.SN_Facebook}`,
+        SN_Twitter: `${hotelForm.SN_Twitter}`,
+        SN_Instagram: `${hotelForm.SN_Instagram}`,
+        SN_Pinterest: `${hotelForm.SN_Pinterest}`,
+        Rooms: {
+          create,
+        },
+      })
+      .then((response) => console.log("LO HICIMOS"))
+      .catch((error) => console.log(error.message));
+  }
+
+  // console.log(deleteRoomData)
   function nextFormTab(direction) {
     if (direction === "right") {
       setFormTab(formTab + 1);
@@ -49,6 +271,7 @@ function HotelCreator() {
           setFormTab={setFormTab}
           formTab={formTab}
           scrollToTop={scrollToTop}
+          form1Constructor={form1Constructor}
         />
       </section>
 
@@ -57,6 +280,7 @@ function HotelCreator() {
           setFormTab={setFormTab}
           formTab={formTab}
           scrollToTop={scrollToTop}
+          form2Constructor={form2Constructor}
         />
       </section>
 
@@ -65,6 +289,7 @@ function HotelCreator() {
           setFormTab={setFormTab}
           formTab={formTab}
           scrollToTop={scrollToTop}
+          form3Constructor={form3Constructor}
         />
       </section>
 
@@ -74,6 +299,7 @@ function HotelCreator() {
           setFormTab={setFormTab}
           formTab={formTab}
           scrollToTop={scrollToTop}
+          form4Constructor={form4Constructor}
         />
       </section>
 
@@ -82,18 +308,28 @@ function HotelCreator() {
         style={{ display: formTab === 5 ? "block" : "none" }}
       >
         <div className="RoomsCreated">
-          {roomFormArr.length !== 0 ? (
+          {create.length === 0 ? (
             <h3>No Rooms have been created</h3>
           ) : (
             <div>
-              <h2>Rooms created</h2>
-              <RoomList />
+              <h2>Rooms created {create.length}</h2>
+              {create.map((room, index) => {
+                return (
+                  <RoomList
+                    delNum={index + 1}
+                    roomName={room.RoomName}
+                    deleteRoom={deleteRoom}
+                    deleteRoomData={deleteRoomData}
+                    setDeleteRoomData={setDeleteRoomData}
+                  />
+                );
+              })}
             </div>
           )}
         </div>
         <Form5RoomForm
-          setRoomFormArr={setRoomFormArr}
-          roomFormArr={roomFormArr}
+          length={create.length}
+          form5Constructor={form5Constructor}
         />
 
         <div className="HotelForm__footer">
@@ -106,7 +342,10 @@ function HotelCreator() {
             🡸
           </button>
           Step {formTab} / 5
-          <button className="HotelCreator__form--microSubmit">
+          <button
+            className="HotelCreator__form--microSubmit"
+            onClick={createHotel}
+          >
             Create Hotel
           </button>
         </div>

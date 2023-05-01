@@ -11,7 +11,7 @@ import UserAdministration from "./UserAdministration";
 
 export default function AdminDashboard() {
   const [profileEdit, setProfileEdit] = useState(false);
-  const [selectedTab, setSelectedTab] = useState("Management");
+  const [selectedTab, setSelectedTab] = useState("Create");
 
   function handleClick(selection) {
     setSelectedTab(selection);
