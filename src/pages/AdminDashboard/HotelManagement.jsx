@@ -101,7 +101,7 @@ function HotelManagement() {
             actualPage * itemsPerPage + itemsPerPage
           )
           .map((hotel, index) => {
-            return <ManageListMember key={index} hotel={hotel} />;
+            return <ManageListMember key={index} hotel={hotel} index={index + 1} />;
           })}
       </section>
 

@@ -43,20 +43,24 @@ function ReservationCard({ booking }) {
             <img src={placeHolderImg} alt="" />
           </figure>
           <div className="HotelMicroCard__text">
+          <p className="">
+              <strong>Reference: </strong>
+               {booking.id}
+            </p>
             <p className="">
               <strong>Hotel: </strong>
                {booking.HotelName}
             </p>
             <p className="">
-              <strong>Location:</strong>
+              <strong>Location: </strong>
               {booking.HotelCity}, {booking.HotelCountry}
             </p>
             <p className="">
-              <strong>Rooms:</strong>
+              <strong>Rooms: </strong>
               {booking.RoomType}
             </p>
             <p className="">
-              <strong>Guests:</strong>
+              <strong>Guests: </strong>
               {booking.NumberOfGuest}
             </p>
             <p className="">
@@ -124,7 +128,7 @@ function ReservationCard({ booking }) {
               <td>
                 <strong> Total Nights: </strong>
               </td>
-              <td className="PaymentDetails__col2">[#]</td>
+              <td className="PaymentDetails__col2">{(new Date(booking.CheckOutDate).getTime() - new Date(booking.CheckInDate).getTime()) / 86400000}</td>
             </tr>
             <tr>
               <td>

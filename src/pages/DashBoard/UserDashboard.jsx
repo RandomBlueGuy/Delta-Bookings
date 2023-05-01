@@ -49,17 +49,16 @@ export default function UserDashboard() {
     zipCode,
   } = userData;
 
-  function handlePic(e){
+  function handlePic(e) {
     readFile(e.target.files[0]);
     setPicture(e.target.files);
-    setChangeImage(true)
+    setChangeImage(true);
   }
 
   useEffect(() => {
     if (changeImage === true) {
       setChangeImage(false);
       const editPicture = async () => {
-
         const data = new FormData();
         data.append("username", fullName);
         for (let i = 0; i < picture.length; i++) {
@@ -271,7 +270,7 @@ export default function UserDashboard() {
             id="file"
             max-size="200"
             onChange={handlePic}
-            style={{display: "none"}}
+            style={{ display: "none" }}
           />
 
           <div className="dashboard__ctn-info-text">
@@ -397,26 +396,6 @@ export default function UserDashboard() {
               </div>
 
               <div className="dashboard__ctn-info-edit1-name">
-                <label htmlFor="password">Password</label>
-                <input
-                  type={profileEdit === false ? "password" : "text"}
-                  name="password"
-                  id="password"
-                  disabled={!profileEdit}
-                  value={password}
-                  onChange={handleChange}
-                  className={
-                    profileEdit === false
-                      ? "Dashboard-ctn-isDisabled"
-                      : "Dashboard-ctn-isNotDisabled"
-                  }
-                />
-                {userErrors.userPassword && (
-                  <span className="error">{userErrors.userPassword}</span>
-                )}
-              </div>
-
-              <div className="dashboard__ctn-info-edit1-name">
                 <label htmlFor="gender">Gender</label>
                 <select
                   name="gender"
@@ -486,7 +465,50 @@ export default function UserDashboard() {
                 />
               </div>
             </form>
+          <div className="pass__changer">
+          <div className="dashboard__ctn__password">
+            <h3>Change Password</h3>
+            <button>Edit</button>
+            </div>
+            <div className="dashboard__ctn__password">
+              <label htmlFor="password">Password</label>
+              <input
+                type={profileEdit === false ? "password" : "text"}
+                name="password"
+                id="password"
+                disabled={!profileEdit}
+                value={password}
+                onChange={handleChange}
+                className={
+                  profileEdit === false
+                    ? "Dashboard-ctn-isDisabled"
+                    : "Dashboard-ctn-isNotDisabled"
+                }
+              />
+              {userErrors.userPassword && (
+                <span className="error">{userErrors.userPassword}</span>
+              )}
+              </div>
+            <div className="dashboard__ctn__password">
+
+              <label htmlFor="password">Confirm your password:</label>
+              <input
+                type={profileEdit === false ? "password" : "text"}
+                name="password2"
+                id="password2"
+                disabled={!profileEdit}
+                // value={password}
+                // onChange={handleChange}
+                className={
+                  profileEdit === false
+                  ? "Dashboard-ctn-isDisabled"
+                  : "Dashboard-ctn-isNotDisabled"
+                }
+                />
+            </div>
           </div>
+          </div>
+
 
           <div
             className="dashboard__ctn--Bookings"

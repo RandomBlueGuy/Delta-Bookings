@@ -33,7 +33,7 @@ export default function AdminDashboard() {
           </div>
           <div className="AdminDashboard__ctn-info-text">
             <h1>[ADMIN NAME]</h1>
-            <p>[ADMIN PHONE NUMBER]</p>
+            <p>Delta Bookings Administrator</p>
           </div>
         </div>
         <div className="AdminDashboard__ctn-info-select">

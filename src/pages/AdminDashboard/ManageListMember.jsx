@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ManageListMember({ hotel }) {
+function ManageListMember({ hotel, index }) {
   const [viewMore, setViewMore] = useState(false);
 
   return (
@@ -14,7 +14,7 @@ function ManageListMember({ hotel }) {
         <div className="Management__Card--id">
           <div>
             <h3>
-              {hotel.HotelId}
+              {index}
               <span className="Management__separator">{" :: "}</span>
             </h3>
           </div>
