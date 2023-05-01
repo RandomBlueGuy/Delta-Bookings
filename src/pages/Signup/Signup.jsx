@@ -83,10 +83,6 @@ export default function Signup() {
           <p>Sign Up With</p>
           <div className="goto-social">
             <button>
-              <img src={fbIcon} alt="" />
-              Facebook
-            </button>
-            <button>
               <img src={googleIcon} alt="" />
               Google
             </button>

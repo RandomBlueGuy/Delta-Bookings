@@ -4,7 +4,7 @@ import AdminDashboard from "./AdminDashboard";
 
 function AdminDashBoardPage() {
   return (
-    <div>
+  <div >
       <main className="Dashboard-ctn">
         <AdminDashboard />
       </main>
