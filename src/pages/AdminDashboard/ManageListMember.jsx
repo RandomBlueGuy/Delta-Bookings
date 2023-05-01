@@ -1,67 +1,83 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import WarningMessage from "../UniversalComponents/WarningMessage";
 
 function ManageListMember({ hotel, index }) {
   const [viewMore, setViewMore] = useState(false);
 
+  const deleteHotel = (event) => {
+    event.preventDefault();
+    console.log(hotel.id);
+  };
+
   return (
     <article
-      className="Management__Card"
+      className='Management__Card'
       onClick={() => {
         setViewMore(!viewMore);
       }}
     >
-      <div className="Management__Card--title">
-        <div className="Management__Card--id">
+      <WarningMessage
+        warningMessage={warningMessage}
+        warningTitle={warningTitle}
+        setShowWarning={}
+        setWarningResult={setWarningResult}
+      />
+
+      <div className='Management__Card--title'>
+        <div className='Management__Card--id'>
           <div>
             <h3>
               {index}
-              <span className="Management__separator">{" :: "}</span>
+              <span className='Management__separator'>{" :: "}</span>
             </h3>
           </div>
           <h3>
             {hotel.HotelName}
-            <span className="Management__separator">{" :: "}</span>
+            <span className='Management__separator'>{" :: "}</span>
             {hotel.loc_City}, {hotel.loc_Country}
           </h3>
         </div>
-        <div className="manage_btns">
-          <button className="manage__edit">✎</button>
-          <button className="manage__del">🞮</button>
+        <div className='manage_btns'>
+          <button className='manage__edit'>✎</button>
+          <button className='manage__del' onClick={deleteHotel}>
+            🞮
+          </button>
         </div>
       </div>
       <div
-        className="Management__Card--body"
+        className='Management__Card--body'
         style={{ display: viewMore ? "flex" : "none" }}
       >
-        <p className="">
+        <p className=''>
           <strong>Description: </strong>
           {hotel.HotelDescription}
         </p>
-        <p className="">
+        <p className=''>
           <strong>PhoneNumber: </strong>
           {hotel.CountryCode} {hotel.PhoneNumber}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Email: </strong>
           {hotel.Email}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Tags: </strong>
           {hotel.Tags[0]} , {hotel.Tags[1]}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Popularity Number: </strong>
           {hotel.PopularityNumber}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Trending Number: </strong>
           {hotel.TrendingNumber}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Review Number: </strong>
           {hotel.ReviewNumber}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Rooms Available: </strong>
           {hotel.Rooms.length}
         </p>
