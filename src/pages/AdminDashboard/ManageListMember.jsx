@@ -4,25 +4,50 @@ import WarningMessage from "../UniversalComponents/WarningMessage";
 
 function ManageListMember({ hotel, index }) {
   const [viewMore, setViewMore] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
+  const [warningResult, setWarningResult] = useState(false);
+  const [display, setDisplay] = useState(true);
+
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
 
   const deleteHotel = (event) => {
     event.preventDefault();
-    console.log(hotel.id);
+    setShowWarning(true);
+    console.log(warningResult);
   };
+
+  useEffect(() => {
+    if (warningResult === true) {
+      axios
+        .delete(`${DB_URL}/api/hotels/${hotel.id}`)
+        .then((response) => {
+          console.log(hotel.HotelName, "Deleted", response);
+          setDisplay(false);
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    }
+  }, [warningResult]);
 
   return (
     <article
       className='Management__Card'
+      style={{
+        display: display ? "block" : "none",
+      }}
       onClick={() => {
         setViewMore(!viewMore);
       }}
     >
-      <WarningMessage
-        warningMessage={warningMessage}
-        warningTitle={warningTitle}
-        setShowWarning={}
-        setWarningResult={setWarningResult}
-      />
+      {showWarning && (
+        <WarningMessage
+          warningMessage={`Are you sure you want to delete ${hotel.HotelName}?`}
+          warningTitle={"You are going to delete a hotel"}
+          setShowWarning={setShowWarning}
+          setWarningResult={setWarningResult}
+        />
+      )}
 
       <div className='Management__Card--title'>
         <div className='Management__Card--id'>

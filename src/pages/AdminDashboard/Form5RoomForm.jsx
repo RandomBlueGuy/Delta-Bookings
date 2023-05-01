@@ -23,6 +23,7 @@ function Form5RoomForm({ length = 1, form5Constructor }) {
     Amenities,
     Inclusions,
   } = info;
+
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
 
   const [errors, setErrors] = useState({});
