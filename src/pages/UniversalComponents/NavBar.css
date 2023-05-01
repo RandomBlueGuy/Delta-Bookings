@@ -85,7 +85,6 @@
 }
 
 .square-icon {
-
   height: 2rem;
   width: 8rem;
   aspect-ratio: 1/1;
@@ -94,6 +93,7 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s;
+  gap: 0.5rem;
 }
 
 .square-icon:hover {
@@ -198,6 +198,11 @@
   right: 0;
 }
 
+.userName{
+  font-weight: 700;
+  color: gray;
+}
+
 @media (max-width: 720px) {
   .NavBar {
     box-sizing: border-box;
@@ -296,4 +301,5 @@
     width: 100%;
     height: 2rem;
   }
+  
 }

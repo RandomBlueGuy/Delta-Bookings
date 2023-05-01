@@ -62,7 +62,8 @@ function HotelCreator() {
     PhoneNumber,
     Email,
     HotelDescription,
-    FrontImg
+    FrontImg,
+    Tags
   ) {
     setHotelForm({
       ...hotelForm,
@@ -72,6 +73,7 @@ function HotelCreator() {
       Email,
       HotelDescription,
       FrontImg,
+      Tags,
     });
   }
 
@@ -149,7 +151,7 @@ function HotelCreator() {
     }
   }, [roomForm]);
 
-  console.log(create);
+  console.log(hotelForm);
 
   function deleteRoom(delNum) {
     if (deleteRoomData === true) {
@@ -224,7 +226,7 @@ function HotelCreator() {
         HotelDescription: `${hotelForm.HotelDescription}`,
         StarRating: 5,
         ReviewNumber: 0,
-        Tags: `Pooil-/-Coffee shop`,
+        Tags: `${hotelForm.Tags}`,
         SpecialTags: `Recommended`,
         PopularityNumber: 100,
         DateAdded: "2022-10-21T03:35:24.658Z",

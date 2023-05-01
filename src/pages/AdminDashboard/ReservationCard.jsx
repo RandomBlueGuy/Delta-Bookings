@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import placeHolderImg from "../../assets/Images/hotelPlaceholder.jpg";
 
 function ReservationCard({ booking }) {
   const [viewMore, setViewMore] = useState(false);
@@ -40,7 +39,7 @@ function ReservationCard({ booking }) {
       >
         <div className="HotelMicroCard">
           <figure className="HotelMicroCard__HotelImg">
-            <img src={placeHolderImg} alt="" />
+            <img src={`https://raw.githubusercontent.com/RandomBlueGuy/PROYECTO-FINAL-MIR/main/src/DataBase/Hotel/Rooms/room${Math.floor(Math.random() * 114) + 1}.jpeg`} alt="" />
           </figure>
           <div className="HotelMicroCard__text">
           <p className="">

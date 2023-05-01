@@ -39,7 +39,7 @@ function Login() {
   };
 
   useEffect(() => {
-    if(next) {navigate("/dashboard"); setNext(false) }
+    if(next) {navigate("/home"); setNext(false) }
   }, [cookies.cookieToken]);
   
 

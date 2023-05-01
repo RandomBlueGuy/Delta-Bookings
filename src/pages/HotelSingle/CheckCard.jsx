@@ -88,8 +88,8 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
       <div className="check__card-map">
         <GoogleMap
           center={{
-            lat: Number(currentHotel.loc_Lat),
-            lng: Number(currentHotel.loc_Lng),
+            lat: 51.51271608651099, 
+            lng: 7.462423170202694
           }}
           zoom={20}
         ></GoogleMap>

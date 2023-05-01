@@ -154,8 +154,8 @@ function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
           <div className="HotelInfoDisplay__mapCtn">
             <GoogleMap
               center={{
-                lat: Number(currentHotel.loc_Lat),
-                lng: Number(currentHotel.loc_Lng),
+                lat: 51.51271608651099, 
+                lng: 7.462423170202694
               }}
               zoom={10}
             >
@@ -168,8 +168,8 @@ function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
                 key="1"
                 text={`${currentHotel.HotelName}`}
                 position={{
-                  lat: Number(currentHotel.loc_Lat),
-                  lng: Number(currentHotel.loc_Lng),
+                  lat: 51.51271608651099, 
+                  lng: 7.462423170202694
                 }}
               />
             </GoogleMap>

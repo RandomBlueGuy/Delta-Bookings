@@ -9,7 +9,6 @@ function Form1BasicInfo({
   form1Constructor,
 }) {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
-
   const [info, setInfo] = useState({
     HotelName: "",
     Website: "",
@@ -17,15 +16,25 @@ function Form1BasicInfo({
     Email: "",
     HotelDescription: "",
     FrontImg: [],
+    Tags: "",
   });
 
-  const { HotelName, Website, PhoneNumber, Email, HotelDescription, FrontImg } =
-    info;
+  const {
+    HotelName,
+    Website,
+    PhoneNumber,
+    Email,
+    HotelDescription,
+    FrontImg,
+    Tags,
+  } = info;
 
   const [errors, setErrors] = useState({});
   const [render, setRender] = useState(false);
   const [image, setImage] = useState(null);
+  const [tagsArr, setTagsArr] = useState({ tag1: "NoTag", tag2: "NoTag" });
   const webRegex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/;
+  // console.log(tagsArr);
 
   const readFile = (FrontImg) => {
     const reader = new FileReader();
@@ -99,14 +108,15 @@ function Form1BasicInfo({
 
       const fileURLs = Object.values(response.data);
       const newURL = response.data["file 0"];
-
+      const tagRes = `${tagsArr.tag1 !== "NoTag" ? tagsArr.tag1 : "Swimming"}-/-${tagsArr.tag2 !== "NoTag" ? tagsArr.tag2 : "Bar"}`
       form1Constructor(
         HotelName,
         Website,
         PhoneNumber,
         Email,
         HotelDescription,
-        newURL
+        newURL,
+        tagRes
       );
 
       setErrors({});
@@ -117,135 +127,184 @@ function Form1BasicInfo({
 
   return (
     <form
-      action=''
-      className='CreateHotel--subHotel CH__form1'
+      action=""
+      className="CreateHotel--subHotel CH__form1"
       onSubmit={handleInfo}
     >
       <h2>Basic information</h2>
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='HotelName'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="HotelName">
             Name:
           </label>
           <input
-            name='HotelName'
-            id='inp1'
-            className='HotelCreator__input'
-            type='text'
-            placeholder='Write your new hotel Name'
+            name="HotelName"
+            id="inp1"
+            className="HotelCreator__input"
+            type="text"
+            placeholder="Write your new hotel Name"
             onChange={(event) => handleChange(event)}
             value={HotelName}
           />
         </div>
         {errors.HotelName && (
-          <span className='error-creatorAdmin'> {errors.HotelName} </span>
+          <span className="error-creatorAdmin"> {errors.HotelName} </span>
         )}
       </div>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='Website'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="Website">
             Website:
           </label>
           <input
-            id='inp2'
-            className='HotelCreator__input'
-            type='text'
-            placeholder='Write your hotel site (no spaces /)'
-            name='Website'
+            id="inp2"
+            className="HotelCreator__input"
+            type="text"
+            placeholder="Write your hotel site (no spaces /)"
+            name="Website"
             onChange={(event) => handleChange(event)}
             value={Website}
           />
         </div>
         {errors.Website && (
-          <span className='error-creatorAdmin'> {errors.Website} </span>
+          <span className="error-creatorAdmin"> {errors.Website} </span>
         )}
       </div>
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='PhoneNumber'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="PhoneNumber">
             Phone number:
           </label>
           <input
-            id='inp3'
-            className='HotelCreator__input'
-            type='text'
-            placeholder='Write your new hotel phone number (only numbers)'
-            name='PhoneNumber'
+            id="inp3"
+            className="HotelCreator__input"
+            type="number"
+            placeholder="Write your new hotel phone number (only numbers)"
+            name="PhoneNumber"
             onChange={(event) => handleChange(event)}
             value={PhoneNumber}
           />
         </div>
         {errors.PhoneNumber && (
-          <span className='error-creatorAdmin'> {errors.PhoneNumber} </span>
+          <span className="error-creatorAdmin"> {errors.PhoneNumber} </span>
         )}
       </div>
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='Email'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="Email">
             Email:
           </label>
           <input
-            id='inp4'
-            className='HotelCreator__input'
-            type='email'
-            placeholder='Write your new hotel email address'
-            name='Email'
+            id="inp4"
+            className="HotelCreator__input"
+            type="email"
+            placeholder="Write your new hotel email address"
+            name="Email"
             onChange={(event) => handleChange(event)}
             value={Email}
           />
         </div>
         {errors.Email && (
-          <span className='error-creatorAdmin'> {errors.Email} </span>
+          <span className="error-creatorAdmin"> {errors.Email} </span>
         )}
       </div>
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='HotelDescription'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="HotelDescription">
             Description:
           </label>
           <input
-            id='inp5'
-            className='HotelCreator__input'
-            type='text'
-            placeholder='Write your new hotel description'
-            name='HotelDescription'
+            id="inp5"
+            className="HotelCreator__input"
+            type="text"
+            placeholder="Write your new hotel description"
+            name="HotelDescription"
             onChange={(event) => handleChange(event)}
             value={HotelDescription}
           />
         </div>
         {errors.HotelDescription && (
-          <span className='error-creatorAdmin'>
+          <span className="error-creatorAdmin">
             {" "}
             {errors.HotelDescription}{" "}
           </span>
         )}
       </div>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='FrontImg'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="tags">
+            Tags:
+          </label>
+          <select
+            value={tagsArr.tag1}
+            onChange={(event) =>
+              setTagsArr({ ...tagsArr, tag1: event.target.value })
+            }
+            id="tag-selector"
+          >
+            <option disabled selected>
+              - Select Tag -
+            </option>
+            <option value="swimming">Swimming</option>
+            <option value="parking">Parking</option>
+            <option value="helicopter">Helicopter</option>
+            <option value="bar">Bar</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="dinner">Dinner</option>
+          </select>
+
+          <select
+            value={tagsArr.tag2}
+            onChange={(event) =>
+              setTagsArr({ ...tagsArr, tag2: event.target.value })
+            }
+            id="tag-selector"
+          >
+            <option disabled selected>
+              - Select Tag -
+            </option>
+            <option value="swimming">Swimming</option>
+            <option value="parking">Parking</option>
+            <option value="helicopter">Helicopter</option>
+            <option value="bar">Bar</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="dinner">Dinner</option>
+          </select>
+        </div>
+        {errors.HotelDescription && (
+          <span className="error-creatorAdmin">
+            {" "}
+            {errors.HotelDescription}{" "}
+          </span>
+        )}
+      </div>
+
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="FrontImg">
             Front image
           </label>
           <input
-            className='Input__file'
-            type='file'
-            name='FrontImg'
-            accept='image/png, image/jpeg, image/jpg'
+            className="Input__file"
+            type="file"
+            name="FrontImg"
+            accept="image/png, image/jpeg, image/jpg"
             onChange={(event) => handleChange(event)}
           />
         </div>
         {errors.FrontImg && (
-          <span className='error-creatorAdmin'> {errors.FrontImg} </span>
+          <span className="error-creatorAdmin"> {errors.FrontImg} </span>
         )}
         {/* {!!image && <img src={image} alt="User Update" />} */}
         <ImgCtn />
       </div>
 
-      <div className='HotelForm__footer'>
+      <div className="HotelForm__footer">
         <button
-          type='submit'
-          className='HotelCreator__form--microSubmit'
+          type="submit"
+          className="HotelCreator__form--microSubmit"
           onClick={(event) => {
             event.preventDefault();
           }}
@@ -255,8 +314,8 @@ function Form1BasicInfo({
         </button>
         Step {formTab} / 5
         <button
-          className='HotelCreator__form--microSubmit'
-          type='submit'
+          className="HotelCreator__form--microSubmit"
+          type="submit"
           onClick={(event) => {
             scrollToTop();
             handleInfo(event);

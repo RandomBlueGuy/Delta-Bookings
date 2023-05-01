@@ -88,7 +88,7 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop,form3Constructor }) 
           <input
             id='inp1'
             className='HotelCreator__input'
-            type='text'
+            type='number'
             placeholder="Write your hotel's popularity number.
           If not, enter NA or related"
             name='PopularityNumber'
@@ -109,7 +109,7 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop,form3Constructor }) 
           <input
             id='inp2'
             className='HotelCreator__input'
-            type='text'
+            type='number'
             placeholder="Write your hotel's popularity number.
           If not, enter NA or related"
             name='TrendingNumber'

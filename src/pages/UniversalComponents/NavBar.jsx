@@ -7,13 +7,18 @@ import menuIcon from "../../assets/Icons/menu.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
+import axios from 'axios';
+import { useJwt } from "react-jwt";
 
 function NavBar() {
   let location = useLocation();
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [cookies, setCookie, removeCookie] = useCookies(["cookieToken"]);
   const [visibility, setVisibility] = useState(true);
   const [isInvalidUrl, setIsInvalidUrl] = useState(false);
+  const [userName , setUserName] = useState("")
   const navigate = useNavigate();
+  const decode = useJwt(cookies.cookieToken);
   // const [isSpecialPath, setIsSpecialPath] = useState(false);
   const [trigger, setTrigger] = useState("0vw");
   // const specialPathsArr = [
@@ -24,7 +29,10 @@ function NavBar() {
   // ];
 
   useEffect(() => {
-    // console.log("Cookie token changed:", cookies.cookieToken);
+    if (decode && decode.decodedToken && decode.decodedToken.id) {
+      const id = decode.decodedToken.id;
+    axios.get(`${DB_URL}/api/users/${id}`).then((response) => setUserName(response.data.data.fullName))
+    }
   }, [cookies.cookieToken]);
 
   const handleLogout = () => {
@@ -107,7 +115,13 @@ function NavBar() {
               <Link to="/home">
                 <h2 style={{ color: visibility ? "black" : "white" }}>Home</h2>
               </Link>
-              <Link to={`/hotel-list/search?city=All&checkInDate=${new Date().toISOString().slice(0, 10)}&checkOutDate=${new Date(Date.now() + 86400000).toISOString().slice(0, 10)}&guestnumber=1`}>
+              <Link
+                to={`/hotel-list/search?city=All&checkInDate=${new Date()
+                  .toISOString()
+                  .slice(0, 10)}&checkOutDate=${new Date(Date.now() + 86400000)
+                  .toISOString()
+                  .slice(0, 10)}&guestnumber=1`}
+              >
                 <h2 style={{ color: visibility ? "black" : "white" }}>
                   Hotels
                 </h2>
@@ -197,6 +211,9 @@ function NavBar() {
               </section>
 
               <div className="square-icon userManager">
+                <p className="userName">
+                  {cookies.cookieToken ? userName : ""}
+                </p>
                 <img
                   src={userIcon}
                   alt="Delta"
@@ -217,11 +234,13 @@ function NavBar() {
                       </div>
                     </Link>
                   )}
-                  {cookies.cookieToken === undefined &&<Link to="/signup">
-                    <div className="item-ctn">
-                      <h4>Sign Up</h4>
-                    </div>
-                  </Link>}
+                  {cookies.cookieToken === undefined && (
+                    <Link to="/signup">
+                      <div className="item-ctn">
+                        <h4>Sign Up</h4>
+                      </div>
+                    </Link>
+                  )}
                   {cookies.cookieToken !== undefined && (
                     <Link to="/home">
                       <div className="item-ctn" onClick={handleLogout}>
@@ -236,7 +255,6 @@ function NavBar() {
                       </div>
                     </Link>
                   )}
-
                 </div>
               </div>
             </div>
