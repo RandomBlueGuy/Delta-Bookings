@@ -1,6 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-function Form3SocialData({ setFormTab, formTab, scrollToTop,form3Constructor }) {
+function Form3SocialData({
+  setFormTab,
+  formTab,
+  scrollToTop,
+  form3Constructor,
+  hotel = null,
+}) {
   const [info, setInfo] = useState({
     PopularityNumber: "",
     TrendingNumber: "",
@@ -9,6 +15,19 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop,form3Constructor }) 
     SN_Twitter: "",
     SN_Pinterest: "",
   });
+
+  useEffect(() => {
+    if (hotel !== null) {
+      setInfo({
+        PopularityNumber: `${hotel.PopularityNumber}`,
+        TrendingNumber: `${hotel.TrendingNumber}`,
+        SN_Facebook: hotel.SN_Facebook,
+        SN_Instagram: hotel.SN_Instagram,
+        SN_Twitter: hotel.SN_Twitter,
+        SN_Pinterest: hotel.SN_Pinterest,
+      });
+    } 
+  }, [hotel]);
 
   const {
     PopularityNumber,
@@ -68,147 +87,150 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop,form3Constructor }) 
         SN_Instagram,
         SN_Twitter,
         SN_Pinterest
-      )
+      );
     }
   };
 
   return (
     <form
-      action=''
-      className='CreateHotel--subHotel CH__form3'
+      action=""
+      className="CreateHotel--subHotel CH__form3"
       onSubmit={handleInfo}
     >
       <h2>Social Data</h2>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='PopularityNumber'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="PopularityNumber">
             Popularity #:
           </label>
           <input
-            id='inp1'
-            className='HotelCreator__input'
-            type='number'
+            id="inp1"
+            className="HotelCreator__input"
+            type="number"
             placeholder="Write your hotel's popularity number.
           If not, enter NA or related"
-            name='PopularityNumber'
+            name="PopularityNumber"
             onChange={(event) => handleChange(event)}
             value={PopularityNumber}
           />
         </div>
         {errors.PopularityNumber && (
-          <span className='error-creatorAdmin'> {errors.PopularityNumber} </span>
+          <span className="error-creatorAdmin">
+            {" "}
+            {errors.PopularityNumber}{" "}
+          </span>
         )}
       </div>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='TrendingNumber'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="TrendingNumber">
             Trending #:
           </label>
           <input
-            id='inp2'
-            className='HotelCreator__input'
-            type='number'
+            id="inp2"
+            className="HotelCreator__input"
+            type="number"
             placeholder="Write your hotel's popularity number.
           If not, enter NA or related"
-            name='TrendingNumber'
+            name="TrendingNumber"
             onChange={(event) => handleChange(event)}
             value={TrendingNumber}
           />
         </div>
         {errors.TrendingNumber && (
-          <span className='error-creatorAdmin'> {errors.TrendingNumber} </span>
+          <span className="error-creatorAdmin"> {errors.TrendingNumber} </span>
         )}
       </div>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='SN_Facebook'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="SN_Facebook">
             Facebook:
           </label>
           <input
-            id='inp3'
-            className='HotelCreator__input'
-            type='text'
+            id="inp3"
+            className="HotelCreator__input"
+            type="text"
             placeholder="Write your hotel's facebook fanpage.
           If not, enter NA or related"
-            name='SN_Facebook'
+            name="SN_Facebook"
             onChange={(event) => handleChange(event)}
             value={SN_Facebook}
           />
         </div>
         {errors.SN_Facebook && (
-          <span className='error-creatorAdmin'> {errors.SN_Facebook} </span>
+          <span className="error-creatorAdmin"> {errors.SN_Facebook} </span>
         )}
       </div>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='SN_Instagram'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="SN_Instagram">
             Instagram:
           </label>
           <input
-            id='inp4'
-            className='HotelCreator__input'
-            type='text'
+            id="inp4"
+            className="HotelCreator__input"
+            type="text"
             placeholder="Write your hotel's Instagram fanpage.
           If not, enter NA or related"
-            name='SN_Instagram'
+            name="SN_Instagram"
             onChange={(event) => handleChange(event)}
             value={SN_Instagram}
           />
         </div>
         {errors.SN_Instagram && (
-          <span className='error-creatorAdmin'> {errors.SN_Instagram} </span>
+          <span className="error-creatorAdmin"> {errors.SN_Instagram} </span>
         )}
       </div>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='SN_Twitter'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="SN_Twitter">
             Twitter:
           </label>
           <input
-            id='inp5'
-            className='HotelCreator__input'
-            type='text'
+            id="inp5"
+            className="HotelCreator__input"
+            type="text"
             placeholder="Write your hotel's Twitter page.
           If not, enter NA or related"
-            name='SN_Twitter'
+            name="SN_Twitter"
             onChange={(event) => handleChange(event)}
             value={SN_Twitter}
           />
         </div>
         {errors.SN_Twitter && (
-          <span className='error-creatorAdmin'> {errors.SN_Twitter} </span>
+          <span className="error-creatorAdmin"> {errors.SN_Twitter} </span>
         )}
       </div>
 
-      <div className='line__Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='SN_Pinterest'>
+      <div className="line__Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="SN_Pinterest">
             Pinterest:
           </label>
           <input
-            id='inp5'
-            className='HotelCreator__input'
-            type='text'
+            id="inp5"
+            className="HotelCreator__input"
+            type="text"
             placeholder="Write your hotel's Pinterest page.
           If not, enter NA or related"
-            name='SN_Pinterest'
+            name="SN_Pinterest"
             onChange={(event) => handleChange(event)}
             value={SN_Pinterest}
           />
         </div>
         {errors.SN_Pinterest && (
-          <span className='error-creatorAdmin'> {errors.SN_Pinterest} </span>
+          <span className="error-creatorAdmin"> {errors.SN_Pinterest} </span>
         )}
       </div>
 
-      <div className='HotelForm__footer'>
+      <div className="HotelForm__footer">
         <button
-          className='HotelCreator__form--microSubmit'
+          className="HotelCreator__form--microSubmit"
           onClick={(event) => {
             setFormTab(2);
             scrollToTop();
@@ -217,15 +239,15 @@ function Form3SocialData({ setFormTab, formTab, scrollToTop,form3Constructor }) 
           🡸
         </button>
         Step {formTab} / 5
-          <button
-            className='HotelCreator__form--microSubmit'
-            onClick={(event) => {
-              scrollToTop();
-              handleInfo(event)
-            }}
-          >
-            🢂
-          </button>
+        <button
+          className="HotelCreator__form--microSubmit"
+          onClick={(event) => {
+            scrollToTop();
+            handleInfo(event);
+          }}
+        >
+          🢂
+        </button>
       </div>
     </form>
   );

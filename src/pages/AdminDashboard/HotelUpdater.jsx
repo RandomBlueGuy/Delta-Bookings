@@ -1,45 +1,47 @@
 import React, { useState, useEffect } from "react";
+
 import Form1BasicInfo from "./Form1BasicInfo";
 import Form2LocationData from "./Form2LocationData";
 import Form3SocialData from "./Form3SocialData";
 import Form4Gallery from "./Form4Gallery";
 import Form5RoomForm from "./Form5RoomForm";
-import RoomList from "./RoomList";
 import axios from "axios";
+import RoomList from "./RoomList";
 
-function HotelCreator() {
+function HotelUpdater({ hotel = {} }) {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [formTab, setFormTab] = useState(5);
-  const [create, setCreate] = useState([]);
-  const [deleteRoomData, setDeleteRoomData] = useState(false);
+  const [create, setCreate] = useState(hotel.Rooms);
+  const [deleteRoomData, setDeleteRoomData] = useState(null);
+  const [updateRoomIndex, setUpdateRoomIndex] =useState(null);
   const [hotelForm, setHotelForm] = useState({
-    HotelName: "",
-    Website: "",
-    location: "",
+    HotelName: hotel.HotelName,
+    Website: hotel.Website,
+    location: hotel.location,
     category: "Category",
-    loc_Lat: "",
-    loc_Lng: "",
-    loc_Place: "",
-    loc_City: "",
-    loc_State: "",
-    loc_Country: "",
-    FrontImg: "",
-    Gallery: "",
-    PhoneNumber: "",
-    CountryCode: "",
-    Email: "",
-    HotelDescription: "",
+    loc_Lat: hotel.loc_Lat,
+    loc_Lng: hotel.loc_Lng,
+    loc_Place: hotel.loc_Place,
+    loc_City: hotel.loc_City,
+    loc_State: hotel.loc_State,
+    loc_Country: hotel.loc_Country,
+    FrontImg: hotel.FrontImg,
+    Gallery: hotel.Gallery,
+    PhoneNumber: hotel.PhoneNumber,
+    CountryCode: hotel.CountryCode,
+    Email: hotel.Email,
+    HotelDescription: hotel.HotelDescription,
     StarRating: 0,
     ReviewNumber: 0,
-    Tags: "", //USAR -//-
-    SpecialTags: "",
+    Tags: hotel.Tags,
+    SpecialTags: hotel.SpecialTags,
     PopularityNumber: 0,
-    DateAdded: "", // FORMATO FECHA HP: 2022-10-21T03:35:24.658Z
+    DateAdded: hotel.DateAdded,
     TrendingNumber: 0,
-    SN_Facebook: "",
-    SN_Twitter: "",
-    SN_Instagram: "",
-    SN_Pinterest: "",
+    SN_Facebook: hotel.SN_Facebook,
+    SN_Twitter: hotel.SN_Twitter,
+    SN_Instagram: hotel.SN_Instagram,
+    SN_Pinterest: hotel.SN_Pinterest,
     Rooms: {},
   });
 
@@ -52,9 +54,32 @@ function HotelCreator() {
     Discount: 0,
     About: "",
     Facility: "Floors 00 - 20",
-    Amenities: "", //USAR -/-
-    Inclusions: "", //USAR -/-
+    Amenities: "",
+    Inclusions: "",
   });
+
+  console.log("hotelForm", hotelForm);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  function nextFormTab(direction) {
+    if (direction === "right") {
+      setFormTab(formTab + 1);
+      if (formTab >= 5) {
+        setFormTab(1);
+      }
+    } else {
+      setFormTab(formTab - 1);
+      if (formTab <= 1) {
+        setFormTab(5);
+      }
+    }
+  }
 
   function form1Constructor(
     HotelName,
@@ -141,7 +166,7 @@ function HotelCreator() {
       Discount,
       About,
       Amenities,
-      Inclusions
+      Inclusions,
     });
   }
 
@@ -152,15 +177,24 @@ function HotelCreator() {
   }, [roomForm]);
 
   // console.log(hotelForm);
+  
+  useEffect(() => {
+    console.log(updateRoomIndex)
+    // setCreate(create.filter((room, index) => index !== deleteRoomData));
+  }, [updateRoomIndex])
 
-  function deleteRoom(delNum) {
-    if (deleteRoomData === true) {
-      setCreate(create.filter((room, index) => index !== delNum));
-      setDeleteRoomData(false);
-    }
+  useEffect(() => {
+    // console.log(deleteRoomData)
+    setCreate(create.filter((room, index) => index !== deleteRoomData));
+  }, [deleteRoomData])
+  
+  console.log("ROOM ARR", create);
+
+  function updateRoom(index) {
+    console.log(index);
   }
 
-  function createHotel() {
+  function updateHotel() {
     // Rooms.create
     setHotelForm({
       ...hotelForm,
@@ -172,40 +206,6 @@ function HotelCreator() {
       Rooms: create,
     });
 
-    console.log("CREATE", create);
-    const gggg = {
-      HotelName: `${hotelForm.HotelName}`,
-      Website: `${hotelForm.Website}`,
-      location: "",
-      category: "",
-      loc_Lat: `${hotelForm.loc_Lat}`,
-      loc_Lng: `${hotelForm.loc_Lng}`,
-      loc_Place: `${hotelForm.loc_Place}`,
-      loc_City: `${hotelForm.loc_City}`,
-      loc_State: `${hotelForm.loc_State}`,
-      loc_Country: `${hotelForm.loc_Country}`,
-      FrontImg: `${hotelForm.FrontImg}`,
-      Gallery: `${hotelForm.Gallery}`,
-      PhoneNumber: `${hotelForm.PhoneNumber}`,
-      CountryCode: `${Math.floor(Math.random() * 80) + 10}`,
-      Email: `${hotelForm.Email}`,
-      HotelDescription: `${hotelForm.HotelDescription}`,
-      StarRating: 5,
-      ReviewNumber: 0,
-      Tags: `Pooil-/-Coffee shop`,
-      SpecialTags: `Recommended`,
-      PopularityNumber: 100,
-      DateAdded: "2022-10-21T03:35:24.658Z",
-      TrendingNumber: 0,
-      SN_Facebook: `${hotelForm.SN_Facebook}`,
-      SN_Twitter: `${hotelForm.SN_Twitter}`,
-      SN_Instagram: `${hotelForm.SN_Instagram}`,
-      SN_Pinterest: `${hotelForm.SN_Pinterest}`,
-      Rooms: {
-        create,
-      },
-    }
-    console.log(gggg);
     axios
       .post(`${DB_URL}/api/hotels`, {
         HotelName: `${hotelForm.HotelName}`,
@@ -243,37 +243,16 @@ function HotelCreator() {
       .catch((error) => console.log(error.message));
   }
 
-  // console.log(deleteRoomData)
-  function nextFormTab(direction) {
-    if (direction === "right") {
-      setFormTab(formTab + 1);
-      if (formTab >= 5) {
-        setFormTab(1);
-      }
-    } else {
-      setFormTab(formTab - 1);
-      if (formTab <= 1) {
-        setFormTab(5);
-      }
-    }
-  }
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <main className="HotelCreator">
-      <h1>Hotel Creation</h1>
+      <h1>Updating {hotel.HotelName}</h1>
       <section style={{ display: formTab === 1 ? "block" : "none" }}>
         <Form1BasicInfo
           setFormTab={setFormTab}
           formTab={formTab}
           scrollToTop={scrollToTop}
           form1Constructor={form1Constructor}
+          hotel={hotel}
         />
       </section>
 
@@ -283,6 +262,7 @@ function HotelCreator() {
           formTab={formTab}
           scrollToTop={scrollToTop}
           form2Constructor={form2Constructor}
+          hotel={hotel}
         />
       </section>
 
@@ -292,6 +272,7 @@ function HotelCreator() {
           formTab={formTab}
           scrollToTop={scrollToTop}
           form3Constructor={form3Constructor}
+          hotel={hotel}
         />
       </section>
 
@@ -302,6 +283,7 @@ function HotelCreator() {
           formTab={formTab}
           scrollToTop={scrollToTop}
           form4Constructor={form4Constructor}
+          hotel={hotel}
         />
       </section>
 
@@ -320,9 +302,9 @@ function HotelCreator() {
                   <RoomList
                     delNum={index + 1}
                     roomName={room.RoomName}
-                    deleteRoom={deleteRoom}
-                    deleteRoomData={deleteRoomData}
+                    setUpdateRoomIndex= {setUpdateRoomIndex}
                     setDeleteRoomData={setDeleteRoomData}
+
                   />
                 );
               })}
@@ -332,6 +314,7 @@ function HotelCreator() {
         <Form5RoomForm
           length={create.length}
           form5Constructor={form5Constructor}
+          roomInfo={create[updateRoomIndex]}
         />
 
         <div className="HotelForm__footer">
@@ -346,7 +329,7 @@ function HotelCreator() {
           Step {formTab} / 5
           <button
             className="HotelCreator__form--microSubmit"
-            onClick={createHotel}
+            onClick={updateHotel}
           >
             Create Hotel
           </button>
@@ -356,4 +339,4 @@ function HotelCreator() {
   );
 }
 
-export default HotelCreator;
+export default HotelUpdater;

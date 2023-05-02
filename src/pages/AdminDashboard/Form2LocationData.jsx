@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Form2LocationData({
   setFormTab,
   formTab,
   scrollToTop,
   form2Constructor,
+  hotel = null,
 }) {
-  //loc_Place, loc_City, loc_State, loc_Country, loc_Lat, loc_Lng;
+  const [errors, setErrors] = useState({});
+  const [render, setRender] = useState(false);
+
   const [info, setInfo] = useState({
     loc_Place: "",
     loc_City: "",
@@ -16,18 +19,21 @@ function Form2LocationData({
     loc_Lng: "",
   });
 
-  const {
-    loc_Place,
-    loc_City,
-    loc_State,
-    loc_Country,
-    loc_Lat,
-    loc_Lng,
-  } = info;
+  useEffect(() => {
+    if (hotel !== null) {
+      setInfo({
+        loc_Place: hotel.loc_Place,
+        loc_City: hotel.loc_City,
+        loc_State: hotel.loc_State,
+        loc_Country: hotel.loc_Country,
+        loc_Lat: hotel.loc_Lat,
+        loc_Lng: hotel.loc_Lng,
+      });
+    }
+  }, [hotel]);
 
-  const [errors, setErrors] = useState({});
-  const [render, setRender] = useState(false);
-
+  const { loc_Place, loc_City, loc_State, loc_Country, loc_Lat, loc_Lng } =
+    info;
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInfo({ ...info, [name]: value });
@@ -58,8 +64,7 @@ function Form2LocationData({
     if (loc_City.trim() === "") {
       validationErrors.loc_City = "Enter the hotel's city";
     } else if (!/^[a-zA-Z]+$/.test(loc_City.trim().replace(/\s+/g, ""))) {
-      validationErrors.loc_City =
-        "Hotel's City name must only contain letters";
+      validationErrors.loc_City = "Hotel's City name must only contain letters";
     }
 
     if (loc_Country.trim() === "") {

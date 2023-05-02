@@ -1,17 +1,33 @@
-import React from "react";
+
 import "./AdminDashboard.css";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AdminImg from "../../assets/Images/dev-pic1.png";
 import HotelManagement from "./HotelManagement";
 import HotelCreator from "./HotelCreator";
 import ReservationVisualizer from "./ReservationVisualizer";
 import UserAdministration from "./UserAdministration";
+import HotelUpdater from './HotelUpdater';
 
 export default function AdminDashboard() {
   const [profileEdit, setProfileEdit] = useState(false);
-  const [selectedTab, setSelectedTab] = useState("Create");
+  const [selectedTab, setSelectedTab] = useState("Management");
+  const [hasChosenHotel, setHasChosenHotel] = useState(false)
+  const [selectedHotel , setSelectedHotel] = useState(null)
+
+  function chooseHotelEdit(hotel){
+    setSelectedHotel(hotel)
+    setHasChosenHotel(true)
+  }
+
+  useEffect(() => {
+    if(hasChosenHotel === true){
+      setHasChosenHotel(false)
+      setSelectedTab("hotelUpdate")
+    }
+  }, [hasChosenHotel])
+  
 
   function handleClick(selection) {
     setSelectedTab(selection);
@@ -79,6 +95,17 @@ export default function AdminDashboard() {
           >
             User Management
           </button>
+          <button
+            type="button"
+            value="hotelUpdate"
+            
+            className={
+              selectedTab === "hotelUpdate" ? "AdminDashboard-is-active" : ""
+            }
+            onClick={(event) => handleClick(event.target.value)}
+          >
+            Edit Hotel{" "}
+          </button>
         </div>
       </section>
       <section className="Admin__AdminDashboardCtn">
@@ -86,7 +113,7 @@ export default function AdminDashboard() {
           className="hotelManagement__ctn"
           style={{ display: selectedTab === "Management" ? "block" : "none" }}
         >
-          <HotelManagement />
+          <HotelManagement chooseHotelEdit={chooseHotelEdit}/>
         </div>
 
         <div
@@ -108,6 +135,14 @@ export default function AdminDashboard() {
           }}
         >
           <UserAdministration />
+        </div>
+        <div
+          className="UserAdministration"
+          style={{
+            display: selectedTab === "hotelUpdate" ? "block" : "none",
+          }}
+        >
+          {selectedHotel && <HotelUpdater hotel={selectedHotel}/>}
         </div>
       </section>
     </main>

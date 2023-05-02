@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ImgCtn from "../UniversalComponents/ImgCtn";
 
@@ -7,17 +7,35 @@ function Form1BasicInfo({
   formTab,
   scrollToTop,
   form1Constructor,
+  hotel = null,
 }) {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
-  const [info, setInfo] = useState({
-    HotelName: "",
-    Website: "",
-    PhoneNumber: "",
-    Email: "",
-    HotelDescription: "",
-    FrontImg: [],
-    Tags: "",
-  });
+
+  const [info, setInfo] = useState({});
+
+  useEffect(() => {
+    if (hotel === null) {
+      setInfo({
+        HotelName: "",
+        Website: "",
+        PhoneNumber: "",
+        Email: "",
+        HotelDescription: "",
+        FrontImg: [],
+        Tags: "",
+      });
+    } else{
+      setInfo({
+        HotelName: hotel.HotelName,
+        Website: hotel.Website,
+        PhoneNumber: (hotel.PhoneNumber).split(" ").join(""),
+        Email: hotel.Email,
+        HotelDescription: hotel.HotelDescription,
+        FrontImg: [],
+        Tags: hotel.Tags,
+      });
+    }
+  }, [hotel]);
 
   const {
     HotelName,
@@ -38,7 +56,6 @@ function Form1BasicInfo({
 
   const readFile = (FrontImg) => {
     const reader = new FileReader();
-
     reader.onload = (e) => setImage(e.target.result);
     reader.readAsDataURL(FrontImg);
   };
@@ -55,21 +72,21 @@ function Form1BasicInfo({
     }));
     readFile(event.target.files[0]);
   };
-
+  
   const handleInfo = async (event) => {
     event.preventDefault();
     const validationErrors = {};
-
+    
     if (!HotelName.trim()) {
       validationErrors.HotelName = "Enter the name of the hotel";
     }
-
+    
     if (!Website.trim()) {
       validationErrors.Website = "Enter your website";
     } else if (!webRegex.test(Website.trim().replace(/\s+/g, ""))) {
       validationErrors.Website = "Invalid Website";
     }
-
+    
     if (!PhoneNumber.trim()) {
       validationErrors.PhoneNumber = "Please enter the hotel's number";
     } else if (!/^[0-9]*$/.test(PhoneNumber.trim().replace(/\s+/g, ""))) {
@@ -77,24 +94,23 @@ function Form1BasicInfo({
     } else if (PhoneNumber.trim().replace(/\s+/g, "").length < 5) {
       validationErrors.PhoneNumber = "Enter a number long enough to be valid";
     }
-
+    
     if (!Email.trim()) {
       validationErrors.Email = "Please enter the hotel's email";
     }
-
+    
     if (!HotelDescription.trim()) {
       validationErrors.HotelDescription = "Enter your hotel's description";
-    } else if (HotelDescription.replace(/\s+/g, "").length > 100) {
-      validationErrors.HotelDescription =
-        "Please give us a shorter description";
     }
-
-    if (FrontImg.length < 1) {
-      validationErrors.FrontImg = "Please upload, at least, one picture";
+    
+    if(hotel === null) {
+      if (FrontImg.length < 1) {
+        validationErrors.FrontImg = "Please upload, at least, one picture";
+      }
     }
-
+    
     setErrors(validationErrors);
-
+    
     if (Object.keys(validationErrors).length === 0) {
       const data = new FormData();
       data.append("HotelName", HotelName);
@@ -108,7 +124,9 @@ function Form1BasicInfo({
 
       const fileURLs = Object.values(response.data);
       const newURL = response.data["file 0"];
-      const tagRes = `${tagsArr.tag1 !== "NoTag" ? tagsArr.tag1 : "Swimming"}-/-${tagsArr.tag2 !== "NoTag" ? tagsArr.tag2 : "Bar"}`
+      const tagRes = `${
+        tagsArr.tag1 !== "NoTag" ? tagsArr.tag1 : "Swimming"
+      }-/-${tagsArr.tag2 !== "NoTag" ? tagsArr.tag2 : "Bar"}`;
       form1Constructor(
         HotelName,
         Website,
@@ -179,7 +197,7 @@ function Form1BasicInfo({
           <input
             id="inp3"
             className="HotelCreator__input"
-            type="number"
+            type="text"
             placeholder="Write your new hotel phone number (only numbers)"
             name="PhoneNumber"
             onChange={(event) => handleChange(event)}

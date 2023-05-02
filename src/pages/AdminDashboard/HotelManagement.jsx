@@ -4,7 +4,7 @@ import HotelListPagination from "../HotelList/HotelListPagination";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../ReduxStore/Slices/FetchData/fetchDataSlice";
 
-function HotelManagement() {
+function HotelManagement({chooseHotelEdit}) {
   const [actualPage, setActualPage] = useState(0);
   const itemsPerPage = 10;
   const [maxNpages, setMaxNpages] = useState();
@@ -101,7 +101,7 @@ function HotelManagement() {
             actualPage * itemsPerPage + itemsPerPage
           )
           .map((hotel, index) => {
-            return <ManageListMember key={index} hotel={hotel} index={index + 1} />;
+            return <ManageListMember key={index} hotel={hotel} index={index + 1} chooseHotelEdit={chooseHotelEdit}/>;
           })}
       </section>
 
