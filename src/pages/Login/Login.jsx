@@ -5,18 +5,20 @@ import "./Login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useCookies } from "react-cookie";
+import FloatingMessage from "../UniversalComponents/FloatingMessage";
 
 function Login() {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
-  const [cookies, setCookie] = useCookies(["cookieToken"]);
+  const [cookies, setCookie] = useCookies(["cookieToken", "cookieName"]);
   const [toggleVisible, setToggleVisible] = useState(true);
   const uIcon = <FontAwesomeIcon icon={faUser} />;
   const lIcon = <FontAwesomeIcon icon={faLock} />;
   const mIcon = <FontAwesomeIcon icon={faEnvelope} />;
-  const [next, setNext] =useState(false)
+  const [next, setNext] = useState(false);
   const [errors, setErrors] = useState({});
   const [emailerr, setEmailerr] = useState({});
   const [logUser, setLogUser] = useState(false);
+  const [showUpdate, setShowUpdate] = useState(false);
   const [data, setData] = useState({
     password: "",
     email: "",
@@ -39,9 +41,12 @@ function Login() {
   };
 
   useEffect(() => {
-    if(next) {navigate("/home"); setNext(false) }
+    if (next) {
+      
+      navigate("/home");
+      setNext(false);
+    }
   }, [cookies.cookieToken]);
-  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -62,13 +67,16 @@ function Login() {
           password: password,
         })
         .then((response) => {
+          // console.log("response.token", response.data.token);
+          setShowUpdate(true);
           setCookie("cookieToken", response.data.token, { path: "/" });
+          setCookie("cookieName", response.data.data.fullName, { path: "/" });
         })
         .catch((error) => console.log(error.message));
     } else {
-      console.log("HAY ERRORES", validationErrors);
+      console.log("There are some errors", validationErrors);
     }
-    setNext(true)
+    setNext(true);
     // setInterval(() => {
     // navigate(`/dashboard`);
     // }, 3000);
@@ -87,6 +95,13 @@ function Login() {
 
   return (
     <main className="Login-ctn">
+      {showUpdate && (
+        <FloatingMessage
+          message={`Welcome back, `}
+          setShowUpdate={setShowUpdate}
+          showUpdate={showUpdate}
+        />
+      )}
       <section className="Login-card">
         <form>
           <h1>Login</h1>

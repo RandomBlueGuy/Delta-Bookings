@@ -53,22 +53,6 @@ function ContactInfoCard({ currentHotel }) {
             <img src={gIcon} alt="" />
           </Link>
         </div>
-        <div className="contact__info-check">
-          <input
-            className="contact__info-check-text"
-            type="text"
-            name="checkin"
-            id="checkin"
-            value={"Check-In: [DATE]"}
-          />
-          <input
-            className="contact__info-check-text"
-            type="text"
-            name="checkout"
-            id="checkout"
-            value={"Check-Out: [DATE]"}
-          />
-        </div>
       </div>
     </section>
   );

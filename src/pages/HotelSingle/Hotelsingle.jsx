@@ -46,7 +46,6 @@ export default function Hotelsingle() {
       .catch((error) => console.log(error.message));
         setInterval(() => {
           setLoading(false)
-          
         }, 1000);
   }, []);
 

@@ -19,19 +19,20 @@ export default function UserDashboard() {
   const [dataErrors, setDataErrors] = useState({});
   const [userErrors, setUserErrors] = useState({});
   const [initialUserData, setInitialUserData] = useState({});
-  const [showUpdate, setShowUpdate] = useState(false);
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
   const [cookies] = useCookies("cookieToken");
   const decode = useJwt(cookies.cookieToken);
-  const [showWarning, setShowWarning] = useState(false);
-  const [warningResult, setWarningResult] = useState(false);
   const [picture, setPicture] = useState("");
   const [image, setImage] = useState("");
   const [bookingsArr, setBookingsArr] = useState([]);
   const [changeImage, setChangeImage] = useState(false);
+  const [showUpdate, setShowUpdate] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
+  const [warningResult, setWarningResult] = useState(false);
   const [warningMessage, setWarningMessage] = useState("");
   const [warningTitle, setWarningTitle] = useState("");
   const [shouldUpdate, setShouldUpdate] = useState("");
+
   const [userData, setUserData] = useState({
     fullName: "",
     email: "",
@@ -52,7 +53,7 @@ export default function UserDashboard() {
     setPicture(e.target.files);
     setChangeImage(true);
   }
-
+  console.log(userData);
   useEffect(() => {
     if (changeImage === true) {
       setChangeImage(false);
@@ -297,7 +298,7 @@ export default function UserDashboard() {
       <section className="dashboard__ctn-info">
         <div className="dashboard__ctn-info-prof">
           <div className="dashboard__ctn-info-img">
-            <img src={picture} className="profile__img" alt="Profile-Picture" />
+            <img src={picture} className="profile__img" alt="" />
             <label htmlFor="file">
               <FontAwesomeIcon icon={faPenToSquare} />
             </label>
@@ -378,7 +379,7 @@ export default function UserDashboard() {
                         handleNewuserinfo();
                       }}
                     >
-                      Save Changes
+                      Save
                     </button>
                   )}
                 </form>
@@ -413,10 +414,8 @@ export default function UserDashboard() {
               <div className="dashboard__ctn-info-edit1-name">
                 <label
                   htmlFor="phoneNumber"
-                  className="dashboard__ctn-info-edit1-name"
-                >
-                  Phone number
-                </label>
+                >Phone number
+                  </label>
                 <input
                   type="text"
                   name="phoneNumber"
@@ -507,45 +506,48 @@ export default function UserDashboard() {
             </form>
             <div className="pass__changer">
               <div className="dashboard__ctn__password">
-                <h3>Change Password</h3>
-                {editState2 === false && (
-                  <button
-                    className="dashboard-edit-btn"
-                    onClick={() => {
-                      setEditState2(true);
-                      setProfileEdit2(true);
-                    }}
-                  >
-                    Edit
-                  </button>
-                )}
-
-                {editState2 === true && (
-                  <button
-                    onClick={() => {
-                      setEditState2(false);
-                      setProfileEdit2(false);
-                      setPassword("");
-                      setPassword2("");
-                    }}
-                  >
-                    Cancel
-                  </button>
-                )}
-                <form onSubmit={handleNewPassword}>
-                  {editState2 === true && (
-                    <button
-                      type="submit"
-                      onClick={(event) => {
-                        event.preventDefault();
-                        setShouldUpdate("Password");
-                        handleNewPassword();
-                      }}
-                    >
-                      Save Changes
-                    </button>
-                  )}
-                </form>
+                <div className="dashboard__password--title">
+                  <h3>Change Password</h3>
+                  <div className="dashboard__Btng">
+                    {editState2 === false && (
+                      <button
+                        className="dashboard-edit-btn"
+                        onClick={() => {
+                          setEditState2(true);
+                          setProfileEdit2(true);
+                        }}
+                      >
+                        Edit
+                      </button>
+                    )}
+                    {editState2 === true && (
+                      <button
+                        onClick={() => {
+                          setEditState2(false);
+                          setProfileEdit2(false);
+                          setPassword("");
+                          setPassword2("");
+                        }}
+                      >
+                        Cancel
+                      </button>
+                    )}
+                    <form onSubmit={handleNewPassword}>
+                      {editState2 === true && (
+                        <button
+                          type="submit"
+                          onClick={(event) => {
+                            event.preventDefault();
+                            setShouldUpdate("Password");
+                            handleNewPassword();
+                          }}
+                        >
+                          Save
+                        </button>
+                      )}
+                    </form>
+                  </div>
+                </div>
               </div>
               <div className="dashboard__ctn-info-edit1-name">
                 <label htmlFor="password">Password</label>
@@ -566,7 +568,7 @@ export default function UserDashboard() {
                 )}
               </div>
               <div className="dashboard__ctn-info-edit1-name">
-                <label htmlFor="password2">Confirm your password:</label>
+                <label htmlFor="password2">Confirm password:</label>
                 <input
                   type="password"
                   name="password2"
@@ -590,7 +592,11 @@ export default function UserDashboard() {
           >
             <h1>My Reservations</h1>
             <div className="reservationDisplay">
-              <h2>{bookingsArr.length > 0 ? `You have ${bookingsArr.length} reservations` : "You haven't made any reservation yet :("}</h2>
+              <h2>
+                {bookingsArr.length > 0
+                  ? `You have ${bookingsArr.length} reservations`
+                  : "You haven't made any reservation yet :("}
+              </h2>
               {bookingsArr.map((booking, index) => (
                 <ReservationCard key={index} booking={booking} />
               ))}

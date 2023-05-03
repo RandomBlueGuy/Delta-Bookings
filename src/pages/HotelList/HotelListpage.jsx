@@ -23,7 +23,6 @@ function HotelListpage() {
   const [filterLoading, setFilterLoading] = useState(false);
   const location = useLocation();
   const searchParams = Object.fromEntries(new URLSearchParams(location.search));
-  console.log(searchParams)
 
   useEffect(() => {
     dispatch(fetchData(searchParams));
@@ -88,7 +87,7 @@ function HotelListpage() {
     <div className="HotelListpage-ctn">
       {loading === true && <LoadingComp />}
       {filterLoading === true && <LoadingComp />}
-      <Header />
+      <Header location={searchParams.city}/>
       <div className="SearchBar-ctn-display">
         <SearchBar />
       </div>
@@ -194,9 +193,13 @@ function HotelListpage() {
               actualPage * itemsPerPage,
               actualPage * itemsPerPage + itemsPerPage
             )
-            .map((hotel, index) => {
-              return <HotelCard key={index} hotelInfoCard={hotel} searchParams={searchParams}/>;
+            .map((hotel) => {
+              return <HotelCard key={hotel.id} hotelInfoCard={hotel} searchParams={searchParams}/>;
             })}
+
+{/* {filteredHotelsArray.slice(actualPage, actualPage + itemsPerPage).map((hotel) => (
+  <HotelCard key={hotel.id} hotel={hotel} />
+))} */}
         </div>
         <HotelListPagination
           maxNpages={maxNpages}

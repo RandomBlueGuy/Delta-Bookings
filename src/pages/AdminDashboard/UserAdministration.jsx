@@ -1,25 +1,30 @@
 import React, { useEffect, useState, useRef } from "react";
 import HotelListPagination from "../HotelList/HotelListPagination";
 import UserListMember from "./UserListMember";
-import axios from 'axios';
+import axios from "axios";
+import FloatingMessage from "../UniversalComponents/FloatingMessage";
 
 function ReservationVisualizer() {
   const [actualPage, setActualPage] = useState(0);
   const itemsPerPage = 5;
   const [maxNpages, setMaxNpages] = useState();
   const refProp = useRef(null);
-  const [userArr, setUserArr]  = useState([]);
+  const [userArr, setUserArr] = useState([]);
+  const [recallGet, setRecallGet] = useState(true);
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
+  const [showUpdate, setShowUpdate] = useState(false);
 
-console.log(userArr)
+  // console.log(userArr);
+
   useEffect(() => {
-    axios.get(`${DB_URL}/api/users`)
-    .then((response) => {
-      // console.log(response.data.data)
-      setUserArr(response.data.data)
-    })
-  }, [])
-  
+    if (recallGet) {
+      axios.get(`${DB_URL}/api/users`).then((response) => {
+        setUserArr(response.data.data);
+      });
+      setRecallGet(false);
+      setShowUpdate(true)
+    }
+  }, [recallGet]);
 
   useEffect(() => {
     const res = userArr.length / itemsPerPage;
@@ -27,19 +32,26 @@ console.log(userArr)
   }, [userArr]);
 
   return (
-    <main ref={refProp} className=''>
+    <main ref={refProp} className="">
+      {showUpdate && (
+        <FloatingMessage
+          message={`Saving changes...`}
+          setShowUpdate={setShowUpdate}
+          showUpdate={showUpdate}
+        />
+      )}
       <h1>Users Administration</h1>
       <label htmlFor="management__searchbar" />
       <div className="searchbar__ctn">
         <input type="text" className="management__searchbar" />
-                 <select name="" id="">
-           <option value="" disabled>
-             -- sort by --
-           </option>
-           <option value="Id">Id</option>
-           <option value="Name">Name</option>
-           <option value="Role">Role</option>
-         </select>
+        <select name="" id="">
+          <option value="" disabled>
+            -- sort by --
+          </option>
+          <option value="Id">Id</option>
+          <option value="Name">Name</option>
+          <option value="Role">Role</option>
+        </select>
         <button>SEARCH</button>
       </div>
 
@@ -53,8 +65,9 @@ console.log(userArr)
             return (
               <UserListMember
                 key={index}
-                index={index}
+                index={index + 1}
                 user={user}
+                setRecallGet={setRecallGet}
               />
             );
           })}

@@ -28,13 +28,13 @@ function HotelManagement({chooseHotelEdit}) {
   }, [HotelsArray]);
 
   useEffect(() => {
-    setFilteredHotelsArray(
-      HotelsArray.filter((hotel) => {
-        const input = inputFilter.split(" ").join("").toLowerCase();
-        const key = hotel[`${inputKey}`].toString().split(" ").join("").toLowerCase();
-        return key.includes(input);
-      })
-    );
+    // setFilteredHotelsArray(
+    //   HotelsArray.filter((hotel) => {
+    //     const input = inputFilter.split(" ").join("").toLowerCase();
+    //     const key = hotel[`${inputKey}`].toString().split(" ").join("").toLowerCase();
+    //     return key.includes(input);
+    //   })
+    // );
   }, [inputFilter, inputKey]);
 
   useEffect(() => {
@@ -101,7 +101,7 @@ function HotelManagement({chooseHotelEdit}) {
             actualPage * itemsPerPage + itemsPerPage
           )
           .map((hotel, index) => {
-            return <ManageListMember key={index} hotel={hotel} index={index + 1} chooseHotelEdit={chooseHotelEdit}/>;
+            return <ManageListMember key={hotel.id} hotel={hotel} index={index + 1} chooseHotelEdit={chooseHotelEdit}/>;
           })}
       </section>
 

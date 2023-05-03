@@ -33,49 +33,50 @@ export const fetchDataSlice = createSlice({
 
 export const fetchData = (searchParams = { city: "All" }) => {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
-  
+
   return async (dispatch) => {
-    dispatch({ type: axiosLoading });
+    dispatch(axiosLoading());
 
     try {
       await axios.get(`${DB_URL}/api/hotels`).then((response) => {
         const { data } = response.data;
-        
+
         if (searchParams.id) {
           const [currentHotel] = data.filter(
             (hotel) => hotel.id === searchParams.id
           );
-          dispatch({ type: axiosSuccessHS, payload: currentHotel });
+          dispatch(axiosSuccessHS(currentHotel));
         }
         if (searchParams.city === "All") {
-          dispatch({ type: axiosSuccess, payload: data });
+          dispatch(axiosSuccess(data));
         } else {
-          dispatch({
-            type: axiosSuccess,
-            payload: data.filter((hotel) => {
-              return (
-                hotel.loc_City
-                  .split(" ")
-                  .join("_")
-                  .toLocaleLowerCase()
-                  .includes(searchParams.city) ||
-                hotel.loc_State
-                  .split(" ")
-                  .join("_")
-                  .toLocaleLowerCase()
-                  .includes(searchParams.city) ||
-                hotel.loc_Country
-                  .split(" ")
-                  .join("_")
-                  .toLocaleLowerCase()
-                  .includes(searchParams.city)
-              );
-            }),
-          });
+          dispatch(
+            axiosSuccess(
+              data.filter((hotel) => {
+                return (
+                  hotel.loc_City
+                    .split(" ")
+                    .join("_")
+                    .toLocaleLowerCase()
+                    .includes(searchParams.city) ||
+                  hotel.loc_State
+                    .split(" ")
+                    .join("_")
+                    .toLocaleLowerCase()
+                    .includes(searchParams.city) ||
+                  hotel.loc_Country
+                    .split(" ")
+                    .join("_")
+                    .toLocaleLowerCase()
+                    .includes(searchParams.city)
+                );
+              })
+            )
+          );
         }
       });
     } catch (error) {
-      dispatch({ type: axiosError, payload: error.message });
+      dispatch(axiosError(error.message));
     }
   };
 };

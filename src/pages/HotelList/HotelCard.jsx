@@ -76,7 +76,7 @@ function HotelCard({ hotelInfoCard, searchParams }) {
         <div className="price-tags">
           <h4>${hotelInfoCard.Rooms[0].OriginalPricePerNight.toFixed(0)}</h4>
           <h3>${finalPrice.toFixed(0)}</h3>
-          {tagsArr.map((tag) => <p className="tags">{tag}</p>)}
+          {tagsArr.map((tag, index) => <p className="tags" key={index}>{tag}</p>)}
         </div>
       </section>
     </main>

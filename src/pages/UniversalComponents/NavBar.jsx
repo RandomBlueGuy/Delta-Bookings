@@ -7,16 +7,16 @@ import menuIcon from "../../assets/Icons/menu.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
-import axios from 'axios';
+import axios from "axios";
 import { useJwt } from "react-jwt";
 
 function NavBar() {
   let location = useLocation();
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
-  const [cookies, setCookie, removeCookie] = useCookies(["cookieToken"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["cookieToken", "cookieName"]);
   const [visibility, setVisibility] = useState(true);
   const [isInvalidUrl, setIsInvalidUrl] = useState(false);
-  const [userName , setUserName] = useState("")
+  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
   const decode = useJwt(cookies.cookieToken);
   // const [isSpecialPath, setIsSpecialPath] = useState(false);
@@ -31,12 +31,16 @@ function NavBar() {
   useEffect(() => {
     if (decode && decode.decodedToken && decode.decodedToken.id) {
       const id = decode.decodedToken.id;
-    axios.get(`${DB_URL}/api/users/${id}`).then((response) => setUserName(response.data.data.fullName))
+      axios.get(`${DB_URL}/api/users/${id}`).then((response) => {
+        setUserName(response.data.data.fullName);
+        // setCookie("cookieToken", response.data.data.fullName, { path: "/" });
+      });
     }
   }, [cookies.cookieToken]);
 
   const handleLogout = () => {
     removeCookie("cookieToken");
+    removeCookie("cookieName");
   };
 
   const invalidPathsArr = ["/404-page-not-found"];
@@ -50,8 +54,8 @@ function NavBar() {
   }, [location.pathname]);
 
   // useEffect(() => {
-  //     .map((element) => element === location.pathname)
-  //     .includes(true))
+  //     // .map((element) => element === location.pathname)
+  //     // .includes(true))
   //   if (
   //     specialPathsArr
   //       .map((element) => element === location.pathname)
@@ -135,7 +139,7 @@ function NavBar() {
 
             <div className="user-related">
               <section className="accesibility">
-                <select
+                {/* <select
                   name=""
                   id=""
                   className="coin"
@@ -143,7 +147,7 @@ function NavBar() {
                 >
                   <option value="">USD</option>
                   <option value="">COP</option>
-                </select>
+                </select> */}
               </section>
 
               <section className="mobile__NavBtn">
@@ -193,31 +197,33 @@ function NavBar() {
                   <div className="mobile-menu-titles">
                     <h2>Accesibility</h2>
                   </div>
-                  <div className="item-ctn" style={{ paddingLeft: "0.5rem" }}>
+                  {/* <div className="item-ctn" style={{ paddingLeft: "0.5rem" }}>
                     <h2>Coin:</h2>
                     <select name="" id="" className="coin">
                       <option value="">USD</option>
                       <option value="">COP</option>
                     </select>
-                  </div>
+                  </div> */}
                 </div>
                 <button className="dropdown square-icon" onClick={triggerOpen}>
                   <img
                     src={menuIcon}
                     alt="Delta"
-                    style={{ filter: visibility ? "invert(0)" : "invert(1)" }}
                   />
                 </button>
               </section>
 
               <div className="square-icon userManager">
-                <p className="userName">
-                  {cookies.cookieToken ? userName : ""}
+                <p className="userName" >
+                  {cookies.cookieName ? (cookies.cookieName).split(" ")[0] : ""}
                 </p>
+                
                 <img
                   src={userIcon}
                   alt="Delta"
-                  style={{ filter: visibility ? "invert(0)" : "invert(1)" }}
+                  // style={{ filter: visibility ? "invert(0)" : "invert(1)" }}
+                  style={{ filter: cookies.cookieName ? "invert(47%) sepia(69%) saturate(7351%) hue-rotate(343deg) brightness(111%) contrast(86%)" : ""}}
+
                 />
                 <div className="dropdown-menu">
                   {cookies.cookieToken !== undefined && (
