@@ -7,7 +7,7 @@ import menuIcon from "../../assets/Icons/menu.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
-import axios from 'axios';
+import axios from "axios";
 import { useJwt } from "react-jwt";
 
 function NavBar() {
@@ -16,22 +16,17 @@ function NavBar() {
   const [cookies, setCookie, removeCookie] = useCookies(["cookieToken"]);
   const [visibility, setVisibility] = useState(true);
   const [isInvalidUrl, setIsInvalidUrl] = useState(false);
-  const [userName , setUserName] = useState("")
+  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
   const decode = useJwt(cookies.cookieToken);
-  // const [isSpecialPath, setIsSpecialPath] = useState(false);
   const [trigger, setTrigger] = useState("0vw");
-  // const specialPathsArr = [
-  //   "/bookings",
-  //   "/hotel-single",
-  //   "/checkout-success",
-  //   "/login",
-  // ];
 
   useEffect(() => {
     if (decode && decode.decodedToken && decode.decodedToken.id) {
       const id = decode.decodedToken.id;
-    axios.get(`${DB_URL}/api/users/${id}`).then((response) => setUserName(response.data.data.fullName))
+      axios
+        .get(`${DB_URL}/api/users/${id}`)
+        .then((response) => setUserName(response.data.data.fullName));
     }
   }, [cookies.cookieToken]);
 
@@ -49,22 +44,6 @@ function NavBar() {
       : setIsInvalidUrl(false);
   }, [location.pathname]);
 
-  // useEffect(() => {
-  //     .map((element) => element === location.pathname)
-  //     .includes(true))
-  //   if (
-  //     specialPathsArr
-  //       .map((element) => element === location.pathname)
-  //       .includes(true)
-  //   ) {
-  //     setIsSpecialPath(true);
-  //     setVisibility(true);
-  //   } else {
-  //     setIsSpecialPath(false);
-  //     setVisibility(false);
-  //   }
-  // }, [location.pathname]);
-
   const triggerOpen = (event) => {
     event.preventDefault();
     setTrigger("90vw");
@@ -75,44 +54,27 @@ function NavBar() {
     setTrigger("0vw");
   };
 
-  // useEffect(() => {
-  //   isSpecialPath ? setVisibility(true) : setVisibility(false);
-  // }, []);
-
-  // const toggleVisible = () => {
-  //   if (isSpecialPath) {
-  //     setVisibility(true);
-  //   } else {
-  //     document.documentElement.scrollTop > 100
-  //       ? setVisibility(true)
-  //       : setVisibility(false);
-  //   }
-  // };
-
-  // window.addEventListener("scroll", toggleVisible);
-
   return (
     !isInvalidUrl && (
       <main>
         <section
-          className="NavBar-container txt-color"
+          className='NavBar-container txt-color'
           style={{
             backgroundColor: visibility ? "white" : "transparent",
             boxShadow: visibility
               ? `0px 2px 5px rgba(43, 43, 43, 0.2)`
               : "none",
-            // display: invalidUrl ? "none" : "flex",
           }}
         >
-          <nav className="NavBar">
-            <section className="nav-section">
-              <Link to="/home">
-                <img src={visibility ? iconB : iconW} alt="Delta" />
+          <nav className='NavBar'>
+            <section className='nav-section'>
+              <Link to='/home'>
+                <img src={visibility ? iconB : iconW} alt='Delta' />
               </Link>
             </section>
 
-            <section className="nav-desktop">
-              <Link to="/home">
+            <section className='nav-desktop'>
+              <Link to='/home'>
                 <h2 style={{ color: visibility ? "black" : "white" }}>Home</h2>
               </Link>
               <Link
@@ -126,131 +88,131 @@ function NavBar() {
                   Hotels
                 </h2>
               </Link>
-              <Link to="/about-us">
+              <Link to='/about-us'>
                 <h2 style={{ color: visibility ? "black" : "white" }}>
                   About Us
                 </h2>
               </Link>
             </section>
 
-            <div className="user-related">
-              <section className="accesibility">
+            <div className='user-related'>
+              <section className='accesibility'>
                 <select
-                  name=""
-                  id=""
-                  className="coin"
+                  name=''
+                  id=''
+                  className='coin'
                   style={{ color: visibility ? "black" : "white" }}
                 >
-                  <option value="">USD</option>
-                  <option value="">COP</option>
+                  <option value=''>USD</option>
+                  <option value=''>COP</option>
                 </select>
               </section>
 
-              <section className="mobile__NavBtn">
+              <section className='mobile__NavBtn'>
                 <div
-                  id="mySidepanel"
+                  id='mySidepanel'
                   style={{
                     width: trigger,
                     padding: trigger !== "0vw" ? "1rem" : "0",
                     opacity: trigger !== "0vw" ? "1" : "0",
                   }}
-                  className="sidepanel"
+                  className='sidepanel'
                 >
-                  <div className="closebtn" onClick={triggerClose}>
+                  <div className='closebtn' onClick={triggerClose}>
                     <h2>Back →</h2>
                   </div>
-                  <div className="mobile-menu-titles">
+                  <div className='mobile-menu-titles'>
                     <h2>Navigation</h2>
                   </div>
-                  <Link to="/" className="item-ctn">
+                  <Link to='/' className='item-ctn'>
                     <h2>Home</h2>
                   </Link>
-                  <Link to="/hotel-list/search?city=All" className="item-ctn">
+                  <Link to='/hotel-list/search?city=All' className='item-ctn'>
                     <h2>Hotel</h2>
                   </Link>
-                  <Link to="/about-us" className="item-ctn">
+                  <Link to='/about-us' className='item-ctn'>
                     <h2>About Us</h2>
                   </Link>
 
-                  <div className="mobile-menu-titles">
+                  <div className='mobile-menu-titles'>
                     <h2>Account</h2>
                   </div>
-                  <Link to="/dashboard" className="item-ctn">
+                  <Link to='/dashboard' className='item-ctn'>
                     <h2>Profile</h2>
                   </Link>
-                  <Link to="/admin-dashboard" className="item-ctn">
+                  <Link to='/admin-dashboard' className='item-ctn'>
                     <h2>Admin Dashboard</h2>
                   </Link>
-                  <Link to="/login" className="item-ctn">
+                  <Link to='/login' className='item-ctn'>
                     <h2>Log In</h2>
                   </Link>
-                  <Link to="/home" className="item-ctn" onClick={handleLogout}>
+                  <Link to='/home' className='item-ctn' onClick={handleLogout}>
                     <h2>Log Out</h2>
                   </Link>
-                  <Link to="/signup" className="item-ctn">
+                  <Link to='/signup' className='item-ctn'>
                     <h2>Sign-up</h2>
                   </Link>
-                  <div className="mobile-menu-titles">
+                  <div className='mobile-menu-titles'>
                     <h2>Accesibility</h2>
                   </div>
-                  <div className="item-ctn" style={{ paddingLeft: "0.5rem" }}>
+                  <div className='item-ctn' style={{ paddingLeft: "0.5rem" }}>
                     <h2>Coin:</h2>
-                    <select name="" id="" className="coin">
-                      <option value="">USD</option>
-                      <option value="">COP</option>
+                    <select name='' id='' className='coin'>
+                      <option value=''>USD</option>
+                      <option value=''>COP</option>
                     </select>
                   </div>
                 </div>
-                <button className="dropdown square-icon" onClick={triggerOpen}>
+                <button className='dropdown square-icon' onClick={triggerOpen}>
                   <img
                     src={menuIcon}
-                    alt="Delta"
+                    alt='Delta'
                     style={{ filter: visibility ? "invert(0)" : "invert(1)" }}
                   />
                 </button>
               </section>
 
-              <div className="square-icon userManager">
-                <p className="userName">
+              <div className='square-icon userManager'>
+                <p className='userName'>
                   {cookies.cookieToken ? userName : ""}
                 </p>
                 <img
                   src={userIcon}
-                  alt="Delta"
+                  alt='Delta'
                   style={{ filter: visibility ? "invert(0)" : "invert(1)" }}
                 />
-                <div className="dropdown-menu">
+                <div className='dropdown-menu'>
                   {cookies.cookieToken !== undefined && (
-                    <Link to="/dashboard">
-                      <div className="item-ctn">
+                    <Link to='/dashboard'>
+                      <div className='item-ctn'>
                         <h4>Profile</h4>
                       </div>
                     </Link>
                   )}
                   {cookies.cookieToken !== undefined && (
-                    <Link to="/admin-dashboard">
-                      <div className="item-ctn">
+                    <Link to='/admin-dashboard'>
+                      <div className='item-ctn'>
                         <h4>Dashboard</h4>
                       </div>
                     </Link>
                   )}
                   {cookies.cookieToken === undefined && (
-                    <Link to="/signup">
-                      <div className="item-ctn">
+                    <Link to='/signup'>
+                      <div className='item-ctn'>
                         <h4>Sign Up</h4>
                       </div>
                     </Link>
                   )}
                   {cookies.cookieToken !== undefined && (
-                    <Link to="/home">
-                      <div className="item-ctn" onClick={handleLogout}>
+                    <Link to='/home'>
+                      <div className='item-ctn' onClick={handleLogout}>
                         <h4>Log out</h4>
                       </div>
                     </Link>
                   )}
                   {cookies.cookieToken === undefined && (
-                    <Link to="/login">
-                      <div className="item-ctn">
+                    <Link to='/login'>
+                      <div className='item-ctn'>
                         <h4>Log in</h4>
                       </div>
                     </Link>

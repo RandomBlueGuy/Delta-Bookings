@@ -306,17 +306,6 @@
   flex-basis: 65%;
   background-color: white;
 }
-/* outline: solid var(--red-style);
-box-shadow: 0 0 10px #719ece42;
-animation: input-shake  0.2s ease-in-out 0s 2;
-}
-
-@keyframes input-shake {
-0% { margin-left: 0rem; }
-25% { margin-left: 0.5rem; }
-75% { margin-left: -0.5rem; }
-100% { margin-left: 0rem; }
-} */
 
 .reservationDisplay{
   display: flex;
@@ -337,4 +326,16 @@ animation: input-shake  0.2s ease-in-out 0s 2;
   width: 60%;
   align-items: center;
   gap: 1rem;
+}
+
+.error-creatorUser{
+    color: red;
+    font-style: italic;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
+    float: right;
+    margin-top: -5px;
+    margin-bottom: 5px;
 }
