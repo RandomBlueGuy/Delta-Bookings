@@ -28,13 +28,13 @@ function HotelManagement({chooseHotelEdit}) {
   }, [HotelsArray]);
 
   useEffect(() => {
-    // setFilteredHotelsArray(
-    //   HotelsArray.filter((hotel) => {
-    //     const input = inputFilter.split(" ").join("").toLowerCase();
-    //     const key = hotel[`${inputKey}`].toString().split(" ").join("").toLowerCase();
-    //     return key.includes(input);
-    //   })
-    // );
+    setFilteredHotelsArray(
+      HotelsArray.filter((hotel) => {
+        const input = inputFilter.split(" ").join("").toLowerCase();
+        const key = hotel[`${inputKey}`].toString().split(" ").join("").toLowerCase();
+        return key.includes(input);
+      })
+    );
   }, [inputFilter, inputKey]);
 
   useEffect(() => {

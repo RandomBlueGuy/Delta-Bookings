@@ -10,7 +10,7 @@ import RoomList from "./RoomList";
 
 function HotelUpdater({ hotel = {} }) {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
-  const [formTab, setFormTab] = useState(5);
+  const [formTab, setFormTab] = useState(1);
   const [create, setCreate] = useState(hotel.Rooms);
   const [deleteRoomData, setDeleteRoomData] = useState(null);
   const [updateRoomIndex, setUpdateRoomIndex] =useState(null);
@@ -188,26 +188,53 @@ function HotelUpdater({ hotel = {} }) {
     setCreate(create.filter((room, index) => index !== deleteRoomData));
   }, [deleteRoomData])
   
-  console.log("ROOM ARR", create);
 
   function updateRoom(index) {
     console.log(index);
   }
 
   function updateHotel() {
-    // Rooms.create
+    const roomUpdateArr = create.map((room) => room.id)
+    console.log(roomUpdateArr)
     setHotelForm({
       ...hotelForm,
-      StarRating: 4.5,
-      ReviewNumber: 0,
-      PopularityNumber: 100,
-      DateAdded: "2022-10-21T03:35:24.658Z",
-      TrendingNumber: 100,
       Rooms: create,
     });
-
+    const hotelTest = {
+      HotelName: `${hotelForm.HotelName}`,
+      Website: `${hotelForm.Website}`,
+      location: "",
+      category: "",
+      loc_Lat: `${hotelForm.loc_Lat}`,
+      loc_Lng: `${hotelForm.loc_Lng}`,
+      loc_Place: `${hotelForm.loc_Place}`,
+      loc_City: `${hotelForm.loc_City}`,
+      loc_State: `${hotelForm.loc_State}`,
+      loc_Country: `${hotelForm.loc_Country}`,
+      FrontImg: `${hotelForm.FrontImg}`,
+      Gallery: `${hotelForm.Gallery}`,
+      PhoneNumber: `${hotelForm.PhoneNumber}`,
+      CountryCode: `${Math.floor(Math.random() * 80) + 10}`,
+      Email: `${hotelForm.Email}`,
+      HotelDescription: `${hotelForm.HotelDescription}`,
+      StarRating: 5,
+      ReviewNumber: 0,
+      Tags: `${hotelForm.Tags}`,
+      SpecialTags: `Recommended`,
+      PopularityNumber: 100,
+      DateAdded: "2022-10-21T03:35:24.658Z",
+      TrendingNumber: 0,
+      SN_Facebook: `${hotelForm.SN_Facebook}`,
+      SN_Twitter: `${hotelForm.SN_Twitter}`,
+      SN_Instagram: `${hotelForm.SN_Instagram}`,
+      SN_Pinterest: `${hotelForm.SN_Pinterest}`,
+      Rooms: {
+        create,
+      }
+    }
+      console.log("htlprueba", hotelTest);
     axios
-      .post(`${DB_URL}/api/hotels`, {
+      .put(`${DB_URL}/api/hotels/${hotel.id}`, {
         HotelName: `${hotelForm.HotelName}`,
         Website: `${hotelForm.Website}`,
         location: "",
@@ -239,8 +266,14 @@ function HotelUpdater({ hotel = {} }) {
           create,
         },
       })
-      .then((response) => console.log("LO HICIMOS"))
+      .then((response) => console.log("Hotel Updated!"))
       .catch((error) => console.log(error.message));
+
+      for (let i = 0; i < roomUpdateArr.length; i++) {
+        axios.put(`${DB_URL}/api/rooms/${roomUpdateArr[i]}`)
+        .then((response)=> console.log("Room updated", response))
+        .catch((error)=> console.log("The room could not be deleted"))
+      }
   }
 
   return (
@@ -304,7 +337,6 @@ function HotelUpdater({ hotel = {} }) {
                     roomName={room.RoomName}
                     setUpdateRoomIndex= {setUpdateRoomIndex}
                     setDeleteRoomData={setDeleteRoomData}
-
                   />
                 );
               })}

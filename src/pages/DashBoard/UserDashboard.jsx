@@ -595,7 +595,7 @@ export default function UserDashboard() {
               <h2>
                 {bookingsArr.length > 0
                   ? `You have ${bookingsArr.length} reservations`
-                  : "You haven't made any reservation yet :("}
+                  : "You haven't made any reservations yet :("}
               </h2>
               {bookingsArr.map((booking, index) => (
                 <ReservationCard key={index} booking={booking} />
