@@ -1,25 +1,25 @@
 import React, { useEffect, useState, useRef } from "react";
 import HotelListPagination from "../HotelList/HotelListPagination";
 import UserListMember from "./UserListMember";
+import axios from 'axios';
 
 function ReservationVisualizer() {
   const [actualPage, setActualPage] = useState(0);
   const itemsPerPage = 5;
   const [maxNpages, setMaxNpages] = useState();
   const refProp = useRef(null);
-  const userArr = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-  ];
+  const [userArr, setUserArr]  = useState([]);
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
+
+console.log(userArr)
+  useEffect(() => {
+    axios.get(`${DB_URL}/api/users`)
+    .then((response) => {
+      // console.log(response.data.data)
+      setUserArr(response.data.data)
+    })
+  }, [])
+  
 
   useEffect(() => {
     const res = userArr.length / itemsPerPage;

@@ -285,6 +285,10 @@
   border-right: 5px solid var(--red-style);
 }
 
+.passwordCtn{
+  /* max-width: 8rem; */
+}
+
 .dashboard__ctn--Bookings {
   box-sizing: border-box;
   display: flex;

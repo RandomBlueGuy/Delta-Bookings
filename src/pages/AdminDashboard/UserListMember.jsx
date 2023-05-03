@@ -12,10 +12,10 @@ function UserListMember({ index, user }) {
     >
       <section className="UserListHeader">
         <h3>
-          [{user}]<span className="Management__separator">{" :: "}</span>
-          [UserName]
+          {index}<span className="Management__separator">{" :: "}</span>
+          {user.fullName}
           <span className="Management__separator">{" :: "}</span>
-          [Role]
+          [{user.role.Name}]
         </h3>
         <div className="manage_btns">
           <button className="manage__edit">✎</button>

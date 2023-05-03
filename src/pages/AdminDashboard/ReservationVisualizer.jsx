@@ -1,30 +1,26 @@
 import React, { useEffect, useState, useRef } from "react";
 import HotelListPagination from "../HotelList/HotelListPagination";
 import ReservationCard from "./ReservationCard";
+import axios from "axios";
 
 function ReservationVisualizer() {
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [actualPage, setActualPage] = useState(0);
   const itemsPerPage = 5;
   const [maxNpages, setMaxNpages] = useState();
   const refProp = useRef(null);
-  const reservationsArr = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-  ];
+  const [reservations, setReservations] = useState([]);
+  // console.log(reservations);
+  useEffect(() => {
+    axios
+      .get(`${DB_URL}/api/bookings`)
+      .then((response) => setReservations(response.data.data));
+  }, []);
 
   useEffect(() => {
-    const res = reservationsArr.length / itemsPerPage;
+    const res = reservations.length / itemsPerPage;
     setMaxNpages(res > parseInt(res) ? parseInt(res) + 1 : res);
-  }, [reservationsArr]);
+  }, [reservations]);
 
   return (
     <main ref={refProp}>
@@ -44,20 +40,15 @@ function ReservationVisualizer() {
       </div>
 
       <div className="reservations__list">
-        {/* {reservationsArr
+      {/* {reservations.length > 0  && <ReservationCard booking={reservations[0]} />} */}
+        {reservations
           .slice(
             actualPage * itemsPerPage,
             actualPage * itemsPerPage + itemsPerPage
           )
           .map((reservation, index) => {
-            return (
-              <ReservationCard
-                key={index}
-                index={index}
-                reservation={reservation}
-              />
-            );
-          })} */}
+            return <ReservationCard key={index} booking={reservation} />;
+          })}
       </div>
 
       <div className="manage__pagination">

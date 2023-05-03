@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function ReservationCard({ booking }) {
   const [viewMore, setViewMore] = useState(false);
-  console.log(booking);
+  // console.log(booking);
   return (
     <article
       className="ReservationCard"

@@ -12,24 +12,7 @@ const Form = () => {
   });
 
   const handleSubmit = async (event) => {
-    try {
-      event.preventDefault();
 
-      const response = await axios.post(
-        "https://jsonplaceholder.typicode.com/posts",
-        data
-      );
-      setData({
-        name: "",
-        birthday: "",
-        gender: "",
-        streetAddress: "",
-        cityState: "",
-        zip: "",
-      });
-    } catch {
-      alert("No se pudo enviar los datos");
-    }
   };
 
   const handleChange = (event) => {

@@ -58,7 +58,7 @@ function HotelUpdater({ hotel = {} }) {
     Inclusions: "",
   });
 
-  console.log("hotelForm", hotelForm);
+  // console.log("hotelForm", hotelForm);
 
   const scrollToTop = () => {
     window.scrollTo({
