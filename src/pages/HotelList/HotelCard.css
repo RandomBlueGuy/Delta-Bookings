@@ -197,11 +197,10 @@
   font-size: 12px;
   color: var(--txt-gray);
 }
-/* 
+/* /*  */
 @media (max-width: 720px){
   .hotel-card{
-    scale: 0.975;
+    max-width: 350px;
   }
-} */
-
+} 
 

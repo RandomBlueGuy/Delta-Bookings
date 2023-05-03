@@ -70,8 +70,12 @@ function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
           className="HotelInfoDisplay-rooms-display"
           style={{ display: selectedTab === "ROOMS" ? "flex" : "none" }}
         >
-          {currentHotel?.Rooms.map((room, index) => (
-            <RoomCard key={index} RoomCardData={room} roomChanger={roomChanger}/>
+          {currentHotel?.Rooms.map((room) => (
+            <RoomCard
+              key={room.id}
+              RoomCardData={room}
+              roomChanger={roomChanger}
+            />
           ))}
         </article>
 
@@ -154,8 +158,8 @@ function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
           <div className="HotelInfoDisplay__mapCtn">
             <GoogleMap
               center={{
-                lat: 51.51271608651099, 
-                lng: 7.462423170202694
+                lat: 51.51271608651099,
+                lng: 7.462423170202694,
               }}
               zoom={10}
             >
@@ -168,8 +172,8 @@ function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
                 key="1"
                 text={`${currentHotel.HotelName}`}
                 position={{
-                  lat: 51.51271608651099, 
-                  lng: 7.462423170202694
+                  lat: 51.51271608651099,
+                  lng: 7.462423170202694,
                 }}
               />
             </GoogleMap>
@@ -183,7 +187,7 @@ function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
           <h1>Hotel Reviews:</h1>
           {reviews.map((review) => {
             return (
-              <div className="reviewCard">
+              <div className="reviewCard" key={review.id}>
                 <div className="reviewCard__titleCtn">
                   <h1 className="reviewCard__title">
                     <span>By: </span>
@@ -218,9 +222,21 @@ function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
             <strong>CHECK IN: </strong> Until{" "}
             {Math.floor(Math.random() * 4) + 16}:00 PM
           </p>
-          <h2 style={{opacity: "0"}}>___</h2>
+          <h2 style={{ opacity: "0" }}>___</h2>
           <h2 className="Room__title">Other considerations</h2>
-          <p className="">Pellentesque consectetur sem vitae eleifend efficitur. Vivamus a tristique nulla, faucibus volutpat libero. Phasellus interdum nisi nisi, sit amet lobortis ex vulputate ut. Morbi eget justo pulvinar, faucibus arcu ut, viverra justo. Maecenas vestibulum luctus ante quis hendrerit. Ut at pulvinar est, a venenatis odio. Proin aliquam ante non ante malesuada pellentesque. Sed ac libero bibendum, accumsan dui in, feugiat risus. Praesent rutrum quam id libero ultrices, congue vehicula dolor egestas. Suspendisse eu leo nec turpis rutrum fringilla. Mauris pretium, nibh id dignissim sollicitudin, ex erat dignissim mi, in fringilla magna orci ac felis. Ut ex elit, posuere at enim eget, commodo elementum tortor.</p>
+          <p className="">
+            Pellentesque consectetur sem vitae eleifend efficitur. Vivamus a
+            tristique nulla, faucibus volutpat libero. Phasellus interdum nisi
+            nisi, sit amet lobortis ex vulputate ut. Morbi eget justo pulvinar,
+            faucibus arcu ut, viverra justo. Maecenas vestibulum luctus ante
+            quis hendrerit. Ut at pulvinar est, a venenatis odio. Proin aliquam
+            ante non ante malesuada pellentesque. Sed ac libero bibendum,
+            accumsan dui in, feugiat risus. Praesent rutrum quam id libero
+            ultrices, congue vehicula dolor egestas. Suspendisse eu leo nec
+            turpis rutrum fringilla. Mauris pretium, nibh id dignissim
+            sollicitudin, ex erat dignissim mi, in fringilla magna orci ac
+            felis. Ut ex elit, posuere at enim eget, commodo elementum tortor.
+          </p>
         </article>
       </section>
     </main>

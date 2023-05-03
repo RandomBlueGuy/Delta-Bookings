@@ -18,16 +18,16 @@ function RoomCard({ RoomCardData, roomChanger }) {
         <div className="RoomCard-table-amenities">
           <ul>
             <h4>Amenities</h4>
-            {amenitiesArr.map((amenities) => (
-              <li>{amenities}</li>
+            {amenitiesArr.map((amenities, index) => (
+              <li key={index}>🗹 {amenities}</li>
             ))}
           </ul>
         </div>
         <div className="RoomCard-table-inclusion">
           <ul>
             <h4>Inclusions</h4>
-            {inclusionsArr.map((inclusion) => (
-              <li>
+            {inclusionsArr.map((inclusion, index) => (
+              <li key={index}>
                 <FontAwesomeIcon icon={faCheck} />
                 {inclusion}
               </li>

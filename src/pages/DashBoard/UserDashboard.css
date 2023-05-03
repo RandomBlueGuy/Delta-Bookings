@@ -68,8 +68,23 @@
   max-height: 180px;
   min-height: 180px;
   box-sizing: border-box;
-  overflow: hidden;
   position: relative;
+  background-color: gray;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.247);
+  animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%{
+    background-color: rgba(211, 211, 211, 0.5);
+  }
+  50%{
+    background-color: rgba(255, 255, 255, 0.496);
+  }
+  100%{
+    background-color: rgba(211, 211, 211, 0.5);
+  }
 }
 
 .profile__img {
@@ -231,6 +246,7 @@
   width: 100%;
   /* background-color: red; */
   display: flex;
+  align-items: center;
 }
 
 .dashboard__ctn-info-edit1-name label {
@@ -317,17 +333,18 @@
 .pass__changer{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0.5rem;
 }
 
 .dashboard__ctn__password{
   display: flex;
-  width: 60%;
+  width: 100%;
   align-items: center;
   gap: 1rem;
 }
 
+<<<<<<< HEAD
 .error-creatorUser{
     color: red;
     font-style: italic;
@@ -338,4 +355,15 @@
     float: right;
     margin-top: -5px;
     margin-bottom: 5px;
+=======
+.dashboard__password--title{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.dashboard__password--title button {
+  padding: 0.5rem;
+>>>>>>> ae31d447aaa4133c24e0c1811341fea5c747660a
 }

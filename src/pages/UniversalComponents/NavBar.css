@@ -200,7 +200,7 @@
 
 .userName{
   font-weight: 700;
-  color: gray;
+  color: var(--red-style);
 }
 
 @media (max-width: 720px) {

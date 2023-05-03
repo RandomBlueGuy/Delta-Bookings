@@ -70,9 +70,7 @@ function HotelListPagination({
       >
         {actualPage}
       </button>
-      <select name="" id="">
-        {optionGenerator()}
-      </select>
+      <button>{`${actualPage + 1} / ${maxNpages}`}</button>
       <button
         className={actualPage < maxNpages - 1 ? "act-chk" : "dis-chk"}
         disabled={actualPage < maxNpages - 1 ? false : true}
