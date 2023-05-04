@@ -146,8 +146,7 @@ function Form5RoomForm({
         if (roomURL === "") {
           roomURL = roomInfo.RoomImg;
         }
-        
-        console.log(roomURL);
+  
         const roomAmenities =  Amenities.split(" ").join("-/-");
         const roomInclusions =  Inclusions.split(" ").join("-/-");
         console.log(roomAmenities)
