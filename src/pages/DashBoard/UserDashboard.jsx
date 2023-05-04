@@ -16,23 +16,21 @@ export default function UserDashboard() {
   const [profileEdit, setProfileEdit] = useState(false);
   const [profileEdit2, setProfileEdit2] = useState(false);
   const [selectedTab, setSelectedTab] = useState("Profile");
-  const [dataErrors, setDataErrors] = useState({});
-  const [userErrors, setUserErrors] = useState({});
   const [initialUserData, setInitialUserData] = useState({});
-  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  const [showUpdate, setShowUpdate] = useState(false);
   const [cookies] = useCookies("cookieToken");
   const decode = useJwt(cookies.cookieToken);
   const [picture, setPicture] = useState("");
   const [image, setImage] = useState("");
   const [bookingsArr, setBookingsArr] = useState([]);
   const [changeImage, setChangeImage] = useState(false);
-  const [showUpdate, setShowUpdate] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
   const [warningResult, setWarningResult] = useState(false);
   const [warningMessage, setWarningMessage] = useState("");
   const [warningTitle, setWarningTitle] = useState("");
   const [shouldUpdate, setShouldUpdate] = useState("");
-
+  const [dataErrors, setDataErrors] = useState({});
+  const [passwordErrors, setPasswordErrors] = useState({});
   const [userData, setUserData] = useState({
     fullName: "",
     email: "",
@@ -46,6 +44,8 @@ export default function UserDashboard() {
   const { fullName, email, phoneNumber, gender, streetAddress, city, zipCode } =
     userData;
 
+  const numberRegex = /^[0-9]*$/;
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   function handlePic(e) {
@@ -151,7 +151,6 @@ export default function UserDashboard() {
             }
           )
           .then((response) => {
-            console.log("Success");
             setShowUpdate(true);
           })
           .catch((error) => console.log(error.message));
@@ -180,7 +179,6 @@ export default function UserDashboard() {
         setPassword("");
         setPassword2("");
       }
-      // setShouldUpdate("");
     }
   }, [warningResult]);
 
@@ -207,18 +205,26 @@ export default function UserDashboard() {
 
   const handleNewuserinfo = (event) => {
     const validationErrors = {};
-    // if (!fullName.trim()) {
-    //   validationErrors.fullName = "Please enter your name";
-    // }
-    // if (!streetAddress.trim()) {
-    //   validationErrors.streetAddress = "Please enter your address";
-    // }
-    // if (!city.trim()) {
-    //   validationErrors.city = "Please enter your city";
-    // }
-    // if (!zipCode.trim()) {
-    //   validationErrors.zipCode = "Please enter your zip";
-    // }
+    if (!fullName.trim()) {
+      validationErrors.fullName = "Please enter your name";
+    }
+    if (!streetAddress.trim()) {
+      validationErrors.streetAddress = "Please enter your address";
+    }
+    if (!city.trim()) {
+      validationErrors.city = "Please enter your city";
+    }
+    if (!zipCode.trim()) {
+      validationErrors.zipCode = "Please enter your zip";
+    }
+
+    if (!phoneNumber.trim()) {
+      validationErrors.phoneNumber = "Please Enter your phone Number";
+    } else if (!numberRegex.test(phoneNumber)) {
+      validationErrors.phoneNumber = "Only numeric characters are accepted";
+    } else if (phoneNumber.trim().replace(/\s+/g, "").length !== 10) {
+      validationErrors.phoneNumber = "Enter a 10 number digit";
+    }
 
     setDataErrors(validationErrors);
 
@@ -231,55 +237,41 @@ export default function UserDashboard() {
     }
   };
 
-  // const handleInfo = (event) => {
-  //   event.preventDefault();
-  //   const errors = {};
-
-  //   if (!email.trim()) {
-  //     errors.userEmail = "Please Enter Your Email";
-  //   } else if (!emailRegex.test(email.trim().replace(/\s+/g, ""))) {
-  //     errors.userEmail = "Enter a Valid Email";
-  //   }
-
-  //   if (!password.trim()) {
-  //     errors.userPassword = "Please Enter Your Password";
-  //   } else if (!passwordRegex.test(password.trim().replace(/\s+/g, ""))) {
-  //     errors.userPassword =
-  //       "Password Must Have This: 8 characters, a number, one uppercase letter and one lowercase letter";
-  //   }
-
-  //   if (!phoneNumber.trim()) {
-  //     errors.userphoneNumber = "Please Enter your phoneNumber Number";
-  //   } else if (!numberRegex.test(phoneNumber)) {
-  //     errors.userphoneNumber = "Only numeric characters are accepted";
-  //   } else if (phoneNumber.trim().replace(/\s+/g, "").length !== 10) {
-  //     errors.userphoneNumber = "Enter a 10 number digit";
-  //   }
-  //   setUserErrors(errors);
-
-  //   if (Object.keys(errors).length === 0) {
-  //     //PUT Request
-  //   }
-  // };
-
   function handleCancel() {
     setUserData(initialUserData);
   }
 
   function handleNewPassword() {
-    if (password === password2) {
-      console.log("passwords match");
-      setWarningTitle("Password Update");
-      setShowWarning(true);
-      setWarningMessage("You are going to change your password permanently.");
-    } else {
-      console.log("passwords don't match");
+    const passErrors = {};
+    if (!password.trim() || !password2.trim()) {
+      passErrors.password = "Both fields must not be blank";
+    } else if (
+      !passwordRegex.test(password.trim().replace(/\s+/g, "")) ||
+      !passwordRegex.test(password2.trim().replace(/\s+/g, ""))
+    ) {
+      passErrors.password =
+        "Passwords must have 8 characters, a number, one uppercase letter and one lowecase letter";
+    } else if (password !== password2) {
+      passErrors.password = "Passwords must be the same";
     }
-    // setProfileEdit2(false)
+
+    setPasswordErrors(passErrors);
+    console.log(passwordErrors);
+
+    if (Object.keys(passErrors).length === 0) {
+      if (password === password2) {
+        console.log("passwords match");
+        setWarningTitle("Password Update");
+        setShowWarning(true);
+        setWarningMessage("You are going to change your password permanently.");
+      } else {
+        console.log("passwords don't match");
+      }
+    }
   }
 
   return (
-    <section className="dashboard__ctn">
+    <section className='dashboard__ctn'>
       {showUpdate && (
         <FloatingMessage
           message={`${shouldUpdate} Updated!`}
@@ -295,42 +287,42 @@ export default function UserDashboard() {
           setWarningResult={setWarningResult}
         />
       )}
-      <section className="dashboard__ctn-info">
-        <div className="dashboard__ctn-info-prof">
-          <div className="dashboard__ctn-info-img">
-            <img src={picture} className="profile__img" alt="" />
-            <label htmlFor="file">
+      <section className='dashboard__ctn-info'>
+        <div className='dashboard__ctn-info-prof'>
+          <div className='dashboard__ctn-info-img'>
+            <img src={picture} className='profile__img' alt='Profile-Picture' />
+            <label htmlFor='file'>
               <FontAwesomeIcon icon={faPenToSquare} />
             </label>
           </div>
           <input
-            type="file"
-            accept="image/*"
-            name="file"
-            id="file"
-            max-size="200"
+            type='file'
+            accept='image/*'
+            name='file'
+            id='file'
+            max-size='200'
             onChange={handlePic}
             style={{ display: "none" }}
           />
 
-          <div className="dashboard__ctn-info-text">
+          <div className='dashboard__ctn-info-text'>
             <h1>{initialUserData.fullName || "User"}</h1>
             <p>{initialUserData.email || "Email"}</p>
             <p>{initialUserData.phoneNumber || "Phone"}</p>
           </div>
         </div>
-        <div className="dashboard__ctn-info-select">
+        <div className='dashboard__ctn-info-select'>
           <button
-            type="button"
-            value="Profile"
+            type='button'
+            value='Profile'
             className={selectedTab === "Profile" ? "Dashboard-is-active" : ""}
             onClick={(event) => handleClick(event.target.value)}
           >
             Profile
           </button>
           <button
-            type="button"
-            value="Bookings"
+            type='button'
+            value='Bookings'
             className={selectedTab === "Bookings" ? "Dashboard-is-active" : ""}
             onClick={(event) => handleClick(event.target.value)}
           >
@@ -338,18 +330,18 @@ export default function UserDashboard() {
           </button>
         </div>
       </section>
-      <section className="dashboard__ctn-edit">
-        <div className="dashboard__ctn-edit1">
+      <section className='dashboard__ctn-edit'>
+        <div className='dashboard__ctn-edit1'>
           <div
-            className="dashboard__ctn--profile"
+            className='dashboard__ctn--profile'
             style={{ display: selectedTab === "Profile" ? "block" : "none" }}
           >
-            <div className="dashboard__ctn-info-edit1-title">
+            <div className='dashboard__ctn-info-edit1-title'>
               <h1>Profile</h1>
-              <div className="dashboard__Btng">
+              <div className='dashboard__Btng'>
                 {editState1 === false && (
                   <button
-                    className="dashboard-edit-btn"
+                    className='dashboard-edit-btn'
                     onClick={() => {
                       setEditState1(true);
                       handleClickEdit();
@@ -372,7 +364,7 @@ export default function UserDashboard() {
                 <form onSubmit={handleNewuserinfo}>
                   {editState1 === true && (
                     <button
-                      type="submit"
+                      type='submit'
                       onClick={(event) => {
                         event.preventDefault();
                         setShouldUpdate("Profile");
@@ -385,21 +377,21 @@ export default function UserDashboard() {
                 </form>
               </div>
             </div>
-            <form className="dashboard__form" action="">
-              <div className="dashboard__ctn-info-edit1-name">
-                <label htmlFor="fullName">Email</label>
+            <form className='dashboard__form' action=''>
+              <div className='dashboard__ctn-info-edit1-name'>
+                <label htmlFor='fullName'>Email</label>
                 <input
                   value={email}
                   disabled
-                  className="Dashboard-ctn-isDisabled"
+                  className='Dashboard-ctn-isDisabled'
                 />
               </div>
-              <div className="dashboard__ctn-info-edit1-name">
-                <label htmlFor="fullName">Name</label>
+              <div className='dashboard__ctn-info-edit1-name'>
+                <label htmlFor='fullName'>Name</label>
                 <input
-                  type="text"
-                  id="nombre"
-                  name="fullName"
+                  type='text'
+                  id='nombre'
+                  name='fullName'
                   value={fullName}
                   onChange={handleChange}
                   disabled={!profileEdit}
@@ -410,16 +402,21 @@ export default function UserDashboard() {
                   }
                 />
               </div>
+              {dataErrors.fullName && (
+                <span className='error-creatorUser'>{dataErrors.fullName}</span>
+              )}
 
-              <div className="dashboard__ctn-info-edit1-name">
+              <div className='dashboard__ctn-info-edit1-name'>
                 <label
-                  htmlFor="phoneNumber"
-                >Phone number
-                  </label>
+                  htmlFor='phoneNumber'
+                  className='dashboard__ctn-info-edit1-name'
+                >
+                  Phone number
+                </label>
                 <input
-                  type="text"
-                  name="phoneNumber"
-                  id="phoneNumber"
+                  type='text'
+                  name='phoneNumber'
+                  id='phoneNumber'
                   disabled={!profileEdit}
                   value={phoneNumber}
                   onChange={handleChange}
@@ -429,15 +426,17 @@ export default function UserDashboard() {
                       : "Dashboard-ctn-isNotDisabled"
                   }
                 />
-                {/* {userErrors.userphoneNumber && (
-                  <span className="error">{userErrors.userphoneNumber}</span>
-                )} */}
               </div>
+              {dataErrors.phoneNumber && (
+                <span className='error-creatorUser'>
+                  {dataErrors.phoneNumber}
+                </span>
+              )}
 
-              <div className="dashboard__ctn-info-edit1-name">
-                <label htmlFor="gender">Gender</label>
+              <div className='dashboard__ctn-info-edit1-name'>
+                <label htmlFor='gender'>Gender</label>
                 <select
-                  name="gender"
+                  name='gender'
                   value={gender}
                   onChange={handleChange}
                   disabled={!profileEdit}
@@ -447,18 +446,19 @@ export default function UserDashboard() {
                       : "Dashboard-ctn-isNotDisabled"
                   }
                 >
-                  <option value="Masculino">Masculino</option>
-                  <option value="Femenino">Femenino</option>
-                  <option value="Non Binary">Non Binary</option>
+                  <option value='Masculino'>Masculino</option>
+                  <option value='Femenino'>Femenino</option>
+                  <option value='Non Binary'>Non Binary</option>
                 </select>
               </div>
-              <div className="dashboard__ctn-info-edit1-name">
-                <label htmlFor="streetAddress">Street Address</label>
+
+              <div className='dashboard__ctn-info-edit1-name'>
+                <label htmlFor='streetAddress'>Street Address</label>
                 <input
-                  type="text"
-                  name="streetAddress"
+                  type='text'
+                  name='streetAddress'
                   value={streetAddress}
-                  id="streetAddress"
+                  id='streetAddress'
                   placeholder={streetAddress}
                   onChange={handleChange}
                   disabled={!profileEdit}
@@ -469,15 +469,21 @@ export default function UserDashboard() {
                   }
                 />
               </div>
-              <div className="dashboard__ctn-info-edit1-name">
-                <label htmlFor="city">City/State</label>
+              {dataErrors.streetAddress && (
+                <span className='error-creatorUser'>
+                  {dataErrors.streetAddress}
+                </span>
+              )}
+
+              <div className='dashboard__ctn-info-edit1-name'>
+                <label htmlFor='city'>City/State</label>
                 <input
-                  type="text"
-                  name="city"
+                  type='text'
+                  name='city'
                   value={city}
                   onChange={handleChange}
-                  id="city"
-                  placeholder="[CITY BASE]"
+                  id='city'
+                  placeholder='[CITY BASE]'
                   disabled={!profileEdit}
                   className={
                     profileEdit === false
@@ -486,12 +492,16 @@ export default function UserDashboard() {
                   }
                 />
               </div>
-              <div className="dashboard__ctn-info-edit1-name">
-                <label htmlFor="zipCode">Zip</label>
+              {dataErrors.city && (
+                <span className='error-creatorUser'>{dataErrors.city}</span>
+              )}
+
+              <div className='dashboard__ctn-info-edit1-name'>
+                <label htmlFor='zipCode'>Zip</label>
                 <input
-                  type="text"
-                  name="zipCode"
-                  id="zipCode"
+                  type='text'
+                  name='zipCode'
+                  id='zipCode'
                   value={zipCode}
                   onChange={handleChange}
                   placeholder={zipCode}
@@ -503,57 +513,57 @@ export default function UserDashboard() {
                   }
                 />
               </div>
+              {dataErrors.zipCode && (
+                <span className='error-creatorUser'>{dataErrors.zipCode}</span>
+              )}
             </form>
-            <div className="pass__changer">
-              <div className="dashboard__ctn__password">
-                <div className="dashboard__password--title">
-                  <h3>Change Password</h3>
-                  <div className="dashboard__Btng">
-                    {editState2 === false && (
-                      <button
-                        className="dashboard-edit-btn"
-                        onClick={() => {
-                          setEditState2(true);
-                          setProfileEdit2(true);
-                        }}
-                      >
-                        Edit
-                      </button>
-                    )}
-                    {editState2 === true && (
-                      <button
-                        onClick={() => {
-                          setEditState2(false);
-                          setProfileEdit2(false);
-                          setPassword("");
-                          setPassword2("");
-                        }}
-                      >
-                        Cancel
-                      </button>
-                    )}
-                    <form onSubmit={handleNewPassword}>
-                      {editState2 === true && (
-                        <button
-                          type="submit"
-                          onClick={(event) => {
-                            event.preventDefault();
-                            setShouldUpdate("Password");
-                            handleNewPassword();
-                          }}
-                        >
-                          Save
-                        </button>
-                      )}
-                    </form>
-                  </div>
-                </div>
+            <div className='pass__changer'>
+              <div className='dashboard__ctn__password'>
+                <h3>Change Password</h3>
+                {editState2 === false && (
+                  <button
+                    className='dashboard-edit-btn'
+                    onClick={() => {
+                      setEditState2(true);
+                      setProfileEdit2(true);
+                    }}
+                  >
+                    Edit
+                  </button>
+                )}
+
+                {editState2 === true && (
+                  <button
+                    onClick={() => {
+                      setEditState2(false);
+                      setProfileEdit2(false);
+                      setPassword("");
+                      setPassword2("");
+                    }}
+                  >
+                    Cancel
+                  </button>
+                )}
+                <form onSubmit={handleNewPassword}>
+                  {editState2 === true && (
+                    <button
+                      type='submit'
+                      onClick={(event) => {
+                        event.preventDefault();
+                        setShouldUpdate("Password");
+                        handleNewPassword();
+                      }}
+                    >
+                      Save Changes
+                    </button>
+                  )}
+                </form>
               </div>
-              <div className="dashboard__ctn-info-edit1-name">
-                <label htmlFor="password">Password</label>
+              <div className='dashboard__ctn-info-edit1-name'>
+                <label htmlFor='password'>Password</label>
                 <input
-                  type="password"
-                  id="password"
+                  type='password'
+                  id='password'
                   disabled={!profileEdit2}
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
@@ -563,16 +573,13 @@ export default function UserDashboard() {
                       : "Dashboard-ctn-isNotDisabled"
                   }
                 />
-                {userErrors.userPassword && (
-                  <span className="error">{userErrors.userPassword}</span>
-                )}
               </div>
-              <div className="dashboard__ctn-info-edit1-name">
-                <label htmlFor="password2">Confirm password:</label>
+              <div className='dashboard__ctn-info-edit1-name'>
+                <label htmlFor='password2'>Confirm your password:</label>
                 <input
-                  type="password"
-                  name="password2"
-                  id="password2"
+                  type='password'
+                  name='password2'
+                  id='password2'
                   disabled={!profileEdit2}
                   value={password2}
                   onChange={(event) => setPassword2(event.target.value)}
@@ -585,17 +592,22 @@ export default function UserDashboard() {
               </div>
             </div>
           </div>
+          {passwordErrors.password && (
+            <span className='error-creator-pass'>
+              {passwordErrors.password}
+            </span>
+          )}
 
           <div
-            className="dashboard__ctn--Bookings"
+            className='dashboard__ctn--Bookings'
             style={{ display: selectedTab === "Bookings" ? "flex" : "none" }}
           >
             <h1>My Reservations</h1>
-            <div className="reservationDisplay">
+            <div className='reservationDisplay'>
               <h2>
                 {bookingsArr.length > 0
                   ? `You have ${bookingsArr.length} reservations`
-                  : "You haven't made any reservations yet :("}
+                  : "You haven't made any reservation yet :("}
               </h2>
               {bookingsArr.map((booking, index) => (
                 <ReservationCard key={index} booking={booking} />
