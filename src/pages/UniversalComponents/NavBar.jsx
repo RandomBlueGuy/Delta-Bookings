@@ -48,22 +48,6 @@ function NavBar() {
       : setIsInvalidUrl(false);
   }, [location.pathname]);
 
-  // useEffect(() => {
-  //     .map((element) => element === location.pathname)
-  //     .includes(true))
-  //   if (
-  //     specialPathsArr
-  //       .map((element) => element === location.pathname)
-  //       .includes(true)
-  //   ) {
-  //     setIsSpecialPath(true);
-  //     setVisibility(true);
-  //   } else {
-  //     setIsSpecialPath(false);
-  //     setVisibility(false);
-  //   }
-  // }, [location.pathname]);
-
   const triggerOpen = (event) => {
     event.preventDefault();
     setTrigger("90vw");
@@ -175,14 +159,8 @@ function NavBar() {
                   <div className='mobile-menu-titles'>
                     <h2>Accesibility</h2>
                   </div>
-                  {/* <div className="item-ctn" style={{ paddingLeft: "0.5rem" }}>
-                    <h2>Coin:</h2>
-                    <select name="" id="" className="coin">
-                      <option value="">USD</option>
-                      <option value="">COP</option>
-                    </select>
-                  </div> */}
                 </div>
+
                 <button className='dropdown square-icon' onClick={triggerOpen}>
                   <img
                     src={menuIcon}
@@ -200,7 +178,6 @@ function NavBar() {
                 <img
                   src={userIcon}
                   alt='Delta'
-                  // style={{ filter: visibility ? "invert(0)" : "invert(1)" }}
                   style={{
                     filter: cookies.cookieName
                       ? "invert(47%) sepia(69%) saturate(7351%) hue-rotate(343deg) brightness(111%) contrast(86%)"

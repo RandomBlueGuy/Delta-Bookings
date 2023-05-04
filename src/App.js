@@ -24,17 +24,14 @@ import PrivateRoutes from "./Utils/PrivateRoutes";
 import { useCookies } from "react-cookie";
 import LoadingComp from "./pages/UniversalComponents/LoadingComp";
 
-
 function App() {
   const { pathname } = useLocation();
   const [cookies] = useCookies(["cookieToken"]);
-  const [auth, setAuth] = useState()
+  const [auth, setAuth] = useState();
 
   useEffect(() => {
-    setAuth(() => cookies.cookieToken)
+    setAuth(() => cookies.cookieToken);
   }, [cookies.cookieToken]);
-  
-  // console.log("is it auth:", auth);
 
   useEffect(() => {
     setTimeout(() => {
@@ -44,25 +41,24 @@ function App() {
 
   return (
     <React.Fragment>
-      {/* <LoadingComp /> */}
       <UpButton />
       <NavBar />
       <Routes>
-        <Route exact path="/" element={<Navigate to="/home" />} />
-        <Route exact path="/home" element={<Homepage />} />
-        <Route exact path="/hotel-list/:search" element={<HotelList />} />
-        <Route exact path="/hotel-single/:htlnfo" element={<Hotelsingle />} />
-        <Route exact path="/signup" element={<Signuppage />} />
-        <Route exact path="/login" element={<Login />} />
+        <Route exact path='/' element={<Navigate to='/home' />} />
+        <Route exact path='/home' element={<Homepage />} />
+        <Route exact path='/hotel-list/:search' element={<HotelList />} />
+        <Route exact path='/hotel-single/:htlnfo' element={<Hotelsingle />} />
+        <Route exact path='/signup' element={<Signuppage />} />
+        <Route exact path='/login' element={<Login />} />
         <Route
           exact
-          path="/*"
-          element={<Navigate to="/404-page-not-found" />}
+          path='/*'
+          element={<Navigate to='/404-page-not-found' />}
         />
-        <Route exact path="/404-page-not-found" element={<Page404 />} />
-        <Route exact path="/about-us" element={<AboutUspage />} />
+        <Route exact path='/404-page-not-found' element={<Page404 />} />
+        <Route exact path='/about-us' element={<AboutUspage />} />
         <Route element={<PrivateRoutes auth={auth} />}>
-          <Route exact path="/dashboard" element={<UserDashBoard />} />
+          <Route exact path='/dashboard' element={<UserDashBoard />} />
           <Route
             exact
             path='/admin-dashboard'
@@ -78,8 +74,8 @@ function App() {
             path='/checkout-success/:scss'
             element={<CheckoutSuccessPage />}
           />
-          <Route exact path="/bookings/:bkngcd" element={<Bookingpage />} />
-          <Route exact path="/checkout/" element={<CheckoutPage />} />
+          <Route exact path='/bookings/:bkngcd' element={<Bookingpage />} />
+          <Route exact path='/checkout/' element={<CheckoutPage />} />
         </Route>
       </Routes>
       <Footer />

@@ -19,7 +19,8 @@ function HotelUpdater({ hotel = {} }) {
   const [showUpdate, setShowUpdate] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
   const [warningResult, setWarningResult] = useState(false);
-  const [floatingMessageDescription, setFloatingMessageDescription] = useState("");
+  const [floatingMessageDescription, setFloatingMessageDescription] =
+    useState("");
   const [hotelForm, setHotelForm] = useState({
     HotelName: hotel.HotelName,
     Website: hotel.Website,
@@ -64,8 +65,6 @@ function HotelUpdater({ hotel = {} }) {
     Inclusions: "",
   });
 
-  // console.log("hotelForm", hotelForm);
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -99,7 +98,7 @@ function HotelUpdater({ hotel = {} }) {
     if (FrontImg === undefined) {
       FrontImg = hotelForm.FrontImg;
     }
-    console.log("front Imag", FrontImg);
+
     setHotelForm({
       ...hotelForm,
       HotelName,
@@ -153,8 +152,6 @@ function HotelUpdater({ hotel = {} }) {
   }
 
   function form4Constructor(Gallery) {
-    //USE -//-
-    console.log(Gallery);
     setHotelForm({ ...hotelForm, Gallery });
   }
 
@@ -171,7 +168,7 @@ function HotelUpdater({ hotel = {} }) {
   ) {
     Discount = Number(Discount);
     OriginalPricePerNight = Number(OriginalPricePerNight);
-    console.log("IMAGE TAKEN FOR ROOM", RoomImg);
+
     if (isItUpdating === true) {
       setCreate(
         create.filter((room) => {
@@ -206,26 +203,22 @@ function HotelUpdater({ hotel = {} }) {
   useEffect(() => {
     if (roomForm.RoomName !== "") {
       setCreate([...create, roomForm]);
-      setFloatingMessageDescription("Room Updated")
+      setFloatingMessageDescription("Room Updated");
       setShowUpdate(true);
     }
   }, [roomForm]);
 
-  // console.log(hotelForm);
-
   useEffect(() => {
     console.log(updateRoomIndex);
-    // setCreate(create.filter((room, index) => index !== deleteRoomData));
   }, [updateRoomIndex]);
 
   useEffect(() => {
-    // console.log(deleteRoomData)
     setCreate(create.filter((room, index) => index !== deleteRoomData));
   }, [deleteRoomData]);
 
   const updateHotel = async () => {
     const roomUpdateArr = create.map((room) => room.id);
-    // console.log("createIMG", create[0].RoomImg);
+
     setHotelForm({
       ...hotelForm,
       Rooms: create,
@@ -269,15 +262,12 @@ function HotelUpdater({ hotel = {} }) {
         })
         .then((response) => {
           console.log("Hotel Updated!");
-          setFloatingMessageDescription("Hotel Updated")
+          setFloatingMessageDescription("Hotel Updated");
           setWarningResult(false);
-          setShowUpdate(true)
+          setShowUpdate(true);
           setFormTab(1);
         })
         .catch((error) => console.log(error.message));
-
-      const imgArr = create.map((room) => room.RoomImg);
-      console.log(imgArr);
 
       for (let i = 0; i < create.length; i++) {
         axios
@@ -301,7 +291,7 @@ function HotelUpdater({ hotel = {} }) {
   }, [warningResult]);
 
   return (
-    <main className="HotelCreator">
+    <main className='HotelCreator'>
       {showUpdate && (
         <FloatingMessage
           message={floatingMessageDescription}
@@ -363,10 +353,10 @@ function HotelUpdater({ hotel = {} }) {
       </section>
 
       <section
-        className="HC__FormCtn"
+        className='HC__FormCtn'
         style={{ display: formTab === 5 ? "block" : "none" }}
       >
-        <div className="RoomsCreated">
+        <div className='RoomsCreated'>
           {create.length === 0 ? (
             <h3>No Rooms have been created</h3>
           ) : (
@@ -392,9 +382,9 @@ function HotelUpdater({ hotel = {} }) {
           isItUpdating={true}
         />
 
-        <div className="HotelForm__footer">
+        <div className='HotelForm__footer'>
           <button
-            className="HotelCreator__form--microSubmit"
+            className='HotelCreator__form--microSubmit'
             onClick={() => {
               nextFormTab("left");
             }}
@@ -403,7 +393,7 @@ function HotelUpdater({ hotel = {} }) {
           </button>
           Step {formTab} / 5
           <button
-            className="HotelCreator__form--microSubmit"
+            className='HotelCreator__form--microSubmit'
             onClick={() => {
               setShowWarning(true);
               updateHotel();

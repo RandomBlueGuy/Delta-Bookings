@@ -13,7 +13,6 @@ function ManageListMember({ hotel, index, chooseHotelEdit }) {
   const deleteHotel = (event) => {
     event.preventDefault();
     setShowWarning(true);
-    console.log(warningResult);
   };
 
   useEffect(() => {
@@ -32,7 +31,7 @@ function ManageListMember({ hotel, index, chooseHotelEdit }) {
 
   return (
     <article
-      className="Management__Card"
+      className='Management__Card'
       style={{
         display: display ? "block" : "none",
       }}
@@ -46,9 +45,9 @@ function ManageListMember({ hotel, index, chooseHotelEdit }) {
         />
       )}
 
-      <div className="Management__Card--title">
+      <div className='Management__Card--title'>
         <div
-          className="Management__Card--id"
+          className='Management__Card--id'
           onClick={() => {
             setViewMore(!viewMore);
           }}
@@ -56,60 +55,60 @@ function ManageListMember({ hotel, index, chooseHotelEdit }) {
           <div>
             <h3>
               {index}
-              <span className="Management__separator">{" :: "}</span>
+              <span className='Management__separator'>{" :: "}</span>
             </h3>
           </div>
           <h3>
             {hotel.HotelName}
-            <span className="Management__separator">{" :: "}</span>
+            <span className='Management__separator'>{" :: "}</span>
             {hotel.loc_City}, {hotel.loc_Country}
           </h3>
         </div>
-        <div className="manage_btns">
+        <div className='manage_btns'>
           <button
-            className="manage__edit"
+            className='manage__edit'
             onClick={() => chooseHotelEdit(hotel)}
           >
             ✎
           </button>
-          <button className="manage__del" onClick={deleteHotel}>
+          <button className='manage__del' onClick={deleteHotel}>
             🞮
           </button>
         </div>
       </div>
       <div
-        className="Management__Card--body"
+        className='Management__Card--body'
         style={{ display: viewMore ? "flex" : "none" }}
       >
-        <p className="">
+        <p className=''>
           <strong>Description: </strong>
           {hotel.HotelDescription}
         </p>
-        <p className="">
+        <p className=''>
           <strong>PhoneNumber: </strong>
           {hotel.CountryCode} {hotel.PhoneNumber}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Email: </strong>
           {hotel.Email}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Tags: </strong>
           {`${hotel.Tags.split("-/-").join(", ")}`}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Popularity Number: </strong>
           {hotel.PopularityNumber}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Trending Number: </strong>
           {hotel.TrendingNumber}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Review Number: </strong>
           {hotel.ReviewNumber}
         </p>
-        <p className="">
+        <p className=''>
           <strong>Rooms Available: </strong>
           {hotel.Rooms.length}
         </p>

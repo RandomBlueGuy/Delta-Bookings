@@ -53,7 +53,7 @@ export default function UserDashboard() {
     setPicture(e.target.files);
     setChangeImage(true);
   }
-  console.log(userData);
+
   useEffect(() => {
     if (changeImage === true) {
       setChangeImage(false);
@@ -171,7 +171,6 @@ export default function UserDashboard() {
             }
           )
           .then((response) => {
-            console.log("Password Updated");
             setShowUpdate(true);
           })
           .catch((error) => console.log(error.message));
@@ -256,16 +255,12 @@ export default function UserDashboard() {
     }
 
     setPasswordErrors(passErrors);
-    console.log(passwordErrors);
 
     if (Object.keys(passErrors).length === 0) {
       if (password === password2) {
-        console.log("passwords match");
         setWarningTitle("Password Update");
         setShowWarning(true);
         setWarningMessage("You are going to change your password permanently.");
-      } else {
-        console.log("passwords don't match");
       }
     }
   }

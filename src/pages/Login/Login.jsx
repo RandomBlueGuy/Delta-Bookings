@@ -42,7 +42,6 @@ function Login() {
 
   useEffect(() => {
     if (next) {
-      
       navigate("/home");
       setNext(false);
     }
@@ -67,19 +66,13 @@ function Login() {
           password: password,
         })
         .then((response) => {
-          // console.log("response.token", response.data.token);
           setShowUpdate(true);
           setCookie("cookieToken", response.data.token, { path: "/" });
           setCookie("cookieName", response.data.data.fullName, { path: "/" });
         })
         .catch((error) => console.log(error.message));
-    } else {
-      console.log("There are some errors", validationErrors);
     }
     setNext(true);
-    // setInterval(() => {
-    // navigate(`/dashboard`);
-    // }, 3000);
   };
 
   const handleEmail = (event) => {
@@ -94,7 +87,7 @@ function Login() {
   };
 
   return (
-    <main className="Login-ctn">
+    <main className='Login-ctn'>
       {showUpdate && (
         <FloatingMessage
           message={`Welcome back, `}
@@ -102,52 +95,52 @@ function Login() {
           showUpdate={showUpdate}
         />
       )}
-      <section className="Login-card">
+      <section className='Login-card'>
         <form>
           <h1>Login</h1>
-          <label htmlFor="email" className="Login-normal-label" name="user">
+          <label htmlFor='email' className='Login-normal-label' name='user'>
             User:
           </label>
-          <div className="form__line--login">
-            <div className="Login-formbox">
+          <div className='form__line--login'>
+            <div className='Login-formbox'>
               {uIcon}
               <input
-                id="user-input"
-                type="text"
-                placeholder="Enter your email"
-                className="Login-input-email"
-                name="email"
+                id='user-input'
+                type='text'
+                placeholder='Enter your email'
+                className='Login-input-email'
+                name='email'
                 value={email}
                 onChange={(event) => handleChange(event)}
               />
             </div>
             {errors.email && (
-              <div className="error__display">{errors.email}</div>
+              <div className='error__display'>{errors.email}</div>
             )}
           </div>
-          <div className="form__line--login">
-            <label htmlFor="password" className="Login-normal-label">
+          <div className='form__line--login'>
+            <label htmlFor='password' className='Login-normal-label'>
               Password:
             </label>
-            <div className="pass-input-area">
-              <div className="Login-formbox">
+            <div className='pass-input-area'>
+              <div className='Login-formbox'>
                 {lIcon}
                 <input
-                  id="password-input"
-                  name="password"
-                  type="password"
+                  id='password-input'
+                  name='password'
+                  type='password'
                   placeholder={"Enter your password"}
                   value={password}
                   onChange={(event) => handleChange(event)}
                 />
               </div>
               {errors.userPassword && (
-                <div className="error__display">{errors.userPassword}</div>
+                <div className='error__display'>{errors.userPassword}</div>
               )}
             </div>
           </div>
           <button
-            className="Login-ctn-btn"
+            className='Login-ctn-btn'
             onClick={(event) => {
               handleSubmit(event);
             }}
@@ -155,56 +148,13 @@ function Login() {
             Log In
           </button>
         </form>
-        {/* <button className="Login-special-btn" onClick={toggleSecretSection}>
-          Forgot your password?
-        </button>
-        <div className="err__display__secret">
-          <div
-            className={
-              toggleVisible
-                ? "Login-secret-section"
-                : "Login-secret-section-active"
-            }
-          >
-            <div className="form__line--login">
-              <label className="emailRecovery" htmlFor="recover-input">
-                Write your Email here to reset your password
-              </label>
-              <div className="Login-formbox">
-                {mIcon}
-                <input
-                  type="email"
-                  name="emailRecovery"
-                  id="emailRecovery"
-                  value={emailRecovery}
-                  placeholder="Enter your recovery email"
-                  onChange={(event) => handleChange(event)}
-                />
-                <button className="email__recover" onClick={handleEmail}>
-                  ✉
-                </button>
-              </div>
-              {emailerr.userEmail && (
-                <div
-                  className="error__display"
-                  style={{ display: toggleVisible ? "none" : "flex" }}
-                >
-                  {emailerr.userEmail}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-        {emailerr.userEmail && (
-          <span className="error">{emailerr.userEmail}</span>
-        )} */}
 
-        <div className="social-distancing">
-          <div className="social-distancing-line"></div>
+        <div className='social-distancing'>
+          <div className='social-distancing-line'></div>
           <p>OR</p>
         </div>
-        <Link to="/signup">
-          <button className="Signin-ctn-btn">Sign Up</button>
+        <Link to='/signup'>
+          <button className='Signin-ctn-btn'>Sign Up</button>
         </Link>
       </section>
     </main>

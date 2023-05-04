@@ -10,7 +10,7 @@ function ReservationVisualizer() {
   const [maxNpages, setMaxNpages] = useState();
   const refProp = useRef(null);
   const [reservations, setReservations] = useState([]);
-  // console.log(reservations);
+
   useEffect(() => {
     axios
       .get(`${DB_URL}/api/bookings`)
@@ -25,22 +25,22 @@ function ReservationVisualizer() {
   return (
     <main ref={refProp}>
       <h1>Reservation Visualizer</h1>
-      <label htmlFor="management__searchbar" />
-      <div className="searchbar__ctn">
-        <input type="text" className="management__searchbar" />
-        <select name="" id="">
-          <option value="" disabled>
+      <label htmlFor='management__searchbar' />
+      <div className='searchbar__ctn'>
+        <input type='text' className='management__searchbar' />
+        <select name='' id=''>
+          <option value='' disabled>
             -- sort by --
           </option>
-          <option value="Id">Id</option>
-          <option value="Location">Location</option>
-          <option value="User">User</option>
+          <option value='Id'>Id</option>
+          <option value='Location'>Location</option>
+          <option value='User'>User</option>
         </select>
         <button>SEARCH</button>
       </div>
 
-      <div className="reservations__list">
-      {/* {reservations.length > 0  && <ReservationCard booking={reservations[0]} />} */}
+      <div className='reservations__list'>
+        {/* {reservations.length > 0  && <ReservationCard booking={reservations[0]} />} */}
         {reservations
           .slice(
             actualPage * itemsPerPage,
@@ -51,7 +51,7 @@ function ReservationVisualizer() {
           })}
       </div>
 
-      <div className="manage__pagination">
+      <div className='manage__pagination'>
         <HotelListPagination
           maxNpages={maxNpages}
           actualPage={actualPage}

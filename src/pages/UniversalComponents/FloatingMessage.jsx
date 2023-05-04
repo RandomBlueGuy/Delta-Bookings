@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 function FloatingMessage({
   message = "[FLOATING MESSAGE]",
@@ -19,15 +19,15 @@ function FloatingMessage({
 
   return (
     <main
-      className="floatingMessage__ctn"
+      className='floatingMessage__ctn'
       style={{ display: showUpdate ? "flex" : "none" }}
     >
       <p>
         <strong>{message}</strong>
       </p>
       <p
-        className="floatingMessage__special"
-         onClick={()=>setShowUpdate(false)}
+        className='floatingMessage__special'
+        onClick={() => setShowUpdate(false)}
       >
         <strong>🗙</strong>
       </p>

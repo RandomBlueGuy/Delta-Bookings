@@ -19,18 +19,14 @@ function UserListMember({ index, user, setRecallGet }) {
   );
   const [warningTitle, setWarningTitle] = useState("Think about it");
 
-  console.log(shouldDelete);
-
   useEffect(() => {
     if (role !== "") {
-      console.log("role is not empty");
       setViewSubmit(true);
     }
   }, [role]);
 
   useEffect(() => {
     if (warningResult === true && role !== "") {
-      console.log(warningResult);
       setShowWarning(false);
       const selectedRoleValue = role === "User" ? 1 : 2;
       axios
@@ -47,7 +43,6 @@ function UserListMember({ index, user, setRecallGet }) {
           }
         )
         .then(() => {
-          console.log("user updated");
           setRecallGet(true);
           setRole("");
         });
@@ -59,7 +54,6 @@ function UserListMember({ index, user, setRecallGet }) {
 
   useEffect(() => {
     if (warningResult === true && shouldDelete === true) {
-      console.log("I wiill delete something");
       setShouldDelete(false);
       setWarningResult(false);
       axios
@@ -69,29 +63,10 @@ function UserListMember({ index, user, setRecallGet }) {
           },
         })
         .then(() => {
-          console.log("UserDeleted");
           setRecallGet(true);
         });
     }
   }, [warningResult]);
-
-  // setWarningTitle("Think about it");
-  // setWarningMessage(
-  //   "Take into consideration the possible consequences of this particular action."
-  // );
-
-  // setWarningTitle("Change this user's role");
-  // setWarningMessage(
-  //   "Making changes to the role will affect the way that person interacts with the app"
-  // );
-  // setShowWarning(true);
-
-  useEffect(() => {
-    // if (warningResult && shouldUpdate === "Delete") {
-    // } else if (warningResult && shouldUpdate === "Update") {
-    //
-    // }
-  }, []);
 
   return (
     <main className='Management__Card'>

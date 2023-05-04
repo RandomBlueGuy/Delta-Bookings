@@ -8,10 +8,10 @@ import devPicImg3 from "../../assets/Images/dev-pic3.png";
 
 function AboutUspage() {
   return (
-    <main className="AboutUs-container">
+    <main className='AboutUs-container'>
       <AboutHeader />
-      <div className="AboutUs-card">
-        <section className="AboutUs-brief">
+      <div className='AboutUs-card'>
+        <section className='AboutUs-brief'>
           <h1>What is Delta Bookings?</h1>
           <p>
             Delta Bookings is the project we decided to take as part of our
@@ -53,46 +53,45 @@ function AboutUspage() {
           </ul>
         </section>
 
-				<section className="AboutUs-developers">
-					<div className="developers-title">
-						<h1>Our Team</h1>
-					</div>
-					<DevCard
-						cNick="RandomBlueDev"
-						cImage={devPicImg1}
-						cName=" Andrés Vélez"
-						cTitle="Junior Web Developer"
-						cEmail="randombluemail@gmail.com"
-						cGithub="github.com/RandomBlueGuy"
-						cLinkedin="one day..."
-						cColor1="rgb(14, 170, 222)"
-					/>
-					<DevCard
-						cNick="Oscar_Nuñez"
-						cImage={devPicImg2} // si pueden enviarme una imagen que quisieran tener en el about us
-						cName=" Oscar Javier Nuñez"
-						cTitle="Junior Web Developer"
-						cEmail="oscar.nunez07@hotmail.com"
-						cGithub="github.com/Oskarnuz"
-						cLinkedin="/in/oscar-nuñez-68115587"
-						cColor1="rgb(15, 207, 111)"
-					/>
+        <section className='AboutUs-developers'>
+          <div className='developers-title'>
+            <h1>Our Team</h1>
+          </div>
+          <DevCard
+            cNick='RandomBlueDev'
+            cImage={devPicImg1}
+            cName=' Andrés Vélez'
+            cTitle='Junior Web Developer'
+            cEmail='randombluemail@gmail.com'
+            cGithub='github.com/RandomBlueGuy'
+            cLinkedin='one day...'
+            cColor1='rgb(14, 170, 222)'
+          />
+          <DevCard
+            cNick='Oscar_Nuñez'
+            cImage={devPicImg2}
+            cName=' Oscar Javier Nuñez'
+            cTitle='Junior Web Developer'
+            cEmail='oscar.nunez07@hotmail.com'
+            cGithub='github.com/Oskarnuz'
+            cLinkedin='/in/oscar-nuñez-68115587'
+            cColor1='rgb(15, 207, 111)'
+          />
 
-					<DevCard
-						cNick=" Michael_Saénz"
-						cImage={devPicImg3} // si pueden enviarme una imagen que quisieran tener en el about us
-						cName="Michael Saénz"
-						cTitle="Junior Web Developer"
-						cEmail="michaelsaenz96@hotmail.com"
-						cGithub="github.com/MSaenz1011"
-						cLinkedin="[UNKNOWN]"
-						cColor1="rgb(215, 207, 111)"
-
-					/>
-				</section>
-			</div>
-		</main>
-	);
+          <DevCard
+            cNick=' Michael_Saénz'
+            cImage={devPicImg3}
+            cName='Michael Saénz'
+            cTitle='Junior Web Developer'
+            cEmail='michaelsaenz96@hotmail.com'
+            cGithub='github.com/MSaenz1011'
+            cLinkedin='[UNKNOWN]'
+            cColor1='rgb(215, 207, 111)'
+          />
+        </section>
+      </div>
+    </main>
+  );
 }
 
 export default AboutUspage;
