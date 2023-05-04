@@ -183,7 +183,7 @@ function Form5RoomForm({
           </div>
         </div>
 
-        <div className='line_Ctn'>
+        <div className='line__Ctn'>
           <div className='HotelCreator__form--line'>
             <label className='HotelCreator__label' htmlFor='RoomName'>
               Room name:
@@ -203,7 +203,7 @@ function Form5RoomForm({
           )}
         </div>
 
-        <div className='line_Ctn'>
+        <div className='line__Ctn'>
           <div className='HotelCreator__form--line'>
             <label className='HotelCreator__label' htmlFor='roonAmenities'>
               Add Amenities:
@@ -223,7 +223,7 @@ function Form5RoomForm({
           )}
         </div>
 
-        <div className='line_Ctn'>
+        <div className='line__Ctn'>
           <div className='HotelCreator__form--line'>
             <label className='HotelCreator__label' htmlFor='Inclusions'>
               Add Inclusions:
@@ -243,7 +243,7 @@ function Form5RoomForm({
           )}
         </div>
 
-        <div className='line_Ctn'>
+        <div className='line__Ctn'>
           <div className='HotelCreator__form--line'>
             <label
               className='HotelCreator__label'
@@ -269,7 +269,7 @@ function Form5RoomForm({
           )}
         </div>
 
-        <div className='line_Ctn'>
+        <div className='line__Ctn'>
           <div className='HotelCreator__form--line'>
             <label className='HotelCreator__label' htmlFor='Discount'>
               Room's discount:
@@ -289,7 +289,7 @@ function Form5RoomForm({
           )}
         </div>
 
-        <div className='line_Ctn'>
+        <div className='line__Ctn'>
           <div className='HotelCreator__form--line'>
             <label className='HotelCreator__label' htmlFor='About'>
               Room's description:
@@ -309,7 +309,7 @@ function Form5RoomForm({
           )}
         </div>
 
-        <div className='line_Ctn'>
+        <div className='line__Ctn'>
           <div className='HotelCreator__form--line'>
             <label className='HotelCreator__label' htmlFor='RoomImg'>
               Add Room Image:
