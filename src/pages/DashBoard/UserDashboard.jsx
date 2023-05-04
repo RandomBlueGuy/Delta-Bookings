@@ -16,31 +16,21 @@ export default function UserDashboard() {
   const [profileEdit, setProfileEdit] = useState(false);
   const [profileEdit2, setProfileEdit2] = useState(false);
   const [selectedTab, setSelectedTab] = useState("Profile");
-
   const [initialUserData, setInitialUserData] = useState({});
-<<<<<<< HEAD
   const [showUpdate, setShowUpdate] = useState(false);
-=======
-  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
->>>>>>> ae31d447aaa4133c24e0c1811341fea5c747660a
   const [cookies] = useCookies("cookieToken");
   const decode = useJwt(cookies.cookieToken);
   const [picture, setPicture] = useState("");
   const [image, setImage] = useState("");
   const [bookingsArr, setBookingsArr] = useState([]);
   const [changeImage, setChangeImage] = useState(false);
-  const [showUpdate, setShowUpdate] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
   const [warningResult, setWarningResult] = useState(false);
   const [warningMessage, setWarningMessage] = useState("");
   const [warningTitle, setWarningTitle] = useState("");
   const [shouldUpdate, setShouldUpdate] = useState("");
-<<<<<<< HEAD
   const [dataErrors, setDataErrors] = useState({});
   const [passwordErrors, setPasswordErrors] = useState({});
-=======
-
->>>>>>> ae31d447aaa4133c24e0c1811341fea5c747660a
   const [userData, setUserData] = useState({
     fullName: "",
     email: "",
@@ -55,9 +45,7 @@ export default function UserDashboard() {
     userData;
 
   const numberRegex = /^[0-9]*$/;
-  const emailRegex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   function handlePic(e) {
@@ -216,7 +204,6 @@ export default function UserDashboard() {
   };
 
   const handleNewuserinfo = (event) => {
-    console.log(dataErrors);
     const validationErrors = {};
     if (!fullName.trim()) {
       validationErrors.fullName = "Please enter your name";
@@ -255,13 +242,31 @@ export default function UserDashboard() {
   }
 
   function handleNewPassword() {
-    if (password === password2) {
-      console.log("passwords match");
-      setWarningTitle("Password Update");
-      setShowWarning(true);
-      setWarningMessage("You are going to change your password permanently.");
-    } else {
-      console.log("passwords don't match");
+    const passErrors = {};
+    if (!password.trim() || !password2.trim()) {
+      passErrors.password = "Both fields must not be blank";
+    } else if (
+      !passwordRegex.test(password.trim().replace(/\s+/g, "")) ||
+      !passwordRegex.test(password2.trim().replace(/\s+/g, ""))
+    ) {
+      passErrors.password =
+        "Passwords must have 8 characters, a number, one uppercase letter and one lowecase letter";
+    } else if (password !== password2) {
+      passErrors.password = "Passwords must be the same";
+    }
+
+    setPasswordErrors(passErrors);
+    console.log(passwordErrors);
+
+    if (Object.keys(passErrors).length === 0) {
+      if (password === password2) {
+        console.log("passwords match");
+        setWarningTitle("Password Update");
+        setShowWarning(true);
+        setWarningMessage("You are going to change your password permanently.");
+      } else {
+        console.log("passwords don't match");
+      }
     }
   }
 
@@ -282,19 +287,11 @@ export default function UserDashboard() {
           setWarningResult={setWarningResult}
         />
       )}
-<<<<<<< HEAD
       <section className='dashboard__ctn-info'>
         <div className='dashboard__ctn-info-prof'>
           <div className='dashboard__ctn-info-img'>
             <img src={picture} className='profile__img' alt='Profile-Picture' />
             <label htmlFor='file'>
-=======
-      <section className="dashboard__ctn-info">
-        <div className="dashboard__ctn-info-prof">
-          <div className="dashboard__ctn-info-img">
-            <img src={picture} className="profile__img" alt="" />
-            <label htmlFor="file">
->>>>>>> ae31d447aaa4133c24e0c1811341fea5c747660a
               <FontAwesomeIcon icon={faPenToSquare} />
             </label>
           </div>
@@ -411,17 +408,11 @@ export default function UserDashboard() {
 
               <div className='dashboard__ctn-info-edit1-name'>
                 <label
-<<<<<<< HEAD
                   htmlFor='phoneNumber'
                   className='dashboard__ctn-info-edit1-name'
                 >
                   Phone number
                 </label>
-=======
-                  htmlFor="phoneNumber"
-                >Phone number
-                  </label>
->>>>>>> ae31d447aaa4133c24e0c1811341fea5c747660a
                 <input
                   type='text'
                   name='phoneNumber'
@@ -526,7 +517,6 @@ export default function UserDashboard() {
                 <span className='error-creatorUser'>{dataErrors.zipCode}</span>
               )}
             </form>
-<<<<<<< HEAD
             <div className='pass__changer'>
               <div className='dashboard__ctn__password'>
                 <h3>Change Password</h3>
@@ -568,52 +558,6 @@ export default function UserDashboard() {
                     </button>
                   )}
                 </form>
-=======
-            <div className="pass__changer">
-              <div className="dashboard__ctn__password">
-                <div className="dashboard__password--title">
-                  <h3>Change Password</h3>
-                  <div className="dashboard__Btng">
-                    {editState2 === false && (
-                      <button
-                        className="dashboard-edit-btn"
-                        onClick={() => {
-                          setEditState2(true);
-                          setProfileEdit2(true);
-                        }}
-                      >
-                        Edit
-                      </button>
-                    )}
-                    {editState2 === true && (
-                      <button
-                        onClick={() => {
-                          setEditState2(false);
-                          setProfileEdit2(false);
-                          setPassword("");
-                          setPassword2("");
-                        }}
-                      >
-                        Cancel
-                      </button>
-                    )}
-                    <form onSubmit={handleNewPassword}>
-                      {editState2 === true && (
-                        <button
-                          type="submit"
-                          onClick={(event) => {
-                            event.preventDefault();
-                            setShouldUpdate("Password");
-                            handleNewPassword();
-                          }}
-                        >
-                          Save
-                        </button>
-                      )}
-                    </form>
-                  </div>
-                </div>
->>>>>>> ae31d447aaa4133c24e0c1811341fea5c747660a
               </div>
               <div className='dashboard__ctn-info-edit1-name'>
                 <label htmlFor='password'>Password</label>
@@ -630,13 +574,8 @@ export default function UserDashboard() {
                   }
                 />
               </div>
-<<<<<<< HEAD
               <div className='dashboard__ctn-info-edit1-name'>
                 <label htmlFor='password2'>Confirm your password:</label>
-=======
-              <div className="dashboard__ctn-info-edit1-name">
-                <label htmlFor="password2">Confirm password:</label>
->>>>>>> ae31d447aaa4133c24e0c1811341fea5c747660a
                 <input
                   type='password'
                   name='password2'
@@ -653,25 +592,22 @@ export default function UserDashboard() {
               </div>
             </div>
           </div>
+          {passwordErrors.password && (
+            <span className='error-creator-pass'>
+              {passwordErrors.password}
+            </span>
+          )}
 
           <div
             className='dashboard__ctn--Bookings'
             style={{ display: selectedTab === "Bookings" ? "flex" : "none" }}
           >
             <h1>My Reservations</h1>
-<<<<<<< HEAD
             <div className='reservationDisplay'>
               <h2>
                 {bookingsArr.length > 0
                   ? `You have ${bookingsArr.length} reservations`
                   : "You haven't made any reservation yet :("}
-=======
-            <div className="reservationDisplay">
-              <h2>
-                {bookingsArr.length > 0
-                  ? `You have ${bookingsArr.length} reservations`
-                  : "You haven't made any reservations yet :("}
->>>>>>> ae31d447aaa4133c24e0c1811341fea5c747660a
               </h2>
               {bookingsArr.map((booking, index) => (
                 <ReservationCard key={index} booking={booking} />

@@ -344,7 +344,17 @@
   gap: 1rem;
 }
 
-<<<<<<< HEAD
+.dashboard__password--title{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.dashboard__password--title button {
+  padding: 0.5rem;
+}
+
 .error-creatorUser{
     color: red;
     font-style: italic;
@@ -355,15 +365,15 @@
     float: right;
     margin-top: -5px;
     margin-bottom: 5px;
-=======
-.dashboard__password--title{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
 }
 
-.dashboard__password--title button {
-  padding: 0.5rem;
->>>>>>> ae31d447aaa4133c24e0c1811341fea5c747660a
+.error-creator-pass {
+  color: red;
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+  float: right;
+  margin:auto 
 }

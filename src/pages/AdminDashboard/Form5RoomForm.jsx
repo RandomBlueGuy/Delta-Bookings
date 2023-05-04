@@ -68,49 +68,49 @@ function Form5RoomForm({ length = 1, form5Constructor, roomInfo = null }) {
       setStatus(false);
     }
   };
-  
+
   const handleInfo = async (event) => {
     event.preventDefault();
     const validationErrors = {};
-    
+
     if (RoomName.trim() === "") {
       validationErrors.RoomName = "Enter your room's name";
     }
-    
+
     if (Amenities.trim() === "") {
       validationErrors.Amenities = "Enter your amenities";
     }
     if (Inclusions.trim() === "") {
       validationErrors.Inclusions = "Enter your inclusions";
     }
-    
+
     if (OriginalPricePerNight === "") {
       validationErrors.OriginalPricePerNight = "Enter the room's price";
     } else if (
       !/^[0-9]*$/.test(OriginalPricePerNight.trim().replace(/\s+/g, ""))
-      ) {
-        validationErrors.OriginalPricePerNight = "Only numeric characters";
-      }
-      
+    ) {
+      validationErrors.OriginalPricePerNight = "Only numeric characters";
+    }
+
     if (Discount === "") {
       validationErrors.Discount = "Enter the room's discount";
     } else if (!/^[0-9]*$/.test(Discount.trim().replace(/\s+/g, ""))) {
       validationErrors.Discount = "Only numeric characters";
     }
-    
+
     if (About.trim() === "") {
       validationErrors.About = "enter your room's description";
     } else if (About.replace(/\s+/g, "").length > 100) {
       validationErrors.hoteldescription =
-      "Please give us a shorter description";
+        "Please give us a shorter description";
     }
 
     if (RoomImg.length < 1) {
       validationErrors.RoomImg = "Please upload, at least, one picture";
     }
-    
+
     setErrors(validationErrors);
-    
+
     if (Object.keys(validationErrors).length === 0) {
       // console.log("HELLO")
       // const data = new FormData();
@@ -124,8 +124,12 @@ function Form5RoomForm({ length = 1, form5Constructor, roomInfo = null }) {
       // });
 
       // const roomURL = response.data["file 0"];
-      const roomAmenities = `${(Amenities.split(" "))[0]} -/- ${Amenities.split(" ")[1]}`
-      const roomInclusions = `${(Inclusions.split(" "))[0]} -/- ${Inclusions.split(" ")[1]}`
+      const roomAmenities = `${Amenities.split(" ")[0]} -/- ${
+        Amenities.split(" ")[1]
+      }`;
+      const roomInclusions = `${Inclusions.split(" ")[0]} -/- ${
+        Inclusions.split(" ")[1]
+      }`;
       setChangeRoomData(true);
       form5Constructor(
         RoomImg,
@@ -143,19 +147,19 @@ function Form5RoomForm({ length = 1, form5Constructor, roomInfo = null }) {
 
   return (
     <>
-      <div className="dividing-ctn">
-        <div className="dividing-line"></div>
+      <div className='dividing-ctn'>
+        <div className='dividing-line'></div>
       </div>
       <form
         onSubmit={handleInfo}
-        action=""
-        className="CreateHotel--subHotel Ctn__Form5"
+        action=''
+        className='CreateHotel--subHotel Ctn__Form5'
       >
-        <div className="RoomCreator__header">
+        <div className='RoomCreator__header'>
           <h3>Room creator</h3>
           <div>
             <button
-              className="manage__status"
+              className='manage__status'
               disabled
               style={{
                 backgroundColor: !status
@@ -169,7 +173,7 @@ function Form5RoomForm({ length = 1, form5Constructor, roomInfo = null }) {
               {!status ? "Not Complete ◉" : "Completed ✔"}
             </button>
             <button
-              className="manage__del"
+              className='manage__del'
               onClick={(event) => {
                 event.preventDefault();
               }}
@@ -179,162 +183,162 @@ function Form5RoomForm({ length = 1, form5Constructor, roomInfo = null }) {
           </div>
         </div>
 
-        <div className="line_Ctn">
-          <div className="HotelCreator__form--line">
-            <label className="HotelCreator__label" htmlFor="RoomName">
+        <div className='line__Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='RoomName'>
               Room name:
             </label>
             <input
-              id="inp1"
-              className="HotelCreator__input"
-              type="text"
+              id='inp1'
+              className='HotelCreator__input'
+              type='text'
               placeholder="Write your room's Name"
-              name="RoomName"
+              name='RoomName'
               onChange={handleChange}
               value={RoomName}
             />
           </div>
           {errors.RoomName && (
-            <span className="error-creatorAdmin"> {errors.RoomName} </span>
+            <span className='error-creatorAdmin'> {errors.RoomName} </span>
           )}
         </div>
 
-        <div className="line_Ctn">
-          <div className="HotelCreator__form--line">
-            <label className="HotelCreator__label" htmlFor="roonAmenities">
+        <div className='line__Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='roonAmenities'>
               Add Amenities:
             </label>
             <input
-              id="inp2"
-              className="HotelCreator__input"
-              type="text"
+              id='inp2'
+              className='HotelCreator__input'
+              type='text'
               placeholder="Write your room's amenities (at least 2 use commas)"
-              name="Amenities"
+              name='Amenities'
               onChange={handleChange}
               value={Amenities}
             />
           </div>
           {errors.Amenities && (
-            <span className="error-creatorAdmin"> {errors.Amenities} </span>
+            <span className='error-creatorAdmin'> {errors.Amenities} </span>
           )}
         </div>
 
-        <div className="line_Ctn">
-          <div className="HotelCreator__form--line">
-            <label className="HotelCreator__label" htmlFor="Inclusions">
+        <div className='line__Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='Inclusions'>
               Add Inclusions:
             </label>
             <input
-              id="inp3"
-              className="HotelCreator__input"
-              type="text"
+              id='inp3'
+              className='HotelCreator__input'
+              type='text'
               placeholder="Write your room's Inclusions (at least 2 use commas)"
-              name="Inclusions"
+              name='Inclusions'
               onChange={handleChange}
               value={Inclusions}
             />
           </div>
           {errors.Inclusions && (
-            <span className="error-creatorAdmin"> {errors.Inclusions} </span>
+            <span className='error-creatorAdmin'> {errors.Inclusions} </span>
           )}
         </div>
 
-        <div className="line_Ctn">
-          <div className="HotelCreator__form--line">
+        <div className='line__Ctn'>
+          <div className='HotelCreator__form--line'>
             <label
-              className="HotelCreator__label"
-              htmlFor="OriginalPricePerNight"
+              className='HotelCreator__label'
+              htmlFor='OriginalPricePerNight'
             >
               Room's Price:
             </label>
             <input
-              id="inp4"
-              className="HotelCreator__input"
-              type="number"
+              id='inp4'
+              className='HotelCreator__input'
+              type='number'
               placeholder="Write your room's price"
-              name="OriginalPricePerNight"
+              name='OriginalPricePerNight'
               onChange={handleChange}
               value={OriginalPricePerNight}
             />
           </div>
           {errors.OriginalPricePerNight && (
-            <span className="error-creatorAdmin">
+            <span className='error-creatorAdmin'>
               {" "}
               {errors.OriginalPricePerNight}{" "}
             </span>
           )}
         </div>
 
-        <div className="line_Ctn">
-          <div className="HotelCreator__form--line">
-            <label className="HotelCreator__label" htmlFor="Discount">
+        <div className='line__Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='Discount'>
               Room's discount:
             </label>
             <input
-              id="inp5"
-              className="HotelCreator__input"
-              type="number"
+              id='inp5'
+              className='HotelCreator__input'
+              type='number'
               placeholder="Write your room's discount"
-              name="Discount"
+              name='Discount'
               onChange={handleChange}
               value={Discount}
             />
           </div>
           {errors.Discount && (
-            <span className="error-creatorAdmin"> {errors.Discount} </span>
+            <span className='error-creatorAdmin'> {errors.Discount} </span>
           )}
         </div>
 
-        <div className="line_Ctn">
-          <div className="HotelCreator__form--line">
-            <label className="HotelCreator__label" htmlFor="About">
+        <div className='line__Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='About'>
               Room's description:
             </label>
             <input
-              id="inp5"
-              className="HotelCreator__input"
-              type="text"
+              id='inp5'
+              className='HotelCreator__input'
+              type='text'
               placeholder="Write your room'sgi description"
-              name="About"
+              name='About'
               onChange={handleChange}
               value={About}
             />
           </div>
           {errors.About && (
-            <span className="error-creatorAdmin"> {errors.About} </span>
+            <span className='error-creatorAdmin'> {errors.About} </span>
           )}
         </div>
 
-        <div className="line_Ctn">
-          <div className="HotelCreator__form--line">
-            <label className="HotelCreator__label" htmlFor="RoomImg">
+        <div className='line__Ctn'>
+          <div className='HotelCreator__form--line'>
+            <label className='HotelCreator__label' htmlFor='RoomImg'>
               Add Room Image:
             </label>
             <input
-              className="HotelCreator__input"
-              type="file"
-              name="RoomImg"
-              accept="image/png, image/jpeg, image/jpg"
+              className='HotelCreator__input'
+              type='file'
+              name='RoomImg'
+              accept='image/png, image/jpeg, image/jpg'
               multiple
               onChange={handleChange}
             />
           </div>
           {errors.RoomImg && (
-            <span className="error-creatorAdmin"> {errors.RoomImg} </span>
+            <span className='error-creatorAdmin'> {errors.RoomImg} </span>
           )}
         </div>
 
-        <div className="addRoom">
+        <div className='addRoom'>
           <button
-          style={{display: roomInfo === null ? "block" : "none"}}
-          // disabled={length > 3 ? true : false}
+            style={{ display: roomInfo === null ? "block" : "none" }}
+            // disabled={length > 3 ? true : false}
           >
             Create Room 🞧
           </button>
           <button
-          style={{display: roomInfo !== null ? "block" : "none"}}
-          // disabled={length > 3 ? true : false}
-          // onClick={}
+            style={{ display: roomInfo !== null ? "block" : "none" }}
+            // disabled={length > 3 ? true : false}
+            // onClick={}
           >
             Update Room 🞧
           </button>
