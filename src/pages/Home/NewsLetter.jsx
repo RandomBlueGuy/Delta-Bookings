@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./NewsLetter.css";
 import axios from "axios";
+import FloatingMessage from "../UniversalComponents/FloatingMessage";
 
 import ReviewCard from "./ReviewCard";
 
@@ -10,7 +11,9 @@ function NewsLetter() {
   const r1Date = new Date(review1.Date);
   const r2Date = new Date(review2.Date);
   const [inputEmail, setInputEmail] = useState("");
-  const [Errors, setErrors] = useState({});
+  const [showUpdate, setShowUpdate] = useState(false);
+  const [message, setMessage] = useState("");
+
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
@@ -36,30 +39,30 @@ function NewsLetter() {
   }, []);
 
   const sendEmail = async () => {
-    const validationErrors = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!inputEmail.trim()) {
-      validationErrors.emailerror = "Please, enter your email";
-    } else if (!emailRegex.test(inputEmail)) {
-      validationErrors.emailerror = "Enter a valid email";
-    }
-
-    setErrors(validationErrors);
-
-    if (Object.keys(validationErrors).length === 0) {
-      const res = await axios
-        .post(`${DB_URL}/api/emailsubscription`, {
-          Email: inputEmail,
-        })
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error.message));
-      setInputEmail("");
-    }
+    const res = await axios
+      .post(`${DB_URL}/api/emailsubscription`, {
+        Email: inputEmail,
+      })
+      .then(() => {
+        setMessage("Newsletter subscription added. Thank you for suscribing");
+        setShowUpdate(true);
+      })
+      .catch(() => {
+        setMessage("Invalid Email, please try again");
+        setShowUpdate(true);
+      });
+    setInputEmail("");
   };
 
   return (
     <main className='NewsLetter-container'>
+      {showUpdate && (
+        <FloatingMessage
+          message={`${message} `}
+          setShowUpdate={setShowUpdate}
+          showUpdate={showUpdate}
+        />
+      )}
       <section className='NewsLetter-table'>
         <ReviewCard
           placeholderImg={"1"}
@@ -108,9 +111,6 @@ function NewsLetter() {
           <button type='button' className='sub-btn' onClick={sendEmail}>
             Subscribe
           </button>
-          {Errors.emailerror && (
-            <span className='error'>{Errors.emailerror}</span>
-          )}
         </form>
       </div>
     </main>

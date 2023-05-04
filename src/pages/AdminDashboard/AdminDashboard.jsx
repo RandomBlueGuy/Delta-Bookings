@@ -2,7 +2,9 @@ import "./AdminDashboard.css";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
-import AdminImg from "../../assets/Images/dev-pic1.png";
+import axios from "axios";
+import { useCookies } from "react-cookie";
+import { useJwt } from "react-jwt";
 import HotelManagement from "./HotelManagement";
 import HotelCreator from "./HotelCreator";
 import ReservationVisualizer from "./ReservationVisualizer";
@@ -10,10 +12,17 @@ import UserAdministration from "./UserAdministration";
 import HotelUpdater from "./HotelUpdater";
 
 export default function AdminDashboard() {
-  const [profileEdit, setProfileEdit] = useState(false);
   const [selectedTab, setSelectedTab] = useState("Management");
   const [hasChosenHotel, setHasChosenHotel] = useState(false);
   const [selectedHotel, setSelectedHotel] = useState(null);
+  const [picture, setPicture] = useState("");
+  const [image, setImage] = useState("");
+  const [userData, setUserData] = useState("");
+  const [changeImage, setChangeImage] = useState(false);
+  const [cookies] = useCookies("cookieToken");
+  const decode = useJwt(cookies.cookieToken);
+
+  const DB_URL = process.env.REACT_APP_BACKEND_URL;
 
   function chooseHotelEdit(hotel) {
     setSelectedHotel(hotel);
@@ -31,25 +40,96 @@ export default function AdminDashboard() {
     setSelectedTab(selection);
   }
 
-  function handleClickEdit() {
-    setProfileEdit(!profileEdit);
+  const readFile = (file) => {
+    const reader = new FileReader();
+    reader.onload = (e) => setImage(e.target.result);
+    reader.readAsDataURL(file);
+  };
+
+  function handlePic(e) {
+    readFile(e.target.files[0]);
+    setPicture(e.target.files);
+    setChangeImage(true);
   }
+
+  useEffect(() => {
+    if (changeImage === true) {
+      setChangeImage(false);
+      const editPicture = async () => {
+        const data = new FormData();
+        data.append("Admin", userData);
+        for (let i = 0; i < picture.length; i++) {
+          data.append(`file:${i}`, picture[i], picture[i].name);
+        }
+
+        const response = await axios.post(`${DB_URL}/test-formdata`, data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+
+        const newURL = response.data["file:0"];
+
+        await axios
+          .put(
+            `${DB_URL}/api/users/${decode.id}/picture`,
+            {
+              picture: newURL,
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${cookies.cookieToken}`,
+              },
+            }
+          )
+          .then((response) => {
+            setPicture(response.data.data.picture);
+          });
+      };
+      editPicture();
+    }
+  }, [changeImage]);
+
+  useEffect(() => {
+    if (decode && decode.decodedToken && decode.decodedToken.id) {
+      const id = decode.decodedToken.id;
+      axios
+        .get(`${DB_URL}/api/users/${id}`)
+        .then((response) => {
+          setUserData(response.data.data.fullName);
+          setPicture(response.data.data.picture);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [decode.decodedToken]);
 
   return (
     <main className='AdminDashboard__ctn'>
       <section className='AdminDashboard__ctn-info'>
         <div className='AdminDashboard__ctn-info-prof'>
-          <div className='AdminDashboard__ctn-info-img'>
-            <img src={AdminImg} alt='' />
-            <button>
+          <div className='dashboard__ctn-info-img'>
+            <img src={picture} className='profile__img' alt='' />
+            <label htmlFor='file'>
               <FontAwesomeIcon icon={faPenToSquare} />
-            </button>
+            </label>
           </div>
+
+          <input
+            type='file'
+            accept='image/*'
+            name='file'
+            id='file'
+            max-size='200'
+            onChange={handlePic}
+            style={{ display: "none" }}
+          />
+
           <div className='AdminDashboard__ctn-info-text'>
-            <h1>[ADMIN NAME]</h1>
+            <h1>{userData}</h1>
             <p>Delta Bookings Administrator</p>
           </div>
         </div>
+
         <div className='AdminDashboard__ctn-info-select'>
           <button
             type='button'

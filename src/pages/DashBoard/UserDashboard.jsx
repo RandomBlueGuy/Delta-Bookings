@@ -285,7 +285,7 @@ export default function UserDashboard() {
       <section className='dashboard__ctn-info'>
         <div className='dashboard__ctn-info-prof'>
           <div className='dashboard__ctn-info-img'>
-            <img src={picture} className='profile__img' alt='Profile-Picture' />
+            <img src={picture} className='profile__img' alt='' />
             <label htmlFor='file'>
               <FontAwesomeIcon icon={faPenToSquare} />
             </label>
