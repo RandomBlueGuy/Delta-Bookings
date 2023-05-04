@@ -155,7 +155,7 @@ function Login() {
             Log In
           </button>
         </form>
-        <button className="Login-special-btn" onClick={toggleSecretSection}>
+        {/* <button className="Login-special-btn" onClick={toggleSecretSection}>
           Forgot your password?
         </button>
         <div className="err__display__secret">
@@ -197,7 +197,7 @@ function Login() {
         </div>
         {emailerr.userEmail && (
           <span className="error">{emailerr.userEmail}</span>
-        )}
+        )} */}
 
         <div className="social-distancing">
           <div className="social-distancing-line"></div>

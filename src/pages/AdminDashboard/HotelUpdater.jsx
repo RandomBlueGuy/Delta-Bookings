@@ -7,13 +7,19 @@ import Form4Gallery from "./Form4Gallery";
 import Form5RoomForm from "./Form5RoomForm";
 import axios from "axios";
 import RoomList from "./RoomList";
+import WarningMessage from "../UniversalComponents/WarningMessage";
+import FloatingMessage from "../UniversalComponents/FloatingMessage";
 
 function HotelUpdater({ hotel = {} }) {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [formTab, setFormTab] = useState(1);
   const [create, setCreate] = useState(hotel.Rooms);
   const [deleteRoomData, setDeleteRoomData] = useState(null);
-  const [updateRoomIndex, setUpdateRoomIndex] =useState(null);
+  const [updateRoomIndex, setUpdateRoomIndex] = useState(null);
+  const [showUpdate, setShowUpdate] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
+  const [warningResult, setWarningResult] = useState(false);
+  const [floatingMessageDescription, setFloatingMessageDescription] = useState("");
   const [hotelForm, setHotelForm] = useState({
     HotelName: hotel.HotelName,
     Website: hotel.Website,
@@ -90,6 +96,10 @@ function HotelUpdater({ hotel = {} }) {
     FrontImg,
     Tags
   ) {
+    if (FrontImg === undefined) {
+      FrontImg = hotelForm.FrontImg;
+    }
+    console.log("front Imag", FrontImg);
     setHotelForm({
       ...hotelForm,
       HotelName,
@@ -144,6 +154,7 @@ function HotelUpdater({ hotel = {} }) {
 
   function form4Constructor(Gallery) {
     //USE -//-
+    console.log(Gallery);
     setHotelForm({ ...hotelForm, Gallery });
   }
 
@@ -154,130 +165,161 @@ function HotelUpdater({ hotel = {} }) {
     Discount,
     About,
     Amenities,
-    Inclusions
+    Inclusions,
+    isItUpdating,
+    roomId
   ) {
     Discount = Number(Discount);
     OriginalPricePerNight = Number(OriginalPricePerNight);
-    setRoomForm({
-      ...roomForm,
-      RoomImg,
-      RoomName,
-      OriginalPricePerNight,
-      Discount,
-      About,
-      Amenities,
-      Inclusions,
-    });
+    console.log("IMAGE TAKEN FOR ROOM", RoomImg);
+    if (isItUpdating === true) {
+      setCreate(
+        create.filter((room) => {
+          return room.id !== roomId;
+        })
+      );
+      setRoomForm({
+        ...roomForm,
+        RoomImg,
+        RoomName,
+        OriginalPricePerNight,
+        Discount,
+        About,
+        Amenities,
+        Inclusions,
+        id: roomId,
+      });
+    } else {
+      setRoomForm({
+        ...roomForm,
+        RoomImg,
+        RoomName,
+        OriginalPricePerNight,
+        Discount,
+        About,
+        Amenities,
+        Inclusions,
+      });
+    }
   }
 
   useEffect(() => {
     if (roomForm.RoomName !== "") {
       setCreate([...create, roomForm]);
+      setFloatingMessageDescription("Room Updated")
+      setShowUpdate(true);
     }
   }, [roomForm]);
 
   // console.log(hotelForm);
-  
+
   useEffect(() => {
-    console.log(updateRoomIndex)
+    console.log(updateRoomIndex);
     // setCreate(create.filter((room, index) => index !== deleteRoomData));
-  }, [updateRoomIndex])
+  }, [updateRoomIndex]);
 
   useEffect(() => {
     // console.log(deleteRoomData)
     setCreate(create.filter((room, index) => index !== deleteRoomData));
-  }, [deleteRoomData])
-  
+  }, [deleteRoomData]);
 
-  function updateRoom(index) {
-    console.log(index);
-  }
-
-  function updateHotel() {
-    const roomUpdateArr = create.map((room) => room.id)
-    console.log(roomUpdateArr)
+  const updateHotel = async () => {
+    const roomUpdateArr = create.map((room) => room.id);
+    // console.log("createIMG", create[0].RoomImg);
     setHotelForm({
       ...hotelForm,
       Rooms: create,
     });
-    const hotelTest = {
-      HotelName: `${hotelForm.HotelName}`,
-      Website: `${hotelForm.Website}`,
-      location: "",
-      category: "",
-      loc_Lat: `${hotelForm.loc_Lat}`,
-      loc_Lng: `${hotelForm.loc_Lng}`,
-      loc_Place: `${hotelForm.loc_Place}`,
-      loc_City: `${hotelForm.loc_City}`,
-      loc_State: `${hotelForm.loc_State}`,
-      loc_Country: `${hotelForm.loc_Country}`,
-      FrontImg: `${hotelForm.FrontImg}`,
-      Gallery: `${hotelForm.Gallery}`,
-      PhoneNumber: `${hotelForm.PhoneNumber}`,
-      CountryCode: `${Math.floor(Math.random() * 80) + 10}`,
-      Email: `${hotelForm.Email}`,
-      HotelDescription: `${hotelForm.HotelDescription}`,
-      StarRating: 5,
-      ReviewNumber: 0,
-      Tags: `${hotelForm.Tags}`,
-      SpecialTags: `Recommended`,
-      PopularityNumber: 100,
-      DateAdded: "2022-10-21T03:35:24.658Z",
-      TrendingNumber: 0,
-      SN_Facebook: `${hotelForm.SN_Facebook}`,
-      SN_Twitter: `${hotelForm.SN_Twitter}`,
-      SN_Instagram: `${hotelForm.SN_Instagram}`,
-      SN_Pinterest: `${hotelForm.SN_Pinterest}`,
-      Rooms: {
-        create,
+  };
+
+  useEffect(() => {
+    if (warningResult === true) {
+      axios
+        .put(`${DB_URL}/api/hotels/${hotel.id}`, {
+          HotelName: `${hotelForm.HotelName}`,
+          Website: `${hotelForm.Website}`,
+          location: "",
+          category: "",
+          loc_Lat: `${hotelForm.loc_Lat}`,
+          loc_Lng: `${hotelForm.loc_Lng}`,
+          loc_Place: `${hotelForm.loc_Place}`,
+          loc_City: `${hotelForm.loc_City}`,
+          loc_State: `${hotelForm.loc_State}`,
+          loc_Country: `${hotelForm.loc_Country}`,
+          FrontImg: `${hotelForm.FrontImg}`,
+          Gallery: `${hotelForm.Gallery}`,
+          PhoneNumber: `${hotelForm.PhoneNumber}`,
+          CountryCode: `${Math.floor(Math.random() * 80) + 10}`,
+          Email: `${hotelForm.Email}`,
+          HotelDescription: `${hotelForm.HotelDescription}`,
+          StarRating: 5,
+          ReviewNumber: 0,
+          Tags: `${hotelForm.Tags}`,
+          SpecialTags: `Recommended`,
+          PopularityNumber: 100,
+          DateAdded: "2022-10-21T03:35:24.658Z",
+          TrendingNumber: 0,
+          SN_Facebook: `${hotelForm.SN_Facebook}`,
+          SN_Twitter: `${hotelForm.SN_Twitter}`,
+          SN_Instagram: `${hotelForm.SN_Instagram}`,
+          SN_Pinterest: `${hotelForm.SN_Pinterest}`,
+          Rooms: {
+            create,
+          },
+        })
+        .then((response) => {
+          console.log("Hotel Updated!");
+          setFloatingMessageDescription("Hotel Updated")
+          setWarningResult(false);
+          setShowUpdate(true)
+          setFormTab(1);
+        })
+        .catch((error) => console.log(error.message));
+
+      const imgArr = create.map((room) => room.RoomImg);
+      console.log(imgArr);
+
+      for (let i = 0; i < create.length; i++) {
+        axios
+          .put(`${DB_URL}/api/rooms/${create[i].id}`, {
+            Available: true,
+            RoomImg: `${create[i].RoomImg}`,
+            RoomName: `${create[i].RoomName}`,
+            OriginalPricePerNight: parseInt(create[i].OriginalPricePerNight),
+            Discount: parseInt(create[i].Discount),
+            About: `${create[i].About}`,
+            Facility: `${create[i].Facility}`,
+            Amenities: `${create[i].Amenities}`,
+            Inclusions: `${create[i].Inclusions}`,
+          })
+          .then((response) => {
+            console.log("Room updated", response);
+          })
+          .catch(() => console.log("The room could not be updated"));
       }
     }
-      console.log("htlprueba", hotelTest);
-    axios
-      .put(`${DB_URL}/api/hotels/${hotel.id}`, {
-        HotelName: `${hotelForm.HotelName}`,
-        Website: `${hotelForm.Website}`,
-        location: "",
-        category: "",
-        loc_Lat: `${hotelForm.loc_Lat}`,
-        loc_Lng: `${hotelForm.loc_Lng}`,
-        loc_Place: `${hotelForm.loc_Place}`,
-        loc_City: `${hotelForm.loc_City}`,
-        loc_State: `${hotelForm.loc_State}`,
-        loc_Country: `${hotelForm.loc_Country}`,
-        FrontImg: `${hotelForm.FrontImg}`,
-        Gallery: `${hotelForm.Gallery}`,
-        PhoneNumber: `${hotelForm.PhoneNumber}`,
-        CountryCode: `${Math.floor(Math.random() * 80) + 10}`,
-        Email: `${hotelForm.Email}`,
-        HotelDescription: `${hotelForm.HotelDescription}`,
-        StarRating: 5,
-        ReviewNumber: 0,
-        Tags: `${hotelForm.Tags}`,
-        SpecialTags: `Recommended`,
-        PopularityNumber: 100,
-        DateAdded: "2022-10-21T03:35:24.658Z",
-        TrendingNumber: 0,
-        SN_Facebook: `${hotelForm.SN_Facebook}`,
-        SN_Twitter: `${hotelForm.SN_Twitter}`,
-        SN_Instagram: `${hotelForm.SN_Instagram}`,
-        SN_Pinterest: `${hotelForm.SN_Pinterest}`,
-        Rooms: {
-          create,
-        },
-      })
-      .then((response) => console.log("Hotel Updated!"))
-      .catch((error) => console.log(error.message));
-
-      for (let i = 0; i < roomUpdateArr.length; i++) {
-        axios.put(`${DB_URL}/api/rooms/${roomUpdateArr[i]}`)
-        .then((response)=> console.log("Room updated", response))
-        .catch((error)=> console.log("The room could not be deleted"))
-      }
-  }
+  }, [warningResult]);
 
   return (
     <main className="HotelCreator">
+      {showUpdate && (
+        <FloatingMessage
+          message={floatingMessageDescription}
+          setShowUpdate={setShowUpdate}
+          showUpdate={showUpdate}
+        />
+      )}
+
+      {showWarning && (
+        <WarningMessage
+          warningMessage={"You are going to change a hotel permanently"}
+          warningTitle={
+            "Are you sure you want to update this hotel with the information provided?"
+          }
+          setShowWarning={setShowWarning}
+          setWarningResult={setWarningResult}
+        />
+      )}
       <h1>Updating {hotel.HotelName}</h1>
       <section style={{ display: formTab === 1 ? "block" : "none" }}>
         <Form1BasicInfo
@@ -335,7 +377,7 @@ function HotelUpdater({ hotel = {} }) {
                   <RoomList
                     delNum={index + 1}
                     roomName={room.RoomName}
-                    setUpdateRoomIndex= {setUpdateRoomIndex}
+                    setUpdateRoomIndex={setUpdateRoomIndex}
                     setDeleteRoomData={setDeleteRoomData}
                   />
                 );
@@ -347,6 +389,7 @@ function HotelUpdater({ hotel = {} }) {
           length={create.length}
           form5Constructor={form5Constructor}
           roomInfo={create[updateRoomIndex]}
+          isItUpdating={true}
         />
 
         <div className="HotelForm__footer">
@@ -361,7 +404,10 @@ function HotelUpdater({ hotel = {} }) {
           Step {formTab} / 5
           <button
             className="HotelCreator__form--microSubmit"
-            onClick={updateHotel}
+            onClick={() => {
+              setShowWarning(true);
+              updateHotel();
+            }}
           >
             Create Hotel
           </button>

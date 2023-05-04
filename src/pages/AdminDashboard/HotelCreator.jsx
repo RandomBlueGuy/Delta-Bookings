@@ -9,7 +9,7 @@ import axios from "axios";
 
 function HotelCreator() {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
-  const [formTab, setFormTab] = useState(5);
+  const [formTab, setFormTab] = useState(1);
   const [create, setCreate] = useState([]);
   const [deleteRoomData, setDeleteRoomData] = useState(false);
   const [hotelForm, setHotelForm] = useState({
@@ -131,6 +131,7 @@ function HotelCreator() {
     Amenities,
     Inclusions
   ) {
+    console.log("I get here")
     Discount = Number(Discount);
     OriginalPricePerNight = Number(OriginalPricePerNight);
     setRoomForm({
@@ -332,6 +333,7 @@ function HotelCreator() {
         <Form5RoomForm
           length={create.length}
           form5Constructor={form5Constructor}
+          isItUpdating={false}
         />
 
         <div className="HotelForm__footer">

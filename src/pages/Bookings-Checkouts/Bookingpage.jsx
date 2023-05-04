@@ -124,6 +124,7 @@ function Bookingpage() {
         })
 
         .catch((error) => {
+          navigate('/checkout-failure')
           console.log("Error creating booking:", error.message);
         });
     }

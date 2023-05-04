@@ -14,7 +14,8 @@ export default function AdminDashboard() {
   const [profileEdit, setProfileEdit] = useState(false);
   const [selectedTab, setSelectedTab] = useState("Management");
   const [hasChosenHotel, setHasChosenHotel] = useState(false)
-  const [selectedHotel , setSelectedHotel] = useState(null)
+  const [selectedHotel , setSelectedHotel] = useState(null);
+  // const [user]
 
   function chooseHotelEdit(hotel){
     setSelectedHotel(hotel)

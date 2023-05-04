@@ -14,7 +14,6 @@ function ReservationVisualizer() {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [showUpdate, setShowUpdate] = useState(false);
 
-  // console.log(userArr);
 
   useEffect(() => {
     if (recallGet) {
@@ -41,20 +40,6 @@ function ReservationVisualizer() {
         />
       )}
       <h1>Users Administration</h1>
-      <label htmlFor="management__searchbar" />
-      <div className="searchbar__ctn">
-        <input type="text" className="management__searchbar" />
-        <select name="" id="">
-          <option value="" disabled>
-            -- sort by --
-          </option>
-          <option value="Id">Id</option>
-          <option value="Name">Name</option>
-          <option value="Role">Role</option>
-        </select>
-        <button>SEARCH</button>
-      </div>
-
       <div className="reservations__list">
         {userArr
           .slice(

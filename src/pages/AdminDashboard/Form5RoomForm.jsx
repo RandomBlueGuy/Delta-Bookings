@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function Form5RoomForm({ length = 1, form5Constructor, roomInfo = null }) {
+function Form5RoomForm({
+  length = 1,
+  form5Constructor,
+  roomInfo = null,
+  isItUpdating = false,
+}) {
   const [status, setStatus] = useState(false);
   const [changeRoomData, setChangeRoomData] = useState(false);
 
@@ -68,76 +73,97 @@ function Form5RoomForm({ length = 1, form5Constructor, roomInfo = null }) {
       setStatus(false);
     }
   };
-  
+
   const handleInfo = async (event) => {
     event.preventDefault();
     const validationErrors = {};
-    
+
     if (RoomName.trim() === "") {
       validationErrors.RoomName = "Enter your room's name";
     }
-    
+
     if (Amenities.trim() === "") {
       validationErrors.Amenities = "Enter your amenities";
     }
     if (Inclusions.trim() === "") {
       validationErrors.Inclusions = "Enter your inclusions";
     }
-    
-    if (OriginalPricePerNight === "") {
-      validationErrors.OriginalPricePerNight = "Enter the room's price";
-    } else if (
-      !/^[0-9]*$/.test(OriginalPricePerNight.trim().replace(/\s+/g, ""))
-      ) {
-        validationErrors.OriginalPricePerNight = "Only numeric characters";
-      }
-      
-    if (Discount === "") {
-      validationErrors.Discount = "Enter the room's discount";
-    } else if (!/^[0-9]*$/.test(Discount.trim().replace(/\s+/g, ""))) {
-      validationErrors.Discount = "Only numeric characters";
-    }
-    
+
+    // if (OriginalPricePerNight === "") {
+    //   validationErrors.OriginalPricePerNight = "Enter the room's price";
+    // } else if (
+    //   !/^[0-9]*$/.test(OriginalPricePerNight.trim().replace(/\s+/g, ""))
+    // ) {
+    //   validationErrors.OriginalPricePerNight = "Only numeric characters";
+    // }
+
+    // if (Discount === "") {
+    //   validationErrors.Discount = "Enter the room's discount";
+    // } else if (!/^[0-9]*$/.test(Discount.trim().replace(/\s+/g, ""))) {
+    //   validationErrors.Discount = "Only numeric characters";
+    // }
+
     if (About.trim() === "") {
       validationErrors.About = "enter your room's description";
-    } else if (About.replace(/\s+/g, "").length > 100) {
-      validationErrors.hoteldescription =
-      "Please give us a shorter description";
     }
 
     if (RoomImg.length < 1) {
       validationErrors.RoomImg = "Please upload, at least, one picture";
     }
-    
     setErrors(validationErrors);
-    
+
     if (Object.keys(validationErrors).length === 0) {
-      // console.log("HELLO")
-      // const data = new FormData();
-      // data.append("HotelFront", RoomImg);
-      // for (let i = 0; i < RoomImg.length; i++) {
-      //   data.append(`file ${i}`, RoomImg[i], RoomImg[i].name);
-      // }
+      const data = new FormData();
+      data.append("HotelFront", RoomImg);
+      // console.log("data", isItUpdating);
+      let roomURL = "";
 
-      // const response = await axios.post(`${DB_URL}/test-formdata`, data, {
-      //   headers: { "Content-Type": "multipart/form-data" },
-      // });
-
-      // const roomURL = response.data["file 0"];
-      const roomAmenities = `${(Amenities.split(" "))[0]} -/- ${Amenities.split(" ")[1]}`
-      const roomInclusions = `${(Inclusions.split(" "))[0]} -/- ${Inclusions.split(" ")[1]}`
-      setChangeRoomData(true);
-      form5Constructor(
-        RoomImg,
-        RoomName,
-        OriginalPricePerNight,
-        Discount,
-        About,
-        roomAmenities,
-        roomInclusions
-      );
-      // setErrors({});
-      // setInfo({})
+      for (let i = 0; i < RoomImg.length; i++) {
+        data.append(`file ${i}`, RoomImg[i], RoomImg[i].name);
+      }
+      const response = await axios.post(`${DB_URL}/test-formdata`, data, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      roomURL = response.data["file 0"];
+      const roomAmenities = `${Amenities.split(" ")[0]}-/-${
+        Amenities.split(" ")[1]
+      }`;
+      const roomInclusions = `${Inclusions.split(" ")[0]}-/-${
+        Inclusions.split(" ")[1]
+      }`;
+      if (isItUpdating === false) {
+        form5Constructor(
+          roomURL,
+          RoomName,
+          OriginalPricePerNight,
+          Discount,
+          About,
+          roomAmenities,
+          roomInclusions
+        );
+      } else {
+        // console.log();
+        if (roomURL === "") {
+          roomURL = roomInfo.RoomImg;
+        }
+        
+        console.log(roomURL);
+        const roomAmenities =  Amenities.split(" ").join("-/-");
+        const roomInclusions =  Inclusions.split(" ").join("-/-");
+        console.log(roomAmenities)
+        setChangeRoomData(true);
+        form5Constructor(
+          roomURL,
+          RoomName,
+          OriginalPricePerNight,
+          Discount,
+          About,
+          roomAmenities,
+          roomInclusions,
+          isItUpdating,
+          roomInfo.id
+        );
+      }
     }
   };
 
@@ -154,7 +180,7 @@ function Form5RoomForm({ length = 1, form5Constructor, roomInfo = null }) {
         <div className="RoomCreator__header">
           <h3>Room creator</h3>
           <div>
-            <button
+            {/* <button
               className="manage__status"
               disabled
               style={{
@@ -167,14 +193,23 @@ function Form5RoomForm({ length = 1, form5Constructor, roomInfo = null }) {
               }}
             >
               {!status ? "Not Complete ◉" : "Completed ✔"}
-            </button>
+            </button> */}
             <button
               className="manage__del"
               onClick={(event) => {
                 event.preventDefault();
+                setInfo({
+                  RoomImg: "",
+                  RoomName: "",
+                  OriginalPricePerNight: "",
+                  Discount: "",
+                  About: "",
+                  Amenities: "",
+                  Inclusions: "",
+                });
               }}
             >
-              Delete 🞮
+              Clear
             </button>
           </div>
         </div>
@@ -326,15 +361,15 @@ function Form5RoomForm({ length = 1, form5Constructor, roomInfo = null }) {
 
         <div className="addRoom">
           <button
-          style={{display: roomInfo === null ? "block" : "none"}}
-          // disabled={length > 3 ? true : false}
+            style={{ display: roomInfo === null ? "block" : "none" }}
+            // disabled={length > 3 ? true : false}
           >
             Create Room 🞧
           </button>
           <button
-          style={{display: roomInfo !== null ? "block" : "none"}}
-          // disabled={length > 3 ? true : false}
-          // onClick={}
+            style={{ display: roomInfo !== null ? "block" : "none" }}
+            // disabled={length > 3 ? true : false}
+            // onClick={}
           >
             Update Room 🞧
           </button>
