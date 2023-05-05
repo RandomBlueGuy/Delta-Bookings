@@ -28,10 +28,22 @@ function App() {
   const { pathname } = useLocation();
   const [cookies] = useCookies(["cookieToken"]);
   const [auth, setAuth] = useState();
-
+  let decode = useJwt(cookies.cookieToken);
+  const [role, setRole] = useState("");
+  
+  
   useEffect(() => {
     setAuth(() => cookies.cookieToken);
   }, [cookies.cookieToken]);
+  
+  useEffect(() => {
+    if (auth) {
+      const role = decode?.decodedToken?.role
+      setRole(role);
+      // console.log("auth", auth)
+    }
+  }, [auth]);
+  console.log("role", role);
 
   useEffect(() => {
     setTimeout(() => {
@@ -44,38 +56,38 @@ function App() {
       <UpButton />
       <NavBar />
       <Routes>
-        <Route exact path='/' element={<Navigate to='/home' />} />
-        <Route exact path='/home' element={<Homepage />} />
-        <Route exact path='/hotel-list/:search' element={<HotelList />} />
-        <Route exact path='/hotel-single/:htlnfo' element={<Hotelsingle />} />
-        <Route exact path='/signup' element={<Signuppage />} />
-        <Route exact path='/login' element={<Login />} />
+        <Route exact path="/" element={<Navigate to="/home" />} />
+        <Route exact path="/home" element={<Homepage />} />
+        <Route exact path="/hotel-list/:search" element={<HotelList />} />
+        <Route exact path="/hotel-single/:htlnfo" element={<Hotelsingle />} />
+        <Route exact path="/signup" element={<Signuppage />} />
+        <Route exact path="/login" element={<Login />} />
         <Route
           exact
-          path='/*'
-          element={<Navigate to='/404-page-not-found' />}
+          path="/*"
+          element={<Navigate to="/404-page-not-found" />}
         />
-        <Route exact path='/404-page-not-found' element={<Page404 />} />
-        <Route exact path='/about-us' element={<AboutUspage />} />
+        <Route exact path="/404-page-not-found" element={<Page404 />} />
+        <Route exact path="/about-us" element={<AboutUspage />} />
         <Route element={<PrivateRoutes auth={auth} />}>
-          <Route exact path='/dashboard' element={<UserDashBoard />} />
-          <Route
+          <Route exact path="/dashboard" element={<UserDashBoard />} />
+          {role && role === "Admin" && <Route
             exact
-            path='/admin-dashboard'
+            path="/admin-dashboard"
             element={<AdminDashBoardPage />}
-          />
+          />}
           <Route
             exact
-            path='/checkout-failure'
+            path="/checkout-failure"
             element={<CheckoutFailurePage />}
           />
           <Route
             exact
-            path='/checkout-success/:scss'
+            path="/checkout-success/:scss"
             element={<CheckoutSuccessPage />}
           />
-          <Route exact path='/bookings/:bkngcd' element={<Bookingpage />} />
-          <Route exact path='/checkout/' element={<CheckoutPage />} />
+          <Route exact path="/bookings/:bkngcd" element={<Bookingpage />} />
+          <Route exact path="/checkout/" element={<CheckoutPage />} />
         </Route>
       </Routes>
       <Footer />

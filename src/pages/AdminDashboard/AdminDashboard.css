@@ -592,6 +592,13 @@
   max-height: 2.5rem;
 }
 
+.HotelCreator__label--insert{
+  background-color: var(--red-style);
+  color: white;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+
 @media (max-width: 720px) {
   .AdminDashboard__ctn {
     flex-direction: column;
@@ -614,6 +621,7 @@
     align-items: right;
     margin: 0;
     position: relative;
+    align-items: center;
   }
 
   .HotelCreator__label {

@@ -6,7 +6,7 @@ function HeaderSignup() {
     <main className="SignupHeader-container">
       <section className="SignupHeader-title">
         <h1>SIGN UP</h1>
-        <p>[PAGE] >> Sign Up]</p>
+        <p>Join Delta Booking!</p>
       </section>
     </main>
   );

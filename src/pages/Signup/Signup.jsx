@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Signup.css";
-import googleIcon from "../../assets/Icons/googleSI.svg";
 import { useNavigate } from "react-router-dom";
 import FloatingMessage from "../UniversalComponents/FloatingMessage";
 
@@ -77,17 +76,7 @@ export default function Signup() {
         <section className='signup'>
           <h1>SIGN UP </h1>
           <p>Sign Up With</p>
-          <div className='goto-social'>
-            <button>
-              <img src={googleIcon} alt='' />
-              Google
-            </button>
-          </div>
         </section>
-        <div className='social-distancing'>
-          <div className='social-distancing-line'></div>
-          <p>OR</p>
-        </div>
         <form className='signup__form' onSubmit={handleSubmit}>
           <label htmlFor='username'>
             Full Name
