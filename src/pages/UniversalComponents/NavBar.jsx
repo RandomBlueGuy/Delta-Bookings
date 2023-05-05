@@ -116,18 +116,6 @@ function NavBar() {
             </section>
 
             <div className='user-related'>
-              <section className='accesibility'>
-                <select
-                  name=''
-                  id=''
-                  className='coin'
-                  style={{ color: visibility ? "black" : "white" }}
-                >
-                  <option value=''>USD</option>
-                  <option value=''>COP</option>
-                </select>
-              </section>
-
               <section className='mobile__NavBtn'>
                 <div
                   id='mySidepanel'
