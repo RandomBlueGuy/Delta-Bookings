@@ -8,6 +8,7 @@ import { useCookies } from "react-cookie";
 import { useJwt } from "react-jwt";
 import WarningMessage from "../UniversalComponents/WarningMessage";
 import FloatingMessage from "../UniversalComponents/FloatingMessage";
+import UserImgPlaceholder from "../../assets/Images/user.svg"
 
 export default function UserDashboard() {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
@@ -285,7 +286,7 @@ export default function UserDashboard() {
       <section className='dashboard__ctn-info'>
         <div className='dashboard__ctn-info-prof'>
           <div className='dashboard__ctn-info-img'>
-            <img src={picture} className='profile__img' alt='' />
+            <img src={picture ? picture : UserImgPlaceholder} className='profile__img' alt='' />
             <label htmlFor='file'>
               <FontAwesomeIcon icon={faPenToSquare} />
             </label>

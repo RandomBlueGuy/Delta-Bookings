@@ -10,6 +10,7 @@ import HotelCreator from "./HotelCreator";
 import ReservationVisualizer from "./ReservationVisualizer";
 import UserAdministration from "./UserAdministration";
 import HotelUpdater from "./HotelUpdater";
+import UserImgPlaceholder from "../../assets/Images/user.svg";
 
 export default function AdminDashboard() {
   const [selectedTab, setSelectedTab] = useState("Management");
@@ -104,36 +105,36 @@ export default function AdminDashboard() {
   }, [decode.decodedToken]);
 
   return (
-    <main className='AdminDashboard__ctn'>
-      <section className='AdminDashboard__ctn-info'>
-        <div className='AdminDashboard__ctn-info-prof'>
-          <div className='dashboard__ctn-info-img'>
-            <img src={picture} className='profile__img' alt='' />
-            <label htmlFor='file'>
+    <main className="AdminDashboard__ctn">
+      <section className="AdminDashboard__ctn-info">
+        <div className="AdminDashboard__ctn-info-prof">
+          <div className="dashboard__ctn-info-img">
+          <img src={picture ? picture : UserImgPlaceholder} className='profile__img' alt='' />
+            <label htmlFor="file">
               <FontAwesomeIcon icon={faPenToSquare} />
             </label>
           </div>
 
           <input
-            type='file'
-            accept='image/*'
-            name='file'
-            id='file'
-            max-size='200'
+            type="file"
+            accept="image/*"
+            name="file"
+            id="file"
+            max-size="200"
             onChange={handlePic}
             style={{ display: "none" }}
           />
 
-          <div className='AdminDashboard__ctn-info-text'>
-            <h1>{userData}</h1>
-            <p>Delta Bookings Administrator</p>
+          <div className="dashboard__ctn-info-text">
+            <h1>{userData || "Admin"}</h1>
+            <p>Administrator</p>
           </div>
         </div>
 
-        <div className='AdminDashboard__ctn-info-select'>
+        <div className="AdminDashboard__ctn-info-select">
           <button
-            type='button'
-            value='Management'
+            type="button"
+            value="Management"
             className={
               selectedTab === "Management" ? "AdminDashboard-is-active" : ""
             }
@@ -142,8 +143,8 @@ export default function AdminDashboard() {
             Hotel Management
           </button>
           <button
-            type='button'
-            value='Create'
+            type="button"
+            value="Create"
             className={
               selectedTab === "Create" ? "AdminDashboard-is-active" : ""
             }
@@ -152,8 +153,8 @@ export default function AdminDashboard() {
             Create a New Hotel
           </button>
           <button
-            type='button'
-            value='Reservations'
+            type="button"
+            value="Reservations"
             className={
               selectedTab === "Reservations" ? "AdminDashboard-is-active" : ""
             }
@@ -162,8 +163,8 @@ export default function AdminDashboard() {
             Reservations
           </button>
           <button
-            type='button'
-            value='UserAdministration'
+            type="button"
+            value="UserAdministration"
             className={
               selectedTab === "UserAdministration"
                 ? "AdminDashboard-is-active"
@@ -174,8 +175,8 @@ export default function AdminDashboard() {
             User Management
           </button>
           <button
-            type='button'
-            value='hotelUpdate'
+            type="button"
+            value="hotelUpdate"
             className={
               selectedTab === "hotelUpdate" ? "AdminDashboard-is-active" : ""
             }
@@ -185,28 +186,28 @@ export default function AdminDashboard() {
           </button>
         </div>
       </section>
-      <section className='Admin__AdminDashboardCtn'>
+      <section className="Admin__AdminDashboardCtn">
         <div
-          className='hotelManagement__ctn'
+          className="hotelManagement__ctn"
           style={{ display: selectedTab === "Management" ? "block" : "none" }}
         >
           <HotelManagement chooseHotelEdit={chooseHotelEdit} />
         </div>
 
         <div
-          className='hotelCreate__ctn'
+          className="hotelCreate__ctn"
           style={{ display: selectedTab === "Create" ? "block" : "none" }}
         >
           <HotelCreator />
         </div>
         <div
-          className='hotelReservations__ctn'
+          className="hotelReservations__ctn"
           style={{ display: selectedTab === "Reservations" ? "block" : "none" }}
         >
           <ReservationVisualizer />
         </div>
         <div
-          className='UserAdministration'
+          className="UserAdministration"
           style={{
             display: selectedTab === "UserAdministration" ? "block" : "none",
           }}
@@ -214,7 +215,7 @@ export default function AdminDashboard() {
           <UserAdministration />
         </div>
         <div
-          className='UserAdministration'
+          className="UserAdministration"
           style={{
             display: selectedTab === "hotelUpdate" ? "block" : "none",
           }}

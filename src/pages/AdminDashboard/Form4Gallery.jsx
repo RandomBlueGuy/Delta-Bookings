@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import FloatingMessage from "../UniversalComponents/FloatingMessage";
+import WarningMessage from "../UniversalComponents/WarningMessage";
 
 function Form4Gallery({
   setFormTab,
@@ -12,6 +14,8 @@ function Form4Gallery({
   const [files, setFiles] = useState("");
   const [errors, setErrors] = useState({});
   const [render, setRender] = useState(false);
+  const [showUpdate, setShowUpdate] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     if (hotel !== null) {
@@ -23,6 +27,8 @@ function Form4Gallery({
     const fileList = event.target.files;
     const filesArray = Array.from(fileList);
     setFiles(filesArray);
+    setMessage(`${filesArray.length} images have been uploaded`);
+    setShowUpdate(true);
   };
 
   const handleInfo = async (event) => {
@@ -64,31 +70,40 @@ function Form4Gallery({
 
   return (
     <form
-      action=''
+      action=""
       onSubmit={handleInfo}
-      className='CreateHotel--subHotel CH__form4'
+      className="CreateHotel--subHotel CH__form4"
     >
-      <div className='line_Ctn'>
-        <div className='HotelCreator__form--line'>
-          <label className='HotelCreator__label' htmlFor='inp6'>
-            Add new images:
+      {showUpdate && (
+        <FloatingMessage
+          message={`Images uploaded`}
+          setShowUpdate={setShowUpdate}
+          showUpdate={showUpdate}
+        />
+      )}
+      <div className="line_Ctn">
+        <div className="HotelCreator__form--line">
+          <label className="HotelCreator__label" htmlFor="inp6">
+            Add images:
           </label>
           <input
-            type='file'
-            name='hotelFront'
-            accept='image/png, image/jpeg, image/jpg'
+            id="Input__file"
+            type="file"
+            name="hotelFront"
+            accept="image/png, image/jpeg, image/jpg"
             multiple
             onChange={(event) => handleFile(event)}
+            style={{border: "none"}}
           />
         </div>
         {errors.filesempty && (
-          <h1 className='error-creatorAdmin'>{errors.filesempty}</h1>
+          <h1 className="error-creatorAdmin">{errors.filesempty}</h1>
         )}
       </div>
 
-      <div className='HotelForm__footer'>
+      <div className="HotelForm__footer">
         <button
-          className='HotelCreator__form--microSubmit'
+          className="HotelCreator__form--microSubmit"
           onClick={(event) => {
             setFormTab(3);
             scrollToTop();
@@ -98,7 +113,7 @@ function Form4Gallery({
         </button>
         Step {formTab} / 5
         <button
-          className='HotelCreator__form--microSubmit'
+          className="HotelCreator__form--microSubmit"
           onClick={(event) => {
             handleInfo(event);
             scrollToTop();

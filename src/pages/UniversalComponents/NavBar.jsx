@@ -100,18 +100,6 @@ function NavBar() {
             </section>
 
             <div className='user-related'>
-              <section className='accesibility'>
-                <select
-                  name=''
-                  id=''
-                  className='coin'
-                  style={{ color: visibility ? "black" : "white" }}
-                >
-                  <option value=''>USD</option>
-                  <option value=''>COP</option>
-                </select>
-              </section>
-
               <section className='mobile__NavBtn'>
                 <div
                   id='mySidepanel'
@@ -150,9 +138,9 @@ function NavBar() {
                   <Link to='/login' className='item-ctn'>
                     <h2>Log In</h2>
                   </Link>
-                  <Link to='/home' className='item-ctn' onClick={handleLogout}>
+                  <a href='/home' className='item-ctn' onClick={handleLogout}>
                     <h2>Log Out</h2>
-                  </Link>
+                  </a>
                   <Link to='/signup' className='item-ctn'>
                     <h2>Sign-up</h2>
                   </Link>
@@ -207,11 +195,11 @@ function NavBar() {
                     </Link>
                   )}
                   {cookies.cookieToken !== undefined && (
-                    <Link to='/home'>
+                    <a  href='/home'>
                       <div className='item-ctn' onClick={handleLogout}>
                         <h4>Log out</h4>
                       </div>
-                    </Link>
+                    </a>
                   )}
                   {cookies.cookieToken === undefined && (
                     <Link to='/login'>
