@@ -6,7 +6,7 @@ import StarRating from "../UniversalComponents/StarRating";
 
 function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
   const [selectedTab, setSelectedTab] = useState("LOCATION");
-  const position = [34.96886, 76.26683];
+  const position = [currentHotel.loc_Lat, currentHotel.loc_Lng];
   const mapRef = useRef(null);
 
   function handleClick(selection) {
