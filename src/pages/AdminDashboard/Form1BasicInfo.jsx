@@ -10,9 +10,10 @@ function Form1BasicInfo({
   hotel = null,
 }) {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
-
+  
   const [info, setInfo] = useState({});
-
+  const [tagsArr, setTagsArr] = useState({ tag1: "Swimming", tag2: "Parking" });
+  
   useEffect(() => {
     if (hotel === null) {
       setInfo({
@@ -44,13 +45,11 @@ function Form1BasicInfo({
     Email,
     HotelDescription,
     FrontImg,
-    Tags,
   } = info;
 
   const [errors, setErrors] = useState({});
   const [render, setRender] = useState(false);
   const [image, setImage] = useState(null);
-  const [tagsArr, setTagsArr] = useState({ tag1: "NoTag", tag2: "NoTag" });
   const webRegex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/;
   const [showUpdate, setShowUpdate] = useState(false);
   const readFile = (FrontImg) => {
@@ -124,9 +123,8 @@ function Form1BasicInfo({
 
       const fileURLs = Object.values(response.data);
       const newURL = response.data["file 0"];
-      const tagRes = `${
-        tagsArr.tag1 !== "NoTag" ? tagsArr.tag1 : "Swimming"
-      }-/-${tagsArr.tag2 !== "NoTag" ? tagsArr.tag2 : "Bar"}`;
+      let tagRes = `${tagsArr.tag1}-/-${tagsArr.tag2}`;
+
       form1Constructor(
         HotelName,
         Website,
@@ -159,12 +157,12 @@ function Form1BasicInfo({
       <h2>Basic information</h2>
       <div className="line__Ctn">
         <div className="HotelCreator__form--line">
-          <label className="HotelCreator__label" htmlFor="HotelName">
+          <label className="HotelCreator__label" htmlFor="inp__HotelName">
             Name:
           </label>
           <input
-            name="HotelName"
-            id="inp1"
+            name="inp__HotelName"
+            id="inp__HotelName"
             className="HotelCreator__input"
             type="text"
             placeholder="Write your new hotel Name"
@@ -179,11 +177,11 @@ function Form1BasicInfo({
 
       <div className="line__Ctn">
         <div className="HotelCreator__form--line">
-          <label className="HotelCreator__label" htmlFor="Website">
+          <label className="HotelCreator__label" htmlFor="inp__Website">
             Website:
           </label>
           <input
-            id="inp2"
+            id="inp__Website"
             className="HotelCreator__input"
             type="text"
             placeholder="Write your hotel site (no spaces /)"
@@ -198,11 +196,11 @@ function Form1BasicInfo({
       </div>
       <div className="line__Ctn">
         <div className="HotelCreator__form--line">
-          <label className="HotelCreator__label" htmlFor="PhoneNumber">
+          <label className="HotelCreator__label" htmlFor="inp__PhoneNumber">
             Phone number:
           </label>
           <input
-            id="inp3"
+            id="inp__PhoneNumber"
             className="HotelCreator__input"
             type="text"
             placeholder="Write your new hotel phone number (only numbers)"
@@ -272,12 +270,12 @@ function Form1BasicInfo({
             <option disabled selected>
               - Select Tag -
             </option>
-            <option value="swimming">Swimming</option>
-            <option value="parking">Parking</option>
-            <option value="helicopter">Helicopter</option>
-            <option value="bar">Bar</option>
-            <option value="breakfast">Breakfast</option>
-            <option value="dinner">Dinner</option>
+            <option value="Swimming">Swimming</option>
+            <option value="Parking">Parking</option>
+            <option value="Helicopter">Helicopter</option>
+            <option value="Bar">Bar</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Dinner">Dinner</option>
           </select>
 
           <select
@@ -285,17 +283,17 @@ function Form1BasicInfo({
             onChange={(event) =>
               setTagsArr({ ...tagsArr, tag2: event.target.value })
             }
-            id="tag-selector"
+            id="tag-selector2"
           >
             <option disabled selected>
               - Select Tag -
             </option>
-            <option value="swimming">Swimming</option>
-            <option value="parking">Parking</option>
-            <option value="helicopter">Helicopter</option>
-            <option value="bar">Bar</option>
-            <option value="breakfast">Breakfast</option>
-            <option value="dinner">Dinner</option>
+            <option value="Swimming">Swimming</option>
+            <option value="Parking">Parking</option>
+            <option value="Helicopter">Helicopter</option>
+            <option value="Bar">Bar</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Dinner">Dinner</option>
           </select>
         </div>
         {errors.HotelDescription && (

@@ -70,7 +70,6 @@ function Login() {
           setCookie("cookieToken", response.data.token, { path: "/" });
           setCookie("cookieName", response.data.data.fullName, { path: "/" });
         })
-        .catch((error) => console.log(error.message));
     }
     setNext(true);
   };

@@ -40,10 +40,8 @@ function App() {
     if (auth) {
       const role = decode?.decodedToken?.role
       setRole(role);
-      // console.log("auth", auth)
     }
   }, [auth]);
-  console.log("role", role);
 
   useEffect(() => {
     setTimeout(() => {
@@ -54,7 +52,7 @@ function App() {
   return (
     <React.Fragment>
       <UpButton />
-      <NavBar />
+      <NavBar role={role}/>
       <Routes>
         <Route exact path="/" element={<Navigate to="/home" />} />
         <Route exact path="/home" element={<Homepage />} />
@@ -71,11 +69,11 @@ function App() {
         <Route exact path="/about-us" element={<AboutUspage />} />
         <Route element={<PrivateRoutes auth={auth} />}>
           <Route exact path="/dashboard" element={<UserDashBoard />} />
-          {role && role === "Admin" && <Route
+        <Route
             exact
             path="/admin-dashboard"
-            element={<AdminDashBoardPage />}
-          />}
+            element={<AdminDashBoardPage role={role}/>}
+          /> 
           <Route
             exact
             path="/checkout-failure"

@@ -105,7 +105,7 @@ function Form3SocialData({
             Popularity #:
           </label>
           <input
-            id="inp1"
+            id="PopularityNumber"
             className="HotelCreator__input"
             type="number"
             placeholder="Write your hotel's popularity number.
@@ -129,7 +129,7 @@ function Form3SocialData({
             Trending #:
           </label>
           <input
-            id="inp2"
+            id="TrendingNumber"
             className="HotelCreator__input"
             type="number"
             placeholder="Write your hotel's popularity number.
@@ -150,7 +150,7 @@ function Form3SocialData({
             Facebook:
           </label>
           <input
-            id="inp3"
+            id="SN_Facebook"
             className="HotelCreator__input"
             type="text"
             placeholder="Write your hotel's facebook fanpage.
@@ -171,7 +171,7 @@ function Form3SocialData({
             Instagram:
           </label>
           <input
-            id="inp4"
+            id="SN_Instagram"
             className="HotelCreator__input"
             type="text"
             placeholder="Write your hotel's Instagram fanpage.
@@ -192,7 +192,7 @@ function Form3SocialData({
             Twitter:
           </label>
           <input
-            id="inp5"
+            id="SN_Twitter"
             className="HotelCreator__input"
             type="text"
             placeholder="Write your hotel's Twitter page.
@@ -213,7 +213,7 @@ function Form3SocialData({
             Pinterest:
           </label>
           <input
-            id="inp5"
+            id="SN_Pinterest"
             className="HotelCreator__input"
             type="text"
             placeholder="Write your hotel's Pinterest page.

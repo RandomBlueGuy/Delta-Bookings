@@ -10,17 +10,15 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import { useJwt } from "react-jwt";
 
-function NavBar() {
+function NavBar({role}) {
   let location = useLocation();
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [cookies, setCookie, removeCookie] = useCookies([
     "cookieToken",
     "cookieName",
   ]);
-  const [visibility, setVisibility] = useState(true);
   const [isInvalidUrl, setIsInvalidUrl] = useState(false);
   const [userName, setUserName] = useState("");
-  const navigate = useNavigate();
   const decode = useJwt(cookies.cookieToken);
   const [trigger, setTrigger] = useState("0vw");
 
@@ -64,22 +62,21 @@ function NavBar() {
         <section
           className='NavBar-container txt-color'
           style={{
-            backgroundColor: visibility ? "white" : "transparent",
-            boxShadow: visibility
-              ? `0px 2px 5px rgba(43, 43, 43, 0.2)`
-              : "none",
+            backgroundColor:"white",
+            boxShadow: `0px 2px 5px rgba(43, 43, 43, 0.2)`
+
           }}
         >
           <nav className='NavBar'>
             <section className='nav-section'>
               <Link to='/home'>
-                <img src={visibility ? iconB : iconW} alt='Delta' />
+                <img src={iconB} alt='Delta' />
               </Link>
             </section>
 
             <section className='nav-desktop'>
               <Link to='/home'>
-                <h2 style={{ color: visibility ? "black" : "white" }}>Home</h2>
+                <h2 style={{ color:  "black"}}>Home</h2>
               </Link>
               <Link
                 to={`/hotel-list/search?city=All&checkInDate=${new Date()
@@ -88,12 +85,12 @@ function NavBar() {
                   .toISOString()
                   .slice(0, 10)}&guestnumber=1`}
               >
-                <h2 style={{ color: visibility ? "black" : "white" }}>
+                <h2 style={{ color: "black"}}>
                   Hotels
                 </h2>
               </Link>
               <Link to='/about-us'>
-                <h2 style={{ color: visibility ? "black" : "white" }}>
+                <h2 style={{ color: "black"}}>
                   About Us
                 </h2>
               </Link>
@@ -132,7 +129,7 @@ function NavBar() {
                   <Link to='/dashboard' className='item-ctn'>
                     <h2>Profile</h2>
                   </Link>
-                  <Link to='/admin-dashboard' className='item-ctn'>
+                  <Link to='/admin-dashboard' className='item-ctn' style={{display: role === "Admin" ? "block": "none"}}>
                     <h2>Admin Dashboard</h2>
                   </Link>
                   <Link to='/login' className='item-ctn'>
@@ -153,7 +150,6 @@ function NavBar() {
                   <img
                     src={menuIcon}
                     alt='Delta'
-                    style={{ filter: visibility ? "invert(0)" : "invert(1)" }}
                   />
                 </button>
               </section>
@@ -181,7 +177,7 @@ function NavBar() {
                     </Link>
                   )}
                   {cookies.cookieToken !== undefined && (
-                    <Link to='/admin-dashboard'>
+                    <Link to='/admin-dashboard' style={{display: role === "Admin" ? "block": "none"}}>
                       <div className='item-ctn'>
                         <h4>Dashboard</h4>
                       </div>

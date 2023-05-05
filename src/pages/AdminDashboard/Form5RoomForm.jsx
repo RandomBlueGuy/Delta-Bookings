@@ -133,7 +133,6 @@ function Form5RoomForm({
 
         const roomAmenities = Amenities.split(" ").join("-/-");
         const roomInclusions = Inclusions.split(" ").join("-/-");
-        console.log(roomAmenities);
         setChangeRoomData(true);
         form5Constructor(
           roomURL,
@@ -189,7 +188,7 @@ function Form5RoomForm({
               Room name:
             </label>
             <input
-              id="inp1"
+              id="RoomName"
               className="HotelCreator__input"
               type="text"
               placeholder="Write your room's Name"
@@ -209,7 +208,7 @@ function Form5RoomForm({
               Add Amenities:
             </label>
             <input
-              id="inp2"
+              id="roonAmenities"
               className="HotelCreator__input"
               type="text"
               placeholder="Write your room's amenities (at least 2 use commas)"
@@ -229,7 +228,7 @@ function Form5RoomForm({
               Add Inclusions:
             </label>
             <input
-              id="inp3"
+              id="Inclusions"
               className="HotelCreator__input"
               type="text"
               placeholder="Write your room's Inclusions (at least 2 use commas)"
@@ -252,7 +251,7 @@ function Form5RoomForm({
               Room's Price:
             </label>
             <input
-              id="inp4"
+              id="OriginalPricePerNight"
               className="HotelCreator__input"
               type="number"
               placeholder="Write your room's price"
@@ -275,7 +274,7 @@ function Form5RoomForm({
               Room's discount:
             </label>
             <input
-              id="inp5"
+              id="Discount"
               className="HotelCreator__input"
               type="number"
               placeholder="Write your room's discount"
@@ -295,7 +294,7 @@ function Form5RoomForm({
               Room's description:
             </label>
             <input
-              id="inp5"
+              id="About"
               className="HotelCreator__input"
               type="text"
               placeholder="Write your room'sgi description"
@@ -311,7 +310,7 @@ function Form5RoomForm({
 
         <div className="line__Ctn">
           <div className="HotelCreator__form--line">
-            <label className="HotelCreator__label" htmlFor="">
+            <label className="HotelCreator__label" htmlFor="RoomImg">
               Room Image:
             </label>
             <input

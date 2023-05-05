@@ -113,7 +113,7 @@ function Form2LocationData({
             Address:
           </label>
           <input
-            id="inp1"
+            id="loc_Place"
             className="HotelCreator__input"
             type="text"
             placeholder="Write your hotel address"
@@ -133,7 +133,7 @@ function Form2LocationData({
             City:
           </label>
           <input
-            id="inp2"
+            id="loc_City"
             className="HotelCreator__input"
             type="text"
             placeholder="Enter the city"
@@ -153,7 +153,7 @@ function Form2LocationData({
             State:
           </label>
           <input
-            id="inp3"
+            id="loc_State"
             className="HotelCreator__input"
             type="text"
             placeholder="Enter the state"
@@ -173,7 +173,7 @@ function Form2LocationData({
             Country:
           </label>
           <input
-            id="inp4"
+            id="loc_Country"
             className="HotelCreator__input"
             type="text"
             placeholder="Write your hotel's country"
@@ -193,7 +193,7 @@ function Form2LocationData({
             Latitude:
           </label>
           <input
-            id="inp5"
+            id="loc_Lat"
             className="HotelCreator__input"
             type="text"
             placeholder="Write your hotel's latitude"
@@ -213,7 +213,7 @@ function Form2LocationData({
             Longitude:
           </label>
           <input
-            id="inp5"
+            id="loc_Lng"
             className="HotelCreator__input"
             type="text"
             placeholder="Write your hotel's Longitude"

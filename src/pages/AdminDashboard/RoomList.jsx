@@ -5,6 +5,7 @@ function RoomList({
   roomName = "Room Name",
   setUpdateRoomIndex,
   setDeleteRoomData,
+  isItpUpdating = false
 }) {
   return (
     <main className="Management__Card--title roomList__ctn">
@@ -25,6 +26,7 @@ function RoomList({
           onClick={() => {
             setDeleteRoomData(delNum - 1);
           }}
+          style={{display: !isItpUpdating ? "block" : "none"}}
         >
           🞮
         </button>

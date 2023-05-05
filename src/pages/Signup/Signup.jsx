@@ -54,8 +54,6 @@ export default function Signup() {
           email,
           password,
         })
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error.message));
     };
 
     if (Object.keys(validationErrors).length === 0) {

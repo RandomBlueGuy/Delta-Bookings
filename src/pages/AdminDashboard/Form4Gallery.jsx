@@ -49,10 +49,6 @@ function Form4Gallery({
           data.append(`file:${i}`, files[i], files[i].name);
         }
 
-        if (!data.append) {
-          console.log("No data");
-        }
-
         const response = await axios.post(`${DB_URL}/test-formdata`, data, {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -83,11 +79,11 @@ function Form4Gallery({
       )}
       <div className="line_Ctn">
         <div className="HotelCreator__form--line">
-          <label className="HotelCreator__label" htmlFor="inp6">
+          <label className="HotelCreator__label" htmlFor="inpGallery">
             Add images:
           </label>
           <input
-            id="Input__file"
+            id="inpGallery"
             type="file"
             name="hotelFront"
             accept="image/png, image/jpeg, image/jpg"

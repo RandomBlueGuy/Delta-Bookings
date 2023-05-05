@@ -98,9 +98,6 @@ export default function AdminDashboard() {
           setUserData(response.data.data.fullName);
           setPicture(response.data.data.picture);
         })
-        .catch((error) => {
-          console.error(error);
-        });
     }
   }, [decode.decodedToken]);
 

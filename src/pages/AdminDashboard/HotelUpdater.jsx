@@ -209,10 +209,6 @@ function HotelUpdater({ hotel = {} }) {
   }, [roomForm]);
 
   useEffect(() => {
-    console.log(updateRoomIndex);
-  }, [updateRoomIndex]);
-
-  useEffect(() => {
     setCreate(create.filter((room, index) => index !== deleteRoomData));
   }, [deleteRoomData]);
 
@@ -261,13 +257,11 @@ function HotelUpdater({ hotel = {} }) {
           },
         })
         .then((response) => {
-          console.log("Hotel Updated!");
           setFloatingMessageDescription("Hotel Updated");
           setWarningResult(false);
           setShowUpdate(true);
           setFormTab(1);
         })
-        .catch((error) => console.log(error.message));
 
       for (let i = 0; i < create.length; i++) {
         axios
@@ -282,10 +276,6 @@ function HotelUpdater({ hotel = {} }) {
             Amenities: `${create[i].Amenities}`,
             Inclusions: `${create[i].Inclusions}`,
           })
-          .then((response) => {
-            console.log("Room updated", response);
-          })
-          .catch(() => console.log("The room could not be updated"));
       }
     }
   }, [warningResult]);
@@ -369,6 +359,7 @@ function HotelUpdater({ hotel = {} }) {
                     roomName={room.RoomName}
                     setUpdateRoomIndex={setUpdateRoomIndex}
                     setDeleteRoomData={setDeleteRoomData}
+                    isItpUpdating={true}
                   />
                 );
               })}
