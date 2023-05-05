@@ -31,10 +31,10 @@ function HotelCreator() {
     HotelDescription: "",
     StarRating: 0,
     ReviewNumber: 0,
-    Tags: "", //USAR -//-
+    Tags: "",
     SpecialTags: "",
     PopularityNumber: 0,
-    DateAdded: "", // FORMATO FECHA HP: 2022-10-21T03:35:24.658Z
+    DateAdded: "",
     TrendingNumber: 0,
     SN_Facebook: "",
     SN_Twitter: "",
@@ -52,8 +52,8 @@ function HotelCreator() {
     Discount: 0,
     About: "",
     Facility: "Floors 00 - 20",
-    Amenities: "", //USAR -/-
-    Inclusions: "", //USAR -/-
+    Amenities: "",
+    Inclusions: "",
   });
 
   function form1Constructor(
@@ -118,7 +118,6 @@ function HotelCreator() {
   }
 
   function form4Constructor(Gallery) {
-    //USE -//-
     setHotelForm({ ...hotelForm, Gallery });
   }
 
@@ -131,7 +130,7 @@ function HotelCreator() {
     Amenities,
     Inclusions
   ) {
-    console.log("I get here")
+    console.log("I get here");
     Discount = Number(Discount);
     OriginalPricePerNight = Number(OriginalPricePerNight);
     setRoomForm({
@@ -142,7 +141,7 @@ function HotelCreator() {
       Discount,
       About,
       Amenities,
-      Inclusions
+      Inclusions,
     });
   }
 
@@ -152,8 +151,6 @@ function HotelCreator() {
     }
   }, [roomForm]);
 
-  // console.log(hotelForm);
-
   function deleteRoom(delNum) {
     if (deleteRoomData === true) {
       setCreate(create.filter((room, index) => index !== delNum));
@@ -162,7 +159,6 @@ function HotelCreator() {
   }
 
   function createHotel() {
-    // Rooms.create
     setHotelForm({
       ...hotelForm,
       StarRating: 4.5,
@@ -205,8 +201,8 @@ function HotelCreator() {
       Rooms: {
         create,
       },
-    }
-    console.log(gggg);
+    };
+
     axios
       .post(`${DB_URL}/api/hotels`, {
         HotelName: `${hotelForm.HotelName}`,
@@ -244,7 +240,6 @@ function HotelCreator() {
       .catch((error) => console.log(error.message));
   }
 
-  // console.log(deleteRoomData)
   function nextFormTab(direction) {
     if (direction === "right") {
       setFormTab(formTab + 1);
@@ -267,7 +262,7 @@ function HotelCreator() {
   };
 
   return (
-    <main className="HotelCreator">
+    <main className='HotelCreator'>
       <h1>Hotel Creation</h1>
       <section style={{ display: formTab === 1 ? "block" : "none" }}>
         <Form1BasicInfo
@@ -307,10 +302,10 @@ function HotelCreator() {
       </section>
 
       <section
-        className="HC__FormCtn"
+        className='HC__FormCtn'
         style={{ display: formTab === 5 ? "block" : "none" }}
       >
-        <div className="RoomsCreated">
+        <div className='RoomsCreated'>
           {create.length === 0 ? (
             <h3>No Rooms have been created</h3>
           ) : (
@@ -336,9 +331,9 @@ function HotelCreator() {
           isItUpdating={false}
         />
 
-        <div className="HotelForm__footer">
+        <div className='HotelForm__footer'>
           <button
-            className="HotelCreator__form--microSubmit"
+            className='HotelCreator__form--microSubmit'
             onClick={() => {
               nextFormTab("left");
             }}
@@ -347,7 +342,7 @@ function HotelCreator() {
           </button>
           Step {formTab} / 5
           <button
-            className="HotelCreator__form--microSubmit"
+            className='HotelCreator__form--microSubmit'
             onClick={createHotel}
           >
             Create Hotel

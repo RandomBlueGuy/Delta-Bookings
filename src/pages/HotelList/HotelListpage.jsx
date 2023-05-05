@@ -69,12 +69,10 @@ function HotelListpage() {
     setActualPage(0);
   }, [maxNpages, selectedFilter]);
 
-
   useEffect(() => {
     const res = filteredHotelsArray.length / itemsPerPage;
     setMaxNpages(() => (res > parseInt(res) ? parseInt(res) + 1 : res));
   }, [filteredHotelsArray]);
-
 
   const setFakeLoading = () => {
     setFilterLoading(true);
@@ -84,33 +82,33 @@ function HotelListpage() {
   };
 
   return (
-    <div className="HotelListpage-ctn">
+    <div className='HotelListpage-ctn'>
       {loading === true && <LoadingComp />}
       {filterLoading === true && <LoadingComp />}
-      <Header location={searchParams.city}/>
-      <div className="SearchBar-ctn-display">
+      <Header location={searchParams.city} />
+      <div className='SearchBar-ctn-display'>
         <SearchBar />
       </div>
-      <div className="HotelList-displayer" ref={refProp}>
-        <div className="filter-ctn">
-          <div className="filter-ctn-btns">
+      <div className='HotelList-displayer' ref={refProp}>
+        <div className='filter-ctn'>
+          <div className='filter-ctn-btns'>
             <h2>Filter by:</h2>
-            <div className="mobile__filter">
+            <div className='mobile__filter'>
               <select
-                name=""
-                id=""
+                name=''
+                id=''
                 onChange={(event) => {
-                   setSelectedFilter(event.target.value);
-                   setFakeLoading();
+                  setSelectedFilter(event.target.value);
+                  setFakeLoading();
                 }}
               >
-                <option value="All">All</option>
-                <option value="Popular">Popular</option>
-                <option value="Latest">Latest</option>
-                <option value="Trend">Trend</option>
+                <option value='All'>All</option>
+                <option value='Popular'>Popular</option>
+                <option value='Latest'>Latest</option>
+                <option value='Trend'>Trend</option>
               </select>
             </div>
-            <div className="filter__btns">
+            <div className='filter__btns'>
               <button
                 value={"All"}
                 className={
@@ -169,8 +167,8 @@ function HotelListpage() {
               </button>
             </div>
           </div>
-          <div className="weird-thing">
-            <p className="weirdThing__txt">
+          <div className='weird-thing'>
+            <p className='weirdThing__txt'>
               {" "}
               {filteredHotelsArray.length} hotels found
             </p>
@@ -187,19 +185,21 @@ function HotelListpage() {
           setActualPage={setActualPage}
           refProp={refProp}
         />
-        <div className="card-gallery">
+        <div className='card-gallery'>
           {filteredHotelsArray
             .slice(
               actualPage * itemsPerPage,
               actualPage * itemsPerPage + itemsPerPage
             )
             .map((hotel) => {
-              return <HotelCard key={hotel.id} hotelInfoCard={hotel} searchParams={searchParams}/>;
+              return (
+                <HotelCard
+                  key={hotel.id}
+                  hotelInfoCard={hotel}
+                  searchParams={searchParams}
+                />
+              );
             })}
-
-{/* {filteredHotelsArray.slice(actualPage, actualPage + itemsPerPage).map((hotel) => (
-  <HotelCard key={hotel.id} hotel={hotel} />
-))} */}
         </div>
         <HotelListPagination
           maxNpages={maxNpages}

@@ -1,5 +1,4 @@
 
-/*Styles Related to the Person's Info*/
 
 .container-2 {
     display: flex;
@@ -57,7 +56,7 @@ label{
     resize: vertical;
 }
 
-/*Styles Related to the Hotel Info*/
+
 
 .container-1 {
     display: flex;
@@ -131,7 +130,7 @@ label{
 }
 
 
-/*Styles Related Only to the Card-Info Container*/
+
 
 .card-info{
     display: flex;
@@ -145,7 +144,6 @@ label{
 
 
 
-/*General Styles*/
 .btn {
     appearance: none;
     border: 1px solid rgba(27, 31, 35, .15);

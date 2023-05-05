@@ -10,7 +10,7 @@ import HotelSingleCardHeader from "./HotelSingleCardHeader";
 import HotelSingleGallery from "./HotelSingleGallery";
 import HotelInfoDisplay from "./HotelInfoDisplay";
 import CheckCard from "./CheckCard";
-import LoadingComp from '../UniversalComponents/LoadingComp';
+import LoadingComp from "../UniversalComponents/LoadingComp";
 
 export default function Hotelsingle() {
   const currentHotel = useSelector((state) => state.fetchData.hotelSingle);
@@ -20,7 +20,7 @@ export default function Hotelsingle() {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [reviews, setReviews] = useState([]);
   const [selectedRoom, setSelectedRoom] = useState({});
-  const [loading , setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     dispatch(fetchData(searchParams));
@@ -44,23 +44,22 @@ export default function Hotelsingle() {
         })
       )
       .catch((error) => console.log(error.message));
-        setInterval(() => {
-          setLoading(false)
-        }, 1000);
+    setInterval(() => {
+      setLoading(false);
+    }, 1000);
   }, []);
 
-  
   function roomChanger(newRoom) {
     setSelectedRoom(() => newRoom);
   }
 
   return (
-    <div className="hotelsingle__maxcontainer">
+    <div className='hotelsingle__maxcontainer'>
       {loading === true && <LoadingComp />}
-      <main className="hotel__single-container">
+      <main className='hotel__single-container'>
         {currentHotel && <HotelSingleCardHeader currentHotel={currentHotel} />}
-        <div className="hotels__container-columns">
-          <div className="container-column1">
+        <div className='hotels__container-columns'>
+          <div className='container-column1'>
             {currentHotel && <HotelSingleGallery currentHotel={currentHotel} />}
             {currentHotel && (
               <HotelInfoDisplay
@@ -69,15 +68,9 @@ export default function Hotelsingle() {
                 roomChanger={roomChanger}
               />
             )}
-            <section className="hotel__ctn-displayCard">
-              {/* {							
-              <HotelCard />
-							<HotelCard />
-							<HotelCard />} */}
-            </section>
           </div>
-          <div className="container-column2">
-            <section className="contactInfo__display">
+          <div className='container-column2'>
+            <section className='contactInfo__display'>
               {currentHotel && (
                 <CheckCard
                   currentHotel={currentHotel}
@@ -86,7 +79,7 @@ export default function Hotelsingle() {
                 />
               )}
             </section>
-            <section className="contactInfo__display">
+            <section className='contactInfo__display'>
               {currentHotel && <ContactInfoCard currentHotel={currentHotel} />}
             </section>
           </div>

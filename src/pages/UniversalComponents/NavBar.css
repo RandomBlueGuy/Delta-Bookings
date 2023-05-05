@@ -62,10 +62,7 @@
   height: 2rem;
 }
 
-/* .nav-section:hover {
-  transition: ease-in-out 0.2s;
-  transform: scale(1.05);
-} */
+
 
 .mobile__NavBtn{
   display: none;
@@ -105,7 +102,7 @@
 }
 
 .dropdown-menu .item-ctn {
-  /* align-items: center; */
+
   justify-content: left;
   transition: all 0.2s ease-in-out;
   padding: 0.25rem;
@@ -192,7 +189,7 @@
 
 .userManager{
   display: flex;
-  /* background-color: var(--NavBar-btn); */
+
   height: 3rem;
   top: 0;
   right: 0;

@@ -56,7 +56,6 @@ function Bookingpage() {
 
   useEffect(() => {
     if (TravellerInfo !== undefined) {
-      // setProceed(true)
     }
   }, [TravellerInfo.email]);
 
@@ -119,20 +118,18 @@ function Bookingpage() {
         })
         .then((response) => {
           setIsLoading(false);
-          console.log("booking Success!!!!'", response.data.data.id);
-          navigate(`/checkout-success/scss?id=${response.data.data.id}`)
+          navigate(`/checkout-success/scss?id=${response.data.data.id}`);
         })
 
         .catch((error) => {
-          navigate('/checkout-failure')
-          console.log("Error creating booking:", error.message);
+          navigate("/checkout-failure");
         });
     }
   }
 
   return (
     <div>
-      <div className="booking-info">
+      <div className='booking-info'>
         {isLoading === true && <LoadingComp />}
         {currentHotel && (
           <BookingInfo

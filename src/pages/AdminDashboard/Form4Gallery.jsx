@@ -12,11 +12,10 @@ function Form4Gallery({
   const [files, setFiles] = useState("");
   const [errors, setErrors] = useState({});
   const [render, setRender] = useState(false);
-  // console.log(errors);
+
   useEffect(() => {
     if (hotel !== null) {
       setFiles(hotel.Gallery);
-      // console.log(hotel.Gallery)
     }
   }, [hotel]);
 
@@ -36,7 +35,6 @@ function Form4Gallery({
         setErrors(validationErrors);
       }
     }
-    // console.log("ALOHAAAA", files)
 
     if (Object.keys(validationErrors).length === 0) {
       if (typeof files !== "string") {
@@ -66,31 +64,31 @@ function Form4Gallery({
 
   return (
     <form
-      action=""
+      action=''
       onSubmit={handleInfo}
-      className="CreateHotel--subHotel CH__form4"
+      className='CreateHotel--subHotel CH__form4'
     >
-      <div className="line_Ctn">
-        <div className="HotelCreator__form--line">
-          <label className="HotelCreator__label" htmlFor="inp6">
+      <div className='line_Ctn'>
+        <div className='HotelCreator__form--line'>
+          <label className='HotelCreator__label' htmlFor='inp6'>
             Add new images:
           </label>
           <input
-            type="file"
-            name="hotelFront"
-            accept="image/png, image/jpeg, image/jpg"
+            type='file'
+            name='hotelFront'
+            accept='image/png, image/jpeg, image/jpg'
             multiple
             onChange={(event) => handleFile(event)}
           />
         </div>
         {errors.filesempty && (
-          <h1 className="error-creatorAdmin">{errors.filesempty}</h1>
+          <h1 className='error-creatorAdmin'>{errors.filesempty}</h1>
         )}
       </div>
 
-      <div className="HotelForm__footer">
+      <div className='HotelForm__footer'>
         <button
-          className="HotelCreator__form--microSubmit"
+          className='HotelCreator__form--microSubmit'
           onClick={(event) => {
             setFormTab(3);
             scrollToTop();
@@ -100,7 +98,7 @@ function Form4Gallery({
         </button>
         Step {formTab} / 5
         <button
-          className="HotelCreator__form--microSubmit"
+          className='HotelCreator__form--microSubmit'
           onClick={(event) => {
             handleInfo(event);
             scrollToTop();

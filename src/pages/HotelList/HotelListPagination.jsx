@@ -55,7 +55,7 @@ function HotelListPagination({
   };
 
   return (
-    <div className="pagination-ctn">
+    <div className='pagination-ctn'>
       <button
         className={actualPage > 0 ? "act-chk" : "dis-chk"}
         disabled={actualPage > 0 ? false : true}
@@ -85,7 +85,6 @@ function HotelListPagination({
       >
         ❯❯
       </button>
-      {/* <h1 onClick={() => {setActualPage(actualPage + 1)}}>{actualPage} - </h1> */}
     </div>
   );
 }

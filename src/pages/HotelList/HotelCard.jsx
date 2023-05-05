@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 function HotelCard({ hotelInfoCard, searchParams }) {
   const navigate = useNavigate();
   const tagsArr = hotelInfoCard.Tags.split("-/-");
-  
+
   const finalPrice =
     hotelInfoCard.Rooms[0].OriginalPricePerNight -
     (
@@ -33,20 +33,20 @@ function HotelCard({ hotelInfoCard, searchParams }) {
   }
 
   return (
-    <main className="hotel-card">
+    <main className='hotel-card'>
       <figure>
         <img
-          className="hotel-pic"
+          className='hotel-pic'
           src={`${hotelInfoCard.FrontImg}`}
-          alt=""
+          alt=''
           onClick={handleNavigate}
         />
-        {/* </Link> */}
-        <div className="heart-ctn">
-          <img className="love-icon" src={heartEmptyIcon} alt="" />
+
+        <div className='heart-ctn'>
+          <img className='love-icon' src={heartEmptyIcon} alt='' />
         </div>
         <div
-          className="card__specialtag"
+          className='card__specialtag'
           style={{
             display: hotelInfoCard.SpecialTags === "NoTag" ? "none" : "flex",
           }}
@@ -54,29 +54,33 @@ function HotelCard({ hotelInfoCard, searchParams }) {
           {hotelInfoCard.SpecialTags}
         </div>
       </figure>
-      <section className="card-description">
-        <div className="HC-title">
-          <div className="HC-subtitle">
+      <section className='card-description'>
+        <div className='HC-title'>
+          <div className='HC-subtitle'>
             <h1>{hotelInfoCard.HotelName.slice(0, 20)}...</h1>
           </div>
-          <div className="HC-location">
+          <div className='HC-location'>
             <p>
               <FontAwesomeIcon icon={faLocationDot} />
               {hotelInfoCard.loc_City}
             </p>
           </div>
         </div>
-        <div className="HC-description">
+        <div className='HC-description'>
           <p>{hotelInfoCard.HotelDescription.slice(0, 130)}...</p>
         </div>
-        <div className="score-system">
+        <div className='score-system'>
           <StarRating hotelRating={hotelInfoCard.StarRating} />
           <p>{hotelInfoCard.ReviewNumber} reviews</p>
         </div>
-        <div className="price-tags">
+        <div className='price-tags'>
           <h4>${hotelInfoCard.Rooms[0].OriginalPricePerNight.toFixed(0)}</h4>
           <h3>${finalPrice.toFixed(0)}</h3>
-          {tagsArr.map((tag, index) => <p className="tags" key={index}>{tag}</p>)}
+          {tagsArr.map((tag, index) => (
+            <p className='tags' key={index}>
+              {tag}
+            </p>
+          ))}
         </div>
       </section>
     </main>
