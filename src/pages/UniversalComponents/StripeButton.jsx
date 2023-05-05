@@ -57,7 +57,7 @@ export default function StripeButton({ sendPayment, finalPrice }) {
       <CardNumberElement className='stripe-input' />
       <label className='stripe-label'>Card Expiration</label>
       <CardExpiryElement className='stripe-input' />
-      <label className='stripe-label'>Card CCV</label>
+      <label className='stripe-label'>Card CVC</label>
       <CardCvcElement className='stripe-input' />
       {isLoading === true && (
         <LoadingComp message={"We are processing your payment"} />
