@@ -8,6 +8,7 @@ import {
 } from "@stripe/react-stripe-js";
 import axios from "axios";
 import LoadingComp from "../UniversalComponents/LoadingComp";
+import "../UniversalComponents/StripeButton.css";
 
 export default function StripeButton({ sendPayment, finalPrice }) {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
@@ -52,31 +53,19 @@ export default function StripeButton({ sendPayment, finalPrice }) {
       onSubmit={handleSubmit}
       style={{ display: "flex", flexDirection: "column" }}
     >
-      <CardNumberElement
-        style={{
-          padding: "10px",
-          border: "10px solid #ccc",
-          borderRadius: "4px",
-        }}
-      />
-      <CardExpiryElement
-        style={{
-          padding: "10px",
-          border: "1px solid #ccc",
-          borderRadius: "4px",
-        }}
-      />
-      <CardCvcElement
-        style={{
-          padding: "10px",
-          border: "1px solid #ccc",
-          borderRadius: "4px",
-        }}
-      />
+      <label className='stripe-label'>Card Number</label>
+      <CardNumberElement className='stripe-input' />
+      <label className='stripe-label'>Card Expiration</label>
+      <CardExpiryElement className='stripe-input' />
+      <label className='stripe-label'>Card CCV</label>
+      <CardCvcElement className='stripe-input' />
       {isLoading === true && (
         <LoadingComp message={"We are processing your payment"} />
       )}
-      <button type='submit' style={{ padding: "0.5rem 0.75rem" }}>
+      <button
+        type='submit'
+        style={{ margin: "1rem", padding: "0.5rem 0.75rem" }}
+      >
         Pay With Stripe
       </button>
     </form>

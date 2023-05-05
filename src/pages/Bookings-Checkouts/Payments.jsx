@@ -13,22 +13,6 @@ const stripePromise = loadStripe(
   "pk_test_51N0c89EVaWSJ74nLzQn1EK6VmxmVrVpEnnQZCl8uWRqzCfDRQIOnDkMvn3PSb3wkIxosQT9bJbDZmYk4uAesUdoC00HMQf6eck"
 );
 
-const ELEMENTS_OPTIONS = {
-  style: {
-    base: {
-      fontSize: "16px",
-      color: "#32325d",
-      fontFamily: "Arial, sans-serif",
-      "::placeholder": {
-        color: "#aab7c4",
-      },
-    },
-    invalid: {
-      color: "#fa755a",
-    },
-  },
-};
-
 export default function Payments({ sendPayment, finalPrice }) {
   const [expanded, setExpanded] = useState("panel1");
 
@@ -63,7 +47,7 @@ export default function Payments({ sendPayment, finalPrice }) {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              <Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
+              <Elements stripe={stripePromise}>
                 <StripeButton
                   sendPayment={sendPayment}
                   finalPrice={finalPrice}
