@@ -329,10 +329,10 @@ function Form5RoomForm({
         </div>
 
         <div className="addRoom">
-          <button style={{ display: roomInfo === null ? "block" : "none" }}>
+          <button style={{ display: isItUpdating ? "none" : "block" }}>
             Create Room 🞧
           </button>
-          <button style={{ display: roomInfo !== null ? "block" : "none" }}>
+          <button style={{ display: isItUpdating ? "block" : "none" }}>
             Update Room 🞧
           </button>
         </div>
