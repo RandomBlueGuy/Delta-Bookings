@@ -1,6 +1,8 @@
 import React from "react";
 import "./Footer.css";
-// import GoogleMap from "google-map-react";
+import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css';
+
 import icon from "../../assets/Icons/delta.svg";
 import locationIcon from "../../assets/Icons/location.svg";
 import phoneIcon from "../../assets/Icons/phone.svg";
@@ -13,7 +15,6 @@ import gIcon from "../../assets/Icons/google.svg";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-
 function Footer() {
   let location = useLocation();
   const [invalidUrl, setInvalidUrl] = useState("");
@@ -22,7 +23,9 @@ function Footer() {
   useEffect(() => {
     const result = paths === location.pathname;
     setInvalidUrl(result);
-  },[location.pathname]);
+  }, [location.pathname]);
+
+  const position = [4.56, -75.52]
 
   return (
     !invalidUrl && (
@@ -78,11 +81,18 @@ function Footer() {
             </div>
             <div className="Footer-box-body">
               <div className="map-box">
-                MAPA DESHABILITADO TEMPORALMENTE POR ADVERTENCIAS EN CONSOLA :)
-                {/* <GoogleMap
-                  center={{ lat: 6.266716684592229, lng: -75.58217656599909 }}
-                  zoom={20}
-                ></GoogleMap> */}
+              <MapContainer center={position} zoom={5} scrollWheelZoom={true}>
+                <TileLayer
+                  // attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={position}>
+                  <Popup>
+                    A pretty CSS3 popup. <br /> Easily customizable.
+                  </Popup>
+                </Marker>
+              </MapContainer>
+                
               </div>
             </div>
           </section>

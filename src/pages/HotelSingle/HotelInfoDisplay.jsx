@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import RoomCard from "./RoomCard";
 import "./HotelInfoDisplay.css";
-import GoogleMap from "google-map-react";
-import Marker from "google-map-react";
 import StarRating from "../UniversalComponents/StarRating";
-import axios from "axios";
+import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
   const [selectedTab, setSelectedTab] = useState("ROOMS");
@@ -12,6 +11,8 @@ function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
   function handleClick(selection) {
     setSelectedTab(selection);
   }
+
+  const position = [currentHotel.loc_Lat, currentHotel.loc_Lng];
 
   return (
     <main className="HotelInfoDisplay-ctn">
@@ -156,27 +157,16 @@ function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
           </h1>
 
           <div className="HotelInfoDisplay__mapCtn">
-            <GoogleMap
-              center={{
-                lat: 51.51271608651099,
-                lng: 7.462423170202694,
-              }}
-              zoom={10}
-            >
-              <Marker
-                style={{
-                  width: "1rem",
-                  height: "1rem",
-                  background: "red",
-                }}
-                key="1"
-                text={`${currentHotel.HotelName}`}
-                position={{
-                  lat: 51.51271608651099,
-                  lng: 7.462423170202694,
-                }}
+            <MapContainer center={position} zoom={5} scrollWheelZoom={false}>
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-            </GoogleMap>
+              <Marker position={position}>
+                <Popup>
+                  A pretty CSS3 popup. <br /> Easily customizable.
+                </Popup>
+              </Marker>
+            </MapContainer>
           </div>
         </article>
 

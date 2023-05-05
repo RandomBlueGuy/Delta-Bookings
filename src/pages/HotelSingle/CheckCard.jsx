@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CheckCard.css";
-import GoogleMap from "google-map-react";
 import WarningMessage from "../UniversalComponents/WarningMessage";
+import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css';
 
 function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   const [guests, setGuests] = useState(searchParams.guestnumber);
@@ -75,6 +76,8 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
     setShowWarning(true);
   };
 
+  const position = [currentHotel.loc_Lat, currentHotel.loc_Lng]
+
   return (
     <section className="check__card">
       {showWarning && (
@@ -86,13 +89,16 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
         />
       )}
       <div className="check__card-map">
-        <GoogleMap
-          center={{
-            lat: 51.51271608651099, 
-            lng: 7.462423170202694
-          }}
-          zoom={20}
-        ></GoogleMap>
+      <MapContainer center={position} zoom={5} scrollWheelZoom={false}>
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={position}>
+                  <Popup>
+                    A pretty CSS3 popup. <br /> Easily customizable.
+                  </Popup>
+                </Marker>
+              </MapContainer>
       </div>
       <section className="check__card-info">
         <div className="check__card--line">
