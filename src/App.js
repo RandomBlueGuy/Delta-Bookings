@@ -22,7 +22,6 @@ import AdminDashBoardPage from "./pages/AdminDashboard/AdminDashboardPage";
 import { useJwt } from "react-jwt";
 import PrivateRoutes from "./Utils/PrivateRoutes";
 import { useCookies } from "react-cookie";
-import LoadingComp from "./pages/UniversalComponents/LoadingComp";
 
 function App() {
   const { pathname } = useLocation();
@@ -30,15 +29,14 @@ function App() {
   const [auth, setAuth] = useState();
   let decode = useJwt(cookies.cookieToken);
   const [role, setRole] = useState("");
-  
-  
+
   useEffect(() => {
     setAuth(() => cookies.cookieToken);
   }, [cookies.cookieToken]);
-  
+
   useEffect(() => {
     if (auth) {
-      const role = decode?.decodedToken?.role
+      const role = decode?.decodedToken?.role;
       setRole(role);
     }
   }, [auth]);
@@ -54,19 +52,19 @@ function App() {
       <UpButton />
       <NavBar role={role}/>
       <Routes>
-        <Route exact path="/" element={<Navigate to="/home" />} />
-        <Route exact path="/home" element={<Homepage />} />
-        <Route exact path="/hotel-list/:search" element={<HotelList />} />
-        <Route exact path="/hotel-single/:htlnfo" element={<Hotelsingle />} />
-        <Route exact path="/signup" element={<Signuppage />} />
-        <Route exact path="/login" element={<Login />} />
+        <Route exact path='/' element={<Navigate to='/home' />} />
+        <Route exact path='/home' element={<Homepage />} />
+        <Route exact path='/hotel-list/:search' element={<HotelList />} />
+        <Route exact path='/hotel-single/:htlnfo' element={<Hotelsingle />} />
+        <Route exact path='/signup' element={<Signuppage />} />
+        <Route exact path='/login' element={<Login />} />
         <Route
           exact
-          path="/*"
-          element={<Navigate to="/404-page-not-found" />}
+          path='/*'
+          element={<Navigate to='/404-page-not-found' />}
         />
-        <Route exact path="/404-page-not-found" element={<Page404 />} />
-        <Route exact path="/about-us" element={<AboutUspage />} />
+        <Route exact path='/404-page-not-found' element={<Page404 />} />
+        <Route exact path='/about-us' element={<AboutUspage />} />
         <Route element={<PrivateRoutes auth={auth} />}>
           <Route exact path="/dashboard" element={<UserDashBoard />} />
         <Route
@@ -76,16 +74,16 @@ function App() {
           /> 
           <Route
             exact
-            path="/checkout-failure"
+            path='/checkout-failure'
             element={<CheckoutFailurePage />}
           />
           <Route
             exact
-            path="/checkout-success/:scss"
+            path='/checkout-success/:scss'
             element={<CheckoutSuccessPage />}
           />
-          <Route exact path="/bookings/:bkngcd" element={<Bookingpage />} />
-          <Route exact path="/checkout/" element={<CheckoutPage />} />
+          <Route exact path='/bookings/:bkngcd' element={<Bookingpage />} />
+          <Route exact path='/checkout/' element={<CheckoutPage />} />
         </Route>
       </Routes>
       <Footer />
