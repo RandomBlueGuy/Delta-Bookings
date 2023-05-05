@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import {
+  useStripe,
+  useElements,
+  CardCvcElement,
+  CardNumberElement,
+  CardExpiryElement,
+} from "@stripe/react-stripe-js";
 import axios from "axios";
 import LoadingComp from "../UniversalComponents/LoadingComp";
 
@@ -11,21 +17,24 @@ export default function StripeButton({ sendPayment, finalPrice }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsLoading(true)
+    setIsLoading(true);
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
-      card: elements.getElement(CardElement),
+      card: elements.getElement(
+        CardNumberElement,
+        CardCvcElement,
+        CardExpiryElement
+      ),
     });
 
     if (error) {
       return "Error";
     }
-    const card  = paymentMethod.card;
+    const card = paymentMethod.card;
     const { data } = await axios
       .post(`${DB_URL}/api/checkout`, {
         paymentMethod,
         amount: Math.floor(finalPrice) * 100,
-        source: "tok_visa",
         source: "tok_visa",
       })
       .catch((error) =>
@@ -39,10 +48,35 @@ export default function StripeButton({ sendPayment, finalPrice }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <CardElement />
-      {isLoading === true && <LoadingComp message={"We are processing your payment"} />}
-      <button type='submit' style={{ padding: "0.5rem 0.75rem" }} >
+    <form
+      onSubmit={handleSubmit}
+      style={{ display: "flex", flexDirection: "column" }}
+    >
+      <CardNumberElement
+        style={{
+          padding: "10px",
+          border: "10px solid #ccc",
+          borderRadius: "4px",
+        }}
+      />
+      <CardExpiryElement
+        style={{
+          padding: "10px",
+          border: "1px solid #ccc",
+          borderRadius: "4px",
+        }}
+      />
+      <CardCvcElement
+        style={{
+          padding: "10px",
+          border: "1px solid #ccc",
+          borderRadius: "4px",
+        }}
+      />
+      {isLoading === true && (
+        <LoadingComp message={"We are processing your payment"} />
+      )}
+      <button type='submit' style={{ padding: "0.5rem 0.75rem" }}>
         Pay With Stripe
       </button>
     </form>
