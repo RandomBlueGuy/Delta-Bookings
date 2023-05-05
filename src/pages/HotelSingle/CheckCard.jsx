@@ -1,17 +1,23 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CheckCard.css";
-import GoogleMap from "google-map-react";
+import { MapContainer, TileLayer } from "react-leaflet";
 import WarningMessage from "../UniversalComponents/WarningMessage";
+import { useCookies } from "react-cookie";
 
 function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   const [guests, setGuests] = useState(searchParams.guestnumber);
-
+  const [cookies] = useCookies(["cookieToken"]);
   const [disabler, setDisabler] = useState(true);
   const [showWarning, setShowWarning] = useState(false);
   const [warningResult, setWarningResult] = useState();
+  const [warningMessage, setWarningMessage] = useState("");
+  const [warningTitle, setWarningTitle] = useState("");
   const navigate = useNavigate();
-  const [checkInDate, setCheckInDate] = useState(searchParams.checkInDate || new Date().toISOString().split("T")[0]);
+  const position = [currentHotel.loc_Lat, currentHotel.loc_Lng];
+  const [checkInDate, setCheckInDate] = useState(
+    searchParams.checkInDate || new Date().toISOString().split("T")[0]
+  );
   const [checkOutDate, setCheckOutDate] = useState(
     searchParams.checkOutDate ||
       new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
@@ -31,13 +37,18 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   };
 
   useEffect(() => {
-    if (guests && checkInDate && checkOutDate && Object.keys(selectedRoom).length > 0) {
+    if (
+      guests &&
+      checkInDate &&
+      checkOutDate &&
+      Object.keys(selectedRoom).length > 0
+    ) {
       setDisabler(false);
     }
   }, [selectedRoom, guests, checkInDate, checkOutDate]);
 
   useEffect(() => {
-    if (warningResult) {
+    if (warningResult && cookies.cookieToken) {
       const bookingParams = {
         id: searchParams.id,
         roomId: selectedRoom.id,
@@ -48,6 +59,8 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
       };
       const queryString = new URLSearchParams(bookingParams).toString();
       navigate(`/bookings/bkngcd?${queryString}`);
+    } else if (warningResult) {
+      navigate(`/login`);
     }
   }, [warningResult]);
 
@@ -55,44 +68,35 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
     setGuests(parseInt(event.target.value));
   };
 
-  const handleDateInChange = (event) => {
-    setCheckInDate(event.target.value);
-    setCheckInDate(() => {
-      return new Date(
-        new Date(event.target.value).getTime() + 24 * 60 * 60 * 1000
-      )
-        .toISOString()
-        .split("T")[0];
-    });
-  };
-
-  const handleCheckOutChange = (event) => {
-    setCheckOutDate(event.target.value);
-  };
-
   const handleBooking = (event) => {
     event.preventDefault();
-    setShowWarning(true);
+    if (cookies.cookieToken) {
+      setWarningTitle("Proceed to booking");
+      setWarningMessage("Do you want to proceed with the current booking?");
+      setShowWarning(true);
+    } else {
+      setWarningTitle("You should register...");
+      setWarningMessage(
+        "You need to be logged in order to book a hotel. By pressing yes you will be redirected to our login page."
+      );
+      setShowWarning(true);
+    }
   };
 
   return (
     <section className="check__card">
       {showWarning && (
         <WarningMessage
-          warningMessage={"Do you want to proceed with the current booking?"}
-          warningTitle={"Proceed to booking"}
+          warningMessage={warningMessage}
+          warningTitle={warningTitle}
           setShowWarning={setShowWarning}
           setWarningResult={setWarningResult}
         />
       )}
       <div className="check__card-map">
-        <GoogleMap
-          center={{
-            lat: 51.51271608651099, 
-            lng: 7.462423170202694
-          }}
-          zoom={20}
-        ></GoogleMap>
+        <MapContainer center={position} zoom={10} scrollWheelZoom={false} style={{zIndex: 1}}>
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        </MapContainer>
       </div>
       <section className="check__card-info">
         <div className="check__card--line">
