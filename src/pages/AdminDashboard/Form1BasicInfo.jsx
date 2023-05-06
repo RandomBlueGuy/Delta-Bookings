@@ -161,7 +161,7 @@ function Form1BasicInfo({
             Name:
           </label>
           <input
-            name="inp__HotelName"
+            name="HotelName"
             id="inp__HotelName"
             className="HotelCreator__input"
             type="text"
