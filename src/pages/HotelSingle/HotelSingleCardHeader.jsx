@@ -17,14 +17,7 @@ function HotelSingleCardHeader({ currentHotel }) {
               hotelRating={currentHotel?.StarRating}
             />
           </div>
-          <button>
-            <img src={shareIcon} alt="" />
-            <p className="button__txtDisplay">Share</p>
-          </button>
-          <button>
-            <img src={saveIcon} alt="" />
-            <p className="button__txtDisplay">Save</p>
-          </button>
+
         </div>
         <div className="HotelSingleCardHeader-general-description">
           <h3>

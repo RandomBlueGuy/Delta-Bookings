@@ -29,17 +29,17 @@ function TopOffers() {
         </div>
         <div className="table-card">
           <img src={offer3Img} alt="" />
-          <h3>Hotel Booking</h3>
+          <h3>Weekend sale</h3>
           <p>Avail Hot Deals On Hotel Booking To Any Place</p>
         </div>
         <div className="table-card">
           <img src={offer4Img} alt="" />
-          <h3>Hotel Booking</h3>
+          <h3>Outlet</h3>
           <p>Avail Hot Deals On Hotel Booking To Any Place</p>
         </div>
         <div className="table-card">
           <img src={offer5Img} alt="" />
-          <h3>Hotel Booking</h3>
+          <h3>Get Discounts</h3>
           <p>Avail Hot Deals On Hotel Booking To Any Place</p>
         </div>
       </section>
@@ -48,32 +48,32 @@ function TopOffers() {
         <div className="table-card ">
           <img src={place1Img} className="place-img " alt="" />
           <h3>South Africa</h3>
-          <p>Starting from $50000</p>
+          <p>Starting from $6000</p>
         </div>
         <div className="table-card">
           <img src={place2Img} className="place-img " alt="" />
           <h3>India</h3>
-          <p>Starting from $50000</p>
+          <p>Starting from $500</p>
         </div>
         <div className="table-card">
           <img src={place3Img} className="place-img " alt="" />
-          <h3>India</h3>
-          <p>Starting from $50000</p>
+          <h3>Australia</h3>
+          <p>Starting from $60000</p>
         </div>
         <div className="table-card">
           <img src={place4Img} className="place-img " alt="" />
-          <h3>Hotel Booking</h3>
-          <p>Starting from $50000</p>
+          <h3>Paris</h3>
+          <p>Starting from $12000</p>
         </div>
         <div className="table-card">
           <img src={place5Img} className="place-img " alt="" />
-          <h3>Hotel Booking</h3>
-          <p>Starting from $50000</p>
+          <h3>USA</h3>
+          <p>Starting from $26000</p>
         </div>
         <div className="table-card">
           <img src={place6Img} className="place-img " alt="" />
-          <h3>Hotel Booking</h3>
-          <p>Starting from $50000</p>
+          <h3>Japan</h3>
+          <p>Starting from $3000</p>
         </div>
       </section>
     </main>

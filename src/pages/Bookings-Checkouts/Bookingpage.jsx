@@ -19,8 +19,15 @@ function Bookingpage() {
   const currentHotel = useSelector((state) => state.fetchData.hotelSingle);
   const [price, setPrice] = useState({});
   const [TravellerInfoObj, setTravellerInfoObj] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [extraDiscount, setExtraDiscount] = useState(0);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setInterval(() => {
+      setIsLoading(false);
+    }, 1500);
+  }, []);
 
   useEffect(() => {
     dispatch(fetchData(searchParams));
@@ -41,7 +48,9 @@ function Bookingpage() {
       const basePrice = currentRoom.OriginalPricePerNight * nights;
       const discount = Math.floor((basePrice * currentRoom.Discount) / 100);
       const tax = Math.floor(discount * 0.19);
-      const finalPrice = Math.floor(basePrice - discount + tax);
+      const finalPrice =
+        Math.floor(basePrice - discount + tax) -
+        (basePrice * extraDiscount) / 100;
 
       setPrice({
         RoomName: currentRoom.RoomName,
@@ -52,7 +61,7 @@ function Bookingpage() {
         finalPrice,
       });
     }
-  }, [currentHotel]);
+  }, [currentHotel, extraDiscount]);
 
   useEffect(() => {
     if (TravellerInfo !== undefined) {
@@ -142,9 +151,18 @@ function Bookingpage() {
           />
         )}
         {proceed && (
-          <Payments sendPayment={sendPayment} finalPrice={price.finalPrice} />
+          <Payments
+            sendPayment={sendPayment}
+            finalPrice={price.finalPrice}
+            extraDiscount={extraDiscount}
+          />
         )}
-        {!proceed && <TravellerInfo fillTravellerInfo={fillTravellerInfo} />}
+        {!proceed && (
+          <TravellerInfo
+            fillTravellerInfo={fillTravellerInfo}
+            setExtraDiscount={setExtraDiscount}
+          />
+        )}
       </div>
     </div>
   );

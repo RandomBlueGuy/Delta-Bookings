@@ -1,18 +1,22 @@
+import "./styles.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useJwt } from "react-jwt";
 import { useCookies } from "react-cookie";
-import "./styles.css";
+import FloatingMessage from "../UniversalComponents/FloatingMessage";
 
-export default function TravellerInfo({ fillTravellerInfo }) {
+export default function TravellerInfo({ fillTravellerInfo, setExtraDiscount }) {
   const COUPON_CODE = process.env.REACT_APP_COUPON_CODE;
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
+  const [showUpdate, setShowUpdate] = useState(false);
+  const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
   const letterRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
   const numberRegex = /^[0-9]*$/;
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const [cookies] = useCookies("cookieToken");
   const decode = useJwt(cookies.cookieToken);
+
   const [info, setInfo] = useState({
     fullName: "",
     inputEmail: "",
@@ -87,12 +91,24 @@ export default function TravellerInfo({ fillTravellerInfo }) {
 
   function handleCoupon() {
     if (coupon === COUPON_CODE) {
+      setMessage("Coupon received. enjoy your discount!");
+      setShowUpdate(true);
+      setExtraDiscount(15)
     } else {
+      setMessage("This coupon code does not seem correct, try again!");
+      setShowUpdate(true);
     }
   }
 
   return (
     <div className="container-2">
+      {showUpdate && (
+        <FloatingMessage
+          message={message}
+          setShowUpdate={setShowUpdate}
+          showUpdate={showUpdate}
+        />
+      )}
       <section className="travelInfo-container">
         <h4>Traveller Information</h4>
         <div className="email-group" role="form">

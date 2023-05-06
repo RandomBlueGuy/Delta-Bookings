@@ -42,9 +42,6 @@ function HotelCard({ hotelInfoCard, searchParams }) {
           onClick={handleNavigate}
         />
 
-        <div className="heart-ctn">
-          <img className="love-icon" src={heartEmptyIcon} alt="" />
-        </div>
         <div
           className="card__specialtag"
           style={{
