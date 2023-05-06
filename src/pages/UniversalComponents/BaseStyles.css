@@ -170,6 +170,12 @@ input {
   /* animation-iteration-count: 1; */
 }
 
+@media (max-width: 721px) {
+  .floatingMessage__ctn {
+    max-height: 100%;
+  }
+}
+
 @keyframes set-up-down {
   0% {
     bottom: -5rem;

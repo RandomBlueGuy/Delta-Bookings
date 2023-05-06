@@ -116,3 +116,9 @@
 .guest__select {
   width: 100%;
 }
+
+@media (max-width: 721px) {
+  .check__card {
+    width: 100%;
+  }
+}

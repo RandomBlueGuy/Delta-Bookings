@@ -1,10 +1,9 @@
 import React from "react";
 import "./NavBar.css";
 import iconB from "../../assets/Icons/delta-black.svg";
-import iconW from "../../assets/Icons/delta.svg";
 import userIcon from "../../assets/Icons/user.svg";
 import menuIcon from "../../assets/Icons/menu.svg";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import axios from "axios";
@@ -55,6 +54,10 @@ function NavBar({ role }) {
     event.preventDefault();
     setTrigger("0vw");
   };
+
+  useEffect(() => {
+    setTrigger("0vw");
+  }, [location.pathname]);
 
   return (
     !isInvalidUrl && (
@@ -130,9 +133,11 @@ function NavBar({ role }) {
                   <div className="mobile-menu-titles">
                     <h2>Account</h2>
                   </div>
-                  <Link to="/dashboard" className="item-ctn">
-                    <h2>Profile</h2>
-                  </Link>
+                  {cookies.cookieToken !== undefined && (
+                    <Link to="/dashboard" className="item-ctn">
+                      <h2>Profile</h2>
+                    </Link>
+                  )}
                   <Link
                     to="/admin-dashboard"
                     className="item-ctn"
@@ -140,18 +145,25 @@ function NavBar({ role }) {
                   >
                     <h2>Admin Dashboard</h2>
                   </Link>
-                  <Link to="/login" className="item-ctn">
-                    <h2>Log In</h2>
-                  </Link>
-                  <a href="/home" className="item-ctn" onClick={handleLogout}>
-                    <h2>Log Out</h2>
-                  </a>
-                  <Link to="/signup" className="item-ctn">
-                    <h2>Sign-up</h2>
-                  </Link>
-                  <div className="mobile-menu-titles">
-                    <h2>Accesibility</h2>
-                  </div>
+                  {cookies.cookieToken === undefined && (
+                    <Link to="/login" className="item-ctn">
+                      <h2>Log In</h2>
+                    </Link>
+                  )}
+                  {cookies.cookieToken !== undefined && (
+                    <a href="/home" className="item-ctn" onClick={handleLogout}>
+                      <h2>Log Out</h2>
+                    </a>
+                  )}
+                  {cookies.cookieToken === undefined && (
+                    <Link
+                      to="/signup"
+                      className="item-ctn"
+                      onClick={triggerOpen}
+                    >
+                      <h2>Sign Up</h2>
+                    </Link>
+                  )}
                 </div>
 
                 <button className="dropdown square-icon" onClick={triggerOpen}>

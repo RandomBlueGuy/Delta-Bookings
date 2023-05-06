@@ -106,7 +106,6 @@
 @media (max-width: 720px) {
   .gallery-slideshow {
     width: 100%;
-    background-color: red;
   }
   .gallery-other-images {
     display: none;
