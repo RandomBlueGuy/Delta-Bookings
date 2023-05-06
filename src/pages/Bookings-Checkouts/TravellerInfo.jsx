@@ -92,109 +92,109 @@ export default function TravellerInfo({ fillTravellerInfo }) {
   }
 
   return (
-    <div className='container-2'>
-      <section className='travelInfo-container'>
+    <div className="container-2">
+      <section className="travelInfo-container">
         <h4>Traveller Information</h4>
-        <div className='email-group' role='form'>
-          <label htmlFor='fullName'>
+        <div className="email-group" role="form">
+          <label htmlFor="fullName">
             Full Name
             <input
-              name='fullName'
-              type='text'
-              class='form-control'
-              id='fullName'
-              placeholder='First Name'
+              name="fullName"
+              type="text"
+              class="form-control"
+              id="fullName"
+              placeholder="First Name"
               onChange={(event) => handleChange(event)}
               value={fullName}
             />
             {errors.fullName && (
-              <span className='error-creatorAdmin'>{errors.fullName}</span>
+              <span className="error-creatorAdmin">{errors.fullName}</span>
             )}
           </label>
         </div>
 
-        <section className='email-group'>
-          <div class='email-info'>
-            <label htmlFor='inputEmail'>
+        <section className="email-group">
+          <div class="email-info">
+            <label htmlFor="inputEmail">
               Email address
               <input
-                name='inputEmail'
-                type='email'
-                class='form-control'
-                id='exampleInputEmail1'
-                aria-describedby='emailHelp'
+                name="inputEmail"
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
                 onChange={(event) => handleChange(event)}
-                placeholder='Enter email'
+                placeholder="Enter email"
                 value={inputEmail}
               />
               {errors.email && (
-                <span className='error-creatorAdmin'>{errors.email}</span>
+                <span className="error-creatorAdmin">{errors.email}</span>
               )}
             </label>
-            <small id='emailHelp' class='form-text text-muted'>
+            <small id="emailHelp" class="form-text text-muted">
               Booking confirmation will be sent to this email ID.
             </small>
           </div>
         </section>
 
-        <section className='contact-info'>
-          <div class='form-group'>
-            <label htmlFor='contactInfo'>
+        <section className="contact-info">
+          <div class="form-group">
+            <label htmlFor="contactInfo">
               Contact Info
               <input
-                name='contactInfo'
-                type='tel'
-                class='form-control'
-                id='exampleInputEmail1'
+                name="contactInfo"
+                type="tel"
+                class="form-control"
+                id="exampleInputEmail1"
                 onChange={(event) => handleChange(event)}
-                placeholder='+57'
+                placeholder="+57"
                 value={contactInfo}
               />
               {errors.number && (
-                <span className='error-creatorAdmin'>{errors.number}</span>
+                <span className="error-creatorAdmin">{errors.number}</span>
               )}
             </label>
           </div>
         </section>
 
-        <section className='request-info'>
-          <label htmlFor='request'>
+        <section className="request-info">
+          <label htmlFor="request">
             Special Request
             <textarea
-              name='request'
-              maxlength='60'
-              class='form-control'
-              id='text-area-form'
+              name="request"
+              maxlength="60"
+              class="form-control"
+              id="text-area-form"
               onChange={(event) => handleChange(event)}
-              rows='2'
-              placeholder='E.g: Transport fee'
+              rows="2"
+              placeholder="E.g: Transport fee"
               value={request}
             ></textarea>
           </label>
         </section>
 
-        <section className='coupon-info'>
-          <label htmlFor='coupon'>Have A Coupon Code?</label>
-          <div className='coupon-wrapper'>
+        <section className="coupon-info">
+          <label htmlFor="coupon">Have A Coupon Code?</label>
+          <div className="coupon-wrapper">
             <input
-              name='coupon'
-              type='text'
-              class='form-control'
-              placeholder='Promo Code'
+              name="coupon"
+              type="text"
+              class="form-control"
+              placeholder="Promo Code"
               onChange={(event) => handleChange(event)}
-              aria-describedby='basic-addon2'
+              aria-describedby="basic-addon2"
               value={coupon}
             />
-            <div class='input-group-append'>
-              <button type='button' className='btn' onClick={handleCoupon}>
+            <div class="input-group-append">
+              <button type="button" className="btn" onClick={handleCoupon}>
                 APPLY
               </button>
             </div>
           </div>
         </section>
 
-        <section className='button-pay'>
-          <button type='submit' className='btn' onClick={handleInfo}>
+        <section className="button-pay">
+          <button type="submit" className="btn" onClick={handleInfo}>
             PAY NOW
           </button>
         </section>

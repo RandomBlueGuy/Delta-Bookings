@@ -94,32 +94,30 @@ export default function UserDashboard() {
   useEffect(() => {
     if (decode && decode.decodedToken && decode.decodedToken.id) {
       const id = decode.decodedToken.id;
-      axios
-        .get(`${DB_URL}/api/users/${id}`)
-        .then((response) => {
-          setUserData({
-            fullName: response.data.data.fullName,
-            email: response.data.data.email,
-            phoneNumber: response.data.data.phoneNumber,
-            password: response.data.data.password,
-            gender: response.data.data.gender || "non binary",
-            streetAddress: response.data.data.streetAddress,
-            city: response.data.data.city,
-            zipCode: response.data.data.zipCode,
-          });
-          setPicture(response.data.data.picture);
-          setInitialUserData({
-            fullName: response.data.data.fullName,
-            email: response.data.data.email,
-            phoneNumber: response.data.data.phoneNumber,
-            password: response.data.data.password,
-            gender: response.data.data.gender,
-            streetAddress: response.data.data.streetAddress,
-            city: response.data.data.city,
-            zipCode: response.data.data.zipCode,
-          });
-          setBookingsArr(response.data.data.bookings);
-        })
+      axios.get(`${DB_URL}/api/users/${id}`).then((response) => {
+        setUserData({
+          fullName: response.data.data.fullName,
+          email: response.data.data.email,
+          phoneNumber: response.data.data.phoneNumber,
+          password: response.data.data.password,
+          gender: response.data.data.gender || "non binary",
+          streetAddress: response.data.data.streetAddress,
+          city: response.data.data.city,
+          zipCode: response.data.data.zipCode,
+        });
+        setPicture(response.data.data.picture);
+        setInitialUserData({
+          fullName: response.data.data.fullName,
+          email: response.data.data.email,
+          phoneNumber: response.data.data.phoneNumber,
+          password: response.data.data.password,
+          gender: response.data.data.gender,
+          streetAddress: response.data.data.streetAddress,
+          city: response.data.data.city,
+          zipCode: response.data.data.zipCode,
+        });
+        setBookingsArr(response.data.data.bookings);
+      });
     }
   }, [decode.decodedToken]);
 
@@ -150,11 +148,10 @@ export default function UserDashboard() {
           )
           .then((response) => {
             setShowUpdate(true);
-          })
+          });
 
         setWarningResult(false);
         setInitialUserData(userData);
-
       } else {
         axios
           .put(
@@ -170,8 +167,8 @@ export default function UserDashboard() {
           )
           .then((response) => {
             setShowUpdate(true);
-          })
-          
+          });
+
         setWarningResult(false);
         setPassword("");
         setPassword2("");

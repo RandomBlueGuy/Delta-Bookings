@@ -47,31 +47,31 @@
   margin: 0.1rem;
 }
 
-.NavBar__dropdownCtn{
+.NavBar__dropdownCtn {
   background-color: whitesmoke;
   padding: 4rem 10% 1% 10%;
   display: flex;
   justify-content: space-between;
 }
 
-.NavBar__dropdownCtn h3{
+.NavBar__dropdownCtn h3 {
   color: var(--red-style);
   margin: 0;
   padding: 0;
 }
 
-.NavBar__groupings{
+.NavBar__groupings {
   background-color: lightblue;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.ctn__g1{
+.ctn__g1 {
   flex-basis: 88%;
 }
 
-.ctn__g2{
+.ctn__g2 {
   flex-basis: 10%;
 }
 

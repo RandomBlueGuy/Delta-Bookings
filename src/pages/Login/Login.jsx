@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useCookies } from "react-cookie";
@@ -17,7 +17,7 @@ function Login() {
   const [next, setNext] = useState(false);
   const [errors, setErrors] = useState({});
   const [emailerr, setEmailerr] = useState({});
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("");
   const [logUser, setLogUser] = useState(false);
   const [showUpdate, setShowUpdate] = useState(false);
   const [data, setData] = useState({
@@ -72,8 +72,9 @@ function Login() {
           setCookie("cookieName", response.data.data.fullName, { path: "/" });
         })
         .catch(() => {
-          setMessage("Invalid Email or Password")
-          setShowUpdate(true)});
+          setMessage("Invalid Email or Password");
+          setShowUpdate(true);
+        });
     }
     setNext(true);
   };
@@ -81,20 +82,23 @@ function Login() {
   const handleEmail = (event) => {
     event.preventDefault();
     const validateEmail = {};
-    
+
     if (emailRecovery.trim() === "") {
       validateEmail.userEmailRecovery = "Please Enter Your Email";
     } else if (!emailRegex.test(emailRecovery)) {
       validateEmail.userEmailRecovery = "Enter a Valid Email";
     }
     setEmailerr(validateEmail);
-    console.log("error", validateEmail)
-    if(Object.keys(validateEmail).length === 0){
-      console.log("nicely done");
-      axios.post(`${DB_URL}/api/users/recover`, {email: emailRecovery})
-      .then(() => {
-        setMessage("we are sending you an email with a provisional password.")
-        setShowUpdate(true)})
+
+    if (Object.keys(validateEmail).length === 0) {
+      axios
+        .post(`${DB_URL}/api/users/recover`, { email: emailRecovery })
+        .then(() => {
+          setMessage(
+            "we are sending you an email with a provisional password."
+          );
+          setShowUpdate(true);
+        });
     }
   };
 
@@ -212,4 +216,5 @@ function Login() {
     </main>
   );
 }
+
 export default Login;

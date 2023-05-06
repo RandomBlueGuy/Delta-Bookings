@@ -6,7 +6,7 @@ export default function HeaderCheckout() {
     <main className="Header-checkout">
       <section className="Header-title">
         <h1>DASHBOARD</h1>
-        <p> Home {>>} Checkout </p>
+        <p> Home {`>>`} Checkout </p>
       </section>
     </main>
   );

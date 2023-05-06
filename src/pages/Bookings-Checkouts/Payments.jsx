@@ -6,9 +6,9 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import StripeButton from "../UniversalComponents/StripeButton";
-
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+
 const stripePromise = loadStripe(
   "pk_test_51N0c89EVaWSJ74nLzQn1EK6VmxmVrVpEnnQZCl8uWRqzCfDRQIOnDkMvn3PSb3wkIxosQT9bJbDZmYk4uAesUdoC00HMQf6eck"
 );

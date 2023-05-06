@@ -1,5 +1,5 @@
-import React from 'react'
-import './HeaderSignup.css'
+import React from "react";
+import "./HeaderSignup.css";
 
 function HeaderSignup() {
   return (

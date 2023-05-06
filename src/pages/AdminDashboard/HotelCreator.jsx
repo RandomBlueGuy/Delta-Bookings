@@ -6,12 +6,15 @@ import Form4Gallery from "./Form4Gallery";
 import Form5RoomForm from "./Form5RoomForm";
 import RoomList from "./RoomList";
 import axios from "axios";
+import FloatingMessage from "../UniversalComponents/FloatingMessage";
 
 function HotelCreator() {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [formTab, setFormTab] = useState(1);
   const [create, setCreate] = useState([]);
   const [deleteRoomData, setDeleteRoomData] = useState(false);
+  const [showUpdate, setShowUpdate] = useState(false);
+  const [message, setMessage] = useState(false);
   const [hotelForm, setHotelForm] = useState({
     HotelName: "",
     Website: "",
@@ -130,7 +133,6 @@ function HotelCreator() {
     Amenities,
     Inclusions
   ) {
-    console.log("I get here");
     Discount = Number(Discount);
     OriginalPricePerNight = Number(OriginalPricePerNight);
     setRoomForm({
@@ -169,7 +171,6 @@ function HotelCreator() {
       Rooms: create,
     });
 
-    console.log("CREATE", create);
     const gggg = {
       HotelName: `${hotelForm.HotelName}`,
       Website: `${hotelForm.Website}`,
@@ -236,8 +237,14 @@ function HotelCreator() {
           create,
         },
       })
-      .then((response) => console.log("LO HICIMOS"))
-      .catch((error) => console.log(error.message));
+      .then(() => {
+        setMessage("Hotel created successfully");
+        setShowUpdate(true);
+      })
+      .catch(() => {
+        setMessage("Something went wrong");
+        setShowUpdate(true);
+      });
   }
 
   function nextFormTab(direction) {
@@ -262,7 +269,14 @@ function HotelCreator() {
   };
 
   return (
-    <main className='HotelCreator'>
+    <main className="HotelCreator">
+      {showUpdate && (
+        <FloatingMessage
+          message={message}
+          setShowUpdate={setShowUpdate}
+          showUpdate={showUpdate}
+        />
+      )}
       <h1>Hotel Creation</h1>
       <section style={{ display: formTab === 1 ? "block" : "none" }}>
         <Form1BasicInfo
@@ -302,10 +316,10 @@ function HotelCreator() {
       </section>
 
       <section
-        className='HC__FormCtn'
+        className="HC__FormCtn"
         style={{ display: formTab === 5 ? "block" : "none" }}
       >
-        <div className='RoomsCreated'>
+        <div className="RoomsCreated">
           {create.length === 0 ? (
             <h3>No Rooms have been created</h3>
           ) : (
@@ -331,9 +345,9 @@ function HotelCreator() {
           isItUpdating={false}
         />
 
-        <div className='HotelForm__footer'>
+        <div className="HotelForm__footer">
           <button
-            className='HotelCreator__form--microSubmit'
+            className="HotelCreator__form--microSubmit"
             onClick={() => {
               nextFormTab("left");
             }}
@@ -342,7 +356,7 @@ function HotelCreator() {
           </button>
           Step {formTab} / 5
           <button
-            className='HotelCreator__form--microSubmit'
+            className="HotelCreator__form--microSubmit"
             onClick={createHotel}
           >
             Create Hotel

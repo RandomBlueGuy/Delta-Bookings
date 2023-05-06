@@ -1,6 +1,6 @@
-import React, { useState } from "react";
 import axios from "axios";
 import "./Signup.css";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FloatingMessage from "../UniversalComponents/FloatingMessage";
 
@@ -48,12 +48,11 @@ export default function Signup() {
     }
     setErrors(validationErrors);
     const createUserDB = async () => {
-      const res = await axios
-        .post(`${DB_URL}/auth/local/signup`, {
-          fullName: username,
-          email,
-          password,
-        })
+      const res = await axios.post(`${DB_URL}/auth/local/signup`, {
+        fullName: username,
+        email,
+        password,
+      });
     };
 
     if (Object.keys(validationErrors).length === 0) {
@@ -64,73 +63,73 @@ export default function Signup() {
   };
 
   return (
-    <div className='signup-main-container'>
+    <div className="signup-main-container">
       <FloatingMessage
-        message='Congrats! now you are part of Delta Bookings! '
+        message="Congrats! now you are part of Delta Bookings! "
         setShowUpdate={setShowUpdate}
         showUpdate={showUpdate}
       />
-      <main className='signup-card'>
-        <section className='signup'>
+      <main className="signup-card">
+        <section className="signup">
           <h1>SIGN UP </h1>
           <p>Sign Up With</p>
         </section>
-        <form className='signup__form' onSubmit={handleSubmit}>
-          <label htmlFor='username'>
+        <form className="signup__form" onSubmit={handleSubmit}>
+          <label htmlFor="username">
             Full Name
             <input
-              type='text'
-              id='username'
-              name='username'
+              type="text"
+              id="username"
+              name="username"
               value={username}
-              placeholder='Enter your name'
+              placeholder="Enter your name"
               onChange={(event) => handleChange(event)}
             />
             {errors.userName && (
-              <span className='error'>{errors.userName}</span>
+              <span className="error">{errors.userName}</span>
             )}
           </label>
 
-          <label htmlFor='email'>
+          <label htmlFor="email">
             Email Address
             <input
-              type='email'
-              name='email'
-              id='email'
+              type="email"
+              name="email"
+              id="email"
               value={email}
-              placeholder='Email Address'
+              placeholder="Email Address"
               onChange={(event) => handleChange(event)}
             />
             {errors.userEmail && (
-              <span className='error'>{errors.userEmail}</span>
+              <span className="error">{errors.userEmail}</span>
             )}
           </label>
 
-          <label htmlFor='password'>
+          <label htmlFor="password">
             Password
             <input
-              type='password'
-              name='password'
-              id='password'
-              placeholder='Password'
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
               value={password}
               onChange={(event) => handleChange(event)}
             />
             {errors.userPassword && (
-              <span className='error'>{errors.userPassword}</span>
+              <span className="error">{errors.userPassword}</span>
             )}
           </label>
 
-          <button className='createAcc-btn' type='submit'>
+          <button className="createAcc-btn" type="submit">
             CREATE ACCOUNT
           </button>
         </form>
-        <div className='social-distancing'>
-          <div className='social-distancing-line'></div>
+        <div className="social-distancing">
+          <div className="social-distancing-line"></div>
           <p>OR</p>
         </div>
         <button
-          className='loginBtn'
+          className="loginBtn"
           onClick={() => {
             return navigate("/login");
           }}

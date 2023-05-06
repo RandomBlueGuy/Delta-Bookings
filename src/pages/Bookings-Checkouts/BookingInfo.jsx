@@ -7,7 +7,7 @@ export default function BookingModule({
   hotelCity = "",
   hotelCountry = "",
   hotelImg = "",
-  price
+  price,
 }) {
   return (
     <article className="container-1">
@@ -39,7 +39,8 @@ export default function BookingModule({
 
         <section className="third-container" id="third">
           <strong>
-            {searchParams.guestsN} Guests, {price.RoomName}, {price.nights}  Nights
+            {searchParams.guestsN} Guests, {price.RoomName}, {price.nights}{" "}
+            Nights
           </strong>
           <p className="edit-option"></p>
         </section>

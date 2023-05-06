@@ -1,62 +1,62 @@
-.container-success{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center ;
-    background-color: #f5f5dc;
-    text-align: center; 
-    padding: 3rem 0
+.container-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5dc;
+  text-align: center;
+  padding: 3rem 0;
 }
 
-.container-success h1{
-    width: 80%;
-    max-width: 700px;
+.container-success h1 {
+  width: 80%;
+  max-width: 700px;
 }
 
-.picture-travel{
-    width: 20%;
-    margin-top: 5%;
-    mix-blend-mode: multiply;
+.picture-travel {
+  width: 20%;
+  margin-top: 5%;
+  mix-blend-mode: multiply;
 }
 
-.container-success button{
-    appearance: none;
-    border: 1px solid rgba(27, 31, 35, .15);
-    box-sizing: border-box;
-    display: inline-block;
-    line-height: 20px;
-    padding: 7px 16px;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    white-space: nowrap;
-    margin-top: 15px;
+.container-success button {
+  appearance: none;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  box-sizing: border-box;
+  display: inline-block;
+  line-height: 20px;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-top: 15px;
 }
 
-.confirmation-text{
-    width: 50%;
-    margin-top: 0.8rem;
+.confirmation-text {
+  width: 50%;
+  margin-top: 0.8rem;
 }
 
- .confirmation-text, .container-success button{
-    margin-bottom: 2%;
+.confirmation-text,
+.container-success button {
+  margin-bottom: 2%;
 }
 
-@media (max-width:376px){
-    .picture-travel{
+@media (max-width: 376px) {
+  .picture-travel {
     margin-top: 15%;
     width: 40%;
-    }
-    
-    .confirmation-text{
-        width: 75%;
-    }
+  }
 
-    .container-success button{
+  .confirmation-text {
+    width: 75%;
+  }
+
+  .container-success button {
     margin-bottom: 5%;
-    }
-    
+  }
 }

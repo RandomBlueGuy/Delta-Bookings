@@ -1,223 +1,218 @@
-
-
 .container-2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
 }
 .travelInfo-container {
-        background-color: white;
-        padding: 1rem;
-        width: 100%;
-        box-shadow: 3px 3px 6px rgb(0 0 0 / 10%);
+  background-color: white;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 3px 3px 6px rgb(0 0 0 / 10%);
 }
 
-.person-info{
-    display: flex;
-    justify-content: space-between;
+.person-info {
+  display: flex;
+  justify-content: space-between;
 }
 
-.name-info, .lastname-info{
-    width: 50%;
+.name-info,
+.lastname-info {
+  width: 50%;
 }
 
-label{
-    display: flex;
-    flex-direction: column;
+label {
+  display: flex;
+  flex-direction: column;
 }
 
-
-.coupon-wrapper{
-    display: flex;
+.coupon-wrapper {
+  display: flex;
 }
 
-.button-pay{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
+.button-pay {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
 .email-group,
 .coupon-info,
 .contact-info,
 .request-info {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #firstname {
-    width: 90%;
+  width: 90%;
 }
 
 #lastname {
-    width: 100%
+  width: 100%;
 }
 
-#text-area-form{
-    resize: vertical;
+#text-area-form {
+  resize: vertical;
 }
-
-
 
 .container-1 {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    width: 50%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 50%;
 }
 
 .booking-info {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: flex-start;
-    justify-content: space-between;
-    background-color: #f5f5dc;
-    padding: 4rem 10%;
-    gap: 5%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #f5f5dc;
+  padding: 4rem 10%;
+  gap: 5%;
 }
 
 .picture-example {
-    width: 30%;
+  width: 30%;
 }
 
-.edit-option{
-    color: red;
-    font-weight: 500;
+.edit-option {
+  color: red;
+  font-weight: 500;
 }
 
 .info-container {
-        background-color: white;
-        padding: 1rem;
-        width: 100%;
-        box-shadow: 3px 3px 6px rgb(0 0 0 / 10%);
+  background-color: white;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 3px 3px 6px rgb(0 0 0 / 10%);
 }
 
-.first-container{
-    display:flex;
-    justify-content: flex-start;
-    align-items: center;
-    
+.first-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.second-split-info, .third-container, .fourth-split-info, .fifth-split-info{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
+.second-split-info,
+.third-container,
+.fourth-split-info,
+.fifth-split-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
 }
 
 .second-container div,
 .fourth-container div {
-    margin-bottom: -5px;
+  margin-bottom: -5px;
 }
 
-.timestaps{
-    margin-top: 0.6rem;
+.timestaps {
+  margin-top: 0.6rem;
 }
 .checkout-in {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .hotel-info {
-    padding-left: 5%;
+  padding-left: 5%;
 }
 
 .hotel-name {
-    margin-bottom: -2px;
+  margin-bottom: -2px;
 }
 
-#first, #second, #third, #fourth, #fifth{
-    margin-top: 1rem;
-    border-top: 1px solid #ebebeb;
+#first,
+#second,
+#third,
+#fourth,
+#fifth {
+  margin-top: 1rem;
+  border-top: 1px solid #ebebeb;
 }
 
-
-
-
-.card-info{
-    display: flex;
-    justify-content: space-between;
-    gap: 5%;
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
 }
 
-#panel1d-header, #panel2d-header {
-    background-color:#e3e3e38d;
+#panel1d-header,
+#panel2d-header {
+  background-color: #e3e3e38d;
 }
-
-
 
 .btn {
-    appearance: none;
-    border: 1px solid rgba(27, 31, 35, .15);
-    box-sizing: border-box;
-    display: inline-block;
-    line-height: 20px;
-    padding: 7px 16px;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    white-space: nowrap;
+  appearance: none;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  box-sizing: border-box;
+  display: inline-block;
+  line-height: 20px;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
-.btn:nth-child(1){
-    padding-top:8px;
-    padding-bottom:8px
+.btn:nth-child(1) {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .form-control {
-    width: 100%;
-    border-radius: 0%;
-    border: 2px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 0%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
-h4{
-    margin-top: 0px;
-    margin-bottom: 10px;
+h4 {
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 input {
-    min-height: 2rem;
-    border: 0.0625rem solid #999;
+  min-height: 2rem;
+  border: 0.0625rem solid #999;
 }
 
 /*Error Style*/
 .error {
-    color: red;
-    font-style: italic;
-    font-size: 0.8rem;
+  color: red;
+  font-style: italic;
+  font-size: 0.8rem;
 }
 
+@media (max-width: 376px) {
+  .booking-info {
+    flex-direction: column;
+    align-items: center;
+    padding: 5% 5%;
+  }
 
-@media (max-width:376px) {
+  .container-1 {
+    padding-right: 0;
+    width: 100%;
+  }
 
-    .booking-info {
-        flex-direction: column;
-        align-items: center;
-        padding: 5% 5%;
-    }
+  .info-container {
+    width: 100%;
+  }
 
-    .container-1 {
-        padding-right: 0;
-        width: 100%;
-    }
+  .container-2 {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 20px;
+  }
 
-    .info-container {
-        width: 100%;
-    }
+  .btn {
+    width: 100%;
+  }
 
-    .container-2 {
-        width: 100%;
-        padding-left: 0;
-        margin-top: 20px;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
-    .card-info{
-        flex-direction: column;
-    }
+  .card-info {
+    flex-direction: column;
+  }
 }
-

@@ -35,60 +35,60 @@ function Footer() {
 
   return (
     !invalidUrl && (
-      <main className='ctn-footer'>
-        <div className='main-box'>
-          <section className='box-member B2'>
-            <div className='box-title'>
-              <div className='display-logo'>
-                <img src={icon} className='back' alt='company icon' />
+      <main className="ctn-footer">
+        <div className="main-box">
+          <section className="box-member B2">
+            <div className="box-title">
+              <div className="display-logo">
+                <img src={icon} className="back" alt="company icon" />
               </div>
             </div>
 
-            <div className='Footer-box-body'>
+            <div className="Footer-box-body">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt.
               </p>
               <p></p>
 
-              <div className='display-icon'>
-                <img src={locationIcon} alt='' />
+              <div className="display-icon">
+                <img src={locationIcon} alt="" />
                 <p>[LOCATION]</p>
               </div>
-              <div className='display-icon'>
-                <img src={phoneIcon} alt='' />
+              <div className="display-icon">
+                <img src={phoneIcon} alt="" />
                 <p>[PHONE]</p>
               </div>
-              <div className='display-icon'>
-                <img src={mailIcon} alt='' />
+              <div className="display-icon">
+                <img src={mailIcon} alt="" />
                 <p>contact-mail@xmail.com</p>
               </div>
             </div>
           </section>
 
-          <section className='box-member B3'>
-            <div className='box-title'>
+          <section className="box-member B3">
+            <div className="box-title">
               <h2>About</h2>
             </div>
-            <div className='Footer-box-body'>
-              <Link to=''>About Us</Link>
-              <Link to=''>FAQ</Link>
-              <Link to=''>Login</Link>
-              <Link to=''>Register</Link>
-              <Link to=''>Terms & Co.</Link>
-              <Link to=''>Privacy</Link>
-              <Link to=''>Support</Link>
+            <div className="Footer-box-body">
+              <Link to="">About Us</Link>
+              <Link to="">FAQ</Link>
+              <Link to="">Login</Link>
+              <Link to="">Register</Link>
+              <Link to="">Terms & Co.</Link>
+              <Link to="">Privacy</Link>
+              <Link to="">Support</Link>
             </div>
           </section>
 
-          <section className='box-member B1'>
-            <div className='box-title'>
+          <section className="box-member B1">
+            <div className="box-title">
               <h2>Our Location</h2>
             </div>
-            <div className='Footer-box-body'>
-              <div className='map-box'>
+            <div className="Footer-box-body">
+              <div className="map-box">
                 <MapContainer center={position} zoom={5} scrollWheelZoom={true}>
-                  <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+                  <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                   <Marker position={position} icon={myIcon}>
                     <Popup>
                       A pretty CSS3 popup. <br /> Easily customizable.
@@ -99,33 +99,33 @@ function Footer() {
             </div>
           </section>
 
-          <section className='box-member B3'>
-            <div className='box-title'>
+          <section className="box-member B3">
+            <div className="box-title">
               <h2>Useful Links</h2>
             </div>
-            <div className='Footer-box-body'>
-              <Link to=''>Home</Link>
-              <Link to=''>Our Vehical</Link>
-              <Link to=''>Latest Video</Link>
-              <Link to=''>Services</Link>
-              <Link to=''>Booking Deal</Link>
-              <Link to=''>Emergency Call</Link>
-              <Link to=''>Mobile App</Link>
+            <div className="Footer-box-body">
+              <Link to="">Home</Link>
+              <Link to="">Our Vehical</Link>
+              <Link to="">Latest Video</Link>
+              <Link to="">Services</Link>
+              <Link to="">Booking Deal</Link>
+              <Link to="">Emergency Call</Link>
+              <Link to="">Mobile App</Link>
             </div>
           </section>
 
-          <section className='box-member B1'>
-            <div className='box-title'>
+          <section className="box-member B1">
+            <div className="box-title">
               <h2>New Topics</h2>
             </div>
-            <div className='Footer-box-body'>
-              <div className='news-box'>
-                <div className='news-box-img'>
-                  <div className='display-img'>
-                    <img src={placeholder} alt='' />
+            <div className="Footer-box-body">
+              <div className="news-box">
+                <div className="news-box-img">
+                  <div className="display-img">
+                    <img src={placeholder} alt="" />
                   </div>
                 </div>
-                <div className='news-box-txt'>
+                <div className="news-box-txt">
                   <h2>Recent News</h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -133,13 +133,13 @@ function Footer() {
                   </p>
                 </div>
               </div>
-              <div className='news-box'>
-                <div className='news-box-img'>
-                  <div className='display-img'>
-                    <img src={placeholder} alt='' />
+              <div className="news-box">
+                <div className="news-box-img">
+                  <div className="display-img">
+                    <img src={placeholder} alt="" />
                   </div>
                 </div>
-                <div className='news-box-txt'>
+                <div className="news-box-txt">
                   <h2>Recent News</h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -150,22 +150,22 @@ function Footer() {
             </div>
           </section>
         </div>
-        <div className='secondary-box'>
-          <div className='social-buttons'>
-            <Link to=''>
-              <img src={fIcon} alt='' className='social-btn' />
+        <div className="secondary-box">
+          <div className="social-buttons">
+            <Link to="">
+              <img src={fIcon} alt="" className="social-btn" />
             </Link>
-            <Link to=''>
-              <img src={tIcon} alt='' className='social-btn' />
+            <Link to="">
+              <img src={tIcon} alt="" className="social-btn" />
             </Link>
-            <Link to=''>
-              <img src={iIcon} alt='' className='social-btn' />
+            <Link to="">
+              <img src={iIcon} alt="" className="social-btn" />
             </Link>
-            <Link to=''>
-              <img src={gIcon} alt='' className='social-btn' />
+            <Link to="">
+              <img src={gIcon} alt="" className="social-btn" />
             </Link>
           </div>
-          <div className='copyright'>
+          <div className="copyright">
             <p>Copyright 2023 Delta By 💙 Delta Team</p>
           </div>
         </div>

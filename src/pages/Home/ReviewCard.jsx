@@ -18,8 +18,13 @@ function ReviewCard({ placeholderImg, dateD, dateM, user, rating, review }) {
       </figure>
       <div className="card-ctn-nl-txt-container">
         <p className="reviewer">Posted by: {user}</p>
-        <p className="review">User Rating: {rating}{" / "}5</p>
-        <p className="sub">{review && !reviewVM ? `${review.slice(0 , 100)}...` : review}</p>
+        <p className="review">
+          User Rating: {rating}
+          {" / "}5
+        </p>
+        <p className="sub">
+          {review && !reviewVM ? `${review.slice(0, 100)}...` : review}
+        </p>
         <button
           type="button"
           className="more"

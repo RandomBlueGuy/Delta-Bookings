@@ -19,14 +19,14 @@ function FloatingMessage({
 
   return (
     <main
-      className='floatingMessage__ctn'
+      className="floatingMessage__ctn"
       style={{ display: showUpdate ? "flex" : "none" }}
     >
       <p>
         <strong>{message}</strong>
       </p>
       <p
-        className='floatingMessage__special'
+        className="floatingMessage__special"
         onClick={() => setShowUpdate(false)}
       >
         <strong>🗙</strong>

@@ -119,7 +119,7 @@
   background-color: var(--red-style);
 }
 
-.error{
+.error {
   margin-top: -25px;
   padding-bottom: 1.2rem;
 }
@@ -129,10 +129,10 @@
     padding: 2rem 0;
   }
 
-  .signup__form input{
+  .signup__form input {
     margin-bottom: 0.5rem;
   }
-  .createAcc-btn{
-  margin-top: 1rem;
+  .createAcc-btn {
+    margin-top: 1rem;
   }
 }

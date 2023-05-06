@@ -10,7 +10,7 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import { useJwt } from "react-jwt";
 
-function NavBar({role}) {
+function NavBar({ role }) {
   let location = useLocation();
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
   const [cookies, setCookie, removeCookie] = useCookies([
@@ -60,23 +60,22 @@ function NavBar({role}) {
     !isInvalidUrl && (
       <main>
         <section
-          className='NavBar-container txt-color'
+          className="NavBar-container txt-color"
           style={{
-            backgroundColor:"white",
-            boxShadow: `0px 2px 5px rgba(43, 43, 43, 0.2)`
-
+            backgroundColor: "white",
+            boxShadow: `0px 2px 5px rgba(43, 43, 43, 0.2)`,
           }}
         >
-          <nav className='NavBar'>
-            <section className='nav-section'>
-              <Link to='/home'>
-                <img src={iconB} alt='Delta' />
+          <nav className="NavBar">
+            <section className="nav-section">
+              <Link to="/home">
+                <img src={iconB} alt="Delta" />
               </Link>
             </section>
 
-            <section className='nav-desktop'>
-              <Link to='/home'>
-                <h2 style={{ color:  "black"}}>Home</h2>
+            <section className="nav-desktop">
+              <Link to="/home">
+                <h2 style={{ color: "black" }}>Home</h2>
               </Link>
               <Link
                 to={`/hotel-list/search?city=All&checkInDate=${new Date()
@@ -85,121 +84,121 @@ function NavBar({role}) {
                   .toISOString()
                   .slice(0, 10)}&guestnumber=1`}
               >
-                <h2 style={{ color: "black"}}>
-                  Hotels
-                </h2>
+                <h2 style={{ color: "black" }}>Hotels</h2>
               </Link>
-              <Link to='/about-us'>
-                <h2 style={{ color: "black"}}>
-                  About Us
-                </h2>
+              <Link to="/about-us">
+                <h2 style={{ color: "black" }}>About Us</h2>
               </Link>
             </section>
 
-            <div className='user-related'>
-              <section className='mobile__NavBtn'>
+            <div className="user-related">
+              <section className="mobile__NavBtn">
                 <div
-                  id='mySidepanel'
+                  id="mySidepanel"
                   style={{
                     width: trigger,
                     padding: trigger !== "0vw" ? "1rem" : "0",
                     opacity: trigger !== "0vw" ? "1" : "0",
                   }}
-                  className='sidepanel'
+                  className="sidepanel"
                 >
-                  <div className='closebtn' onClick={triggerClose}>
+                  <div className="closebtn" onClick={triggerClose}>
                     <h2>Back →</h2>
                   </div>
-                  <div className='mobile-menu-titles'>
+                  <div className="mobile-menu-titles">
                     <h2>Navigation</h2>
                   </div>
-                  <Link to='/' className='item-ctn'>
+                  <Link to="/" className="item-ctn">
                     <h2>Home</h2>
                   </Link>
-                  <Link to='/hotel-list/search?city=All' className='item-ctn'>
+                  <Link to="/hotel-list/search?city=All" className="item-ctn">
                     <h2>Hotel</h2>
                   </Link>
-                  <Link to='/about-us' className='item-ctn'>
+                  <Link to="/about-us" className="item-ctn">
                     <h2>About Us</h2>
                   </Link>
 
-                  <div className='mobile-menu-titles'>
+                  <div className="mobile-menu-titles">
                     <h2>Account</h2>
                   </div>
-                  <Link to='/dashboard' className='item-ctn'>
+                  <Link to="/dashboard" className="item-ctn">
                     <h2>Profile</h2>
                   </Link>
-                  <Link to='/admin-dashboard' className='item-ctn' style={{display: role === "Admin" ? "block": "none"}}>
+                  <Link
+                    to="/admin-dashboard"
+                    className="item-ctn"
+                    style={{ display: role === "Admin" ? "block" : "none" }}
+                  >
                     <h2>Admin Dashboard</h2>
                   </Link>
-                  <Link to='/login' className='item-ctn'>
+                  <Link to="/login" className="item-ctn">
                     <h2>Log In</h2>
                   </Link>
-                  <a href='/home' className='item-ctn' onClick={handleLogout}>
+                  <a href="/home" className="item-ctn" onClick={handleLogout}>
                     <h2>Log Out</h2>
                   </a>
-                  <Link to='/signup' className='item-ctn'>
+                  <Link to="/signup" className="item-ctn">
                     <h2>Sign-up</h2>
                   </Link>
-                  <div className='mobile-menu-titles'>
+                  <div className="mobile-menu-titles">
                     <h2>Accesibility</h2>
                   </div>
                 </div>
 
-                <button className='dropdown square-icon' onClick={triggerOpen}>
-                  <img
-                    src={menuIcon}
-                    alt='Delta'
-                  />
+                <button className="dropdown square-icon" onClick={triggerOpen}>
+                  <img src={menuIcon} alt="Delta" />
                 </button>
               </section>
 
-              <div className='square-icon userManager'>
-                <p className='userName'>
+              <div className="square-icon userManager">
+                <p className="userName">
                   {cookies.cookieName ? cookies.cookieName.split(" ")[0] : ""}
                 </p>
 
                 <img
                   src={userIcon}
-                  alt='Delta'
+                  alt="Delta"
                   style={{
                     filter: cookies.cookieName
                       ? "invert(47%) sepia(69%) saturate(7351%) hue-rotate(343deg) brightness(111%) contrast(86%)"
                       : "",
                   }}
                 />
-                <div className='dropdown-menu'>
+                <div className="dropdown-menu">
                   {cookies.cookieToken !== undefined && (
-                    <Link to='/dashboard'>
-                      <div className='item-ctn'>
+                    <Link to="/dashboard">
+                      <div className="item-ctn">
                         <h4>Profile</h4>
                       </div>
                     </Link>
                   )}
                   {cookies.cookieToken !== undefined && (
-                    <Link to='/admin-dashboard' style={{display: role === "Admin" ? "block": "none"}}>
-                      <div className='item-ctn'>
+                    <Link
+                      to="/admin-dashboard"
+                      style={{ display: role === "Admin" ? "block" : "none" }}
+                    >
+                      <div className="item-ctn">
                         <h4>Dashboard</h4>
                       </div>
                     </Link>
                   )}
                   {cookies.cookieToken === undefined && (
-                    <Link to='/signup'>
-                      <div className='item-ctn'>
+                    <Link to="/signup">
+                      <div className="item-ctn">
                         <h4>Sign Up</h4>
                       </div>
                     </Link>
                   )}
                   {cookies.cookieToken !== undefined && (
-                    <a  href='/home'>
-                      <div className='item-ctn' onClick={handleLogout}>
+                    <a href="/home">
+                      <div className="item-ctn" onClick={handleLogout}>
                         <h4>Log out</h4>
                       </div>
                     </a>
                   )}
                   {cookies.cookieToken === undefined && (
-                    <Link to='/login'>
-                      <div className='item-ctn'>
+                    <Link to="/login">
+                      <div className="item-ctn">
                         <h4>Log in</h4>
                       </div>
                     </Link>

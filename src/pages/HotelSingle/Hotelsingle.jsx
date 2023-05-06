@@ -54,12 +54,12 @@ export default function Hotelsingle() {
   }
 
   return (
-    <div className='hotelsingle__maxcontainer'>
+    <div className="hotelsingle__maxcontainer">
       {loading === true && <LoadingComp />}
-      <main className='hotel__single-container'>
+      <main className="hotel__single-container">
         {currentHotel && <HotelSingleCardHeader currentHotel={currentHotel} />}
-        <div className='hotels__container-columns'>
-          <div className='container-column1'>
+        <div className="hotels__container-columns">
+          <div className="container-column1">
             {currentHotel && <HotelSingleGallery currentHotel={currentHotel} />}
             {currentHotel && (
               <HotelInfoDisplay
@@ -69,8 +69,8 @@ export default function Hotelsingle() {
               />
             )}
           </div>
-          <div className='container-column2'>
-            <section className='contactInfo__display'>
+          <div className="container-column2">
+            <section className="contactInfo__display">
               {currentHotel && (
                 <CheckCard
                   currentHotel={currentHotel}
@@ -79,7 +79,7 @@ export default function Hotelsingle() {
                 />
               )}
             </section>
-            <section className='contactInfo__display'>
+            <section className="contactInfo__display">
               {currentHotel && <ContactInfoCard currentHotel={currentHotel} />}
             </section>
           </div>

@@ -1,55 +1,55 @@
 .pagination-ctn {
-	display: flex;
-	gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .pagination-ctn button {
-	padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .act-chk {
-	background-color: white;
-	color: black;
-	font-size: 15px;
-	font-weight: 700;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.305);
+  background-color: white;
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.305);
 }
 
 .dis-chk {
-	background-color: rgba(255, 255, 255, 0.403);
-	box-shadow: none;
-	color: rgba(128, 128, 128, 0.34);
+  background-color: rgba(255, 255, 255, 0.403);
+  box-shadow: none;
+  color: rgba(128, 128, 128, 0.34);
 }
 .dis-chk:hover {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .act-chk:hover {
-	color: white;
+  color: white;
 }
 
 .actual {
-	color: gray;
-	background-color: transparent;
-	box-shadow: none;
-	width: 5rem;
-	display: flex;
-	border: none;
-	text-align: center;
+  color: gray;
+  background-color: transparent;
+  box-shadow: none;
+  width: 5rem;
+  display: flex;
+  border: none;
+  text-align: center;
 }
 
 .actual:hover {
-	background-color: transparent;
+  background-color: transparent;
 }
 
-.pagination-ctn select{
-	background-color: transparent;
-	border: none;
-	font-weight: 700;
-	max-height: 100%;
-	overflow-y: auto;
+.pagination-ctn select {
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
-.pagination-ctn option{
-	background-color: white;
+.pagination-ctn option {
+  background-color: white;
 }

@@ -1,8 +1,8 @@
+import "./CheckCard.css";
+import L from "leaflet";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./CheckCard.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
 import WarningMessage from "../UniversalComponents/WarningMessage";
 import { useCookies } from "react-cookie";
 
@@ -91,7 +91,7 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   };
 
   return (
-    <section className='check__card'>
+    <section className="check__card">
       {showWarning && (
         <WarningMessage
           warningMessage={warningMessage}
@@ -100,28 +100,28 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
           setWarningResult={setWarningResult}
         />
       )}
-      <div className='check__card-map'>
+      <div className="check__card-map">
         <MapContainer
           center={position}
           zoom={6}
           scrollWheelZoom={false}
           style={{ zIndex: 1 }}
         >
-          <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           <Marker position={position} icon={myIcon}>
             <Popup>Your Hotel is Here</Popup>
           </Marker>
         </MapContainer>
       </div>
-      <section className='check__card-info'>
-        <div className='check__card--line'>
-          <h4 className='rate-title'>[RATE TYPE]</h4>
+      <section className="check__card-info">
+        <div className="check__card--line">
+          <h4 className="rate-title">[RATE TYPE]</h4>
           <p style={{ fontWeight: "700", fontSize: "80%", color: "gray" }}>
             Per Nigth
           </p>
         </div>
-        <div className='check__card--line'>
-          <p className='rate-description'>✔ Non Refundable</p>
+        <div className="check__card--line">
+          <p className="rate-description">✔ Non Refundable</p>
           <h2 style={{ fontSize: "80%", textDecoration: "line-through" }}>
             $
             {selectedRoom.OriginalPricePerNight
@@ -129,8 +129,8 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
               : "0"}
           </h2>
         </div>
-        <div className='check__card--line'>
-          <p className='rate-description'>✔ Room only</p>
+        <div className="check__card--line">
+          <p className="rate-description">✔ Room only</p>
           <h2>
             $
             {selectedRoom.OriginalPricePerNight
@@ -145,21 +145,21 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
         </div>
       </section>
 
-      <form className='check__card-form' action=''>
-        <label htmlFor='check-in'>Check-in Date</label>
+      <form className="check__card-form" action="">
+        <label htmlFor="check-in">Check-in Date</label>
         <input
-          type='date'
-          id='checkInDate'
-          name='checkInDate'
+          type="date"
+          id="checkInDate"
+          name="checkInDate"
           value={checkInDate}
           min={new Date().toISOString().split("T")[0]}
           onChange={handleCheckInChange}
         />
-        <label htmlFor='check-out'>Check-out Date</label>
+        <label htmlFor="check-out">Check-out Date</label>
         <input
-          type='date'
-          id='checkOutDate'
-          name='checkOutDate'
+          type="date"
+          id="checkOutDate"
+          name="checkOutDate"
           value={checkOutDate}
           min={
             checkInDate &&
@@ -169,20 +169,20 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
           }
           onChange={handleCheckOutDateChange}
         />
-        <div className='Guest__select'>
+        <div className="Guest__select">
           <strong>City:</strong>
           <p>{currentHotel.loc_City}</p>
         </div>
-        <div className='Guest__select'>
+        <div className="Guest__select">
           <strong>Room:</strong>
           <p>{selectedRoom.RoomName || "Please select a room first"}</p>
         </div>
-        <div className='Guest__select'>
+        <div className="Guest__select">
           <strong>Guests:</strong>
           <select
-            className='guest__select'
-            name=''
-            id=''
+            className="guest__select"
+            name=""
+            id=""
             value={guests}
             onChange={(event) => {
               handleGuestChange(event);
@@ -195,7 +195,7 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
           </select>
         </div>
         <button
-          className='BOOKING_BTN'
+          className="BOOKING_BTN"
           disabled={disabler}
           onClick={(event) => handleBooking(event)}
         >

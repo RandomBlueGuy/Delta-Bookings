@@ -5,7 +5,7 @@ import BookingInfo from "./BookingInfo";
 export default function CheckoutPage() {
   return (
     <div>
-      <div className='booking-info'>
+      <div className="booking-info">
         <BookingInfo />
         <Payments />
       </div>

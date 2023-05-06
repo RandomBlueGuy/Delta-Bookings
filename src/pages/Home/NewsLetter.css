@@ -78,7 +78,6 @@
 }
 
 .review {
-
   overflow: hidden;
   font-weight: 800;
   font-size: 18px;
@@ -87,7 +86,7 @@
 .sub {
   height: 5rem;
   max-height: 5rem;
-  width:90%;
+  width: 90%;
   font-weight: 600;
   color: gray;
   font-size: 11px;
@@ -117,7 +116,6 @@
   width: 50%;
   padding-right: 2rem;
   box-shadow: 24px 0px 0px -20px var(--red-style);
-  
 }
 
 .call-txt-title {

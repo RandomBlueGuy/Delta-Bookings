@@ -8,16 +8,14 @@ function UserListMember({ index, user, setRecallGet }) {
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
 
   const [cookies] = useCookies("cookieToken");
-  const decode = useJwt(cookies.cookieToken);
   const [showWarning, setShowWarning] = useState(false);
   const [warningResult, setWarningResult] = useState(false);
   const [role, setRole] = useState("");
   const [viewSubmit, setViewSubmit] = useState("");
   const [shouldDelete, setShouldDelete] = useState(false);
-  const [warningMessage, setWarningMessage] = useState(
-    "Take into consideration the possible consequences of this particular action."
-  );
-  const [warningTitle, setWarningTitle] = useState("Think about it");
+  const warningMessage =
+    "Take into consideration the possible consequences of this particular action.";
+  const warningTitle = "Think about it";
 
   useEffect(() => {
     if (role !== "") {
@@ -69,7 +67,7 @@ function UserListMember({ index, user, setRecallGet }) {
   }, [warningResult]);
 
   return (
-    <main className='Management__Card'>
+    <main className="Management__Card">
       {showWarning && (
         <WarningMessage
           warningMessage={warningMessage}
@@ -78,31 +76,31 @@ function UserListMember({ index, user, setRecallGet }) {
           setWarningResult={setWarningResult}
         />
       )}
-      <section className='UserListHeader'>
+      <section className="UserListHeader">
         <h3>
           {index}
-          <span className='Management__separator'>{" :: "}</span>
+          <span className="Management__separator">{" :: "}</span>
           {user.fullName}
-          <span className='Management__separator'>{" :: "}</span> [
+          <span className="Management__separator">{" :: "}</span> [
           {user.role.Name}]
         </h3>
-        <div className='manage_btns'>
+        <div className="manage_btns">
           <select
-            name=''
-            id=''
+            name=""
+            id=""
             value={role}
             onChange={(event) => {
               setRole(event.target.value);
             }}
           >
-            <option value='' selected disabled>
+            <option value="" selected disabled>
               - select new role -{" "}
             </option>
-            <option value='User'>User</option>
-            <option value='Admin'>Admin </option>
+            <option value="User">User</option>
+            <option value="Admin">Admin </option>
           </select>
           <button
-            className='manage__edit'
+            className="manage__edit"
             style={{ display: viewSubmit ? "block" : "none" }}
             onClick={() => {
               setShowWarning(true);
@@ -111,7 +109,7 @@ function UserListMember({ index, user, setRecallGet }) {
             ✔
           </button>
           <button
-            className='manage__del'
+            className="manage__del"
             onClick={() => {
               setShowWarning(true);
               setShouldDelete(true);
@@ -121,15 +119,15 @@ function UserListMember({ index, user, setRecallGet }) {
           </button>
         </div>
       </section>
-      <div className='UserManagement__Card--body' style={{ display: "none" }}>
-        <label htmlFor=''>
+      <div className="UserManagement__Card--body" style={{ display: "none" }}>
+        <label htmlFor="">
           Password:
-          <input type='password' />
+          <input type="password" />
         </label>
-        <label htmlFor=''>Current Role:</label>
-        <div className='roleCtn'>
-          <button className='UpdateRole'>Discard</button>
-          <button className='UpdateRole'>Save</button>
+        <label htmlFor="">Current Role:</label>
+        <div className="roleCtn">
+          <button className="UpdateRole">Discard</button>
+          <button className="UpdateRole">Save</button>
         </div>
       </div>
     </main>

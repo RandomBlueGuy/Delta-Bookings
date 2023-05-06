@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import Form1BasicInfo from "./Form1BasicInfo";
 import Form2LocationData from "./Form2LocationData";
 import Form3SocialData from "./Form3SocialData";

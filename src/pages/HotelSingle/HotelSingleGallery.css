@@ -1,108 +1,114 @@
 .HotelSingleGallery-ctn {
-	width: 100%;
-	min-height: 40vh ;
-	max-height: 40vh;
-	display: flex;
-	gap: 1%;
-	background-color: transparent;
+  width: 100%;
+  min-height: 40vh;
+  max-height: 40vh;
+  display: flex;
+  gap: 1%;
+  background-color: transparent;
 }
 
 .gallery-slideshow {
-	width: 70%;
-	background-color: transparent;
-	position: relative;
-	overflow: hidden;
-	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
-	display: flex;
-	object-fit: cover;
-	align-items: center;
+  width: 70%;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
+  display: flex;
+  object-fit: cover;
+  align-items: center;
 }
 
 .gallery-slideshow img {
-	max-width: 100%;
-	
+  max-width: 100%;
 }
 
 .gallery-slideshow button {
-	position: absolute;
-	width: 3.2rem;
-	height: 110%;
-	box-shadow: none;
-	font-size: 20px;
-	
+  position: absolute;
+  width: 3.2rem;
+  height: 110%;
+  box-shadow: none;
+  font-size: 20px;
 }
 
-.gallery-slideshow button:active{
-	color: var(--red-style);
+.gallery-slideshow button:active {
+  color: var(--red-style);
 }
 
 .slider-left {
-	left: 0;
-	background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.1));
-	background-position: center;
+  left: 0;
+  background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.1));
+  background-position: center;
 }
 
 .slider-left:hover {
-	background-position: left;
-	background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.5));
+  background-position: left;
+  background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.5));
 }
 
 .slider-right {
-	right: 0;
-	background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  right: 0;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
 }
 
 .slider-right:hover {
-	background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
 .gallery-other-images {
-	display: flex;
-	width: 100%;
-	height: 100%;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 30%;
-	gap: 2%;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  gap: 2%;
 }
 
 .other-image-group {
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.259);
-	position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.259);
+  position: relative;
 }
 
 .other-image-group img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 .gallery-txt-tag {
-	z-index: 4;
-	display: flex;
-	align-items: flex-end;
-	position: absolute;
-	background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
-	bottom: 0;
-	width: 100%;
-	color: white;
-	font-weight: 700;
-	padding-left: 1rem;
-	padding-bottom: 0.5rem;
-	height: 2rem;
+  z-index: 4;
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font-weight: 700;
+  padding-left: 1rem;
+  padding-bottom: 0.5rem;
+  height: 2rem;
 }
 
 @media (max-width: 720px) {
-
-
-	.gallery-slideshow {
-		width: 100%;
-		background-color: red;
-	}
-	.gallery-other-images {
-		display: none;
-	}
-
-
+  .gallery-slideshow {
+    width: 100%;
+    background-color: red;
+  }
+  .gallery-other-images {
+    display: none;
+  }
 }

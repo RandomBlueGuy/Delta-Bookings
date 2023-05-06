@@ -7,7 +7,7 @@ function StarRating({ hotelRating = Math.random() * 5 }) {
     <main className="StarRating">
       <h6>★★★★★</h6>
       <div className="star-painter" style={{ width: `${RatingPercentage}` }}>
-      <h6>★★★★★</h6>
+        <h6>★★★★★</h6>
       </div>
     </main>
   );

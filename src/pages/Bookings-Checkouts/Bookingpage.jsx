@@ -129,7 +129,7 @@ function Bookingpage() {
 
   return (
     <div>
-      <div className='booking-info'>
+      <div className="booking-info">
         {isLoading === true && <LoadingComp />}
         {currentHotel && (
           <BookingInfo

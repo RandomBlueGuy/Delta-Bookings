@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./NewsLetter.css";
 import axios from "axios";
 import FloatingMessage from "../UniversalComponents/FloatingMessage";
-
 import ReviewCard from "./ReviewCard";
 
 function NewsLetter() {
@@ -13,7 +12,6 @@ function NewsLetter() {
   const [inputEmail, setInputEmail] = useState("");
   const [showUpdate, setShowUpdate] = useState(false);
   const [message, setMessage] = useState("");
-
   const DB_URL = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
@@ -55,7 +53,7 @@ function NewsLetter() {
   };
 
   return (
-    <main className='NewsLetter-container'>
+    <main className="NewsLetter-container">
       {showUpdate && (
         <FloatingMessage
           message={`${message} `}
@@ -63,7 +61,7 @@ function NewsLetter() {
           showUpdate={showUpdate}
         />
       )}
-      <section className='NewsLetter-table'>
+      <section className="NewsLetter-table">
         <ReviewCard
           placeholderImg={"1"}
           dateD={(r1Date.getDay() + 1).toString().padStart(2, "0")}
@@ -87,28 +85,28 @@ function NewsLetter() {
         />
       </section>
 
-      <div action='' className='subscribe-form'>
-        <section className='sub-call-txt'>
-          <div className='call-txt-title'>
-            <div className='our-news'>
+      <div action="" className="subscribe-form">
+        <section className="sub-call-txt">
+          <div className="call-txt-title">
+            <div className="our-news">
               <p>OUR NEWS</p>
             </div>
             <h1>Subscribe Our News</h1>
           </div>
-          <p className='call-txt-title-paragraph'>
+          <p className="call-txt-title-paragraph">
             Subscribe and receive our newsletters to follow the new Promise
             about our fresh and fantastic booking offers
           </p>
         </section>
-        <form className='form-input'>
+        <form className="form-input">
           <input
-            className='input-mail'
-            type='text'
-            placeholder='Enter Your Email'
+            className="input-mail"
+            type="text"
+            placeholder="Enter Your Email"
             value={inputEmail}
             onChange={(e) => setInputEmail(e.target.value)}
           />
-          <button type='button' className='sub-btn' onClick={sendEmail}>
+          <button type="button" className="sub-btn" onClick={sendEmail}>
             Subscribe
           </button>
         </form>

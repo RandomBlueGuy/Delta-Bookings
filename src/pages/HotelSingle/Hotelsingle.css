@@ -1,112 +1,110 @@
 .hotelsingle__maxcontainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: rgba(236,236,236,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(236, 236, 236, 0.5);
 }
 
 .hotel__single-container {
-	margin: 5rem 0;
-	display: flex;
-	flex-direction: column;
-	width: 80%;
-	align-items: left;
-	justify-content: center;
-	gap: 2rem;
-	
+  margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: left;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .hotels__container {
-	display: flex;
-	gap: 1rem;
-	flex-direction: column;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
 
 .hotel__info {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .hotel__ctn-displayCard {
-	display: flex;
-	justify-content: space-between;
-	gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .contactInfo__display {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .weather {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 6px rgba(14, 14, 14, 0.159);
 }
 
 .weather img {
-	width: 100%;
+  width: 100%;
 }
 
 .hotels__container-columns {
-	width: 100%;
-	display: flex;
-	gap: 2rem;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
 }
 
 .container-column1 {
-	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	max-width: 70%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 70%;
 }
 
 .container-column2 {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 30%;
 }
 
-
 @media (max-width: 720px) {
-	.HotelList-displayer {
-		width: 100%;
-		align-items: center;
-		justify-content: center;
-	}
+  .HotelList-displayer {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 
-	.hotel__single-container {
-		width: 90%;
-	}
+  .hotel__single-container {
+    width: 90%;
+  }
 
-	.hotels__container-columns {
-		flex-direction: column;
-		width: 100%;
-	}
+  .hotels__container-columns {
+    flex-direction: column;
+    width: 100%;
+  }
 
-	.container-column1 {
-		max-width: 100%;
-	}
+  .container-column1 {
+    max-width: 100%;
+  }
 
-	.container-column2 {
-		max-width: 100%;
-	}
+  .container-column2 {
+    max-width: 100%;
+  }
 
-	.hotel__ctn-displayCard {
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		width: 100%;
-	}
+  .hotel__ctn-displayCard {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
 
-	.RoomCard-table-price{
-		display: flex;
-		align-items: left;
-		justify-content: left;
-	}
+  .RoomCard-table-price {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
 }

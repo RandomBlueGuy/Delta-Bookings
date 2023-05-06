@@ -7,8 +7,6 @@ function HotelListPagination({
   setActualPage,
   refProp,
 }) {
-  const specialChar = ["<<", ">>"];
-
   const optionGenerator = () => {
     const optionArr = [];
     for (let i = 0; i < maxNpages; i++) {
@@ -55,7 +53,7 @@ function HotelListPagination({
   };
 
   return (
-    <div className='pagination-ctn'>
+    <div className="pagination-ctn">
       <button
         className={actualPage > 0 ? "act-chk" : "dis-chk"}
         disabled={actualPage > 0 ? false : true}

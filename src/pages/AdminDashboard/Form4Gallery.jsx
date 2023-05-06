@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import FloatingMessage from "../UniversalComponents/FloatingMessage";
-import WarningMessage from "../UniversalComponents/WarningMessage";
 
 function Form4Gallery({
   setFormTab,

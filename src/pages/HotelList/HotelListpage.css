@@ -30,7 +30,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 2rem;
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
@@ -42,7 +42,7 @@
   margin: 2rem 0;
   background-color: white;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.105);
-  gap: 2rem
+  gap: 2rem;
 }
 
 .filter-ctn h2 {
@@ -57,7 +57,7 @@
   display: flex;
   gap: 1rem;
   margin-left: 1rem;
-	align-items: center;
+  align-items: center;
   padding: 1rem 0;
 }
 
@@ -85,7 +85,6 @@
   color: black;
 }
 
-
 .weirdThing__txt {
   font-weight: 600;
   opacity: 0.6;
@@ -96,8 +95,8 @@
   display: none;
 }
 
-.filter__btns{
-	display: flex;
+.filter__btns {
+  display: flex;
   gap: 1rem;
 }
 
@@ -107,11 +106,10 @@
   }
 
   .mobile__filter {
-	display: block;
- }
+    display: block;
+  }
 
- .filter__btns{
-	display: none;
-}
-
+  .filter__btns {
+    display: none;
+  }
 }

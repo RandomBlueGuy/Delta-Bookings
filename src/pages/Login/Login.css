@@ -1,6 +1,5 @@
 .Login-ctn {
   width: 100%;
-
   background-color: var(--Main-BG);
   display: flex;
   align-items: flex-start;
@@ -14,8 +13,6 @@
   font-size: 16px;
   color: rgb(67, 67, 67);
 }
-
-
 
 .Login-ctn ::placeholder {
   color: rgb(160, 160, 160);
@@ -172,7 +169,7 @@
   text-align: right;
 }
 
-.form__line--login{
+.form__line--login {
   width: 100%;
   margin-bottom: 1rem;
 }
@@ -202,7 +199,6 @@
   .Login-secret-section input,
   .Login-secret-section-active input {
     width: 98%;
-
   }
 
   .Login-secret-section-active {

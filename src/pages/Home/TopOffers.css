@@ -48,8 +48,7 @@
 }
 
 @media (max-width: 376px) {
-
-  .TopOffers-container  h1 {
+  .TopOffers-container h1 {
     margin-bottom: 3rem;
   }
 
@@ -63,8 +62,11 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  
-  section.TopOffers-table:nth-child(2) > div.table-card:nth-child(2), div.table-card:nth-child(3), div.table-card:nth-child(4), div.table-card:nth-child(5) {
+
+  section.TopOffers-table:nth-child(2) > div.table-card:nth-child(2),
+  div.table-card:nth-child(3),
+  div.table-card:nth-child(4),
+  div.table-card:nth-child(5) {
     display: none;
   }
 

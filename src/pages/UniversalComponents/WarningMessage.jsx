@@ -10,7 +10,10 @@ function WarningMessage({
     <main className="WarningMaxCtn">
       <div className="WarningCtn">
         <section className="Warning__header">
-          <h3 className="Warning__header__title">{"⚠️ "}{warningTitle}</h3>
+          <h3 className="Warning__header__title">
+            {"⚠️ "}
+            {warningTitle}
+          </h3>
           <button
             className="Warning__header__close"
             onClick={() => {

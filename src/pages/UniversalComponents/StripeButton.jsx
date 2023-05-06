@@ -53,17 +53,17 @@ export default function StripeButton({ sendPayment, finalPrice }) {
       onSubmit={handleSubmit}
       style={{ display: "flex", flexDirection: "column" }}
     >
-      <label className='stripe-label'>Card Number</label>
-      <CardNumberElement className='stripe-input' />
-      <label className='stripe-label'>Card Expiration</label>
-      <CardExpiryElement className='stripe-input' />
-      <label className='stripe-label'>Card CVC</label>
-      <CardCvcElement className='stripe-input' />
+      <label className="stripe-label">Card Number</label>
+      <CardNumberElement className="stripe-input" />
+      <label className="stripe-label">Card Expiration</label>
+      <CardExpiryElement className="stripe-input" />
+      <label className="stripe-label">Card CVC</label>
+      <CardCvcElement className="stripe-input" />
       {isLoading === true && (
         <LoadingComp message={"We are processing your payment"} />
       )}
       <button
-        type='submit'
+        type="submit"
         style={{ margin: "1rem", padding: "0.5rem 0.75rem" }}
       >
         Pay With Stripe

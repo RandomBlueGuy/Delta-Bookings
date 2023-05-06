@@ -1,10 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
-import fetchDataReducer from './Slices/FetchData/fetchDataSlice';
-
+import { configureStore } from "@reduxjs/toolkit";
+import fetchDataReducer from "./Slices/FetchData/fetchDataSlice";
 
 export const store = configureStore({
-   reducer: {
-      fetchData: fetchDataReducer,
-   },
+  reducer: {
+    fetchData: fetchDataReducer,
+  },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
-})
+});

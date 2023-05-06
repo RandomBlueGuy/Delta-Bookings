@@ -4,15 +4,18 @@ import "./HotelSingleCardHeader.css";
 import shareIcon from "../../assets/Icons/share.svg";
 import saveIcon from "../../assets/Icons/heartEmpty.svg";
 
-function HotelSingleCardHeader({currentHotel}) {
-  const Tags = currentHotel.Tags.split("-/-")
+function HotelSingleCardHeader({ currentHotel }) {
+  const Tags = currentHotel.Tags.split("-/-");
   return (
     <main className="HotelSingleCardHeader-ctn">
       <section className="HotelSingleCardHeader-general-info">
         <div className="general-info-title">
           <h1>{currentHotel?.HotelName}</h1>
           <div className="info-unnecessary">
-            <StarRating className="hotelsingle-displayer" hotelRating={currentHotel?.StarRating} />
+            <StarRating
+              className="hotelsingle-displayer"
+              hotelRating={currentHotel?.StarRating}
+            />
           </div>
           <button>
             <img src={shareIcon} alt="" />
