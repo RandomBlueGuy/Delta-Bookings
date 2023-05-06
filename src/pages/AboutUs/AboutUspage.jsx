@@ -61,32 +61,35 @@ function AboutUspage() {
             cNick='RandomBlueDev'
             cImage={devPicImg1}
             cName=' Andrés Vélez'
-            cTitle='Junior Web Developer'
+            cTitle='Web Developer'
             cEmail='randombluemail@gmail.com'
             cGithub='github.com/RandomBlueGuy'
-            cLinkedin='one day...'
+            cLinkedin='/andres-camilo-velez/'
             cColor1='rgb(14, 170, 222)'
+            lnkedinUrl="https://www.linkedin.com/in/andres-camilo-velez/"
           />
           <DevCard
             cNick='Oscar_Nuñez'
             cImage={devPicImg2}
             cName=' Oscar Javier Nuñez'
-            cTitle='Junior Web Developer'
+            cTitle='Web Developer'
             cEmail='oscar.nunez07@hotmail.com'
             cGithub='github.com/Oskarnuz'
-            cLinkedin='/in/oscar-nuñez-68115587'
+            cLinkedin='/in/oscar-javier-nunez/'
             cColor1='rgb(15, 207, 111)'
+            lnkedinUrl="https://www.linkedin.com/in/oscar-javier-nunez/"
           />
 
           <DevCard
             cNick=' Michael_Saénz'
             cImage={devPicImg3}
             cName='Michael Saénz'
-            cTitle='Junior Web Developer'
+            cTitle='Web Developer'
             cEmail='michaelsaenz96@hotmail.com'
             cGithub='github.com/MSaenz1011'
-            cLinkedin='[UNKNOWN]'
+            cLinkedin='/michael-steven-sáenz-téllez/'
             cColor1='rgb(215, 207, 111)'
+            lnkedinUrl="https://www.linkedin.com/in/michael-steven-sáenz-téllez/"
           />
         </section>
       </div>

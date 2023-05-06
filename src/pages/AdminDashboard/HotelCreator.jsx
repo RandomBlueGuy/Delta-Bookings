@@ -171,39 +171,6 @@ function HotelCreator() {
       Rooms: create,
     });
 
-    const gggg = {
-      HotelName: `${hotelForm.HotelName}`,
-      Website: `${hotelForm.Website}`,
-      location: "",
-      category: "",
-      loc_Lat: `${hotelForm.loc_Lat}`,
-      loc_Lng: `${hotelForm.loc_Lng}`,
-      loc_Place: `${hotelForm.loc_Place}`,
-      loc_City: `${hotelForm.loc_City}`,
-      loc_State: `${hotelForm.loc_State}`,
-      loc_Country: `${hotelForm.loc_Country}`,
-      FrontImg: `${hotelForm.FrontImg}`,
-      Gallery: `${hotelForm.Gallery}`,
-      PhoneNumber: `${hotelForm.PhoneNumber}`,
-      CountryCode: `${Math.floor(Math.random() * 80) + 10}`,
-      Email: `${hotelForm.Email}`,
-      HotelDescription: `${hotelForm.HotelDescription}`,
-      StarRating: 5,
-      ReviewNumber: 0,
-      Tags: `Pooil-/-Coffee shop`,
-      SpecialTags: `Recommended`,
-      PopularityNumber: 100,
-      DateAdded: "2022-10-21T03:35:24.658Z",
-      TrendingNumber: 0,
-      SN_Facebook: `${hotelForm.SN_Facebook}`,
-      SN_Twitter: `${hotelForm.SN_Twitter}`,
-      SN_Instagram: `${hotelForm.SN_Instagram}`,
-      SN_Pinterest: `${hotelForm.SN_Pinterest}`,
-      Rooms: {
-        create,
-      },
-    };
-
     axios
       .post(`${DB_URL}/api/hotels`, {
         HotelName: `${hotelForm.HotelName}`,
@@ -244,6 +211,8 @@ function HotelCreator() {
       .catch(() => {
         setMessage("Something went wrong");
         setShowUpdate(true);
+        setFormTab(1)
+        setHotelForm({})
       });
   }
 

@@ -7,13 +7,17 @@ function DevCard(devInformation) {
   const cOrange = "#ef9d3f";
   const cGreen = "rgba(97,204,146,255)";
   const cYellow = "#c46239";
-  const cPurple = "rgba(168,141,221,255)"
+  const cPurple = "rgba(168,141,221,255)";
 
   return (
     <div className="card-base">
       <div className="developers-card-ctn">
         <figure className="member-img-ctn">
-          <img className="member-profile-pic" src={devInformation.cImage} alt="" />
+          <img
+            className="member-profile-pic"
+            src={devInformation.cImage}
+            alt=""
+          />
           <h3 style={{ color: `${devInformation.cColor1}` }}>
             <span style={{ color: "white" }}>{specialChar[0]}</span>
             {devInformation.cNick}
@@ -60,7 +64,9 @@ function DevCard(devInformation) {
                   <span className="code-indentation">___</span>
                   <span style={{ color: cRed }}> name</span>
                   <span style={{ color: "cyan" }}> : </span>
-                  <span style={{ color: cGreen }}>'{devInformation.cName}'</span>
+                  <span style={{ color: cGreen }}>
+                    '{devInformation.cName}'
+                  </span>
                   <span style={{ color: "white" }}> {specialChar[2]}</span>
                 </p>
               </div>
@@ -75,7 +81,9 @@ function DevCard(devInformation) {
                   <span className="code-indentation">___</span>
                   <span style={{ color: cRed }}> title</span>
                   <span style={{ color: "cyan" }}> : </span>
-                  <span style={{ color: cGreen }}>'{devInformation.cTitle}'</span>
+                  <span style={{ color: cGreen }}>
+                    '{devInformation.cTitle}'
+                  </span>
                   <span style={{ color: "white" }}> {specialChar[2]}</span>
                 </p>
               </div>
@@ -106,7 +114,9 @@ function DevCard(devInformation) {
                   <span className="code-indentation">___</span>
                   <span style={{ color: cOrange }}> email</span>
                   <span style={{ color: "cyan" }}> : </span>
-                  <span style={{ color: cGreen }}>'{devInformation.cEmail}'</span>
+                  <span style={{ color: cGreen }}>
+                    '{devInformation.cEmail}'
+                  </span>
                   <span style={{ color: "white" }}> {specialChar[2]}</span>
                 </p>
               </div>
@@ -122,7 +132,11 @@ function DevCard(devInformation) {
                   <span className="code-indentation">___</span>
                   <span style={{ color: cOrange }}> github</span>
                   <span style={{ color: "cyan" }}> : </span>
-                  <span style={{ color: cGreen }}>'{devInformation.cGithub}'</span>
+                  <a href={`https://www.${devInformation.cGithub}`}>
+                    <span style={{ color: cGreen }}>
+                      '{devInformation.cGithub}'
+                    </span>
+                  </a>
                   <span style={{ color: "white" }}> {specialChar[2]}</span>
                 </p>
               </div>
@@ -138,7 +152,11 @@ function DevCard(devInformation) {
                   <span className="code-indentation">___</span>
                   <span style={{ color: cOrange }}> linkedin</span>
                   <span style={{ color: "cyan" }}> : </span>
-                  <span style={{ color: cGreen }}>'{devInformation.cLinkedin}'</span>
+                  <a href={devInformation.lnkedinUrl}>
+                    <span style={{ color: cGreen }}>
+                      '{devInformation.cLinkedin}'
+                    </span>
+                  </a>
                   <span style={{ color: "white" }}> {specialChar[2]}</span>
                 </p>
               </div>
