@@ -62,7 +62,7 @@ function HotelCard({ hotelInfoCard, searchParams }) {
           <div className='HC-location'>
             <p>
               <FontAwesomeIcon icon={faLocationDot} />
-              {hotelInfoCard.loc_City}
+              {` ${hotelInfoCard.loc_City}`}
             </p>
           </div>
         </div>
