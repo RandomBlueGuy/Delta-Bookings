@@ -164,6 +164,7 @@
     flex-direction: column;
     width: 100%;
   }
+
   .member-img-ctn {
     max-width: 100%;
   }
@@ -174,6 +175,7 @@
     transform: translateX(0px);
     z-index: 3;
   }
+  
   .info-ctn-code p {
     font-size: 12px;
   }
