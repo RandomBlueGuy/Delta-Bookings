@@ -144,7 +144,7 @@
   height: 100%;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 721px) {
   .main-box {
     flex-direction: column;
     width: 90%;

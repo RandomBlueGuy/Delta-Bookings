@@ -54,7 +54,7 @@ function AboutUspage() {
             <li>TypeScript</li>
             <li>JavaScript</li>
             <li>Prisma</li>
-            <li>etc</li>
+            <li>etc</li> ""
           </ul>
         </section>
 
