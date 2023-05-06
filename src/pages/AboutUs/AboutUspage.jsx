@@ -47,8 +47,13 @@ function AboutUspage() {
           </p>
           <ul>
             <li>GitHub.com</li>
-            <li>Visual Studio Code</li>
             <li>React</li>
+            <li>NodeJs</li>
+            <li>Express</li>
+            <li>PostgreSQL</li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>Prisma</li>
             <li>etc</li>
           </ul>
         </section>
