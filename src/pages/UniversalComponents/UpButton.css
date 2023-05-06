@@ -26,7 +26,7 @@
   opacity: 1;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 721px) {
   .up {
     bottom: 1rem;
     right: 1rem;

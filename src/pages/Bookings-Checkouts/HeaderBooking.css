@@ -22,7 +22,7 @@
   height: 150px;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 721px) {
   .Header-booking {
     padding: 0;
   }
