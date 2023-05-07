@@ -49,8 +49,8 @@ function Bookingpage() {
       const discount = Math.floor((basePrice * currentRoom.Discount) / 100);
       const tax = Math.floor(discount * 0.19);
       const finalPrice =
-        Math.floor(basePrice - discount + tax) -
-        (basePrice * extraDiscount) / 100;
+        Math.floor((basePrice - discount + tax) -
+        (basePrice * extraDiscount) / 100);
 
       setPrice({
         RoomName: currentRoom.RoomName,
