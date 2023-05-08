@@ -50,19 +50,24 @@ consist of:
 
 ```
 - React
+- Redux
+- Axios
+- Jsonwebtoken
+- Cookies
 - FontAwesome
 - Material UI
+
 ```
 
 <br />
 
 ## **Basic Commands**
 
-Some basic Git commands are:
+To set up the project, you must type these comands:
 
 ```
-npm install
-npm start
+npm install (to install all requiere modules)
+npm start (to start the app)
 ```
 
 <br />
@@ -72,6 +77,12 @@ npm start
 [Wallpapers here]
 
 <br />
+
+# **Screenshots**
+
+Here you can see the website on live:
+
+-  https://delta-bookings.vercel.app/home
 
 # **Authors**
 
@@ -84,6 +95,6 @@ npm start
 # **Acknowledgments**
 
 - [MIR (Make It Real)](https://makeitreal.camp)
-- Sergio Jaramillo
+- Sergio Jaramillo and Hector Triana
 - [W3Schools](https://www.w3schools.com/)
 - [StackOverflow](https://stackoverflow.com)
