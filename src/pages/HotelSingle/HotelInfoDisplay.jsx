@@ -7,7 +7,7 @@ import L from "leaflet";
 
 function HotelInfoDisplay({ currentHotel = {}, reviews, roomChanger }) {
   const [selectedTab, setSelectedTab] = useState("LOCATION");
-  const position = [currentHotel.loc_Lat, currentHotel.loc_Lng];
+  const position = [41.37561291799558, 2.1468989051193685];
 
   function handleClick(selection) {
     setSelectedTab(selection);

@@ -15,7 +15,7 @@ function CheckCard({ currentHotel, searchParams, selectedRoom }) {
   const [warningMessage, setWarningMessage] = useState("");
   const [warningTitle, setWarningTitle] = useState("");
   const navigate = useNavigate();
-  const position = [currentHotel.loc_Lat, currentHotel.loc_Lng];
+  const position = [41.37561291799558, 2.1468989051193685];
   const [checkInDate, setCheckInDate] = useState(
     searchParams.checkInDate || new Date().toISOString().split("T")[0]
   );
