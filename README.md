@@ -50,28 +50,60 @@ consist of:
 
 ```
 - React
+- Redux
+- Axios
+- Jsonwebtoken
+- Cookies
 - FontAwesome
 - Material UI
+
 ```
 
 <br />
 
 ## **Basic Commands**
 
-Some basic Git commands are:
+To set up the project, you must type these comands:
 
 ```
-npm install
-npm start
+npm install (to install all requiere modules)
+npm start (to start the app)
 ```
 
 <br />
 
 # **Screenshots**
 
-[Wallpapers here]
+Here are screenshots of the app (Remainder: most of the screenshots were taken at 50% of the screen)
+
+![Home Page](https://user-images.githubusercontent.com/82961242/236955964-0b495d71-0acd-4266-a601-cd7716dc4fc4.png)
 
 <br />
+<br />
+![Hotel List Page](https://user-images.githubusercontent.com/82961242/236955965-8be1694e-a376-4624-b9e4-7befba967cbc.png)
+
+<br />
+<br />
+![Hotel Single](https://user-images.githubusercontent.com/82961242/236955951-98746da3-1a3f-4748-83e6-626456cba8af.png)
+<br />
+<br />
+
+![Admin Dashboard](https://user-images.githubusercontent.com/82961242/236955960-30eec337-5647-4510-b8ee-473b336fcf3b.png)
+<br />
+<br />
+
+![User Dashboard](https://user-images.githubusercontent.com/82961242/236955959-041014f7-b4f0-4a41-931d-0bc9bb36b6d1.png)
+<br />
+<br />
+
+
+<br />
+
+# **Screenshots**
+
+Here you can see the website on live:
+
+-  https://delta-bookings.vercel.app/home
 
 # **Authors**
 
@@ -84,6 +116,6 @@ npm start
 # **Acknowledgments**
 
 - [MIR (Make It Real)](https://makeitreal.camp)
-- Sergio Jaramillo
+- Sergio Jaramillo and Hector Triana
 - [W3Schools](https://www.w3schools.com/)
 - [StackOverflow](https://stackoverflow.com)
